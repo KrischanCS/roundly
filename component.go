@@ -13,3 +13,5 @@ type Writer interface {
 	io.ByteWriter
 	io.StringWriter
 }
+
+type ListItem = Component

@@ -62,13 +62,6 @@ func Bdo(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("bdo", attributes, children...)
 }
 
-// Blockquote creates a [blockquote element].
-//
-// [blockquote element]: https://html.spec.whatwg.org/#the-blockquote-element
-func Blockquote(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("blockquote", attributes, children...)
-}
-
 // Br creates a [br element].
 //
 // [br element]: https://html.spec.whatwg.org/#the-br-element
@@ -139,13 +132,6 @@ func Datalist(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Compone
 	return htmfunc.Element("datalist", attributes, children...)
 }
 
-// Dd creates a [dd element].
-//
-// [dd element]: https://html.spec.whatwg.org/#the-dd-element
-func Dd(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("dd", attributes, children...)
-}
-
 // Del creates a [del element].
 //
 // [del element]: https://html.spec.whatwg.org/#the-del-element
@@ -174,27 +160,6 @@ func Dialog(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component
 	return htmfunc.Element("dialog", attributes, children...)
 }
 
-// Div creates a [div element].
-//
-// [div element]: https://html.spec.whatwg.org/#the-div-element
-func Div(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("div", attributes, children...)
-}
-
-// Dl creates a [dl element].
-//
-// [dl element]: https://html.spec.whatwg.org/#the-dl-element
-func Dl(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("dl", attributes, children...)
-}
-
-// Dt creates a [dt element].
-//
-// [dt element]: https://html.spec.whatwg.org/#the-dt-element
-func Dt(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("dt", attributes, children...)
-}
-
 // Em creates a [em element].
 //
 // [em element]: https://html.spec.whatwg.org/#the-em-element
@@ -216,32 +181,11 @@ func Fieldset(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Compone
 	return htmfunc.Element("fieldset", attributes, children...)
 }
 
-// Figcaption creates a [figcaption element].
-//
-// [figcaption element]: https://html.spec.whatwg.org/#the-figcaption-element
-func Figcaption(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("figcaption", attributes, children...)
-}
-
-// Figure creates a [figure element]
-//
-// [figure element]: https://html.spec.whatwg.org/#the-figu-element
-func Figure(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("figure", attributes, children...)
-}
-
 // Form creates a [form element].
 //
 // [form element]: https://html.spec.whatwg.org/#the-form-element
 func Form(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("form", attributes, children...)
-}
-
-// Hr creates a [hr element].
-//
-// [hr element]: https://html.spec.whatwg.org/#the-hr-element
-func Hr(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("hr", attributes, children...)
 }
 
 // I creates a [i element].
@@ -300,20 +244,6 @@ func Legend(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component
 	return htmfunc.Element("legend", attributes, children...)
 }
 
-// Li creates a [li element].
-//
-// [li element]: https://html.spec.whatwg.org/#the-li-element
-func Li(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("li", attributes, children...)
-}
-
-// Main creates a [main element]
-//
-// [main element]: https://html.spec.whatwg.org/#the-main-element
-func Main(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("main", attributes, children...)
-}
-
 // Map creates a [map element].
 //
 // [map element]: https://html.spec.whatwg.org/#the-map-element
@@ -326,13 +256,6 @@ func Map(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // [mark element]: https://html.spec.whatwg.org/#the-mark-element
 func Mark(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("mark", attributes, children...)
-}
-
-// Menu creates a [menu element].
-//
-// [menu element]: https://html.spec.whatwg.org/#the-menu-element
-func Menu(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("menu", attributes, children...)
 }
 
 // Meter creates a [meter element].
@@ -356,13 +279,6 @@ func Object(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component
 	return htmfunc.Element("object", attributes, children...)
 }
 
-// Ol creates a [ol element].
-//
-// [ol element]: https://html.spec.whatwg.org/#the-ol-element
-func Ol(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("ol", attributes, children...)
-}
-
 // Optgroup creates a [optgroup element].
 //
 // [optgroup element]: https://html.spec.whatwg.org/#the-optgroup-element
@@ -384,13 +300,6 @@ func Output(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component
 	return htmfunc.Element("output", attributes, children...)
 }
 
-// P creates a [p element].
-//
-// [p element]: https://html.spec.whatwg.org/#the-p-element
-func P(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("p", attributes, children...)
-}
-
 // Param creates a [param element].
 //
 // [param element]: https://html.spec.whatwg.org/#the-param-element
@@ -403,13 +312,6 @@ func Param(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component 
 // [picture element]: https://html.spec.whatwg.org/#the-picture-element
 func Picture(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("picture", attributes, children...)
-}
-
-// Pre creates a [pre element].
-//
-// [pre element]: https://html.spec.whatwg.org/#the-pre-element
-func Pre(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("pre", attributes, children...)
 }
 
 // Progress creates a [progress element]
@@ -466,13 +368,6 @@ func Samp(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // [script element]: https://html.spec.whatwg.org/#the-script-element
 func Script(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("script", attributes, children...)
-}
-
-// Search creates a [search element].
-//
-// [search element]: https://html.spec.whatwg.org/#the-search-element
-func Search(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("search", attributes, children...)
 }
 
 // Select creates a [select element].
@@ -620,13 +515,6 @@ func Track(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component 
 // [u element]: https://html.spec.whatwg.org/#the-u-element
 func U(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 	return htmfunc.Element("u", attributes, children...)
-}
-
-// Ul creates a [ul element].
-//
-// [ul element]: https://html.spec.whatwg.org/#the-ul-element
-func Ul(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("ul", attributes, children...)
 }
 
 // Var creates a [var element].
