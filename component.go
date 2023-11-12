@@ -15,3 +15,10 @@ type Writer interface {
 }
 
 type ListItem = Component
+
+type TextDirection string
+
+const (
+	LeftToRight TextDirection = "ltr"
+	RightToLeft TextDirection = "rtl"
+)

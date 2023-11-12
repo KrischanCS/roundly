@@ -102,7 +102,7 @@ func Menu(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Component {
 //
 // [li element]: https://html.spec.whatwg.org/#the-li-element
 func Li(attributes attr.Ls, children ...htmfunc.Component) htmfunc.ListItem {
-	return htmfunc.ListItem(htmfunc.Element("li", attributes, children...))
+	return htmfunc.Element("li", attributes, children...)
 }
 
 // Dl creates a [dl element].
