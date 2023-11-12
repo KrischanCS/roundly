@@ -1,0 +1,99 @@
+output:
+  sort-results: true
+
+linters-settings:
+  dogsled:
+    max-blank-identifiers: 2
+
+  dupl:
+    threshold: 150
+
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+
+  exhaustive:
+    check:
+      - switch
+      - map
+    check-generated: true
+    default-signifies-exhaustive: true
+
+  gocognit:
+    min-complexity: 10
+
+
+  varnamelen:
+    max-distance: 6
+    ignore-names:
+      - tt
+      - w
+
+
+
+
+linters:
+  enable-all: false
+  disable-all: true
+  enable:
+    - bidichk
+    - bodyclose
+    - dogsled
+    - dupl
+    - dupword
+    - errcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - execinquery
+    - exhaustive
+    - exportloopref
+    - gocheckcompilerdirectives
+    - gocognit
+    - goconst
+    - gocritic
+    - godot
+    - godox
+    - gofmt
+    - gomnd
+    - gomoddirectives
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - gosmopolitan
+    - govet
+    - importas
+    - inamedparam
+    - ineffassign
+    - interfacebloat
+    - ireturn
+    - lll
+    - makezero
+    - mirror
+    - misspell
+    - nilerr
+    - nilnil
+    - nolintlint
+    - paralleltest
+    - perfsprint
+    - predeclared
+    - promlinter
+    - reassign
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - tenv
+    - testableexamples
+    - testifylint
+    - thelper
+    - tparallel
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - usestdlibvars
+    - varnamelen
+    - wastedassign
+    - wsl
+    - zerologlint
