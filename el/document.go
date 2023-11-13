@@ -128,5 +128,5 @@ func Style(attributes attr.Ls, css string) htmfunc.Component {
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
 func StyleNoEscape(attributes attr.Ls, css string) htmfunc.Component {
-	return htmfunc.Element("style", attributes, Text(css))
+	return htmfunc.Element("style", attributes, TextNoEscape(css))
 }

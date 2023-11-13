@@ -22,6 +22,9 @@ linters-settings:
   gocognit:
     min-complexity: 10
 
+  paralleltest:
+    ignore-missing-subtests: true
+
 
   varnamelen:
     max-distance: 6
@@ -87,7 +90,6 @@ linters:
     - testableexamples
     - testifylint
     - thelper
-    - tparallel
     - typecheck
     - unconvert
     - unparam

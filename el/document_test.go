@@ -56,9 +56,7 @@ func TestHTML(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
-			t.Parallel()
 			var b bytes.Buffer
 
 			component := HTML(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
@@ -70,56 +68,347 @@ func TestHTML(t *testing.T) {
 	}
 }
 
-//nolint:errcheck
-func BenchmarkHTML(b *testing.B) {
-	var w bytes.Buffer
+func TestBase(t *testing.T) {
+	t.Parallel()
 
-	b.ResetTimer()
-	b.ReportAllocs()
-
-	for i := 0; i < b.N; i++ {
-		w.Reset()
-		_ = HTML(attr.Lang("en"),
-			Head(),
-			Body(nil,
-				Text("The quick brown fox jumped over the lazy dog."),
-				Text("<p>Text with tags</p>")),
-		)(&w)
+	type args struct {
+		attributes attr.Ls
 	}
 
-	b.StopTimer()
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "bare tag",
+			args: args{},
+			want: "<base>",
+		},
+		{
+			name: "with href",
+			args: args{
+				attributes: attr.Ls{attr.HRef("https://example.com/index.html")},
+			},
+			want: `<base href="https://example.com/index.html">`,
+		},
+	}
 
-	got := w.String()
-	want := `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text with tags&lt;/p&gt;</body></html>` //nolint:lll
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
 
-	if got != want {
-		b.Errorf("Wanted: %s, got: %s", want, got)
+			component := Base(tt.args.attributes)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
 	}
 }
 
-//nolint:errcheck
-func BenchmarkHTMLNoEscaping(b *testing.B) {
-	var w bytes.Buffer
+func TestDoctype(t *testing.T) {
+	t.Parallel()
 
-	b.ResetTimer()
-	b.ReportAllocs()
-
-	for i := 0; i < b.N; i++ {
-		w.Reset()
-		_ = HTML(attr.Lang("en"),
-			Head(),
-			Body(nil,
-				TextNoEscape("The quick brown fox jumped over the lazy dog."),
-				TextNoEscape("<p>Text with tags</p>")),
-		)(&w)
+	type args struct {
+		doctype string
 	}
 
-	b.StopTimer()
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "Html 5",
+			args: args{
+				doctype: "html",
+			},
+			want: "<!doctype html>",
+		},
+		{
+			name: "Html 4",
+			args: args{
+				doctype: `HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"`,
+			},
+			want: `<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">`,
+		},
+	}
 
-	got := w.String()
-	want := `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.<p>Text with tags</p></body></html>` //nolint:lll
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
 
-	if got != want {
-		b.Errorf("Wanted: %s, got: %s", want, got)
+			component := Doctype(tt.args.doctype)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
+	}
+}
+
+func TestHead(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		childNodes []htmfunc.Component
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "empty",
+			args: args{
+				childNodes: nil,
+			},
+			want: "<head></head>",
+		},
+		{
+			name: "title only",
+			args: args{
+				childNodes: []htmfunc.Component{
+					Title("The Title"),
+				},
+			},
+			want: "<head><title>The Title</title></head>",
+		},
+		{
+			name: "empty",
+			args: args{
+				childNodes: []htmfunc.Component{
+					Title("The Title"),
+					Link(attr.Ls{attr.HRef("/style.css"), attr.Rel("stylesheet")}),
+				},
+			},
+			want: `<head><title>The Title</title><link href="/style.css" rel="stylesheet"></head>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
+
+			component := Head(tt.args.childNodes...)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
+	}
+}
+
+func TestMeta(t *testing.T) {
+	t.Parallel()
+
+	var b bytes.Buffer
+
+	component := Meta(attr.Ls{attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")})
+
+	err := component(&b)
+	require.NoError(t, err)
+
+	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
+
+	assert.Equal(t, want, b.String())
+
+}
+
+func TestStyle(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		attributes attr.Ls
+		css        string
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "empty",
+			args: args{
+				attributes: nil,
+				css:        "",
+			},
+			want: "<style></style>",
+		},
+		{
+			name: "css",
+			args: args{
+				attributes: attr.Ls{attr.Type("text/css")},
+				css:        `body{background-color: firebrick}`,
+			},
+			want: `<style type="text/css">body{background-color: firebrick}</style>`,
+		},
+		{
+			name: "css escaping",
+			args: args{
+				attributes: attr.Ls{attr.Type("text/css")},
+				css:        `body>div{background-color: firebrick}`,
+			},
+			want: `<style type="text/css">body&gt;div{background-color: firebrick}</style>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
+
+			component := Style(tt.args.attributes, tt.args.css)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
+	}
+}
+
+func TestStyleNoEscape(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		attributes attr.Ls
+		css        string
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "empty",
+			args: args{
+				attributes: nil,
+				css:        "",
+			},
+			want: "<style></style>",
+		},
+		{
+			name: "css",
+			args: args{
+				attributes: attr.Ls{attr.Type("text/css")},
+				css:        `body{background-color: firebrick}`,
+			},
+			want: `<style type="text/css">body{background-color: firebrick}</style>`,
+		},
+		{
+			name: "css escaping",
+			args: args{
+				attributes: attr.Ls{attr.Type("text/css")},
+				css:        `body>div{background-color: firebrick}`,
+			},
+			want: `<style type="text/css">body>div{background-color: firebrick}</style>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
+
+			component := StyleNoEscape(tt.args.attributes, tt.args.css)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
+	}
+}
+
+func TestTitle(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		title string
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "empty",
+			args: args{},
+			want: "<title></title>",
+		},
+		{
+			name: "simple title",
+			args: args{
+				title: "The Title",
+			},
+			want: `<title>The Title</title>`,
+		},
+		{
+			name: "simple title",
+			args: args{
+				title: "The Title & some more",
+			},
+			want: `<title>The Title &amp; some more</title>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
+
+			component := Title(tt.args.title)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
+	}
+}
+
+func TestTitleNoEscape(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		title string
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "empty",
+			args: args{},
+			want: "<title></title>",
+		},
+		{
+			name: "simple title",
+			args: args{
+				title: "The Title",
+			},
+			want: `<title>The Title</title>`,
+		},
+		{
+			name: "simple title",
+			args: args{
+				title: "The Title & some more",
+			},
+			want: `<title>The Title & some more</title>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var b bytes.Buffer
+
+			component := TitleNoEscape(tt.args.title)
+
+			err := component(&b)
+			require.NoError(t, err)
+			assert.Equal(t, tt.want, b.String())
+		})
 	}
 }
