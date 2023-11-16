@@ -204,19 +204,19 @@ func TestHead(t *testing.T) {
 func TestMeta(t *testing.T) {
 	t.Parallel()
 
-	var b bytes.Buffer
+	var w bytes.Buffer
 
 	component := Meta(attr.Ls{attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")})
 
-	err := component(&b)
+	err := component(&w)
 	require.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
 
-	assert.Equal(t, want, b.String())
-
+	assert.Equal(t, want, w.String())
 }
 
+//nolint:dupl
 func TestStyle(t *testing.T) {
 	t.Parallel()
 
@@ -269,6 +269,7 @@ func TestStyle(t *testing.T) {
 	}
 }
 
+//nolint:dupl
 func TestStyleNoEscape(t *testing.T) {
 	t.Parallel()
 

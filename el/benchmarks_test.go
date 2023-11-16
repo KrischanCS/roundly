@@ -69,6 +69,7 @@ func BenchmarkExamplePage(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
 		page := HTML(
 			attr.Lang("en"),
 			Head(
@@ -88,6 +89,41 @@ func BenchmarkExamplePage(b *testing.B) {
 		)
 
 		_ = page(&w)
+	}
+
+	_ = w.String()
+}
+
+//nolint:errcheck
+func BenchmarkExamplePageAndString(b *testing.B) {
+	var w bytes.Buffer
+
+	b.ReportAllocs()
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		w.Reset()
+
+		page := HTML(
+			attr.Lang("en"),
+			Head(
+				TitleNoEscape("The Title of the Page"),
+			),
+			Body(nil,
+				Nav(nil,
+					A(attr.Ls{attr.HRef("/main")}, "Main"),
+					A(attr.Ls{attr.HRef("/details")}, "Details"),
+				),
+				Main(nil,
+					H(1, nil,
+						Div(nil, TextNoEscape("Here could be your content")),
+					),
+				),
+			),
+		)
+
+		_ = page(&w)
+		_ = w.String()
 	}
 
 	_ = w.String()

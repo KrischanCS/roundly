@@ -5,6 +5,18 @@ import (
 	"github.com/ch-schulz/htmfunc/attr"
 )
 
+// Document creates an html document with doctype and html root.
+func Document(doctype string, html htmfunc.Component) htmfunc.Component {
+	return func(w htmfunc.Writer) error {
+		err := Doctype(doctype)(w)
+		if err != nil {
+			return err
+		}
+
+		return html(w)
+	}
+}
+
 // Doctype creates the mandatory [doctype tag].
 //
 // [doctype tag]: https://html.spec.whatwg.org/#the-doctype
@@ -30,8 +42,7 @@ func Doctype(doctype string) htmfunc.Component {
 //
 // [html element]: https://html.spec.whatwg.org/#the-html-element
 func HTML(lang htmfunc.Attribute, head, body htmfunc.Component) htmfunc.Component {
-	tag := "html"
-	return htmfunc.Element(tag, []htmfunc.Attribute{lang}, head, body)
+	return htmfunc.Element("html", []htmfunc.Attribute{lang}, head, body)
 }
 
 // Head creates the [head element], which represents a collection of metadata for the Document.
@@ -48,8 +59,7 @@ func HTML(lang htmfunc.Attribute, head, body htmfunc.Component) htmfunc.Componen
 //
 // [head element]: https://html.spec.whatwg.org/#the-head-element
 func Head(childNodes ...htmfunc.Component) htmfunc.Component {
-	tag := "head"
-	return htmfunc.Element(tag, nil, childNodes...)
+	return htmfunc.Element("head", nil, childNodes...)
 }
 
 // Title creates the [title element], which The title element represents the document's title or name.
@@ -62,8 +72,7 @@ func Head(childNodes ...htmfunc.Component) htmfunc.Component {
 //
 // [title element]: https://html.spec.whatwg.org/#the-head-element
 func Title(title string) htmfunc.Component {
-	tag := "title"
-	return htmfunc.Element(tag, nil, Text(title))
+	return htmfunc.Element("title", nil, Text(title))
 }
 
 // TitleNoEscape is equivalent to [Title], but does not escape the given string.
