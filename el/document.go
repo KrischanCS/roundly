@@ -6,7 +6,7 @@ import (
 )
 
 // Document creates an html document with doctype and html root.
-func Document(doctype string, html htmfunc.Component) htmfunc.Component {
+func Document(doctype string, html htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		err := Doctype(doctype)(w)
 		if err != nil {
@@ -20,7 +20,7 @@ func Document(doctype string, html htmfunc.Component) htmfunc.Component {
 // Doctype creates the mandatory [doctype tag].
 //
 // [doctype tag]: https://html.spec.whatwg.org/#the-doctype
-func Doctype(doctype string) htmfunc.Component {
+func Doctype(doctype string) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		_, err := w.WriteString("<!doctype ")
 		if err != nil {
@@ -41,8 +41,8 @@ func Doctype(doctype string) htmfunc.Component {
 // HTML creates the [html element], which represents the root of an HTML document
 //
 // [html element]: https://html.spec.whatwg.org/#the-html-element
-func HTML(lang htmfunc.Attribute, head, body htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("html", []htmfunc.Attribute{lang}, head, body)
+func HTML(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("html", []htmfunc.Attribute{lang}, head, body)
 }
 
 // Head creates the [head element], which represents a collection of metadata for the Document.
@@ -58,8 +58,8 @@ func HTML(lang htmfunc.Attribute, head, body htmfunc.Component) htmfunc.Componen
 //   - [Noscript]
 //
 // [head element]: https://html.spec.whatwg.org/#the-head-element
-func Head(childNodes ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("head", nil, childNodes...)
+func Head(childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("head", nil, childNodes...)
 }
 
 // Title creates the [title element], which The title element represents the document's title or name.
@@ -71,15 +71,15 @@ func Head(childNodes ...htmfunc.Component) htmfunc.Component {
 // There must be no more than one title element per document.
 //
 // [title element]: https://html.spec.whatwg.org/#the-head-element
-func Title(title string) htmfunc.Component {
-	return htmfunc.Element("title", nil, Text(title))
+func Title(title string) htmfunc.Element {
+	return htmfunc.WriteElement("title", nil, Text(title))
 }
 
 // TitleNoEscape is equivalent to [Title], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func TitleNoEscape(title string) htmfunc.Component {
-	return htmfunc.Element("title", nil, TextNoEscape(title))
+func TitleNoEscape(title string) htmfunc.Element {
+	return htmfunc.WriteElement("title", nil, TextNoEscape(title))
 }
 
 // Base creates the [base element]. The base element allows authors to specify the document base URL for the purposes of
@@ -91,8 +91,8 @@ func TitleNoEscape(title string) htmfunc.Component {
 // A base element must have either an href attribute, a target attribute, or both.
 //
 // [base element]: https://html.spec.whatwg.org/#the-base-element
-func Base(attributes attr.Ls) htmfunc.Component {
-	return htmfunc.VoidElement("base", attributes)
+func Base(attributes attr.Ls) htmfunc.Element {
+	return htmfunc.WriteVoidElement("base", attributes)
 }
 
 // Link creates the [link element]. The link element allows authors to link their document to other resources.
@@ -102,8 +102,8 @@ func Base(attributes attr.Ls) htmfunc.Component {
 // present.
 //
 // [link element]: https://html.spec.whatwg.org/#the-link-element
-func Link(attributes attr.Ls) htmfunc.Component {
-	return htmfunc.VoidElement("link", attributes)
+func Link(attributes attr.Ls) htmfunc.Element {
+	return htmfunc.WriteVoidElement("link", attributes)
 }
 
 // Meta creates the [meta element]. Defines metadata about an HTML document. he meta element represents various kinds of
@@ -119,8 +119,8 @@ func Link(attributes attr.Ls) htmfunc.Component {
 // it must be omitted.
 //
 // [meta element]: https://html.spec.whatwg.org/#the-meta-element
-func Meta(attributes attr.Ls) htmfunc.Component {
-	return htmfunc.VoidElement("meta", attributes)
+func Meta(attributes attr.Ls) htmfunc.Element {
+	return htmfunc.WriteVoidElement("meta", attributes)
 }
 
 // Style creates the [style element].
@@ -129,13 +129,13 @@ func Meta(attributes attr.Ls) htmfunc.Component {
 // inputs to the styling processing model. The element does not represent content for the user.
 //
 // [style element]: https://html.spec.whatwg.org/#the-style-element
-func Style(attributes attr.Ls, css string) htmfunc.Component {
-	return htmfunc.Element("style", attributes, Text(css))
+func Style(attributes attr.Ls, css string) htmfunc.Element {
+	return htmfunc.WriteElement("style", attributes, Text(css))
 }
 
 // StyleNoEscape is equivalent to [Style], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func StyleNoEscape(attributes attr.Ls, css string) htmfunc.Component {
-	return htmfunc.Element("style", attributes, TextNoEscape(css))
+func StyleNoEscape(attributes attr.Ls, css string) htmfunc.Element {
+	return htmfunc.WriteElement("style", attributes, TextNoEscape(css))
 }

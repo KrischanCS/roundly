@@ -4,7 +4,7 @@ import (
 	"io"
 )
 
-type Component func(w Writer) error
+type Element func(w Writer) error
 
 type Attribute func(w Writer) error
 
@@ -14,7 +14,7 @@ type Writer interface {
 	io.StringWriter
 }
 
-type ListItem = Component
+type ListItem = Element
 
 type TextDirection string
 

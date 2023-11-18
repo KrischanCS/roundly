@@ -19,8 +19,8 @@ import (
 // If the itemprop attribute is specified on an a element, then the href attribute must also be specified.
 //
 // [a element]: https://html.spec.whatwg.org/#the-a-element
-func A(attributes attr.Ls, text string) htmfunc.Component {
-	return htmfunc.Element("a", attributes, Text(text))
+func A(attributes attr.Ls, text string) htmfunc.Element {
+	return htmfunc.WriteElement("a", attributes, Text(text))
 }
 
 // Em creates a [em element].
@@ -30,8 +30,8 @@ func A(attributes attr.Ls, text string) htmfunc.Component {
 // The level of stress that a particular piece of content has is given by its number of ancestor em elements.
 //
 // [em element]: https://html.spec.whatwg.org/#the-em-element
-func Em(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("em", attributes, children...)
+func Em(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("em", attributes, children...)
 }
 
 // Strong creates a [strong element].
@@ -43,8 +43,8 @@ func Em(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // marking up subheadings, for which the hgroup element is appropriate.)
 //
 // [strong element]: https://html.spec.whatwg.org/#the-strong-element
-func Strong(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("strong", attributes, children...)
+func Strong(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("strong", attributes, children...)
 }
 
 // Small creates a [small element].
@@ -52,8 +52,8 @@ func Strong(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component
 // The small element represents side comments such as small print.
 //
 // [small element]: https://html.spec.whatwg.org/#the-small-element
-func Small(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("small", attributes, children...)
+func Small(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("small", attributes, children...)
 }
 
 // S creates a [s element].
@@ -63,8 +63,8 @@ func Small(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component 
 // The small element represents side comments such as small print.
 //
 // [s element]: https://html.spec.whatwg.org/#the-s-element
-func S(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("s", attributes, children...)
+func S(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("s", attributes, children...)
 }
 
 // Cite creates a [cite element].
@@ -80,8 +80,8 @@ func S(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // to them. In other cases, if an element is really needed, the span element can be used.)
 //
 // [cite element]: https://html.spec.whatwg.org/#the-cite-element
-func Cite(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("cite", attributes, children...)
+func Cite(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("cite", attributes, children...)
 }
 
 // Q creates a [q element].
@@ -106,8 +106,8 @@ func Cite(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // elements is just as correct.
 //
 // [q element]: https://html.spec.whatwg.org/#the-q-element
-func Q(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("q", attributes, children...)
+func Q(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("q", attributes, children...)
 }
 
 // Dfn creates a [dfn element]
@@ -125,8 +125,8 @@ func Q(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // An a element that links to a dfn element represents an instance of the term defined by the dfn element.
 //
 // [dfn element]: https://html.spec.whatwg.org/#the-dfn-element
-func Dfn(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("dfn", attributes, children...)
+func Dfn(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("dfn", attributes, children...)
 }
 
 // Abbr creates a [abbr element].
@@ -136,8 +136,8 @@ func Dfn(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // abbreviation, and nothing else.
 //
 // [abbr element]: https://html.spec.whatwg.org/#the-abbr-element
-func Abbr(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("abbr", attributes, children...)
+func Abbr(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("abbr", attributes, children...)
 }
 
 // Ruby creates a [ruby element].
@@ -164,8 +164,8 @@ func Abbr(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 //
 // [ruby element]: https://html.spec.whatwg.org/#the-ruby-element
 // [JLREQ]: https://html.spec.whatwg.org/#refsJLREQ
-func Ruby(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("ruby", attributes, children...)
+func Ruby(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("ruby", attributes, children...)
 }
 
 // Rt creates a [rt element].
@@ -176,8 +176,8 @@ func Ruby(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // An rt element that is not a child of a ruby element represents the same thing as its children.
 //
 // [rt element]: https://html.spec.whatwg.org/#the-rt-element
-func Rt(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("rt", attributes, children...)
+func Rt(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("rt", attributes, children...)
 }
 
 // Rp creates a [rp element].
@@ -189,8 +189,8 @@ func Rt(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // element represents its children.
 //
 // [rp element]: https://html.spec.whatwg.org/#the-rp-element
-func Rp(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("rp", attributes, children...)
+func Rp(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("rp", attributes, children...)
 }
 
 // Data creates a [data element].
@@ -202,9 +202,9 @@ func Rp(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // machine-readable format.
 //
 // [data element]: https://html.spec.whatwg.org/#the-data-element
-func Data(value string, attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
+func Data(value string, attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 	attributes = append(attributes, attr.Value(value))
-	return htmfunc.Element("data", attributes, children...)
+	return htmfunc.WriteElement("data", attributes, children...)
 }
 
 // TimeMachineReadableAsContent creates a [time element].
@@ -224,8 +224,8 @@ func Data(value string, attributes attr.Ls, children ...htmfunc.Component) htmfu
 // otherwise the child text content of the time element.
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
-func TimeMachineReadableAsContent(attributes attr.Ls, t time.Time) htmfunc.Component {
-	return htmfunc.Element("time", attributes, TextNoEscape(t.Format(time.RFC3339)))
+func TimeMachineReadableAsContent(attributes attr.Ls, t time.Time) htmfunc.Element {
+	return htmfunc.WriteElement("time", attributes, TextNoEscape(t.Format(time.RFC3339)))
 }
 
 // TimeAttribute creates a [time element].
@@ -245,9 +245,9 @@ func TimeMachineReadableAsContent(attributes attr.Ls, t time.Time) htmfunc.Compo
 // otherwise the child text content of the time element.
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
-func TimeAttribute(attributes attr.Ls, t time.Time, childNodes ...htmfunc.Component) htmfunc.Component {
+func TimeAttribute(attributes attr.Ls, t time.Time, childNodes ...htmfunc.Element) htmfunc.Element {
 	attributes = append(attributes, attr.DateTime(t.Format(time.RFC3339)))
-	return htmfunc.Element("time", attributes, childNodes...)
+	return htmfunc.WriteElement("time", attributes, childNodes...)
 }
 
 // Code creates a [code element].
@@ -260,8 +260,8 @@ func TimeAttribute(attributes attr.Ls, t time.Time, childNodes ...htmfunc.Compon
 // attribute, e.g. by adding a class prefixed with "language-" to the element.
 //
 // [code element]: https://html.spec.whatwg.org/#the-code-element
-func Code(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("code", attributes, children...)
+func Code(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("code", attributes, children...)
 }
 
 // Var creates a [var element].
@@ -271,8 +271,8 @@ func Code(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // just be a term used as a placeholder in prose.
 //
 // [var element]: https://html.spec.whatwg.org/#the-var-element
-func Var(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("var", attributes, children...)
+func Var(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("var", attributes, children...)
 }
 
 // Samp creates a [samp element].
@@ -280,8 +280,8 @@ func Var(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // The samp element represents sample or quoted output from another program or computing system.
 //
 // [samp element]: https://html.spec.whatwg.org/#the-samp-element
-func Samp(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("samp", attributes, children...)
+func Samp(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("samp", attributes, children...)
 }
 
 // Kbd creates a [kbd element].
@@ -298,8 +298,8 @@ func Samp(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // as appropriate for the input mechanism.
 //
 // [kbd element]: https://html.spec.whatwg.org/#the-kbd-element
-func Kbd(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("kbd", attributes, children...)
+func Kbd(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("kbd", attributes, children...)
 }
 
 // Sub creates a [sub element].
@@ -314,8 +314,8 @@ func Kbd(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // In certain languages, superscripts are part of the typographical conventions for some abbreviations.
 //
 // [sub element]: https://html.spec.whatwg.org/#the-sub-element
-func Sub(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("sub", attributes, children...)
+func Sub(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("sub", attributes, children...)
 }
 
 // Sup creates a [sup element].
@@ -330,8 +330,8 @@ func Sub(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // In certain languages, superscripts are part of the typographical conventions for some abbreviations.
 //
 // [sup element]: https://html.spec.whatwg.org/#the-sup-element
-func Sup(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("sup", attributes, children...)
+func Sup(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("sup", attributes, children...)
 }
 
 // I creates an [i element].
@@ -344,8 +344,8 @@ func Sup(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // in the XML namespace).
 //
 // [i element]: https://html.spec.whatwg.org/#the-i-element
-func I(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("i", attributes, children...)
+func I(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("i", attributes, children...)
 }
 
 // B creates a [b element].
@@ -355,8 +355,8 @@ func I(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // product names in a review, actionable words in interactive text-driven software, or an article lede.
 //
 // [b element]: https://html.spec.whatwg.org/#the-b-element
-func B(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("b", attributes, children...)
+func B(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("b", attributes, children...)
 }
 
 // U creates a [u element].
@@ -372,8 +372,8 @@ func B(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // or for labeling ship names in Western texts, the i element should be used.
 //
 // [u element]: https://html.spec.whatwg.org/#the-u-element
-func U(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("u", attributes, children...)
+func U(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("u", attributes, children...)
 }
 
 // Mark creates a [mark element].
@@ -387,8 +387,8 @@ func U(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // activity.
 //
 // [mark element]: https://html.spec.whatwg.org/#the-mark-element
-func Mark(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("mark", attributes, children...)
+func Mark(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("mark", attributes, children...)
 }
 
 // Bdi creates a [bdi element].
@@ -398,8 +398,8 @@ func Mark(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 //
 // [bdi element]: https://html.spec.whatwg.org/#the-bdi-element
 // [bidirectional text formatting]: https://html.spec.whatwg.org/#refsBIDI
-func Bdi(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("bdi", attributes, children...)
+func Bdi(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("bdi", attributes, children...)
 }
 
 // Bdo creates a [bdo element].
@@ -411,9 +411,9 @@ func Bdi(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
 // with the value rtl to specify a right-to-left override. The auto value must not be specified.
 //
 // [bdo element]: https://html.spec.whatwg.org/#the-bdo-element
-func Bdo(direction htmfunc.TextDirection, attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
+func Bdo(direction htmfunc.TextDirection, attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 	attributes = append(attributes, attr.Dir(direction))
-	return htmfunc.Element("bdo", attributes, children...)
+	return htmfunc.WriteElement("bdo", attributes, children...)
 }
 
 // Span creates a [span element].
@@ -422,15 +422,15 @@ func Bdo(direction htmfunc.TextDirection, attributes attr.Ls, children ...htmfun
 // e.g. class, lang, or dir. It represents its children.
 //
 // [span element]: https://html.spec.whatwg.org/#the-span-element
-func Span(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("span", attributes, children...)
+func Span(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("span", attributes, children...)
 }
 
 // Br creates a [br element].
 //
 // [br element]: https://html.spec.whatwg.org/#the-br-element
-func Br() htmfunc.Component {
-	return htmfunc.VoidElement("br", nil)
+func Br() htmfunc.Element {
+	return htmfunc.WriteVoidElement("br", nil)
 }
 
 // Wbr creates a [wbr element].
@@ -440,6 +440,6 @@ func Br() htmfunc.Component {
 // Any content inside wbr elements must not be considered part of the surrounding text.
 //
 // [wbr element]: https://html.spec.whatwg.org/#the-wbr-element
-func Wbr(attributes attr.Ls, children ...htmfunc.Component) htmfunc.Component {
-	return htmfunc.Element("wbr", attributes, children...)
+func Wbr(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("wbr", attributes, children...)
 }

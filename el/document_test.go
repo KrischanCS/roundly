@@ -14,8 +14,8 @@ func TestHTML(t *testing.T) {
 
 	type args struct {
 		lang string
-		head htmfunc.Component
-		body htmfunc.Component
+		head htmfunc.Element
+		body htmfunc.Element
 	}
 
 	tests := []struct {
@@ -152,7 +152,7 @@ func TestHead(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		childNodes []htmfunc.Component
+		childNodes []htmfunc.Element
 	}
 
 	tests := []struct {
@@ -170,7 +170,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "title only",
 			args: args{
-				childNodes: []htmfunc.Component{
+				childNodes: []htmfunc.Element{
 					Title("The Title"),
 				},
 			},
@@ -179,7 +179,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "empty",
 			args: args{
-				childNodes: []htmfunc.Component{
+				childNodes: []htmfunc.Element{
 					Title("The Title"),
 					Link(attr.Ls{attr.HRef("/style.css"), attr.Rel("stylesheet")}),
 				},

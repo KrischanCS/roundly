@@ -1,8 +1,8 @@
 package htmfunc
 
-// Element creates a normal html element, with open and closing tag, the given attributes in the opening tag and
+// WriteElement creates a normal html element, with open and closing tag, the given attributes in the opening tag and
 // the given childNodes wrapped between the tags inside.
-func Element(tag string, attributes []Attribute, childNodes ...Component) Component {
+func WriteElement(tag string, attributes []Attribute, childNodes ...Element) Element {
 	return func(w Writer) error {
 		err := writeOpenTag(w, tag, attributes)
 		if err != nil {
@@ -25,7 +25,7 @@ func Element(tag string, attributes []Attribute, childNodes ...Component) Compon
 	}
 }
 
-// VoidElement creates a void element (An element without child nodes and closing tag).
+// WriteVoidElement creates a void element (An element without child nodes and closing tag).
 //
 // This must only be used for elements which don't require a closing tag according to the [html standard].
 //
@@ -47,7 +47,7 @@ func Element(tag string, attributes []Attribute, childNodes ...Component) Compon
 //   - wbr		->	[el.Wbr]
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
-func VoidElement(tag string, attributes []Attribute) Component {
+func WriteVoidElement(tag string, attributes []Attribute) Element {
 	return func(w Writer) error {
 		return writeOpenTag(w, tag, attributes)
 	}

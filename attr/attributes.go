@@ -79,9 +79,9 @@ func Class(classes ...cl.Class) htmfunc.Attribute {
 	}
 }
 
-func Attribute(key string, values ...string) func(w htmfunc.Writer) error {
+func Attribute(name string, values ...string) func(w htmfunc.Writer) error {
 	return func(w htmfunc.Writer) error {
-		_, err := w.WriteString(key)
+		_, err := w.WriteString(name)
 		if err != nil {
 			return err
 		}

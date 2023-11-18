@@ -4,7 +4,7 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
-func Range[T any](component func(T) htmfunc.Component, data ...T) htmfunc.Component {
+func Range[T any](component func(T) htmfunc.Element, data ...T) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		for _, d := range data {
 			err := component(d)(w)
@@ -16,7 +16,7 @@ func Range[T any](component func(T) htmfunc.Component, data ...T) htmfunc.Compon
 	}
 }
 
-func If(component htmfunc.Component, ok bool) htmfunc.Component {
+func If(component htmfunc.Element, ok bool) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		if !ok {
 			return nil
