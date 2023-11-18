@@ -5,62 +5,52 @@ import (
 	"github.com/ch-schulz/htmfunc/attr/cl"
 )
 
-// Ls is a type for convenience, so one does not always have to write `[]htmfunc.Attribute` in all of [el]s method
+/// Ls is a type for convenience, so one does not always have to write `[]htmfunc.Attribute` in all of [el]s method
 // calls.
 type Ls []htmfunc.Attribute
 
 func Lang(language string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("lang", language)(w)
-	}
+	return Attribute("lang", language)
+}
+
+func Src(source string) htmfunc.Attribute {
+	return Attribute("src", source)
+}
+
+func Charset(charset string) htmfunc.Attribute {
+	return Attribute("charset", charset)
 }
 
 func HRef(href string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("href", href)(w)
-	}
+	return Attribute("href", href)
 }
 
 func Value(value string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("value", value)(w)
-	}
+	return Attribute("value", value)
 }
 
 func DateTime(dateTime string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("datetime", dateTime)(w)
-	}
+	return Attribute("datetime", dateTime)
 }
 
 func Dir(direction htmfunc.TextDirection) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("dir", string(direction))(w)
-	}
+	return Attribute("dir", string(direction))
 }
 
 func Rel(relation string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("rel", relation)(w)
-	}
+	return Attribute("rel", relation)
 }
 
 func Name(name string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("name", name)(w)
-	}
+	return Attribute("name", name)
 }
 
 func Content(content string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("content", content)(w)
-	}
+	return Attribute("content", content)
 }
 
 func Type(t string) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		return Attribute("type", t)(w)
-	}
+	return Attribute("type", t)
 }
 
 func Class(classes ...cl.Class) htmfunc.Attribute {
@@ -77,6 +67,10 @@ func Class(classes ...cl.Class) htmfunc.Attribute {
 
 		return w.WriteByte('"')
 	}
+}
+
+func Id(id string) htmfunc.Attribute {
+	return Attribute("id", id)
 }
 
 func Attribute(name string, values ...string) func(w htmfunc.Writer) error {
@@ -100,12 +94,25 @@ func Attribute(name string, values ...string) func(w htmfunc.Writer) error {
 	}
 }
 
+func BooleanAttribute(name string) func(w htmfunc.Writer) error {
+	return func(w htmfunc.Writer) error {
+		_, err := w.WriteString(name)
+		return err
+	}
+}
+
 func writeStringsSpaceSeparated(w htmfunc.Writer, values []string) error {
-	if len(values) != 0 {
+	switch len(values) {
+	case 0:
+		return nil
+	case 1:
 		_, err := w.WriteString(values[0])
-		if err != nil {
-			return err
-		}
+		return err
+	}
+
+	_, err := w.WriteString(values[0])
+	if err != nil {
+		return err
 	}
 
 	for _, v := range values[1:] {
