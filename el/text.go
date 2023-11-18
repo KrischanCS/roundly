@@ -12,7 +12,7 @@ var (
 		'<',
 		'>',
 	}
-	CharEntity = [...]string{
+	charEntity = [...]string{
 		"&amp;",
 		"&#34;",
 		"&#39;",
@@ -28,7 +28,7 @@ func Text(text string) htmfunc.Element {
 		var err error
 		for _, c := range []byte(text) {
 			if n := indexOf(escapeChar, c); n >= 0 {
-				_, err = w.WriteString(CharEntity[n])
+				_, err = w.WriteString(charEntity[n])
 				if err != nil {
 					return err
 				}
