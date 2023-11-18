@@ -1,7 +1,6 @@
 package el
 
 import (
-	"fmt"
 	"github.com/ch-schulz/htmfunc"
 	"github.com/ch-schulz/htmfunc/attr"
 )
@@ -69,15 +68,58 @@ func Aside(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("aside", attributes, childNodes...)
 }
 
-// H creates a [heading element] (h1, h2, ..., h6).
-//
-// H will create invalid headings when given numbers > 6
+// H1 creates a [heading element] h1.
 //
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H(level uint, attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement(fmt.Sprintf("h%d", level), attributes, childNodes...)
+func H1(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h1", attributes, childNodes...)
+}
+
+// H2 creates a [heading element] h2.
+//
+// These elements represent headings for their sections.
+//
+// [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+func H2(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h2", attributes, childNodes...)
+}
+
+// H3 creates a [heading element] h3.
+//
+// These elements represent headings for their sections.
+//
+// [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+func H3(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h3", attributes, childNodes...)
+}
+
+// H4 creates a [heading element] h4.
+//
+// These elements represent headings for their sections.
+//
+// [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+func H4(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h4", attributes, childNodes...)
+}
+
+// H5 creates a [heading element] h5.
+//
+// These elements represent headings for their sections.
+//
+// [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+func H5(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h5", attributes, childNodes...)
+}
+
+// H6 creates a [heading element] h6.
+//
+// These elements represent headings for their sections.
+//
+// [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+func H6(attributes attr.Ls, childNodes ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("h6", attributes, childNodes...)
 }
 
 // Hgroup creates a [hgroup element].

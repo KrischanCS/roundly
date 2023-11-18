@@ -22,7 +22,7 @@ func ExampleHTML() {
 					el.A(attr.Ls{attr.HRef("/details")}, "Details"),
 				),
 				el.Main(nil,
-					el.H(1, nil, el.TextNoEscape("The Heading")),
+					el.H1(nil, el.TextNoEscape("The Heading")),
 					el.Div(nil,
 						el.Text("Here could be your content"),
 					),
