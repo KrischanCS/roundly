@@ -70,7 +70,7 @@ func Class(classes ...cl.Class) htmfunc.Attribute {
 			return err
 		}
 
-		err = writeClassesPaceSeparated(w, classes)
+		err = writeClassesSpaceSeparated(w, classes)
 		if err != nil {
 			return err
 		}
@@ -123,7 +123,7 @@ func writeStringsSpaceSeparated(w htmfunc.Writer, values []string) error {
 	return nil
 }
 
-func writeClassesPaceSeparated(w htmfunc.Writer, classes []cl.Class) error {
+func writeClassesSpaceSeparated(w htmfunc.Writer, classes []cl.Class) error {
 	if len(classes) != 0 {
 		err := classes[0](w)
 		if err != nil {
