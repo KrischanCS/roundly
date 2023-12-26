@@ -2,8 +2,8 @@ package attr
 
 import "github.com/ch-schulz/htmfunc"
 
-// Values writes all given strings space separated to an attribute.
-func Values(value string, values ...string) htmfunc.Value {
+// JoinValues joins all given values space separated.
+func JoinValues(value string, values ...string) htmfunc.Value {
 	return func(w htmfunc.Writer) error {
 		_, err := w.WriteString(value)
 		if err != nil {
