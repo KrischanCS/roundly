@@ -55,16 +55,33 @@ func Type(t string) htmfunc.Attribute {
 	return Attribute("type", t)
 }
 
-func Class(classes htmfunc.Value) htmfunc.Attribute {
+func Class(classes ...htmfunc.Value) htmfunc.Attribute {
 	return func(w htmfunc.Writer) error {
+		if len(classes) == 0 {
+			_, err := w.WriteString(`class=""`)
+			return err
+		}
+
 		_, err := w.WriteString(`class="`)
 		if err != nil {
 			return err
 		}
 
-		err = classes(w)
+		err = classes[0](w)
 		if err != nil {
 			return err
+		}
+
+		for _, class := range classes[1:] {
+			err = w.WriteByte(' ')
+			if err != nil {
+				return err
+			}
+
+			err = class(w)
+			if err != nil {
+				return err
+			}
 		}
 
 		return w.WriteByte('"')
