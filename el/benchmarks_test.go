@@ -19,7 +19,7 @@ func BenchmarkExamplePage(b *testing.B) {
 		page := HTML(
 			attr.Lang("en"),
 			Head(
-				TitleNoEscape("The Title of the Page"),
+				TitleTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
@@ -54,7 +54,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 		page := HTML(
 			attr.Lang("en"),
 			Head(
-				TitleNoEscape("The Title of the Page"),
+				TitleTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
@@ -63,7 +63,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 				),
 				Main(nil,
 					H1(nil,
-						Div(nil, TextNoEscape("Here could be your content")),
+						Div(nil, TextTrusted("Here could be your content")),
 					),
 				),
 			),
@@ -81,7 +81,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 	page := HTML(
 		attr.Lang("en"),
 		Head(
-			TitleNoEscape("The Title of the Page"),
+			TitleTrusted("The Title of the Page"),
 		),
 		Body(nil,
 			Nav(nil,
@@ -115,7 +115,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 	page := HTML(
 		attr.Lang("en"),
 		Head(
-			TitleNoEscape("The Title of the Page"),
+			TitleTrusted("The Title of the Page"),
 		),
 		Body(nil,
 			Nav(nil,
@@ -124,7 +124,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 			),
 			Main(nil,
 				H1(nil,
-					Div(nil, TextNoEscape("Here could be your content")),
+					Div(nil, TextTrusted("Here could be your content")),
 				),
 			),
 		),

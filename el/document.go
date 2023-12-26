@@ -74,11 +74,11 @@ func Title(title string) htmfunc.Element {
 	return htmfunc.WriteElement("title", nil, Text(title))
 }
 
-// TitleNoEscape is equivalent to [Title], but does not escape the given string.
+// TitleTrusted is equivalent to [Title], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func TitleNoEscape(title string) htmfunc.Element {
-	return htmfunc.WriteElement("title", nil, TextNoEscape(title))
+func TitleTrusted(title string) htmfunc.Element {
+	return htmfunc.WriteElement("title", nil, TextTrusted(title))
 }
 
 // Base creates the [base element]. The base element allows authors to specify the document base URL for the purposes of
@@ -132,9 +132,9 @@ func Style(attributes htmfunc.Attribute, css string) htmfunc.Element {
 	return htmfunc.WriteElement("style", attributes, Text(css))
 }
 
-// StyleNoEscape is equivalent to [Style], but does not escape the given string.
+// StyleTrusted is equivalent to [Style], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func StyleNoEscape(attributes htmfunc.Attribute, css string) htmfunc.Element {
-	return htmfunc.WriteElement("style", attributes, TextNoEscape(css))
+func StyleTrusted(attributes htmfunc.Attribute, css string) htmfunc.Element {
+	return htmfunc.WriteElement("style", attributes, TextTrusted(css))
 }

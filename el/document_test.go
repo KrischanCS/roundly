@@ -49,7 +49,7 @@ func TestHTML(t *testing.T) {
 				body: Body(nil,
 					Text("The quick brown fox jumped over the lazy dog."),
 					Text("<p>Text Escaping Works!</p>"),
-					TextNoEscape("<p>This will not be escaped!</p>")),
+					TextTrusted("<p>This will not be escaped!</p>")),
 			},
 			want: `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text Escaping Works!&lt;/p&gt;<p>This will not be escaped!</p></body></html>`, //nolint:lll
 		},
@@ -270,7 +270,7 @@ func TestStyle(t *testing.T) {
 }
 
 //nolint:dupl
-func TestStyleNoEscape(t *testing.T) {
+func TestStyleTrusted(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
@@ -313,7 +313,7 @@ func TestStyleNoEscape(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			var b bytes.Buffer
 
-			component := StyleNoEscape(tt.args.attributes, tt.args.css)
+			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
 			err := component(&b)
 			require.NoError(t, err)
@@ -368,7 +368,7 @@ func TestTitle(t *testing.T) {
 	}
 }
 
-func TestTitleNoEscape(t *testing.T) {
+func TestTitleTrusted(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
@@ -405,7 +405,7 @@ func TestTitleNoEscape(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			var b bytes.Buffer
 
-			component := TitleNoEscape(tt.args.title)
+			component := TitleTrusted(tt.args.title)
 
 			err := component(&b)
 			require.NoError(t, err)

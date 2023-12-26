@@ -225,7 +225,7 @@ func Data(value string, attributes htmfunc.Attribute, children ...htmfunc.Elemen
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
 func TimeMachineReadableAsContent(attributes htmfunc.Attribute, t time.Time) htmfunc.Element {
-	return htmfunc.WriteElement("time", attributes, TextNoEscape(t.Format(time.RFC3339)))
+	return htmfunc.WriteElement("time", attributes, TextTrusted(t.Format(time.RFC3339)))
 }
 
 // TimeAttribute creates a [time element].
