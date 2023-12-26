@@ -2,7 +2,6 @@ package el
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 )
 
 // Details creates a [details element].
@@ -10,7 +9,7 @@ import (
 // The details element represents a disclosure widget from which the user can obtain additional information or controls.
 //
 // [details element]: https://html.spec.whatwg.org/#the-details-element
-func Details(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("details", attributes, children...)
 }
 
@@ -32,7 +31,7 @@ func Details(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 //     string.
 //
 // [summary element]: https://html.spec.whatwg.org/#the-summary-element
-func Summary(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("summary", attributes, children...)
 }
 
@@ -43,6 +42,6 @@ func Summary(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // automatically closed by the application, or manually closed by the user.
 //
 // [dialog element]: https://html.spec.whatwg.org/#the-dialog-element
-func Dialog(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("dialog", attributes, children...)
 }

@@ -2,7 +2,6 @@ package el
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 )
 
 // P creates a [p element].
@@ -10,7 +9,7 @@ import (
 // The p element represents a paragraph.
 //
 // [p element]: https://html.spec.whatwg.org/#the-p-element
-func P(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("p", attributes, children...)
 }
 
@@ -21,7 +20,7 @@ func P(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // of a select element.
 //
 // [hr element]: https://html.spec.whatwg.org/#the-hr-element
-func Hr(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Hr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("hr", attributes, children...)
 }
 
@@ -31,7 +30,7 @@ func Hr(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // rather than by elements.
 //
 // [pre element]: https://html.spec.whatwg.org/#the-pre-element
-func Pre(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("pre", attributes, children...)
 }
 
@@ -53,7 +52,7 @@ func Pre(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // Attribution for the quotation, if any, must be placed outside the blockquote element.
 //
 // [blockquote element]: https://html.spec.whatwg.org/#the-blockquote-element
-func Blockquote(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Blockquote(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("blockquote", attributes, children...)
 }
 
@@ -65,7 +64,7 @@ func Blockquote(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element
 // The items of the list are the li element child nodes of the ol element, in tree order.
 //
 // [ol element]: https://html.spec.whatwg.org/#the-ol-element
-func Ol(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
+func Ol(attributes htmfunc.Attribute, listItems ...htmfunc.ListItem) htmfunc.Element {
 	return htmfunc.WriteElement("ol", attributes, listItems...)
 }
 
@@ -77,7 +76,7 @@ func Ol(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
 // The items of the list are the li element child nodes of the ul element.
 //
 // [ul element]: https://html.spec.whatwg.org/#the-ul-element
-func Ul(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
+func Ul(attributes htmfunc.Attribute, listItems ...htmfunc.ListItem) htmfunc.Element {
 	return htmfunc.WriteElement("ul", attributes, listItems...)
 }
 
@@ -87,7 +86,7 @@ func Ul(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
 // (represented by li elements), each of which represents a command that the user can perform or activate.
 //
 // [menu element]: https://html.spec.whatwg.org/#the-menu-element
-func Menu(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
+func Menu(attributes htmfunc.Attribute, listItems ...htmfunc.ListItem) htmfunc.Element {
 	return htmfunc.WriteElement("menu", attributes, listItems...)
 }
 
@@ -101,7 +100,7 @@ func Menu(attributes attr.Ls, listItems ...htmfunc.ListItem) htmfunc.Element {
 // when the li's list owner is an ol element.
 //
 // [li element]: https://html.spec.whatwg.org/#the-li-element
-func Li(attributes attr.Ls, children ...htmfunc.Element) htmfunc.ListItem {
+func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.ListItem {
 	return htmfunc.WriteElement("li", attributes, children...)
 }
 
@@ -117,7 +116,7 @@ func Li(attributes attr.Ls, children ...htmfunc.Element) htmfunc.ListItem {
 // groups of name-value data.
 //
 // [dl element]: https://html.spec.whatwg.org/#the-dl-element
-func Dl(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Dl(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("dl", attributes, children...)
 }
 
@@ -126,7 +125,7 @@ func Dl(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // The dt element represents the term, or name, part of a term-description group in a description list (dl element).
 //
 // [dt element]: https://html.spec.whatwg.org/#the-dt-element
-func Dt(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("dt", attributes, children...)
 }
 
@@ -136,7 +135,7 @@ func Dt(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // list (dl element).
 //
 // [dd element]: https://html.spec.whatwg.org/#the-dd-element
-func Dd(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("dd", attributes, children...)
 }
 
@@ -146,7 +145,7 @@ func Dd(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // sentence) and is typically referenced as a single unit from the main flow of the document.
 //
 // [figure element]: https://html.spec.whatwg.org/#the-figu-element
-func Figure(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("figure", attributes, children...)
 }
 
@@ -156,7 +155,7 @@ func Figure(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // figure element, if any.
 //
 // [figcaption element]: https://html.spec.whatwg.org/#the-figcaption-element
-func Figcaption(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("figcaption", attributes, children...)
 }
 
@@ -170,7 +169,7 @@ func Figcaption(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element
 // accessible name, and autonomous custom elements. Each main element must be a hierarchically correct main element.
 //
 // [main element]: https://html.spec.whatwg.org/#the-main-element
-func Main(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("main", attributes, children...)
 }
 
@@ -181,7 +180,7 @@ func Main(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // a way of searching or filtering search results on the current web page; or a global or Internet-wide search function.
 //
 // [search element]: https://html.spec.whatwg.org/#the-search-element
-func Search(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("search", attributes, children...)
 }
 
@@ -192,6 +191,6 @@ func Search(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // wrapping groups of dt and dd elements.
 //
 // [div element]: https://html.spec.whatwg.org/#the-div-element
-func Div(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("div", attributes, children...)
 }

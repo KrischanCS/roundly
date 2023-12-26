@@ -2,7 +2,6 @@ package el
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 )
 
 // Document creates an html document with doctype and html root.
@@ -42,7 +41,7 @@ func Doctype(doctype string) htmfunc.Element {
 //
 // [html element]: https://html.spec.whatwg.org/#the-html-element
 func HTML(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("html", []htmfunc.Attribute{lang}, head, body)
+	return htmfunc.WriteElement("html", lang, head, body)
 }
 
 // Head creates the [head element], which represents a collection of metadata for the Document.
@@ -91,7 +90,7 @@ func TitleNoEscape(title string) htmfunc.Element {
 // A base element must have either an href attribute, a target attribute, or both.
 //
 // [base element]: https://html.spec.whatwg.org/#the-base-element
-func Base(attributes attr.Ls) htmfunc.Element {
+func Base(attributes htmfunc.Attribute) htmfunc.Element {
 	return htmfunc.WriteVoidElement("base", attributes)
 }
 
@@ -102,7 +101,7 @@ func Base(attributes attr.Ls) htmfunc.Element {
 // present.
 //
 // [link element]: https://html.spec.whatwg.org/#the-link-element
-func Link(attributes attr.Ls) htmfunc.Element {
+func Link(attributes htmfunc.Attribute) htmfunc.Element {
 	return htmfunc.WriteVoidElement("link", attributes)
 }
 
@@ -119,7 +118,7 @@ func Link(attributes attr.Ls) htmfunc.Element {
 // it must be omitted.
 //
 // [meta element]: https://html.spec.whatwg.org/#the-meta-element
-func Meta(attributes attr.Ls) htmfunc.Element {
+func Meta(attributes htmfunc.Attribute) htmfunc.Element {
 	return htmfunc.WriteVoidElement("meta", attributes)
 }
 
@@ -129,13 +128,13 @@ func Meta(attributes attr.Ls) htmfunc.Element {
 // inputs to the styling processing model. The element does not represent content for the user.
 //
 // [style element]: https://html.spec.whatwg.org/#the-style-element
-func Style(attributes attr.Ls, css string) htmfunc.Element {
+func Style(attributes htmfunc.Attribute, css string) htmfunc.Element {
 	return htmfunc.WriteElement("style", attributes, Text(css))
 }
 
 // StyleNoEscape is equivalent to [Style], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func StyleNoEscape(attributes attr.Ls, css string) htmfunc.Element {
+func StyleNoEscape(attributes htmfunc.Attribute, css string) htmfunc.Element {
 	return htmfunc.WriteElement("style", attributes, TextNoEscape(css))
 }

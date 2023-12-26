@@ -2,7 +2,6 @@ package el
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 )
 
 // Picture creates a [picture element].
@@ -12,7 +11,7 @@ import (
 // density, viewport size, image format, and other factors. It represents its children.
 //
 // [picture element]: https://html.spec.whatwg.org/#the-picture-element
-func Picture(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("picture", attributes, children...)
 }
 
@@ -27,7 +26,7 @@ func Picture(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // will skip to the next source element if the value does not match the environment.
 //
 // [source element]: https://html.spec.whatwg.org/#the-source-element
-func Source(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Source(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("source", attributes, children...)
 }
 
@@ -47,7 +46,7 @@ func Source(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // referencing a non-interactive, optionally animated, image resource that is neither paged nor scripted.
 //
 // [img element]: https://html.spec.whatwg.org/#the-img-element
-func Img(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Img(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("img", attributes, children...)
 }
 
@@ -63,7 +62,7 @@ func Img(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // the attribute is used to construct an iframe srcdoc document, which is a Document whose URL matches about:srcdoc.
 //
 // [iframe element]: https://html.spec.whatwg.org/#the-iframe-element
-func Iframe(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("iframe", attributes, children...)
 }
 
@@ -77,7 +76,7 @@ func Iframe(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // If the itemprop attribute is specified on an embed element, then the src attribute must also be specified.
 //
 // [embed element]: https://html.spec.whatwg.org/#the-embed-element
-func Embed(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Embed(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("embed", attributes, children...)
 }
 
@@ -96,7 +95,7 @@ func Embed(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // content navigable, if applicable, and if present when the element's content navigable is created.
 //
 // [object element]: https://html.spec.whatwg.org/#the-object-element
-func Object(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Object(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("object", attributes, children...)
 }
 
@@ -109,7 +108,7 @@ func Object(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // informing them of how to access the video contents.
 //
 // [video element]: https://html.spec.whatwg.org/#the-video-element
-func Video(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Video(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("video", attributes, children...)
 }
 
@@ -122,7 +121,7 @@ func Video(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // informing them of how to access the audio contents.
 //
 // [audio element]: https://html.spec.whatwg.org/#the-audio-element
-func Audio(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("audio", attributes, children...)
 }
 
@@ -132,7 +131,7 @@ func Audio(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // represent anything on its own.
 //
 // [track element]: https://html.spec.whatwg.org/#the-track-element
-func Track(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("track", attributes, children...)
 }
 
@@ -142,7 +141,7 @@ func Track(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // element represents its children.
 //
 // [map element]: https://html.spec.whatwg.org/#the-map-element
-func Map(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Map(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("map", attributes, children...)
 }
 
@@ -152,7 +151,7 @@ func Map(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // area on an image map.
 //
 // [area element]: https://html.spec.whatwg.org/#the-area-element
-func Area(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Area(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("area", attributes, children...)
 }
 
@@ -180,7 +179,7 @@ func Area(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // [math element]: https://html.spec.whatwg.org/#the-math-element
 // [MathML]: https://html.spec.whatwg.org/multipage/references.html#refsMATHML
 // [other applicable specifications]: https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
-func Math(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("math", attributes, children...)
 }
 
@@ -199,6 +198,6 @@ func Math(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // [svg element]: https://html.spec.whatwg.org/#the-svg-element
 // [SVG 2]: https://html.spec.whatwg.org/multipage/references.html#refsSVG
 // [other applicable specifications]: https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
-func Svg(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("svg", attributes, children...)
 }

@@ -2,7 +2,6 @@ package el
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 )
 
 // Script creates a [script element].
@@ -11,7 +10,7 @@ import (
 // represent content for the user.
 //
 // [script element]: https://html.spec.whatwg.org/#the-script-element
-func Script(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("script", attributes, children...)
 }
 
@@ -22,7 +21,7 @@ func Script(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // scripting, by affecting how the document is parsed.
 //
 // [noscript element]: https://html.spec.whatwg.org/#the-noscript-element
-func Noscript(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("noscript", attributes, children...)
 }
 
@@ -33,7 +32,7 @@ func Noscript(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // In a rendering, the template element represents nothing.
 //
 // [template element]: https://html.spec.whatwg.org/#the-template-element
-func Template(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("template", attributes, children...)
 }
 
@@ -43,6 +42,6 @@ func Template(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
 // if any, and its contents otherwise.
 //
 // [template element]: https://html.spec.whatwg.org/#the-template-element
-func Slot(attributes attr.Ls, children ...htmfunc.Element) htmfunc.Element {
+func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("slot", attributes, children...)
 }

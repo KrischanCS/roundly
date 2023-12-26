@@ -2,12 +2,14 @@ package attr
 
 import (
 	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr/cl"
 )
 
-/// Ls is a type for convenience, so one does not always have to write `[]htmfunc.Attribute` in all of [el]s method
-// calls.
-type Ls []htmfunc.Attribute
+// Join joins the given attributes with spaces
+func Join(attributes ...htmfunc.Attribute) htmfunc.Attribute {
+	return func(w htmfunc.Writer) error {
+		return WriteSpaceSeperated(w, attributes...)
+	}
+}
 
 func Lang(language string) htmfunc.Attribute {
 	return Attribute("lang", language)
@@ -53,14 +55,14 @@ func Type(t string) htmfunc.Attribute {
 	return Attribute("type", t)
 }
 
-func Class(classes ...cl.Class) htmfunc.Attribute {
+func Class(classes htmfunc.Value) htmfunc.Attribute {
 	return func(w htmfunc.Writer) error {
 		_, err := w.WriteString(`class="`)
 		if err != nil {
 			return err
 		}
 
-		err = writeClassesSpaceSeparated(w, classes)
+		err = classes(w)
 		if err != nil {
 			return err
 		}
@@ -130,16 +132,18 @@ func writeStringsSpaceSeparated(w htmfunc.Writer, values []string) error {
 	return nil
 }
 
-func writeClassesSpaceSeparated(w htmfunc.Writer, classes []cl.Class) error {
-	if len(classes) != 0 {
-		err := classes[0](w)
-		if err != nil {
-			return err
-		}
+func WriteSpaceSeperated(w htmfunc.Writer, attrs ...htmfunc.Attribute) (err error) {
+	if len(attrs) == 0 {
+		return
 	}
 
-	for _, c := range classes[1:] {
-		err := w.WriteByte(' ')
+	err = attrs[0](w)
+	if err != nil {
+		return err
+	}
+
+	for _, c := range attrs[1:] {
+		err = w.WriteByte(' ')
 		if err != nil {
 			return err
 		}
@@ -150,5 +154,5 @@ func writeClassesSpaceSeparated(w htmfunc.Writer, classes []cl.Class) error {
 		}
 	}
 
-	return nil
+	return
 }

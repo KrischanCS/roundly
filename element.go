@@ -7,6 +7,7 @@ import (
 type Element func(w Writer) error
 
 type Attribute func(w Writer) error
+type Value func(w Writer) error
 
 type Writer interface {
 	io.Writer

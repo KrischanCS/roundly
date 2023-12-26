@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/ch-schulz/htmfunc/attr"
-	"github.com/ch-schulz/htmfunc/attr/cl"
 	"github.com/ch-schulz/htmfunc/el"
 	"os"
 )
@@ -18,15 +17,15 @@ func ExampleHTML() {
 			),
 			el.Body(nil,
 				el.Nav(nil,
-					el.A(attr.Ls{attr.HRef("/main")}, "Main"),
-					el.A(attr.Ls{attr.HRef("/details")}, "Details"),
+					el.A(attr.HRef("/main"), "Main"),
+					el.A(attr.HRef("/details"), "Details"),
 				),
 				el.Main(nil,
 					el.H1(nil, el.TextNoEscape("The Heading")),
 					el.Div(nil,
 						el.Text("Here could be your content"),
 					),
-					el.Div(attr.Ls{attr.Class(cl.C("escaped", "something"))},
+					el.Div(attr.Class(attr.Values("escaped", "something")),
 						el.Text("HTML characters <div> in </div> here will be escaped &"),
 					),
 				),

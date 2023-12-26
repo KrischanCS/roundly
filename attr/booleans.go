@@ -2,9 +2,9 @@ package attr
 
 import "github.com/ch-schulz/htmfunc"
 
-func If(ok bool, attribute htmfunc.Attribute) htmfunc.Attribute {
+func If(condition bool, attribute htmfunc.Attribute) htmfunc.Attribute {
 	return func(w htmfunc.Writer) error {
-		if !ok {
+		if !condition {
 			return nil
 		}
 

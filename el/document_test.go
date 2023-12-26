@@ -36,7 +36,7 @@ func TestHTML(t *testing.T) {
 			name: "With Text",
 			args: args{
 				lang: "de",
-				body: Body(attr.Ls{attr.Lang("de")}, Text("Dies ist ein Text zum Testen.")),
+				body: Body(attr.Lang("de"), Text("Dies ist ein Text zum Testen.")),
 				head: Head(Title("Der Titel")),
 			},
 			want: `<html lang="de"><head><title>Der Titel</title></head><body lang="de">Dies ist ein Text zum Testen.</body></html>`, //nolint:lll
@@ -72,7 +72,7 @@ func TestBase(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes attr.Ls
+		attributes htmfunc.Attribute
 	}
 
 	tests := []struct {
@@ -88,7 +88,7 @@ func TestBase(t *testing.T) {
 		{
 			name: "with href",
 			args: args{
-				attributes: attr.Ls{attr.HRef("https://example.com/index.html")},
+				attributes: attr.HRef("https://example.com/index.html"),
 			},
 			want: `<base href="https://example.com/index.html">`,
 		},
@@ -181,7 +181,7 @@ func TestHead(t *testing.T) {
 			args: args{
 				childNodes: []htmfunc.Element{
 					Title("The Title"),
-					Link(attr.Ls{attr.HRef("/style.css"), attr.Rel("stylesheet")}),
+					Link(attr.Join(attr.HRef("/style.css"), attr.Rel("stylesheet"))),
 				},
 			},
 			want: `<head><title>The Title</title><link href="/style.css" rel="stylesheet"></head>`,
@@ -206,7 +206,7 @@ func TestMeta(t *testing.T) {
 
 	var w bytes.Buffer
 
-	component := Meta(attr.Ls{attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")})
+	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")))
 
 	err := component(&w)
 	require.NoError(t, err)
@@ -221,7 +221,7 @@ func TestStyle(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes attr.Ls
+		attributes htmfunc.Attribute
 		css        string
 	}
 
@@ -241,7 +241,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: attr.Ls{attr.Type("text/css")},
+				attributes: attr.Type("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -249,7 +249,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: attr.Ls{attr.Type("text/css")},
+				attributes: attr.Type("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body&gt;div{background-color: firebrick}</style>`,
@@ -274,7 +274,7 @@ func TestStyleNoEscape(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes attr.Ls
+		attributes htmfunc.Attribute
 		css        string
 	}
 
@@ -294,7 +294,7 @@ func TestStyleNoEscape(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: attr.Ls{attr.Type("text/css")},
+				attributes: attr.Type("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -302,7 +302,7 @@ func TestStyleNoEscape(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: attr.Ls{attr.Type("text/css")},
+				attributes: attr.Type("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body>div{background-color: firebrick}</style>`,

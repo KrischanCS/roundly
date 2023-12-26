@@ -2,7 +2,7 @@ package htmfunc
 
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in the opening tag and
 // the given childNodes wrapped between the tags inside.
-func WriteElement(tag string, attributes []Attribute, childNodes ...Element) Element {
+func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
 	return func(w Writer) error {
 		err := writeOpenTag(w, tag, attributes)
 		if err != nil {
@@ -47,13 +47,13 @@ func WriteElement(tag string, attributes []Attribute, childNodes ...Element) Ele
 //   - wbr		->	[el.Wbr]
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
-func WriteVoidElement(tag string, attributes []Attribute) Element {
+func WriteVoidElement(tag string, attributes Attribute) Element {
 	return func(w Writer) error {
 		return writeOpenTag(w, tag, attributes)
 	}
 }
 
-func writeOpenTag(w Writer, tag string, attributes []Attribute) error {
+func writeOpenTag(w Writer, tag string, attributes Attribute) error {
 	err := w.WriteByte('<')
 	if err != nil {
 		return err
@@ -64,9 +64,16 @@ func writeOpenTag(w Writer, tag string, attributes []Attribute) error {
 		return err
 	}
 
-	err = writeAttributes(w, attributes)
-	if err != nil {
-		return err
+	if attributes != nil {
+		err = w.WriteByte(' ')
+		if err != nil {
+			return err
+		}
+
+		err = attributes(w)
+		if err != nil {
+			return err
+		}
 	}
 
 	return w.WriteByte('>')
@@ -89,20 +96,4 @@ func writeCloseTag(w Writer, tag string) error {
 	}
 
 	return w.WriteByte('>')
-}
-
-func writeAttributes(w Writer, attributes []Attribute) error {
-	for _, attribute := range attributes {
-		err := w.WriteByte(' ')
-		if err != nil {
-			return err
-		}
-
-		err = attribute(w)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
 }
