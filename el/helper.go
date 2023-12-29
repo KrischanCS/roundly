@@ -4,24 +4,22 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
-type Iterator[T any] func() (element T, hasNext bool)
+type Iterator[T any] func() (element T, ok bool)
 
 func IteratorOf[T any](elements ...T) Iterator[T] {
-	if len(elements) == 0 {
-		return func() (element T, hasNext bool) {
-			return
+	return func() (element T, ok bool) {
+		if len(elements) == 0 {
+			return element, false
 		}
-	}
 
-	return func() (element T, hasNext bool) {
 		element, elements = elements[0], elements[1:]
-		return element, len(elements) != 0
+		return element, true
 	}
 }
 
 func Range[T any](data Iterator[T], component func(T) htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
-		for d, hasNext := data(); hasNext; d, hasNext = data() {
+		for d, ok := data(); ok; d, ok = data() {
 			err := component(d)(w)
 			if err != nil {
 				return err
@@ -31,9 +29,9 @@ func Range[T any](data Iterator[T], component func(T) htmfunc.Element) htmfunc.E
 	}
 }
 
-func If(ok bool, component htmfunc.Element) htmfunc.Element {
+func If(condition bool, component htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
-		if !ok {
+		if !condition {
 			return nil
 		}
 

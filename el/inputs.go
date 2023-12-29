@@ -37,8 +37,8 @@ func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // states in the cell in the second column on the same row as the keyword.
 //
 // [input element]: https://html.spec.whatwg.org/#the-input-element
-func Input(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("input", attributes, children...)
+func Input(attributes htmfunc.Attribute) htmfunc.Element {
+	return htmfunc.WriteVoidElement("input", attributes)
 }
 
 // Button creates a [button element].
