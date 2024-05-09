@@ -17,6 +17,17 @@ func IteratorOf[T any](elements ...T) Iterator[T] {
 	}
 }
 
+func IteratorFromTo(from, to int) Iterator[int] {
+	i := from
+	return func() (element int, ok bool) {
+		if i == to {
+			return i, false
+		}
+		i++
+		return i - 1, true
+	}
+}
+
 func Range[T any](data Iterator[T], component func(T) htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		for d, ok := data(); ok; d, ok = data() {
