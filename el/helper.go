@@ -8,13 +8,15 @@ type Iterator[T any] func() func() (element T, ok bool)
 
 func IteratorOf[T any](elements ...T) Iterator[T] {
 	return func() func() (element T, ok bool) {
-		e := elements
+		tail := elements
+
 		return func() (element T, ok bool) {
-			if len(e) == 0 {
+			if len(tail) == 0 {
 				return element, false
 			}
 
-			element, e = e[0], e[1:]
+			element, tail = tail[0], tail[1:]
+
 			return element, true
 		}
 	}
@@ -23,11 +25,14 @@ func IteratorOf[T any](elements ...T) Iterator[T] {
 func IteratorFromTo(from, to int) Iterator[int] {
 	return func() func() (element int, ok bool) {
 		i := from
+
 		return func() (element int, ok bool) {
 			i++
+
 			if i > to {
 				return 0, false
 			}
+
 			return i - 1, true
 		}
 	}
@@ -36,12 +41,14 @@ func IteratorFromTo(from, to int) Iterator[int] {
 func Range[T any](iterator Iterator[T], component func(T) htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		data := iterator()
+
 		for d, ok := data(); ok; d, ok = data() {
 			err := component(d)(w)
 			if err != nil {
 				return err
 			}
 		}
+
 		return nil
 	}
 }

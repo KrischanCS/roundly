@@ -4,7 +4,7 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
-// Join joins the given attributes with spaces
+// Join joins the given attributes with spaces.
 func Join(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 	return func(w htmfunc.Writer) error {
 		return WriteSpaceSeperated(w, attributes...)
@@ -88,7 +88,7 @@ func Class(classes ...htmfunc.Value) htmfunc.Attribute {
 	}
 }
 
-func Id(id string) htmfunc.Attribute {
+func ID(id string) htmfunc.Attribute {
 	return Attribute("id", id)
 }
 

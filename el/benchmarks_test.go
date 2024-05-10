@@ -39,7 +39,6 @@ func BenchmarkExamplePage(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -77,7 +76,6 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -112,7 +110,6 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -146,7 +143,6 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -180,7 +176,6 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -209,7 +204,6 @@ func BenchmarkRange(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }
 
@@ -249,15 +243,15 @@ func BenchmarkYearCalendar(b *testing.B) {
 			),
 			Main(nil,
 				Div(attr.Class(attr.JoinValues("year")),
-					Range(IteratorOf(months...), func(e struct {
+					Range(IteratorOf(months...), func(month struct {
 						name string
 						days int
 					}) htmfunc.Element {
 						return Div(attr.Class(attr.JoinValues("month")),
-							H3(nil, Text(e.name)),
+							H3(nil, Text(month.name)),
 							Div(attr.Class(attr.JoinValues("days")),
 								Range(
-									IteratorFromTo(1, e.days), func(i int) htmfunc.Element {
+									IteratorFromTo(1, month.days), func(i int) htmfunc.Element {
 										return Div(attr.Class(attr.JoinValues("days")),
 											Text(strconv.Itoa(i)),
 										)
@@ -280,6 +274,5 @@ func BenchmarkYearCalendar(b *testing.B) {
 		_ = page(w)
 	}
 
-	b.StopTimer()
 	_ = w.String()
 }

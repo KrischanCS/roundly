@@ -25,21 +25,22 @@ var (
 // wanted, [TextTrusted] may be used.
 func Text(text string) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
-		var err error
-		for _, c := range []byte(text) {
-			if n := indexOf(escapeChar, c); n >= 0 {
-				_, err = w.WriteString(charEntity[n])
+		for _, rune := range []byte(text) {
+			if n := indexOf(escapeChar, rune); n >= 0 {
+				_, err := w.WriteString(charEntity[n])
 				if err != nil {
 					return err
 				}
+
 				continue
 			}
 
-			err = w.WriteByte(c)
+			err := w.WriteByte(rune)
 			if err != nil {
 				return err
 			}
 		}
+
 		return nil
 	}
 }
@@ -50,6 +51,7 @@ func indexOf(chars [5]byte, char byte) int {
 			return i
 		}
 	}
+
 	return -1
 }
 

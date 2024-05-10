@@ -178,7 +178,9 @@ func Area(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 //
 // [math element]: https://html.spec.whatwg.org/#the-math-element
 // [MathML]: https://html.spec.whatwg.org/multipage/references.html#refsMATHML
-// [other applicable specifications]: https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
+// [other applicable specifications]:
+//
+//	https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
 func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("math", attributes, children...)
 }
@@ -197,7 +199,9 @@ func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 //
 // [svg element]: https://html.spec.whatwg.org/#the-svg-element
 // [SVG 2]: https://html.spec.whatwg.org/multipage/references.html#refsSVG
-// [other applicable specifications]: https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
+// [other applicable specifications]:
+//
+//	https://html.spec.whatwg.org/multipage/infrastructure.html#other-applicable-specifications
 func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("svg", attributes, children...)
 }

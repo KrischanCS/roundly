@@ -104,7 +104,8 @@ func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 
 // Output creates a [output element].
 //
-// The output element represents the result of a calculation performed by the application, or the result of a user action.
+// The output element represents the result of a calculation performed by the application, or the result of a user
+// action.
 //
 // [output element]: https://html.spec.whatwg.org/#the-output-element
 func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
