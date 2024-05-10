@@ -1,11 +1,11 @@
 package el
 
 import (
-	"bytes"
 	"github.com/ch-schulz/htmfunc"
 	"github.com/ch-schulz/htmfunc/attr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/valyala/bytebufferpool"
 	"testing"
 )
 
@@ -57,13 +57,12 @@ func TestHTML(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
-
+			w := bytebufferpool.Get()
 			component := HTML(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -96,13 +95,13 @@ func TestBase(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := Base(tt.args.attributes)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -137,13 +136,13 @@ func TestDoctype(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := Doctype(tt.args.doctype)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -190,13 +189,13 @@ func TestHead(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := Head(tt.args.childNodes...)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -204,11 +203,11 @@ func TestHead(t *testing.T) {
 func TestMeta(t *testing.T) {
 	t.Parallel()
 
-	var w bytes.Buffer
+	w := bytebufferpool.Get()
 
 	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")))
 
-	err := component(&w)
+	err := component(w)
 	require.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
@@ -258,13 +257,13 @@ func TestStyle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := Style(tt.args.attributes, tt.args.css)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -311,13 +310,13 @@ func TestStyleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -357,13 +356,13 @@ func TestTitle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := Title(tt.args.title)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }
@@ -403,13 +402,13 @@ func TestTitleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var b bytes.Buffer
+			w := bytebufferpool.Get()
 
 			component := TitleTrusted(tt.args.title)
 
-			err := component(&b)
+			err := component(w)
 			require.NoError(t, err)
-			assert.Equal(t, tt.want, b.String())
+			assert.Equal(t, tt.want, w.String())
 		})
 	}
 }

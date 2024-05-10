@@ -1,10 +1,10 @@
 package htmfunc_test
 
 import (
-	"bufio"
 	"fmt"
 	"github.com/ch-schulz/htmfunc/attr"
 	"github.com/ch-schulz/htmfunc/el"
+	"github.com/valyala/bytebufferpool"
 	"os"
 )
 
@@ -33,14 +33,14 @@ func ExampleHTML() {
 		),
 	)
 
-	w := bufio.NewWriter(os.Stdout)
+	w := bytebufferpool.Get()
 
 	err := page(w)
 	if err != nil {
 		fmt.Print("Unexpected error: ", err.Error())
 	}
 
-	err = w.Flush()
+	_, err = w.WriteTo(os.Stdout)
 	if err != nil {
 		fmt.Print("Unexpected error: ", err.Error())
 	}

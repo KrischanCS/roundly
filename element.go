@@ -1,19 +1,13 @@
 package htmfunc
 
-import (
-	"io"
-)
+import "github.com/valyala/bytebufferpool"
 
 type Element func(w Writer) error
 
 type Attribute func(w Writer) error
 type Value func(w Writer) error
 
-type Writer interface {
-	io.Writer
-	io.ByteWriter
-	io.StringWriter
-}
+type Writer = *bytebufferpool.ByteBuffer
 
 type ListItem = Element
 
