@@ -1,9 +1,10 @@
 package element
 
 import (
+	"time"
+
 	"github.com/ch-schulz/htmfunc"
 	"github.com/ch-schulz/htmfunc/attribute"
-	"time"
 )
 
 // A creates a [a element].

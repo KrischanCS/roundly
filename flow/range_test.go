@@ -1,12 +1,14 @@
 package flow
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
 	"iter"
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/valyala/bytebufferpool"
 
 	"github.com/ch-schulz/htmfunc"
 	attr "github.com/ch-schulz/htmfunc/attribute"
@@ -15,6 +17,8 @@ import (
 )
 
 func TestRange(t *testing.T) {
+	t.Parallel()
+
 	type args[T any] struct {
 		items     []T
 		component func(int, T) htmfunc.Element
@@ -33,7 +37,7 @@ func TestRange(t *testing.T) {
 				items: nil,
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(fmt.Sprint(i+1))),
+						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
 					)
 				},
@@ -46,7 +50,7 @@ func TestRange(t *testing.T) {
 				items: []string{"apples"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(fmt.Sprint(i+1))),
+						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
 					)
 				},
@@ -59,7 +63,7 @@ func TestRange(t *testing.T) {
 				items: []string{"apples", "bananas", "oranges"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(fmt.Sprint(i+1))),
+						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
 					)
 				},
@@ -71,7 +75,7 @@ func TestRange(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			err := Range(tt.args.items, tt.args.component).RenderHTML(w)
 
@@ -82,10 +86,13 @@ func TestRange(t *testing.T) {
 }
 
 func TestRangeInt(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		limit     int
 		component func(int) htmfunc.Element
 	}
+
 	tests := []struct {
 		name string
 		args args
@@ -96,7 +103,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 0,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(fmt.Sprint(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "",
@@ -106,7 +113,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 1,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(fmt.Sprint(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li>",
@@ -116,7 +123,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 3,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(fmt.Sprint(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li><li>1</li><li>2</li>",
@@ -124,7 +131,7 @@ func TestRangeInt(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			err := RangeInt(tt.args.limit, tt.args.component).RenderHTML(w)
 
@@ -135,6 +142,8 @@ func TestRangeInt(t *testing.T) {
 }
 
 func TestRangeIter(t *testing.T) {
+	t.Parallel()
+
 	type args struct {
 		seq       iter.Seq2[int, int]
 		component func(int, int) htmfunc.Element
@@ -186,7 +195,7 @@ func TestRangeIter(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			err := RangeIter(tt.args.seq, tt.args.component).RenderHTML(w)
 
@@ -205,46 +214,46 @@ func BenchmarkRange(b *testing.B) {
 		}
 	}
 
-	w := bytebufferpool.Get()
+	buf := bytes.NewBuffer(make([]byte, 4096))
+	w := bufio.NewWriter(buf)
 
 	b.ResetTimer()
 	b.ReportAllocs()
 
 	var res []byte
-	for range b.N {
 
-		_ = Range(grid, func(_ int, row []int) htmfunc.Element {
+	for range b.N {
+		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
 				Range(row, func(_ int, i int) htmfunc.Element {
 					return Div(attr.Class(attr.JoinValues("col")),
-						Text(fmt.Sprint(i)),
+						Text(strconv.Itoa(i)),
 					)
 				}),
 			)
 		}).RenderHTML(w)
 
-		res = w.Bytes()
-		w.Reset()
+		res = buf.Bytes()
+		buf.Reset()
 	}
 
 	_ = res
 }
 
 func BenchmarkRangeInt(b *testing.B) {
-
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ResetTimer()
 	b.ReportAllocs()
 
 	var res []byte
-	for i := 0; i < b.N; i++ {
 
-		_ = RangeInt(10, func(row int) htmfunc.Element {
+	for range b.N {
+		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
 				RangeInt(20, func(col int) htmfunc.Element {
 					return Div(attr.Class(attr.JoinValues("col")),
-						Text(fmt.Sprint(row*100+col)),
+						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
@@ -258,27 +267,27 @@ func BenchmarkRangeInt(b *testing.B) {
 }
 
 func BenchmarkRangeIter(b *testing.B) {
-
-	w := bytebufferpool.Get()
+	buf := bytes.NewBuffer(make([]byte, 4096))
+	w := bufio.NewWriter(buf)
 
 	b.ResetTimer()
 	b.ReportAllocs()
 
 	var res []byte
-	for i := 0; i < b.N; i++ {
 
-		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.Element {
+	for range b.N {
+		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
 				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.Element {
 					return Div(attr.Class(attr.JoinValues("col")),
-						Text(fmt.Sprint(row*100+col)),
+						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
 		}).RenderHTML(w)
 
-		res = w.Bytes()
-		w.Reset()
+		res = buf.Bytes()
+		buf.Reset()
 	}
 
 	_ = res

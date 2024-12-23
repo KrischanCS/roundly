@@ -3,7 +3,6 @@ package iters
 import "fmt"
 
 func ExampleFromTo() {
-
 	for i, n := range FromTo(3, 7) {
 		fmt.Printf("%d %d\n", i, n)
 	}
@@ -15,7 +14,7 @@ func ExampleFromTo() {
 	// 3 6
 }
 
-//func ExampleFromTo_Reverse() {
+// func ExampleFromTo_Reverse() {
 //
 //	for i, n := range FromTo(7, 3) {
 //		fmt.Printf("%d %d\n", i, n)
@@ -29,7 +28,6 @@ func ExampleFromTo() {
 //}
 
 func ExampleFromToInclusive() {
-
 	for i, n := range FromToInclusive(3, 7) {
 		fmt.Printf("%d %d\n", i, n)
 	}
@@ -42,7 +40,6 @@ func ExampleFromToInclusive() {
 	// 4 7
 }
 func ExampleFromStepTo() {
-
 	for i, n := range FromStepTo(1.0, 1.5, 7.0) {
 		fmt.Printf("%d %.1f\n", i, n)
 	}

@@ -4,8 +4,6 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/valyala/bytebufferpool"
-
 	"github.com/ch-schulz/htmfunc"
 	"github.com/ch-schulz/htmfunc/attribute"
 	"github.com/ch-schulz/htmfunc/flow"
@@ -14,7 +12,7 @@ import (
 
 //nolint:errcheck
 func BenchmarkExamplePage(b *testing.B) {
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -48,7 +46,7 @@ func BenchmarkExamplePage(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageRange10(b *testing.B) {
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -85,7 +83,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageNoEscape(b *testing.B) {
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -137,13 +135,14 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 		),
 	)
 
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
 		_ = page.RenderHTML(w)
 	}
 
@@ -170,13 +169,14 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 		),
 	)
 
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
 		_ = page.RenderHTML(w)
 	}
 
@@ -185,7 +185,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkRange(b *testing.B) {
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -250,13 +250,14 @@ func BenchmarkYearCalendar(b *testing.B) {
 		),
 	)
 
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
 		_ = page.RenderHTML(w)
 	}
 

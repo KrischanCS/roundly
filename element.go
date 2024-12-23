@@ -1,6 +1,6 @@
 package htmfunc
 
-import "github.com/valyala/bytebufferpool"
+import "io"
 
 type Element interface {
 	RenderHTML(w Writer) error
@@ -9,7 +9,11 @@ type Element interface {
 type Attribute func(w Writer) error
 type Value func(w Writer) error
 
-type Writer = *bytebufferpool.ByteBuffer
+type Writer interface {
+	io.Writer
+	io.ByteWriter
+	io.StringWriter
+}
 
 type ListItem = Element
 

@@ -25,15 +25,30 @@ linters-settings:
   paralleltest:
     ignore-missing-subtests: true
 
-
   varnamelen:
-    max-distance: 6
+    max-distance: 10
+
     ignore-names:
       - tt
       - w
       - i
       - to
 
+  ireturn:
+    allow:
+      - Element
+      - error
+
+  testifylint:
+    disable:
+      - require-error
+
+  revive:
+    rules:
+      - name: dot-imports
+        arguments:
+          - allowedPackages:
+            - "github.com/ch-schulz/htmfunc/element"
 
 
 
@@ -43,6 +58,7 @@ linters:
   enable:
     - bidichk
     - bodyclose
+    - copyloopvar
     - dogsled
     - dupl
     - dupword
@@ -50,9 +66,7 @@ linters:
     - errchkjson
     - errname
     - errorlint
-    - execinquery
     - exhaustive
-    - exportloopref
     - gocheckcompilerdirectives
     - gocognit
     - goconst
@@ -60,7 +74,6 @@ linters:
     - godot
     - godox
     - gofmt
-    - gomnd
     - gomoddirectives
     - goprintffuncname
     - gosec
@@ -78,6 +91,7 @@ linters:
     - misspell
     - nilerr
     - nilnil
+    - mnd
     - nolintlint
     - paralleltest
     - perfsprint

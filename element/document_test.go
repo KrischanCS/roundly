@@ -4,8 +4,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
-	"github.com/valyala/bytebufferpool"
 
 	"github.com/ch-schulz/htmfunc"
 	attr "github.com/ch-schulz/htmfunc/attribute"
@@ -59,11 +57,11 @@ func TestHTML(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 			component := HTML(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -97,12 +95,12 @@ func TestBase(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := Base(tt.args.attributes)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -138,12 +136,12 @@ func TestDoctype(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := Doctype(tt.args.doctype)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -191,12 +189,12 @@ func TestHead(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := Head(tt.args.childNodes...)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -205,13 +203,13 @@ func TestHead(t *testing.T) {
 func TestMeta(t *testing.T) {
 	t.Parallel()
 
-	w := bytebufferpool.Get()
+	w := htmfunc.NewWriter(4096)
 
 	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
 	err := component.RenderHTML(w)
-	require.NoError(t, err)
+	assert.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
 
@@ -260,12 +258,12 @@ func TestStyle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := Style(tt.args.attributes, tt.args.css)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -313,12 +311,12 @@ func TestStyleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -359,12 +357,12 @@ func TestTitle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := Title(tt.args.title)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}
@@ -405,12 +403,12 @@ func TestTitleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := bytebufferpool.Get()
+			w := htmfunc.NewWriter(4096)
 
 			component := TitleTrusted(tt.args.title)
 
 			err := component.RenderHTML(w)
-			require.NoError(t, err)
+			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
 	}

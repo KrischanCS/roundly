@@ -53,11 +53,9 @@ type Number interface {
 // so this behaves the same as doing for range over a slice/array holding the same values.
 func FromStepTo[T Number](start, step, endNotIncluded T) iter.Seq2[int, T] {
 	return func(yield func(int, T) bool) {
-		br := false
 		v := start
 		for i := 0; v < endNotIncluded; i, v = i+1, v+step {
-			br = yield(i, v)
-			if !br {
+			if !yield(i, v) {
 				return
 			}
 		}
