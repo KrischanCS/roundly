@@ -117,24 +117,6 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnly(b *testing.B) {
-	page := HTML(
-		attribute.Lang("en"),
-		Head(
-			TitleTrusted("The Title of the Page"),
-		),
-		Body(nil,
-			Nav(nil,
-				A(attribute.HRef("/main"), "Main"),
-				A(attribute.HRef("/details"), "Details"),
-			),
-			Main(nil,
-				H1(nil,
-					Div(nil, Text("Here could be your content")),
-				),
-			),
-		),
-	)
-
 	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
@@ -142,6 +124,24 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
+		page := HTML(
+			attribute.Lang("en"),
+			Head(
+				TitleTrusted("The Title of the Page"),
+			),
+			Body(nil,
+				Nav(nil,
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
+				),
+				Main(nil,
+					H1(nil,
+						Div(nil, Text("Here could be your content")),
+					),
+				),
+			),
+		)
 
 		_ = page.RenderHTML(w)
 	}
@@ -151,24 +151,6 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
-	page := HTML(
-		attribute.Lang("en"),
-		Head(
-			TitleTrusted("The Title of the Page"),
-		),
-		Body(nil,
-			Nav(nil,
-				A(attribute.HRef("/main"), "Main"),
-				A(attribute.HRef("/details"), "Details"),
-			),
-			Main(nil,
-				H1(nil,
-					Div(nil, TextTrusted("Here could be your content")),
-				),
-			),
-		),
-	)
-
 	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
@@ -176,6 +158,24 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
+
+		page := HTML(
+			attribute.Lang("en"),
+			Head(
+				TitleTrusted("The Title of the Page"),
+			),
+			Body(nil,
+				Nav(nil,
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
+				),
+				Main(nil,
+					H1(nil,
+						Div(nil, TextTrusted("Here could be your content")),
+					),
+				),
+			),
+		)
 
 		_ = page.RenderHTML(w)
 	}
@@ -228,34 +228,34 @@ func BenchmarkYearCalendar(b *testing.B) {
 		{"December", 31},
 	}
 
-	page := HTML(
-		attribute.Lang("en"),
-		Head(
-			TitleTrusted("The Title of the Page"),
-		),
-		Body(nil,
-			Div(attribute.Class(attribute.JoinValues("header")),
-				Nav(nil,
-					A(attribute.HRef("/main"), "Main"),
-					A(attribute.HRef("/details"), "Details"),
-				),
-				H1(nil, Text("Calendar")),
-				H2(nil, Text("2024")),
-			),
-			Main(nil,
-				Div(attribute.Class(attribute.JoinValues("year")),
-					flow.Range(months, month),
-				),
-			),
-		),
-	)
-
 	w := htmfunc.NewWriter(4096)
 
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
+		page := HTML(
+			attribute.Lang("en"),
+			Head(
+				TitleTrusted("The Title of the Page"),
+			),
+			Body(nil,
+				Div(attribute.Class(attribute.JoinValues("header")),
+					Nav(nil,
+						A(attribute.HRef("/main"), "Main"),
+						A(attribute.HRef("/details"), "Details"),
+					),
+					H1(nil, Text("Calendar")),
+					H2(nil, Text("2024")),
+				),
+				Main(nil,
+					Div(attribute.Class(attribute.JoinValues("year")),
+						flow.Range(months, month),
+					),
+				),
+			),
+		)
+
 		w.Reset()
 
 		_ = page.RenderHTML(w)

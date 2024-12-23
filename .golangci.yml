@@ -49,6 +49,8 @@ linters-settings:
         arguments:
           - allowedPackages:
             - "github.com/ch-schulz/htmfunc/element"
+            - "github.com/ch-schulz/htmfunc/attribute"
+            - "github.com/ch-schulz/htmfunc/flow"
 
 
 

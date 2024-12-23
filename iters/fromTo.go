@@ -27,13 +27,7 @@ func FromTo(start, endNotIncluded int) iter.Seq2[int, int] {
 // the second one is the value of the sequence,
 // so this behaves the same as doing for range over a slice/array holding the same values.
 func FromToInclusive(start, endIncluded int) iter.Seq2[int, int] {
-	return func(yield func(int, int) bool) {
-		for i := range endIncluded - start + 1 {
-			if !yield(i, start+i) {
-				return
-			}
-		}
-	}
+	return FromTo(start, endIncluded+1)
 }
 
 type Number interface {

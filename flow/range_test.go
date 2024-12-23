@@ -1,8 +1,6 @@
 package flow
 
 import (
-	"bufio"
-	"bytes"
 	"fmt"
 	"iter"
 	"strconv"
@@ -214,8 +212,7 @@ func BenchmarkRange(b *testing.B) {
 		}
 	}
 
-	buf := bytes.NewBuffer(make([]byte, 4096))
-	w := bufio.NewWriter(buf)
+	w := htmfunc.NewWriter(4096)
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -233,8 +230,8 @@ func BenchmarkRange(b *testing.B) {
 			)
 		}).RenderHTML(w)
 
-		res = buf.Bytes()
-		buf.Reset()
+		res = w.Bytes()
+		w.Reset()
 	}
 
 	_ = res
@@ -267,8 +264,7 @@ func BenchmarkRangeInt(b *testing.B) {
 }
 
 func BenchmarkRangeIter(b *testing.B) {
-	buf := bytes.NewBuffer(make([]byte, 4096))
-	w := bufio.NewWriter(buf)
+	w := htmfunc.NewWriter(4096)
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -286,8 +282,8 @@ func BenchmarkRangeIter(b *testing.B) {
 			)
 		}).RenderHTML(w)
 
-		res = buf.Bytes()
-		buf.Reset()
+		res = w.Bytes()
+		w.Reset()
 	}
 
 	_ = res

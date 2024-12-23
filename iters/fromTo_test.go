@@ -39,6 +39,7 @@ func ExampleFromToInclusive() {
 	// 3 6
 	// 4 7
 }
+
 func ExampleFromStepTo() {
 	for i, n := range FromStepTo(1.0, 1.5, 7.0) {
 		fmt.Printf("%d %.1f\n", i, n)
