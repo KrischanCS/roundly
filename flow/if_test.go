@@ -34,7 +34,7 @@ func TestIf(t *testing.T) {
 	for _, tc := range tt {
 		t.Run(fmt.Sprint(tc.condition), func(t *testing.T) {
 			w := bytebufferpool.Get()
-			err := If(tc.condition, tc.element)(w)
+			err := If(tc.condition, tc.element).RenderHTML(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tc.want, w.String())
@@ -57,7 +57,7 @@ func BenchmarkIf(b *testing.B) {
 
 	var res []byte
 	for i := range b.N {
-		_ = If(conditions[i], H1(nil, Text("Test")))(w)
+		_ = If(conditions[i], H1(nil, Text("Test"))).RenderHTML(w)
 		res = w.Bytes()
 		w.Reset()
 	}

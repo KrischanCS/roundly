@@ -40,7 +40,7 @@ func BenchmarkExamplePage(b *testing.B) {
 			),
 		)
 
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -77,7 +77,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 			),
 		)
 
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -111,7 +111,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 			),
 		)
 
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -144,7 +144,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -177,7 +177,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -205,7 +205,7 @@ func BenchmarkRange(b *testing.B) {
 			),
 		)
 
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()
@@ -257,7 +257,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 		w.Reset()
-		_ = page(w)
+		_ = page.RenderHTML(w)
 	}
 
 	_ = w.String()

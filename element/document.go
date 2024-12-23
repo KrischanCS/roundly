@@ -6,21 +6,21 @@ import (
 
 // Document creates an html document with doctype and html root.
 func Document(doctype string, html htmfunc.Element) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
-		err := Doctype(doctype)(w)
+	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
+		err := Doctype(doctype).RenderHTML(w)
 		if err != nil {
 			return err
 		}
 
-		return html(w)
-	}
+		return html.RenderHTML(w)
+	})
 }
 
 // Doctype creates the mandatory [doctype tag].
 //
 // [doctype tag]: https://html.spec.whatwg.org/#the-doctype
 func Doctype(doctype string) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
+	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString("<!doctype ")
 		if err != nil {
 			return err
@@ -34,7 +34,7 @@ func Doctype(doctype string) htmfunc.Element {
 		err = w.WriteByte('>')
 
 		return err
-	}
+	})
 }
 
 // HTML creates the [html element], which represents the root of an HTML document

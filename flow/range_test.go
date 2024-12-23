@@ -73,7 +73,7 @@ func TestRange(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := bytebufferpool.Get()
 
-			err := Range(tt.args.items, tt.args.component)(w)
+			err := Range(tt.args.items, tt.args.component).RenderHTML(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -126,7 +126,7 @@ func TestRangeInt(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := bytebufferpool.Get()
 
-			err := RangeInt(tt.args.limit, tt.args.component)(w)
+			err := RangeInt(tt.args.limit, tt.args.component).RenderHTML(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -188,7 +188,7 @@ func TestRangeIter(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := bytebufferpool.Get()
 
-			err := RangeIter(tt.args.seq, tt.args.component)(w)
+			err := RangeIter(tt.args.seq, tt.args.component).RenderHTML(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -221,7 +221,7 @@ func BenchmarkRange(b *testing.B) {
 					)
 				}),
 			)
-		})(w)
+		}).RenderHTML(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -248,7 +248,7 @@ func BenchmarkRangeInt(b *testing.B) {
 					)
 				}),
 			)
-		})(w)
+		}).RenderHTML(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -275,7 +275,7 @@ func BenchmarkRangeIter(b *testing.B) {
 					)
 				}),
 			)
-		})(w)
+		}).RenderHTML(w)
 
 		res = w.Bytes()
 		w.Reset()

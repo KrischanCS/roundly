@@ -21,28 +21,29 @@ var (
 	}
 )
 
-// Text represents exactly the given text without any extra tags. Html characters will be escaped. If this is not
-// wanted, [TextTrusted] may be used.
-func Text(text string) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
-		for _, rune := range []byte(text) {
-			if n := indexOf(escapeChar, rune); n >= 0 {
-				_, err := w.WriteString(charEntity[n])
-				if err != nil {
-					return err
-				}
+// Text represents exactly the given text without any extra tags.
+// Html characters will be escaped. If this is not wanted,
+// [TextTrusted] may be used.
+type Text string
 
-				continue
-			}
-
-			err := w.WriteByte(rune)
+func (t Text) RenderHTML(w htmfunc.Writer) error {
+	for _, r := range []byte(t) {
+		if n := indexOf(escapeChar, r); n >= 0 {
+			_, err := w.WriteString(charEntity[n])
 			if err != nil {
 				return err
 			}
+
+			continue
 		}
 
-		return nil
+		err := w.WriteByte(r)
+		if err != nil {
+			return err
+		}
 	}
+
+	return nil
 }
 
 func indexOf(chars [5]byte, char byte) int {
@@ -56,9 +57,9 @@ func indexOf(chars [5]byte, char byte) int {
 }
 
 // TextTrusted is equivalent to [Text], but won't escape the input. Only use with safe text and never with user input.
-func TextTrusted(text string) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
-		_, err := w.WriteString(text)
-		return err
-	}
+type TextTrusted string
+
+func (t TextTrusted) RenderHTML(w htmfunc.Writer) error {
+	_, err := w.WriteString(string(t))
+	return err
 }

@@ -62,7 +62,7 @@ func TestHTML(t *testing.T) {
 			w := bytebufferpool.Get()
 			component := HTML(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -101,7 +101,7 @@ func TestBase(t *testing.T) {
 
 			component := Base(tt.args.attributes)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -142,7 +142,7 @@ func TestDoctype(t *testing.T) {
 
 			component := Doctype(tt.args.doctype)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -195,7 +195,7 @@ func TestHead(t *testing.T) {
 
 			component := Head(tt.args.childNodes...)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -210,7 +210,7 @@ func TestMeta(t *testing.T) {
 	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
-	err := component(w)
+	err := component.RenderHTML(w)
 	require.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
@@ -264,7 +264,7 @@ func TestStyle(t *testing.T) {
 
 			component := Style(tt.args.attributes, tt.args.css)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -317,7 +317,7 @@ func TestStyleTrusted(t *testing.T) {
 
 			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -363,7 +363,7 @@ func TestTitle(t *testing.T) {
 
 			component := Title(tt.args.title)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -409,7 +409,7 @@ func TestTitleTrusted(t *testing.T) {
 
 			component := TitleTrusted(tt.args.title)
 
-			err := component(w)
+			err := component.RenderHTML(w)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})

@@ -2,10 +2,12 @@ package htmfunc_test
 
 import (
 	"fmt"
+	"os"
+
+	"github.com/valyala/bytebufferpool"
+
 	"github.com/ch-schulz/htmfunc/attribute"
 	"github.com/ch-schulz/htmfunc/element"
-	"github.com/valyala/bytebufferpool"
-	"os"
 )
 
 //nolint:lll
@@ -35,7 +37,7 @@ func ExampleHTML() {
 
 	w := bytebufferpool.Get()
 
-	err := page(w)
+	err := page.RenderHTML(w)
 	if err != nil {
 		fmt.Print("Unexpected error: ", err.Error())
 	}

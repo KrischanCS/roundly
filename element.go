@@ -2,7 +2,9 @@ package htmfunc
 
 import "github.com/valyala/bytebufferpool"
 
-type Element func(w Writer) error
+type Element interface {
+	RenderHTML(w Writer) error
+}
 
 type Attribute func(w Writer) error
 type Value func(w Writer) error
