@@ -7,38 +7,28 @@ import (
 )
 
 func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {
-	buf := htmfunc.NewWriter(4096) //nolint:mnd
-
-	for i, e := range items {
-		err := component(i, e).RenderHTML(buf)
-		if err != nil {
-			return htmfunc.WriteFunc(func(_ htmfunc.Writer) error {
-				return err
-			})
-		}
-	}
-
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
-		_, err := buf.WriteTo(w)
-		return err
+		for i, e := range items {
+			err := component(i, e).RenderHTML(w)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
 	})
 }
 
 func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
-	buf := htmfunc.NewWriter(4096) //nolint:mnd
-
-	for i := range limit {
-		err := component(i).RenderHTML(buf)
-		if err != nil {
-			return htmfunc.WriteFunc(func(_ htmfunc.Writer) error {
-				return err
-			})
-		}
-	}
-
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
-		_, err := buf.WriteTo(w)
-		return err
+		for range limit {
+			err := component(limit).RenderHTML(w)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
 	})
 }
 
@@ -49,19 +39,14 @@ func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element
 		})
 	}
 
-	buf := htmfunc.NewWriter(4096) //nolint:mnd
-
-	for t1, t2 := range seq {
-		err := component(t1, t2).RenderHTML(buf)
-		if err != nil {
-			return htmfunc.WriteFunc(func(_ htmfunc.Writer) error {
-				return err
-			})
-		}
-	}
-
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
-		_, err := buf.WriteTo(w)
-		return err
+		for t1, t2 := range seq {
+			err := component(t1, t2).RenderHTML(w)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
 	})
 }
