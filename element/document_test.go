@@ -1,12 +1,14 @@
-package el
+package element
 
 import (
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/valyala/bytebufferpool"
-	"testing"
+
+	"github.com/ch-schulz/htmfunc"
+	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
 func TestHTML(t *testing.T) {
@@ -205,7 +207,8 @@ func TestMeta(t *testing.T) {
 
 	w := bytebufferpool.Get()
 
-	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,highways")))
+	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,"+
+		"highways")))
 
 	err := component(w)
 	require.NoError(t, err)

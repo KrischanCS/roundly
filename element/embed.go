@@ -1,4 +1,4 @@
-package el
+package element
 
 import (
 	"github.com/ch-schulz/htmfunc"

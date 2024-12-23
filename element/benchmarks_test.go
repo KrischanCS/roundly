@@ -1,11 +1,13 @@
-package el
+package element
 
 import (
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
-	"github.com/valyala/bytebufferpool"
 	"strconv"
 	"testing"
+
+	"github.com/valyala/bytebufferpool"
+
+	"github.com/ch-schulz/htmfunc"
+	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
 //nolint:errcheck

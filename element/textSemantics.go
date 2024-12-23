@@ -1,9 +1,10 @@
-package el
+package element
 
 import (
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attr"
 	"time"
+
+	"github.com/ch-schulz/htmfunc"
+	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
 // A creates a [a element].
@@ -92,7 +93,7 @@ func Cite(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // immediately before, after, or inside q elements; they will be inserted into the rendering by the user agent.
 //
 // Content inside a q element must be quoted from another source, whose address, if it has one, may be cited in the cite
-// attribute. The source may be fictional, as when quoting characters in a novel or screenplay.
+// attr. The source may be fictional, as when quoting characters in a novel or screenplay.
 //
 // If the cite attribute is present, it must be a valid URL potentially surrounded by spaces. To obtain the
 // corresponding citation link, the value of the attribute must be parsed relative to the element's node document.
@@ -196,7 +197,7 @@ func Rp(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // Data creates a [data element].
 //
 // The data element represents its contents, along with a machine-readable form of those contents in the value
-// attribute.
+// attr.
 //
 // The value attribute must be present. Its value must be a representation of the element's contents in a
 // machine-readable format.
@@ -212,7 +213,7 @@ func Data(value string, attributes htmfunc.Attribute, children ...htmfunc.Elemen
 // The content of the element will be formatted according to [time.RFC3339]
 //
 // The time element represents its contents, along with a machine-readable form of those contents in the datetime
-// attribute. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as
+// attr. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as
 // described below.
 //
 // The datetime attribute may be present. If present, its value must be a representation of the element's contents in a
@@ -233,7 +234,7 @@ func TimeMachineReadableAsContent(attributes htmfunc.Attribute, t time.Time) htm
 // The datetime attribute will be filled with the given time in [time.RFC3339] format
 //
 // The time element represents its contents, along with a machine-readable form of those contents in the datetime
-// attribute. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as
+// attr. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as
 // described below.
 //
 // The datetime attribute may be present. If present, its value must be a representation of the element's contents in a

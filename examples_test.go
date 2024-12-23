@@ -2,10 +2,12 @@ package htmfunc_test
 
 import (
 	"fmt"
-	"github.com/ch-schulz/htmfunc/attr"
-	"github.com/ch-schulz/htmfunc/el"
-	"github.com/valyala/bytebufferpool"
 	"os"
+
+	"github.com/valyala/bytebufferpool"
+
+	attr "github.com/ch-schulz/htmfunc/attribute"
+	el "github.com/ch-schulz/htmfunc/element"
 )
 
 //nolint:lll
