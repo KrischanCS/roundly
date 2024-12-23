@@ -1,13 +1,16 @@
 package flow
 
-import "github.com/ch-schulz/htmfunc"
+import (
+	"iter"
 
-func Range[T any](iterator Iterator[T], component func(T) htmfunc.Element) htmfunc.Element {
+	"github.com/ch-schulz/htmfunc"
+)
+
+func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
-		data := iterator()
 
-		for d, ok := data(); ok; d, ok = data() {
-			err := component(d)(w)
+		for i, e := range items {
+			err := component(i, e)(w)
 			if err != nil {
 				return err
 			}
@@ -17,36 +20,36 @@ func Range[T any](iterator Iterator[T], component func(T) htmfunc.Element) htmfu
 	}
 }
 
-type Iterator[T any] func() func() (element T, ok bool)
+func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
+	return func(w htmfunc.Writer) error {
 
-func IteratorOf[T any](elements ...T) Iterator[T] {
-	return func() func() (element T, ok bool) {
-		tail := elements
-
-		return func() (element T, ok bool) {
-			if len(tail) == 0 {
-				return element, false
+		for i := range limit {
+			err := component(i)(w)
+			if err != nil {
+				return err
 			}
-
-			element, tail = tail[0], tail[1:]
-
-			return element, true
 		}
+
+		return nil
 	}
 }
 
-func IteratorFromTo(from, to int) Iterator[int] {
-	return func() func() (element int, ok bool) {
-		i := from
-
-		return func() (element int, ok bool) {
-			i++
-
-			if i > to {
-				return 0, false
-			}
-
-			return i - 1, true
+func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element) htmfunc.Element {
+	if seq == nil {
+		return func(w htmfunc.Writer) error {
+			return nil
 		}
+	}
+
+	return func(w htmfunc.Writer) error {
+
+		for t1, t2 := range seq {
+			err := component(t1, t2)(w)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
 	}
 }

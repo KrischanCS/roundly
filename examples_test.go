@@ -2,33 +2,31 @@ package htmfunc_test
 
 import (
 	"fmt"
-	"os"
-
+	"github.com/ch-schulz/htmfunc/attribute"
+	"github.com/ch-schulz/htmfunc/element"
 	"github.com/valyala/bytebufferpool"
-
-	attr "github.com/ch-schulz/htmfunc/attribute"
-	el "github.com/ch-schulz/htmfunc/element"
+	"os"
 )
 
 //nolint:lll
 func ExampleHTML() {
-	page := el.Document("html",
-		el.HTML(attr.Lang("en"),
-			el.Head(
-				el.Title("The Title of the Page"),
+	page := element.Document("html",
+		element.HTML(attribute.Lang("en"),
+			element.Head(
+				element.Title("The Title of the Page"),
 			),
-			el.Body(nil,
-				el.Nav(nil,
-					el.A(attr.HRef("/main"), "Main"),
-					el.A(attr.HRef("/details"), "Details"),
+			element.Body(nil,
+				element.Nav(nil,
+					element.A(attribute.HRef("/main"), "Main"),
+					element.A(attribute.HRef("/details"), "Details"),
 				),
-				el.Main(nil,
-					el.H1(nil, el.TextTrusted("The Heading")),
-					el.Div(nil,
-						el.Text("Here could be your content"),
+				element.Main(nil,
+					element.H1(nil, element.TextTrusted("The Heading")),
+					element.Div(nil,
+						element.Text("Here could be your content"),
 					),
-					el.Div(attr.Class(attr.JoinValues("escaped", "something")),
-						el.Text("HTML characters <div> in </div> here will be escaped &"),
+					element.Div(attribute.Class(attribute.JoinValues("escaped", "something")),
+						element.Text("HTML characters <div> in </div> here will be escaped &"),
 					),
 				),
 			),

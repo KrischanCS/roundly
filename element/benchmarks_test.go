@@ -7,8 +7,9 @@ import (
 	"github.com/valyala/bytebufferpool"
 
 	"github.com/ch-schulz/htmfunc"
-	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/ch-schulz/htmfunc/attribute"
 	"github.com/ch-schulz/htmfunc/flow"
+	"github.com/ch-schulz/htmfunc/iters"
 )
 
 //nolint:errcheck
@@ -22,14 +23,14 @@ func BenchmarkExamplePage(b *testing.B) {
 		w.Reset()
 
 		page := HTML(
-			attr.Lang("en"),
+			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attr.HRef("/main"), "Main"),
-					A(attr.HRef("/details"), "Details"),
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
 				),
 				Main(nil,
 					H1(nil,
@@ -56,20 +57,20 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 		w.Reset()
 
 		page := HTML(
-			attr.Lang("en"),
+			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attr.HRef("/main"), "Main"),
-					A(attr.HRef("/details"), "Details"),
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
 				),
 				Main(nil,
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					flow.Range(flow.IteratorFromTo(1, 10), func(i int) htmfunc.Element {
+					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.Element {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -93,14 +94,14 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 		w.Reset()
 
 		page := HTML(
-			attr.Lang("en"),
+			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attr.HRef("/main"), "Main"),
-					A(attr.HRef("/details"), "Details"),
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
 				),
 				Main(nil,
 					H1(nil,
@@ -119,14 +120,14 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnly(b *testing.B) {
 	page := HTML(
-		attr.Lang("en"),
+		attribute.Lang("en"),
 		Head(
 			TitleTrusted("The Title of the Page"),
 		),
 		Body(nil,
 			Nav(nil,
-				A(attr.HRef("/main"), "Main"),
-				A(attr.HRef("/details"), "Details"),
+				A(attribute.HRef("/main"), "Main"),
+				A(attribute.HRef("/details"), "Details"),
 			),
 			Main(nil,
 				H1(nil,
@@ -152,14 +153,14 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 	page := HTML(
-		attr.Lang("en"),
+		attribute.Lang("en"),
 		Head(
 			TitleTrusted("The Title of the Page"),
 		),
 		Body(nil,
 			Nav(nil,
-				A(attr.HRef("/main"), "Main"),
-				A(attr.HRef("/details"), "Details"),
+				A(attribute.HRef("/main"), "Main"),
+				A(attribute.HRef("/details"), "Details"),
 			),
 			Main(nil,
 				H1(nil,
@@ -193,12 +194,12 @@ func BenchmarkRange(b *testing.B) {
 		w.Reset()
 
 		page := HTML(
-			attr.Lang("en"),
+			attribute.Lang("en"),
 			Head(
 				Title("The Title of the Page"),
 			),
 			Body(nil,
-				flow.Range(flow.IteratorFromTo(1, 1), func(i int) htmfunc.Element {
+				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.Element {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
@@ -212,10 +213,7 @@ func BenchmarkRange(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkYearCalendar(b *testing.B) {
-	months := []struct {
-		name string
-		days int
-	}{
+	months := []monthDays{
 		{"January", 31},
 		{"February", 29},
 		{"March", 31},
@@ -231,38 +229,23 @@ func BenchmarkYearCalendar(b *testing.B) {
 	}
 
 	page := HTML(
-		attr.Lang("en"),
+		attribute.Lang("en"),
 		Head(
 			TitleTrusted("The Title of the Page"),
 		),
 		Body(nil,
-			Div(attr.Class(attr.JoinValues("header")),
+			Div(attribute.Class(attribute.JoinValues("header")),
 				Nav(nil,
-					A(attr.HRef("/main"), "Main"),
-					A(attr.HRef("/details"), "Details"),
+					A(attribute.HRef("/main"), "Main"),
+					A(attribute.HRef("/details"), "Details"),
 				),
 				H1(nil, Text("Calendar")),
 				H2(nil, Text("2024")),
 			),
 			Main(nil,
-				Div(attr.Class(attr.JoinValues("year")),
-					flow.Range(flow.IteratorOf(months...), func(month struct {
-						name string
-						days int
-					}) htmfunc.Element {
-						return Div(attr.Class(attr.JoinValues("month")),
-							H3(nil, Text(month.name)),
-							Div(attr.Class(attr.JoinValues("days")),
-								flow.Range(
-									flow.IteratorFromTo(1, month.days), func(i int) htmfunc.Element {
-										return Div(attr.Class(attr.JoinValues("days")),
-											Text(strconv.Itoa(i)),
-										)
-									},
-								),
-							),
-						)
-					})),
+				Div(attribute.Class(attribute.JoinValues("year")),
+					flow.Range(months, month),
+				),
 			),
 		),
 	)
@@ -278,4 +261,22 @@ func BenchmarkYearCalendar(b *testing.B) {
 	}
 
 	_ = w.String()
+}
+
+type monthDays struct {
+	name string
+	days int
+}
+
+func month(_ int, month monthDays) htmfunc.Element {
+	return Div(attribute.Class(attribute.JoinValues("month")),
+		H3(nil, Text(month.name)),
+		Div(attribute.Class(attribute.JoinValues("days")),
+			flow.RangeInt(month.days, func(i int) htmfunc.Element {
+				return Div(attribute.Class(attribute.JoinValues("day")),
+					Text(strconv.Itoa(i+1)),
+				)
+			}),
+		),
+	)
 }

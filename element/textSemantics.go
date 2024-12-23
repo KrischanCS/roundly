@@ -1,10 +1,9 @@
 package element
 
 import (
-	"time"
-
 	"github.com/ch-schulz/htmfunc"
-	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/ch-schulz/htmfunc/attribute"
+	"time"
 )
 
 // A creates a [a element].
@@ -204,7 +203,7 @@ func Rp(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 //
 // [data element]: https://html.spec.whatwg.org/#the-data-element
 func Data(value string, attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	attributes = attr.Join(attr.Value(value), attributes)
+	attributes = attribute.Join(attribute.Value(value), attributes)
 	return htmfunc.WriteElement("data", attributes, children...)
 }
 
@@ -247,7 +246,7 @@ func TimeMachineReadableAsContent(attributes htmfunc.Attribute, t time.Time) htm
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
 func TimeAttribute(attributes htmfunc.Attribute, t time.Time, childNodes ...htmfunc.Element) htmfunc.Element {
-	attributes = attr.Join(attr.DateTime(t.Format(time.RFC3339)), attributes)
+	attributes = attribute.Join(attribute.DateTime(t.Format(time.RFC3339)), attributes)
 	return htmfunc.WriteElement("time", attributes, childNodes...)
 }
 
@@ -413,7 +412,7 @@ func Bdi(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 //
 // [bdo element]: https://html.spec.whatwg.org/#the-bdo-element
 func Bdo(direction htmfunc.TextDirection, attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	attributes = attr.Join(attr.Dir(direction), attributes)
+	attributes = attribute.Join(attribute.Dir(direction), attributes)
 	return htmfunc.WriteElement("bdo", attributes, children...)
 }
 
