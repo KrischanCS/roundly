@@ -8,6 +8,7 @@ import (
 
 	"github.com/ch-schulz/htmfunc"
 	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/ch-schulz/htmfunc/flow"
 )
 
 //nolint:errcheck
@@ -68,7 +69,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					Range(IteratorFromTo(1, 10), func(i int) htmfunc.Element {
+					flow.Range(flow.IteratorFromTo(1, 10), func(i int) htmfunc.Element {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -197,7 +198,7 @@ func BenchmarkRange(b *testing.B) {
 				Title("The Title of the Page"),
 			),
 			Body(nil,
-				Range(IteratorFromTo(1, 1), func(i int) htmfunc.Element {
+				flow.Range(flow.IteratorFromTo(1, 1), func(i int) htmfunc.Element {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
@@ -245,15 +246,15 @@ func BenchmarkYearCalendar(b *testing.B) {
 			),
 			Main(nil,
 				Div(attr.Class(attr.JoinValues("year")),
-					Range(IteratorOf(months...), func(month struct {
+					flow.Range(flow.IteratorOf(months...), func(month struct {
 						name string
 						days int
 					}) htmfunc.Element {
 						return Div(attr.Class(attr.JoinValues("month")),
 							H3(nil, Text(month.name)),
 							Div(attr.Class(attr.JoinValues("days")),
-								Range(
-									IteratorFromTo(1, month.days), func(i int) htmfunc.Element {
+								flow.Range(
+									flow.IteratorFromTo(1, month.days), func(i int) htmfunc.Element {
 										return Div(attr.Class(attr.JoinValues("days")),
 											Text(strconv.Itoa(i)),
 										)
