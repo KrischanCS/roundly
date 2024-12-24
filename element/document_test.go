@@ -9,6 +9,19 @@ import (
 	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
+func TestDocument(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(128)
+
+	doc := Document("html", HTML(attr.Lang("en"), Head(), Body(nil)))
+
+	err := doc.RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<!doctype html><html lang="en"><head></head><body></body></html>`, w.String())
+}
+
 func TestHTML(t *testing.T) {
 	t.Parallel()
 

@@ -20,8 +20,8 @@ import (
 // If the itemprop attribute is specified on an a element, then the href attribute must also be specified.
 //
 // [a element]: https://html.spec.whatwg.org/#the-a-element
-func A(attributes htmfunc.Attribute, text string) htmfunc.Element {
-	return htmfunc.WriteElement("a", attributes, Text(text))
+func A(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+	return htmfunc.WriteElement("a", attributes, children...)
 }
 
 // Em creates a [em element].

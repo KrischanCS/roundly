@@ -1,0 +1,118 @@
+package element
+
+import (
+	"testing"
+	"time"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+
+	"github.com/ch-schulz/htmfunc"
+	"github.com/ch-schulz/htmfunc/attribute"
+)
+
+func TestTextSemantics(t *testing.T) {
+	t.Parallel()
+
+	elements := []elementFunc{
+		A,
+		Em,
+		Strong,
+		Small,
+		S,
+		Cite,
+		Q,
+		Dfn,
+		Abbr,
+		Ruby,
+		Rt,
+		Rp,
+		Code,
+		Var,
+		Samp,
+		Kbd,
+		Sub,
+		Sup,
+		I,
+		B,
+		U,
+		Mark,
+		Bdi,
+		Span,
+		Wbr,
+	}
+
+	for _, element := range elements {
+		t.Run(getFunctionName(element), func(t *testing.T) {
+			elementTest(t, element)
+		})
+	}
+}
+
+func TestData(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	err := Data("42", nil, TextTrusted("42")).RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<data value="42">42</data>`, w.String())
+
+}
+
+func TestTimeMachineReadableAsContent(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	ts, err := time.Parse(time.RFC3339, "2024-12-24T12:34:56Z")
+	require.NoError(t, err)
+
+	err = TimeMachineReadableAsContent(nil, ts).RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<time>2024-12-24T12:34:56Z</time>`, w.String())
+}
+
+func TestTimeAttribute(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	ts, err := time.Parse(time.RFC3339, "2024-12-24T12:34:56Z")
+	require.NoError(t, err)
+
+	err = TimeAttribute(
+		attribute.Class(attribute.JoinValues("time")),
+		ts,
+		TextTrusted("24.12.2024 12:34:56"),
+	).RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t,
+		`<time datetime="2024-12-24T12:34:56Z" class="time">24.12.2024 12:34:56</time>`,
+		w.String())
+}
+
+func TestBdo(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	err := Bdo(htmfunc.RightToLeft, nil, TextTrusted("مرحباً بالعالم")).RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
+}
+
+func TestBr(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	err := Br().RenderHTML(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<br>`, w.String())
+}

@@ -21,8 +21,8 @@ func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Ele
 
 func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
-		for range limit {
-			err := component(limit).RenderHTML(w)
+		for i := range limit {
+			err := component(i).RenderHTML(w)
 			if err != nil {
 				return err
 			}

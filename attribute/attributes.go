@@ -160,6 +160,10 @@ func WriteSpaceSeperated(w htmfunc.Writer, attrs ...htmfunc.Attribute) (err erro
 	}
 
 	for _, c := range attrs[1:] {
+		if c == nil {
+			continue
+		}
+
 		err = w.WriteByte(' ')
 		if err != nil {
 			return err
