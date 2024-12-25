@@ -7,12 +7,12 @@ import (
 // Document creates an html document with doctype and html root.
 func Document(doctype string, html htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
-		err := Doctype(doctype).RenderHTML(w)
+		err := Doctype(doctype).RenderHtml(w)
 		if err != nil {
 			return err
 		}
 
-		return html.RenderHTML(w)
+		return html.RenderHtml(w)
 	})
 }
 
@@ -37,10 +37,10 @@ func Doctype(doctype string) htmfunc.Element {
 	})
 }
 
-// HTML creates the [html element], which represents the root of an HTML document
+// Html creates the [html element], which represents the root of an HTML document
 //
 // [html element]: https://html.spec.whatwg.org/#the-html-element
-func HTML(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
+func Html(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("html", lang, head, body)
 }
 

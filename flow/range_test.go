@@ -75,7 +75,7 @@ func TestRange(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := Range(tt.args.items, tt.args.component).RenderHTML(w)
+			err := Range(tt.args.items, tt.args.component).RenderHtml(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -131,7 +131,7 @@ func TestRangeInt(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := RangeInt(tt.args.limit, tt.args.component).RenderHTML(w)
+			err := RangeInt(tt.args.limit, tt.args.component).RenderHtml(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -195,7 +195,7 @@ func TestRangeIter(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := RangeIter(tt.args.seq, tt.args.component).RenderHTML(w)
+			err := RangeIter(tt.args.seq, tt.args.component).RenderHtml(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -228,7 +228,7 @@ func BenchmarkRange(b *testing.B) {
 					)
 				}),
 			)
-		}).RenderHTML(w)
+		}).RenderHtml(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -254,7 +254,7 @@ func BenchmarkRangeInt(b *testing.B) {
 					)
 				}),
 			)
-		}).RenderHTML(w)
+		}).RenderHtml(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -280,7 +280,7 @@ func BenchmarkRangeIter(b *testing.B) {
 					)
 				}),
 			)
-		}).RenderHTML(w)
+		}).RenderHtml(w)
 
 		res = w.Bytes()
 		w.Reset()

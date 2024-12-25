@@ -9,7 +9,7 @@ import (
 func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
 		for i, e := range items {
-			err := component(i, e).RenderHTML(w)
+			err := component(i, e).RenderHtml(w)
 			if err != nil {
 				return err
 			}
@@ -22,7 +22,7 @@ func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Ele
 func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
 		for i := range limit {
-			err := component(i).RenderHTML(w)
+			err := component(i).RenderHtml(w)
 			if err != nil {
 				return err
 			}
@@ -41,7 +41,7 @@ func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element
 
 	return htmfunc.WriteFunc(func(w htmfunc.Writer) error {
 		for t1, t2 := range seq {
-			err := component(t1, t2).RenderHTML(w)
+			err := component(t1, t2).RenderHtml(w)
 			if err != nil {
 				return err
 			}

@@ -28,7 +28,7 @@ func elementTest(
 	w := htmfunc.NewWriter(256)
 	element := elementFunc(attr.Join(attr.Class(attr.JoinValues("test", "other"))))
 
-	err := element.RenderHTML(w)
+	err := element.RenderHtml(w)
 
 	got := w.String()
 

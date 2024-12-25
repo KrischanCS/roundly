@@ -14,15 +14,15 @@ func TestDocument(t *testing.T) {
 
 	w := htmfunc.NewWriter(128)
 
-	doc := Document("html", HTML(attr.Lang("en"), Head(), Body(nil)))
+	doc := Document("html", Html(attr.Lang("en"), Head(), Body(nil)))
 
-	err := doc.RenderHTML(w)
+	err := doc.RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<!doctype html><html lang="en"><head></head><body></body></html>`, w.String())
 }
 
-func TestHTML(t *testing.T) {
+func TestHtml(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
@@ -71,9 +71,9 @@ func TestHTML(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
-			component := HTML(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
+			component := Html(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -112,7 +112,7 @@ func TestBase(t *testing.T) {
 
 			component := Base(tt.args.attributes)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -141,9 +141,9 @@ func TestDoctype(t *testing.T) {
 		{
 			name: "Html 4",
 			args: args{
-				doctype: `HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"`,
+				doctype: `Html PUBLIC "-//W3C//DTD Html 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"`,
 			},
-			want: `<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">`,
+			want: `<!doctype Html PUBLIC "-//W3C//DTD Html 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">`,
 		},
 	}
 
@@ -153,7 +153,7 @@ func TestDoctype(t *testing.T) {
 
 			component := Doctype(tt.args.doctype)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -206,7 +206,7 @@ func TestHead(t *testing.T) {
 
 			component := Head(tt.args.childNodes...)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -221,7 +221,7 @@ func TestMeta(t *testing.T) {
 	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
-	err := component.RenderHTML(w)
+	err := component.RenderHtml(w)
 	assert.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
@@ -275,7 +275,7 @@ func TestStyle(t *testing.T) {
 
 			component := Style(tt.args.attributes, tt.args.css)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -328,7 +328,7 @@ func TestStyleTrusted(t *testing.T) {
 
 			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -374,7 +374,7 @@ func TestTitle(t *testing.T) {
 
 			component := Title(tt.args.title)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -420,7 +420,7 @@ func TestTitleTrusted(t *testing.T) {
 
 			component := TitleTrusted(tt.args.title)
 
-			err := component.RenderHTML(w)
+			err := component.RenderHtml(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})

@@ -54,11 +54,10 @@ func TestData(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Data("42", nil, TextTrusted("42")).RenderHTML(w)
+	err := Data("42", nil, TextTrusted("42")).RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<data value="42">42</data>`, w.String())
-
 }
 
 func TestTimeMachineReadableAsContent(t *testing.T) {
@@ -69,7 +68,7 @@ func TestTimeMachineReadableAsContent(t *testing.T) {
 	ts, err := time.Parse(time.RFC3339, "2024-12-24T12:34:56Z")
 	require.NoError(t, err)
 
-	err = TimeMachineReadableAsContent(nil, ts).RenderHTML(w)
+	err = TimeMachineReadableAsContent(nil, ts).RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<time>2024-12-24T12:34:56Z</time>`, w.String())
@@ -87,7 +86,7 @@ func TestTimeAttribute(t *testing.T) {
 		attribute.Class(attribute.JoinValues("time")),
 		ts,
 		TextTrusted("24.12.2024 12:34:56"),
-	).RenderHTML(w)
+	).RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t,
@@ -100,7 +99,7 @@ func TestBdo(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(htmfunc.RightToLeft, nil, TextTrusted("مرحباً بالعالم")).RenderHTML(w)
+	err := Bdo(htmfunc.RightToLeft, nil, TextTrusted("مرحباً بالعالم")).RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
@@ -111,7 +110,7 @@ func TestBr(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Br().RenderHTML(w)
+	err := Br().RenderHtml(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<br>`, w.String())

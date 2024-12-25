@@ -88,7 +88,7 @@ func Class(classes ...htmfunc.Value) htmfunc.Attribute {
 	}
 }
 
-func ID(id string) htmfunc.Attribute {
+func Id(id string) htmfunc.Attribute {
 	return Attribute("id", id)
 }
 

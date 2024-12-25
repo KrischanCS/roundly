@@ -62,7 +62,7 @@ func TestText(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(16)
 
-			err := Text(tt.text).RenderHTML(w)
+			err := Text(tt.text).RenderHtml(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -115,7 +115,7 @@ func TestTextTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(16)
 
-			err := TextTrusted(tt.text).RenderHTML(w)
+			err := TextTrusted(tt.text).RenderHtml(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.text, w.String())

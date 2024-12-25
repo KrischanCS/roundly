@@ -3,7 +3,7 @@ package htmfunc
 import "io"
 
 type Element interface {
-	RenderHTML(w Writer) error
+	RenderHtml(w Writer) error
 }
 
 type Attribute func(w Writer) error

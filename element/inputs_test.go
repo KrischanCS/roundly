@@ -48,7 +48,7 @@ func TestInput(t *testing.T) {
 		attr.Type("button"),
 	))
 
-	err := e.RenderHTML(w)
+	err := e.RenderHtml(w)
 
 	got := w.String()
 

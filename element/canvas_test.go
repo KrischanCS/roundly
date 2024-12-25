@@ -16,7 +16,7 @@ func TestCanvas(t *testing.T) {
 
 	element := Canvas(attr.Join(attr.Class(attr.JoinValues("test", "other"))))
 
-	err := element.RenderHTML(w)
+	err := element.RenderHtml(w)
 
 	want := `<canvas class="test other"></canvas>`
 	got := w.String()

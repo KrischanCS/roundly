@@ -14,10 +14,10 @@ import (
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
 
-//// Currently added as reminders, not used in Fuzzing
-//var (
+// // Currently added as reminders, not used in Fuzzing
+// var (
 //	document                     = Document
-//	html                         = HTML
+//	html                         = Hmlt
 //	base                         = Base
 //	doctype                      = Doctype
 //	head                         = Head
@@ -165,7 +165,7 @@ func FuzzDom(f *testing.F) {
 
 		tree := createTree(r, depth)
 
-		err := tree.RenderHTML(w)
+		err := tree.RenderHtml(w)
 
 		assert.NoError(t, err)
 

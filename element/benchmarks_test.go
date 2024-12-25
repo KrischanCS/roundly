@@ -20,7 +20,7 @@ func BenchmarkExamplePage(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -38,7 +38,7 @@ func BenchmarkExamplePage(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -54,7 +54,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -75,7 +75,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -91,7 +91,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -109,7 +109,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -125,7 +125,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -143,7 +143,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -159,7 +159,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -177,7 +177,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -193,7 +193,7 @@ func BenchmarkRange(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		w.Reset()
 
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				Title("The Title of the Page"),
@@ -205,7 +205,7 @@ func BenchmarkRange(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()
@@ -234,7 +234,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 	b.ResetTimer()
 
 	for range b.N {
-		page := HTML(
+		page := Html(
 			attribute.Lang("en"),
 			Head(
 				TitleTrusted("The Title of the Page"),
@@ -258,7 +258,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 
 		w.Reset()
 
-		_ = page.RenderHTML(w)
+		_ = page.RenderHtml(w)
 	}
 
 	_ = w.String()

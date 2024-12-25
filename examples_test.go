@@ -10,9 +10,9 @@ import (
 )
 
 //nolint:lll
-func ExampleHTML() {
+func ExampleHtml() {
 	page := element.Document("html",
-		element.HTML(attribute.Lang("en"),
+		element.Html(attribute.Lang("en"),
 			element.Head(
 				element.Title("The Title of the Page"),
 			),
@@ -36,7 +36,7 @@ func ExampleHTML() {
 
 	w := bufio.NewWriter(os.Stdout)
 
-	err := page.RenderHTML(w)
+	err := page.RenderHtml(w)
 	if err != nil {
 		fmt.Print("Unexpected error: ", err.Error())
 	}

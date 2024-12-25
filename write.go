@@ -2,7 +2,7 @@ package htmfunc
 
 type WriteFunc func(w Writer) error
 
-func (fn WriteFunc) RenderHTML(w Writer) error {
+func (fn WriteFunc) RenderHtml(w Writer) error {
 	return fn(w)
 }
 
@@ -16,7 +16,7 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 		}
 
 		for _, node := range childNodes {
-			err = node.RenderHTML(w)
+			err = node.RenderHtml(w)
 			if err != nil {
 				return err
 			}
