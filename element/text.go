@@ -25,7 +25,7 @@ var (
 // Html characters will be escaped. If this is not wanted,
 // [TextTrusted] may be used.
 func Text(text string) htmfunc.ElementRenderer {
-	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
+	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
 		for _, r := range []byte(text) {
 			if i := indexOf(escapeChar, r); i >= 0 {
 				_, err := w.WriteString(charEntity[i])
@@ -58,7 +58,7 @@ func indexOf(chars [5]byte, char byte) int {
 
 // TextTrusted is equivalent to [Text], but won't escape the input. Only use with safe text and never with user input.
 func TextTrusted(text string) htmfunc.ElementRenderer {
-	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
+	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(text)
 		return err
 	})

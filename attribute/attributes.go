@@ -5,7 +5,7 @@ import (
 )
 
 func Attribute(name string, values ...string) htmfunc.AttributeRenderer {
-	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+	return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
 			return err
@@ -26,7 +26,7 @@ func Attribute(name string, values ...string) htmfunc.AttributeRenderer {
 }
 
 func MultiValueAttribute(name string, values []htmfunc.ValueRenderer) htmfunc.AttributeRenderer {
-	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+	return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(name + `="`)
 		if err != nil {
 			return err
@@ -60,7 +60,7 @@ func MultiValueAttribute(name string, values []htmfunc.ValueRenderer) htmfunc.At
 
 // Join joins the given attributes with spaces.
 func Join(attributes ...htmfunc.AttributeRenderer) htmfunc.AttributeRenderer {
-	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+	return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
 		return WriteSpaceSeperated(w, attributes...)
 	})
 }
@@ -118,7 +118,7 @@ func Id(id string) htmfunc.AttributeRenderer {
 }
 
 func BooleanAttribute(name string) htmfunc.AttributeRenderer {
-	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+	return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(name)
 		return err
 	})

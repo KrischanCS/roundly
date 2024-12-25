@@ -6,7 +6,7 @@ import (
 
 // Document creates an html document with doctype and html root.
 func Document(doctype string, html htmfunc.ElementRenderer) htmfunc.ElementRenderer {
-	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
+	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
 		err := Doctype(doctype).RenderElement(w)
 		if err != nil {
 			return err
@@ -20,7 +20,7 @@ func Document(doctype string, html htmfunc.ElementRenderer) htmfunc.ElementRende
 //
 // [doctype tag]: https://html.spec.whatwg.org/#the-doctype
 func Doctype(doctype string) htmfunc.ElementRenderer {
-	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
+	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString("<!doctype ")
 		if err != nil {
 			return err
