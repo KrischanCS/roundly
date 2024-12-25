@@ -94,7 +94,7 @@ func TestTimeAttribute(t *testing.T) {
 		w.String())
 }
 
-func TestBdo(t *testing.T) {
+func TestBdo_RTL(t *testing.T) {
 	t.Parallel()
 
 	w := htmfunc.NewWriter(64)
@@ -103,6 +103,17 @@ func TestBdo(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
+}
+
+func TestBdo_LTR(t *testing.T) {
+	t.Parallel()
+
+	w := htmfunc.NewWriter(64)
+
+	err := Bdo(htmfunc.LeftToRight, nil, TextTrusted("مرحباً بالعالم")).RenderHtml(w)
+
+	assert.NoError(t, err)
+	assert.Equal(t, `<bdo dir="ltr">مرحباً بالعالم</bdo>`, w.String())
 }
 
 func TestBr(t *testing.T) {
