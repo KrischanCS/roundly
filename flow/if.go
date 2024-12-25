@@ -7,7 +7,7 @@ func If(condition bool, component htmfunc.Element) htmfunc.Element {
 		return component
 	}
 
-	return htmfunc.WriteFunc(func(_ htmfunc.Writer) error {
+	return htmfunc.WriteElementFunc(func(_ htmfunc.Writer) error {
 		return nil
 	})
 }

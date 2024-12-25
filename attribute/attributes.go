@@ -4,11 +4,65 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
+func Attribute(name string, values ...string) htmfunc.Attribute {
+	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+		_, err := w.WriteString(name)
+		if err != nil {
+			return err
+		}
+
+		_, err = w.WriteString(`="`)
+		if err != nil {
+			return err
+		}
+
+		err = writeStringsSpaceSeparated(w, values)
+		if err != nil {
+			return err
+		}
+
+		return w.WriteByte('"')
+	})
+}
+
+func MultiValueAttribute(name string, values []htmfunc.Value) htmfunc.Attribute {
+	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
+		_, err := w.WriteString(name + `="`)
+		if err != nil {
+			return err
+		}
+
+		if len(values) == 0 {
+			_, err = w.WriteString(`"`)
+			return err
+		}
+
+		err = values[0](w)
+		if err != nil {
+			return err
+		}
+
+		for _, class := range values[1:] {
+			err = w.WriteByte(' ')
+			if err != nil {
+				return err
+			}
+
+			err = class(w)
+			if err != nil {
+				return err
+			}
+		}
+
+		return w.WriteByte('"')
+	})
+}
+
 // Join joins the given attributes with spaces.
 func Join(attributes ...htmfunc.Attribute) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
+	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
 		return WriteSpaceSeperated(w, attributes...)
-	}
+	})
 }
 
 func Lang(language string) htmfunc.Attribute {
@@ -56,68 +110,18 @@ func Type(t string) htmfunc.Attribute {
 }
 
 func Class(classes ...htmfunc.Value) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
-		if len(classes) == 0 {
-			_, err := w.WriteString(`class=""`)
-			return err
-		}
-
-		_, err := w.WriteString(`class="`)
-		if err != nil {
-			return err
-		}
-
-		err = classes[0](w)
-		if err != nil {
-			return err
-		}
-
-		for _, class := range classes[1:] {
-			err = w.WriteByte(' ')
-			if err != nil {
-				return err
-			}
-
-			err = class(w)
-			if err != nil {
-				return err
-			}
-		}
-
-		return w.WriteByte('"')
-	}
+	return MultiValueAttribute("class", classes)
 }
 
 func Id(id string) htmfunc.Attribute {
 	return Attribute("id", id)
 }
 
-func Attribute(name string, values ...string) func(w htmfunc.Writer) error {
-	return func(w htmfunc.Writer) error {
-		_, err := w.WriteString(name)
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(`="`)
-		if err != nil {
-			return err
-		}
-
-		err = writeStringsSpaceSeparated(w, values)
-		if err != nil {
-			return err
-		}
-
-		return w.WriteByte('"')
-	}
-}
-
-func BooleanAttribute(name string) func(w htmfunc.Writer) error {
-	return func(w htmfunc.Writer) error {
+func BooleanAttribute(name string) htmfunc.Attribute {
+	return htmfunc.WriteAttributeFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(name)
 		return err
-	}
+	})
 }
 
 func writeStringsSpaceSeparated(w htmfunc.Writer, values []string) error {
@@ -149,18 +153,18 @@ func writeStringsSpaceSeparated(w htmfunc.Writer, values []string) error {
 	return nil
 }
 
-func WriteSpaceSeperated(w htmfunc.Writer, attrs ...htmfunc.Attribute) (err error) {
-	if len(attrs) == 0 {
+func WriteSpaceSeperated(w htmfunc.Writer, attributes ...htmfunc.Attribute) (err error) {
+	if len(attributes) == 0 {
 		return
 	}
 
-	err = attrs[0](w)
+	err = attributes[0].RenderAttribute(w)
 	if err != nil {
 		return err
 	}
 
-	for _, c := range attrs[1:] {
-		if c == nil {
+	for _, attribute := range attributes[1:] {
+		if attribute == nil {
 			continue
 		}
 
@@ -169,7 +173,7 @@ func WriteSpaceSeperated(w htmfunc.Writer, attrs ...htmfunc.Attribute) (err erro
 			return err
 		}
 
-		err = c(w)
+		err = attribute.RenderAttribute(w)
 		if err != nil {
 			return err
 		}
