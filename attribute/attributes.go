@@ -37,18 +37,18 @@ func MultiValueAttribute(name string, values []htmfunc.Value) htmfunc.Attribute 
 			return err
 		}
 
-		err = values[0](w)
+		err = values[0].RenderValue(w)
 		if err != nil {
 			return err
 		}
 
-		for _, class := range values[1:] {
+		for _, value := range values[1:] {
 			err = w.WriteByte(' ')
 			if err != nil {
 				return err
 			}
 
-			err = class(w)
+			err = value.RenderValue(w)
 			if err != nil {
 				return err
 			}

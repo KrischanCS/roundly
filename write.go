@@ -12,6 +12,12 @@ func (fn WriteAttributeFunc) RenderAttribute(w Writer) error {
 	return fn(w)
 }
 
+type WriteValueFunc func(w Writer) error
+
+func (fn WriteValueFunc) RenderValue(w Writer) error {
+	return fn(w)
+}
+
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in the opening tag and
 // the given childNodes wrapped between the tags inside.
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {

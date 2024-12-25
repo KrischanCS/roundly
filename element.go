@@ -10,7 +10,9 @@ type Attribute interface {
 	RenderAttribute(w Writer) error
 }
 
-type Value func(w Writer) error
+type Value interface {
+	RenderValue(w Writer) error
+}
 
 type Writer interface {
 	io.Writer

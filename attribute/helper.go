@@ -4,7 +4,7 @@ import "github.com/ch-schulz/htmfunc"
 
 // JoinValues joins all given values space separated.
 func JoinValues(value string, values ...string) htmfunc.Value {
-	return func(w htmfunc.Writer) error {
+	return htmfunc.WriteValueFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString(value)
 		if err != nil {
 			return err
@@ -23,12 +23,12 @@ func JoinValues(value string, values ...string) htmfunc.Value {
 		}
 
 		return nil
-	}
+	})
 }
 
 // ValueIf writes the given value if condition is true.
 func ValueIf(condition bool, value string) htmfunc.Value {
-	return func(w htmfunc.Writer) error {
+	return htmfunc.WriteValueFunc(func(w htmfunc.Writer) error {
 		if !condition {
 			return nil
 		}
@@ -36,5 +36,5 @@ func ValueIf(condition bool, value string) htmfunc.Value {
 		_, err := w.WriteString(value)
 
 		return err
-	}
+	})
 }
