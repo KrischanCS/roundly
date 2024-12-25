@@ -34,11 +34,6 @@ linters-settings:
       - i
       - to
 
-  ireturn:
-    allow:
-      - Element
-      - error
-
   testifylint:
     disable:
       - require-error
@@ -86,7 +81,6 @@ linters:
     - inamedparam
     - ineffassign
     - interfacebloat
-    - ireturn
     - lll
     - makezero
     - mirror
