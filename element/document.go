@@ -5,21 +5,21 @@ import (
 )
 
 // Document creates an html document with doctype and html root.
-func Document(doctype string, html htmfunc.Element) htmfunc.Element {
+func Document(doctype string, html htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
-		err := Doctype(doctype).RenderHtml(w)
+		err := Doctype(doctype).RenderElement(w)
 		if err != nil {
 			return err
 		}
 
-		return html.RenderHtml(w)
+		return html.RenderElement(w)
 	})
 }
 
 // Doctype creates the mandatory [doctype tag].
 //
 // [doctype tag]: https://html.spec.whatwg.org/#the-doctype
-func Doctype(doctype string) htmfunc.Element {
+func Doctype(doctype string) htmfunc.ElementRenderer {
 	return htmfunc.WriteElementFunc(func(w htmfunc.Writer) error {
 		_, err := w.WriteString("<!doctype ")
 		if err != nil {
@@ -40,7 +40,7 @@ func Doctype(doctype string) htmfunc.Element {
 // Html creates the [html element], which represents the root of an HTML document
 //
 // [html element]: https://html.spec.whatwg.org/#the-html-element
-func Html(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
+func Html(lang htmfunc.AttributeRenderer, head, body htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("html", lang, head, body)
 }
 
@@ -57,7 +57,7 @@ func Html(lang htmfunc.Attribute, head, body htmfunc.Element) htmfunc.Element {
 //   - [Noscript]
 //
 // [head element]: https://html.spec.whatwg.org/#the-head-element
-func Head(childNodes ...htmfunc.Element) htmfunc.Element {
+func Head(childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("head", nil, childNodes...)
 }
 
@@ -70,14 +70,14 @@ func Head(childNodes ...htmfunc.Element) htmfunc.Element {
 // There must be no more than one title element per document.
 //
 // [title element]: https://html.spec.whatwg.org/#the-head-element
-func Title(title string) htmfunc.Element {
+func Title(title string) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("title", nil, Text(title))
 }
 
 // TitleTrusted is equivalent to [Title], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func TitleTrusted(title string) htmfunc.Element {
+func TitleTrusted(title string) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("title", nil, TextTrusted(title))
 }
 
@@ -90,7 +90,7 @@ func TitleTrusted(title string) htmfunc.Element {
 // A base element must have either an href attribute, a target attribute, or both.
 //
 // [base element]: https://html.spec.whatwg.org/#the-base-element
-func Base(attributes htmfunc.Attribute) htmfunc.Element {
+func Base(attributes htmfunc.AttributeRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteVoidElement("base", attributes)
 }
 
@@ -101,7 +101,7 @@ func Base(attributes htmfunc.Attribute) htmfunc.Element {
 // present.
 //
 // [link element]: https://html.spec.whatwg.org/#the-link-element
-func Link(attributes htmfunc.Attribute) htmfunc.Element {
+func Link(attributes htmfunc.AttributeRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteVoidElement("link", attributes)
 }
 
@@ -118,7 +118,7 @@ func Link(attributes htmfunc.Attribute) htmfunc.Element {
 // it must be omitted.
 //
 // [meta element]: https://html.spec.whatwg.org/#the-meta-element
-func Meta(attributes htmfunc.Attribute) htmfunc.Element {
+func Meta(attributes htmfunc.AttributeRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteVoidElement("meta", attributes)
 }
 
@@ -128,13 +128,13 @@ func Meta(attributes htmfunc.Attribute) htmfunc.Element {
 // inputs to the styling processing model. The element does not represent content for the user.
 //
 // [style element]: https://html.spec.whatwg.org/#the-style-element
-func Style(attributes htmfunc.Attribute, css string) htmfunc.Element {
+func Style(attributes htmfunc.AttributeRenderer, css string) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("style", attributes, Text(css))
 }
 
 // StyleTrusted is equivalent to [Style], but does not escape the given string.
 //
 // This is more efficient, but only use it if the given string is safe and not possibly influenced by user input.
-func StyleTrusted(attributes htmfunc.Attribute, css string) htmfunc.Element {
+func StyleTrusted(attributes htmfunc.AttributeRenderer, css string) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("style", attributes, TextTrusted(css))
 }

@@ -16,7 +16,7 @@ func TestIf(t *testing.T) {
 
 	tt := []struct {
 		condition bool
-		element   htmfunc.Element
+		element   htmfunc.ElementRenderer
 		want      string
 	}{
 		{
@@ -35,7 +35,7 @@ func TestIf(t *testing.T) {
 		t.Run(strconv.FormatBool(tc.condition), func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := If(tc.condition, tc.element).RenderHtml(w)
+			err := If(tc.condition, tc.element).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tc.want, w.String())
@@ -58,7 +58,7 @@ func BenchmarkIf(b *testing.B) {
 
 	var res []byte
 	for i := range b.N { //nolint:wsl
-		_ = If(conditions[i], H1(nil, Text("Test"))).RenderHtml(w) //nolint:errcheck
+		_ = If(conditions[i], H1(nil, Text("Test"))).RenderElement(w) //nolint:errcheck
 		res = w.Bytes()
 		w.Reset()
 	}

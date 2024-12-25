@@ -10,7 +10,7 @@ import (
 // represent content for the user.
 //
 // [script element]: https://html.spec.whatwg.org/#the-script-element
-func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Script(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("script", attributes, children...)
 }
 
@@ -21,7 +21,7 @@ func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // scripting, by affecting how the document is parsed.
 //
 // [noscript element]: https://html.spec.whatwg.org/#the-noscript-element
-func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Noscript(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("noscript", attributes, children...)
 }
 
@@ -32,7 +32,7 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // In a rendering, the template element represents nothing.
 //
 // [template element]: https://html.spec.whatwg.org/#the-template-element
-func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Template(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("template", attributes, children...)
 }
 
@@ -42,6 +42,6 @@ func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // if any, and its contents otherwise.
 //
 // [template element]: https://html.spec.whatwg.org/#the-template-element
-func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Slot(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("slot", attributes, children...)
 }

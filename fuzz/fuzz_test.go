@@ -12,7 +12,7 @@ import (
 	. "github.com/ch-schulz/htmfunc/element"
 )
 
-type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
+type elementFunc func(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer
 
 // // Currently added as reminders, not used in Fuzzing
 // var (
@@ -165,7 +165,7 @@ func FuzzDom(f *testing.F) {
 
 		tree := createTree(r, depth)
 
-		err := tree.RenderHtml(w)
+		err := tree.RenderElement(w)
 
 		assert.NoError(t, err)
 
@@ -173,7 +173,7 @@ func FuzzDom(f *testing.F) {
 	})
 }
 
-func createTree(random *rand.Rand, depth int) htmfunc.Element {
+func createTree(random *rand.Rand, depth int) htmfunc.ElementRenderer {
 	if depth > 20 || random.Float64() < 0.05 {
 		fmt.Println("text, d:", depth)
 		return Div(nil, Text(randomElement(random, texts)))
@@ -181,7 +181,7 @@ func createTree(random *rand.Rand, depth int) htmfunc.Element {
 
 	depth++
 
-	children := make([]htmfunc.Element, 0, 3)
+	children := make([]htmfunc.ElementRenderer, 0, 3)
 	for random.Float64() < 0.55 && len(children) < 20 {
 		fmt.Println("next child, d:", depth)
 		children = append(children, createTree(random, depth))

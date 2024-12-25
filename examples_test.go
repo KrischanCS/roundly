@@ -36,7 +36,7 @@ func ExampleHtml() {
 
 	w := bufio.NewWriter(os.Stdout)
 
-	err := page.RenderHtml(w)
+	err := page.RenderElement(w)
 	if err != nil {
 		fmt.Print("Unexpected error: ", err.Error())
 	}

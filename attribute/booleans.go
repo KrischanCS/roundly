@@ -2,10 +2,10 @@ package attribute
 
 import "github.com/ch-schulz/htmfunc"
 
-func Selected() htmfunc.Attribute {
+func Selected() htmfunc.AttributeRenderer {
 	return BooleanAttribute("selected")
 }
 
-func Checked() htmfunc.Attribute {
+func Checked() htmfunc.AttributeRenderer {
 	return BooleanAttribute("checked")
 }

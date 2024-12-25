@@ -2,7 +2,7 @@ package flow
 
 import "github.com/ch-schulz/htmfunc"
 
-func If(condition bool, component htmfunc.Element) htmfunc.Element {
+func If(condition bool, component htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	if condition {
 		return component
 	}

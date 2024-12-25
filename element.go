@@ -2,15 +2,15 @@ package htmfunc
 
 import "io"
 
-type Element interface {
-	RenderHtml(w Writer) error
+type ElementRenderer interface {
+	RenderElement(w Writer) error
 }
 
-type Attribute interface {
+type AttributeRenderer interface {
 	RenderAttribute(w Writer) error
 }
 
-type Value interface {
+type ValueRenderer interface {
 	RenderValue(w Writer) error
 }
 
@@ -20,7 +20,7 @@ type Writer interface {
 	io.StringWriter
 }
 
-type ListItem = Element
+type ListItem = ElementRenderer
 
 type TextDirection string
 

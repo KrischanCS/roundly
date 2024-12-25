@@ -2,7 +2,7 @@ package htmfunc
 
 type WriteElementFunc func(w Writer) error
 
-func (fn WriteElementFunc) RenderHtml(w Writer) error {
+func (fn WriteElementFunc) RenderElement(w Writer) error {
 	return fn(w)
 }
 
@@ -20,7 +20,7 @@ func (fn WriteValueFunc) RenderValue(w Writer) error {
 
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in the opening tag and
 // the given childNodes wrapped between the tags inside.
-func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
+func WriteElement(tag string, attributes AttributeRenderer, childNodes ...ElementRenderer) ElementRenderer {
 	return WriteElementFunc(func(w Writer) error {
 		err := writeOpenTag(w, tag, attributes)
 		if err != nil {
@@ -28,7 +28,7 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 		}
 
 		for _, node := range childNodes {
-			err = node.RenderHtml(w)
+			err = node.RenderElement(w)
 			if err != nil {
 				return err
 			}
@@ -65,13 +65,13 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 //   - wbr		->	[el.Wbr]
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
-func WriteVoidElement(tag string, attributes Attribute) Element {
+func WriteVoidElement(tag string, attributes AttributeRenderer) ElementRenderer {
 	return WriteElementFunc(func(w Writer) error {
 		return writeOpenTag(w, tag, attributes)
 	})
 }
 
-func writeOpenTag(w Writer, tag string, attributes Attribute) error {
+func writeOpenTag(w Writer, tag string, attributes AttributeRenderer) error {
 	err := w.WriteByte('<')
 	if err != nil {
 		return err

@@ -10,6 +10,6 @@ import (
 // graphs, game graphics, art, or other visual images on the fly.
 //
 // [canvas element]: https://html.spec.whatwg.org/#the-canvas-element
-func Canvas(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Canvas(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("canvas", attributes, children...)
 }

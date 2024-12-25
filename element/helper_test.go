@@ -13,7 +13,7 @@ import (
 	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
-type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
+type elementFunc func(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer
 
 func elementTest(
 	t *testing.T,
@@ -28,7 +28,7 @@ func elementTest(
 	w := htmfunc.NewWriter(256)
 	element := elementFunc(attr.Join(attr.Class(attr.JoinValues("test", "other"))))
 
-	err := element.RenderHtml(w)
+	err := element.RenderElement(w)
 
 	got := w.String()
 

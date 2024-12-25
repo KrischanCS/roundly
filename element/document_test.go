@@ -16,7 +16,7 @@ func TestDocument(t *testing.T) {
 
 	doc := Document("html", Html(attr.Lang("en"), Head(), Body(nil)))
 
-	err := doc.RenderHtml(w)
+	err := doc.RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<!doctype html><html lang="en"><head></head><body></body></html>`, w.String())
@@ -27,8 +27,8 @@ func TestHtml(t *testing.T) {
 
 	type args struct {
 		lang string
-		head htmfunc.Element
-		body htmfunc.Element
+		head htmfunc.ElementRenderer
+		body htmfunc.ElementRenderer
 	}
 
 	tests := []struct {
@@ -73,7 +73,7 @@ func TestHtml(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 			component := Html(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -84,7 +84,7 @@ func TestBase(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.Attribute
+		attributes htmfunc.AttributeRenderer
 	}
 
 	tests := []struct {
@@ -112,7 +112,7 @@ func TestBase(t *testing.T) {
 
 			component := Base(tt.args.attributes)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -153,7 +153,7 @@ func TestDoctype(t *testing.T) {
 
 			component := Doctype(tt.args.doctype)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -164,7 +164,7 @@ func TestHead(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		childNodes []htmfunc.Element
+		childNodes []htmfunc.ElementRenderer
 	}
 
 	tests := []struct {
@@ -182,7 +182,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "title only",
 			args: args{
-				childNodes: []htmfunc.Element{
+				childNodes: []htmfunc.ElementRenderer{
 					Title("The Title"),
 				},
 			},
@@ -191,7 +191,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "empty",
 			args: args{
-				childNodes: []htmfunc.Element{
+				childNodes: []htmfunc.ElementRenderer{
 					Title("The Title"),
 					Link(attr.Join(attr.HRef("/style.css"), attr.Rel("stylesheet"))),
 				},
@@ -206,7 +206,7 @@ func TestHead(t *testing.T) {
 
 			component := Head(tt.args.childNodes...)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -221,7 +221,7 @@ func TestMeta(t *testing.T) {
 	component := Meta(attr.Join(attr.Name("keywords"), attr.Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
-	err := component.RenderHtml(w)
+	err := component.RenderElement(w)
 	assert.NoError(t, err)
 
 	want := `<meta name="keywords" content="british,type face,font,fonts,highway,highways">`
@@ -234,7 +234,7 @@ func TestStyle(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.Attribute
+		attributes htmfunc.AttributeRenderer
 		css        string
 	}
 
@@ -275,7 +275,7 @@ func TestStyle(t *testing.T) {
 
 			component := Style(tt.args.attributes, tt.args.css)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -287,7 +287,7 @@ func TestStyleTrusted(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.Attribute
+		attributes htmfunc.AttributeRenderer
 		css        string
 	}
 
@@ -328,7 +328,7 @@ func TestStyleTrusted(t *testing.T) {
 
 			component := StyleTrusted(tt.args.attributes, tt.args.css)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -374,7 +374,7 @@ func TestTitle(t *testing.T) {
 
 			component := Title(tt.args.title)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})
@@ -420,7 +420,7 @@ func TestTitleTrusted(t *testing.T) {
 
 			component := TitleTrusted(tt.args.title)
 
-			err := component.RenderHtml(w)
+			err := component.RenderElement(w)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
 		})

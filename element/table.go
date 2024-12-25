@@ -9,7 +9,7 @@ import (
 // The table element represents data with more than one dimension, in the form of a table.
 //
 // [table element]: https://html.spec.whatwg.org/#the-table-element
-func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Table(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("table", attributes, children...)
 }
 
@@ -19,7 +19,7 @@ func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // element.
 //
 // [caption element]: https://html.spec.whatwg.org/#the-caption-element
-func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Caption(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("caption", attributes, children...)
 }
 
@@ -29,7 +29,7 @@ func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // and that is a table element.
 //
 // [colgroup element]: https://html.spec.whatwg.org/#the-colgroup-element
-func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Colgroup(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("colgroup", attributes, children...)
 }
 
@@ -39,7 +39,7 @@ func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // the col element represents one or more columns in the column group represented by that colgroup.
 //
 // [col element]: https://html.spec.whatwg.org/#the-col-element
-func Col(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Col(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("col", attributes, children...)
 }
 
@@ -49,7 +49,7 @@ func Col(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // tbody element has a parent and it is a table.
 //
 // [tbody element]: https://html.spec.whatwg.org/#the-tbody-element
-func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Tbody(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("tbody", attributes, children...)
 }
 
@@ -59,7 +59,7 @@ func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // non-header cells for the parent table element, if the thead element has a parent and it is a table.
 //
 // [thead element]: https://html.spec.whatwg.org/#the-thead-element
-func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Thead(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("thead", attributes, children...)
 }
 
@@ -69,7 +69,7 @@ func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // element, if the tfoot element has a parent and it is a table.
 //
 // [tfoot element]: https://html.spec.whatwg.org/#the-tfoot-element
-func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Tfoot(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("tfoot", attributes, children...)
 }
 
@@ -78,7 +78,7 @@ func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // The tr element represents a row of cells in a table.
 //
 // [tr element]: https://html.spec.whatwg.org/#the-tr-element
-func Tr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Tr(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("tr", attributes, children...)
 }
 
@@ -87,7 +87,7 @@ func Tr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // The td element represents a data cell in a table.
 //
 // [td element]: https://html.spec.whatwg.org/#the-td-element
-func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Td(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("td", attributes, children...)
 }
 
@@ -96,6 +96,6 @@ func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // The th element represents a header cell in a table.
 //
 // [th element]: https://html.spec.whatwg.org/#the-th-element
-func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Th(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("th", attributes, children...)
 }

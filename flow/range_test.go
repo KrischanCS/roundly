@@ -19,7 +19,7 @@ func TestRange(t *testing.T) {
 
 	type args[T any] struct {
 		items     []T
-		component func(int, T) htmfunc.Element
+		component func(int, T) htmfunc.ElementRenderer
 	}
 
 	type testCase[T any] struct {
@@ -33,7 +33,7 @@ func TestRange(t *testing.T) {
 			"zeroItems",
 			args[string]{
 				items: nil,
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
 						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
@@ -46,7 +46,7 @@ func TestRange(t *testing.T) {
 			"oneItem",
 			args[string]{
 				items: []string{"apples"},
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
 						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
@@ -59,7 +59,7 @@ func TestRange(t *testing.T) {
 			"ThreeItems",
 			args[string]{
 				items: []string{"apples", "bananas", "oranges"},
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
 						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
 						Div(attr.Class(attr.JoinValues("value")), Text(s)),
@@ -75,7 +75,7 @@ func TestRange(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := Range(tt.args.items, tt.args.component).RenderHtml(w)
+			err := Range(tt.args.items, tt.args.component).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -88,7 +88,7 @@ func TestRangeInt(t *testing.T) {
 
 	type args struct {
 		limit     int
-		component func(int) htmfunc.Element
+		component func(int) htmfunc.ElementRenderer
 	}
 
 	tests := []struct {
@@ -100,7 +100,7 @@ func TestRangeInt(t *testing.T) {
 			name: "0",
 			args: args{
 				limit: 0,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) htmfunc.ElementRenderer {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -110,7 +110,7 @@ func TestRangeInt(t *testing.T) {
 			name: "1",
 			args: args{
 				limit: 1,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) htmfunc.ElementRenderer {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -120,7 +120,7 @@ func TestRangeInt(t *testing.T) {
 			name: "3",
 			args: args{
 				limit: 3,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) htmfunc.ElementRenderer {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -131,7 +131,7 @@ func TestRangeInt(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := RangeInt(tt.args.limit, tt.args.component).RenderHtml(w)
+			err := RangeInt(tt.args.limit, tt.args.component).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -144,7 +144,7 @@ func TestRangeIter(t *testing.T) {
 
 	type args struct {
 		seq       iter.Seq2[int, int]
-		component func(int, int) htmfunc.Element
+		component func(int, int) htmfunc.ElementRenderer
 	}
 
 	tests := []struct {
@@ -156,7 +156,7 @@ func TestRangeIter(t *testing.T) {
 			name: "nil",
 			args: args{
 				seq: nil,
-				component: func(i int, s int) htmfunc.Element {
+				component: func(i int, s int) htmfunc.ElementRenderer {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i, 'a'+i)))
 				},
@@ -167,7 +167,7 @@ func TestRangeIter(t *testing.T) {
 			name: "1",
 			args: args{
 				seq: iters.FromToInclusive(7, 7),
-				component: func(i int, s int) htmfunc.Element {
+				component: func(i int, s int) htmfunc.ElementRenderer {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
@@ -178,7 +178,7 @@ func TestRangeIter(t *testing.T) {
 			name: "5",
 			args: args{
 				seq: iters.FromTo(3, 8),
-				component: func(i int, s int) htmfunc.Element {
+				component: func(i int, s int) htmfunc.ElementRenderer {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
@@ -195,7 +195,7 @@ func TestRangeIter(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			err := RangeIter(tt.args.seq, tt.args.component).RenderHtml(w)
+			err := RangeIter(tt.args.seq, tt.args.component).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -220,15 +220,15 @@ func BenchmarkRange(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
+		_ = Range(grid, func(_ int, row []int) htmfunc.ElementRenderer { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
-				Range(row, func(_ int, i int) htmfunc.Element {
+				Range(row, func(_ int, i int) htmfunc.ElementRenderer {
 					return Div(attr.Class(attr.JoinValues("col")),
 						Text(strconv.Itoa(i)),
 					)
 				}),
 			)
-		}).RenderHtml(w)
+		}).RenderElement(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -246,15 +246,15 @@ func BenchmarkRangeInt(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeInt(10, func(row int) htmfunc.ElementRenderer { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
-				RangeInt(20, func(col int) htmfunc.Element {
+				RangeInt(20, func(col int) htmfunc.ElementRenderer {
 					return Div(attr.Class(attr.JoinValues("col")),
 						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
-		}).RenderHtml(w)
+		}).RenderElement(w)
 
 		res = w.Bytes()
 		w.Reset()
@@ -272,15 +272,15 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.ElementRenderer { //nolint:errcheck
 			return Div(attr.Class(attr.JoinValues("row")),
-				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.Element {
+				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.ElementRenderer {
 					return Div(attr.Class(attr.JoinValues("col")),
 						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
-		}).RenderHtml(w)
+		}).RenderElement(w)
 
 		res = w.Bytes()
 		w.Reset()

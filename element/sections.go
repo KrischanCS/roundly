@@ -10,7 +10,7 @@ import (
 // access to a document's body element.
 //
 // [body element]: https://html.spec.whatwg.org/#the-body-element
-func Body(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Body(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("body", attributes, childNodes...)
 }
 
@@ -29,7 +29,7 @@ func Body(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.E
 // elements.
 //
 // [article element]: https://html.spec.whatwg.org/#the-article-element
-func Article(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Article(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("article", attributes, childNodes...)
 }
 
@@ -39,7 +39,7 @@ func Article(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfun
 // thematic grouping of content, typically with a heading.
 //
 // [section element]: https://html.spec.whatwg.org/#the-section-element
-func Section(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Section(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("section", attributes, childNodes...)
 }
 
@@ -49,7 +49,7 @@ func Section(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfun
 // navigation links.
 //
 // [nav element]: https://html.spec.whatwg.org/#the-nav-element
-func Nav(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Nav(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("nav", attributes, childNodes...)
 }
 
@@ -63,7 +63,7 @@ func Nav(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.El
 // elements, and for other content that is considered separate from the main content of the page.
 //
 // [aside element]: https://html.spec.whatwg.org/#the-aside-element
-func Aside(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Aside(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("aside", attributes, childNodes...)
 }
 
@@ -72,7 +72,7 @@ func Aside(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H1(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H1(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h1", attributes, childNodes...)
 }
 
@@ -81,7 +81,7 @@ func H1(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H2(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H2(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h2", attributes, childNodes...)
 }
 
@@ -90,7 +90,7 @@ func H2(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H3(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H3(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h3", attributes, childNodes...)
 }
 
@@ -99,7 +99,7 @@ func H3(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H4(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H4(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h4", attributes, childNodes...)
 }
 
@@ -108,7 +108,7 @@ func H4(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H5(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H5(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h5", attributes, childNodes...)
 }
 
@@ -117,7 +117,7 @@ func H5(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // These elements represent headings for their sections.
 //
 // [heading element]: https://html.spec.whatwg.org/#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
-func H6(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func H6(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("h6", attributes, childNodes...)
 }
 
@@ -127,7 +127,7 @@ func H6(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Ele
 // one or more p elements containing content representing a subheading, alternative title, or tagline.
 //
 // [hgroup element]: https://html.spec.whatwg.org/#the-hgroup-element
-func Hgroup(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Hgroup(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("hgroup", attributes, childNodes...)
 }
 
@@ -136,7 +136,7 @@ func Hgroup(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc
 // The header element represents a group of introductory or navigational aids.
 //
 // [header element]: https://html.spec.whatwg.org/#the-header-element
-func Header(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Header(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("header", attributes, childNodes...)
 }
 
@@ -150,7 +150,7 @@ func Header(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc
 // agreements, and other such content.
 //
 // [footer element]: https://html.spec.whatwg.org/#the-footer-element
-func Footer(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Footer(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("footer", attributes, childNodes...)
 }
 
@@ -160,6 +160,6 @@ func Footer(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc
 // the body element, then the contact information applies to the document as a whole.
 //
 // [address element]: https://html.spec.whatwg.org/#the-address-element
-func Address(attributes htmfunc.Attribute, childNodes ...htmfunc.Element) htmfunc.Element {
+func Address(attributes htmfunc.AttributeRenderer, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("address", attributes, childNodes...)
 }

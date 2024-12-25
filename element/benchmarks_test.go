@@ -38,7 +38,7 @@ func BenchmarkExamplePage(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -68,14 +68,14 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.Element {
+					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.ElementRenderer {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -109,7 +109,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -143,7 +143,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -177,7 +177,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -199,13 +199,13 @@ func BenchmarkRange(b *testing.B) {
 				Title("The Title of the Page"),
 			),
 			Body(nil,
-				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.Element {
+				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.ElementRenderer {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
 		)
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -258,7 +258,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 
 		w.Reset()
 
-		_ = page.RenderHtml(w)
+		_ = page.RenderElement(w)
 	}
 
 	_ = w.String()
@@ -269,11 +269,11 @@ type monthDays struct {
 	days int
 }
 
-func month(_ int, month monthDays) htmfunc.Element {
+func month(_ int, month monthDays) htmfunc.ElementRenderer {
 	return Div(attribute.Class(attribute.JoinValues("month")),
 		H3(nil, Text(month.name)),
 		Div(attribute.Class(attribute.JoinValues("days")),
-			flow.RangeInt(month.days, func(i int) htmfunc.Element {
+			flow.RangeInt(month.days, func(i int) htmfunc.ElementRenderer {
 				return Div(attribute.Class(attribute.JoinValues("day")),
 					Text(strconv.Itoa(i+1)),
 				)

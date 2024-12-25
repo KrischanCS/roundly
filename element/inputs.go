@@ -13,7 +13,7 @@ import (
 // submitting data to a server.
 //
 // [form element]: https://html.spec.whatwg.org/#the-form-element
-func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Form(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("form", attributes, children...)
 }
 
@@ -24,7 +24,7 @@ func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // inside the label element itself.
 //
 // [label element]: https://html.spec.whatwg.org/#the-label-element
-func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Label(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("label", attributes, children...)
 }
 
@@ -37,7 +37,7 @@ func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // states in the cell in the second column on the same row as the keyword.
 //
 // [input element]: https://html.spec.whatwg.org/#the-input-element
-func Input(attributes htmfunc.Attribute) htmfunc.Element {
+func Input(attributes htmfunc.AttributeRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteVoidElement("input", attributes)
 }
 
@@ -46,7 +46,7 @@ func Input(attributes htmfunc.Attribute) htmfunc.Element {
 // The button element represents a button labeled by its contents.
 //
 // [button element]: https://html.spec.whatwg.org/#the-button-element
-func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Button(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("button", attributes, children...)
 }
 
@@ -55,7 +55,7 @@ func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // The select element represents a control for selecting amongst a set of options.
 //
 // [select element]: https://html.spec.whatwg.org/#the-select-element
-func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Select(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("select", attributes, children...)
 }
 
@@ -65,7 +65,7 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // rendering, the datalist element represents nothing and it, along with its children, should be hidden.
 //
 // [datalist element]: https://html.spec.whatwg.org/#the-datalist-element
-func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Datalist(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("datalist", attributes, children...)
 }
 
@@ -76,7 +76,7 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // The element's group of option elements consists of the option elements that are children of the optgroup element.
 //
 // [optgroup element]: https://html.spec.whatwg.org/#the-optgroup-element
-func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Optgroup(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("optgroup", attributes, children...)
 }
 
@@ -86,7 +86,7 @@ func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // element.
 //
 // [option element]: https://html.spec.whatwg.org/#the-option-element
-func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Option(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("option", attributes, children...)
 }
 
@@ -98,7 +98,7 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // The raw value of a textarea control must be initially the empty string.
 //
 // [textarea element]: https://html.spec.whatwg.org/#the-textarea-element
-func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Textarea(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("textarea", attributes, children...)
 }
 
@@ -108,7 +108,7 @@ func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // action.
 //
 // [output element]: https://html.spec.whatwg.org/#the-output-element
-func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Output(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("output", attributes, children...)
 }
 
@@ -124,7 +124,7 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // total. The units are arbitrary and not specified.
 //
 // [progress element]: https://html.spec.whatwg.org/#the-progress-element
-func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Progress(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("progress", attributes, children...)
 }
 
@@ -140,7 +140,7 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // separate progress element.
 //
 // [meter element]: https://html.spec.whatwg.org/#the-meter-element
-func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Meter(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("meter", attributes, children...)
 }
 
@@ -151,7 +151,7 @@ func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // remainder of the descendants form the group.
 //
 // [fieldset element]: https://html.spec.whatwg.org/#the-fieldset-element
-func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Fieldset(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("fieldset", attributes, children...)
 }
 
@@ -161,6 +161,6 @@ func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // if any.
 //
 // [legend element]: https://html.spec.whatwg.org/#the-legend-element
-func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+func Legend(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
 	return htmfunc.WriteElement("legend", attributes, children...)
 }
