@@ -4,9 +4,8 @@ import (
 	"bufio"
 	"bytes"
 	_ "embed"
-	"io"
+	"flag"
 	"log"
-	"net/http"
 	"os"
 	"regexp"
 	"strings"
@@ -14,6 +13,8 @@ import (
 
 	"golang.org/x/net/html"
 )
+
+var reloadStandard = flag.Bool("reloadHtmlStandard", false, "reload html standard from the web instead of file system")
 
 type attribute struct {
 	Name        string
@@ -55,33 +56,6 @@ func main() {
 }
 
 const htmlStandardUrl = `https://html.spec.whatwg.org/multipage/`
-
-func loadIndicesFromStandard() *html.Node {
-	const indicesUrl = htmlStandardUrl + "indices.html"
-
-	response, err := http.Get(indicesUrl)
-	if err != nil {
-		log.Fatal("Error loading indices from standard: ", indicesUrl)
-	}
-
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
-		if err != nil {
-			log.Print("Error closing body: ", err)
-		}
-	}(response.Body)
-
-	if response.StatusCode != http.StatusOK {
-		log.Fatal("Unexpected status loading indices from standard: ", response.StatusCode)
-	}
-
-	body, err := html.Parse(response.Body)
-	if err != nil {
-		log.Fatal("Error reading response body: ", response.StatusCode)
-	}
-
-	return body
-}
 
 func findAttributes(body *html.Node) []attribute {
 	attributesTable := findNodeWithId(body, "attributes-1")
