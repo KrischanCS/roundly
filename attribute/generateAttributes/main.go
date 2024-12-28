@@ -179,6 +179,10 @@ func setNames(attr *attribute, attributeName string) {
 	}
 
 	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
+
+	// A few attribute names are equal to go go keywords or builtins,
+	// to avoid collisions and have a consistent naming, "Value" is appended to all parameter names.
+	attr.ParamName += "Value"
 }
 
 func extractText(data *html.Node) (string, []link) {
