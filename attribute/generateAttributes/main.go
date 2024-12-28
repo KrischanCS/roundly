@@ -23,12 +23,14 @@ type attribute struct {
 	Elements    []string
 	Description string
 	Value       string
+	Values      []string
 	Links       []link
 }
 
 type attributes struct {
 	Text  []attribute
 	Bool  []attribute
+	Enum  []attribute
 	Other []attribute
 }
 
@@ -48,6 +50,7 @@ func main() {
 
 	generateFile(textAttrTemplate, attributes.Text, "text.go")
 	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
+	generateFile(textAttrTemplate, attributes.Enum, "enum.go")
 	generateFile(textAttrTemplate, attributes.Other, "other.go")
 }
 
@@ -92,6 +95,8 @@ func findAttributes(body *html.Node) attributes {
 	return attrs
 }
 
+var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*$`)
+
 func classifyAndAdd(attrs *attributes, attr attribute) {
 	if strings.HasPrefix(attr.Value, "[Text]") && !strings.Contains(attr.Value, ";") {
 		attrs.Text = append(attrs.Text, attr)
@@ -100,6 +105,12 @@ func classifyAndAdd(attrs *attributes, attr attribute) {
 
 	if attr.Value == "[Boolean attribute]" {
 		attrs.Bool = append(attrs.Bool, attr)
+		return
+	}
+
+	if enumPattern.MatchString(attr.Value) {
+		attr.Values = strings.Split(attr.Value, ";")
+		attrs.Enum = append(attrs.Enum, attr)
 		return
 	}
 
