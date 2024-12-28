@@ -17,12 +17,12 @@ import (
 //
 // Value constraints: {{.Value}}
 //
-// Source: [The HTML Standard - Indices - Attributes Table]
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 {{ range .Links -}}
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
-// [The HTML Standard - Indices - Attributes Table]: https://html.spec.whatwg.org/multipage/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func {{.FuncName}}({{.ParamName}} string) htmfunc.AttributeRenderer {
     return attribute.Attribute("{{.Name}}", {{.ParamName}})
 }
