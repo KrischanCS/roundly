@@ -13,13 +13,13 @@ import (
 // It can be applied to the following elements:
 {{- range .Elements}}
 //   - [{{.}}]
-{{ end -}}
+{{- end}}
 //
 // Value constraints: {{.Value}}
 //
 // Source: [The HTML Standard - Indices - Attributes Table]
 //
-{{- range .Links}}
+{{ range .Links -}}
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard - Indices - Attributes Table]: https://html.spec.whatwg.org/multipage/indices.html#attributes-3

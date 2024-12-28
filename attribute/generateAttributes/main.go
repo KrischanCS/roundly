@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 	"regexp"
-	"slices"
 	"strings"
 	"text/template"
 
@@ -165,24 +164,14 @@ func parseAttribute(row *html.Node) attribute {
 func setNames(attr *attribute, attributeName string) {
 	attr.Name = attributeName
 
-	runes := []rune(attributeName)
-	for len(runes) > 0 {
-		i := slices.Index(runes, '-')
-		if i == -1 {
-			attr.ParamName += string(runes)
-			break
-		}
-
-		attr.ParamName += string(runes[:i])
-		attr.ParamName += strings.ToUpper(string(runes[i+1]))
-		runes = runes[i+2:]
+	if mapping, ok := mappings[attributeName]; ok {
+		attr.FuncName = mapping.FuncName
+		attr.ParamName = mapping.paramName
+		return
 	}
 
+	attr.ParamName = attributeName
 	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
-
-	// A few attribute names are equal to go go keywords or builtins,
-	// to avoid collisions and have a consistent naming, "Value" is appended to all parameter names.
-	attr.ParamName += "Value"
 }
 
 func extractText(data *html.Node) (string, []link) {
