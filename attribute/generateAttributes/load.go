@@ -9,26 +9,31 @@ import (
 	"os"
 )
 
+const (
+	htmlStandardUrl  = `https://html.spec.whatwg.org/dev/`
+	standardFileName = "htmlStandardIndices.html"
+)
+
 func loadIndicesFromStandard() *html.Node {
 	if *reloadStandard || !isStandardFilePresent() {
 		downloadStandardFile()
 	}
 
-	htmlStandard, err := os.Open("htmlStandardIndices.html")
+	htmlStandard, err := os.Open(standardFileName)
 	if err != nil {
-		log.Panic("Error opening htmlStandardIndices.html: ", err)
+		log.Panic("Error opening "+standardFileName+": ", err)
 	}
 
 	body, err := html.Parse(htmlStandard)
 	if err != nil {
-		log.Fatal("Error reading htmlStandardIndices.html: ", err)
+		log.Fatal("Error reading "+standardFileName+": ", err)
 	}
 
 	return body
 }
 
 func isStandardFilePresent() bool {
-	_, err := os.Stat("htmlStandardIndices.html")
+	_, err := os.Stat(standardFileName)
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) {
 			return false

@@ -26,19 +26,33 @@ type attribute struct {
 	Links       []link
 }
 
+type attributes struct {
+	Text  []attribute
+	Bool  []attribute
+	Other []attribute
+}
+
 type link struct {
 	Name string
 	Url  string
 }
 
-var attrTemplate = template.Must(template.ParseFiles("attributes.go.tmpl"))
+var textAttrTemplate = template.Must(template.ParseFiles("attributes.go.tmpl"))
+var boolAttrTemplate = template.Must(template.ParseFiles("attributeBool.go.tmpl"))
 
 func main() {
+	flag.Parse()
 	body := loadIndicesFromStandard()
 
 	attributes := findAttributes(body)
 
-	file, err := os.OpenFile("generated/attributes.go", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	generateFile(textAttrTemplate, attributes.Text, "text.go")
+	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
+	generateFile(textAttrTemplate, attributes.Other, "other.go")
+}
+
+func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {
+	file, err := os.OpenFile("generated/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -49,15 +63,13 @@ func main() {
 		}
 	}(file)
 
-	err = attrTemplate.Execute(file, attributes)
+	err = tmpl.Execute(file, attributes)
 	if err != nil {
 		log.Print("Error executing template: ", err)
 	}
 }
 
-const htmlStandardUrl = `https://html.spec.whatwg.org/multipage/`
-
-func findAttributes(body *html.Node) []attribute {
+func findAttributes(body *html.Node) attributes {
 	attributesTable := findNodeWithId(body, "attributes-1")
 	if attributesTable == nil {
 		log.Fatal("Error finding attributes table")
@@ -65,13 +77,33 @@ func findAttributes(body *html.Node) []attribute {
 
 	tBody := findTBody(attributesTable)
 
-	attributes := make([]attribute, 0, 64)
-	for row := range tBody.ChildNodes() {
-		attr := parseAttribute(row)
-		attributes = append(attributes, attr)
+	attrs := attributes{
+		Text:  make([]attribute, 0, 16),
+		Bool:  make([]attribute, 0, 16),
+		Other: make([]attribute, 0, 16),
 	}
 
-	return attributes
+	for row := range tBody.ChildNodes() {
+		attr := parseAttribute(row)
+
+		classifyAndAdd(&attrs, attr)
+	}
+
+	return attrs
+}
+
+func classifyAndAdd(attrs *attributes, attr attribute) {
+	if strings.HasPrefix(attr.Value, "[Text]") && !strings.Contains(attr.Value, ";") {
+		attrs.Text = append(attrs.Text, attr)
+		return
+	}
+
+	if attr.Value == "[Boolean attribute]" {
+		attrs.Bool = append(attrs.Bool, attr)
+		return
+	}
+
+	attrs.Other = append(attrs.Other, attr)
 }
 
 func findNodeWithId(node *html.Node, s string) *html.Node {

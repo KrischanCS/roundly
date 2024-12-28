@@ -15,7 +15,7 @@ import (
 //   - [{{.}}]
 {{- end}}
 //
-// Value constraints: {{.Value}}
+// The attribute {{.Name}} is a [Boolean attribute].
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -23,7 +23,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("{{.Name}}", {{.ParamName}})
+func {{.FuncName}}() htmfunc.AttributeRenderer {
+    return attribute.BooleanAttribute("{{.Name}}")
 }
 {{end}}
