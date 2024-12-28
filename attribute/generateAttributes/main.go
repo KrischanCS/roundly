@@ -4,50 +4,34 @@ import (
 	"bufio"
 	"bytes"
 	_ "embed"
-	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
 	"regexp"
+	"slices"
 	"strings"
+	"text/template"
 
 	"golang.org/x/net/html"
 )
 
 type attribute struct {
-	name        string
-	elements    []string
-	description string
-	value       string
-	links       []link
+	Name        string
+	FuncName    string
+	ParamName   string
+	Elements    []string
+	Description string
+	Value       string
+	Links       []link
 }
 
 type link struct {
-	name string
-	url  string
+	Name string
+	Url  string
 }
 
-const (
-	attributeFuncTemplate = `
-// %s creates the %s attribute - %s
-// 
-// It can be applied to the following elements:
-%s
-//
-// Value constraints: %s
-//
-// Source: [The HTML Standard]
-//
-%s
-// [The HTML Standard]: https://html.spec.whatwg.org/multipage/
-func %s(%s string) htmfunc.AttributeRenderer {
-	return attr.Attribute("%s", %s)
-}
-
-`
-	elementListTemplate = "//   - %s"
-	linkTemplate        = "// [%s]: %s"
-)
+var attrTemplate = template.Must(template.ParseFiles("attributes.go.tmpl"))
 
 func main() {
 	body := loadIndicesFromStandard()
@@ -58,38 +42,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-
-	for _, attr := range attributes {
-		var linkSb strings.Builder
-
-		for i, l := range attr.links {
-			if i != 0 {
-				linkSb.WriteString("\n")
-			}
-			linkSb.WriteString(fmt.Sprintf(linkTemplate, l.name, l.url))
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			log.Print("Error closing file: ", err)
 		}
+	}(file)
 
-		var elementSb strings.Builder
-		for i, e := range attr.elements {
-			if i != 0 {
-				elementSb.WriteString("\n")
-			}
-			elementSb.WriteString(fmt.Sprintf(elementListTemplate, e))
-		}
-
-		title := strings.Title(attr.name)
-		fmt.Fprintf(file, attributeFuncTemplate,
-			title,
-			attr.name,
-			attr.description,
-			elementSb.String(),
-			attr.value,
-			linkSb.String(),
-			title,
-			strings.ReplaceAll(attr.name, "type", "typeValue"),
-			attr.name,
-			strings.ReplaceAll(attr.name, "type", "typeValue"))
+	err = attrTemplate.Execute(file, attributes)
+	if err != nil {
+		log.Print("Error executing template: ", err)
 	}
 }
 
@@ -103,7 +65,12 @@ func loadIndicesFromStandard() *html.Node {
 		log.Fatal("Error loading indices from standard: ", indicesUrl)
 	}
 
-	defer response.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Print("Error closing body: ", err)
+		}
+	}(response.Body)
 
 	if response.StatusCode != http.StatusOK {
 		log.Fatal("Unexpected status loading indices from standard: ", response.StatusCode)
@@ -171,28 +138,47 @@ func parseAttribute(row *html.Node) attribute {
 	var attr attribute
 
 	text, links := extractText(data)
-	attr.name = text
-	attr.links = links
+	setNames(&attr, text)
+	attr.Links = links
 
 	data = data.NextSibling
 
 	elements, links := extractElements(data)
-	attr.elements = elements
-	attr.links = append(attr.links, links...)
+	attr.Elements = elements
+	attr.Links = append(attr.Links, links...)
 
 	data = data.NextSibling
 
 	text, links = extractText(data)
-	attr.description = text
-	attr.links = append(attr.links, links...)
+	attr.Description = text
+	attr.Links = append(attr.Links, links...)
 
 	data = data.NextSibling
 
 	text, links = extractText(data)
-	attr.value = text
-	attr.links = append(attr.links, links...)
+	attr.Value = text
+	attr.Links = append(attr.Links, links...)
 
 	return attr
+}
+
+func setNames(attr *attribute, attributeName string) {
+	attr.Name = attributeName
+
+	runes := []rune(attributeName)
+	for len(runes) > 0 {
+		i := slices.Index(runes, '-')
+		if i == -1 {
+			attr.ParamName += string(runes)
+			break
+		}
+
+		attr.ParamName += string(runes[:i])
+		attr.ParamName += strings.ToUpper(string(runes[i+1]))
+		runes = runes[i+2:]
+	}
+
+	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
 }
 
 func extractText(data *html.Node) (string, []link) {
@@ -213,14 +199,14 @@ func extractText(data *html.Node) (string, []link) {
 			l := link{}
 			for _, attr := range node.Attr {
 				if attr.Key == "href" {
-					l.url = htmlStandardUrl + attr.Val
+					l.Url = htmlStandardUrl + attr.Val
 					break
 				}
 			}
 
 			text, ls := extractText(node)
 
-			l.name = text
+			l.Name = text
 			links = append(links, l)
 
 			sb.WriteString("[" + text + "]")

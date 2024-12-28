@@ -1,0 +1,29 @@
+package generated
+
+import (
+"github.com/ch-schulz/htmfunc"
+"github.com/ch-schulz/htmfunc/attribute"
+)
+{{- range .}}
+
+
+{{/*gotype: github.com/ch-schulz/htmfunc/attribute/generateAttributes.attribute*/ -}}
+// {{.FuncName}} creates the {{.Name}} attribute - {{.Description}}
+//
+// It can be applied to the following elements:
+{{- range .Elements}}
+//   - [{{.}}]
+{{ end -}}
+//
+// Value constraints: {{.Value}}
+//
+// Source: [The HTML Standard - Indices - Attributes Table]
+//
+{{- range .Links}}
+// [{{.Name}}]: {{.Url}}
+{{ end -}}
+// [The HTML Standard - Indices - Attributes Table]: https://html.spec.whatwg.org/multipage/indices.html#attributes-3
+func {{.FuncName}}({{.ParamName}} string) htmfunc.AttributeRenderer {
+    return attribute.Attribute("{{.Name}}", {{.ParamName}})
+}
+{{end}}
