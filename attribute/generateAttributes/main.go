@@ -23,7 +23,13 @@ func main() {
 	generateFile(textAttrTemplate, attributes.Text, "text.go")
 	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
 	generateFile(enumAttrTemplate, attributes.Enum, "enum.go")
-	generateFile(textAttrTemplate, attributes.Other, "other.go")
+	generateFile(textAttrTemplate, attributes.InputType, "inputType.go")
+	generateFile(textAttrTemplate, attributes.ListComma, "commaSeperated.go")
+	generateFile(textAttrTemplate, attributes.ListCommaFloat, "commaSeperatedFloat.go")
+	generateFile(textAttrTemplate, attributes.ListSpace, "spaceSeperated.go")
+	generateFile(textAttrTemplate, attributes.Float, "float.go")
+	generateFile(textAttrTemplate, attributes.Int, "int.go")
+	generateFile(textAttrTemplate, attributes.Uint, "uint.go")
 }
 
 func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {

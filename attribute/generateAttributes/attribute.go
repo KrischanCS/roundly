@@ -21,10 +21,16 @@ type attribute struct {
 }
 
 type attributes struct {
-	Text  []attribute
-	Bool  []attribute
-	Enum  []attribute
-	Other []attribute
+	Text           []attribute
+	Bool           []attribute
+	Enum           []attribute
+	InputType      []attribute
+	ListComma      []attribute
+	ListCommaFloat []attribute
+	ListSpace      []attribute
+	Float          []attribute
+	Int            []attribute
+	Uint           []attribute
 }
 
 type link struct {
@@ -41,9 +47,16 @@ func findAttributes(body *html.Node) attributes {
 	tBody := findTBody(attributesTable)
 
 	attrs := attributes{
-		Text:  make([]attribute, 0, 16),
-		Bool:  make([]attribute, 0, 16),
-		Other: make([]attribute, 0, 16),
+		Text:           make([]attribute, 0, 16),
+		Bool:           make([]attribute, 0, 16),
+		Enum:           make([]attribute, 0, 16),
+		InputType:      make([]attribute, 0, 16),
+		ListComma:      make([]attribute, 0, 16),
+		ListCommaFloat: make([]attribute, 0, 16),
+		ListSpace:      make([]attribute, 0, 16),
+		Float:          make([]attribute, 0, 16),
+		Int:            make([]attribute, 0, 16),
+		Uint:           make([]attribute, 0, 16),
 	}
 
 	for row := range tBody.ChildNodes() {
@@ -58,11 +71,6 @@ func findAttributes(body *html.Node) attributes {
 var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
 func classifyAndAdd(attrs *attributes, attr attribute) {
-	if strings.HasPrefix(attr.Value, "[Text]") && !strings.Contains(attr.Value, ";") {
-		attrs.Text = append(attrs.Text, attr)
-		return
-	}
-
 	if attr.Value == "[Boolean attribute]" {
 		attrs.Bool = append(attrs.Bool, attr)
 		return
@@ -77,7 +85,62 @@ func classifyAndAdd(attrs *attributes, attr attribute) {
 		return
 	}
 
-	attrs.Other = append(attrs.Other, attr)
+	if strings.HasPrefix(attr.Value, "[input type keyword]") {
+		attrs.InputType = append(attrs.InputType, attr)
+		return
+	}
+
+	if isCommaSeparatedList(attr.Value) {
+		attrs.ListComma = append(attrs.ListComma, attr)
+		return
+	}
+
+	if strings.HasPrefix(attr.Value, "[Valid list of floating-point numbers]") {
+		attrs.ListCommaFloat = append(attrs.ListCommaFloat, attr)
+		return
+	}
+
+	if isSpaceSeparatedList(attr.Value) {
+		attrs.ListSpace = append(attrs.ListSpace, attr)
+		return
+	}
+
+	if strings.HasPrefix(attr.Value, "[Valid floating-point number]") {
+		attrs.Float = append(attrs.Float, attr)
+		return
+	}
+
+	if strings.HasPrefix(attr.Value, "[Valid Integer]") {
+		attrs.Int = append(attrs.Int, attr)
+		return
+	}
+
+	if strings.HasPrefix(attr.Value, "[Valid non-negative integer]") {
+		attrs.Uint = append(attrs.Uint, attr)
+		return
+	}
+
+	attrs.Text = append(attrs.Text, attr)
+}
+
+func isCommaSeparatedList(value string) bool {
+	if strings.HasPrefix(value, "[Set of comma-separated tokens]") {
+		return true
+	}
+
+	return strings.HasPrefix(value, "Comma-separated list of")
+}
+
+func isSpaceSeparatedList(value string) bool {
+	if strings.HasPrefix(value, "[Ordered set of unique space-separated tokens]") {
+		return true
+	}
+
+	if strings.HasPrefix(value, "[Unordered set of unique space-separated tokens]") {
+		return true
+	}
+
+	return strings.HasPrefix(value, "[Set of space-separated tokens]")
 }
 
 func findNodeWithId(node *html.Node, s string) *html.Node {
@@ -171,9 +234,16 @@ func extractText(data *html.Node) (string, []link) {
 
 			sb.WriteString(node.Data)
 		case html.ElementNode:
-			if node.Type == html.ElementNode && node.Data == "a" {
+			if node.Data == "a" {
 				addAsLink(node, &links, &sb)
 				continue
+			}
+
+			if node.Data == "li" {
+				if node.PrevSibling != nil && node.PrevSibling.Data == "li" {
+					sb.WriteByte(',')
+				}
+				sb.WriteByte(' ')
 			}
 
 			text, ls := extractText(node)
