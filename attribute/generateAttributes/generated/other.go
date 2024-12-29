@@ -10,7 +10,7 @@ import (
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: [Set of comma-separated tokens]* consisting of [valid MIME type strings with no parameters] or audio/*, video/*, or image/*
+// Value constraints: [Set of comma-separated tokens] (Additional rules apply, see elements documentation) consisting of [valid MIME type strings with no parameters] or audio/ (Additional rules apply, see elements documentation), video/ (Additional rules apply, see elements documentation), or image/ (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -126,7 +126,7 @@ func As(as string) htmfunc.AttributeRenderer {
 //   - [[select]]
 //   - [[textarea]]
 //
-// Value constraints: [Autofill field] name and related tokens*
+// Value constraints: [Autofill field] name and related tokens (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -146,7 +146,7 @@ func AutoComplete(autoComplete string) htmfunc.AttributeRenderer {
 //   - [[script]]
 //   - [[style]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens]*
+// Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -254,7 +254,7 @@ func ColSpan(colSpan string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[area]]
 //
-// Value constraints: [Valid list of floating-point numbers]*
+// Value constraints: [Valid list of floating-point numbers] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -347,7 +347,7 @@ func Download(download string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[label]]
 //
-// Value constraints: [ID]*
+// Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -363,7 +363,7 @@ func For(forV string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[output]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs*
+// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -386,7 +386,7 @@ func For(forV string) htmfunc.AttributeRenderer {
 //   - [[textarea]]
 //   - [[form-associated custom elements]]
 //
-// Value constraints: [ID]*
+// Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -451,7 +451,7 @@ func FormTarget(formTarget string) htmfunc.AttributeRenderer {
 //   - [[td]]
 //   - [[th]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs*
+// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -516,7 +516,7 @@ func Hidden(hidden string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meter]]
 //
-// Value constraints: [Valid floating-point number]*
+// Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -673,7 +673,7 @@ func ItemId(itemId string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[HTML elements]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs], [defined property names], or text*
+// Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs], [defined property names], or text (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -692,7 +692,7 @@ func ItemProp(itemProp string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[HTML elements]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs*
+// Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -709,7 +709,7 @@ func ItemRef(itemRef string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[HTML elements]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs]*
+// Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -742,7 +742,7 @@ func Lang(lang string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: [ID]*
+// Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -758,7 +758,7 @@ func List(list string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meter]]
 //
-// Value constraints: [Valid floating-point number]*
+// Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -774,7 +774,7 @@ func Low(low string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: Varies*
+// Value constraints: Varies (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -790,7 +790,7 @@ func Max(max string) htmfunc.AttributeRenderer {
 //   - [[meter]]
 //   - [[progress]]
 //
-// Value constraints: [Valid floating-point number]*
+// Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -848,7 +848,7 @@ func Media(media string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: Varies*
+// Value constraints: Varies (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -863,7 +863,7 @@ func Min(min string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meter]]
 //
-// Value constraints: [Valid floating-point number]*
+// Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -917,7 +917,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meter]]
 //
-// Value constraints: [Valid floating-point number]*
+// Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -988,7 +988,7 @@ func PopOver(popOver string) htmfunc.AttributeRenderer {
 //   - [[button]]
 //   - [[input]]
 //
-// Value constraints: [ID]*
+// Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1050,7 +1050,7 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
 //   - [[a]]
 //   - [[area]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens]*
+// Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1068,7 +1068,7 @@ func Rel(rel string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[link]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens]*
+// Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1154,7 +1154,7 @@ func Size(size string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[link]]
 //
-// Value constraints: [Unordered set of unique space-separated tokens], [ASCII case-insensitive], consisting of sizes*
+// Value constraints: [Unordered set of unique space-separated tokens], [ASCII case-insensitive], consisting of sizes (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1260,7 +1260,7 @@ func Src(src string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[iframe]]
 //
-// Value constraints: The source of [an iframesrcdoc document]*
+// Value constraints: The source of [an iframesrcdoc document] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1342,7 +1342,7 @@ func Step(step string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[HTML elements]]
 //
-// Value constraints: CSS declarations*
+// Value constraints: CSS declarations (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1503,7 +1503,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[img]]
 //
-// Value constraints: [Valid hash-name reference]*
+// Value constraints: [Valid hash-name reference] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1520,7 +1520,7 @@ func UseMap(useMap string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: Varies*
+// Value constraints: Varies (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //

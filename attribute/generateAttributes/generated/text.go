@@ -10,7 +10,7 @@ import (
 // It can be applied to the following elements:
 //   - [[th]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -28,7 +28,7 @@ func Abbr(abbr string) htmfunc.AttributeRenderer {
 //   - [[img]]
 //   - [[input]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -46,7 +46,7 @@ func Alt(alt string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meta]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -63,7 +63,7 @@ func Content(content string) htmfunc.AttributeRenderer {
 //   - [[input]]
 //   - [[textarea]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -82,7 +82,7 @@ func DirName(dirName string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[HTML elements]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -144,7 +144,7 @@ func Label(label string) htmfunc.AttributeRenderer {
 //   - [[textarea]]
 //   - [[form-associated custom elements]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -168,7 +168,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[details]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -185,7 +185,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[form]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -202,7 +202,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[map]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -221,7 +221,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[meta]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -271,7 +271,7 @@ func Nonce(nonce string) htmfunc.AttributeRenderer {
 //   - [[input]]
 //   - [[textarea]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -409,7 +409,7 @@ func Value(value string) htmfunc.AttributeRenderer {
 // It can be applied to the following elements:
 //   - [[data]]
 //
-// Value constraints: [Text]*
+// Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //

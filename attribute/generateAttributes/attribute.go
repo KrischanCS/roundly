@@ -135,6 +135,8 @@ func parseAttribute(row *html.Node) attribute {
 	data = data.NextSibling
 
 	text, links = extractText(data)
+	text = strings.ReplaceAll(text, "*", " (Additional rules apply, see elements documentation)")
+
 	attr.Value = text
 	attr.Links = append(attr.Links, links...)
 
