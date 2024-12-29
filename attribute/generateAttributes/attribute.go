@@ -186,7 +186,12 @@ func extractText(data *html.Node) (string, []link) {
 
 	compactWhitespace(&sb)
 
-	return sb.String(), links
+	s := sb.String()
+
+	// Special case currently needed for "popover" which has a trailing ;
+	s = strings.Trim(s, ";")
+
+	return s, links
 }
 
 func addAsLink(node *html.Node, links *[]link, sb *strings.Builder) {

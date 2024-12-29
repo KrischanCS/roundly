@@ -947,24 +947,6 @@ func Ping(ping string) htmfunc.AttributeRenderer {
     return attribute.Attribute("ping", ping)
 }
 
-// PopOver creates the popover attribute - Makes the element a [popover] element
-//
-// It can be applied to the following elements:
-//   - [[HTML elements]]
-//
-// Value constraints: "[auto]";"[manual]";
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [HTML elements]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
-// [popover]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
-// [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
-// [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOver(popOver string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("popover", popOver)
-}
-
 // PopOverTarget creates the popovertarget attribute - Targets a popover element to toggle, show, or hide
 //
 // It can be applied to the following elements:

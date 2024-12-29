@@ -493,6 +493,26 @@ func Method(method string) htmfunc.AttributeRenderer {
     return attribute.Attribute("method", method)
 }
 
+// PopOver creates the popover attribute - Makes the element a [popover] element
+//
+// It can be applied to the following elements:
+//   - [[HTML elements]]
+//
+// Can hold one of the following values:
+//   - "[auto]"
+//   - "[manual]"
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
+// [popover]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
+// [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
+// [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func PopOver(popOver string) htmfunc.AttributeRenderer {
+    return attribute.Attribute("popover", popOver)
+}
+
 // PopOverTargetAction creates the popovertargetaction attribute - Indicates whether a targeted popover element is to be toggled, shown, or hidden
 //
 // It can be applied to the following elements:
