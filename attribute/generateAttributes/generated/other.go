@@ -494,23 +494,6 @@ func Height(height string) htmfunc.AttributeRenderer {
     return attribute.Attribute("height", height)
 }
 
-// Hidden creates the hidden attribute - Whether the element is relevant
-//
-// It can be applied to the following elements:
-//   - [[HTML elements]]
-//
-// Value constraints: "[until-found]";"[hidden]";the empty string
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
-// [until-found]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden-until-found
-// [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Hidden(hidden string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("hidden", hidden)
-}
-
 // High creates the high attribute - Low limit of high range
 //
 // It can be applied to the following elements:
@@ -1204,23 +1187,6 @@ func Span(span string) htmfunc.AttributeRenderer {
     return attribute.Attribute("span", span)
 }
 
-// SpellCheck creates the spellcheck attribute - Whether the element is to have its spelling and grammar checked
-//
-// It can be applied to the following elements:
-//   - [[HTML elements]]
-//
-// Value constraints: "[true]";"[false]";the empty string
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck
-// [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-true
-// [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SpellCheck(spellCheck string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("spellcheck", spellCheck)
-}
-
 // Src creates the src attribute - Address of the resource
 //
 // It can be applied to the following elements:
@@ -1593,21 +1559,4 @@ func Value(value string) htmfunc.AttributeRenderer {
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Width(width string) htmfunc.AttributeRenderer {
     return attribute.Attribute("width", width)
-}
-
-// WritingSuggestions creates the writingsuggestions attribute - Whether the element can offer writing suggestions or not.
-//
-// It can be applied to the following elements:
-//   - [[HTML elements]]
-//
-// Value constraints: "[true]";"[false]";the empty string
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions
-// [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-true
-// [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WritingSuggestions(writingSuggestions string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("writingsuggestions", writingSuggestions)
 }

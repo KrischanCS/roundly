@@ -55,7 +55,7 @@ func findAttributes(body *html.Node) attributes {
 	return attrs
 }
 
-var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*$`)
+var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
 func classifyAndAdd(attrs *attributes, attr attribute) {
 	if strings.HasPrefix(attr.Value, "[Text]") && !strings.Contains(attr.Value, ";") {

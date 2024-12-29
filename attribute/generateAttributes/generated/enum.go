@@ -349,6 +349,26 @@ func FormMethod(formMethod string) htmfunc.AttributeRenderer {
     return attribute.Attribute("formmethod", formMethod)
 }
 
+// Hidden creates the hidden attribute - Whether the element is relevant
+//
+// It can be applied to the following elements:
+//   - [[HTML elements]]
+//
+// Can hold one of the following values:
+//   - "[until-found]"
+//   - "[hidden]"
+//   - the empty string
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
+// [until-found]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden-until-found
+// [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Hidden(hidden string) htmfunc.AttributeRenderer {
+    return attribute.Attribute("hidden", hidden)
+}
+
 // HttpEquiv creates the http-equiv attribute - Pragma directive
 //
 // It can be applied to the following elements:
@@ -584,6 +604,26 @@ func Shape(shape string) htmfunc.AttributeRenderer {
     return attribute.Attribute("shape", shape)
 }
 
+// SpellCheck creates the spellcheck attribute - Whether the element is to have its spelling and grammar checked
+//
+// It can be applied to the following elements:
+//   - [[HTML elements]]
+//
+// Can hold one of the following values:
+//   - "[true]"
+//   - "[false]"
+//   - the empty string
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck
+// [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-true
+// [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func SpellCheck(spellCheck string) htmfunc.AttributeRenderer {
+    return attribute.Attribute("spellcheck", spellCheck)
+}
+
 // Translate creates the translate attribute - Whether the element is to be translated when the page is localized
 //
 // It can be applied to the following elements:
@@ -665,4 +705,24 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Wrap(wrap string) htmfunc.AttributeRenderer {
     return attribute.Attribute("wrap", wrap)
+}
+
+// WritingSuggestions creates the writingsuggestions attribute - Whether the element can offer writing suggestions or not.
+//
+// It can be applied to the following elements:
+//   - [[HTML elements]]
+//
+// Can hold one of the following values:
+//   - "[true]"
+//   - "[false]"
+//   - the empty string
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions
+// [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-true
+// [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func WritingSuggestions(writingSuggestions string) htmfunc.AttributeRenderer {
+    return attribute.Attribute("writingsuggestions", writingSuggestions)
 }
