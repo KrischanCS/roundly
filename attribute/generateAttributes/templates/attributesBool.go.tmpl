@@ -1,0 +1,27 @@
+package generated
+
+import (
+    "github.com/ch-schulz/htmfunc"
+    "github.com/ch-schulz/htmfunc/attribute"
+)
+{{ range .}}
+{{/*gotype: github.com/ch-schulz/htmfunc/attribute/generateAttributes.attribute*/ -}}
+// {{.FuncName}} creates the {{.Name}} attribute - {{.Description}}
+//
+// It can be applied to the following elements:
+{{- range .Elements}}
+//   - [{{.}}]
+{{- end}}
+//
+// The attribute {{.Name}} is a [Boolean attribute].
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+{{ range .Links -}}
+// [{{.Name}}]: {{.Url}}
+{{ end -}}
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func {{.FuncName}}() htmfunc.AttributeRenderer {
+    return attribute.BooleanAttribute("{{.Name}}")
+}
+{{end}}

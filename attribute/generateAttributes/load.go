@@ -7,12 +7,12 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
-const (
-	htmlStandardUrl  = `https://html.spec.whatwg.org/dev/`
-	standardFileName = "htmlStandardIndices.html"
-)
+const htmlStandardUrl = `https://html.spec.whatwg.org/dev/`
+
+var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
 
 func loadIndicesFromStandard() *html.Node {
 	if *reloadStandard || !isStandardFilePresent() {
@@ -64,7 +64,8 @@ func downloadStandardFile() {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)
 	}
 
-	file, err := os.OpenFile("htmlStandardIndices.html", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666)
+	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY,
+		0666)
 	if err != nil {
 		log.Print("Error creating file htmlStandardIndices.html: ", err)
 	}
