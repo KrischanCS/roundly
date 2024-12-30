@@ -10,7 +10,29 @@ import (
 // It can be applied to the following elements:
 //   - [[input]]
 //
-// Value constraints: [input type keyword]
+// Value constraints: [input type keyword]. Must be one of the following:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //

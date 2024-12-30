@@ -38,6 +38,32 @@ type link struct {
 	Url  string
 }
 
+// TODO parse https://html.spec.whatwg.org/dev/input.html#attr-input-type instead of hardcoding this
+var inputTypes = []string{
+	"hidden",
+	"text",
+	"search",
+	"tel",
+	"url",
+	"email",
+	"password",
+	"date",
+	"month",
+	"week",
+	"time",
+	"datetime",
+	"number",
+	"range",
+	"color",
+	"checkbox",
+	"radio",
+	"file",
+	"submit",
+	"image",
+	"reset",
+	"button",
+}
+
 func findAttributes(body *html.Node) attributes {
 	attributesTable := findNodeWithId(body, "attributes-1")
 	if attributesTable == nil {
@@ -86,7 +112,10 @@ func classifyAndAdd(attrs *attributes, attr attribute) {
 	}
 
 	if strings.HasPrefix(attr.Value, "[input type keyword]") {
+		attr.Values = inputTypes
+
 		attrs.InputType = append(attrs.InputType, attr)
+
 		return
 	}
 
@@ -110,7 +139,7 @@ func classifyAndAdd(attrs *attributes, attr attribute) {
 		return
 	}
 
-	if strings.HasPrefix(attr.Value, "[Valid Integer]") {
+	if strings.Contains(attr.Value, "[Valid integer]") {
 		attrs.Int = append(attrs.Int, attr)
 		return
 	}

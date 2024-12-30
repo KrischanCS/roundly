@@ -13,6 +13,7 @@ var reloadStandard = flag.Bool("reloadHtmlStandard", false, "reload html standar
 var textAttrTemplate = template.Must(template.ParseFiles("templates/attributesText.go.tmpl"))
 var boolAttrTemplate = template.Must(template.ParseFiles("templates/attributesBool.go.tmpl"))
 var enumAttrTemplate = template.Must(template.ParseFiles("templates/attributesEnum.go.tmpl"))
+var inputTypeAttrTemplate = template.Must(template.ParseFiles("templates/attributesInputType.go.tmpl"))
 
 func main() {
 	flag.Parse()
@@ -23,7 +24,7 @@ func main() {
 	generateFile(textAttrTemplate, attributes.Text, "text.go")
 	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
 	generateFile(enumAttrTemplate, attributes.Enum, "enum.go")
-	generateFile(textAttrTemplate, attributes.InputType, "inputType.go")
+	generateFile(inputTypeAttrTemplate, attributes.InputType, "inputType.go")
 	generateFile(textAttrTemplate, attributes.ListComma, "commaSeperated.go")
 	generateFile(textAttrTemplate, attributes.ListCommaFloat, "commaSeperatedFloat.go")
 	generateFile(textAttrTemplate, attributes.ListSpace, "spaceSeperated.go")
