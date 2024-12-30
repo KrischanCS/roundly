@@ -2,7 +2,6 @@ package generated
 
 import (
     "github.com/ch-schulz/htmfunc"
-    "github.com/ch-schulz/htmfunc/attribute"
 )
 
 // AccessKey creates the accesskey attribute - Keyboard shortcut to activate or focus element
@@ -19,7 +18,7 @@ import (
 // [identical to]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-is
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AccessKey(accessKey string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("accesskey", accessKey)
+    return htmfunc.Attribute("accesskey", accessKey)
 }
 
 // Blocking creates the blocking attribute - Whether the element is [potentially render-blocking]
@@ -40,7 +39,7 @@ func AccessKey(accessKey string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Blocking(blocking string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("blocking", blocking)
+    return htmfunc.Attribute("blocking", blocking)
 }
 
 // Class creates the class attribute - Classes to which the element belongs
@@ -56,7 +55,7 @@ func Blocking(blocking string) htmfunc.AttributeRenderer {
 // [Set of space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Class(class string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("class", class)
+    return htmfunc.Attribute("class", class)
 }
 
 // For_Output creates the for attribute - Specifies controls from which the output was calculated
@@ -72,7 +71,7 @@ func Class(class string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func For_Output(forV string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("for", forV)
+    return htmfunc.Attribute("for", forV)
 }
 
 // Headers creates the headers attribute - The header cells for this cell
@@ -90,7 +89,7 @@ func For_Output(forV string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Headers(headers string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("headers", headers)
+    return htmfunc.Attribute("headers", headers)
 }
 
 // ItemProp creates the itemprop attribute - [Property names] of a microdata item
@@ -109,7 +108,7 @@ func Headers(headers string) htmfunc.AttributeRenderer {
 // [defined property names]: https://html.spec.whatwg.org/dev/microdata.html#defined-property-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ItemProp(itemProp string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("itemprop", itemProp)
+    return htmfunc.Attribute("itemprop", itemProp)
 }
 
 // ItemRef creates the itemref attribute - [Referenced] elements
@@ -126,7 +125,7 @@ func ItemProp(itemProp string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ItemRef(itemRef string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("itemref", itemRef)
+    return htmfunc.Attribute("itemref", itemRef)
 }
 
 // ItemType creates the itemtype attribute - [Item types] of a microdata item
@@ -144,7 +143,7 @@ func ItemRef(itemRef string) htmfunc.AttributeRenderer {
 // [valid absolute URLs]: https://html.spec.whatwg.org/dev/https://url.spec.whatwg.org/#syntax-url-absolute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ItemType(itemType string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("itemtype", itemType)
+    return htmfunc.Attribute("itemtype", itemType)
 }
 
 // Ping creates the ping attribute - [URLs] to ping
@@ -164,7 +163,7 @@ func ItemType(itemType string) htmfunc.AttributeRenderer {
 // [valid non-empty URLs]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Ping(ping string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("ping", ping)
+    return htmfunc.Attribute("ping", ping)
 }
 
 // Rel_AArea creates the rel attribute - Relationship between the location in the document containing the [hyperlink] and the destination resource
@@ -183,7 +182,7 @@ func Ping(ping string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Rel_AArea(rel string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("rel", rel)
+    return htmfunc.Attribute("rel", rel)
 }
 
 // Rel_Link creates the rel attribute - Relationship between the document containing the [hyperlink] and the destination resource
@@ -200,7 +199,7 @@ func Rel_AArea(rel string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Rel_Link(rel string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("rel", rel)
+    return htmfunc.Attribute("rel", rel)
 }
 
 // SandBox creates the sandbox attribute - Security rules for nested content
@@ -217,7 +216,7 @@ func Rel_Link(rel string) htmfunc.AttributeRenderer {
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func SandBox(sandBox string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("sandbox", sandBox)
+    return htmfunc.Attribute("sandbox", sandBox)
 }
 
 // Sizes_Link creates the sizes attribute - Sizes of the icons (for [rel]="[icon]")
@@ -236,5 +235,5 @@ func SandBox(sandBox string) htmfunc.AttributeRenderer {
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Sizes_Link(sizes string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("sizes", sizes)
+    return htmfunc.Attribute("sizes", sizes)
 }

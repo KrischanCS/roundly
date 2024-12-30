@@ -2,7 +2,6 @@ package generated
 
 import (
     "github.com/ch-schulz/htmfunc"
-    "github.com/ch-schulz/htmfunc/attribute"
 )
 
 // AutoCapitalize creates the autocapitalize attribute - Recommended autocapitalization behavior (for supported input methods)
@@ -29,7 +28,7 @@ import (
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AutoCapitalize(autoCapitalize string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("autocapitalize", autoCapitalize)
+    return htmfunc.Attribute("autocapitalize", autoCapitalize)
 }
 
 // AutoComplete_Form creates the autocomplete attribute - Default setting for autofill feature for controls in the form
@@ -46,7 +45,7 @@ func AutoCapitalize(autoCapitalize string) htmfunc.AttributeRenderer {
 // [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-autocomplete
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AutoComplete_Form(autoComplete string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("autocomplete", autoComplete)
+    return htmfunc.Attribute("autocomplete", autoComplete)
 }
 
 // AutoCorrect creates the autocorrect attribute - Recommended autocorrection behavior (for supported input methods)
@@ -65,7 +64,7 @@ func AutoComplete_Form(autoComplete string) htmfunc.AttributeRenderer {
 // [off]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocorrect-off
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AutoCorrect(autoCorrect string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("autocorrect", autoCorrect)
+    return htmfunc.Attribute("autocorrect", autoCorrect)
 }
 
 // CharSet creates the charset attribute - [Character encoding declaration]
@@ -82,7 +81,7 @@ func AutoCorrect(autoCorrect string) htmfunc.AttributeRenderer {
 // [Character encoding declaration]: https://html.spec.whatwg.org/dev/semantics.html#character-encoding-declaration
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func CharSet(charSet string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("charset", charSet)
+    return htmfunc.Attribute("charset", charSet)
 }
 
 // ColorSpace creates the colorspace attribute - The color space of the serialized color
@@ -101,7 +100,7 @@ func CharSet(charSet string) htmfunc.AttributeRenderer {
 // [display-p3]: https://html.spec.whatwg.org/dev/input.html#attr-input-colorspace-display-p3
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ColorSpace(colorSpace string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("colorspace", colorSpace)
+    return htmfunc.Attribute("colorspace", colorSpace)
 }
 
 // ContentEditable creates the contenteditable attribute - Whether the element is editable
@@ -119,7 +118,7 @@ func ColorSpace(colorSpace string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-contenteditable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ContentEditable(contentEditable string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("contenteditable", contentEditable)
+    return htmfunc.Attribute("contenteditable", contentEditable)
 }
 
 // CrossOrigin creates the crossorigin attribute - How the element handles crossorigin requests
@@ -146,7 +145,7 @@ func ContentEditable(contentEditable string) htmfunc.AttributeRenderer {
 // [use-credentials]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-crossorigin-use-credentials-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func CrossOrigin(crossOrigin string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("crossorigin", crossOrigin)
+    return htmfunc.Attribute("crossorigin", crossOrigin)
 }
 
 // Decoding creates the decoding attribute - Decoding hint to use when processing this image for presentation
@@ -164,7 +163,7 @@ func CrossOrigin(crossOrigin string) htmfunc.AttributeRenderer {
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-decoding
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Decoding(decoding string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("decoding", decoding)
+    return htmfunc.Attribute("decoding", decoding)
 }
 
 // Dir creates the dir attribute - [The text directionality] of the element
@@ -186,7 +185,7 @@ func Decoding(decoding string) htmfunc.AttributeRenderer {
 // [auto]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Dir(dir string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("dir", dir)
+    return htmfunc.Attribute("dir", dir)
 }
 
 // Dir_Bdo creates the dir attribute - [The text directionality] of the element
@@ -206,7 +205,7 @@ func Dir(dir string) htmfunc.AttributeRenderer {
 // [rtl]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-rtl
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Dir_Bdo(dir string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("dir", dir)
+    return htmfunc.Attribute("dir", dir)
 }
 
 // Draggable creates the draggable attribute - Whether the element is draggable
@@ -223,7 +222,7 @@ func Dir_Bdo(dir string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dnd.html#attr-draggable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Draggable(draggable string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("draggable", draggable)
+    return htmfunc.Attribute("draggable", draggable)
 }
 
 // EncType creates the enctype attribute - Entry list encoding type to use for [form submission]
@@ -245,7 +244,7 @@ func Draggable(draggable string) htmfunc.AttributeRenderer {
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func EncType(encType string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("enctype", encType)
+    return htmfunc.Attribute("enctype", encType)
 }
 
 // EnterKeyHint creates the enterkeyhint attribute - Hint for selecting an enter key action
@@ -274,7 +273,7 @@ func EncType(encType string) htmfunc.AttributeRenderer {
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func EnterKeyHint(enterKeyHint string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("enterkeyhint", enterKeyHint)
+    return htmfunc.Attribute("enterkeyhint", enterKeyHint)
 }
 
 // FetchPriority creates the fetchpriority attribute - Sets the [priority] for [fetches] initiated by the element
@@ -301,7 +300,7 @@ func EnterKeyHint(enterKeyHint string) htmfunc.AttributeRenderer {
 // [low]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-low
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func FetchPriority(fetchPriority string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("fetchpriority", fetchPriority)
+    return htmfunc.Attribute("fetchpriority", fetchPriority)
 }
 
 // FormEnctype creates the formenctype attribute - Entry list encoding type to use for [form submission]
@@ -325,7 +324,7 @@ func FetchPriority(fetchPriority string) htmfunc.AttributeRenderer {
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func FormEnctype(formEnctype string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("formenctype", formEnctype)
+    return htmfunc.Attribute("formenctype", formEnctype)
 }
 
 // FormMethod creates the formmethod attribute - Variant to use for [form submission]
@@ -346,7 +345,7 @@ func FormEnctype(formEnctype string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func FormMethod(formMethod string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("formmethod", formMethod)
+    return htmfunc.Attribute("formmethod", formMethod)
 }
 
 // Hidden creates the hidden attribute - Whether the element is relevant
@@ -366,7 +365,7 @@ func FormMethod(formMethod string) htmfunc.AttributeRenderer {
 // [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Hidden(hidden string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("hidden", hidden)
+    return htmfunc.Attribute("hidden", hidden)
 }
 
 // HttpEquiv creates the http-equiv attribute - Pragma directive
@@ -391,7 +390,7 @@ func Hidden(hidden string) htmfunc.AttributeRenderer {
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func HttpEquiv(httpEquiv string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("http-equiv", httpEquiv)
+    return htmfunc.Attribute("http-equiv", httpEquiv)
 }
 
 // InputMode creates the inputmode attribute - Hint for selecting an input modality
@@ -422,7 +421,7 @@ func HttpEquiv(httpEquiv string) htmfunc.AttributeRenderer {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func InputMode(inputMode string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("inputmode", inputMode)
+    return htmfunc.Attribute("inputmode", inputMode)
 }
 
 // Kind creates the kind attribute - The type of text track
@@ -447,7 +446,7 @@ func InputMode(inputMode string) htmfunc.AttributeRenderer {
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Kind(kind string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("kind", kind)
+    return htmfunc.Attribute("kind", kind)
 }
 
 // Loading creates the loading attribute - Used when determining loading deferral
@@ -468,7 +467,7 @@ func Kind(kind string) htmfunc.AttributeRenderer {
 // [eager]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-loading-eager
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Loading(loading string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("loading", loading)
+    return htmfunc.Attribute("loading", loading)
 }
 
 // Method creates the method attribute - Variant to use for [form submission]
@@ -490,7 +489,7 @@ func Loading(loading string) htmfunc.AttributeRenderer {
 // [dialog]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-dialog-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Method(method string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("method", method)
+    return htmfunc.Attribute("method", method)
 }
 
 // PopOver creates the popover attribute - Makes the element a [popover] element
@@ -510,7 +509,7 @@ func Method(method string) htmfunc.AttributeRenderer {
 // [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PopOver(popOver string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("popover", popOver)
+    return htmfunc.Attribute("popover", popOver)
 }
 
 // PopOverTargetAction creates the popovertargetaction attribute - Indicates whether a targeted popover element is to be toggled, shown, or hidden
@@ -533,7 +532,7 @@ func PopOver(popOver string) htmfunc.AttributeRenderer {
 // [hide]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-hide
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PopOverTargetAction(popOverTargetAction string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("popovertargetaction", popOverTargetAction)
+    return htmfunc.Attribute("popovertargetaction", popOverTargetAction)
 }
 
 // PreLoad creates the preload attribute - Hints how much buffering the [media resource] will likely need
@@ -557,7 +556,7 @@ func PopOverTargetAction(popOverTargetAction string) htmfunc.AttributeRenderer {
 // [auto]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PreLoad(preLoad string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("preload", preLoad)
+    return htmfunc.Attribute("preload", preLoad)
 }
 
 // Scope creates the scope attribute - Specifies which cells the header cell applies to
@@ -580,7 +579,7 @@ func PreLoad(preLoad string) htmfunc.AttributeRenderer {
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-colgroup
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Scope(scope string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("scope", scope)
+    return htmfunc.Attribute("scope", scope)
 }
 
 // ShadowRootMode creates the shadowrootmode attribute - Enables streaming declarative shadow roots
@@ -597,7 +596,7 @@ func Scope(scope string) htmfunc.AttributeRenderer {
 // [template]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootmode
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ShadowRootMode(shadowRootMode string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("shadowrootmode", shadowRootMode)
+    return htmfunc.Attribute("shadowrootmode", shadowRootMode)
 }
 
 // Shape creates the shape attribute - The kind of shape to be created in an [image map]
@@ -621,7 +620,7 @@ func ShadowRootMode(shadowRootMode string) htmfunc.AttributeRenderer {
 // [rect]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-rect
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Shape(shape string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("shape", shape)
+    return htmfunc.Attribute("shape", shape)
 }
 
 // SpellCheck creates the spellcheck attribute - Whether the element is to have its spelling and grammar checked
@@ -641,7 +640,7 @@ func Shape(shape string) htmfunc.AttributeRenderer {
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func SpellCheck(spellCheck string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("spellcheck", spellCheck)
+    return htmfunc.Attribute("spellcheck", spellCheck)
 }
 
 // Translate creates the translate attribute - Whether the element is to be translated when the page is localized
@@ -658,7 +657,7 @@ func SpellCheck(spellCheck string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-translate
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Translate(translate string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("translate", translate)
+    return htmfunc.Attribute("translate", translate)
 }
 
 // Type_Button creates the type attribute - Type of button
@@ -679,7 +678,7 @@ func Translate(translate string) htmfunc.AttributeRenderer {
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Type_Button(typeV string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("type", typeV)
+    return htmfunc.Attribute("type", typeV)
 }
 
 // Type_Ol creates the type attribute - Kind of list marker
@@ -704,7 +703,7 @@ func Type_Button(typeV string) htmfunc.AttributeRenderer {
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Type_Ol(typeV string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("type", typeV)
+    return htmfunc.Attribute("type", typeV)
 }
 
 // Wrap creates the wrap attribute - How the value of the form control is to be wrapped for [form submission]
@@ -724,7 +723,7 @@ func Type_Ol(typeV string) htmfunc.AttributeRenderer {
 // [hard]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap-hard
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Wrap(wrap string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("wrap", wrap)
+    return htmfunc.Attribute("wrap", wrap)
 }
 
 // WritingSuggestions creates the writingsuggestions attribute - Whether the element can offer writing suggestions or not.
@@ -744,5 +743,5 @@ func Wrap(wrap string) htmfunc.AttributeRenderer {
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func WritingSuggestions(writingSuggestions string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("writingsuggestions", writingSuggestions)
+    return htmfunc.Attribute("writingsuggestions", writingSuggestions)
 }

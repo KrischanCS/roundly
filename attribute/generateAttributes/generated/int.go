@@ -2,7 +2,6 @@ package generated
 
 import (
     "github.com/ch-schulz/htmfunc"
-    "github.com/ch-schulz/htmfunc/attribute"
 )
 
 // Start creates the start attribute - Starting value of the list
@@ -18,7 +17,7 @@ import (
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Start(start string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("start", start)
+    return htmfunc.Attribute("start", start)
 }
 
 // TabIndex creates the tabindex attribute - Whether the element is focusable and sequentially focusable, andthe relative order of the element for the purposes of sequential focus navigation
@@ -34,7 +33,7 @@ func Start(start string) htmfunc.AttributeRenderer {
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TabIndex(tabIndex string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("tabindex", tabIndex)
+    return htmfunc.Attribute("tabindex", tabIndex)
 }
 
 // Value_Li creates the value attribute - Ordinal value of the list item
@@ -50,5 +49,5 @@ func TabIndex(tabIndex string) htmfunc.AttributeRenderer {
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Value_Li(value string) htmfunc.AttributeRenderer {
-    return attribute.Attribute("value", value)
+    return htmfunc.Attribute("value", value)
 }
