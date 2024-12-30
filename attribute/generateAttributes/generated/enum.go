@@ -32,7 +32,7 @@ func AutoCapitalize(autoCapitalize string) htmfunc.AttributeRenderer {
     return attribute.Attribute("autocapitalize", autoCapitalize)
 }
 
-// AutoComplete creates the autocomplete attribute - Default setting for autofill feature for controls in the form
+// AutoComplete_Form creates the autocomplete attribute - Default setting for autofill feature for controls in the form
 //
 // It can be applied to the following elements:
 //   - [form]
@@ -45,7 +45,7 @@ func AutoCapitalize(autoCapitalize string) htmfunc.AttributeRenderer {
 //
 // [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-autocomplete
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoComplete(autoComplete string) htmfunc.AttributeRenderer {
+func AutoComplete_Form(autoComplete string) htmfunc.AttributeRenderer {
     return attribute.Attribute("autocomplete", autoComplete)
 }
 
@@ -189,7 +189,7 @@ func Dir(dir string) htmfunc.AttributeRenderer {
     return attribute.Attribute("dir", dir)
 }
 
-// Dir creates the dir attribute - [The text directionality] of the element
+// Dir_Bdo creates the dir attribute - [The text directionality] of the element
 //
 // It can be applied to the following elements:
 //   - [bdo]
@@ -205,7 +205,7 @@ func Dir(dir string) htmfunc.AttributeRenderer {
 // [ltr]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-ltr
 // [rtl]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-rtl
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Dir(dir string) htmfunc.AttributeRenderer {
+func Dir_Bdo(dir string) htmfunc.AttributeRenderer {
     return attribute.Attribute("dir", dir)
 }
 
@@ -661,7 +661,7 @@ func Translate(translate string) htmfunc.AttributeRenderer {
     return attribute.Attribute("translate", translate)
 }
 
-// Type creates the type attribute - Type of button
+// Type_Button creates the type attribute - Type of button
 //
 // It can be applied to the following elements:
 //   - [button]
@@ -678,11 +678,11 @@ func Translate(translate string) htmfunc.AttributeRenderer {
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_Button(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }
 
-// Type creates the type attribute - Kind of list marker
+// Type_Ol creates the type attribute - Kind of list marker
 //
 // It can be applied to the following elements:
 //   - [ol]
@@ -703,7 +703,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_Ol(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }
 

@@ -37,7 +37,7 @@ func TabIndex(tabIndex string) htmfunc.AttributeRenderer {
     return attribute.Attribute("tabindex", tabIndex)
 }
 
-// Value creates the value attribute - Ordinal value of the list item
+// Value_Li creates the value attribute - Ordinal value of the list item
 //
 // It can be applied to the following elements:
 //   - [li]
@@ -49,6 +49,6 @@ func TabIndex(tabIndex string) htmfunc.AttributeRenderer {
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.AttributeRenderer {
+func Value_Li(value string) htmfunc.AttributeRenderer {
     return attribute.Attribute("value", value)
 }

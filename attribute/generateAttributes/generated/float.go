@@ -37,7 +37,7 @@ func Low(low string) htmfunc.AttributeRenderer {
     return attribute.Attribute("low", low)
 }
 
-// Max creates the max attribute - Upper bound of range
+// Max_MeterProgress creates the max attribute - Upper bound of range
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -51,11 +51,11 @@ func Low(low string) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max(max string) htmfunc.AttributeRenderer {
+func Max_MeterProgress(max string) htmfunc.AttributeRenderer {
     return attribute.Attribute("max", max)
 }
 
-// Min creates the min attribute - Lower bound of range
+// Min_Meter creates the min attribute - Lower bound of range
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -67,7 +67,7 @@ func Max(max string) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-min
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min(min string) htmfunc.AttributeRenderer {
+func Min_Meter(min string) htmfunc.AttributeRenderer {
     return attribute.Attribute("min", min)
 }
 
@@ -103,7 +103,7 @@ func Step(step string) htmfunc.AttributeRenderer {
     return attribute.Attribute("step", step)
 }
 
-// Value creates the value attribute - Current value of the element
+// Value_MeterProgress creates the value attribute - Current value of the element
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -117,6 +117,6 @@ func Step(step string) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.AttributeRenderer {
+func Value_MeterProgress(value string) htmfunc.AttributeRenderer {
     return attribute.Attribute("value", value)
 }

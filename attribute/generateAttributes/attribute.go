@@ -72,7 +72,33 @@ func findAttributes(body *html.Node) attributes {
 
 	tBody := findTBody(attributesTable)
 
-	attrs := attributes{
+	attrsByName := make(map[string][]*attribute)
+
+	attrs := make([]*attribute, 0, 256)
+	for row := range tBody.ChildNodes() {
+		attr := parseAttribute(row)
+		addByName(attrsByName, &attr)
+		attrs = append(attrs, &attr)
+	}
+
+	disambiguateAttrs(attrsByName)
+
+	return classify(attrs)
+}
+
+func addByName(attrsByName map[string][]*attribute, attr *attribute) {
+	attrsWithName, ok := attrsByName[attr.Name]
+	if !ok {
+		attrsWithName = make([]*attribute, 0, 1)
+	}
+	attrsWithName = append(attrsWithName, attr)
+	attrsByName[attr.Name] = attrsWithName
+}
+
+var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
+
+func classify(attrs []*attribute) attributes {
+	attrsClassified := attributes{
 		Text:           make([]attribute, 0, 16),
 		Bool:           make([]attribute, 0, 16),
 		Enum:           make([]attribute, 0, 16),
@@ -85,71 +111,64 @@ func findAttributes(body *html.Node) attributes {
 		Uint:           make([]attribute, 0, 16),
 	}
 
-	for row := range tBody.ChildNodes() {
-		attr := parseAttribute(row)
+	for _, attr := range attrs {
 
-		classifyAndAdd(&attrs, attr)
+		if attr.Value == "[Boolean attribute]" {
+			attrsClassified.Bool = append(attrsClassified.Bool, *attr)
+			continue
+		}
+
+		if enumPattern.MatchString(attr.Value) {
+			// TODO should be exchanged for something like scanner to avoid the two pass/allocations here,
+			//   but since this is not performance critical keep it as is for the moment.
+			attr.Value = strings.ReplaceAll(attr.Value, "; ", ";")
+			attr.Values = strings.Split(attr.Value, ";")
+			attrsClassified.Enum = append(attrsClassified.Enum, *attr)
+			continue
+		}
+
+		if strings.HasPrefix(attr.Value, "[input type keyword]") {
+			attr.Values = inputTypes
+
+			attrsClassified.InputType = append(attrsClassified.InputType, *attr)
+
+			continue
+		}
+
+		if isCommaSeparatedList(attr.Value) {
+			attrsClassified.ListComma = append(attrsClassified.ListComma, *attr)
+			continue
+		}
+
+		if strings.HasPrefix(attr.Value, "[Valid list of floating-point numbers]") {
+			attrsClassified.ListCommaFloat = append(attrsClassified.ListCommaFloat, *attr)
+			continue
+		}
+
+		if isSpaceSeparatedList(attr.Value) {
+			attrsClassified.ListSpace = append(attrsClassified.ListSpace, *attr)
+			continue
+		}
+
+		if strings.HasPrefix(attr.Value, "[Valid floating-point number]") {
+			attrsClassified.Float = append(attrsClassified.Float, *attr)
+			continue
+		}
+
+		if strings.Contains(attr.Value, "[Valid integer]") {
+			attrsClassified.Int = append(attrsClassified.Int, *attr)
+			continue
+		}
+
+		if strings.HasPrefix(attr.Value, "[Valid non-negative integer]") {
+			attrsClassified.Uint = append(attrsClassified.Uint, *attr)
+			continue
+		}
+
+		attrsClassified.Text = append(attrsClassified.Text, *attr)
 	}
 
-	return attrs
-}
-
-var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
-
-func classifyAndAdd(attrs *attributes, attr attribute) {
-	if attr.Value == "[Boolean attribute]" {
-		attrs.Bool = append(attrs.Bool, attr)
-		return
-	}
-
-	if enumPattern.MatchString(attr.Value) {
-		// TODO should be exchanged for something like scanner to avoid the two pass/allocations here,
-		//   but since this is not performance critical keep it as is for the moment.
-		attr.Value = strings.ReplaceAll(attr.Value, "; ", ";")
-		attr.Values = strings.Split(attr.Value, ";")
-		attrs.Enum = append(attrs.Enum, attr)
-		return
-	}
-
-	if strings.HasPrefix(attr.Value, "[input type keyword]") {
-		attr.Values = inputTypes
-
-		attrs.InputType = append(attrs.InputType, attr)
-
-		return
-	}
-
-	if isCommaSeparatedList(attr.Value) {
-		attrs.ListComma = append(attrs.ListComma, attr)
-		return
-	}
-
-	if strings.HasPrefix(attr.Value, "[Valid list of floating-point numbers]") {
-		attrs.ListCommaFloat = append(attrs.ListCommaFloat, attr)
-		return
-	}
-
-	if isSpaceSeparatedList(attr.Value) {
-		attrs.ListSpace = append(attrs.ListSpace, attr)
-		return
-	}
-
-	if strings.HasPrefix(attr.Value, "[Valid floating-point number]") {
-		attrs.Float = append(attrs.Float, attr)
-		return
-	}
-
-	if strings.Contains(attr.Value, "[Valid integer]") {
-		attrs.Int = append(attrs.Int, attr)
-		return
-	}
-
-	if strings.HasPrefix(attr.Value, "[Valid non-negative integer]") {
-		attrs.Uint = append(attrs.Uint, attr)
-		return
-	}
-
-	attrs.Text = append(attrs.Text, attr)
+	return attrsClassified
 }
 
 func isCommaSeparatedList(value string) bool {

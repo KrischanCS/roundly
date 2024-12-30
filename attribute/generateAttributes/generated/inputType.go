@@ -5,7 +5,7 @@ import (
     "github.com/ch-schulz/htmfunc/attribute"
 )
 
-// Type creates the type attribute - Type of form control
+// Type_Input creates the type attribute - Type of form control
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -39,6 +39,6 @@ import (
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_Input(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }

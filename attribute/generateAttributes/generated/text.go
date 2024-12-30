@@ -120,7 +120,7 @@ func As(as string) htmfunc.AttributeRenderer {
     return attribute.Attribute("as", as)
 }
 
-// AutoComplete creates the autocomplete attribute - Hint for form autofill feature
+// AutoComplete_InputSelectTextarea creates the autocomplete attribute - Hint for form autofill feature
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -136,7 +136,7 @@ func As(as string) htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-autocomplete
 // [Autofill field]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#autofill-field
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoComplete(autoComplete string) htmfunc.AttributeRenderer {
+func AutoComplete_InputSelectTextarea(autoComplete string) htmfunc.AttributeRenderer {
     return attribute.Attribute("autocomplete", autoComplete)
 }
 
@@ -211,7 +211,7 @@ func Data(data string) htmfunc.AttributeRenderer {
     return attribute.Attribute("data", data)
 }
 
-// DateTime creates the datetime attribute - Date and (optionally) time of the change
+// DateTime_DelIns creates the datetime attribute - Date and (optionally) time of the change
 //
 // It can be applied to the following elements:
 //   - [del]
@@ -225,11 +225,11 @@ func Data(data string) htmfunc.AttributeRenderer {
 // [ins]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [Valid date string with optional time]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string-with-optional-time
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime(dateTime string) htmfunc.AttributeRenderer {
+func DateTime_DelIns(dateTime string) htmfunc.AttributeRenderer {
     return attribute.Attribute("datetime", dateTime)
 }
 
-// DateTime creates the datetime attribute - Machine-readable value
+// DateTime_Time creates the datetime attribute - Machine-readable value
 //
 // It can be applied to the following elements:
 //   - [time]
@@ -250,7 +250,7 @@ func DateTime(dateTime string) htmfunc.AttributeRenderer {
 // [valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [valid duration string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-duration-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime(dateTime string) htmfunc.AttributeRenderer {
+func DateTime_Time(dateTime string) htmfunc.AttributeRenderer {
     return attribute.Attribute("datetime", dateTime)
 }
 
@@ -291,7 +291,7 @@ func Download(download string) htmfunc.AttributeRenderer {
     return attribute.Attribute("download", download)
 }
 
-// For creates the for attribute - Associate the label with form control
+// For_Label creates the for attribute - Associate the label with form control
 //
 // It can be applied to the following elements:
 //   - [label]
@@ -303,7 +303,7 @@ func Download(download string) htmfunc.AttributeRenderer {
 // [label]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func For(forV string) htmfunc.AttributeRenderer {
+func For_Label(forV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("for", forV)
 }
 
@@ -378,7 +378,7 @@ func FormTarget(formTarget string) htmfunc.AttributeRenderer {
     return attribute.Attribute("formtarget", formTarget)
 }
 
-// HRef creates the href attribute - Address of the [hyperlink]
+// HRef_AArea creates the href attribute - Address of the [hyperlink]
 //
 // It can be applied to the following elements:
 //   - [a]
@@ -393,11 +393,11 @@ func FormTarget(formTarget string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.AttributeRenderer {
+func HRef_AArea(hRef string) htmfunc.AttributeRenderer {
     return attribute.Attribute("href", hRef)
 }
 
-// HRef creates the href attribute - Address of the [hyperlink]
+// HRef_Link creates the href attribute - Address of the [hyperlink]
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -410,11 +410,11 @@ func HRef(hRef string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.AttributeRenderer {
+func HRef_Link(hRef string) htmfunc.AttributeRenderer {
     return attribute.Attribute("href", hRef)
 }
 
-// HRef creates the href attribute - [Document base URL]
+// HRef_Base creates the href attribute - [Document base URL]
 //
 // It can be applied to the following elements:
 //   - [base]
@@ -427,7 +427,7 @@ func HRef(hRef string) htmfunc.AttributeRenderer {
 // [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.AttributeRenderer {
+func HRef_Base(hRef string) htmfunc.AttributeRenderer {
     return attribute.Attribute("href", hRef)
 }
 
@@ -588,7 +588,7 @@ func List(list string) htmfunc.AttributeRenderer {
     return attribute.Attribute("list", list)
 }
 
-// Max creates the max attribute - Maximum value
+// Max_Input creates the max attribute - Maximum value
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -599,7 +599,7 @@ func List(list string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-max
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max(max string) htmfunc.AttributeRenderer {
+func Max_Input(max string) htmfunc.AttributeRenderer {
     return attribute.Attribute("max", max)
 }
 
@@ -625,7 +625,7 @@ func Media(media string) htmfunc.AttributeRenderer {
     return attribute.Attribute("media", media)
 }
 
-// Min creates the min attribute - Minimum value
+// Min_Input creates the min attribute - Minimum value
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -636,11 +636,11 @@ func Media(media string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-min
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min(min string) htmfunc.AttributeRenderer {
+func Min_Input(min string) htmfunc.AttributeRenderer {
     return attribute.Attribute("min", min)
 }
 
-// Name creates the name attribute - Name of the element to use for [form submission] and in the [form.elements] API
+// Name_InputsOutputs creates the name attribute - Name of the element to use for [form submission] and in the [form.elements] API
 //
 // It can be applied to the following elements:
 //   - [button]
@@ -666,11 +666,11 @@ func Min(min string) htmfunc.AttributeRenderer {
 // [form.elements]: https://html.spec.whatwg.org/dev/forms.html#dom-form-elements
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_InputsOutputs(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Name of group of mutually-exclusive [details] elements
+// Name_Details creates the name attribute - Name of group of mutually-exclusive [details] elements
 //
 // It can be applied to the following elements:
 //   - [details]
@@ -683,11 +683,11 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_Details(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Name of form to use in the [document.forms] API
+// Name_Form creates the name attribute - Name of form to use in the [document.forms] API
 //
 // It can be applied to the following elements:
 //   - [form]
@@ -700,11 +700,11 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [document.forms]: https://html.spec.whatwg.org/dev/dom.html#dom-document-forms
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_Form(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Name of [content navigable]
+// Name_IframeObject creates the name attribute - Name of [content navigable]
 //
 // It can be applied to the following elements:
 //   - [iframe]
@@ -719,11 +719,11 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [content navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#content-navigable
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_IframeObject(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Name of [image map] to [reference] from the [usemap] attribute
+// Name_Map creates the name attribute - Name of [image map] to [reference] from the [usemap] attribute
 //
 // It can be applied to the following elements:
 //   - [map]
@@ -738,11 +738,11 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [usemap]: https://html.spec.whatwg.org/dev/image-maps.html#attr-hyperlink-usemap
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_Map(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Metadata name
+// Name_Meta creates the name attribute - Metadata name
 //
 // It can be applied to the following elements:
 //   - [meta]
@@ -754,11 +754,11 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_Meta(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
-// Name creates the name attribute - Name of shadow tree slot
+// Name_Slot creates the name attribute - Name of shadow tree slot
 //
 // It can be applied to the following elements:
 //   - [slot]
@@ -770,7 +770,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // [slot]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.AttributeRenderer {
+func Name_Slot(name string) htmfunc.AttributeRenderer {
     return attribute.Attribute("name", name)
 }
 
@@ -887,7 +887,7 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
     return attribute.Attribute("referrerpolicy", referrerPolicy)
 }
 
-// Sizes creates the sizes attribute - Image sizes for different page layouts
+// Sizes_ImgSource creates the sizes attribute - Image sizes for different page layouts
 //
 // It can be applied to the following elements:
 //   - [img]
@@ -901,7 +901,7 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-sizes
 // [Valid source size list]: https://html.spec.whatwg.org/dev/images.html#valid-source-size-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Sizes(sizes string) htmfunc.AttributeRenderer {
+func Sizes_ImgSource(sizes string) htmfunc.AttributeRenderer {
     return attribute.Attribute("sizes", sizes)
 }
 
@@ -1002,7 +1002,7 @@ func Style(style string) htmfunc.AttributeRenderer {
     return attribute.Attribute("style", style)
 }
 
-// Target creates the target attribute - [Navigable] for [hyperlink][navigation]
+// Target_AArea creates the target attribute - [Navigable] for [hyperlink][navigation]
 //
 // It can be applied to the following elements:
 //   - [a]
@@ -1019,11 +1019,11 @@ func Style(style string) htmfunc.AttributeRenderer {
 // [navigation]: https://html.spec.whatwg.org/dev/browsing-the-web.html#navigate
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.AttributeRenderer {
+func Target_AArea(target string) htmfunc.AttributeRenderer {
     return attribute.Attribute("target", target)
 }
 
-// Target creates the target attribute - Default [navigable] for [hyperlink][navigation] and [form submission]
+// Target_Base creates the target attribute - Default [navigable] for [hyperlink][navigation] and [form submission]
 //
 // It can be applied to the following elements:
 //   - [base]
@@ -1039,11 +1039,11 @@ func Target(target string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.AttributeRenderer {
+func Target_Base(target string) htmfunc.AttributeRenderer {
     return attribute.Attribute("target", target)
 }
 
-// Target creates the target attribute - [Navigable] for [form submission]
+// Target_Form creates the target attribute - [Navigable] for [form submission]
 //
 // It can be applied to the following elements:
 //   - [form]
@@ -1057,7 +1057,7 @@ func Target(target string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.AttributeRenderer {
+func Target_Form(target string) htmfunc.AttributeRenderer {
     return attribute.Attribute("target", target)
 }
 
@@ -1077,7 +1077,7 @@ func Title(title string) htmfunc.AttributeRenderer {
     return attribute.Attribute("title", title)
 }
 
-// Title creates the title attribute - Full term or expansion of abbreviation
+// Title_AbbrDfn creates the title attribute - Full term or expansion of abbreviation
 //
 // It can be applied to the following elements:
 //   - [abbr]
@@ -1091,11 +1091,11 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [dfn]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-dfn-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(title string) htmfunc.AttributeRenderer {
+func Title_AbbrDfn(title string) htmfunc.AttributeRenderer {
     return attribute.Attribute("title", title)
 }
 
-// Title creates the title attribute - Description of pattern (when used with [pattern] attribute)
+// Title_Input creates the title attribute - Description of pattern (when used with [pattern] attribute)
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -1108,11 +1108,11 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [pattern]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(title string) htmfunc.AttributeRenderer {
+func Title_Input(title string) htmfunc.AttributeRenderer {
     return attribute.Attribute("title", title)
 }
 
-// Title creates the title attribute - Title of the link
+// Title_Link creates the title attribute - Title of the link
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -1124,11 +1124,11 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(title string) htmfunc.AttributeRenderer {
+func Title_Link(title string) htmfunc.AttributeRenderer {
     return attribute.Attribute("title", title)
 }
 
-// Title creates the title attribute - [CSS style sheet set name]
+// Title_LinkStyle creates the title attribute - [CSS style sheet set name]
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -1143,11 +1143,11 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [CSS style sheet set name]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom/#css-style-sheet-set-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(title string) htmfunc.AttributeRenderer {
+func Title_LinkStyle(title string) htmfunc.AttributeRenderer {
     return attribute.Attribute("title", title)
 }
 
-// Type creates the type attribute - Hint for the type of the referenced resource
+// Type_ALink creates the type attribute - Hint for the type of the referenced resource
 //
 // It can be applied to the following elements:
 //   - [a]
@@ -1161,11 +1161,11 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_ALink(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }
 
-// Type creates the type attribute - Type of embedded resource
+// Type_EmbedObjectSource creates the type attribute - Type of embedded resource
 //
 // It can be applied to the following elements:
 //   - [embed]
@@ -1181,11 +1181,11 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_EmbedObjectSource(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }
 
-// Type creates the type attribute - Type of script
+// Type_Script creates the type attribute - Type of script
 //
 // It can be applied to the following elements:
 //   - [script]
@@ -1198,7 +1198,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // [valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [JavaScript MIME type essence match]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.AttributeRenderer {
+func Type_Script(typeV string) htmfunc.AttributeRenderer {
     return attribute.Attribute("type", typeV)
 }
 
@@ -1219,7 +1219,7 @@ func UseMap(useMap string) htmfunc.AttributeRenderer {
     return attribute.Attribute("usemap", useMap)
 }
 
-// Value creates the value attribute - Value to be used for [form submission]
+// Value_ButtonOption creates the value attribute - Value to be used for [form submission]
 //
 // It can be applied to the following elements:
 //   - [button]
@@ -1234,11 +1234,11 @@ func UseMap(useMap string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.AttributeRenderer {
+func Value_ButtonOption(value string) htmfunc.AttributeRenderer {
     return attribute.Attribute("value", value)
 }
 
-// Value creates the value attribute - Machine-readable value
+// Value_Data creates the value attribute - Machine-readable value
 //
 // It can be applied to the following elements:
 //   - [data]
@@ -1250,11 +1250,11 @@ func Value(value string) htmfunc.AttributeRenderer {
 // [data]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-data-value
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.AttributeRenderer {
+func Value_Data(value string) htmfunc.AttributeRenderer {
     return attribute.Attribute("value", value)
 }
 
-// Value creates the value attribute - Value of the form control
+// Value_Input creates the value attribute - Value of the form control
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -1265,6 +1265,6 @@ func Value(value string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.AttributeRenderer {
+func Value_Input(value string) htmfunc.AttributeRenderer {
     return attribute.Attribute("value", value)
 }
