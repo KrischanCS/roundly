@@ -1,6 +1,7 @@
 package generated
 
 import (
+    "strconv"
     "github.com/ch-schulz/htmfunc"
 )
 
@@ -16,8 +17,8 @@ import (
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-cols
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Cols(cols string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("cols", cols)
+func Cols(cols uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("cols", strconv.FormatUint(uint64(cols), 10))
 }
 
 // ColSpan creates the colspan attribute - Number of columns that the cell is to span
@@ -34,8 +35,8 @@ func Cols(cols string) htmfunc.AttributeRenderer {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-colspan
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ColSpan(colSpan string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("colspan", colSpan)
+func ColSpan(colSpan uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("colspan", strconv.FormatUint(uint64(colSpan), 10))
 }
 
 // Height creates the height attribute - Vertical dimension
@@ -65,8 +66,8 @@ func ColSpan(colSpan string) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Height(height string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("height", height)
+func Height(height uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("height", strconv.FormatUint(uint64(height), 10))
 }
 
 // MaxLength creates the maxlength attribute - Maximum [length] of value
@@ -84,8 +85,8 @@ func Height(height string) htmfunc.AttributeRenderer {
 // [length]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-length
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MaxLength(maxLength string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("maxlength", maxLength)
+func MaxLength(maxLength uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("maxlength", strconv.FormatUint(uint64(maxLength), 10))
 }
 
 // MinLength creates the minlength attribute - Minimum [length] of value
@@ -103,8 +104,8 @@ func MaxLength(maxLength string) htmfunc.AttributeRenderer {
 // [length]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-length
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MinLength(minLength string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("minlength", minLength)
+func MinLength(minLength uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("minlength", strconv.FormatUint(uint64(minLength), 10))
 }
 
 // Rows creates the rows attribute - Number of lines to show
@@ -119,8 +120,8 @@ func MinLength(minLength string) htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-rows
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rows(rows string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("rows", rows)
+func Rows(rows uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("rows", strconv.FormatUint(uint64(rows), 10))
 }
 
 // RowSpan creates the rowspan attribute - Number of rows that the cell is to span
@@ -137,8 +138,8 @@ func Rows(rows string) htmfunc.AttributeRenderer {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-rowspan
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func RowSpan(rowSpan string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("rowspan", rowSpan)
+func RowSpan(rowSpan uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("rowspan", strconv.FormatUint(uint64(rowSpan), 10))
 }
 
 // Size creates the size attribute - Size of the control
@@ -155,8 +156,8 @@ func RowSpan(rowSpan string) htmfunc.AttributeRenderer {
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-size
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Size(size string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("size", size)
+func Size(size uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("size", strconv.FormatUint(uint64(size), 10))
 }
 
 // Span creates the span attribute - Number of columns spanned by the element
@@ -173,8 +174,8 @@ func Size(size string) htmfunc.AttributeRenderer {
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-colgroup-span
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Span(span string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("span", span)
+func Span(span uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("span", strconv.FormatUint(uint64(span), 10))
 }
 
 // Width creates the width attribute - Horizontal dimension
@@ -204,6 +205,6 @@ func Span(span string) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Width(width string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("width", width)
+func Width(width uint) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("width", strconv.FormatUint(uint64(width), 10))
 }

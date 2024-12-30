@@ -1,6 +1,7 @@
 package generated
 
 import (
+    "strconv"
     "github.com/ch-schulz/htmfunc"
 )
 
@@ -16,8 +17,8 @@ import (
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-high
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func High(high string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("high", high)
+func High(high float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("high", strconv.FormatFloat(high, 'f', -1, 64))
 }
 
 // Low creates the low attribute - High limit of low range
@@ -32,8 +33,8 @@ func High(high string) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-low
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Low(low string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("low", low)
+func Low(low float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("low", strconv.FormatFloat(low, 'f', -1, 64))
 }
 
 // Max_MeterProgress creates the max attribute - Upper bound of range
@@ -50,8 +51,8 @@ func Low(low string) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max_MeterProgress(max string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("max", max)
+func Max_MeterProgress(max float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("max", strconv.FormatFloat(max, 'f', -1, 64))
 }
 
 // Min_Meter creates the min attribute - Lower bound of range
@@ -66,8 +67,8 @@ func Max_MeterProgress(max string) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-min
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min_Meter(min string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("min", min)
+func Min_Meter(min float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("min", strconv.FormatFloat(min, 'f', -1, 64))
 }
 
 // Optimum creates the optimum attribute - Optimum value in gauge
@@ -82,8 +83,8 @@ func Min_Meter(min string) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-optimum
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Optimum(optimum string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("optimum", optimum)
+func Optimum(optimum float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("optimum", strconv.FormatFloat(optimum, 'f', -1, 64))
 }
 
 // Step creates the step attribute - Granularity to be matched by the form control's value
@@ -98,8 +99,8 @@ func Optimum(optimum string) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-step
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Step(step string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("step", step)
+func Step(step float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("step", strconv.FormatFloat(step, 'f', -1, 64))
 }
 
 // Value_MeterProgress creates the value attribute - Current value of the element
@@ -116,6 +117,6 @@ func Step(step string) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_MeterProgress(value string) htmfunc.AttributeRenderer {
-    return htmfunc.Attribute("value", value)
+func Value_MeterProgress(value float64) htmfunc.AttributeRenderer {
+    return htmfunc.Attribute("value", strconv.FormatFloat(value, 'f', -1, 64))
 }

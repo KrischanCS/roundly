@@ -14,6 +14,13 @@ var textAttrTemplate = template.Must(template.ParseFiles("templates/attributesTe
 var boolAttrTemplate = template.Must(template.ParseFiles("templates/attributesBool.go.tmpl"))
 var enumAttrTemplate = template.Must(template.ParseFiles("templates/attributesEnum.go.tmpl"))
 var inputTypeAttrTemplate = template.Must(template.ParseFiles("templates/attributesInputType.go.tmpl"))
+var commaSeparatedAttrTemplate = template.Must(template.ParseFiles("templates/attributesCommaSeparated.go.tmpl"))
+var commaSeparatedFloatAttrTemplate = template.Must(template.ParseFiles("templates/attributesCommaSeparatedFloats.go." +
+	"" + "tmpl"))
+var spaceSeparatedAttrTemplate = template.Must(template.ParseFiles("templates/attributesSpaceSeparated.go.tmpl"))
+var floatAttrTemplate = template.Must(template.ParseFiles("templates/attributesFloat.go.tmpl"))
+var intAttrTemplate = template.Must(template.ParseFiles("templates/attributesInt.go.tmpl"))
+var uintAttrTemplate = template.Must(template.ParseFiles("templates/attributesUint.go.tmpl"))
 
 func main() {
 	flag.Parse()
@@ -25,12 +32,12 @@ func main() {
 	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
 	generateFile(enumAttrTemplate, attributes.Enum, "enum.go")
 	generateFile(inputTypeAttrTemplate, attributes.InputType, "inputType.go")
-	generateFile(textAttrTemplate, attributes.ListComma, "commaSeperated.go")
-	generateFile(textAttrTemplate, attributes.ListCommaFloat, "commaSeperatedFloat.go")
-	generateFile(textAttrTemplate, attributes.ListSpace, "spaceSeperated.go")
-	generateFile(textAttrTemplate, attributes.Float, "float.go")
-	generateFile(textAttrTemplate, attributes.Int, "int.go")
-	generateFile(textAttrTemplate, attributes.Uint, "uint.go")
+	generateFile(commaSeparatedAttrTemplate, attributes.ListComma, "commaSeperated.go")
+	generateFile(commaSeparatedFloatAttrTemplate, attributes.ListCommaFloat, "commaSeperatedFloat.go")
+	generateFile(spaceSeparatedAttrTemplate, attributes.ListSpace, "spaceSeperated.go")
+	generateFile(floatAttrTemplate, attributes.Float, "float.go")
+	generateFile(intAttrTemplate, attributes.Int, "int.go")
+	generateFile(uintAttrTemplate, attributes.Uint, "uint.go")
 }
 
 func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {
