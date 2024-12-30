@@ -1,6 +1,6 @@
 package htmfunc
 
-func Attribute(name string, values ...string) AttributeRenderer {
+func Attribute(name string, value string) AttributeRenderer {
 	return AttributeWriteFunc(func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
@@ -12,7 +12,28 @@ func Attribute(name string, values ...string) AttributeRenderer {
 			return err
 		}
 
-		err = writeStringsSpaceSeparated(w, values)
+		_, err = w.WriteString(value)
+		if err != nil {
+			return err
+		}
+
+		return w.WriteByte('"')
+	})
+}
+
+func Attributes(name string, delimiter byte, values ...string) AttributeRenderer {
+	return AttributeWriteFunc(func(w Writer) error {
+		_, err := w.WriteString(name)
+		if err != nil {
+			return err
+		}
+
+		_, err = w.WriteString(`="`)
+		if err != nil {
+			return err
+		}
+
+		err = writeStringsSeparated(w, delimiter, values)
 		if err != nil {
 			return err
 		}
@@ -28,7 +49,7 @@ func BooleanAttribute(name string) AttributeRenderer {
 	})
 }
 
-func writeStringsSpaceSeparated(w Writer, values []string) error {
+func writeStringsSeparated(w Writer, delimiter byte, values []string) error {
 	switch len(values) {
 	case 0:
 		return nil
@@ -43,7 +64,7 @@ func writeStringsSpaceSeparated(w Writer, values []string) error {
 	}
 
 	for _, v := range values[1:] {
-		err := w.WriteByte(' ')
+		err := w.WriteByte(delimiter)
 		if err != nil {
 			return err
 		}
