@@ -8,7 +8,7 @@ import (
 // Accept creates the accept attribute - Hint for expected file type in [file upload controls]
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: [Set of comma-separated tokens] (Additional rules apply, see elements documentation) consisting of [valid MIME type strings with no parameters] or audio/ (Additional rules apply, see elements documentation), video/ (Additional rules apply, see elements documentation), or image/ (Additional rules apply, see elements documentation)
 //
@@ -26,7 +26,7 @@ func Accept(accept string) htmfunc.AttributeRenderer {
 // ImageSrcSet creates the imagesrcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for [rel]="[preload]")
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: Comma-separated list of [image candidate strings]
 //
@@ -44,8 +44,8 @@ func ImageSrcSet(imageSrcSet string) htmfunc.AttributeRenderer {
 // SrcSet creates the srcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
 //
 // It can be applied to the following elements:
-//   - [[img]]
-//   - [[source]]
+//   - [img]
+//   - [source]
 //
 // Value constraints: Comma-separated list of [image candidate strings]
 //

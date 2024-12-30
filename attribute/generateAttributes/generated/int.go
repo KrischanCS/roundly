@@ -8,7 +8,7 @@ import (
 // Start creates the start attribute - Starting value of the list
 //
 // It can be applied to the following elements:
-//   - [[ol]]
+//   - [ol]
 //
 // Value constraints: [Valid integer]
 //
@@ -24,7 +24,7 @@ func Start(start string) htmfunc.AttributeRenderer {
 // TabIndex creates the tabindex attribute - Whether the element is focusable and sequentially focusable, andthe relative order of the element for the purposes of sequential focus navigation
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Valid integer]
 //
@@ -40,7 +40,7 @@ func TabIndex(tabIndex string) htmfunc.AttributeRenderer {
 // Value creates the value attribute - Ordinal value of the list item
 //
 // It can be applied to the following elements:
-//   - [[li]]
+//   - [li]
 //
 // Value constraints: [Valid integer]
 //

@@ -8,7 +8,7 @@ import (
 // Coords creates the coords attribute - Coordinates for the shape to be created in an [image map]
 //
 // It can be applied to the following elements:
-//   - [[area]]
+//   - [area]
 //
 // Value constraints: [Valid list of floating-point numbers] (Additional rules apply, see elements documentation)
 //

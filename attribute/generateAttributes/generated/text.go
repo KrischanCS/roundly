@@ -8,7 +8,7 @@ import (
 // Abbr creates the abbr attribute - Alternative label to use for the header cell when referencing the cell in other contexts
 //
 // It can be applied to the following elements:
-//   - [[th]]
+//   - [th]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -24,7 +24,7 @@ func Abbr(abbr string) htmfunc.AttributeRenderer {
 // AcceptCharset creates the accept-charset attribute - Character encodings to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Value constraints: [ASCII case-insensitive] match for "UTF-8"
 //
@@ -41,7 +41,7 @@ func AcceptCharset(acceptCharset string) htmfunc.AttributeRenderer {
 // Action creates the action attribute - [URL] to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -59,7 +59,7 @@ func Action(action string) htmfunc.AttributeRenderer {
 // Allow creates the allow attribute - [Permissions policy] to be applied to the [iframe]'s contents
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
+//   - [iframe]
 //
 // Value constraints: [Serialized permissions policy]
 //
@@ -77,9 +77,9 @@ func Allow(allow string) htmfunc.AttributeRenderer {
 // Alt creates the alt attribute - Replacement text for use when images are not available
 //
 // It can be applied to the following elements:
-//   - [[area]]
-//   - [[img]]
-//   - [[input]]
+//   - [area]
+//   - [img]
+//   - [input]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -97,7 +97,7 @@ func Alt(alt string) htmfunc.AttributeRenderer {
 // As creates the as attribute - [Potential destination] for a preload request (for [rel]="[preload]" and [rel]="[modulepreload]")
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Potential destination], for [rel]="[preload]"; [script-like destination], for [rel]="[modulepreload]"
 //
@@ -123,9 +123,9 @@ func As(as string) htmfunc.AttributeRenderer {
 // AutoComplete creates the autocomplete attribute - Hint for form autofill feature
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[select]]
-//   - [[textarea]]
+//   - [input]
+//   - [select]
+//   - [textarea]
 //
 // Value constraints: [Autofill field] name and related tokens (Additional rules apply, see elements documentation)
 //
@@ -143,10 +143,10 @@ func AutoComplete(autoComplete string) htmfunc.AttributeRenderer {
 // Cite creates the cite attribute - Link to the source of the quotation or more information about the edit
 //
 // It can be applied to the following elements:
-//   - [[blockquote]]
-//   - [[del]]
-//   - [[ins]]
-//   - [[q]]
+//   - [blockquote]
+//   - [del]
+//   - [ins]
+//   - [q]
 //
 // Value constraints: [Valid URL potentially surrounded by spaces]
 //
@@ -165,7 +165,7 @@ func Cite(cite string) htmfunc.AttributeRenderer {
 // Color creates the color attribute - Color to use when customizing a site's icon (for [rel]="mask-icon")
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: CSS [<color>]
 //
@@ -182,7 +182,7 @@ func Color(color string) htmfunc.AttributeRenderer {
 // Content creates the content attribute - Value of the element
 //
 // It can be applied to the following elements:
-//   - [[meta]]
+//   - [meta]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -198,7 +198,7 @@ func Content(content string) htmfunc.AttributeRenderer {
 // Data creates the data attribute - Address of the resource
 //
 // It can be applied to the following elements:
-//   - [[object]]
+//   - [object]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -214,8 +214,8 @@ func Data(data string) htmfunc.AttributeRenderer {
 // DateTime creates the datetime attribute - Date and (optionally) time of the change
 //
 // It can be applied to the following elements:
-//   - [[del]]
-//   - [[ins]]
+//   - [del]
+//   - [ins]
 //
 // Value constraints: [Valid date string with optional time]
 //
@@ -232,7 +232,7 @@ func DateTime(dateTime string) htmfunc.AttributeRenderer {
 // DateTime creates the datetime attribute - Machine-readable value
 //
 // It can be applied to the following elements:
-//   - [[time]]
+//   - [time]
 //
 // Value constraints: [Valid month string],[valid date string],[valid yearless date string],[valid time string],[valid local date and time string],[valid time-zone offset string],[valid global date and time string],[valid week string],[valid non-negative integer], or[valid duration string]
 //
@@ -257,8 +257,8 @@ func DateTime(dateTime string) htmfunc.AttributeRenderer {
 // DirName creates the dirname attribute - Name of form control to use for sending the element's [directionality] in [form submission]
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[textarea]]
+//   - [input]
+//   - [textarea]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -277,8 +277,8 @@ func DirName(dirName string) htmfunc.AttributeRenderer {
 // Download creates the download attribute - Whether to download the resource instead of navigating to it, and its filename if so
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
+//   - [a]
+//   - [area]
 //
 // Value constraints: Text
 //
@@ -294,7 +294,7 @@ func Download(download string) htmfunc.AttributeRenderer {
 // For creates the for attribute - Associate the label with form control
 //
 // It can be applied to the following elements:
-//   - [[label]]
+//   - [label]
 //
 // Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
@@ -310,14 +310,14 @@ func For(forV string) htmfunc.AttributeRenderer {
 // Form creates the form attribute - Associates the element with a [form] element
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[fieldset]]
-//   - [[input]]
-//   - [[object]]
-//   - [[output]]
-//   - [[select]]
-//   - [[textarea]]
-//   - [[form-associated custom elements]]
+//   - [button]
+//   - [fieldset]
+//   - [input]
+//   - [object]
+//   - [output]
+//   - [select]
+//   - [textarea]
+//   - [form-associated custom elements]
 //
 // Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
@@ -341,8 +341,8 @@ func Form(form string) htmfunc.AttributeRenderer {
 // FormAction creates the formaction attribute - [URL] to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -361,8 +361,8 @@ func FormAction(formAction string) htmfunc.AttributeRenderer {
 // FormTarget creates the formtarget attribute - [Navigable] for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Value constraints: [Valid navigable target name or keyword]
 //
@@ -381,8 +381,8 @@ func FormTarget(formTarget string) htmfunc.AttributeRenderer {
 // HRef creates the href attribute - Address of the [hyperlink]
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
+//   - [a]
+//   - [area]
 //
 // Value constraints: [Valid URL potentially surrounded by spaces]
 //
@@ -400,7 +400,7 @@ func HRef(hRef string) htmfunc.AttributeRenderer {
 // HRef creates the href attribute - Address of the [hyperlink]
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -417,7 +417,7 @@ func HRef(hRef string) htmfunc.AttributeRenderer {
 // HRef creates the href attribute - [Document base URL]
 //
 // It can be applied to the following elements:
-//   - [[base]]
+//   - [base]
 //
 // Value constraints: [Valid URL potentially surrounded by spaces]
 //
@@ -434,8 +434,8 @@ func HRef(hRef string) htmfunc.AttributeRenderer {
 // HRefLang creates the hreflang attribute - Language of the linked resource
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[link]]
+//   - [a]
+//   - [link]
 //
 // Value constraints: Valid BCP 47 language tag
 //
@@ -451,7 +451,7 @@ func HRefLang(hRefLang string) htmfunc.AttributeRenderer {
 // Id creates the id attribute - The element's [ID]
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -468,7 +468,7 @@ func Id(id string) htmfunc.AttributeRenderer {
 // ImageSizes creates the imagesizes attribute - Image sizes for different page layouts (for [rel]="[preload]")
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Valid source size list]
 //
@@ -486,8 +486,8 @@ func ImageSizes(imageSizes string) htmfunc.AttributeRenderer {
 // Integrity creates the integrity attribute - Integrity metadata used in Subresource Integrity checks [[SRI]]
 //
 // It can be applied to the following elements:
-//   - [[link]]
-//   - [[script]]
+//   - [link]
+//   - [script]
 //
 // Value constraints: [Text]
 //
@@ -505,7 +505,7 @@ func Integrity(integrity string) htmfunc.AttributeRenderer {
 // Is creates the is attribute - Creates a [customized built-in element]
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Valid custom element name] of a defined [customized built-in element]
 //
@@ -523,7 +523,7 @@ func Is(is string) htmfunc.AttributeRenderer {
 // ItemId creates the itemid attribute - [Global identifier] for a microdata item
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Valid URL potentially surrounded by spaces]
 //
@@ -540,9 +540,9 @@ func ItemId(itemId string) htmfunc.AttributeRenderer {
 // Label creates the label attribute - User-visible label
 //
 // It can be applied to the following elements:
-//   - [[optgroup]]
-//   - [[option]]
-//   - [[track]]
+//   - [optgroup]
+//   - [option]
+//   - [track]
 //
 // Value constraints: [Text]
 //
@@ -560,7 +560,7 @@ func Label(label string) htmfunc.AttributeRenderer {
 // Lang creates the lang attribute - Language of the element
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: Valid BCP 47 language tag or the empty string
 //
@@ -575,7 +575,7 @@ func Lang(lang string) htmfunc.AttributeRenderer {
 // List creates the list attribute - List of autocomplete options
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
@@ -591,7 +591,7 @@ func List(list string) htmfunc.AttributeRenderer {
 // Max creates the max attribute - Maximum value
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: Varies (Additional rules apply, see elements documentation)
 //
@@ -606,10 +606,10 @@ func Max(max string) htmfunc.AttributeRenderer {
 // Media creates the media attribute - Applicable media
 //
 // It can be applied to the following elements:
-//   - [[link]]
-//   - [[meta]]
-//   - [[source]]
-//   - [[style]]
+//   - [link]
+//   - [meta]
+//   - [source]
+//   - [style]
 //
 // Value constraints: [Valid media query list]
 //
@@ -628,7 +628,7 @@ func Media(media string) htmfunc.AttributeRenderer {
 // Min creates the min attribute - Minimum value
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: Varies (Additional rules apply, see elements documentation)
 //
@@ -643,13 +643,13 @@ func Min(min string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of the element to use for [form submission] and in the [form.elements] API
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[fieldset]]
-//   - [[input]]
-//   - [[output]]
-//   - [[select]]
-//   - [[textarea]]
-//   - [[form-associated custom elements]]
+//   - [button]
+//   - [fieldset]
+//   - [input]
+//   - [output]
+//   - [select]
+//   - [textarea]
+//   - [form-associated custom elements]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -673,7 +673,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of group of mutually-exclusive [details] elements
 //
 // It can be applied to the following elements:
-//   - [[details]]
+//   - [details]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -690,7 +690,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of form to use in the [document.forms] API
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -707,8 +707,8 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of [content navigable]
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
-//   - [[object]]
+//   - [iframe]
+//   - [object]
 //
 // Value constraints: [Valid navigable target name or keyword]
 //
@@ -726,7 +726,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of [image map] to [reference] from the [usemap] attribute
 //
 // It can be applied to the following elements:
-//   - [[map]]
+//   - [map]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -745,7 +745,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Metadata name
 //
 // It can be applied to the following elements:
-//   - [[meta]]
+//   - [meta]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -761,7 +761,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Name creates the name attribute - Name of shadow tree slot
 //
 // It can be applied to the following elements:
-//   - [[slot]]
+//   - [slot]
 //
 // Value constraints: [Text]
 //
@@ -777,7 +777,7 @@ func Name(name string) htmfunc.AttributeRenderer {
 // Nonce creates the nonce attribute - Cryptographic nonce used in Content Security Policy checks [[CSP]]
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Text]
 //
@@ -794,7 +794,7 @@ func Nonce(nonce string) htmfunc.AttributeRenderer {
 // Pattern creates the pattern attribute - Pattern to be matched by the form control's value
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: Regular expression matching the JavaScript [Pattern] production
 //
@@ -810,8 +810,8 @@ func Pattern(pattern string) htmfunc.AttributeRenderer {
 // PlaceHolder creates the placeholder attribute - User-visible label to be placed within the form control
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[textarea]]
+//   - [input]
+//   - [textarea]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -828,8 +828,8 @@ func PlaceHolder(placeHolder string) htmfunc.AttributeRenderer {
 // PopOverTarget creates the popovertarget attribute - Targets a popover element to toggle, show, or hide
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Value constraints: [ID] (Additional rules apply, see elements documentation)
 //
@@ -846,7 +846,7 @@ func PopOverTarget(popOverTarget string) htmfunc.AttributeRenderer {
 // Poster creates the poster attribute - Poster frame to show prior to video playback
 //
 // It can be applied to the following elements:
-//   - [[video]]
+//   - [video]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -862,12 +862,12 @@ func Poster(poster string) htmfunc.AttributeRenderer {
 // ReferrerPolicy creates the referrerpolicy attribute - [Referrer policy] for [fetches] initiated by the element
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
-//   - [[iframe]]
-//   - [[img]]
-//   - [[link]]
-//   - [[script]]
+//   - [a]
+//   - [area]
+//   - [iframe]
+//   - [img]
+//   - [link]
+//   - [script]
 //
 // Value constraints: [Referrer policy]
 //
@@ -890,8 +890,8 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
 // Sizes creates the sizes attribute - Image sizes for different page layouts
 //
 // It can be applied to the following elements:
-//   - [[img]]
-//   - [[source]]
+//   - [img]
+//   - [source]
 //
 // Value constraints: [Valid source size list]
 //
@@ -908,7 +908,7 @@ func Sizes(sizes string) htmfunc.AttributeRenderer {
 // Slot creates the slot attribute - The element's desired slot
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Text]
 //
@@ -924,15 +924,15 @@ func Slot(slot string) htmfunc.AttributeRenderer {
 // Src creates the src attribute - Address of the resource
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[embed]]
-//   - [[iframe]]
-//   - [[img]]
-//   - [[input]]
-//   - [[script]]
-//   - [[source] (in [video] or [audio])]
-//   - [[track]]
-//   - [[video]]
+//   - [audio]
+//   - [embed]
+//   - [iframe]
+//   - [img]
+//   - [input]
+//   - [script]
+//   - [source] (in [video] or [audio])
+//   - [track]
+//   - [video]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -958,7 +958,7 @@ func Src(src string) htmfunc.AttributeRenderer {
 // SrcDoc creates the srcdoc attribute - A document to render in the [iframe]
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
+//   - [iframe]
 //
 // Value constraints: The source of [an iframesrcdoc document] (Additional rules apply, see elements documentation)
 //
@@ -975,7 +975,7 @@ func SrcDoc(srcDoc string) htmfunc.AttributeRenderer {
 // SrcLang creates the srclang attribute - Language of the text track
 //
 // It can be applied to the following elements:
-//   - [[track]]
+//   - [track]
 //
 // Value constraints: Valid BCP 47 language tag
 //
@@ -990,7 +990,7 @@ func SrcLang(srcLang string) htmfunc.AttributeRenderer {
 // Style creates the style attribute - Presentational and formatting instructions
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: CSS declarations (Additional rules apply, see elements documentation)
 //
@@ -1005,8 +1005,8 @@ func Style(style string) htmfunc.AttributeRenderer {
 // Target creates the target attribute - [Navigable] for [hyperlink][navigation]
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
+//   - [a]
+//   - [area]
 //
 // Value constraints: [Valid navigable target name or keyword]
 //
@@ -1026,7 +1026,7 @@ func Target(target string) htmfunc.AttributeRenderer {
 // Target creates the target attribute - Default [navigable] for [hyperlink][navigation] and [form submission]
 //
 // It can be applied to the following elements:
-//   - [[base]]
+//   - [base]
 //
 // Value constraints: [Valid navigable target name or keyword]
 //
@@ -1046,7 +1046,7 @@ func Target(target string) htmfunc.AttributeRenderer {
 // Target creates the target attribute - [Navigable] for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Value constraints: [Valid navigable target name or keyword]
 //
@@ -1064,7 +1064,7 @@ func Target(target string) htmfunc.AttributeRenderer {
 // Title creates the title attribute - Advisory information for the element
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Text]
 //
@@ -1080,8 +1080,8 @@ func Title(title string) htmfunc.AttributeRenderer {
 // Title creates the title attribute - Full term or expansion of abbreviation
 //
 // It can be applied to the following elements:
-//   - [[abbr]]
-//   - [[dfn]]
+//   - [abbr]
+//   - [dfn]
 //
 // Value constraints: [Text]
 //
@@ -1098,7 +1098,7 @@ func Title(title string) htmfunc.AttributeRenderer {
 // Title creates the title attribute - Description of pattern (when used with [pattern] attribute)
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: [Text]
 //
@@ -1115,7 +1115,7 @@ func Title(title string) htmfunc.AttributeRenderer {
 // Title creates the title attribute - Title of the link
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Text]
 //
@@ -1131,8 +1131,8 @@ func Title(title string) htmfunc.AttributeRenderer {
 // Title creates the title attribute - [CSS style sheet set name]
 //
 // It can be applied to the following elements:
-//   - [[link]]
-//   - [[style]]
+//   - [link]
+//   - [style]
 //
 // Value constraints: [Text]
 //
@@ -1150,8 +1150,8 @@ func Title(title string) htmfunc.AttributeRenderer {
 // Type creates the type attribute - Hint for the type of the referenced resource
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[link]]
+//   - [a]
+//   - [link]
 //
 // Value constraints: [Valid MIME type string]
 //
@@ -1168,9 +1168,9 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // Type creates the type attribute - Type of embedded resource
 //
 // It can be applied to the following elements:
-//   - [[embed]]
-//   - [[object]]
-//   - [[source]]
+//   - [embed]
+//   - [object]
+//   - [source]
 //
 // Value constraints: [Valid MIME type string]
 //
@@ -1188,7 +1188,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // Type creates the type attribute - Type of script
 //
 // It can be applied to the following elements:
-//   - [[script]]
+//   - [script]
 //
 // Value constraints: "module"; a [valid MIME type string] that is not a [JavaScript MIME type essence match]
 //
@@ -1205,7 +1205,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // UseMap creates the usemap attribute - Name of [image map] to use
 //
 // It can be applied to the following elements:
-//   - [[img]]
+//   - [img]
 //
 // Value constraints: [Valid hash-name reference] (Additional rules apply, see elements documentation)
 //
@@ -1222,8 +1222,8 @@ func UseMap(useMap string) htmfunc.AttributeRenderer {
 // Value creates the value attribute - Value to be used for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[option]]
+//   - [button]
+//   - [option]
 //
 // Value constraints: [Text]
 //
@@ -1241,7 +1241,7 @@ func Value(value string) htmfunc.AttributeRenderer {
 // Value creates the value attribute - Machine-readable value
 //
 // It can be applied to the following elements:
-//   - [[data]]
+//   - [data]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
 //
@@ -1257,7 +1257,7 @@ func Value(value string) htmfunc.AttributeRenderer {
 // Value creates the value attribute - Value of the form control
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: Varies (Additional rules apply, see elements documentation)
 //

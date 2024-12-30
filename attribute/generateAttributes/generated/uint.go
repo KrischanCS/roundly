@@ -8,7 +8,7 @@ import (
 // Cols creates the cols attribute - Maximum number of characters per line
 //
 // It can be applied to the following elements:
-//   - [[textarea]]
+//   - [textarea]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
 //
@@ -24,8 +24,8 @@ func Cols(cols string) htmfunc.AttributeRenderer {
 // ColSpan creates the colspan attribute - Number of columns that the cell is to span
 //
 // It can be applied to the following elements:
-//   - [[td]]
-//   - [[th]]
+//   - [td]
+//   - [th]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
 //
@@ -42,14 +42,14 @@ func ColSpan(colSpan string) htmfunc.AttributeRenderer {
 // Height creates the height attribute - Vertical dimension
 //
 // It can be applied to the following elements:
-//   - [[canvas]]
-//   - [[embed]]
-//   - [[iframe]]
-//   - [[img]]
-//   - [[input]]
-//   - [[object]]
-//   - [[source] (in [picture])]
-//   - [[video]]
+//   - [canvas]
+//   - [embed]
+//   - [iframe]
+//   - [img]
+//   - [input]
+//   - [object]
+//   - [source] (in [picture])
+//   - [video]
 //
 // Value constraints: [Valid non-negative integer]
 //
@@ -73,8 +73,8 @@ func Height(height string) htmfunc.AttributeRenderer {
 // MaxLength creates the maxlength attribute - Maximum [length] of value
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[textarea]]
+//   - [input]
+//   - [textarea]
 //
 // Value constraints: [Valid non-negative integer]
 //
@@ -92,8 +92,8 @@ func MaxLength(maxLength string) htmfunc.AttributeRenderer {
 // MinLength creates the minlength attribute - Minimum [length] of value
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[textarea]]
+//   - [input]
+//   - [textarea]
 //
 // Value constraints: [Valid non-negative integer]
 //
@@ -111,7 +111,7 @@ func MinLength(minLength string) htmfunc.AttributeRenderer {
 // Rows creates the rows attribute - Number of lines to show
 //
 // It can be applied to the following elements:
-//   - [[textarea]]
+//   - [textarea]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
 //
@@ -127,8 +127,8 @@ func Rows(rows string) htmfunc.AttributeRenderer {
 // RowSpan creates the rowspan attribute - Number of rows that the cell is to span
 //
 // It can be applied to the following elements:
-//   - [[td]]
-//   - [[th]]
+//   - [td]
+//   - [th]
 //
 // Value constraints: [Valid non-negative integer]
 //
@@ -145,8 +145,8 @@ func RowSpan(rowSpan string) htmfunc.AttributeRenderer {
 // Size creates the size attribute - Size of the control
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[select]]
+//   - [input]
+//   - [select]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
 //
@@ -163,8 +163,8 @@ func Size(size string) htmfunc.AttributeRenderer {
 // Span creates the span attribute - Number of columns spanned by the element
 //
 // It can be applied to the following elements:
-//   - [[col]]
-//   - [[colgroup]]
+//   - [col]
+//   - [colgroup]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
 //
@@ -181,14 +181,14 @@ func Span(span string) htmfunc.AttributeRenderer {
 // Width creates the width attribute - Horizontal dimension
 //
 // It can be applied to the following elements:
-//   - [[canvas]]
-//   - [[embed]]
-//   - [[iframe]]
-//   - [[img]]
-//   - [[input]]
-//   - [[object]]
-//   - [[source] (in [picture])]
-//   - [[video]]
+//   - [canvas]
+//   - [embed]
+//   - [iframe]
+//   - [img]
+//   - [input]
+//   - [object]
+//   - [source] (in [picture])
+//   - [video]
 //
 // Value constraints: [Valid non-negative integer]
 //

@@ -8,7 +8,7 @@ import (
 // AutoCapitalize creates the autocapitalize attribute - Recommended autocapitalization behavior (for supported input methods)
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[on]"
@@ -35,7 +35,7 @@ func AutoCapitalize(autoCapitalize string) htmfunc.AttributeRenderer {
 // AutoComplete creates the autocomplete attribute - Default setting for autofill feature for controls in the form
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Can hold one of the following values:
 //   - "on"
@@ -52,7 +52,7 @@ func AutoComplete(autoComplete string) htmfunc.AttributeRenderer {
 // AutoCorrect creates the autocorrect attribute - Recommended autocorrection behavior (for supported input methods)
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[on]"
@@ -71,7 +71,7 @@ func AutoCorrect(autoCorrect string) htmfunc.AttributeRenderer {
 // CharSet creates the charset attribute - [Character encoding declaration]
 //
 // It can be applied to the following elements:
-//   - [[meta]]
+//   - [meta]
 //
 // Can hold one of the following values:
 //   - "utf-8"
@@ -88,7 +88,7 @@ func CharSet(charSet string) htmfunc.AttributeRenderer {
 // ColorSpace creates the colorspace attribute - The color space of the serialized color
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Can hold one of the following values:
 //   - "[limited-srgb]"
@@ -107,7 +107,7 @@ func ColorSpace(colorSpace string) htmfunc.AttributeRenderer {
 // ContentEditable creates the contenteditable attribute - Whether the element is editable
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "true"
@@ -125,11 +125,11 @@ func ContentEditable(contentEditable string) htmfunc.AttributeRenderer {
 // CrossOrigin creates the crossorigin attribute - How the element handles crossorigin requests
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[img]]
-//   - [[link]]
-//   - [[script]]
-//   - [[video]]
+//   - [audio]
+//   - [img]
+//   - [link]
+//   - [script]
+//   - [video]
 //
 // Can hold one of the following values:
 //   - "[anonymous]"
@@ -152,7 +152,7 @@ func CrossOrigin(crossOrigin string) htmfunc.AttributeRenderer {
 // Decoding creates the decoding attribute - Decoding hint to use when processing this image for presentation
 //
 // It can be applied to the following elements:
-//   - [[img]]
+//   - [img]
 //
 // Can hold one of the following values:
 //   - "sync"
@@ -170,7 +170,7 @@ func Decoding(decoding string) htmfunc.AttributeRenderer {
 // Dir creates the dir attribute - [The text directionality] of the element
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[ltr]"
@@ -192,7 +192,7 @@ func Dir(dir string) htmfunc.AttributeRenderer {
 // Dir creates the dir attribute - [The text directionality] of the element
 //
 // It can be applied to the following elements:
-//   - [[bdo]]
+//   - [bdo]
 //
 // Can hold one of the following values:
 //   - "[ltr]"
@@ -212,7 +212,7 @@ func Dir(dir string) htmfunc.AttributeRenderer {
 // Draggable creates the draggable attribute - Whether the element is draggable
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "true"
@@ -229,7 +229,7 @@ func Draggable(draggable string) htmfunc.AttributeRenderer {
 // EncType creates the enctype attribute - Entry list encoding type to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Can hold one of the following values:
 //   - "[application/x-www-form-urlencoded]"
@@ -251,7 +251,7 @@ func EncType(encType string) htmfunc.AttributeRenderer {
 // EnterKeyHint creates the enterkeyhint attribute - Hint for selecting an enter key action
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[enter]"
@@ -280,9 +280,9 @@ func EnterKeyHint(enterKeyHint string) htmfunc.AttributeRenderer {
 // FetchPriority creates the fetchpriority attribute - Sets the [priority] for [fetches] initiated by the element
 //
 // It can be applied to the following elements:
-//   - [[img]]
-//   - [[link]]
-//   - [[script]]
+//   - [img]
+//   - [link]
+//   - [script]
 //
 // Can hold one of the following values:
 //   - "[auto]"
@@ -307,8 +307,8 @@ func FetchPriority(fetchPriority string) htmfunc.AttributeRenderer {
 // FormEnctype creates the formenctype attribute - Entry list encoding type to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
 //   - "[application/x-www-form-urlencoded]"
@@ -331,8 +331,8 @@ func FormEnctype(formEnctype string) htmfunc.AttributeRenderer {
 // FormMethod creates the formmethod attribute - Variant to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
 //   - "GET"
@@ -352,7 +352,7 @@ func FormMethod(formMethod string) htmfunc.AttributeRenderer {
 // Hidden creates the hidden attribute - Whether the element is relevant
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[until-found]"
@@ -372,7 +372,7 @@ func Hidden(hidden string) htmfunc.AttributeRenderer {
 // HttpEquiv creates the http-equiv attribute - Pragma directive
 //
 // It can be applied to the following elements:
-//   - [[meta]]
+//   - [meta]
 //
 // Can hold one of the following values:
 //   - "[content-type]"
@@ -397,7 +397,7 @@ func HttpEquiv(httpEquiv string) htmfunc.AttributeRenderer {
 // InputMode creates the inputmode attribute - Hint for selecting an input modality
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[none]"
@@ -428,7 +428,7 @@ func InputMode(inputMode string) htmfunc.AttributeRenderer {
 // Kind creates the kind attribute - The type of text track
 //
 // It can be applied to the following elements:
-//   - [[track]]
+//   - [track]
 //
 // Can hold one of the following values:
 //   - "[subtitles]"
@@ -453,8 +453,8 @@ func Kind(kind string) htmfunc.AttributeRenderer {
 // Loading creates the loading attribute - Used when determining loading deferral
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
-//   - [[img]]
+//   - [iframe]
+//   - [img]
 //
 // Can hold one of the following values:
 //   - "[lazy]"
@@ -474,7 +474,7 @@ func Loading(loading string) htmfunc.AttributeRenderer {
 // Method creates the method attribute - Variant to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // Can hold one of the following values:
 //   - "[GET]"
@@ -496,7 +496,7 @@ func Method(method string) htmfunc.AttributeRenderer {
 // PopOver creates the popover attribute - Makes the element a [popover] element
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[auto]"
@@ -516,8 +516,8 @@ func PopOver(popOver string) htmfunc.AttributeRenderer {
 // PopOverTargetAction creates the popovertargetaction attribute - Indicates whether a targeted popover element is to be toggled, shown, or hidden
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
 //   - "[toggle]"
@@ -539,8 +539,8 @@ func PopOverTargetAction(popOverTargetAction string) htmfunc.AttributeRenderer {
 // PreLoad creates the preload attribute - Hints how much buffering the [media resource] will likely need
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[video]]
+//   - [audio]
+//   - [video]
 //
 // Can hold one of the following values:
 //   - "[none]"
@@ -563,7 +563,7 @@ func PreLoad(preLoad string) htmfunc.AttributeRenderer {
 // Scope creates the scope attribute - Specifies which cells the header cell applies to
 //
 // It can be applied to the following elements:
-//   - [[th]]
+//   - [th]
 //
 // Can hold one of the following values:
 //   - "[row]"
@@ -586,7 +586,7 @@ func Scope(scope string) htmfunc.AttributeRenderer {
 // ShadowRootMode creates the shadowrootmode attribute - Enables streaming declarative shadow roots
 //
 // It can be applied to the following elements:
-//   - [[template]]
+//   - [template]
 //
 // Can hold one of the following values:
 //   - "open"
@@ -603,7 +603,7 @@ func ShadowRootMode(shadowRootMode string) htmfunc.AttributeRenderer {
 // Shape creates the shape attribute - The kind of shape to be created in an [image map]
 //
 // It can be applied to the following elements:
-//   - [[area]]
+//   - [area]
 //
 // Can hold one of the following values:
 //   - "[circle]"
@@ -627,7 +627,7 @@ func Shape(shape string) htmfunc.AttributeRenderer {
 // SpellCheck creates the spellcheck attribute - Whether the element is to have its spelling and grammar checked
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[true]"
@@ -647,7 +647,7 @@ func SpellCheck(spellCheck string) htmfunc.AttributeRenderer {
 // Translate creates the translate attribute - Whether the element is to be translated when the page is localized
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "yes"
@@ -664,7 +664,7 @@ func Translate(translate string) htmfunc.AttributeRenderer {
 // Type creates the type attribute - Type of button
 //
 // It can be applied to the following elements:
-//   - [[button]]
+//   - [button]
 //
 // Can hold one of the following values:
 //   - "[submit]"
@@ -685,7 +685,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // Type creates the type attribute - Kind of list marker
 //
 // It can be applied to the following elements:
-//   - [[ol]]
+//   - [ol]
 //
 // Can hold one of the following values:
 //   - "[1]"
@@ -710,7 +710,7 @@ func Type(typeV string) htmfunc.AttributeRenderer {
 // Wrap creates the wrap attribute - How the value of the form control is to be wrapped for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[textarea]]
+//   - [textarea]
 //
 // Can hold one of the following values:
 //   - "[soft]"
@@ -730,7 +730,7 @@ func Wrap(wrap string) htmfunc.AttributeRenderer {
 // WritingSuggestions creates the writingsuggestions attribute - Whether the element can offer writing suggestions or not.
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Can hold one of the following values:
 //   - "[true]"

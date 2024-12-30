@@ -8,7 +8,7 @@ import (
 // AllowFullScreen creates the allowfullscreen attribute - Whether to allow the [iframe]'s contents to use [requestFullscreen()]
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
+//   - [iframe]
 //
 // The attribute allowfullscreen is a [Boolean attribute].
 //
@@ -26,7 +26,7 @@ func AllowFullScreen() htmfunc.AttributeRenderer {
 // Alpha creates the alpha attribute - Allow the color's alpha component to be set
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // The attribute alpha is a [Boolean attribute].
 //
@@ -42,7 +42,7 @@ func Alpha() htmfunc.AttributeRenderer {
 // Async creates the async attribute - Execute script when available, without blocking while fetching
 //
 // It can be applied to the following elements:
-//   - [[script]]
+//   - [script]
 //
 // The attribute async is a [Boolean attribute].
 //
@@ -58,7 +58,7 @@ func Async() htmfunc.AttributeRenderer {
 // AutoFocus creates the autofocus attribute - Automatically focus the element when the page is loaded
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // The attribute autofocus is a [Boolean attribute].
 //
@@ -74,8 +74,8 @@ func AutoFocus() htmfunc.AttributeRenderer {
 // AutoPlay creates the autoplay attribute - Hint that the [media resource] can be started automatically when the page is loaded
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[video]]
+//   - [audio]
+//   - [video]
 //
 // The attribute autoplay is a [Boolean attribute].
 //
@@ -93,7 +93,7 @@ func AutoPlay() htmfunc.AttributeRenderer {
 // Checked creates the checked attribute - Whether the control is checked
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // The attribute checked is a [Boolean attribute].
 //
@@ -109,8 +109,8 @@ func Checked() htmfunc.AttributeRenderer {
 // Controls creates the controls attribute - Show user agent controls
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[video]]
+//   - [audio]
+//   - [video]
 //
 // The attribute controls is a [Boolean attribute].
 //
@@ -127,7 +127,7 @@ func Controls() htmfunc.AttributeRenderer {
 // Default creates the default attribute - Enable the track if no other [text track] is more suitable
 //
 // It can be applied to the following elements:
-//   - [[track]]
+//   - [track]
 //
 // The attribute default is a [Boolean attribute].
 //
@@ -144,7 +144,7 @@ func Default() htmfunc.AttributeRenderer {
 // Defer creates the defer attribute - Defer script execution
 //
 // It can be applied to the following elements:
-//   - [[script]]
+//   - [script]
 //
 // The attribute defer is a [Boolean attribute].
 //
@@ -160,13 +160,13 @@ func Defer() htmfunc.AttributeRenderer {
 // Disabled creates the disabled attribute - Whether the form control is disabled
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
-//   - [[optgroup]]
-//   - [[option]]
-//   - [[select]]
-//   - [[textarea]]
-//   - [[form-associated custom elements]]
+//   - [button]
+//   - [input]
+//   - [optgroup]
+//   - [option]
+//   - [select]
+//   - [textarea]
+//   - [form-associated custom elements]
 //
 // The attribute disabled is a [Boolean attribute].
 //
@@ -188,7 +188,7 @@ func Disabled() htmfunc.AttributeRenderer {
 // Disabled creates the disabled attribute - Whether the descendant form controls, except any inside [legend], are disabled
 //
 // It can be applied to the following elements:
-//   - [[fieldset]]
+//   - [fieldset]
 //
 // The attribute disabled is a [Boolean attribute].
 //
@@ -205,7 +205,7 @@ func Disabled() htmfunc.AttributeRenderer {
 // Disabled creates the disabled attribute - Whether the link is disabled
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // The attribute disabled is a [Boolean attribute].
 //
@@ -221,8 +221,8 @@ func Disabled() htmfunc.AttributeRenderer {
 // FormNoValidate creates the formnovalidate attribute - Bypass form control validation for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[button]]
-//   - [[input]]
+//   - [button]
+//   - [input]
 //
 // The attribute formnovalidate is a [Boolean attribute].
 //
@@ -240,7 +240,7 @@ func FormNoValidate() htmfunc.AttributeRenderer {
 // Inert creates the inert attribute - Whether the element is [inert].
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // The attribute inert is a [Boolean attribute].
 //
@@ -257,7 +257,7 @@ func Inert() htmfunc.AttributeRenderer {
 // IsMap creates the ismap attribute - Whether the image is a server-side image map
 //
 // It can be applied to the following elements:
-//   - [[img]]
+//   - [img]
 //
 // The attribute ismap is a [Boolean attribute].
 //
@@ -273,7 +273,7 @@ func IsMap() htmfunc.AttributeRenderer {
 // ItemScope creates the itemscope attribute - Introduces a microdata item
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // The attribute itemscope is a [Boolean attribute].
 //
@@ -289,8 +289,8 @@ func ItemScope() htmfunc.AttributeRenderer {
 // Loop creates the loop attribute - Whether to loop the [media resource]
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[video]]
+//   - [audio]
+//   - [video]
 //
 // The attribute loop is a [Boolean attribute].
 //
@@ -308,8 +308,8 @@ func Loop() htmfunc.AttributeRenderer {
 // Multiple creates the multiple attribute - Whether to allow multiple values
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[select]]
+//   - [input]
+//   - [select]
 //
 // The attribute multiple is a [Boolean attribute].
 //
@@ -326,8 +326,8 @@ func Multiple() htmfunc.AttributeRenderer {
 // Muted creates the muted attribute - Whether to mute the [media resource] by default
 //
 // It can be applied to the following elements:
-//   - [[audio]]
-//   - [[video]]
+//   - [audio]
+//   - [video]
 //
 // The attribute muted is a [Boolean attribute].
 //
@@ -345,7 +345,7 @@ func Muted() htmfunc.AttributeRenderer {
 // NoModule creates the nomodule attribute - Prevents execution in user agents that support module scripts
 //
 // It can be applied to the following elements:
-//   - [[script]]
+//   - [script]
 //
 // The attribute nomodule is a [Boolean attribute].
 //
@@ -361,7 +361,7 @@ func NoModule() htmfunc.AttributeRenderer {
 // NoValidate creates the novalidate attribute - Bypass form control validation for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[form]]
+//   - [form]
 //
 // The attribute novalidate is a [Boolean attribute].
 //
@@ -378,7 +378,7 @@ func NoValidate() htmfunc.AttributeRenderer {
 // Open creates the open attribute - Whether the details are visible
 //
 // It can be applied to the following elements:
-//   - [[details]]
+//   - [details]
 //
 // The attribute open is a [Boolean attribute].
 //
@@ -394,7 +394,7 @@ func Open() htmfunc.AttributeRenderer {
 // Open creates the open attribute - Whether the dialog box is showing
 //
 // It can be applied to the following elements:
-//   - [[dialog]]
+//   - [dialog]
 //
 // The attribute open is a [Boolean attribute].
 //
@@ -410,7 +410,7 @@ func Open() htmfunc.AttributeRenderer {
 // PlaysInline creates the playsinline attribute - Encourage the user agent to display video content within the element's playback area
 //
 // It can be applied to the following elements:
-//   - [[video]]
+//   - [video]
 //
 // The attribute playsinline is a [Boolean attribute].
 //
@@ -426,8 +426,8 @@ func PlaysInline() htmfunc.AttributeRenderer {
 // ReadOnly creates the readonly attribute - Whether to allow the value to be edited by the user
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[textarea]]
+//   - [input]
+//   - [textarea]
 //
 // The attribute readonly is a [Boolean attribute].
 //
@@ -444,7 +444,7 @@ func ReadOnly() htmfunc.AttributeRenderer {
 // ReadOnly creates the readonly attribute - Affects willValidate, plus any behavior added by the custom element author
 //
 // It can be applied to the following elements:
-//   - [[form-associated custom elements]]
+//   - [form-associated custom elements]
 //
 // The attribute readonly is a [Boolean attribute].
 //
@@ -460,9 +460,9 @@ func ReadOnly() htmfunc.AttributeRenderer {
 // Required creates the required attribute - Whether the control is required for [form submission]
 //
 // It can be applied to the following elements:
-//   - [[input]]
-//   - [[select]]
-//   - [[textarea]]
+//   - [input]
+//   - [select]
+//   - [textarea]
 //
 // The attribute required is a [Boolean attribute].
 //
@@ -481,7 +481,7 @@ func Required() htmfunc.AttributeRenderer {
 // Reversed creates the reversed attribute - Number the list backwards
 //
 // It can be applied to the following elements:
-//   - [[ol]]
+//   - [ol]
 //
 // The attribute reversed is a [Boolean attribute].
 //
@@ -497,7 +497,7 @@ func Reversed() htmfunc.AttributeRenderer {
 // Selected creates the selected attribute - Whether the option is selected by default
 //
 // It can be applied to the following elements:
-//   - [[option]]
+//   - [option]
 //
 // The attribute selected is a [Boolean attribute].
 //
@@ -513,7 +513,7 @@ func Selected() htmfunc.AttributeRenderer {
 // ShadowRootClonable creates the shadowrootclonable attribute - Sets [clonable] on a declarative shadow root
 //
 // It can be applied to the following elements:
-//   - [[template]]
+//   - [template]
 //
 // The attribute shadowrootclonable is a [Boolean attribute].
 //
@@ -530,7 +530,7 @@ func ShadowRootClonable() htmfunc.AttributeRenderer {
 // ShadowRootDelegatesFocus creates the shadowrootdelegatesfocus attribute - Sets [delegates focus] on a declarative shadow root
 //
 // It can be applied to the following elements:
-//   - [[template]]
+//   - [template]
 //
 // The attribute shadowrootdelegatesfocus is a [Boolean attribute].
 //
@@ -547,7 +547,7 @@ func ShadowRootDelegatesFocus() htmfunc.AttributeRenderer {
 // ShadowRootSerializable creates the shadowrootserializable attribute - Sets serializable on a declarative shadow root
 //
 // It can be applied to the following elements:
-//   - [[template]]
+//   - [template]
 //
 // The attribute shadowrootserializable is a [Boolean attribute].
 //

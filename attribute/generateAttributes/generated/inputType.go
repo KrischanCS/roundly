@@ -8,7 +8,7 @@ import (
 // Type creates the type attribute - Type of form control
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: [input type keyword]. Must be one of the following:
 //   - hidden

@@ -8,7 +8,7 @@ import (
 // High creates the high attribute - Low limit of high range
 //
 // It can be applied to the following elements:
-//   - [[meter]]
+//   - [meter]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
@@ -24,7 +24,7 @@ func High(high string) htmfunc.AttributeRenderer {
 // Low creates the low attribute - High limit of low range
 //
 // It can be applied to the following elements:
-//   - [[meter]]
+//   - [meter]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
@@ -40,8 +40,8 @@ func Low(low string) htmfunc.AttributeRenderer {
 // Max creates the max attribute - Upper bound of range
 //
 // It can be applied to the following elements:
-//   - [[meter]]
-//   - [[progress]]
+//   - [meter]
+//   - [progress]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
@@ -58,7 +58,7 @@ func Max(max string) htmfunc.AttributeRenderer {
 // Min creates the min attribute - Lower bound of range
 //
 // It can be applied to the following elements:
-//   - [[meter]]
+//   - [meter]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
@@ -74,7 +74,7 @@ func Min(min string) htmfunc.AttributeRenderer {
 // Optimum creates the optimum attribute - Optimum value in gauge
 //
 // It can be applied to the following elements:
-//   - [[meter]]
+//   - [meter]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
 //
@@ -90,7 +90,7 @@ func Optimum(optimum string) htmfunc.AttributeRenderer {
 // Step creates the step attribute - Granularity to be matched by the form control's value
 //
 // It can be applied to the following elements:
-//   - [[input]]
+//   - [input]
 //
 // Value constraints: [Valid floating-point number] greater than zero, or "any"
 //
@@ -106,8 +106,8 @@ func Step(step string) htmfunc.AttributeRenderer {
 // Value creates the value attribute - Current value of the element
 //
 // It can be applied to the following elements:
-//   - [[meter]]
-//   - [[progress]]
+//   - [meter]
+//   - [progress]
 //
 // Value constraints: [Valid floating-point number]
 //

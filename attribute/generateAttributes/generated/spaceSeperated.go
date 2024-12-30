@@ -8,7 +8,7 @@ import (
 // AccessKey creates the accesskey attribute - Keyboard shortcut to activate or focus element
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Ordered set of unique space-separated tokens], none of which are [identical to] another, each consisting of one code point in length
 //
@@ -25,9 +25,9 @@ func AccessKey(accessKey string) htmfunc.AttributeRenderer {
 // Blocking creates the blocking attribute - Whether the element is [potentially render-blocking]
 //
 // It can be applied to the following elements:
-//   - [[link]]
-//   - [[script]]
-//   - [[style]]
+//   - [link]
+//   - [script]
+//   - [style]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
@@ -46,7 +46,7 @@ func Blocking(blocking string) htmfunc.AttributeRenderer {
 // Class creates the class attribute - Classes to which the element belongs
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Set of space-separated tokens]
 //
@@ -62,7 +62,7 @@ func Class(class string) htmfunc.AttributeRenderer {
 // For creates the for attribute - Specifies controls from which the output was calculated
 //
 // It can be applied to the following elements:
-//   - [[output]]
+//   - [output]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
@@ -78,8 +78,8 @@ func For(forV string) htmfunc.AttributeRenderer {
 // Headers creates the headers attribute - The header cells for this cell
 //
 // It can be applied to the following elements:
-//   - [[td]]
-//   - [[th]]
+//   - [td]
+//   - [th]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
@@ -96,7 +96,7 @@ func Headers(headers string) htmfunc.AttributeRenderer {
 // ItemProp creates the itemprop attribute - [Property names] of a microdata item
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs], [defined property names], or text (Additional rules apply, see elements documentation)
 //
@@ -115,7 +115,7 @@ func ItemProp(itemProp string) htmfunc.AttributeRenderer {
 // ItemRef creates the itemref attribute - [Referenced] elements
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
 //
@@ -132,7 +132,7 @@ func ItemRef(itemRef string) htmfunc.AttributeRenderer {
 // ItemType creates the itemtype attribute - [Item types] of a microdata item
 //
 // It can be applied to the following elements:
-//   - [[HTML elements]]
+//   - [HTML elements]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of [valid absolute URLs] (Additional rules apply, see elements documentation)
 //
@@ -150,8 +150,8 @@ func ItemType(itemType string) htmfunc.AttributeRenderer {
 // Ping creates the ping attribute - [URLs] to ping
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
+//   - [a]
+//   - [area]
 //
 // Value constraints: [Set of space-separated tokens] consisting of [valid non-empty URLs]
 //
@@ -170,8 +170,8 @@ func Ping(ping string) htmfunc.AttributeRenderer {
 // Rel creates the rel attribute - Relationship between the location in the document containing the [hyperlink] and the destination resource
 //
 // It can be applied to the following elements:
-//   - [[a]]
-//   - [[area]]
+//   - [a]
+//   - [area]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
@@ -189,7 +189,7 @@ func Rel(rel string) htmfunc.AttributeRenderer {
 // Rel creates the rel attribute - Relationship between the document containing the [hyperlink] and the destination resource
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
 //
@@ -206,7 +206,7 @@ func Rel(rel string) htmfunc.AttributeRenderer {
 // SandBox creates the sandbox attribute - Security rules for nested content
 //
 // It can be applied to the following elements:
-//   - [[iframe]]
+//   - [iframe]
 //
 // Value constraints: [Unordered set of unique space-separated tokens], [ASCII case-insensitive], consisting of"allow-downloads", "allow-forms", "allow-modals", "allow-orientation-lock", "allow-pointer-lock", "allow-popups", "allow-popups-to-escape-sandbox", "allow-presentation", "allow-same-origin", "allow-scripts", "allow-top-navigation", "allow-top-navigation-by-user-activation", "allow-top-navigation-to-custom-protocols"
 //
@@ -223,7 +223,7 @@ func SandBox(sandBox string) htmfunc.AttributeRenderer {
 // Sizes creates the sizes attribute - Sizes of the icons (for [rel]="[icon]")
 //
 // It can be applied to the following elements:
-//   - [[link]]
+//   - [link]
 //
 // Value constraints: [Unordered set of unique space-separated tokens], [ASCII case-insensitive], consisting of sizes (Additional rules apply, see elements documentation)
 //
