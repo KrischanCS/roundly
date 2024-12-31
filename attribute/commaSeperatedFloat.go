@@ -1,8 +1,8 @@
-package generated
+package attribute
 
 import (
-    "strconv"
     "github.com/ch-schulz/htmfunc"
+    "strconv"
 )
 
 // Coords creates the coords attribute - Coordinates for the shape to be created in an [image map]
@@ -24,5 +24,5 @@ func Coords(coords ...float64) htmfunc.AttributeRenderer {
         floats[i] = strconv.FormatFloat(val, 'f', -1, 64)
     }
 
-    return htmfunc.Attributes("coords", ',', floats...)
+    return htmfunc.AttributesMultiValue("coords", ',', floats...)
 }

@@ -83,7 +83,7 @@ func TestTimeAttribute(t *testing.T) {
 	require.NoError(t, err)
 
 	err = TimeAttribute(
-		attribute.Class(attribute.JoinValues("time")),
+		attribute.Class("time"),
 		ts,
 		TextTrusted("24.12.2024 12:34:56"),
 	).RenderElement(w)

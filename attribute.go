@@ -21,7 +21,7 @@ func Attribute(name string, value string) AttributeRenderer {
 	})
 }
 
-func Attributes(name string, delimiter byte, values ...string) AttributeRenderer {
+func AttributesMultiValue(name string, delimiter byte, values ...string) AttributeRenderer {
 	return AttributeWriteFunc(func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {

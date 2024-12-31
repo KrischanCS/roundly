@@ -17,7 +17,7 @@ type elementFunc func(attributes htmfunc.AttributeRenderer, children ...htmfunc.
 // // Currently added as reminders, not used in Fuzzing
 // var (
 //	document                     = Document
-//	html                         = Hmlt
+//	html                         = Html
 //	base                         = Base
 //	doctype                      = Doctype
 //	head                         = Head
@@ -183,12 +183,10 @@ func createTree(random *rand.Rand, depth int) htmfunc.ElementRenderer {
 
 	children := make([]htmfunc.ElementRenderer, 0, 3)
 	for random.Float64() < 0.55 && len(children) < 20 {
-		fmt.Println("next child, d:", depth)
 		children = append(children, createTree(random, depth))
 	}
 
 	if len(children) == 0 {
-		fmt.Println("0 children, adding text, d:", depth)
 		return Div(nil, Text(randomElement(random, texts)))
 	}
 

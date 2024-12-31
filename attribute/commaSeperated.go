@@ -1,4 +1,4 @@
-package generated
+package attribute
 
 import (
     "github.com/ch-schulz/htmfunc"
@@ -19,7 +19,7 @@ import (
 // [valid MIME type strings with no parameters]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type-with-no-parameters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Accept(accept ...string) htmfunc.AttributeRenderer {
-    return htmfunc.Attributes("accept", ',', accept...)
+    return htmfunc.AttributesMultiValue("accept", ',', accept...)
 }
 
 // ImageSrcSet creates the imagesrcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for [rel]="[preload]")
@@ -37,7 +37,7 @@ func Accept(accept ...string) htmfunc.AttributeRenderer {
 // [image candidate strings]: https://html.spec.whatwg.org/dev/images.html#image-candidate-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ImageSrcSet(imageSrcSet ...string) htmfunc.AttributeRenderer {
-    return htmfunc.Attributes("imagesrcset", ',', imageSrcSet...)
+    return htmfunc.AttributesMultiValue("imagesrcset", ',', imageSrcSet...)
 }
 
 // SrcSet creates the srcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
@@ -55,5 +55,5 @@ func ImageSrcSet(imageSrcSet ...string) htmfunc.AttributeRenderer {
 // [image candidate strings]: https://html.spec.whatwg.org/dev/images.html#image-candidate-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func SrcSet(srcSet ...string) htmfunc.AttributeRenderer {
-    return htmfunc.Attributes("srcset", ',', srcSet...)
+    return htmfunc.AttributesMultiValue("srcset", ',', srcSet...)
 }

@@ -1,4 +1,4 @@
-package generated
+package attribute
 
 import (
     "github.com/ch-schulz/htmfunc"
@@ -21,6 +21,6 @@ import (
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func {{.FuncName}}({{.ParamName}} ...string) htmfunc.AttributeRenderer {
-    return htmfunc.Attributes("{{.Name}}", ',', {{.ParamName}}...)
+    return htmfunc.AttributesMultiValue("{{.Name}}", ',', {{.ParamName}}...)
 }
 {{end}}

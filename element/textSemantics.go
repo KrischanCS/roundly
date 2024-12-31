@@ -204,7 +204,7 @@ func Rp(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRendere
 //
 // [data element]: https://html.spec.whatwg.org/#the-data-element
 func Data(value string, attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
-	attributes = attribute.Join(attribute.Value(value), attributes)
+	attributes = attribute.Attributes(attribute.Value_Data(value), attributes)
 	return htmfunc.WriteElement("data", attributes, children...)
 }
 
@@ -247,7 +247,7 @@ func TimeMachineReadableAsContent(attributes htmfunc.AttributeRenderer, t time.T
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
 func TimeAttribute(attributes htmfunc.AttributeRenderer, t time.Time, childNodes ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
-	attributes = attribute.Join(attribute.DateTime(t.Format(time.RFC3339)), attributes)
+	attributes = attribute.Attributes(attribute.DateTime_Time(t.Format(time.RFC3339)), attributes)
 	return htmfunc.WriteElement("time", attributes, childNodes...)
 }
 
@@ -413,7 +413,7 @@ func Bdi(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRender
 //
 // [bdo element]: https://html.spec.whatwg.org/#the-bdo-element
 func Bdo(direction htmfunc.TextDirection, attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer {
-	attributes = attribute.Join(attribute.Dir(direction), attributes)
+	attributes = attribute.Attributes(attribute.Dir(string(direction)), attributes)
 	return htmfunc.WriteElement("bdo", attributes, children...)
 }
 

@@ -1,4 +1,4 @@
-package generated
+package attribute
 
 import (
     "github.com/ch-schulz/htmfunc"

@@ -14,7 +14,7 @@ func TestCanvas(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	element := Canvas(attr.Join(attr.Class(attr.JoinValues("test", "other"))))
+	element := Canvas(attr.Attributes(attr.Class("test", "other")))
 
 	err := element.RenderElement(w)
 

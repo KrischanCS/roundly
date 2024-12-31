@@ -1,8 +1,8 @@
-package generated
+package attribute
 
 import (
-    "strconv"
     "github.com/ch-schulz/htmfunc"
+    "strconv"
 )
 {{ range . }}
 {{/*gotype: github.com/ch-schulz/htmfunc/attribute/generateAttributes.attribute*/ -}}
@@ -27,6 +27,6 @@ func {{.FuncName}}({{.ParamName}} ...float64) htmfunc.AttributeRenderer {
         floats[i] = strconv.FormatFloat(val, 'f', -1, 64)
     }
 
-    return htmfunc.Attributes("{{.Name}}", ',', floats...)
+    return htmfunc.AttributesMultiValue("{{.Name}}", ',', floats...)
 }
 {{end}}

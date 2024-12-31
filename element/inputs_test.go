@@ -42,10 +42,10 @@ func TestInput(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	e := Input(attr.Join(
-		attr.Value("test"),
-		attr.Class(attr.JoinValues("rounded")),
-		attr.Type("button"),
+	e := Input(attr.Attributes(
+		attr.Value_Input("test"),
+		attr.Class("rounded"),
+		attr.Type_Input("button"),
 	))
 
 	err := e.RenderElement(w)

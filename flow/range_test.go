@@ -35,8 +35,8 @@ func TestRange(t *testing.T) {
 				items: nil,
 				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
-						Div(attr.Class(attr.JoinValues("value")), Text(s)),
+						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), Text(s)),
 					)
 				},
 			},
@@ -48,8 +48,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples"},
 				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
-						Div(attr.Class(attr.JoinValues("value")), Text(s)),
+						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), Text(s)),
 					)
 				},
 			},
@@ -61,8 +61,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples", "bananas", "oranges"},
 				component: func(i int, s string) htmfunc.ElementRenderer {
 					return Li(nil,
-						Div(attr.Class(attr.JoinValues("number")), Text(strconv.Itoa(i+1))),
-						Div(attr.Class(attr.JoinValues("value")), Text(s)),
+						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), Text(s)),
 					)
 				},
 			},
@@ -221,9 +221,9 @@ func BenchmarkRange(b *testing.B) {
 
 	for range b.N {
 		_ = Range(grid, func(_ int, row []int) htmfunc.ElementRenderer { //nolint:errcheck
-			return Div(attr.Class(attr.JoinValues("row")),
+			return Div(attr.Class("row"),
 				Range(row, func(_ int, i int) htmfunc.ElementRenderer {
-					return Div(attr.Class(attr.JoinValues("col")),
+					return Div(attr.Class("col"),
 						Text(strconv.Itoa(i)),
 					)
 				}),
@@ -247,9 +247,9 @@ func BenchmarkRangeInt(b *testing.B) {
 
 	for range b.N {
 		_ = RangeInt(10, func(row int) htmfunc.ElementRenderer { //nolint:errcheck
-			return Div(attr.Class(attr.JoinValues("row")),
+			return Div(attr.Class("row"),
 				RangeInt(20, func(col int) htmfunc.ElementRenderer {
-					return Div(attr.Class(attr.JoinValues("col")),
+					return Div(attr.Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
@@ -273,9 +273,9 @@ func BenchmarkRangeIter(b *testing.B) {
 
 	for range b.N {
 		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.ElementRenderer { //nolint:errcheck
-			return Div(attr.Class(attr.JoinValues("row")),
+			return Div(attr.Class("row"),
 				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.ElementRenderer {
-					return Div(attr.Class(attr.JoinValues("col")),
+					return Div(attr.Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)
 				}),

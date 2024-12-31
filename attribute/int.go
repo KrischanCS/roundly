@@ -1,8 +1,8 @@
-package generated
+package attribute
 
 import (
-    "strconv"
     "github.com/ch-schulz/htmfunc"
+    "strconv"
 )
 
 // Start creates the start attribute - Starting value of the list

@@ -26,7 +26,7 @@ func elementTest(
 	want := fmt.Sprintf(`<%s class="test other"></%s>`, tag, tag)
 
 	w := htmfunc.NewWriter(256)
-	element := elementFunc(attr.Join(attr.Class(attr.JoinValues("test", "other"))))
+	element := elementFunc(attr.Attributes(attr.Class("test", "other")))
 
 	err := element.RenderElement(w)
 
