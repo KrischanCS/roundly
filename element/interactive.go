@@ -9,7 +9,7 @@ import (
 // The details element represents a disclosure widget from which the user can obtain additional information or controls.
 //
 // [details element]: https://html.spec.whatwg.org/#the-details-element
-func Details(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("details", attributes, children...)
 }
 
@@ -31,7 +31,7 @@ func Details(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementW
 //     string.
 //
 // [summary element]: https://html.spec.whatwg.org/#the-summary-element
-func Summary(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("summary", attributes, children...)
 }
 
@@ -42,6 +42,6 @@ func Summary(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementW
 // automatically closed by the application, or manually closed by the user.
 //
 // [dialog element]: https://html.spec.whatwg.org/#the-dialog-element
-func Dialog(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("dialog", attributes, children...)
 }

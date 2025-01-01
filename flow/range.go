@@ -6,8 +6,8 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
-func Range[T any](items []T, component func(int, T) htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
-	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
+func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {
+	return htmfunc.Element(func(w htmfunc.Writer) error {
 		for i, e := range items {
 			err := component(i, e).RenderElement(w)
 			if err != nil {
@@ -19,8 +19,8 @@ func Range[T any](items []T, component func(int, T) htmfunc.ElementWriteFunc) ht
 	})
 }
 
-func RangeInt(limit int, component func(int) htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
-	return htmfunc.ElementWriteFunc(func(w htmfunc.Writer) error {
+func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
+	return htmfunc.Element(func(w htmfunc.Writer) error {
 		for i := range limit {
 			err := component(i).RenderElement(w)
 			if err != nil {
@@ -32,7 +32,7 @@ func RangeInt(limit int, component func(int) htmfunc.ElementWriteFunc) htmfunc.E
 	})
 }
 
-func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element) htmfunc.Element {
 	if seq == nil {
 		return func(_ htmfunc.Writer) error {
 			return nil

@@ -17,8 +17,8 @@ import (
 // [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-start
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Start(start int) htmfunc.AttributeWriteFunc {
-    return htmfunc.Attribute("start", strconv.Itoa(start))
+func Start(start int) htmfunc.Attribute {
+    return htmfunc.WriteAttribute("start", strconv.Itoa(start))
 }
 
 // TabIndex creates the tabindex attribute - Whether the element is focusable and sequentially focusable, andthe relative order of the element for the purposes of sequential focus navigation
@@ -33,8 +33,8 @@ func Start(start int) htmfunc.AttributeWriteFunc {
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-tabindex
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TabIndex(tabIndex int) htmfunc.AttributeWriteFunc {
-    return htmfunc.Attribute("tabindex", strconv.Itoa(tabIndex))
+func TabIndex(tabIndex int) htmfunc.Attribute {
+    return htmfunc.WriteAttribute("tabindex", strconv.Itoa(tabIndex))
 }
 
 // Value_Li creates the value attribute - Ordinal value of the list item
@@ -49,6 +49,6 @@ func TabIndex(tabIndex int) htmfunc.AttributeWriteFunc {
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_Li(value int) htmfunc.AttributeWriteFunc {
-    return htmfunc.Attribute("value", strconv.Itoa(value))
+func Value_Li(value int) htmfunc.Attribute {
+    return htmfunc.WriteAttribute("value", strconv.Itoa(value))
 }

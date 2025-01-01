@@ -21,12 +21,12 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} ...float64) htmfunc.AttributeWriteFunc {
+func {{.FuncName}}({{.ParamName}} ...float64) htmfunc.Attribute {
     floats := make([]string, len({{.ParamName}}))
     for i, val := range {{.ParamName}} {
         floats[i] = strconv.FormatFloat(val, 'f', -1, 64)
     }
 
-    return htmfunc.AttributesMultiValue("{{.Name}}", ',', floats...)
+    return htmfunc.WriteMultiValueAttribute("{{.Name}}", ',', floats...)
 }
 {{end}}

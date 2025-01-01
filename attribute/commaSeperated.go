@@ -18,8 +18,8 @@ import (
 // [Set of comma-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-comma-separated-tokens
 // [valid MIME type strings with no parameters]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type-with-no-parameters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Accept(accept ...string) htmfunc.AttributeWriteFunc {
-    return htmfunc.AttributesMultiValue("accept", ',', accept...)
+func Accept(accept ...string) htmfunc.Attribute {
+    return htmfunc.WriteMultiValueAttribute("accept", ',', accept...)
 }
 
 // ImageSrcSet creates the imagesrcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for [rel]="[preload]")
@@ -36,8 +36,8 @@ func Accept(accept ...string) htmfunc.AttributeWriteFunc {
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
 // [image candidate strings]: https://html.spec.whatwg.org/dev/images.html#image-candidate-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ImageSrcSet(imageSrcSet ...string) htmfunc.AttributeWriteFunc {
-    return htmfunc.AttributesMultiValue("imagesrcset", ',', imageSrcSet...)
+func ImageSrcSet(imageSrcSet ...string) htmfunc.Attribute {
+    return htmfunc.WriteMultiValueAttribute("imagesrcset", ',', imageSrcSet...)
 }
 
 // SrcSet creates the srcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
@@ -54,6 +54,6 @@ func ImageSrcSet(imageSrcSet ...string) htmfunc.AttributeWriteFunc {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-srcset
 // [image candidate strings]: https://html.spec.whatwg.org/dev/images.html#image-candidate-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SrcSet(srcSet ...string) htmfunc.AttributeWriteFunc {
-    return htmfunc.AttributesMultiValue("srcset", ',', srcSet...)
+func SrcSet(srcSet ...string) htmfunc.Attribute {
+    return htmfunc.WriteMultiValueAttribute("srcset", ',', srcSet...)
 }

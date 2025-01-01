@@ -19,7 +19,7 @@ func TestRange(t *testing.T) {
 
 	type args[T any] struct {
 		items     []T
-		component func(int, T) htmfunc.ElementWriteFunc
+		component func(int, T) htmfunc.Element
 	}
 
 	type testCase[T any] struct {
@@ -33,7 +33,7 @@ func TestRange(t *testing.T) {
 			"zeroItems",
 			args[string]{
 				items: nil,
-				component: func(i int, s string) htmfunc.ElementWriteFunc {
+				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
 						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
 						Div(attr.Class("value"), Text(s)),
@@ -46,7 +46,7 @@ func TestRange(t *testing.T) {
 			"oneItem",
 			args[string]{
 				items: []string{"apples"},
-				component: func(i int, s string) htmfunc.ElementWriteFunc {
+				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
 						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
 						Div(attr.Class("value"), Text(s)),
@@ -59,7 +59,7 @@ func TestRange(t *testing.T) {
 			"ThreeItems",
 			args[string]{
 				items: []string{"apples", "bananas", "oranges"},
-				component: func(i int, s string) htmfunc.ElementWriteFunc {
+				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
 						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
 						Div(attr.Class("value"), Text(s)),
@@ -88,7 +88,7 @@ func TestRangeInt(t *testing.T) {
 
 	type args struct {
 		limit     int
-		component func(int) htmfunc.ElementWriteFunc
+		component func(int) htmfunc.Element
 	}
 
 	tests := []struct {
@@ -100,7 +100,7 @@ func TestRangeInt(t *testing.T) {
 			name: "0",
 			args: args{
 				limit: 0,
-				component: func(i int) htmfunc.ElementWriteFunc {
+				component: func(i int) htmfunc.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -110,7 +110,7 @@ func TestRangeInt(t *testing.T) {
 			name: "1",
 			args: args{
 				limit: 1,
-				component: func(i int) htmfunc.ElementWriteFunc {
+				component: func(i int) htmfunc.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -120,7 +120,7 @@ func TestRangeInt(t *testing.T) {
 			name: "3",
 			args: args{
 				limit: 3,
-				component: func(i int) htmfunc.ElementWriteFunc {
+				component: func(i int) htmfunc.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -144,7 +144,7 @@ func TestRangeIter(t *testing.T) {
 
 	type args struct {
 		seq       iter.Seq2[int, int]
-		component func(int, int) htmfunc.ElementWriteFunc
+		component func(int, int) htmfunc.Element
 	}
 
 	tests := []struct {
@@ -156,7 +156,7 @@ func TestRangeIter(t *testing.T) {
 			name: "nil",
 			args: args{
 				seq: nil,
-				component: func(i int, s int) htmfunc.ElementWriteFunc {
+				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i, 'a'+i)))
 				},
@@ -167,7 +167,7 @@ func TestRangeIter(t *testing.T) {
 			name: "1",
 			args: args{
 				seq: iters.FromToInclusive(7, 7),
-				component: func(i int, s int) htmfunc.ElementWriteFunc {
+				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
@@ -178,7 +178,7 @@ func TestRangeIter(t *testing.T) {
 			name: "5",
 			args: args{
 				seq: iters.FromTo(3, 8),
-				component: func(i int, s int) htmfunc.ElementWriteFunc {
+				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
@@ -220,9 +220,9 @@ func BenchmarkRange(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = Range(grid, func(_ int, row []int) htmfunc.ElementWriteFunc { //nolint:errcheck
+		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class("row"),
-				Range(row, func(_ int, i int) htmfunc.ElementWriteFunc {
+				Range(row, func(_ int, i int) htmfunc.Element {
 					return Div(attr.Class("col"),
 						Text(strconv.Itoa(i)),
 					)
@@ -246,9 +246,9 @@ func BenchmarkRangeInt(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeInt(10, func(row int) htmfunc.ElementWriteFunc { //nolint:errcheck
+		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class("row"),
-				RangeInt(20, func(col int) htmfunc.ElementWriteFunc {
+				RangeInt(20, func(col int) htmfunc.Element {
 					return Div(attr.Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)
@@ -272,9 +272,9 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.ElementWriteFunc { //nolint:errcheck
+		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class("row"),
-				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.ElementWriteFunc {
+				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.Element {
 					return Div(attr.Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)

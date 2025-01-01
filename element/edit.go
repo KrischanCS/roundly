@@ -11,7 +11,7 @@ import (
 // del elements should not cross implied paragraph boundaries.
 //
 // [del element]: https://html.spec.whatwg.org/#the-del-element
-func Del(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("del", attributes, children...)
 }
 
@@ -22,6 +22,6 @@ func Del(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWrite
 // ins elements should not cross implied paragraph boundaries.
 //
 // [ins element]: https://html.spec.whatwg.org/#the-ins-element
-func Ins(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc {
+func Ins(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
 	return htmfunc.WriteElement("ins", attributes, children...)
 }

@@ -20,7 +20,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} ...string) htmfunc.AttributeWriteFunc {
-    return htmfunc.AttributesMultiValue("{{.Name}}", ' ', {{.ParamName}}...)
+func {{.FuncName}}({{.ParamName}} ...string) htmfunc.Attribute {
+    return htmfunc.WriteMultiValueAttribute("{{.Name}}", ' ', {{.ParamName}}...)
 }
 {{end}}

@@ -16,7 +16,7 @@ func TestIf(t *testing.T) {
 
 	tt := []struct {
 		condition bool
-		element   htmfunc.ElementRenderer
+		element   htmfunc.Element
 		want      string
 	}{
 		{

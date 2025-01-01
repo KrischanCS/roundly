@@ -1,7 +1,7 @@
 package htmfunc
 
-func Attribute(name string, value string) AttributeWriteFunc {
-	return AttributeWriteFunc(func(w Writer) error {
+func WriteAttribute(name string, value string) Attribute {
+	return func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
 			return err
@@ -18,11 +18,11 @@ func Attribute(name string, value string) AttributeWriteFunc {
 		}
 
 		return w.WriteByte('"')
-	})
+	}
 }
 
-func AttributesMultiValue(name string, delimiter byte, values ...string) AttributeWriteFunc {
-	return AttributeWriteFunc(func(w Writer) error {
+func WriteMultiValueAttribute(name string, delimiter byte, values ...string) Attribute {
+	return func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
 			return err
@@ -39,14 +39,14 @@ func AttributesMultiValue(name string, delimiter byte, values ...string) Attribu
 		}
 
 		return w.WriteByte('"')
-	})
+	}
 }
 
-func BooleanAttribute(name string) AttributeWriteFunc {
-	return AttributeWriteFunc(func(w Writer) error {
+func WriteBoolAttribute(name string) Attribute {
+	return func(w Writer) error {
 		_, err := w.WriteString(name)
 		return err
-	})
+	}
 }
 
 func writeStringsSeparated(w Writer, delimiter byte, values []string) error {

@@ -20,7 +20,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}() htmfunc.AttributeWriteFunc {
-    return htmfunc.BooleanAttribute("{{.Name}}")
+func {{.FuncName}}() htmfunc.Attribute {
+    return htmfunc.WriteBoolAttribute("{{.Name}}")
 }
 {{end}}

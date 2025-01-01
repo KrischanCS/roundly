@@ -27,8 +27,8 @@ func TestHtml(t *testing.T) {
 
 	type args struct {
 		lang string
-		head htmfunc.ElementWriteFunc
-		body htmfunc.ElementWriteFunc
+		head htmfunc.Element
+		body htmfunc.Element
 	}
 
 	tests := []struct {
@@ -84,7 +84,7 @@ func TestBase(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.AttributeWriteFunc
+		attributes htmfunc.Attribute
 	}
 
 	tests := []struct {
@@ -164,7 +164,7 @@ func TestHead(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		childNodes []htmfunc.ElementWriteFunc
+		childNodes []htmfunc.Element
 	}
 
 	tests := []struct {
@@ -182,7 +182,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "title only",
 			args: args{
-				childNodes: []htmfunc.ElementWriteFunc{
+				childNodes: []htmfunc.Element{
 					Title("The Title"),
 				},
 			},
@@ -191,7 +191,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "empty",
 			args: args{
-				childNodes: []htmfunc.ElementWriteFunc{
+				childNodes: []htmfunc.Element{
 					Title("The Title"),
 					Link(attr.Attributes(attr.HRef_Link("/style.css"), attr.Rel_Link("stylesheet"))),
 				},
@@ -234,7 +234,7 @@ func TestStyle(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.AttributeWriteFunc
+		attributes htmfunc.Attribute
 		css        string
 	}
 
@@ -287,7 +287,7 @@ func TestStyleTrusted(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.AttributeWriteFunc
+		attributes htmfunc.Attribute
 		css        string
 	}
 

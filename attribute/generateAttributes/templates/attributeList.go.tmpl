@@ -5,24 +5,24 @@ import (
 )
 
 // Attributes joins all given attributes space separated
-func Attributes(attributes ...htmfunc.AttributeWriteFunc) htmfunc.AttributeWriteFunc {
+func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 	if attributes == nil {
-		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
+		return func(w htmfunc.Writer) error {
 			return nil
-		})
+		}
 	}
 
 	switch len(attributes) {
 	case 0:
-		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
+		return func(w htmfunc.Writer) error {
 			return nil
-		})
+		}
 
 	case 1:
 		return attributes[0]
 
 	default:
-		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
+		return func(w htmfunc.Writer) error {
 			err := attributes[0].RenderAttribute(w)
 			if err != nil {
 				return err
@@ -45,6 +45,6 @@ func Attributes(attributes ...htmfunc.AttributeWriteFunc) htmfunc.AttributeWrite
 			}
 
 			return nil
-		})
+		}
 	}
 }
