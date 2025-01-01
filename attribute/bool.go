@@ -18,7 +18,7 @@ import (
 // [requestFullscreen()]: https://html.spec.whatwg.org/dev/https://fullscreen.spec.whatwg.org/#dom-element-requestfullscreen
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AllowFullScreen() htmfunc.AttributeRenderer {
+func AllowFullScreen() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("allowfullscreen")
 }
 
@@ -34,7 +34,7 @@ func AllowFullScreen() htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-alpha
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Alpha() htmfunc.AttributeRenderer {
+func Alpha() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("alpha")
 }
 
@@ -50,7 +50,7 @@ func Alpha() htmfunc.AttributeRenderer {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-async
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Async() htmfunc.AttributeRenderer {
+func Async() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("async")
 }
 
@@ -66,7 +66,7 @@ func Async() htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-fe-autofocus
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoFocus() htmfunc.AttributeRenderer {
+func AutoFocus() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("autofocus")
 }
 
@@ -85,7 +85,7 @@ func AutoFocus() htmfunc.AttributeRenderer {
 // [media resource]: https://html.spec.whatwg.org/dev/media.html#media-resource
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoPlay() htmfunc.AttributeRenderer {
+func AutoPlay() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("autoplay")
 }
 
@@ -101,7 +101,7 @@ func AutoPlay() htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-checked
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Checked() htmfunc.AttributeRenderer {
+func Checked() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("checked")
 }
 
@@ -119,7 +119,7 @@ func Checked() htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/media.html#attr-media-controls
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Controls() htmfunc.AttributeRenderer {
+func Controls() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("controls")
 }
 
@@ -136,7 +136,7 @@ func Controls() htmfunc.AttributeRenderer {
 // [text track]: https://html.spec.whatwg.org/dev/media.html#text-track
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Default() htmfunc.AttributeRenderer {
+func Default() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("default")
 }
 
@@ -152,7 +152,7 @@ func Default() htmfunc.AttributeRenderer {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-defer
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Defer() htmfunc.AttributeRenderer {
+func Defer() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("defer")
 }
 
@@ -180,7 +180,7 @@ func Defer() htmfunc.AttributeRenderer {
 // [form-associated custom elements]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-disabled
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled_Inputs() htmfunc.AttributeRenderer {
+func Disabled_Inputs() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("disabled")
 }
 
@@ -197,7 +197,7 @@ func Disabled_Inputs() htmfunc.AttributeRenderer {
 // [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled_Fieldset() htmfunc.AttributeRenderer {
+func Disabled_Fieldset() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("disabled")
 }
 
@@ -213,7 +213,7 @@ func Disabled_Fieldset() htmfunc.AttributeRenderer {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-disabled
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled_Link() htmfunc.AttributeRenderer {
+func Disabled_Link() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("disabled")
 }
 
@@ -232,7 +232,7 @@ func Disabled_Link() htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormNoValidate() htmfunc.AttributeRenderer {
+func FormNoValidate() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("formnovalidate")
 }
 
@@ -249,7 +249,7 @@ func FormNoValidate() htmfunc.AttributeRenderer {
 // [inert]: https://html.spec.whatwg.org/dev/interaction.html#inert
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Inert() htmfunc.AttributeRenderer {
+func Inert() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("inert")
 }
 
@@ -265,7 +265,7 @@ func Inert() htmfunc.AttributeRenderer {
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-ismap
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func IsMap() htmfunc.AttributeRenderer {
+func IsMap() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("ismap")
 }
 
@@ -281,7 +281,7 @@ func IsMap() htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/microdata.html#attr-itemscope
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemScope() htmfunc.AttributeRenderer {
+func ItemScope() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("itemscope")
 }
 
@@ -300,7 +300,7 @@ func ItemScope() htmfunc.AttributeRenderer {
 // [media resource]: https://html.spec.whatwg.org/dev/media.html#media-resource
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Loop() htmfunc.AttributeRenderer {
+func Loop() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("loop")
 }
 
@@ -318,7 +318,7 @@ func Loop() htmfunc.AttributeRenderer {
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-multiple
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Multiple() htmfunc.AttributeRenderer {
+func Multiple() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("multiple")
 }
 
@@ -337,7 +337,7 @@ func Multiple() htmfunc.AttributeRenderer {
 // [media resource]: https://html.spec.whatwg.org/dev/media.html#media-resource
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Muted() htmfunc.AttributeRenderer {
+func Muted() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("muted")
 }
 
@@ -353,7 +353,7 @@ func Muted() htmfunc.AttributeRenderer {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-nomodule
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func NoModule() htmfunc.AttributeRenderer {
+func NoModule() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("nomodule")
 }
 
@@ -370,7 +370,7 @@ func NoModule() htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func NoValidate() htmfunc.AttributeRenderer {
+func NoValidate() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("novalidate")
 }
 
@@ -386,7 +386,7 @@ func NoValidate() htmfunc.AttributeRenderer {
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Open_Details() htmfunc.AttributeRenderer {
+func Open_Details() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("open")
 }
 
@@ -402,7 +402,7 @@ func Open_Details() htmfunc.AttributeRenderer {
 // [dialog]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Open_Dialog() htmfunc.AttributeRenderer {
+func Open_Dialog() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("open")
 }
 
@@ -418,7 +418,7 @@ func Open_Dialog() htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/media.html#attr-video-playsinline
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PlaysInline() htmfunc.AttributeRenderer {
+func PlaysInline() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("playsinline")
 }
 
@@ -436,7 +436,7 @@ func PlaysInline() htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-readonly
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReadOnly_InputTextarea() htmfunc.AttributeRenderer {
+func ReadOnly_InputTextarea() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("readonly")
 }
 
@@ -452,7 +452,7 @@ func ReadOnly_InputTextarea() htmfunc.AttributeRenderer {
 // [form-associated custom elements]: https://html.spec.whatwg.org/dev/custom-elements.html#attr-face-readonly
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReadOnly_CustomFormElements() htmfunc.AttributeRenderer {
+func ReadOnly_CustomFormElements() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("readonly")
 }
 
@@ -473,7 +473,7 @@ func ReadOnly_CustomFormElements() htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Required() htmfunc.AttributeRenderer {
+func Required() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("required")
 }
 
@@ -489,7 +489,7 @@ func Required() htmfunc.AttributeRenderer {
 // [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-reversed
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Reversed() htmfunc.AttributeRenderer {
+func Reversed() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("reversed")
 }
 
@@ -505,7 +505,7 @@ func Reversed() htmfunc.AttributeRenderer {
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-selected
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Selected() htmfunc.AttributeRenderer {
+func Selected() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("selected")
 }
 
@@ -522,7 +522,7 @@ func Selected() htmfunc.AttributeRenderer {
 // [clonable]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#shadowroot-clonable
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShadowRootClonable() htmfunc.AttributeRenderer {
+func ShadowRootClonable() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("shadowrootclonable")
 }
 
@@ -539,7 +539,7 @@ func ShadowRootClonable() htmfunc.AttributeRenderer {
 // [delegates focus]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#shadowroot-delegates-focus
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShadowRootDelegatesFocus() htmfunc.AttributeRenderer {
+func ShadowRootDelegatesFocus() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("shadowrootdelegatesfocus")
 }
 
@@ -555,6 +555,6 @@ func ShadowRootDelegatesFocus() htmfunc.AttributeRenderer {
 // [template]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootserializable
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShadowRootSerializable() htmfunc.AttributeRenderer {
+func ShadowRootSerializable() htmfunc.AttributeWriteFunc {
     return htmfunc.BooleanAttribute("shadowrootserializable")
 }

@@ -38,6 +38,6 @@ import (
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type_Input(typeV string) htmfunc.AttributeRenderer {
+func Type_Input(typeV string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("type", typeV)
 }

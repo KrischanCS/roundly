@@ -21,7 +21,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} int) htmfunc.AttributeRenderer {
+func {{.FuncName}}({{.ParamName}} int) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("{{.Name}}", strconv.Itoa({{.ParamName}}))
 }
 {{end}}

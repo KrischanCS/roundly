@@ -13,7 +13,7 @@ import (
 	attr "github.com/ch-schulz/htmfunc/attribute"
 )
 
-type elementFunc func(attributes htmfunc.AttributeRenderer, children ...htmfunc.ElementRenderer) htmfunc.ElementRenderer
+type elementFunc func(attributes htmfunc.AttributeWriteFunc, children ...htmfunc.ElementWriteFunc) htmfunc.ElementWriteFunc
 
 func elementTest(
 	t *testing.T,

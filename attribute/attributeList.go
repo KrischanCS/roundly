@@ -5,7 +5,7 @@ import (
 )
 
 // Attributes joins all given attributes space separated
-func Attributes(attributes ...htmfunc.AttributeRenderer) htmfunc.AttributeRenderer {
+func Attributes(attributes ...htmfunc.AttributeWriteFunc) htmfunc.AttributeWriteFunc {
 	if attributes == nil {
 		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
 			return nil

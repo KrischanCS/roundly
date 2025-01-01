@@ -18,7 +18,7 @@ import (
 // [image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
 // [Valid list of floating-point numbers]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-list-of-floating-point-numbers
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Coords(coords ...float64) htmfunc.AttributeRenderer {
+func Coords(coords ...float64) htmfunc.AttributeWriteFunc {
     floats := make([]string, len(coords))
     for i, val := range coords {
         floats[i] = strconv.FormatFloat(val, 'f', -1, 64)

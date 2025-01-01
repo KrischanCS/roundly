@@ -68,7 +68,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.ElementRenderer {
+					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.ElementWriteFunc {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -199,7 +199,7 @@ func BenchmarkRange(b *testing.B) {
 				Title("The Title of the Page"),
 			),
 			Body(nil,
-				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.ElementRenderer {
+				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.ElementWriteFunc {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
@@ -269,11 +269,11 @@ type monthDays struct {
 	days int
 }
 
-func month(_ int, month monthDays) htmfunc.ElementRenderer {
+func month(_ int, month monthDays) htmfunc.ElementWriteFunc {
 	return Div(attribute.Class("month"),
 		H3(nil, Text(month.name)),
 		Div(attribute.Class("days"),
-			flow.RangeInt(month.days, func(i int) htmfunc.ElementRenderer {
+			flow.RangeInt(month.days, func(i int) htmfunc.ElementWriteFunc {
 				return Div(attribute.Class("day"),
 					Text(strconv.Itoa(i+1)),
 				)

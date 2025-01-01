@@ -17,7 +17,7 @@ import (
 // [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-start
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Start(start int) htmfunc.AttributeRenderer {
+func Start(start int) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("start", strconv.Itoa(start))
 }
 
@@ -33,7 +33,7 @@ func Start(start int) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-tabindex
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TabIndex(tabIndex int) htmfunc.AttributeRenderer {
+func TabIndex(tabIndex int) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("tabindex", strconv.Itoa(tabIndex))
 }
 
@@ -49,6 +49,6 @@ func TabIndex(tabIndex int) htmfunc.AttributeRenderer {
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_Li(value int) htmfunc.AttributeRenderer {
+func Value_Li(value int) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("value", strconv.Itoa(value))
 }

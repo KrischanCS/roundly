@@ -5,7 +5,13 @@ import (
 )
 
 // Attributes joins all given attributes space separated
-func Attributes(attributes ...htmfunc.AttributeRenderer) htmfunc.AttributeRenderer {
+func Attributes(attributes ...htmfunc.AttributeWriteFunc) htmfunc.AttributeWriteFunc {
+	if attributes == nil {
+		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
+			return nil
+		})
+	}
+
 	switch len(attributes) {
 	case 0:
 		return htmfunc.AttributeWriteFunc(func(w htmfunc.Writer) error {
@@ -23,6 +29,10 @@ func Attributes(attributes ...htmfunc.AttributeRenderer) htmfunc.AttributeRender
 			}
 
 			for _, attribute := range attributes[1:] {
+				if attribute == nil {
+					continue
+				}
+
 				err = w.WriteByte(' ')
 				if err != nil {
 					return err

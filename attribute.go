@@ -1,6 +1,6 @@
 package htmfunc
 
-func Attribute(name string, value string) AttributeRenderer {
+func Attribute(name string, value string) AttributeWriteFunc {
 	return AttributeWriteFunc(func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
@@ -21,7 +21,7 @@ func Attribute(name string, value string) AttributeRenderer {
 	})
 }
 
-func AttributesMultiValue(name string, delimiter byte, values ...string) AttributeRenderer {
+func AttributesMultiValue(name string, delimiter byte, values ...string) AttributeWriteFunc {
 	return AttributeWriteFunc(func(w Writer) error {
 		_, err := w.WriteString(name)
 		if err != nil {
@@ -42,7 +42,7 @@ func AttributesMultiValue(name string, delimiter byte, values ...string) Attribu
 	})
 }
 
-func BooleanAttribute(name string) AttributeRenderer {
+func BooleanAttribute(name string) AttributeWriteFunc {
 	return AttributeWriteFunc(func(w Writer) error {
 		_, err := w.WriteString(name)
 		return err

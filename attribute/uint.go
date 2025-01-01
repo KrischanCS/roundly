@@ -17,7 +17,7 @@ import (
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-cols
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Cols(cols uint) htmfunc.AttributeRenderer {
+func Cols(cols uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("cols", strconv.FormatUint(uint64(cols), 10))
 }
 
@@ -35,7 +35,7 @@ func Cols(cols uint) htmfunc.AttributeRenderer {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-colspan
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ColSpan(colSpan uint) htmfunc.AttributeRenderer {
+func ColSpan(colSpan uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("colspan", strconv.FormatUint(uint64(colSpan), 10))
 }
 
@@ -66,7 +66,7 @@ func ColSpan(colSpan uint) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Height(height uint) htmfunc.AttributeRenderer {
+func Height(height uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("height", strconv.FormatUint(uint64(height), 10))
 }
 
@@ -85,7 +85,7 @@ func Height(height uint) htmfunc.AttributeRenderer {
 // [length]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-length
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MaxLength(maxLength uint) htmfunc.AttributeRenderer {
+func MaxLength(maxLength uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("maxlength", strconv.FormatUint(uint64(maxLength), 10))
 }
 
@@ -104,7 +104,7 @@ func MaxLength(maxLength uint) htmfunc.AttributeRenderer {
 // [length]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-length
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MinLength(minLength uint) htmfunc.AttributeRenderer {
+func MinLength(minLength uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("minlength", strconv.FormatUint(uint64(minLength), 10))
 }
 
@@ -120,7 +120,7 @@ func MinLength(minLength uint) htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-rows
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rows(rows uint) htmfunc.AttributeRenderer {
+func Rows(rows uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("rows", strconv.FormatUint(uint64(rows), 10))
 }
 
@@ -138,7 +138,7 @@ func Rows(rows uint) htmfunc.AttributeRenderer {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-rowspan
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func RowSpan(rowSpan uint) htmfunc.AttributeRenderer {
+func RowSpan(rowSpan uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("rowspan", strconv.FormatUint(uint64(rowSpan), 10))
 }
 
@@ -156,7 +156,7 @@ func RowSpan(rowSpan uint) htmfunc.AttributeRenderer {
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-size
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Size(size uint) htmfunc.AttributeRenderer {
+func Size(size uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("size", strconv.FormatUint(uint64(size), 10))
 }
 
@@ -174,7 +174,7 @@ func Size(size uint) htmfunc.AttributeRenderer {
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-colgroup-span
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Span(span uint) htmfunc.AttributeRenderer {
+func Span(span uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("span", strconv.FormatUint(uint64(span), 10))
 }
 
@@ -205,6 +205,6 @@ func Span(span uint) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Width(width uint) htmfunc.AttributeRenderer {
+func Width(width uint) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("width", strconv.FormatUint(uint64(width), 10))
 }

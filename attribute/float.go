@@ -17,7 +17,7 @@ import (
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-high
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func High(high float64) htmfunc.AttributeRenderer {
+func High(high float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("high", strconv.FormatFloat(high, 'f', -1, 64))
 }
 
@@ -33,7 +33,7 @@ func High(high float64) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-low
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Low(low float64) htmfunc.AttributeRenderer {
+func Low(low float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("low", strconv.FormatFloat(low, 'f', -1, 64))
 }
 
@@ -51,7 +51,7 @@ func Low(low float64) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max_MeterProgress(max float64) htmfunc.AttributeRenderer {
+func Max_MeterProgress(max float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("max", strconv.FormatFloat(max, 'f', -1, 64))
 }
 
@@ -67,7 +67,7 @@ func Max_MeterProgress(max float64) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-min
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min_Meter(min float64) htmfunc.AttributeRenderer {
+func Min_Meter(min float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("min", strconv.FormatFloat(min, 'f', -1, 64))
 }
 
@@ -83,7 +83,7 @@ func Min_Meter(min float64) htmfunc.AttributeRenderer {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-optimum
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Optimum(optimum float64) htmfunc.AttributeRenderer {
+func Optimum(optimum float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("optimum", strconv.FormatFloat(optimum, 'f', -1, 64))
 }
 
@@ -99,7 +99,7 @@ func Optimum(optimum float64) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-step
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Step(step float64) htmfunc.AttributeRenderer {
+func Step(step float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("step", strconv.FormatFloat(step, 'f', -1, 64))
 }
 
@@ -117,6 +117,6 @@ func Step(step float64) htmfunc.AttributeRenderer {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_MeterProgress(value float64) htmfunc.AttributeRenderer {
+func Value_MeterProgress(value float64) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("value", strconv.FormatFloat(value, 'f', -1, 64))
 }

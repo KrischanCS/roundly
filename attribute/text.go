@@ -16,7 +16,7 @@ import (
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-th-abbr
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Abbr(abbr string) htmfunc.AttributeRenderer {
+func Abbr(abbr string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("abbr", abbr)
 }
 
@@ -33,7 +33,7 @@ func Abbr(abbr string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AcceptCharset(acceptCharset string) htmfunc.AttributeRenderer {
+func AcceptCharset(acceptCharset string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("accept-charset", acceptCharset)
 }
 
@@ -51,7 +51,7 @@ func AcceptCharset(acceptCharset string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Action(action string) htmfunc.AttributeRenderer {
+func Action(action string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("action", action)
 }
 
@@ -69,7 +69,7 @@ func Action(action string) htmfunc.AttributeRenderer {
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [Serialized permissions policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-feature-policy/#serialized-permissions-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Allow(allow string) htmfunc.AttributeRenderer {
+func Allow(allow string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("allow", allow)
 }
 
@@ -89,7 +89,7 @@ func Allow(allow string) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-alt
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Alt(alt string) htmfunc.AttributeRenderer {
+func Alt(alt string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("alt", alt)
 }
 
@@ -115,7 +115,7 @@ func Alt(alt string) htmfunc.AttributeRenderer {
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func As(as string) htmfunc.AttributeRenderer {
+func As(as string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("as", as)
 }
 
@@ -135,7 +135,7 @@ func As(as string) htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-autocomplete
 // [Autofill field]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#autofill-field
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoComplete_InputSelectTextarea(autoComplete string) htmfunc.AttributeRenderer {
+func AutoComplete_InputSelectTextarea(autoComplete string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("autocomplete", autoComplete)
 }
 
@@ -157,7 +157,7 @@ func AutoComplete_InputSelectTextarea(autoComplete string) htmfunc.AttributeRend
 // [q]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-q-cite
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Cite(cite string) htmfunc.AttributeRenderer {
+func Cite(cite string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("cite", cite)
 }
 
@@ -174,7 +174,7 @@ func Cite(cite string) htmfunc.AttributeRenderer {
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [<color>]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/css-color/#typedef-color
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Color(color string) htmfunc.AttributeRenderer {
+func Color(color string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("color", color)
 }
 
@@ -190,7 +190,7 @@ func Color(color string) htmfunc.AttributeRenderer {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-content
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Content(content string) htmfunc.AttributeRenderer {
+func Content(content string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("content", content)
 }
 
@@ -206,7 +206,7 @@ func Content(content string) htmfunc.AttributeRenderer {
 // [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-data
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Data(data string) htmfunc.AttributeRenderer {
+func Data(data string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("data", data)
 }
 
@@ -224,7 +224,7 @@ func Data(data string) htmfunc.AttributeRenderer {
 // [ins]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [Valid date string with optional time]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string-with-optional-time
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime_DelIns(dateTime string) htmfunc.AttributeRenderer {
+func DateTime_DelIns(dateTime string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("datetime", dateTime)
 }
 
@@ -249,7 +249,7 @@ func DateTime_DelIns(dateTime string) htmfunc.AttributeRenderer {
 // [valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [valid duration string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-duration-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime_Time(dateTime string) htmfunc.AttributeRenderer {
+func DateTime_Time(dateTime string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("datetime", dateTime)
 }
 
@@ -269,7 +269,7 @@ func DateTime_Time(dateTime string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DirName(dirName string) htmfunc.AttributeRenderer {
+func DirName(dirName string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("dirname", dirName)
 }
 
@@ -286,7 +286,7 @@ func DirName(dirName string) htmfunc.AttributeRenderer {
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-download
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-download
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Download(download string) htmfunc.AttributeRenderer {
+func Download(download string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("download", download)
 }
 
@@ -302,7 +302,7 @@ func Download(download string) htmfunc.AttributeRenderer {
 // [label]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func For_Label(forV string) htmfunc.AttributeRenderer {
+func For_Label(forV string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("for", forV)
 }
 
@@ -333,7 +333,7 @@ func For_Label(forV string) htmfunc.AttributeRenderer {
 // [form]: https://html.spec.whatwg.org/dev/forms.html#the-form-element
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Form(form string) htmfunc.AttributeRenderer {
+func Form(form string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("form", form)
 }
 
@@ -353,7 +353,7 @@ func Form(form string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormAction(formAction string) htmfunc.AttributeRenderer {
+func FormAction(formAction string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("formaction", formAction)
 }
 
@@ -373,7 +373,7 @@ func FormAction(formAction string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormTarget(formTarget string) htmfunc.AttributeRenderer {
+func FormTarget(formTarget string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("formtarget", formTarget)
 }
 
@@ -392,7 +392,7 @@ func FormTarget(formTarget string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef_AArea(hRef string) htmfunc.AttributeRenderer {
+func HRef_AArea(hRef string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("href", hRef)
 }
 
@@ -409,7 +409,7 @@ func HRef_AArea(hRef string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef_Link(hRef string) htmfunc.AttributeRenderer {
+func HRef_Link(hRef string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("href", hRef)
 }
 
@@ -426,7 +426,7 @@ func HRef_Link(hRef string) htmfunc.AttributeRenderer {
 // [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef_Base(hRef string) htmfunc.AttributeRenderer {
+func HRef_Base(hRef string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("href", hRef)
 }
 
@@ -443,7 +443,7 @@ func HRef_Base(hRef string) htmfunc.AttributeRenderer {
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-hreflang
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-hreflang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRefLang(hRefLang string) htmfunc.AttributeRenderer {
+func HRefLang(hRefLang string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("hreflang", hRefLang)
 }
 
@@ -460,7 +460,7 @@ func HRefLang(hRefLang string) htmfunc.AttributeRenderer {
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Id(id string) htmfunc.AttributeRenderer {
+func Id(id string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("id", id)
 }
 
@@ -478,7 +478,7 @@ func Id(id string) htmfunc.AttributeRenderer {
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
 // [Valid source size list]: https://html.spec.whatwg.org/dev/images.html#valid-source-size-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ImageSizes(imageSizes string) htmfunc.AttributeRenderer {
+func ImageSizes(imageSizes string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("imagesizes", imageSizes)
 }
 
@@ -497,7 +497,7 @@ func ImageSizes(imageSizes string) htmfunc.AttributeRenderer {
 // [[SRI]]: https://html.spec.whatwg.org/dev/references.html#refsSRI
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Integrity(integrity string) htmfunc.AttributeRenderer {
+func Integrity(integrity string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("integrity", integrity)
 }
 
@@ -515,7 +515,7 @@ func Integrity(integrity string) htmfunc.AttributeRenderer {
 // [Valid custom element name]: https://html.spec.whatwg.org/dev/custom-elements.html#valid-custom-element-name
 // [customized built-in element]: https://html.spec.whatwg.org/dev/custom-elements.html#customized-built-in-element
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Is(is string) htmfunc.AttributeRenderer {
+func Is(is string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("is", is)
 }
 
@@ -532,7 +532,7 @@ func Is(is string) htmfunc.AttributeRenderer {
 // [Global identifier]: https://html.spec.whatwg.org/dev/microdata.html#global-identifier
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemId(itemId string) htmfunc.AttributeRenderer {
+func ItemId(itemId string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("itemid", itemId)
 }
 
@@ -552,7 +552,7 @@ func ItemId(itemId string) htmfunc.AttributeRenderer {
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-label
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Label(label string) htmfunc.AttributeRenderer {
+func Label(label string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("label", label)
 }
 
@@ -567,7 +567,7 @@ func Label(label string) htmfunc.AttributeRenderer {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-lang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Lang(lang string) htmfunc.AttributeRenderer {
+func Lang(lang string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("lang", lang)
 }
 
@@ -583,7 +583,7 @@ func Lang(lang string) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-list
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func List(list string) htmfunc.AttributeRenderer {
+func List(list string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("list", list)
 }
 
@@ -598,7 +598,7 @@ func List(list string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-max
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max_Input(max string) htmfunc.AttributeRenderer {
+func Max_Input(max string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("max", max)
 }
 
@@ -620,7 +620,7 @@ func Max_Input(max string) htmfunc.AttributeRenderer {
 // [style]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-media
 // [Valid media query list]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-media-query-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Media(media string) htmfunc.AttributeRenderer {
+func Media(media string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("media", media)
 }
 
@@ -635,7 +635,7 @@ func Media(media string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-min
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min_Input(min string) htmfunc.AttributeRenderer {
+func Min_Input(min string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("min", min)
 }
 
@@ -665,7 +665,7 @@ func Min_Input(min string) htmfunc.AttributeRenderer {
 // [form.elements]: https://html.spec.whatwg.org/dev/forms.html#dom-form-elements
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_InputsOutputs(name string) htmfunc.AttributeRenderer {
+func Name_InputsOutputs(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -682,7 +682,7 @@ func Name_InputsOutputs(name string) htmfunc.AttributeRenderer {
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_Details(name string) htmfunc.AttributeRenderer {
+func Name_Details(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -699,7 +699,7 @@ func Name_Details(name string) htmfunc.AttributeRenderer {
 // [document.forms]: https://html.spec.whatwg.org/dev/dom.html#dom-document-forms
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_Form(name string) htmfunc.AttributeRenderer {
+func Name_Form(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -718,7 +718,7 @@ func Name_Form(name string) htmfunc.AttributeRenderer {
 // [content navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#content-navigable
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_IframeObject(name string) htmfunc.AttributeRenderer {
+func Name_IframeObject(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -737,7 +737,7 @@ func Name_IframeObject(name string) htmfunc.AttributeRenderer {
 // [usemap]: https://html.spec.whatwg.org/dev/image-maps.html#attr-hyperlink-usemap
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_Map(name string) htmfunc.AttributeRenderer {
+func Name_Map(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -753,7 +753,7 @@ func Name_Map(name string) htmfunc.AttributeRenderer {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_Meta(name string) htmfunc.AttributeRenderer {
+func Name_Meta(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -769,7 +769,7 @@ func Name_Meta(name string) htmfunc.AttributeRenderer {
 // [slot]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name_Slot(name string) htmfunc.AttributeRenderer {
+func Name_Slot(name string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("name", name)
 }
 
@@ -786,7 +786,7 @@ func Name_Slot(name string) htmfunc.AttributeRenderer {
 // [[CSP]]: https://html.spec.whatwg.org/dev/references.html#refsCSP
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Nonce(nonce string) htmfunc.AttributeRenderer {
+func Nonce(nonce string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("nonce", nonce)
 }
 
@@ -802,7 +802,7 @@ func Nonce(nonce string) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
 // [Pattern]: https://html.spec.whatwg.org/dev/https://tc39.es/ecma262/#prod-Pattern
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Pattern(pattern string) htmfunc.AttributeRenderer {
+func Pattern(pattern string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("pattern", pattern)
 }
 
@@ -820,7 +820,7 @@ func Pattern(pattern string) htmfunc.AttributeRenderer {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-placeholder
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PlaceHolder(placeHolder string) htmfunc.AttributeRenderer {
+func PlaceHolder(placeHolder string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("placeholder", placeHolder)
 }
 
@@ -838,7 +838,7 @@ func PlaceHolder(placeHolder string) htmfunc.AttributeRenderer {
 // [input]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertarget
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverTarget(popOverTarget string) htmfunc.AttributeRenderer {
+func PopOverTarget(popOverTarget string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("popovertarget", popOverTarget)
 }
 
@@ -854,7 +854,7 @@ func PopOverTarget(popOverTarget string) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/media.html#attr-video-poster
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Poster(poster string) htmfunc.AttributeRenderer {
+func Poster(poster string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("poster", poster)
 }
 
@@ -882,7 +882,7 @@ func Poster(poster string) htmfunc.AttributeRenderer {
 // [fetches]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-fetch
 // [Referrer policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-referrer-policy/#referrer-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
+func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("referrerpolicy", referrerPolicy)
 }
 
@@ -900,7 +900,7 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.AttributeRenderer {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-sizes
 // [Valid source size list]: https://html.spec.whatwg.org/dev/images.html#valid-source-size-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Sizes_ImgSource(sizes string) htmfunc.AttributeRenderer {
+func Sizes_ImgSource(sizes string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("sizes", sizes)
 }
 
@@ -916,7 +916,7 @@ func Sizes_ImgSource(sizes string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#the-id-attribute
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Slot(slot string) htmfunc.AttributeRenderer {
+func Slot(slot string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("slot", slot)
 }
 
@@ -950,7 +950,7 @@ func Slot(slot string) htmfunc.AttributeRenderer {
 // [video]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Src(src string) htmfunc.AttributeRenderer {
+func Src(src string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("src", src)
 }
 
@@ -967,7 +967,7 @@ func Src(src string) htmfunc.AttributeRenderer {
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [an iframesrcdoc document]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#an-iframe-srcdoc-document
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SrcDoc(srcDoc string) htmfunc.AttributeRenderer {
+func SrcDoc(srcDoc string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("srcdoc", srcDoc)
 }
 
@@ -982,7 +982,7 @@ func SrcDoc(srcDoc string) htmfunc.AttributeRenderer {
 //
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-srclang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SrcLang(srcLang string) htmfunc.AttributeRenderer {
+func SrcLang(srcLang string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("srclang", srcLang)
 }
 
@@ -997,7 +997,7 @@ func SrcLang(srcLang string) htmfunc.AttributeRenderer {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-style
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Style(style string) htmfunc.AttributeRenderer {
+func Style(style string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("style", style)
 }
 
@@ -1018,7 +1018,7 @@ func Style(style string) htmfunc.AttributeRenderer {
 // [navigation]: https://html.spec.whatwg.org/dev/browsing-the-web.html#navigate
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target_AArea(target string) htmfunc.AttributeRenderer {
+func Target_AArea(target string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("target", target)
 }
 
@@ -1038,7 +1038,7 @@ func Target_AArea(target string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target_Base(target string) htmfunc.AttributeRenderer {
+func Target_Base(target string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("target", target)
 }
 
@@ -1056,7 +1056,7 @@ func Target_Base(target string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target_Form(target string) htmfunc.AttributeRenderer {
+func Target_Form(target string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("target", target)
 }
 
@@ -1072,7 +1072,7 @@ func Target_Form(target string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(title string) htmfunc.AttributeRenderer {
+func Title(title string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("title", title)
 }
 
@@ -1090,7 +1090,7 @@ func Title(title string) htmfunc.AttributeRenderer {
 // [dfn]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-dfn-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title_AbbrDfn(title string) htmfunc.AttributeRenderer {
+func Title_AbbrDfn(title string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("title", title)
 }
 
@@ -1107,7 +1107,7 @@ func Title_AbbrDfn(title string) htmfunc.AttributeRenderer {
 // [pattern]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title_Input(title string) htmfunc.AttributeRenderer {
+func Title_Input(title string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("title", title)
 }
 
@@ -1123,7 +1123,7 @@ func Title_Input(title string) htmfunc.AttributeRenderer {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title_Link(title string) htmfunc.AttributeRenderer {
+func Title_Link(title string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("title", title)
 }
 
@@ -1142,7 +1142,7 @@ func Title_Link(title string) htmfunc.AttributeRenderer {
 // [CSS style sheet set name]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom/#css-style-sheet-set-name
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title_LinkStyle(title string) htmfunc.AttributeRenderer {
+func Title_LinkStyle(title string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("title", title)
 }
 
@@ -1160,7 +1160,7 @@ func Title_LinkStyle(title string) htmfunc.AttributeRenderer {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type_ALink(typeV string) htmfunc.AttributeRenderer {
+func Type_ALink(typeV string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("type", typeV)
 }
 
@@ -1180,7 +1180,7 @@ func Type_ALink(typeV string) htmfunc.AttributeRenderer {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type_EmbedObjectSource(typeV string) htmfunc.AttributeRenderer {
+func Type_EmbedObjectSource(typeV string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("type", typeV)
 }
 
@@ -1197,7 +1197,7 @@ func Type_EmbedObjectSource(typeV string) htmfunc.AttributeRenderer {
 // [valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [JavaScript MIME type essence match]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type_Script(typeV string) htmfunc.AttributeRenderer {
+func Type_Script(typeV string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("type", typeV)
 }
 
@@ -1214,7 +1214,7 @@ func Type_Script(typeV string) htmfunc.AttributeRenderer {
 // [image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
 // [Valid hash-name reference]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-hash-name-reference
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func UseMap(useMap string) htmfunc.AttributeRenderer {
+func UseMap(useMap string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("usemap", useMap)
 }
 
@@ -1233,7 +1233,7 @@ func UseMap(useMap string) htmfunc.AttributeRenderer {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_ButtonOption(value string) htmfunc.AttributeRenderer {
+func Value_ButtonOption(value string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("value", value)
 }
 
@@ -1249,7 +1249,7 @@ func Value_ButtonOption(value string) htmfunc.AttributeRenderer {
 // [data]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-data-value
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_Data(value string) htmfunc.AttributeRenderer {
+func Value_Data(value string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("value", value)
 }
 
@@ -1264,6 +1264,6 @@ func Value_Data(value string) htmfunc.AttributeRenderer {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_Input(value string) htmfunc.AttributeRenderer {
+func Value_Input(value string) htmfunc.AttributeWriteFunc {
     return htmfunc.Attribute("value", value)
 }

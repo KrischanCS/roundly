@@ -17,7 +17,7 @@ import (
 // [Ordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#ordered-set-of-unique-space-separated-tokens
 // [identical to]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-is
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AccessKey(accessKey ...string) htmfunc.AttributeRenderer {
+func AccessKey(accessKey ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("accesskey", ' ', accessKey...)
 }
 
@@ -38,7 +38,7 @@ func AccessKey(accessKey ...string) htmfunc.AttributeRenderer {
 // [potentially render-blocking]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#potentially-render-blocking
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Blocking(blocking ...string) htmfunc.AttributeRenderer {
+func Blocking(blocking ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("blocking", ' ', blocking...)
 }
 
@@ -54,7 +54,7 @@ func Blocking(blocking ...string) htmfunc.AttributeRenderer {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#classes
 // [Set of space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Class(class ...string) htmfunc.AttributeRenderer {
+func Class(class ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("class", ' ', class...)
 }
 
@@ -70,7 +70,7 @@ func Class(class ...string) htmfunc.AttributeRenderer {
 // [output]: https://html.spec.whatwg.org/dev/form-elements.html#attr-output-for
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func For_Output(forV ...string) htmfunc.AttributeRenderer {
+func For_Output(forV ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("for", ' ', forV...)
 }
 
@@ -88,7 +88,7 @@ func For_Output(forV ...string) htmfunc.AttributeRenderer {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-headers
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Headers(headers ...string) htmfunc.AttributeRenderer {
+func Headers(headers ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("headers", ' ', headers...)
 }
 
@@ -107,7 +107,7 @@ func Headers(headers ...string) htmfunc.AttributeRenderer {
 // [valid absolute URLs]: https://html.spec.whatwg.org/dev/https://url.spec.whatwg.org/#syntax-url-absolute
 // [defined property names]: https://html.spec.whatwg.org/dev/microdata.html#defined-property-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemProp(itemProp ...string) htmfunc.AttributeRenderer {
+func ItemProp(itemProp ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("itemprop", ' ', itemProp...)
 }
 
@@ -124,7 +124,7 @@ func ItemProp(itemProp ...string) htmfunc.AttributeRenderer {
 // [Referenced]: https://html.spec.whatwg.org/dev/dom.html#referenced
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemRef(itemRef ...string) htmfunc.AttributeRenderer {
+func ItemRef(itemRef ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("itemref", ' ', itemRef...)
 }
 
@@ -142,7 +142,7 @@ func ItemRef(itemRef ...string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [valid absolute URLs]: https://html.spec.whatwg.org/dev/https://url.spec.whatwg.org/#syntax-url-absolute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemType(itemType ...string) htmfunc.AttributeRenderer {
+func ItemType(itemType ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("itemtype", ' ', itemType...)
 }
 
@@ -162,7 +162,7 @@ func ItemType(itemType ...string) htmfunc.AttributeRenderer {
 // [Set of space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-space-separated-tokens
 // [valid non-empty URLs]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Ping(ping ...string) htmfunc.AttributeRenderer {
+func Ping(ping ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("ping", ' ', ping...)
 }
 
@@ -181,7 +181,7 @@ func Ping(ping ...string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rel_AArea(rel ...string) htmfunc.AttributeRenderer {
+func Rel_AArea(rel ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("rel", ' ', rel...)
 }
 
@@ -198,7 +198,7 @@ func Rel_AArea(rel ...string) htmfunc.AttributeRenderer {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rel_Link(rel ...string) htmfunc.AttributeRenderer {
+func Rel_Link(rel ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("rel", ' ', rel...)
 }
 
@@ -215,7 +215,7 @@ func Rel_Link(rel ...string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SandBox(sandBox ...string) htmfunc.AttributeRenderer {
+func SandBox(sandBox ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("sandbox", ' ', sandBox...)
 }
 
@@ -234,6 +234,6 @@ func SandBox(sandBox ...string) htmfunc.AttributeRenderer {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Sizes_Link(sizes ...string) htmfunc.AttributeRenderer {
+func Sizes_Link(sizes ...string) htmfunc.AttributeWriteFunc {
     return htmfunc.AttributesMultiValue("sizes", ' ', sizes...)
 }
