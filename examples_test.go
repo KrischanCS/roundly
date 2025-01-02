@@ -5,29 +5,29 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ch-schulz/htmfunc/attribute"
-	"github.com/ch-schulz/htmfunc/element"
+	attr "github.com/ch-schulz/htmfunc/attribute"
+	. "github.com/ch-schulz/htmfunc/element"
 )
 
 //nolint:lll
 func ExampleHtml() {
-	page := element.Document("html",
-		element.Html(attribute.Lang("en"),
-			element.Head(
-				element.Title("The Title of the Page"),
+	page := Document("html",
+		Html(attr.Lang("en"),
+			Head(
+				Title("The Title of the Page"),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(attribute.HRef_AArea("/main"), element.TextTrusted("Main")),
-					element.A(attribute.HRef_AArea("/details"), element.TextTrusted("Details")),
+			Body(nil,
+				Nav(nil,
+					A(attr.HRef_AArea("/main"), TextTrusted("Main")),
+					A(attr.HRef_AArea("/details"), TextTrusted("Details")),
 				),
-				element.Main(nil,
-					element.H1(nil, element.TextTrusted("The Heading")),
-					element.Div(nil,
-						element.Text("Here could be your content"),
+				Main(nil,
+					H1(nil, TextTrusted("The Heading")),
+					Div(nil,
+						Text("Here could be your content"),
 					),
-					element.Div(attribute.Class("escaped", "something"),
-						element.Text("HTML characters <div> in </div> here will be escaped &"),
+					Div(attr.Class("escaped", "something"),
+						Text("HTML characters <div> in </div> here will be escaped &"),
 					),
 				),
 			),

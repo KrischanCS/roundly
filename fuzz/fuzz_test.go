@@ -174,7 +174,7 @@ func FuzzDom(f *testing.F) {
 }
 
 func createTree(random *rand.Rand, depth int) htmfunc.Element {
-	if depth > 20 || random.Float64() < 0.05 {
+	if depth > 20 || random.Float64() < 0.03 {
 		fmt.Println("text, d:", depth)
 		return Div(nil, Text(randomElement(random, texts)))
 	}
@@ -182,7 +182,7 @@ func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	depth++
 
 	children := make([]htmfunc.Element, 0, 3)
-	for random.Float64() < 0.55 && len(children) < 20 {
+	for random.Float64() < 0.6 && len(children) < 30 {
 		children = append(children, createTree(random, depth))
 	}
 
