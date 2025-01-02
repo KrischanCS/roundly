@@ -20,7 +20,7 @@ linters-settings:
     default-signifies-exhaustive: true
 
   gocognit:
-    min-complexity: 15
+    min-complexity: 12
 
   paralleltest:
     ignore-missing-subtests: true
