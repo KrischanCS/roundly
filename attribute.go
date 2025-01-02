@@ -1,5 +1,11 @@
 package htmfunc
 
+type Attribute func(w Writer) error
+
+func (fn Attribute) RenderAttribute(w Writer) error {
+	return fn(w)
+}
+
 func WriteAttribute(name string, value string) Attribute {
 	return func(w Writer) error {
 		_, err := w.WriteString(name)
