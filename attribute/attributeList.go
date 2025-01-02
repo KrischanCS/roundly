@@ -4,7 +4,7 @@ import (
 	"github.com/ch-schulz/htmfunc"
 )
 
-// Attributes joins all given attributes space separated
+// Attributes joins all given attributes space separated.
 func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 	if attributes == nil {
 		return func(w htmfunc.Writer) error {
@@ -17,34 +17,36 @@ func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 		return func(w htmfunc.Writer) error {
 			return nil
 		}
-
 	case 1:
 		return attributes[0]
-
 	default:
-		return func(w htmfunc.Writer) error {
-			err := attributes[0].RenderAttribute(w)
+		return join(attributes)
+	}
+}
+
+func join(attributes []htmfunc.Attribute) htmfunc.Attribute {
+	return func(w htmfunc.Writer) error {
+		err := attributes[0].RenderAttribute(w)
+		if err != nil {
+			return err
+		}
+
+		for _, attribute := range attributes[1:] {
+			if attribute == nil {
+				continue
+			}
+
+			err = w.WriteByte(' ')
 			if err != nil {
 				return err
 			}
 
-			for _, attribute := range attributes[1:] {
-				if attribute == nil {
-					continue
-				}
-
-				err = w.WriteByte(' ')
-				if err != nil {
-					return err
-				}
-
-				err = attribute.RenderAttribute(w)
-				if err != nil {
-					return err
-				}
+			err = attribute.RenderAttribute(w)
+			if err != nil {
+				return err
 			}
-
-			return nil
 		}
+
+		return nil
 	}
 }

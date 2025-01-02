@@ -1,15 +1,12 @@
 package fuzz
 
 import (
-	"fmt"
+	"github.com/ch-schulz/htmfunc"
+	. "github.com/ch-schulz/htmfunc/element"
+	"github.com/stretchr/testify/assert"
 	"math"
 	"math/rand/v2"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
-
-	"github.com/ch-schulz/htmfunc"
-	. "github.com/ch-schulz/htmfunc/element"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
@@ -34,7 +31,7 @@ type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element)
 //	br                           = Br
 //)
 
-var elements = []elementFunc{
+var elements = []elementFunc{ //nolint:gochecknoglobals
 	Canvas,
 	Ins,
 	Del,
@@ -140,7 +137,7 @@ var elements = []elementFunc{
 	Wbr,
 }
 
-var texts = []string{
+var texts = []string{ //nolint:gochecknoglobals
 	"Hello, World!",
 	"Hi",
 	"Three < Four",
@@ -175,7 +172,6 @@ func FuzzDom(f *testing.F) {
 
 func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	if depth > 20 || random.Float64() < 0.03 {
-		fmt.Println("text, d:", depth)
 		return Div(nil, Text(randomElement(random, texts)))
 	}
 

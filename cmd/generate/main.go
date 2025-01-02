@@ -8,33 +8,38 @@ import (
 	"text/template"
 )
 
+//nolint:gochecknoglobals
 var reloadStandard = flag.Bool("reloadHtmlStandard", false, "reload html standard from the web instead of file system")
 
-var textAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesText.go.tmpl"))
-var boolAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesBool.go.tmpl"))
-var enumAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesEnum.go.tmpl"))
-var inputTypeAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesInputType.go.tmpl"))
-var commaSeparatedAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesCommaSeparated.go.tmpl"))
-var commaSeparatedFloatAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesCommaSeparatedFloats.go." + "" + "tmpl"))
-var spaceSeparatedAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesSpaceSeparated.go.tmpl"))
-var floatAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesFloat.go.tmpl"))
-var intAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesInt.go.tmpl"))
-var uintAttrTemplate = template.Must(
-	template.ParseFiles("templates/attributesUint.go.tmpl"))
-var attrsTemplate = template.Must(
-	template.ParseFiles("templates/attributeList.go.tmpl"))
+//nolint:gochecknoglobals
+var (
+	textAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesText.go.tmpl"))
+	boolAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesBool.go.tmpl"))
+	enumAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesEnum.go.tmpl"))
+	inputTypeAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesInputType.go.tmpl"))
+	commaSeparatedAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesCommaSeparated.go.tmpl"))
+	commaSeparatedFloatAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesCommaSeparatedFloats.go." + "" + "tmpl"))
+	spaceSeparatedAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesSpaceSeparated.go.tmpl"))
+	floatAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesFloat.go.tmpl"))
+	intAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesInt.go.tmpl"))
+	uintAttrTemplate = template.Must(
+		template.ParseFiles("templates/attributesUint.go.tmpl"))
+	attrsTemplate = template.Must(
+		template.ParseFiles("templates/attributeList.go.tmpl"))
+)
 
 func main() {
 	flag.Parse()
+
 	body := loadIndicesFromStandard()
 
 	attributes := findAttributes(body)

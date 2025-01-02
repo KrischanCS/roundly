@@ -2,18 +2,17 @@ package flow
 
 import (
 	"fmt"
-	"iter"
-	"strconv"
-	"testing"
-
-	"github.com/stretchr/testify/assert"
-
 	"github.com/ch-schulz/htmfunc"
 	attr "github.com/ch-schulz/htmfunc/attribute"
 	. "github.com/ch-schulz/htmfunc/element"
 	"github.com/ch-schulz/htmfunc/iters"
+	"github.com/stretchr/testify/assert"
+	"iter"
+	"strconv"
+	"testing"
 )
 
+//nolint:funlen
 func TestRange(t *testing.T) {
 	t.Parallel()
 
@@ -139,6 +138,7 @@ func TestRangeInt(t *testing.T) {
 	}
 }
 
+//nolint:funlen
 func TestRangeIter(t *testing.T) {
 	t.Parallel()
 

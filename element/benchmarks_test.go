@@ -17,7 +17,7 @@ func BenchmarkExamplePage(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(
@@ -51,7 +51,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(
@@ -88,7 +88,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(
@@ -122,7 +122,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(
@@ -156,7 +156,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(
@@ -190,7 +190,7 @@ func BenchmarkRange(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		w.Reset()
 
 		page := Html(

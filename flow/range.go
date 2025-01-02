@@ -7,7 +7,7 @@ import (
 )
 
 func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {
-	return htmfunc.Element(func(w htmfunc.Writer) error {
+	return func(w htmfunc.Writer) error {
 		for i, e := range items {
 			err := component(i, e).RenderElement(w)
 			if err != nil {
@@ -16,11 +16,11 @@ func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Ele
 		}
 
 		return nil
-	})
+	}
 }
 
 func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
-	return htmfunc.Element(func(w htmfunc.Writer) error {
+	return func(w htmfunc.Writer) error {
 		for i := range limit {
 			err := component(i).RenderElement(w)
 			if err != nil {
@@ -29,7 +29,7 @@ func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 		}
 
 		return nil
-	})
+	}
 }
 
 func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element) htmfunc.Element {

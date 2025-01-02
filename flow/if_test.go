@@ -1,14 +1,12 @@
 package flow
 
 import (
+	"github.com/ch-schulz/htmfunc"
+	. "github.com/ch-schulz/htmfunc/element"
+	"github.com/stretchr/testify/assert"
 	"math/rand/v2"
 	"strconv"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
-
-	"github.com/ch-schulz/htmfunc"
-	. "github.com/ch-schulz/htmfunc/element"
 )
 
 func TestIf(t *testing.T) {

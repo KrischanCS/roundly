@@ -29,10 +29,12 @@ linters-settings:
     max-distance: 10
 
     ignore-names:
+      - i
+      - id
+      - sb
+      - to
       - tt
       - w
-      - i
-      - to
 
   testifylint:
     disable:
@@ -47,67 +49,25 @@ linters-settings:
             - "github.com/ch-schulz/htmfunc/attribute"
             - "github.com/ch-schulz/htmfunc/flow"
 
+  stylecheck:
+    checks:
+      - all
+      - -ST1003
+
+
 
 
 linters:
-  enable-all: false
-  disable-all: true
-  enable:
-    - bidichk
-    - bodyclose
-    - copyloopvar
-    - dogsled
-    - dupl
-    - dupword
-    - errcheck
-    - errchkjson
-    - errname
-    - errorlint
-    - exhaustive
-    - gocheckcompilerdirectives
-    - gocognit
-    - goconst
-    - gocritic
-    - godot
-    - godox
-    - gofmt
-    - gomoddirectives
-    - goprintffuncname
-    - gosec
-    - gosimple
-    - gosmopolitan
-    - govet
-    - importas
-    - inamedparam
-    - ineffassign
-    - interfacebloat
-    - lll
-    - makezero
-    - mirror
-    - misspell
-    - nilerr
-    - nilnil
-    - mnd
-    - nolintlint
-    - paralleltest
-    - perfsprint
-    - predeclared
-    - promlinter
-    - reassign
-    - revive
-    - rowserrcheck
-    - sqlclosecheck
-    - staticcheck
-    - tenv
-    - testableexamples
-    - testifylint
-    - thelper
-    - typecheck
-    - unconvert
-    - unparam
-    - unused
-    - usestdlibvars
-    - varnamelen
-    - wastedassign
-    - wsl
-    - zerologlint
+  enable-all: true
+  disable:
+    - depguard
+    - exhaustruct
+    - exportloopref
+    - gci
+    - gofumpt
+    - ireturn
+    - nlreturn
+    - noctx
+    - testpackage
+    - tparallel
+    - wrapcheck

@@ -5,14 +5,14 @@ import (
 )
 
 var (
-	escapeChar = [...]byte{
+	escapeChar = [...]byte{ //nolint:gochecknoglobals
 		'&',
 		'"',
 		'\'',
 		'<',
 		'>',
 	}
-	charEntity = [...]string{
+	charEntity = [...]string{ //nolint:gochecknoglobals
 		"&amp;",
 		"&#34;",
 		"&#39;",
@@ -47,7 +47,7 @@ func Text(text string) htmfunc.Element {
 }
 
 func indexOf(chars [5]byte, char byte) int {
-	for i := 0; i < 5; i++ {
+	for i := range 5 {
 		if chars[i] == char {
 			return i
 		}

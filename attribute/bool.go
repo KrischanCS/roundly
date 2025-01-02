@@ -1,7 +1,8 @@
+//nolint:nolintlint,lll
 package attribute
 
 import (
-    "github.com/ch-schulz/htmfunc"
+	"github.com/ch-schulz/htmfunc"
 )
 
 // AllowFullScreen creates the allowfullscreen attribute - Whether to allow the [iframe]'s contents to use [requestFullscreen()]
@@ -19,7 +20,7 @@ import (
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AllowFullScreen() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("allowfullscreen")
+	return htmfunc.WriteBoolAttribute("allowfullscreen")
 }
 
 // Alpha creates the alpha attribute - Allow the color's alpha component to be set
@@ -35,7 +36,7 @@ func AllowFullScreen() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Alpha() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("alpha")
+	return htmfunc.WriteBoolAttribute("alpha")
 }
 
 // Async creates the async attribute - Execute script when available, without blocking while fetching
@@ -51,7 +52,7 @@ func Alpha() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Async() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("async")
+	return htmfunc.WriteBoolAttribute("async")
 }
 
 // AutoFocus creates the autofocus attribute - Automatically focus the element when the page is loaded
@@ -67,7 +68,7 @@ func Async() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AutoFocus() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("autofocus")
+	return htmfunc.WriteBoolAttribute("autofocus")
 }
 
 // AutoPlay creates the autoplay attribute - Hint that the [media resource] can be started automatically when the page is loaded
@@ -86,7 +87,7 @@ func AutoFocus() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func AutoPlay() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("autoplay")
+	return htmfunc.WriteBoolAttribute("autoplay")
 }
 
 // Checked creates the checked attribute - Whether the control is checked
@@ -102,7 +103,7 @@ func AutoPlay() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Checked() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("checked")
+	return htmfunc.WriteBoolAttribute("checked")
 }
 
 // Controls creates the controls attribute - Show user agent controls
@@ -120,7 +121,7 @@ func Checked() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Controls() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("controls")
+	return htmfunc.WriteBoolAttribute("controls")
 }
 
 // Default creates the default attribute - Enable the track if no other [text track] is more suitable
@@ -137,7 +138,7 @@ func Controls() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Default() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("default")
+	return htmfunc.WriteBoolAttribute("default")
 }
 
 // Defer creates the defer attribute - Defer script execution
@@ -153,7 +154,7 @@ func Default() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Defer() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("defer")
+	return htmfunc.WriteBoolAttribute("defer")
 }
 
 // Disabled_Inputs creates the disabled attribute - Whether the form control is disabled
@@ -181,7 +182,7 @@ func Defer() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Disabled_Inputs() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("disabled")
+	return htmfunc.WriteBoolAttribute("disabled")
 }
 
 // Disabled_Fieldset creates the disabled attribute - Whether the descendant form controls, except any inside [legend], are disabled
@@ -198,7 +199,7 @@ func Disabled_Inputs() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Disabled_Fieldset() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("disabled")
+	return htmfunc.WriteBoolAttribute("disabled")
 }
 
 // Disabled_Link creates the disabled attribute - Whether the link is disabled
@@ -214,7 +215,7 @@ func Disabled_Fieldset() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Disabled_Link() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("disabled")
+	return htmfunc.WriteBoolAttribute("disabled")
 }
 
 // FormNoValidate creates the formnovalidate attribute - Bypass form control validation for [form submission]
@@ -233,7 +234,7 @@ func Disabled_Link() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func FormNoValidate() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("formnovalidate")
+	return htmfunc.WriteBoolAttribute("formnovalidate")
 }
 
 // Inert creates the inert attribute - Whether the element is [inert].
@@ -250,7 +251,7 @@ func FormNoValidate() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Inert() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("inert")
+	return htmfunc.WriteBoolAttribute("inert")
 }
 
 // IsMap creates the ismap attribute - Whether the image is a server-side image map
@@ -266,7 +267,7 @@ func Inert() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func IsMap() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("ismap")
+	return htmfunc.WriteBoolAttribute("ismap")
 }
 
 // ItemScope creates the itemscope attribute - Introduces a microdata item
@@ -282,7 +283,7 @@ func IsMap() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ItemScope() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("itemscope")
+	return htmfunc.WriteBoolAttribute("itemscope")
 }
 
 // Loop creates the loop attribute - Whether to loop the [media resource]
@@ -301,7 +302,7 @@ func ItemScope() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Loop() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("loop")
+	return htmfunc.WriteBoolAttribute("loop")
 }
 
 // Multiple creates the multiple attribute - Whether to allow multiple values
@@ -319,7 +320,7 @@ func Loop() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Multiple() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("multiple")
+	return htmfunc.WriteBoolAttribute("multiple")
 }
 
 // Muted creates the muted attribute - Whether to mute the [media resource] by default
@@ -338,7 +339,7 @@ func Multiple() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Muted() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("muted")
+	return htmfunc.WriteBoolAttribute("muted")
 }
 
 // NoModule creates the nomodule attribute - Prevents execution in user agents that support module scripts
@@ -354,7 +355,7 @@ func Muted() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func NoModule() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("nomodule")
+	return htmfunc.WriteBoolAttribute("nomodule")
 }
 
 // NoValidate creates the novalidate attribute - Bypass form control validation for [form submission]
@@ -371,7 +372,7 @@ func NoModule() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func NoValidate() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("novalidate")
+	return htmfunc.WriteBoolAttribute("novalidate")
 }
 
 // Open_Details creates the open attribute - Whether the details are visible
@@ -387,7 +388,7 @@ func NoValidate() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Open_Details() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("open")
+	return htmfunc.WriteBoolAttribute("open")
 }
 
 // Open_Dialog creates the open attribute - Whether the dialog box is showing
@@ -403,7 +404,7 @@ func Open_Details() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Open_Dialog() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("open")
+	return htmfunc.WriteBoolAttribute("open")
 }
 
 // PlaysInline creates the playsinline attribute - Encourage the user agent to display video content within the element's playback area
@@ -419,7 +420,7 @@ func Open_Dialog() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PlaysInline() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("playsinline")
+	return htmfunc.WriteBoolAttribute("playsinline")
 }
 
 // ReadOnly_InputTextarea creates the readonly attribute - Whether to allow the value to be edited by the user
@@ -437,7 +438,7 @@ func PlaysInline() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ReadOnly_InputTextarea() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("readonly")
+	return htmfunc.WriteBoolAttribute("readonly")
 }
 
 // ReadOnly_CustomFormElements creates the readonly attribute - Affects willValidate, plus any behavior added by the custom element author
@@ -453,7 +454,7 @@ func ReadOnly_InputTextarea() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ReadOnly_CustomFormElements() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("readonly")
+	return htmfunc.WriteBoolAttribute("readonly")
 }
 
 // Required creates the required attribute - Whether the control is required for [form submission]
@@ -474,7 +475,7 @@ func ReadOnly_CustomFormElements() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Required() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("required")
+	return htmfunc.WriteBoolAttribute("required")
 }
 
 // Reversed creates the reversed attribute - Number the list backwards
@@ -490,7 +491,7 @@ func Required() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Reversed() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("reversed")
+	return htmfunc.WriteBoolAttribute("reversed")
 }
 
 // Selected creates the selected attribute - Whether the option is selected by default
@@ -506,7 +507,7 @@ func Reversed() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Selected() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("selected")
+	return htmfunc.WriteBoolAttribute("selected")
 }
 
 // ShadowRootClonable creates the shadowrootclonable attribute - Sets [clonable] on a declarative shadow root
@@ -523,7 +524,7 @@ func Selected() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ShadowRootClonable() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("shadowrootclonable")
+	return htmfunc.WriteBoolAttribute("shadowrootclonable")
 }
 
 // ShadowRootDelegatesFocus creates the shadowrootdelegatesfocus attribute - Sets [delegates focus] on a declarative shadow root
@@ -540,7 +541,7 @@ func ShadowRootClonable() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ShadowRootDelegatesFocus() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("shadowrootdelegatesfocus")
+	return htmfunc.WriteBoolAttribute("shadowrootdelegatesfocus")
 }
 
 // ShadowRootSerializable creates the shadowrootserializable attribute - Sets serializable on a declarative shadow root
@@ -556,5 +557,5 @@ func ShadowRootDelegatesFocus() htmfunc.Attribute {
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ShadowRootSerializable() htmfunc.Attribute {
-    return htmfunc.WriteBoolAttribute("shadowrootserializable")
+	return htmfunc.WriteBoolAttribute("shadowrootserializable")
 }

@@ -4,7 +4,7 @@ type MethodParamName struct {
 	FuncName, paramName string
 }
 
-var mappings = map[string]MethodParamName{
+var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"accept-charset":           {"AcceptCharset", "acceptCharset"},
 	"accesskey":                {"AccessKey", "accessKey"},
 	"allowfullscreen":          {"AllowFullScreen", "allowFullScreen"},

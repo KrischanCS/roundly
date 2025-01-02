@@ -50,5 +50,4 @@ func ExampleFromStepTo() {
 	// 1 2.5
 	// 2 4.0
 	// 3 5.5
-
 }

@@ -10,14 +10,31 @@ type namedElementGroups struct {
 	name     string
 }
 
+//nolint:gochecknoglobals
 var definedElementGroups = []namedElementGroups{
 	{
-		elements: []string{"[button]", "[input]", "[optgroup]", "[option]", "[select]", "[textarea]", "[form-associated custom elements]"},
-		name:     "Inputs",
+		elements: []string{
+			"[button]",
+			"[input]",
+			"[optgroup]",
+			"[option]",
+			"[select]",
+			"[textarea]",
+			"[form-associated custom elements]",
+		},
+		name: "Inputs",
 	},
 	{
-		elements: []string{"[button]", "[fieldset]", "[input]", "[output]", "[select]", "[textarea]", "[form-associated custom elements]"},
-		name:     "InputsOutputs",
+		elements: []string{
+			"[button]",
+			"[fieldset]",
+			"[input]",
+			"[output]",
+			"[select]",
+			"[textarea]",
+			"[form-associated custom elements]",
+		},
+		name: "InputsOutputs",
 	},
 }
 
@@ -49,7 +66,9 @@ func renameByElements(attr *attribute) {
 			if !slices.Equal(attr.Elements, group.elements) {
 				continue
 			}
+
 			attr.FuncName += group.name
+
 			return
 		}
 

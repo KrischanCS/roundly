@@ -9,7 +9,7 @@ import (
 	. "github.com/ch-schulz/htmfunc/element"
 )
 
-//nolint:lll
+//nolint:nolintlint,lll
 func ExampleHtml() {
 	page := Document("html",
 		Html(attr.Lang("en"),

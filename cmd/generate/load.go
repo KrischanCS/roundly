@@ -12,7 +12,7 @@ import (
 
 const htmlStandardUrl = `https://html.spec.whatwg.org/dev/`
 
-var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
+var standardFileName = filepath.Join("data", "htmlStandardIndices.html") //nolint:gochecknoglobals
 
 func loadIndicesFromStandard() *html.Node {
 	if *reloadStandard || !isStandardFilePresent() {
@@ -53,12 +53,12 @@ func downloadStandardFile() {
 		log.Panic("Error loading indices from standard: ", err)
 	}
 
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
+	defer func() {
+		err := response.Body.Close()
 		if err != nil {
 			log.Print("Error closing body: ", err)
 		}
-	}(response.Body)
+	}()
 
 	if response.StatusCode != http.StatusOK {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)

@@ -13,7 +13,7 @@ import (
 // so this behaves the same as doing for range over a slice/array holding the same values.
 func FromTo(start, endNotIncluded int) iter.Seq2[int, int] {
 	return func(yield func(int, int) bool) {
-		for i := 0; i < endNotIncluded-start; i++ {
+		for i := range endNotIncluded - start {
 			if !yield(i, start+i) {
 				return
 			}

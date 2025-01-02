@@ -1,12 +1,10 @@
 package element
 
 import (
-	"testing"
-
-	"github.com/stretchr/testify/assert"
-
 	"github.com/ch-schulz/htmfunc"
 	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestDocument(t *testing.T) {
@@ -52,7 +50,7 @@ func TestHtml(t *testing.T) {
 				body: Body(attr.Lang("de"), Text("Dies ist ein Text zum Testen.")),
 				head: Head(Title("Der Titel")),
 			},
-			want: `<html lang="de"><head><title>Der Titel</title></head><body lang="de">Dies ist ein Text zum Testen.</body></html>`, //nolint:lll
+			want: `<html lang="de"><head><title>Der Titel</title></head><body lang="de">Dies ist ein Text zum Testen.</body></html>`, //nolint:nolintlint,lll
 		},
 		{
 			name: "Multiple Components",
@@ -64,7 +62,7 @@ func TestHtml(t *testing.T) {
 					Text("<p>Text Escaping Works!</p>"),
 					TextTrusted("<p>This will not be escaped!</p>")),
 			},
-			want: `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text Escaping Works!&lt;/p&gt;<p>This will not be escaped!</p></body></html>`, //nolint:lll
+			want: `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text Escaping Works!&lt;/p&gt;<p>This will not be escaped!</p></body></html>`, //nolint:nolintlint,lll
 		},
 	}
 

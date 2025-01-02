@@ -1,7 +1,8 @@
+//nolint:nolintlint,lll
 package attribute
 
 import (
-    "github.com/ch-schulz/htmfunc"
+	"github.com/ch-schulz/htmfunc"
 )
 {{ range .}}
 {{/*gotype: github.com/ch-schulz/htmfunc/attribute/generateAttributes.attribute*/ -}}
@@ -24,6 +25,6 @@ import (
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func {{.FuncName}}({{.ParamName}} string) htmfunc.Attribute {
-    return htmfunc.WriteAttribute("{{.Name}}", {{.ParamName}})
+	return htmfunc.WriteAttribute("{{.Name}}", {{.ParamName}})
 }
 {{end}}
