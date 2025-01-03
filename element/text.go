@@ -1,18 +1,19 @@
 package element
 
 import (
+	"bytes"
 	"github.com/ch-schulz/htmfunc"
 )
 
 var (
-	escapeChar = [...]byte{ //nolint:gochecknoglobals
+	escapeChar = []byte{ //nolint:gochecknoglobals
 		'&',
 		'"',
 		'\'',
 		'<',
 		'>',
 	}
-	charEntity = [...]string{ //nolint:gochecknoglobals
+	charEntity = []string{ //nolint:gochecknoglobals
 		"&amp;",
 		"&#34;",
 		"&#39;",
@@ -27,7 +28,7 @@ var (
 func Text(text string) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
 		for _, r := range []byte(text) {
-			if i := indexOf(escapeChar, r); i >= 0 {
+			if i := bytes.IndexByte(escapeChar, r); i != -1 {
 				_, err := w.WriteString(charEntity[i])
 				if err != nil {
 					return err
@@ -44,16 +45,6 @@ func Text(text string) htmfunc.Element {
 
 		return nil
 	}
-}
-
-func indexOf(chars [5]byte, char byte) int {
-	for i := range 5 {
-		if chars[i] == char {
-			return i
-		}
-	}
-
-	return -1
 }
 
 // TextTrusted is equivalent to [Text], but won't escape the input. Only use with safe text and never with user input.
