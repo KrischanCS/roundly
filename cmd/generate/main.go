@@ -58,7 +58,7 @@ func main() {
 }
 
 func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {
-	file, err := os.OpenFile("../../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	file, err := os.OpenFile("../../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666) //nolint:mnd
 	if err != nil {
 		log.Fatal(err)
 	}

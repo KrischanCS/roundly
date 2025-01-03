@@ -64,8 +64,7 @@ func downloadStandardFile() {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)
 	}
 
-	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY,
-		0666)
+	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666) //nolint:mnd
 	if err != nil {
 		log.Print("Error creating file htmlStandardIndices.html: ", err)
 	}

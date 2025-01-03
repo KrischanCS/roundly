@@ -73,7 +73,7 @@ func findAttributes(body *html.Node) attributes {
 	tBody := findTBody(attributesTable)
 
 	attrsByName := make(map[string][]*attribute)
-	attrs := make([]*attribute, 0, 256)
+	attrs := make([]*attribute, 0, 256) //nolint:mnd
 
 	for row := range tBody.ChildNodes() {
 		attr := parseAttribute(row)
@@ -98,6 +98,7 @@ func addByName(attrsByName map[string][]*attribute, attr *attribute) {
 
 var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
+//nolint:mnd
 func classifyAttributes(attrs []*attribute) attributes {
 	attrsClassified := attributes{
 		Text:           make([]attribute, 0, 16),
@@ -275,8 +276,8 @@ func setNames(attr *attribute, attributeName string) {
 }
 
 func extractText(data *html.Node) (string, []link) {
-	var sb strings.Builder
-	links := make([]link, 0, 3)
+	sb := strings.Builder{}
+	links := make([]link, 0, 3) //nolint:mnd
 
 	for node := data.FirstChild; node != nil; node = node.NextSibling {
 		switch node.Type {
