@@ -1,6 +1,6 @@
 package flow
 
-import "github.com/ch-schulz/htmfunc"
+import "github.com/KrischanCS/htmfunc"
 
 // If returns the given renderer if condition is true, else a NOP renderer.
 func If[T ~func(w htmfunc.Writer) error](condition bool, renderer T) T {

@@ -4,10 +4,10 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attribute"
-	"github.com/ch-schulz/htmfunc/flow"
-	"github.com/ch-schulz/htmfunc/iters"
+	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/flow"
+	"github.com/KrischanCS/htmfunc/iters"
 )
 
 //nolint:errcheck

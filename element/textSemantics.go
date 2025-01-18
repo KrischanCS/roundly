@@ -3,8 +3,8 @@ package element
 import (
 	"time"
 
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/htmfunc/attribute"
 )
 
 // A creates a [a element].
@@ -252,7 +252,7 @@ func TimeMachineReadableAsContent(attributes htmfunc.Attribute, t time.Time) htm
 //
 // [time element]: https://html.spec.whatwg.org/#the-time-element
 func TimeAttribute(attributes htmfunc.Attribute, t time.Time, childNodes ...htmfunc.Element) htmfunc.
-Element {
+	Element {
 	attributes = attribute.Attributes(attribute.DateTime_Time(t.Format(time.RFC3339)), attributes)
 	return htmfunc.WriteElement("time", attributes, childNodes...)
 }

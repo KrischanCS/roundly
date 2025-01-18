@@ -2,7 +2,7 @@
 package attribute
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Accept creates the accept attribute - Hint for expected file type in [file upload controls]

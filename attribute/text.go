@@ -2,7 +2,7 @@
 package attribute
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Abbr creates the abbr attribute - Alternative label to use for the header cell when referencing the cell in other contexts
@@ -67,9 +67,10 @@ func Action(action string) htmfunc.Attribute {
 //
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-allow
 // [Permissions policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-feature-policy/#permissions-policy
-// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [Serialized permissions policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-feature-policy/#serialized-permissions-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 func Allow(allow string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("allow", allow)
 }
@@ -107,15 +108,16 @@ func Alt(alt string) htmfunc.Attribute {
 // [Potential destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-potential-destination
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
-// [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
+// [script-like destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#request-destination-script-like
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [Potential destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-potential-destination
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
-// [script-like destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#request-destination-script-like
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func As(as string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("as", as)
 }
@@ -495,9 +497,10 @@ func ImageSizes(imageSizes string) htmfunc.Attribute {
 //
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-integrity
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-integrity
-// [[SRI]]: https://html.spec.whatwg.org/dev/references.html#refsSRI
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [[SRI]]: https://html.spec.whatwg.org/dev/references.html#refsSRI
 func Integrity(integrity string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("integrity", integrity)
 }
@@ -514,8 +517,9 @@ func Integrity(integrity string) htmfunc.Attribute {
 // [HTML elements]: https://html.spec.whatwg.org/dev/custom-elements.html#attr-is
 // [customized built-in element]: https://html.spec.whatwg.org/dev/custom-elements.html#customized-built-in-element
 // [Valid custom element name]: https://html.spec.whatwg.org/dev/custom-elements.html#valid-custom-element-name
-// [customized built-in element]: https://html.spec.whatwg.org/dev/custom-elements.html#customized-built-in-element
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [customized built-in element]: https://html.spec.whatwg.org/dev/custom-elements.html#customized-built-in-element
 func Is(is string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("is", is)
 }
@@ -680,9 +684,10 @@ func Name_InputsOutputs(name string) htmfunc.Attribute {
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
-// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 func Name_Details(name string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("name", name)
 }
@@ -784,9 +789,10 @@ func Name_Slot(name string) htmfunc.Attribute {
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-nonce
-// [[CSP]]: https://html.spec.whatwg.org/dev/references.html#refsCSP
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [[CSP]]: https://html.spec.whatwg.org/dev/references.html#refsCSP
 func Nonce(nonce string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("nonce", nonce)
 }
@@ -881,8 +887,9 @@ func Poster(poster string) htmfunc.Attribute {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-referrerpolicy
 // [Referrer policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-referrer-policy/#referrer-policy
 // [fetches]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-fetch
-// [Referrer policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-referrer-policy/#referrer-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [Referrer policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-referrer-policy/#referrer-policy
 func ReferrerPolicy(referrerPolicy string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("referrerpolicy", referrerPolicy)
 }
@@ -946,11 +953,12 @@ func Slot(slot string) htmfunc.Attribute {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-src
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-src
 // [video]: https://html.spec.whatwg.org/dev/media.html#the-video-element
-// [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-src
-// [video]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
+// [video]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
 func Src(src string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("src", src)
 }
@@ -965,9 +973,10 @@ func Src(src string) htmfunc.Attribute {
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-srcdoc
-// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [an iframesrcdoc document]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#an-iframe-srcdoc-document
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+//
+// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 func SrcDoc(srcDoc string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("srcdoc", srcDoc)
 }

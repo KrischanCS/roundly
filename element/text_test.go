@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 func TestText(t *testing.T) {

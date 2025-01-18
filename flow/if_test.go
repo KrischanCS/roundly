@@ -1,8 +1,8 @@
 package flow
 
 import (
-	"github.com/ch-schulz/htmfunc"
-	. "github.com/ch-schulz/htmfunc/element"
+	"github.com/KrischanCS/htmfunc"
+	. "github.com/KrischanCS/htmfunc/element"
 	"github.com/stretchr/testify/assert"
 	"math/rand/v2"
 	"strconv"

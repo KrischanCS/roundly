@@ -1,7 +1,7 @@
 package element
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Del creates a [del element].

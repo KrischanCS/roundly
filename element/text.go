@@ -2,7 +2,7 @@ package element
 
 import (
 	"bytes"
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 var (

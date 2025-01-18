@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	attr "github.com/ch-schulz/htmfunc/attribute"
-	. "github.com/ch-schulz/htmfunc/element"
+	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/element"
 )
 
 //nolint:nolintlint,lll

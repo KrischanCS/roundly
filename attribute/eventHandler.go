@@ -2,7 +2,7 @@
 package attribute
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // OnAfterPrint creates the onafterprint attribute - [afterprint] event handler for Window object

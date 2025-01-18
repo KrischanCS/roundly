@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ch-schulz/htmfunc"
-	"github.com/ch-schulz/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/htmfunc/attribute"
 )
 
 func TestTextSemantics(t *testing.T) {

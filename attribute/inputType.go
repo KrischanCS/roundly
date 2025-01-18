@@ -2,7 +2,7 @@
 package attribute
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Type_Input creates the type attribute - Type of form control

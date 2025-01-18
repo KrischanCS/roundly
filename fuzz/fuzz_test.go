@@ -1,8 +1,8 @@
 package fuzz
 
 import (
-	"github.com/ch-schulz/htmfunc"
-	. "github.com/ch-schulz/htmfunc/element"
+	"github.com/KrischanCS/htmfunc"
+	. "github.com/KrischanCS/htmfunc/element"
 	"github.com/stretchr/testify/assert"
 	"math"
 	"math/rand/v2"

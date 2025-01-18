@@ -1,7 +1,7 @@
 package element
 
 import (
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Body creates the [body element] The body element represents the contents of the document.

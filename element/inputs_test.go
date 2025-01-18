@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ch-schulz/htmfunc"
-	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc"
+	attr "github.com/KrischanCS/htmfunc/attribute"
 )
 
 func TestInputs(t *testing.T) {

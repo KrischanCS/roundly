@@ -2,10 +2,10 @@ package flow
 
 import (
 	"fmt"
-	"github.com/ch-schulz/htmfunc"
-	attr "github.com/ch-schulz/htmfunc/attribute"
-	. "github.com/ch-schulz/htmfunc/element"
-	"github.com/ch-schulz/htmfunc/iters"
+	"github.com/KrischanCS/htmfunc"
+	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/htmfunc/iters"
 	"github.com/stretchr/testify/assert"
 	"iter"
 	"strconv"

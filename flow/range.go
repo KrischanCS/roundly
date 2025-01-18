@@ -3,7 +3,7 @@ package flow
 import (
 	"iter"
 
-	"github.com/ch-schulz/htmfunc"
+	"github.com/KrischanCS/htmfunc"
 )
 
 func Range[T any](items []T, component func(int, T) htmfunc.Element) htmfunc.Element {

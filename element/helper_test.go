@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ch-schulz/htmfunc"
-	attr "github.com/ch-schulz/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc"
+	attr "github.com/KrischanCS/htmfunc/attribute"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element

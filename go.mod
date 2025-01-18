@@ -1,4 +1,4 @@
-module github.com/ch-schulz/htmfunc
+module github.com/KrischanCS/htmfunc
 
 go 1.23
 
