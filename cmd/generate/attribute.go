@@ -86,6 +86,23 @@ func findAttributes(body *html.Node) attributes {
 	return classifyAttributes(attrs)
 }
 
+func findEventHandlerAttributes(body *html.Node) []attribute {
+	eventHandlersTable := findNodeWithId(body, "ix-event-handlers")
+	if eventHandlersTable == nil {
+		log.Fatal("Error finding event handlers table")
+	}
+
+	tBody := findTBody(eventHandlersTable)
+
+	attrs := make([]attribute, 0, 256) //nolint:mnd
+	for row := range tBody.ChildNodes() {
+		attr := parseAttribute(row)
+		attrs = append(attrs, attr)
+	}
+
+	return attrs
+}
+
 func addByName(attrsByName map[string][]*attribute, attr *attribute) {
 	attrsWithName, ok := attrsByName[attr.Name]
 	if !ok {

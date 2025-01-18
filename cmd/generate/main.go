@@ -43,6 +43,7 @@ func main() {
 	body := loadIndicesFromStandard()
 
 	attributes := findAttributes(body)
+	eventHandlerAttributes := findEventHandlerAttributes(body)
 
 	generateFile(textAttrTemplate, attributes.Text, "text.go")
 	generateFile(boolAttrTemplate, attributes.Bool, "bool.go")
@@ -55,6 +56,7 @@ func main() {
 	generateFile(intAttrTemplate, attributes.Int, "int.go")
 	generateFile(uintAttrTemplate, attributes.Uint, "uint.go")
 	generateFile(attrsTemplate, nil, "attributeList.go")
+	generateFile(textAttrTemplate, eventHandlerAttributes, "eventHandler.go")
 }
 
 func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {
