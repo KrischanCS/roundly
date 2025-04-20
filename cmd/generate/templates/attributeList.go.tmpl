@@ -1,3 +1,5 @@
+// Generated file. DO NOT EDIT.
+
 package attribute
 
 import (

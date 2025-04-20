@@ -1,3 +1,4 @@
+// Package iters provides a few useful iterators.
 package iters
 
 import (

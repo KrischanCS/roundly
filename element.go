@@ -1,3 +1,5 @@
+// Package htmfunc provides a way to create type-safe, template like HTML
+// components in pure go.
 package htmfunc
 
 type Element func(w Writer) error

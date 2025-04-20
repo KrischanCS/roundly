@@ -1,10 +1,12 @@
 package element
 
 import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestCanvas(t *testing.T) {

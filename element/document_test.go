@@ -1,10 +1,12 @@
 package element
 
 import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestDocument(t *testing.T) {
@@ -81,26 +83,20 @@ func TestHtml(t *testing.T) {
 func TestBase(t *testing.T) {
 	t.Parallel()
 
-	type args struct {
-		attributes htmfunc.Attribute
-	}
-
 	tests := []struct {
-		name string
-		args args
-		want string
+		name       string
+		attributes htmfunc.Attribute
+		want       string
 	}{
 		{
-			name: "bare tag",
-			args: args{},
-			want: "<base>",
+			name:       "bare tag",
+			attributes: nil,
+			want:       "<base>",
 		},
 		{
-			name: "with href",
-			args: args{
-				attributes: attr.HRef_AArea("https://example.com/index.html"),
-			},
-			want: `<base href="https://example.com/index.html">`,
+			name:       "with href",
+			attributes: attr.HRef_AArea("https://example.com/index.html"),
+			want:       `<base href="https://example.com/index.html">`,
 		},
 	}
 
@@ -108,7 +104,7 @@ func TestBase(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Base(tt.args.attributes)
+			component := Base(tt.attributes)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -336,33 +332,25 @@ func TestStyleTrusted(t *testing.T) {
 func TestTitle(t *testing.T) {
 	t.Parallel()
 
-	type args struct {
-		title string
-	}
-
 	tests := []struct {
-		name string
-		args args
-		want string
+		name  string
+		title string
+		want  string
 	}{
 		{
-			name: "empty",
-			args: args{},
-			want: "<title></title>",
+			name:  "empty",
+			title: "",
+			want:  "<title></title>",
 		},
 		{
-			name: "simple title",
-			args: args{
-				title: "The Title",
-			},
-			want: `<title>The Title</title>`,
+			name:  "simple title",
+			title: "The Title",
+			want:  `<title>The Title</title>`,
 		},
 		{
-			name: "simple title",
-			args: args{
-				title: "The Title & some more",
-			},
-			want: `<title>The Title &amp; some more</title>`,
+			name:  "simple title",
+			title: "The Title & some more",
+			want:  `<title>The Title &amp; some more</title>`,
 		},
 	}
 
@@ -370,7 +358,7 @@ func TestTitle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Title(tt.args.title)
+			component := Title(tt.title)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -382,33 +370,25 @@ func TestTitle(t *testing.T) {
 func TestTitleTrusted(t *testing.T) {
 	t.Parallel()
 
-	type args struct {
-		title string
-	}
-
 	tests := []struct {
-		name string
-		args args
-		want string
+		name  string
+		title string
+		want  string
 	}{
 		{
-			name: "empty",
-			args: args{},
-			want: "<title></title>",
+			name:  "empty",
+			title: "",
+			want:  "<title></title>",
 		},
 		{
-			name: "simple title",
-			args: args{
-				title: "The Title",
-			},
-			want: `<title>The Title</title>`,
+			name:  "simple title",
+			title: "The Title",
+			want:  `<title>The Title</title>`,
 		},
 		{
-			name: "simple title",
-			args: args{
-				title: "The Title & some more",
-			},
-			want: `<title>The Title & some more</title>`,
+			name:  "simple title",
+			title: "The Title & some more",
+			want:  `<title>The Title & some more</title>`,
 		},
 	}
 
@@ -416,7 +396,7 @@ func TestTitleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := TitleTrusted(tt.args.title)
+			component := TitleTrusted(tt.title)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)

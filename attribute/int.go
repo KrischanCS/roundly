@@ -1,9 +1,11 @@
-//nolint:nolintlint,lll
+// Generated file. DO NOT EDIT.
+
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
 	"strconv"
+
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Start creates the start attribute - Starting value of the list

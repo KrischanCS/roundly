@@ -1,3 +1,6 @@
+.task/
+
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
@@ -127,4 +130,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-

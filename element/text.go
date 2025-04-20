@@ -2,6 +2,7 @@ package element
 
 import (
 	"bytes"
+
 	"github.com/KrischanCS/htmfunc"
 )
 

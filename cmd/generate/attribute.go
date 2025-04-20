@@ -3,10 +3,11 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"golang.org/x/net/html"
 	"log"
 	"regexp"
 	"strings"
+
+	"golang.org/x/net/html"
 )
 
 type attribute struct {
@@ -95,6 +96,7 @@ func findEventHandlerAttributes(body *html.Node) []attribute {
 	tBody := findTBody(eventHandlersTable)
 
 	attrs := make([]attribute, 0, 256) //nolint:mnd
+
 	for row := range tBody.ChildNodes() {
 		attr := parseAttribute(row)
 		attrs = append(attrs, attr)
@@ -345,19 +347,19 @@ func extractTextFromElement(node *html.Node, links *[]link, sb *strings.Builder)
 }
 
 func addAsLink(node *html.Node, links *[]link, sb *strings.Builder) {
-	link := link{}
+	var url string
 
 	for _, attr := range node.Attr {
 		if attr.Key == "href" {
-			link.Url = htmlStandardUrl + attr.Val
+			url = htmlStandardUrl + attr.Val
 			break
 		}
 	}
 
 	text, ls := extractText(node)
+	name := text
 
-	link.Name = text
-	*links = append(*links, link)
+	*links = append(*links, link{Name: name, Url: url})
 
 	sb.WriteString("[" + text + "]")
 
@@ -378,6 +380,7 @@ func compactWhitespace(sb *strings.Builder) {
 			if b != ' ' && b != '\t' {
 				lastWasWhitespace = false
 				sb.WriteByte(b)
+
 				continue
 			}
 

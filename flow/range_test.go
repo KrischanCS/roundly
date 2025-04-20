@@ -2,14 +2,16 @@ package flow
 
 import (
 	"fmt"
+	"iter"
+	"strconv"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
 	"github.com/KrischanCS/htmfunc/iters"
-	"github.com/stretchr/testify/assert"
-	"iter"
-	"strconv"
-	"testing"
 )
 
 //nolint:funlen

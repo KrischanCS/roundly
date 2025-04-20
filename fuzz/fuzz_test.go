@@ -1,12 +1,14 @@
 package fuzz
 
 import (
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
-	"github.com/stretchr/testify/assert"
 	"math"
 	"math/rand/v2"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+
+	"github.com/KrischanCS/htmfunc"
+	. "github.com/KrischanCS/htmfunc/element"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element

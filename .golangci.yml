@@ -1,73 +1,91 @@
-output:
-  sort-results: true
-
-linters-settings:
-  dogsled:
-    max-blank-identifiers: 2
-
-  dupl:
-    threshold: 150
-
-  errcheck:
-    check-type-assertions: true
-    check-blank: true
-
-  exhaustive:
-    check:
-      - switch
-      - map
-    check-generated: true
-    default-signifies-exhaustive: true
-
-  gocognit:
-    min-complexity: 12
-
-  paralleltest:
-    ignore-missing-subtests: true
-
-  varnamelen:
-    max-distance: 10
-
-    ignore-names:
-      - i
-      - id
-      - sb
-      - to
-      - tt
-      - w
-
-  testifylint:
-    disable:
-      - require-error
-
-  revive:
-    rules:
-      - name: dot-imports
-        arguments:
-          - allowedPackages:
-            - "github.com/KrischanCS/htmfunc/element"
-            - "github.com/KrischanCS/htmfunc/attribute"
-            - "github.com/KrischanCS/htmfunc/flow"
-
-  stylecheck:
-    checks:
-      - all
-      - -ST1003
-
-
-
+version: "2"
 
 linters:
-  enable-all: true
+  default: all
   disable:
-    - depguard
-    - exhaustruct
-    - exportloopref
-    - gci
-    - gofumpt
-    - ireturn
-    - nlreturn
-    - noctx
-    - testpackage
-    - tparallel
-    - wrapcheck
+    - depguard # Not restricting dependencies at the moment
+    - ireturn # Allow returning interfaces
+    - testpackage # Allow white-box testing
+    - tparallel # Using paralleltest instead, it allows ignoring subtests
+    - wrapcheck # Allow returning unwrapped errors
+    - noctx # Allow http requests without context, http requests in this package are only called in generation, and prefer readability there over robustness.
+
+
+  settings:
+
+    errcheck:
+      check-type-assertions: true # Always check type assertions
+      check-blank: true # Don't allow swallowing errors
+
+    exhaustive:
+      check:
+        - switch
+        - map
+      default-signifies-exhaustive: true
+
+    gocognit:
+      min-complexity: 12
+
+    paralleltest:
+      ignore-missing-subtests: true # If there are lots of tests and short test-cases (subtest), it should be faster there should be no gains in running all subtests in parallel, and calling t.Parallel() all the time just adds noise.
+
+    revive:
+      rules:
+        - name: dot-imports
+          arguments:
+            - allowedPackages: # I recommend dot-imports for these packages, so allowing it especially for examples and testing
+                - github.com/KrischanCS/htmfunc/element
+                - github.com/KrischanCS/htmfunc/attribute
+                - github.com/KrischanCS/htmfunc/flow
+
+    staticcheck:
+      checks:
+        - all # Enable all checks
+        - -ST1003 # But ignore "ST1003 - Poorly chosen identifier" for the moment, underscores are currently included in names of some generated methods
+
+    testifylint:
+      disable:
+        - require-error # I only use require in the "Arrange" phase of tests, in the "Assert" phase I prefer normal assertions also for errors
+
+    varnamelen:
+      max-distance: 15 # Don't care too much about short identifiers in go, changing from default 6 to 15
+      ignore-decls:
+        - i int # index
+        - ok bool # ok pattern
+        # Writers
+        - w io.Writer
+        - w Writer
+        - w *bytes.Buffer
+
+        # String builders
+        - sb strings.Builder
+        - sb *strings.Builder
+      ignore-names:
+        - tc # TestCase, many different types
+        - fn # function parameters, no common signature
+
+    nlreturn:
+      block-size: 2
+
+  exclusions:
+    generated: lax
+#    presets:
+#      - comments
+#      - common-false-positives
+#      - legacy
+#      - std-error-handling
+#    paths:
+#      - third_party$
+#      - builtin$
+#      - examples$
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

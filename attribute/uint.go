@@ -1,9 +1,11 @@
-//nolint:nolintlint,lll
+// Generated file. DO NOT EDIT.
+
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
 	"strconv"
+
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Cols creates the cols attribute - Maximum number of characters per line

@@ -1,9 +1,11 @@
-//nolint:nolintlint,lll
+// Generated file. DO NOT EDIT.
+
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
 	"strconv"
+
+	"github.com/KrischanCS/htmfunc"
 )
 
 // Coords creates the coords attribute - Coordinates for the shape to be created in an [image map]

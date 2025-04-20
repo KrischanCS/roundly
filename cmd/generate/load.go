@@ -2,12 +2,13 @@ package main
 
 import (
 	"errors"
-	"golang.org/x/net/html"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"golang.org/x/net/html"
 )
 
 const htmlStandardUrl = `https://html.spec.whatwg.org/dev/`
@@ -19,6 +20,7 @@ func loadIndicesFromStandard() *html.Node {
 		downloadStandardFile()
 	}
 
+	//nolint:gosec
 	htmlStandard, err := os.Open(standardFileName)
 	if err != nil {
 		log.Panic("Error opening "+standardFileName+": ", err)
@@ -64,6 +66,7 @@ func downloadStandardFile() {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)
 	}
 
+	//nolint:gosec
 	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666) //nolint:mnd
 	if err != nil {
 		log.Print("Error creating file htmlStandardIndices.html: ", err)

@@ -1,18 +1,20 @@
 package flow
 
 import (
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
-	"github.com/stretchr/testify/assert"
 	"math/rand/v2"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+
+	"github.com/KrischanCS/htmfunc"
+	. "github.com/KrischanCS/htmfunc/element"
 )
 
 func TestIf(t *testing.T) {
 	t.Parallel()
 
-	tt := []struct {
+	tests := []struct {
 		condition bool
 		element   htmfunc.Element
 		want      string
@@ -29,7 +31,7 @@ func TestIf(t *testing.T) {
 		},
 	}
 
-	for _, tc := range tt {
+	for _, tc := range tests {
 		t.Run(strconv.FormatBool(tc.condition), func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 

@@ -1,3 +1,5 @@
+// Package generate creates all attribute functions bases on the html standard.
+// Probably generation of the elements will also be added.
 package main
 
 import (
@@ -60,6 +62,7 @@ func main() {
 }
 
 func generateFile(tmpl *template.Template, attributes []attribute, fileName string) {
+	//nolint:gosec
 	file, err := os.OpenFile("../../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666) //nolint:mnd
 	if err != nil {
 		log.Fatal(err)
