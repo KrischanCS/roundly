@@ -7,7 +7,7 @@ import (
 	"flag"
 
 	"github.com/KrischanCS/htmfunc/generator/internal/attributes"
-	"github.com/KrischanCS/htmfunc/generator/internal/loadStandard"
+	"github.com/KrischanCS/htmfunc/generator/internal/standard"
 )
 
 //nolint:gochecknoglobals
@@ -16,7 +16,7 @@ var reloadStandard = flag.Bool("reloadHtmlStandard", false, "reload html standar
 func main() {
 	flag.Parse()
 
-	body := loadStandard.LoadIndicesFromStandard(*reloadStandard)
+	body := standard.LoadIndicesFromStandard(*reloadStandard)
 
 	attributes.GenerateAttributes(body)
 }

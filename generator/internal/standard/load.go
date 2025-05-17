@@ -1,4 +1,6 @@
-package loadStandard
+// Package standard loads the html-standard, either from the stored file or
+// refreshes it from the web.
+package standard
 
 import (
 	"errors"
@@ -13,7 +15,8 @@ import (
 
 const HtmlStandardUrl = `https://html.spec.whatwg.org/dev/`
 
-var standardFileName = filepath.Join("data", "htmlStandardIndices.html") //nolint:gochecknoglobals
+//nolint:gochecknoglobals
+var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
 
 func LoadIndicesFromStandard(reload bool) *html.Node {
 	if reload || !isStandardFilePresent() {

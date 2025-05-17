@@ -9,7 +9,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/KrischanCS/htmfunc/generator/internal/loadStandard"
+	"github.com/KrischanCS/htmfunc/generator/internal/standard"
 )
 
 type attribute struct {
@@ -353,7 +353,7 @@ func addAsLink(node *html.Node, links *[]link, sb *strings.Builder) {
 
 	for _, attr := range node.Attr {
 		if attr.Key == "href" {
-			url = loadStandard.HtmlStandardUrl + attr.Val
+			url = standard.HtmlStandardUrl + attr.Val
 			break
 		}
 	}

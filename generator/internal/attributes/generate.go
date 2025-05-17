@@ -1,3 +1,4 @@
+// Package attributes generates all attribute functions based on the HTML standard.
 package attributes
 
 import (
@@ -65,6 +66,7 @@ func generateFile(tmpl *template.Template, attributes []attribute, fileName stri
 			log.Print("Error closing file: ", err)
 		}
 	}(file)
+
 	err = tmpl.Execute(file, attributes)
 	if err != nil {
 		log.Print("Error executing template: ", err)
