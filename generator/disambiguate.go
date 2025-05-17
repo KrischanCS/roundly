@@ -38,6 +38,9 @@ var definedElementGroups = []namedElementGroups{
 	},
 }
 
+// disambiguateAttrs checks multiple attributes with the same name exist.
+//
+// If so, it renames them based on the elements they can be used on.
 func disambiguateAttrs(attrsByName map[string][]*attribute) {
 	for _, attrs := range attrsByName {
 		if len(attrs) == 1 {
@@ -50,6 +53,11 @@ func disambiguateAttrs(attrsByName map[string][]*attribute) {
 	}
 }
 
+// renameByElements implements the renaming rules.
+//   - Attributes which can be applied to all elements ("[HTML elements]") are not renamed
+//   - If the element set equals a defined group, the group name is used
+//   - If it can be applied to form-associated custom elements, the name is suffixed with "CustomFormElements"
+//   - If it nonthin of that applies, the name is suffixed with all the applicable element names
 func renameByElements(attr *attribute) {
 	if len(attr.Elements) == 1 && attr.Elements[0] == "[HTML elements]" {
 		return
@@ -62,14 +70,9 @@ func renameByElements(attr *attribute) {
 			continue
 		}
 
-		for _, group := range definedElementGroups {
-			if !slices.Equal(attr.Elements, group.elements) {
-				continue
-			}
-
-			attr.FuncName += group.name
-
-			return
+		if groupName, ok := findDefinedGroup(attr.Elements); ok {
+			attr.FuncName += groupName
+			continue
 		}
 
 		if elementName == "[form-associated custom elements]" {
@@ -80,4 +83,16 @@ func renameByElements(attr *attribute) {
 		runes := []rune(strings.Trim(elementName, "[]"))
 		attr.FuncName += strings.ToUpper(string(runes[0])) + string(runes[1:])
 	}
+}
+
+func findDefinedGroup(elements []string) (string, bool) {
+	for _, group := range definedElementGroups {
+		if !slices.Equal(elements, group.elements) {
+			continue
+		}
+
+		return group.name, true
+	}
+
+	return "", false
 }
