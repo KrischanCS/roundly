@@ -23,22 +23,12 @@ var (
 	}
 )
 
-// Text represents exactly the given text without any extra tags.
-// Html characters will be escaped. If this is not wanted,
-// [TextTrusted] may be used.
+// Text represents exactly the given text without any extra tags. Html-specific
+// characters will be escaped. If this is not wanted, [TextTrusted] may be used.
 func Text(text string) htmfunc.Element {
 	return func(w htmfunc.Writer) error {
-		for _, r := range []byte(text) {
-			if i := bytes.IndexByte(escapeChar, r); i != -1 {
-				_, err := w.WriteString(charEntity[i])
-				if err != nil {
-					return err
-				}
-
-				continue
-			}
-
-			err := w.WriteByte(r)
+		for _, char := range []byte(text) {
+			err := checkEscapeAndWrite(w, char)
 			if err != nil {
 				return err
 			}
@@ -54,4 +44,19 @@ func TextTrusted(text string) htmfunc.Element {
 		_, err := w.WriteString(text)
 		return err
 	}
+}
+
+func checkEscapeAndWrite(w htmfunc.Writer, char byte) error {
+	i := bytes.IndexByte(escapeChar, char)
+
+	if i != -1 {
+		return w.WriteByte(char)
+	}
+
+	_, err := w.WriteString(charEntity[i])
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

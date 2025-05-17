@@ -24,7 +24,7 @@ linters:
       default-signifies-exhaustive: true
 
     gocognit:
-      min-complexity: 12
+      min-complexity: 10 # Authors of gocognit recommend to change the default from 30 to 10-20, feeling good with 10 at the momment.
 
     paralleltest:
       ignore-missing-subtests: true # If there are lots of tests and short test-cases (subtest), it should be faster there should be no gains in running all subtests in parallel, and calling t.Parallel() all the time just adds noise.
@@ -69,15 +69,8 @@ linters:
 
   exclusions:
     generated: lax
-#    presets:
-#      - comments
-#      - common-false-positives
-#      - legacy
-#      - std-error-handling
-#    paths:
-#      - third_party$
-#      - builtin$
-#      - examples$
+    paths:
+      - vendor
 
 formatters:
   enable:
@@ -86,6 +79,4 @@ formatters:
   exclusions:
     generated: lax
     paths:
-      - third_party$
-      - builtin$
-      - examples$
+      - vendor
