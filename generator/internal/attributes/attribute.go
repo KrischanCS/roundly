@@ -1,4 +1,4 @@
-package main
+package attributes
 
 import (
 	"bufio"
@@ -8,6 +8,8 @@ import (
 	"strings"
 
 	"golang.org/x/net/html"
+
+	"github.com/KrischanCS/htmfunc/generator/internal/loadStandard"
 )
 
 type attribute struct {
@@ -351,7 +353,7 @@ func addAsLink(node *html.Node, links *[]link, sb *strings.Builder) {
 
 	for _, attr := range node.Attr {
 		if attr.Key == "href" {
-			url = htmlStandardUrl + attr.Val
+			url = loadStandard.HtmlStandardUrl + attr.Val
 			break
 		}
 	}

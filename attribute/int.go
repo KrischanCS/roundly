@@ -3,9 +3,8 @@
 package attribute
 
 import (
-	"strconv"
-
 	"github.com/KrischanCS/htmfunc"
+	"strconv"
 )
 
 // Start creates the start attribute - Starting value of the list

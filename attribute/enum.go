@@ -677,9 +677,8 @@ func Translate(translate string) htmfunc.Attribute {
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-//
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Type_Button(typeV string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", typeV)
 }

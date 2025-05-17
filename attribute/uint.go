@@ -3,9 +3,8 @@
 package attribute
 
 import (
-	"strconv"
-
 	"github.com/KrischanCS/htmfunc"
+	"strconv"
 )
 
 // Cols creates the cols attribute - Maximum number of characters per line

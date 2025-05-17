@@ -1,4 +1,4 @@
-package main
+package loadStandard
 
 import (
 	"errors"
@@ -11,12 +11,12 @@ import (
 	"golang.org/x/net/html"
 )
 
-const htmlStandardUrl = `https://html.spec.whatwg.org/dev/`
+const HtmlStandardUrl = `https://html.spec.whatwg.org/dev/`
 
 var standardFileName = filepath.Join("data", "htmlStandardIndices.html") //nolint:gochecknoglobals
 
-func loadIndicesFromStandard() *html.Node {
-	if *reloadStandard || !isStandardFilePresent() {
+func LoadIndicesFromStandard(reload bool) *html.Node {
+	if reload || !isStandardFilePresent() {
 		downloadStandardFile()
 	}
 
@@ -48,7 +48,7 @@ func isStandardFilePresent() bool {
 }
 
 func downloadStandardFile() {
-	const indicesUrl = htmlStandardUrl + "indices.html"
+	const indicesUrl = HtmlStandardUrl + "indices.html"
 
 	response, err := http.Get(indicesUrl)
 	if err != nil {

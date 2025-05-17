@@ -3,9 +3,8 @@
 package attribute
 
 import (
-	"strconv"
-
 	"github.com/KrischanCS/htmfunc"
+	"strconv"
 )
 
 // High creates the high attribute - Low limit of high range

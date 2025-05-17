@@ -1,4 +1,4 @@
-package main
+package attributes
 
 type MethodParamName struct {
 	FuncName, paramName string

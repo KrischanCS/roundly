@@ -1,4 +1,4 @@
-package main
+package attributes
 
 import (
 	"slices"
@@ -72,7 +72,7 @@ func renameByElements(attr *attribute) {
 
 		if groupName, ok := findDefinedGroup(attr.Elements); ok {
 			attr.FuncName += groupName
-			continue
+			return
 		}
 
 		if elementName == "[form-associated custom elements]" {
