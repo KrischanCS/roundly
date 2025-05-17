@@ -528,6 +528,22 @@ func ShadowRootClonable() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("shadowrootclonable")
 }
 
+// ShadowRootCustomElementRegistry creates the shadowrootcustomelementregistry attribute - Enables declarative shadow roots to indicate they will use a custom element registry
+//
+// It can be applied to the following elements:
+//   - [template]
+//
+// The attribute shadowrootcustomelementregistry is a [Boolean attribute].
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [template]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootcustomelementregistry
+// [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func ShadowRootCustomElementRegistry() htmfunc.Attribute {
+	return htmfunc.WriteBoolAttribute("shadowrootcustomelementregistry")
+}
+
 // ShadowRootDelegatesFocus creates the shadowrootdelegatesfocus attribute - Sets [delegates focus] on a declarative shadow root
 //
 // It can be applied to the following elements:

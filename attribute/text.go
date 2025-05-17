@@ -182,6 +182,43 @@ func Color(color string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("color", color)
 }
 
+// Command creates the command attribute - Indicates to the targeted element which action to take.
+//
+// It can be applied to the following elements:
+//   - [button]
+//
+// Value constraints: "[toggle-popover]";"[show-popover]";"[hide-popover]";"[close]";"[show-modal]";a [custom command keyword]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command
+// [toggle-popover]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-toggle-popover
+// [show-popover]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-show-popover
+// [hide-popover]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-hide-popover
+// [close]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-close
+// [show-modal]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-show-modal
+// [custom command keyword]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-custom
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Command(command string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("command", command)
+}
+
+// Commandfor creates the commandfor attribute - Targets another element to be invoked.
+//
+// It can be applied to the following elements:
+//   - [button]
+//
+// Value constraints: [ID] (Additional rules apply, see elements documentation)
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-commandfor
+// [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Commandfor(commandfor string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("commandfor", commandfor)
+}
+
 // Content creates the content attribute - Value of the element
 //
 // It can be applied to the following elements:

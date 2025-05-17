@@ -246,6 +246,23 @@ func OnClose(onClose string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("onclose", onClose)
 }
 
+// OnCommand creates the oncommand attribute - [command] event handler
+//
+// It can be applied to the following elements:
+//   - [HTML elements]
+//
+// Value constraints: [Event handler content attribute]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/webappapis.html#handler-oncommand
+// [command]: https://html.spec.whatwg.org/dev/#event-command
+// [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func OnCommand(onCommand string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncommand", onCommand)
+}
+
 // OnContextLost creates the oncontextlost attribute - [contextlost] event handler
 //
 // It can be applied to the following elements:

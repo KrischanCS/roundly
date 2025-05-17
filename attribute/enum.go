@@ -86,6 +86,27 @@ func CharSet(charSet string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("charset", charSet)
 }
 
+// ClosedBy creates the closedby attribute - Which user actions will close the dialog
+//
+// It can be applied to the following elements:
+//   - [dialog]
+//
+// Can hold one of the following values:
+//   - "[any]"
+//   - "[closerequest]"
+//   - "[none]"
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [dialog]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby
+// [any]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-any
+// [closerequest]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-closerequest
+// [none]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-none
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func ClosedBy(closedBy string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("closedby", closedBy)
+}
+
 // ColorSpace creates the colorspace attribute - The color space of the serialized color
 //
 // It can be applied to the following elements:
