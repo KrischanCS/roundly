@@ -110,13 +110,11 @@ func Alt(alt string) htmfunc.Attribute {
 // [Potential destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-potential-destination
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
-// [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
 // [Potential destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-potential-destination
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
 // [script-like destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#request-destination-script-like
-// [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func As(as string) htmfunc.Attribute {
@@ -970,9 +968,9 @@ func Slot(slot string) htmfunc.Attribute {
 //   - [img]
 //   - [input]
 //   - [script]
-//   - [source] (in [video] or [audio])
+//   - [source] (in [video] or [audio (1)])
 //   - [track]
-//   - [video]
+//   - [video (1)]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
 //
@@ -986,9 +984,9 @@ func Slot(slot string) htmfunc.Attribute {
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-src
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-src
 // [video]: https://html.spec.whatwg.org/dev/media.html#the-video-element
-// [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
+// [audio (1)]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-src
-// [video]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
+// [video (1)]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Src(src string) htmfunc.Attribute {

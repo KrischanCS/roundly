@@ -3,8 +3,10 @@ package attributes
 import (
 	"bufio"
 	"bytes"
+	"fmt"
 	"log"
 	"regexp"
+	"slices"
 	"strings"
 
 	"golang.org/x/net/html"
@@ -324,7 +326,44 @@ func extractText(data *html.Node) (string, []link) {
 	// Special case currently needed for "popover" which has a trailing ;
 	s = strings.Trim(s, ";")
 
+	s, links = distinguishLinkDuplicates(s, links)
+
 	return s, links
+}
+
+func distinguishLinkDuplicates(s string, links []link) (string, []link) {
+	exactSameLink := make([]int, 0)
+
+	for i, link := range links {
+		duplicates := 0
+		for j, otherLink := range links[i+1:] {
+			if link.Name == otherLink.Name {
+				if link.Url == otherLink.Url {
+					exactSameLink = append(exactSameLink, i+j+1)
+					continue
+				}
+
+				duplicates++
+
+				name := fmt.Sprintf("%s (%d)", link.Name, duplicates)
+				links[i+j+1].Name = name
+
+				index := strings.Index(s, "["+link.Name+"]")
+
+				s = s[:index+1] + strings.Replace(s[index+1:], "["+link.Name+"]", "["+name+"]", 1)
+			}
+		}
+	}
+
+	newLinks := make([]link, 0, len(links)-len(exactSameLink))
+	for i, l := range links {
+		if !slices.Contains(exactSameLink, i) {
+			newLinks = append(newLinks, l)
+		}
+	}
+
+	return s, newLinks
+
 }
 
 func extractTextFromElement(node *html.Node, links *[]link, sb *strings.Builder) {
