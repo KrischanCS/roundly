@@ -49,7 +49,7 @@ func TextTrusted(text string) htmfunc.Element {
 func checkEscapeAndWrite(w htmfunc.Writer, char byte) error {
 	i := bytes.IndexByte(escapeChar, char)
 
-	if i != -1 {
+	if i == -1 {
 		return w.WriteByte(char)
 	}
 

@@ -16,11 +16,10 @@ import (
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-allowfullscreen
+// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [requestFullscreen()]: https://html.spec.whatwg.org/dev/https://fullscreen.spec.whatwg.org/#dom-element-requestfullscreen
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-//
-// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 func AllowFullScreen() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("allowfullscreen")
 }

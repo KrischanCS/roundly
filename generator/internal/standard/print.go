@@ -51,38 +51,54 @@ func ExtractText(data *html.Node) (string, []Link) {
 	return s, links
 }
 
-func DistinguishLinkDuplicates(s string, links []Link) (string, []Link) {
-	exactSameLink := set.Of[int]()
+func DistinguishLinkDuplicates(text string, links []Link) (string, []Link) {
+	links = eliminateExactSameLinks(links)
 
 	for i, link := range links {
 		duplicates := 0
+
 		for j, otherLink := range links[i+1:] {
-			if link.Name == otherLink.Name {
-				if link.Url == otherLink.Url {
-					exactSameLink.Add(i + j + 1)
-					continue
-				}
+			currentI := i + j + 1
 
-				duplicates++
+			if link.Name != otherLink.Name {
+				continue
+			}
 
-				name := fmt.Sprintf("%s (%d)", link.Name, duplicates)
-				links[i+j+1].Name = name
+			duplicates++
 
-				index := strings.Index(s, "["+link.Name+"]")
+			name := fmt.Sprintf("%s (%d)", link.Name, duplicates)
+			links[currentI].Name = name
 
-				s = s[:index+1] + strings.Replace(s[index+1:], "["+link.Name+"]", "["+name+"]", 1)
+			index := strings.Index(text, "["+link.Name+"]")
+
+			text = text[:index+1] + strings.Replace(text[index+1:], "["+link.Name+"]", "["+name+"]", 1)
+		}
+	}
+
+	return text, links
+}
+
+func eliminateExactSameLinks(links []Link) []Link {
+	exactSameLink := set.Of[int]()
+
+	for i, link := range links {
+		for j, otherLink := range links[i+1:] {
+			currentI := i + j + 1
+			if link == otherLink {
+				exactSameLink.Add(currentI)
 			}
 		}
 	}
 
 	newLinks := make([]Link, 0, len(links)-exactSameLink.Len())
+
 	for i, l := range links {
 		if !exactSameLink.Contains(i) {
 			newLinks = append(newLinks, l)
 		}
 	}
 
-	return s, newLinks
+	return newLinks
 }
 
 func extractTextFromElement(node *html.Node, links *[]Link, sb *strings.Builder) {

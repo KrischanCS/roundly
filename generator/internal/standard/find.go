@@ -39,27 +39,19 @@ func FindTBody(table *html.Node) *html.Node {
 }
 
 func FindTableWithCaption(page *html.Node, caption string) (*html.Node, bool) {
-	current := page
-	for current != nil {
+	for current := page; current != nil; current = current.NextSibling {
 		if current.Type != html.ElementNode && current.Type != html.DocumentNode {
-			current = current.NextSibling
 			continue
 		}
 
-		if current.Data == "table" {
-			if hasCaption(current, caption) {
-				return current, true
-			}
-			current = current.NextSibling
-			continue
+		if current.Data == "table" && hasCaption(current, caption) {
+			return current, true
 		}
 
 		table, ok := FindTableWithCaption(current.FirstChild, caption)
 		if ok {
 			return table, true
 		}
-
-		current = current.NextSibling
 	}
 
 	return nil, false
