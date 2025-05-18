@@ -2,9 +2,12 @@ package elements
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 
 	"golang.org/x/net/html"
+
+	"github.com/KrischanCS/go-toolbox/iterator"
 
 	"github.com/KrischanCS/htmfunc/generator/internal/standard"
 )
@@ -33,8 +36,26 @@ func getAllElements(standardIndicesPage *html.Node) []Element {
 
 	elements := createElements(elementsTable)
 
-	for _, element := range elements {
-		fmt.Println(element)
+	e := iterator.Of(elements...)
+
+	groups := make(map[string][]string)
+	iterator.Reduce(e, &groups, func(accumulator *map[string][]string, value Element) {
+		group, ok := (*accumulator)[value.SemanticGroup]
+		if !ok {
+			group = make([]string, 0, 8)
+		}
+
+		group = append(group, value.Tag)
+		(*accumulator)[value.SemanticGroup] = group
+	})
+
+	for group, tags := range groups {
+		sort.Strings(tags)
+
+		fmt.Println(group)
+		for _, tag := range tags {
+			fmt.Printf("  %s\n", tag)
+		}
 	}
 
 	return elements
@@ -123,5 +144,52 @@ func elementFromRow(name string, documentationLink standard.Link, descriptionNod
 	element.Description = strings.Trim(description, "[]")
 	element.Links = links
 
+	element.SemanticGroup = extractSemanticGroup(documentationLink)
+
 	return element
+}
+
+func extractSemanticGroup(link standard.Link) string {
+	s := strings.Split(link.Url, "#")[0]
+
+	switch s {
+	default:
+		panic("Unkown semantic groupt link: " + link.Url)
+	case "https://html.spec.whatwg.org/dev/text-level-semantics.html":
+		return "text"
+	case "https://html.spec.whatwg.org/dev/sections.html":
+		return "sections"
+	case "https://html.spec.whatwg.org/dev/image-maps.html":
+		return "imageMaps"
+	case "https://html.spec.whatwg.org/dev/media.html":
+		return "media"
+	case "https://html.spec.whatwg.org/dev/semantics.html":
+		return "semantics"
+	case "https://html.spec.whatwg.org/dev/grouping-content.html":
+		return "grouping"
+	case "https://html.spec.whatwg.org/dev/form-elements.html":
+		return "formElements"
+	case "https://html.spec.whatwg.org/dev/canvas.html":
+		return "canvas"
+	case "https://html.spec.whatwg.org/dev/tables.html":
+		return "tables"
+	case "https://html.spec.whatwg.org/dev/edits.html":
+		return "edits"
+	case "https://html.spec.whatwg.org/dev/interactive-elements.html":
+		return "interactive"
+	case "https://html.spec.whatwg.org/dev/iframe-embed-object.html":
+		return "iframeEmbedObject"
+	case "https://html.spec.whatwg.org/dev/forms.html":
+		return "forms"
+	case "https://html.spec.whatwg.org/dev/embedded-content.html":
+		return "embedded"
+	case "https://html.spec.whatwg.org/dev/input.html":
+		return "input"
+	case "https://html.spec.whatwg.org/dev/https://w3c.github.io/mathml-core/":
+		return "mathml"
+	case "https://html.spec.whatwg.org/dev/scripting.html":
+		return "scripting"
+	case "https://html.spec.whatwg.org/dev/https://svgwg.org/svg2-draft/struct.html":
+		return "svg"
+	}
 }
