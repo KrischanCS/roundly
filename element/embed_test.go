@@ -1,16 +1,23 @@
-package elementArch
+package element
 
 import (
 	"testing"
 )
 
-func TestInteractive(t *testing.T) {
+func TestEmbed(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Details,
-		Summary,
-		Dialog,
+		Audio,
+		Iframe,
+		Map,
+		Math,
+		Object,
+		Picture,
+		Source,
+		Svg,
+		Track,
+		Video,
 	}
 
 	for _, element := range elements {

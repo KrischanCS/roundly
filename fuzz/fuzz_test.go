@@ -8,7 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/elementArch"
+	. "github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/htmfunc/text"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
@@ -31,17 +32,19 @@ type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element)
 //	timeAttribute                = TimeAttribute
 //	bdo                          = Bdo
 //	br                           = Br
+//	area                         = Area
+//	embed                        = Embed
+//	img                          = Img
+//	hr                           = Hr
+//	col                          = Col
 //)
 
 var elements = []elementFunc{ //nolint:gochecknoglobals
 	Canvas,
 	Ins,
 	Del,
-	Area,
 	Audio,
-	Embed,
 	Iframe,
-	Img,
 	Map,
 	Math,
 	Object,
@@ -50,7 +53,6 @@ var elements = []elementFunc{ //nolint:gochecknoglobals
 	Svg,
 	Track,
 	Video,
-	Area,
 	Blockquote,
 	Dd,
 	Div,
@@ -58,7 +60,6 @@ var elements = []elementFunc{ //nolint:gochecknoglobals
 	Dt,
 	Figcaption,
 	Figure,
-	Hr,
 	Li,
 	Main,
 	Menu,
@@ -105,7 +106,6 @@ var elements = []elementFunc{ //nolint:gochecknoglobals
 	Table,
 	Caption,
 	Colgroup,
-	Col,
 	Tbody,
 	Thead,
 	Tfoot,
@@ -174,7 +174,7 @@ func FuzzDom(f *testing.F) {
 
 func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	if depth > 20 || random.Float64() < 0.03 {
-		return Div(nil, Text(randomElement(random, texts)))
+		return Div(nil, text.Text(randomElement(random, texts)))
 	}
 
 	depth++
@@ -185,7 +185,7 @@ func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	}
 
 	if len(children) == 0 {
-		return Div(nil, Text(randomElement(random, texts)))
+		return Div(nil, text.Text(randomElement(random, texts)))
 	}
 
 	element := randomElement(random, elements)

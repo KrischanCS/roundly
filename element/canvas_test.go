@@ -1,4 +1,4 @@
-package elementArch
+package element
 
 import (
 	"testing"

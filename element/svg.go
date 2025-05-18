@@ -33,5 +33,6 @@ import (
 // [[SVG]]: https://html.spec.whatwg.org/dev/references.html#refsSVG
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("svg", attributes, children...)
+func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("svg", attributes, children...)
 }

@@ -37,5 +37,6 @@ import (
 // [height]: https://html.spec.whatwg.org/dev/canvas.html#attr-canvas-height
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Canvas(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("canvas", attributes, children...)
+func Canvas(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("canvas", attributes, children...)
 }

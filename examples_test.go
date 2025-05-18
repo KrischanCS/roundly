@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"os"
 
+	. "github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/elementArch"
+	. "github.com/KrischanCS/htmfunc/element"
+	. "github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:nolintlint,lll
@@ -14,7 +16,8 @@ func ExampleHtml() {
 	page := Document("html",
 		Html(attr.Lang("en"),
 			Head(
-				Title("The Title of the Page"),
+				nil,
+				Title(nil, Text("The Title of the Page")),
 			),
 			Body(nil,
 				Nav(nil,

@@ -1,4 +1,4 @@
-package elementArch
+package text
 
 import (
 	"bytes"

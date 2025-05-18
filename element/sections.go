@@ -30,7 +30,8 @@ import (
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Address(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("address", attributes, children...)
+func Address(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("address", attributes, children...)
 }
 
 // Article creates the article element - Self-contained syndicatable or reusable composition [(More)]
@@ -58,7 +59,8 @@ func Address(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Article(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("article", attributes, children...)
+func Article(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("article", attributes, children...)
 }
 
 // Aside creates the aside element - Sidebar for tangentially related content [(More)]
@@ -86,7 +88,8 @@ func Article(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("aside", attributes, children...)
+func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("aside", attributes, children...)
 }
 
 // Body creates the body element - Document body [(More)]
@@ -145,7 +148,8 @@ func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [onunload]: https://html.spec.whatwg.org/dev/webappapis.html#handler-window-onunload
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Body(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("body", attributes, children...)
+func Body(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("body", attributes, children...)
 }
 
 // Footer creates the footer element - Footer for a page or section [(More)]
@@ -171,7 +175,8 @@ func Body(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("footer", attributes, children...)
+func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("footer", attributes, children...)
 }
 
 // H1 creates the h1 element - Heading [(More)]
@@ -203,7 +208,8 @@ func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h1", attributes, children...)
+func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h1", attributes, children...)
 }
 
 // H2 creates the h2 element - Heading [(More)]
@@ -235,7 +241,8 @@ func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h2", attributes, children...)
+func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h2", attributes, children...)
 }
 
 // H3 creates the h3 element - Heading [(More)]
@@ -267,7 +274,8 @@ func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h3", attributes, children...)
+func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h3", attributes, children...)
 }
 
 // H4 creates the h4 element - Heading [(More)]
@@ -299,7 +307,8 @@ func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h4", attributes, children...)
+func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h4", attributes, children...)
 }
 
 // H5 creates the h5 element - Heading [(More)]
@@ -331,7 +340,8 @@ func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h5", attributes, children...)
+func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h5", attributes, children...)
 }
 
 // H6 creates the h6 element - Heading [(More)]
@@ -363,7 +373,8 @@ func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func H6(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("h6", attributes, children...)
+func H6(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("h6", attributes, children...)
 }
 
 // Header creates the header element - Introductory or navigational aids for a page or section [(More)]
@@ -389,7 +400,8 @@ func H6(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("header", attributes, children...)
+func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("header", attributes, children...)
 }
 
 // Hgroup creates the hgroup element - Heading container [(More)]
@@ -431,7 +443,8 @@ func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Hgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("hgroup", attributes, children...)
+func Hgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("hgroup", attributes, children...)
 }
 
 // Nav creates the nav element - Section with navigational links [(More)]
@@ -459,7 +472,8 @@ func Hgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Nav(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("nav", attributes, children...)
+func Nav(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("nav", attributes, children...)
 }
 
 // Section creates the section element - Generic document or application section [(More)]
@@ -487,5 +501,6 @@ func Nav(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Section(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("section", attributes, children...)
+func Section(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("section", attributes, children...)
 }

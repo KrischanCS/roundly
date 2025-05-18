@@ -47,7 +47,8 @@ import (
 // [target]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-target
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("form", attributes, children...)
+func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("form", attributes, children...)
 }
 
 // Label creates the label element - Caption for a form control [(More)]
@@ -79,5 +80,6 @@ func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [for]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("label", attributes, children...)
+func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("label", attributes, children...)
 }

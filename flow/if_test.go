@@ -8,7 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/elementArch"
+	. "github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/htmfunc/text"
 )
 
 func TestIf(t *testing.T) {
@@ -21,12 +22,12 @@ func TestIf(t *testing.T) {
 	}{
 		{
 			false,
-			H1(nil, Text("Test")),
+			H1(nil, text.Text("Test")),
 			"",
 		},
 		{
 			true,
-			H1(nil, Text("Test")),
+			H1(nil, text.Text("Test")),
 			"<h1>Test</h1>",
 		},
 	}
@@ -58,7 +59,7 @@ func BenchmarkIf(b *testing.B) {
 
 	var res []byte
 	for i := range b.N { //nolint:wsl
-		_ = If(conditions[i], H1(nil, Text("Test"))).RenderElement(w) //nolint:errcheck
+		_ = If(conditions[i], H1(nil, text.Text("Test"))).RenderElement(w) //nolint:errcheck
 		res = w.Bytes()
 		w.Reset()
 	}

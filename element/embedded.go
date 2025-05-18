@@ -99,7 +99,8 @@ func Img(attributes htmfunc.Attribute) htmfunc.Element {
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("picture", attributes, children...)
+func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("picture", attributes, children...)
 }
 
 // Source creates the source element - Image source for [img] or media source for [video] or [audio [(More)]
@@ -142,5 +143,6 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Source(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("source", attributes, children...)
+func Source(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("source", attributes, children...)
 }

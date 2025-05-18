@@ -1,23 +1,16 @@
-package elementArch
+package element
 
 import (
 	"testing"
 )
 
-func TestTable(t *testing.T) {
+func TestInteractive(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Table,
-		Caption,
-		Colgroup,
-		Col,
-		Tbody,
-		Thead,
-		Tfoot,
-		Tr,
-		Td,
-		Th,
+		Details,
+		Summary,
+		Dialog,
 	}
 
 	for _, element := range elements {

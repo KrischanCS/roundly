@@ -1,14 +1,13 @@
-package elementArch
+package element
 
 import (
 	"testing"
-	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 
 	"github.com/KrischanCS/htmfunc"
 	"github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/text"
 )
 
 func TestTextSemantics(t *testing.T) {
@@ -54,24 +53,10 @@ func TestData(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Data("42", nil, TextTrusted("42")).RenderElement(w)
+	err := Data(attribute.Value_Data("42"), text.TextTrusted("42")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<data value="42">42</data>`, w.String())
-}
-
-func TestTimeMachineReadableAsContent(t *testing.T) {
-	t.Parallel()
-
-	w := htmfunc.NewWriter(64)
-
-	ts, err := time.Parse(time.RFC3339, "2024-12-24T12:34:56Z")
-	require.NoError(t, err)
-
-	err = TimeMachineReadableAsContent(nil, ts).RenderElement(w)
-
-	assert.NoError(t, err)
-	assert.Equal(t, `<time>2024-12-24T12:34:56Z</time>`, w.String())
 }
 
 func TestTimeAttribute(t *testing.T) {
@@ -79,13 +64,12 @@ func TestTimeAttribute(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	ts, err := time.Parse(time.RFC3339, "2024-12-24T12:34:56Z")
-	require.NoError(t, err)
-
-	err = TimeAttribute(
-		attribute.Class("time"),
-		ts,
-		TextTrusted("24.12.2024 12:34:56"),
+	err := Time(
+		attribute.Attributes(
+			attribute.DateTime_Time("2024-12-24T12:34:56Z"),
+			attribute.Class("time"),
+		),
+		text.TextTrusted("24.12.2024 12:34:56"),
 	).RenderElement(w)
 
 	assert.NoError(t, err)
@@ -99,7 +83,7 @@ func TestBdo_RTL(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(htmfunc.RightToLeft, nil, TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(attribute.Dir_Bdo(string(htmfunc.RightToLeft)), text.TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
@@ -110,7 +94,7 @@ func TestBdo_LTR(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(htmfunc.LeftToRight, nil, TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(attribute.Dir_Bdo(string(htmfunc.LeftToRight)), text.TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="ltr">مرحباً بالعالم</bdo>`, w.String())
@@ -121,7 +105,7 @@ func TestBr(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Br().RenderElement(w)
+	err := Br(nil).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<br>`, w.String())

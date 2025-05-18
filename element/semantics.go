@@ -57,7 +57,8 @@ func Base(attributes htmfunc.Attribute) htmfunc.Element {
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Head(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("head", attributes, children...)
+func Head(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("head", attributes, children...)
 }
 
 // Html creates the html element - Root element [(More)]
@@ -81,7 +82,8 @@ func Head(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Html(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("html", attributes, children...)
+func Html(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("html", attributes, children...)
 }
 
 // Link creates the link element - Link metadata [(More)]
@@ -216,7 +218,8 @@ func Meta(attributes htmfunc.Attribute) htmfunc.Element {
 // [blocking]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-blocking
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Style(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("style", attributes, children...)
+func Style(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("style", attributes, children...)
 }
 
 // Title creates the title element - Document title [(More)]
@@ -240,5 +243,6 @@ func Style(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Title(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("title", attributes, children...)
+func Title(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("title", attributes, children...)
 }

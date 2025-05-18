@@ -97,7 +97,8 @@ func Embed(attributes htmfunc.Attribute) htmfunc.Element {
 // [loading]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-loading
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("iframe", attributes, children...)
+func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("iframe", attributes, children...)
 }
 
 // Object creates the object element - Image, [child navigable], or [plugin [(More)]
@@ -147,5 +148,6 @@ func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Object(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("object", attributes, children...)
+func Object(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("object", attributes, children...)
 }

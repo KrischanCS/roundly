@@ -80,5 +80,6 @@ func Area(attributes htmfunc.Attribute) htmfunc.Element {
 // [name]: https://html.spec.whatwg.org/dev/image-maps.html#attr-map-name
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Map(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("map", attributes, children...)
+func Map(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("map", attributes, children...)
 }

@@ -1,4 +1,4 @@
-package elementArch
+package element
 
 import (
 	"strconv"
@@ -8,6 +8,7 @@ import (
 	"github.com/KrischanCS/htmfunc/attribute"
 	"github.com/KrischanCS/htmfunc/flow"
 	"github.com/KrischanCS/htmfunc/iters"
+	"github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:errcheck
@@ -22,17 +23,18 @@ func BenchmarkExamplePage(b *testing.B) {
 
 		page := Html(
 			attribute.Lang("en"),
-			Head(
-				TitleTrusted("The Title of the Page"),
+			Head(nil,
+				Title(nil, text.TextTrusted("The Title of the Page")),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
-				),
-				Main(nil,
-					H1(nil,
-						Div(nil, Text("Here could be your content")),
+					A(attribute.HRef_AArea("/main"), text.TextTrusted(("Main")),
+						A(attribute.HRef_AArea("/details"), text.TextTrusted(("Details"))),
+						Main(nil,
+							H1(nil,
+								Div(nil, text.Text("Here could be your content")),
+							),
+						),
 					),
 				),
 			),
@@ -57,19 +59,23 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				TitleTrusted("The Title of the Page"),
+				nil,
+				Title(
+					nil,
+					text.TextTrusted("The Title of the Page"),
+				),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
+					A(attribute.HRef_AArea("/main"), text.TextTrusted("Main")),
+					A(attribute.HRef_AArea("/details"), text.TextTrusted("Details")),
 				),
 				Main(nil,
 					H1(nil,
-						Div(nil, Text("Here could be your content")),
+						Div(nil, text.Text("Here could be your content")),
 					),
 					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.Element {
-						return Div(nil, Text(strconv.Itoa(i)))
+						return Div(nil, text.Text(strconv.Itoa(i)))
 					}),
 				),
 			),
@@ -94,16 +100,17 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				TitleTrusted("The Title of the Page"),
+				nil,
+				text.TextTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
+					A(attribute.HRef_AArea("/main"), text.TextTrusted("Main")),
+					A(attribute.HRef_AArea("/details"), text.TextTrusted("Details")),
 				),
 				Main(nil,
 					H1(nil,
-						Div(nil, TextTrusted("Here could be your content")),
+						Div(nil, text.TextTrusted("Here could be your content")),
 					),
 				),
 			),
@@ -128,16 +135,17 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				TitleTrusted("The Title of the Page"),
+				nil,
+				text.TextTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
+					A(attribute.HRef_AArea("/main"), text.TextTrusted("Main")),
+					A(attribute.HRef_AArea("/details"), text.TextTrusted("Details")),
 				),
 				Main(nil,
 					H1(nil,
-						Div(nil, Text("Here could be your content")),
+						Div(nil, text.Text("Here could be your content")),
 					),
 				),
 			),
@@ -162,16 +170,17 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				TitleTrusted("The Title of the Page"),
+				nil,
+				text.TextTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
+					A(attribute.HRef_AArea("/main"), text.TextTrusted("Main")),
+					A(attribute.HRef_AArea("/details"), text.TextTrusted("Details")),
 				),
 				Main(nil,
 					H1(nil,
-						Div(nil, TextTrusted("Here could be your content")),
+						Div(nil, text.TextTrusted("Here could be your content")),
 					),
 				),
 			),
@@ -196,11 +205,12 @@ func BenchmarkRange(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				Title("The Title of the Page"),
+				nil,
+				text.Text("The Title of the Page"),
 			),
 			Body(nil,
 				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.Element {
-					return Div(nil, Text(strconv.Itoa(i)))
+					return Div(nil, text.Text(strconv.Itoa(i)))
 				}),
 			),
 		)
@@ -237,16 +247,17 @@ func BenchmarkYearCalendar(b *testing.B) {
 		page := Html(
 			attribute.Lang("en"),
 			Head(
-				TitleTrusted("The Title of the Page"),
+				nil,
+				text.TextTrusted("The Title of the Page"),
 			),
 			Body(nil,
 				Div(attribute.Class("header"),
 					Nav(nil,
-						A(attribute.HRef_AArea("/main"), TextTrusted("Main")),
-						A(attribute.HRef_AArea("/details"), TextTrusted("Details")),
+						A(attribute.HRef_AArea("/main"), text.TextTrusted("Main")),
+						A(attribute.HRef_AArea("/details"), text.TextTrusted("Details")),
 					),
-					H1(nil, Text("Calendar")),
-					H2(nil, Text("2024")),
+					H1(nil, text.Text("Calendar")),
+					H2(nil, text.Text("2024")),
 				),
 				Main(nil,
 					Div(attribute.Class("year"),
@@ -271,11 +282,11 @@ type monthDays struct {
 
 func month(_ int, month monthDays) htmfunc.Element {
 	return Div(attribute.Class("month"),
-		H3(nil, Text(month.name)),
+		H3(nil, text.Text(month.name)),
 		Div(attribute.Class("days"),
 			flow.RangeInt(month.days, func(i int) htmfunc.Element {
 				return Div(attribute.Class("day"),
-					Text(strconv.Itoa(i+1)),
+					text.Text(strconv.Itoa(i+1)),
 				)
 			}),
 		),

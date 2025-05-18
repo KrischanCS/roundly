@@ -26,7 +26,8 @@ import (
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("caption", attributes, children...)
+func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("caption", attributes, children...)
 }
 
 // Col creates the col element - Table column [(More)]
@@ -78,7 +79,8 @@ func Col(attributes htmfunc.Attribute) htmfunc.Element {
 // [span]: https://html.spec.whatwg.org/dev/tables.html#attr-colgroup-span
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("colgroup", attributes, children...)
+func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("colgroup", attributes, children...)
 }
 
 // Table creates the table element - Table [(More)]
@@ -116,7 +118,8 @@ func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("table", attributes, children...)
+func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("table", attributes, children...)
 }
 
 // Tbody creates the tbody element - Group of rows in a table [(More)]
@@ -141,7 +144,8 @@ func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("tbody", attributes, children...)
+func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("tbody", attributes, children...)
 }
 
 // Td creates the td element - Table cell [(More)]
@@ -170,7 +174,8 @@ func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [headers]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-headers
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("td", attributes, children...)
+func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("td", attributes, children...)
 }
 
 // Tfoot creates the tfoot element - Group of footer rows in a table [(More)]
@@ -195,7 +200,8 @@ func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("tfoot", attributes, children...)
+func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("tfoot", attributes, children...)
 }
 
 // Th creates the th element - Table header cell [(More)]
@@ -229,7 +235,8 @@ func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [abbr]: https://html.spec.whatwg.org/dev/tables.html#attr-th-abbr
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("th", attributes, children...)
+func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("th", attributes, children...)
 }
 
 // Thead creates the thead element - Group of heading rows in a table [(More)]
@@ -254,7 +261,8 @@ func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("thead", attributes, children...)
+func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("thead", attributes, children...)
 }
 
 // Tr creates the tr element - Table row [(More)]
@@ -287,5 +295,6 @@ func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Tr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("tr", attributes, children...)
+func Tr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("tr", attributes, children...)
 }

@@ -33,5 +33,6 @@ import (
 // [[MATHML]]: https://html.spec.whatwg.org/dev/references.html#refsMATHML
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("math", attributes, children...)
+func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("math", attributes, children...)
 }

@@ -10,8 +10,9 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/elementArch"
+	. "github.com/KrischanCS/htmfunc/element"
 	"github.com/KrischanCS/htmfunc/iters"
+	"github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:funlen
@@ -36,8 +37,8 @@ func TestRange(t *testing.T) {
 				items: nil,
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), Text(s)),
+						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), text.Text(s)),
 					)
 				},
 			},
@@ -49,8 +50,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), Text(s)),
+						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), text.Text(s)),
 					)
 				},
 			},
@@ -62,8 +63,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples", "bananas", "oranges"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), Text(s)),
+						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
+						Div(attr.Class("value"), text.Text(s)),
 					)
 				},
 			},
@@ -102,7 +103,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 0,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(strconv.Itoa(i)))
+					return Li(nil, text.Text(strconv.Itoa(i)))
 				},
 			},
 			want: "",
@@ -112,7 +113,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 1,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(strconv.Itoa(i)))
+					return Li(nil, text.Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li>",
@@ -122,7 +123,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 3,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, Text(strconv.Itoa(i)))
+					return Li(nil, text.Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li><li>1</li><li>2</li>",
@@ -160,7 +161,7 @@ func TestRangeIter(t *testing.T) {
 				seq: nil,
 				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
-						Text(fmt.Sprintf("%d - %c", i, 'a'+i)))
+						text.Text(fmt.Sprintf("%d - %c", i, 'a'+i)))
 				},
 			},
 			want: "",
@@ -171,7 +172,7 @@ func TestRangeIter(t *testing.T) {
 				seq: iters.FromToInclusive(7, 7),
 				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
-						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
+						text.Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
 			},
 			want: `<li>1 - g</li>`,
@@ -182,7 +183,7 @@ func TestRangeIter(t *testing.T) {
 				seq: iters.FromTo(3, 8),
 				component: func(i int, s int) htmfunc.Element {
 					return Li(nil,
-						Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
+						text.Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
 				},
 			},
 			want: `<li>1 - c</li>` +
@@ -226,7 +227,7 @@ func BenchmarkRange(b *testing.B) {
 			return Div(attr.Class("row"),
 				Range(row, func(_ int, i int) htmfunc.Element {
 					return Div(attr.Class("col"),
-						Text(strconv.Itoa(i)),
+						text.Text(strconv.Itoa(i)),
 					)
 				}),
 			)
@@ -252,7 +253,7 @@ func BenchmarkRangeInt(b *testing.B) {
 			return Div(attr.Class("row"),
 				RangeInt(20, func(col int) htmfunc.Element {
 					return Div(attr.Class("col"),
-						Text(strconv.Itoa(row*100+col)),
+						text.Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
@@ -278,7 +279,7 @@ func BenchmarkRangeIter(b *testing.B) {
 			return Div(attr.Class("row"),
 				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.Element {
 					return Div(attr.Class("col"),
-						Text(strconv.Itoa(row*100+col)),
+						text.Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)

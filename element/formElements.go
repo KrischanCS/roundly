@@ -69,7 +69,8 @@ import (
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-value
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("button", attributes, children...)
+func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("button", attributes, children...)
 }
 
 // Datalist creates the datalist element - Container for options for [combo box control [(More)]
@@ -100,7 +101,8 @@ func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("datalist", attributes, children...)
+func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("datalist", attributes, children...)
 }
 
 // Fieldset creates the fieldset element - Group of form controls [(More)]
@@ -138,7 +140,8 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("fieldset", attributes, children...)
+func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("fieldset", attributes, children...)
 }
 
 // Legend creates the legend element - Caption for [fieldset [(More)]
@@ -164,7 +167,8 @@ func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("legend", attributes, children...)
+func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("legend", attributes, children...)
 }
 
 // Meter creates the meter element - Gauge [(More)]
@@ -206,7 +210,8 @@ func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [optimum]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-optimum
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("meter", attributes, children...)
+func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("meter", attributes, children...)
 }
 
 // Optgroup creates the optgroup element - Group of options in a list box [(More)]
@@ -235,7 +240,8 @@ func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-label
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("optgroup", attributes, children...)
+func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("optgroup", attributes, children...)
 }
 
 // Option creates the option element - Option in a list box or combo box control [(More)]
@@ -270,7 +276,8 @@ func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-value
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("option", attributes, children...)
+func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("option", attributes, children...)
 }
 
 // Output creates the output element - Calculated output value [(More)]
@@ -312,7 +319,8 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("output", attributes, children...)
+func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("output", attributes, children...)
 }
 
 // Progress creates the progress element - Progress bar [(More)]
@@ -346,7 +354,8 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [max]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("progress", attributes, children...)
+func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("progress", attributes, children...)
 }
 
 // Select creates the select element - List box control [(More)]
@@ -404,7 +413,8 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [size]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-size
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("select", attributes, children...)
+func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("select", attributes, children...)
 }
 
 // Textarea creates the textarea element - Multiline text controls [(More)]
@@ -470,5 +480,6 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [wrap]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("textarea", attributes, children...)
+func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("textarea", attributes, children...)
 }

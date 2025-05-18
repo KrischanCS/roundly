@@ -32,7 +32,8 @@ import (
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("noscript", attributes, children...)
+func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("noscript", attributes, children...)
 }
 
 // Script creates the script element - Embedded script [(More)]
@@ -85,7 +86,8 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [fetchpriority]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-fetchpriority
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("script", attributes, children...)
+func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("script", attributes, children...)
 }
 
 // Slot creates the slot element - Shadow tree slot [(More)]
@@ -113,7 +115,8 @@ func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [name]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("slot", attributes, children...)
+func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("slot", attributes, children...)
 }
 
 // Template creates the template element - Template [(More)]
@@ -158,5 +161,6 @@ func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [shadowrootcustomelementregistry]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootcustomelementregistry
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("template", attributes, children...)
+func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("template", attributes, children...)
 }

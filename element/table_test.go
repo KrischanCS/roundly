@@ -1,29 +1,22 @@
-package elementArch
+package element
 
 import (
 	"testing"
 )
 
-func TestGrouping(t *testing.T) {
+func TestTable(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Blockquote,
-		Dd,
-		Div,
-		Dl,
-		Dt,
-		Figcaption,
-		Figure,
-		Hr,
-		Li,
-		Main,
-		Menu,
-		Ol,
-		P,
-		Pre,
-		Search,
-		Ul,
+		Table,
+		Caption,
+		Colgroup,
+		Tbody,
+		Thead,
+		Tfoot,
+		Tr,
+		Td,
+		Th,
 	}
 
 	for _, element := range elements {

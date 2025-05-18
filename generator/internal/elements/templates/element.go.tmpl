@@ -43,8 +43,8 @@ import (
 func {{.FuncName}}(attributes htmfunc.Attribute{{- if .IsVoid -}}{{- else -}}, children ...htmfunc.Element{{- end -}}) htmfunc.Element {
 {{- if .IsVoid }}
     return htmfunc.WriteVoidElement("{{.Tag}}", attributes)
-{{ else -}}
+{{- else }}
     return htmfunc.WriteElement("{{.Tag}}", attributes, children...)
-{{ end -}}
+{{- end }}
 }
 {{end}}

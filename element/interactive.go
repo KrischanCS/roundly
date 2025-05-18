@@ -37,7 +37,8 @@ import (
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("details", attributes, children...)
+func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("details", attributes, children...)
 }
 
 // Dialog creates the dialog element - Dialog box or window [(More)]
@@ -63,7 +64,8 @@ func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("dialog", attributes, children...)
+func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("dialog", attributes, children...)
 }
 
 // Summary creates the summary element - Caption for [details [(More)]
@@ -89,5 +91,6 @@ func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("summary", attributes, children...)
+func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("summary", attributes, children...)
 }

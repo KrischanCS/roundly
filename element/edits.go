@@ -35,7 +35,8 @@ import (
 // [datetime]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("del", attributes, children...)
+func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("del", attributes, children...)
 }
 
 // Ins creates the ins element - An addition to the document [(More)]
@@ -67,5 +68,6 @@ func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [datetime]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Ins(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("ins", attributes, children...)
+func Ins(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("ins", attributes, children...)
 }

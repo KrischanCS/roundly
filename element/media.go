@@ -53,7 +53,8 @@ import (
 // [controls]: https://html.spec.whatwg.org/dev/media.html#attr-media-controls
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("audio", attributes, children...)
+func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("audio", attributes, children...)
 }
 
 // Track creates the track element - Timed text track [(More)]
@@ -87,7 +88,8 @@ func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [srclang]: https://html.spec.whatwg.org/dev/media.html#attr-track-srclang
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("track", attributes, children...)
+func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("track", attributes, children...)
 }
 
 // Video creates the video element - Video player [(More)]
@@ -145,5 +147,6 @@ func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Video(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("video", attributes, children...)
+func Video(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
+    return htmfunc.WriteElement("video", attributes, children...)
 }
