@@ -1,12 +1,8 @@
 package attributes
 
 import (
-	"bufio"
-	"bytes"
-	"fmt"
 	"log"
 	"regexp"
-	"slices"
 	"strings"
 
 	"golang.org/x/net/html"
@@ -22,7 +18,7 @@ type attribute struct {
 	Description string
 	Value       string
 	Values      []string
-	Links       []link
+	Links       []standard.Link
 }
 
 type attributes struct {
@@ -36,11 +32,6 @@ type attributes struct {
 	Float          []attribute
 	Int            []attribute
 	Uint           []attribute
-}
-
-type link struct {
-	Name string
-	Url  string
 }
 
 // TODO parse https://html.spec.whatwg.org/dev/input.html#attr-input-type instead of hardcoding this.
@@ -70,12 +61,12 @@ var inputTypes = []string{ //nolint:gochecknoglobals
 }
 
 func findAttributes(body *html.Node) attributes {
-	attributesTable := findNodeWithId(body, "attributes-1")
+	attributesTable := standard.FindNodeWithId(body, "attributes-1")
 	if attributesTable == nil {
 		log.Fatal("Error finding attributes table")
 	}
 
-	tBody := findTBody(attributesTable)
+	tBody := standard.FindTBody(attributesTable)
 
 	attrsByName := make(map[string][]*attribute)
 	attrs := make([]*attribute, 0, 256) //nolint:mnd
@@ -92,12 +83,12 @@ func findAttributes(body *html.Node) attributes {
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {
-	eventHandlersTable := findNodeWithId(body, "ix-event-handlers")
+	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
 	if eventHandlersTable == nil {
 		log.Fatal("Error finding event handlers table")
 	}
 
-	tBody := findTBody(eventHandlersTable)
+	tBody := standard.FindTBody(eventHandlersTable)
 
 	attrs := make([]attribute, 0, 256) //nolint:mnd
 
@@ -220,44 +211,12 @@ func isSpaceSeparatedList(value string) bool {
 	return strings.HasPrefix(value, "[Set of space-separated tokens]")
 }
 
-func findNodeWithId(node *html.Node, id string) *html.Node {
-	for _, attr := range node.Attr {
-		if attr.Key == "id" && attr.Val == id {
-			return node
-		}
-	}
-
-	for child := range node.ChildNodes() {
-		if n := findNodeWithId(child, id); n != nil {
-			return n
-		}
-	}
-
-	if node.NextSibling != nil {
-		return findNodeWithId(node.NextSibling, id)
-	}
-
-	return nil
-}
-
-func findTBody(table *html.Node) *html.Node {
-	for current := table.FirstChild; current != nil; current = current.NextSibling {
-		if current.Data == "tbody" {
-			return current
-		}
-	}
-
-	log.Fatal("Error finding tbody")
-
-	return nil
-}
-
 func parseAttribute(row *html.Node) attribute {
 	data := row.FirstChild
 
 	var attr attribute
 
-	text, links := extractText(data)
+	text, links := standard.ExtractText(data)
 	setNames(&attr, text)
 	attr.Links = links
 
@@ -269,13 +228,13 @@ func parseAttribute(row *html.Node) attribute {
 
 	data = data.NextSibling
 
-	text, links = extractText(data)
+	text, links = standard.ExtractText(data)
 	attr.Description = text
 	attr.Links = append(attr.Links, links...)
 
 	data = data.NextSibling
 
-	text, links = extractText(data)
+	text, links = standard.ExtractText(data)
 	text = strings.ReplaceAll(text, "*", " (Additional rules apply, see elements documentation)")
 
 	attr.Value = text
@@ -298,151 +257,8 @@ func setNames(attr *attribute, attributeName string) {
 	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
 }
 
-func extractText(data *html.Node) (string, []link) {
-	sb := strings.Builder{}
-	links := make([]link, 0, 3) //nolint:mnd
-
-	for node := data.FirstChild; node != nil; node = node.NextSibling {
-		switch node.Type {
-		case html.CommentNode:
-			continue
-		case html.TextNode:
-			if isAllWhitespace(node.Data) {
-				continue
-			}
-
-			sb.WriteString(node.Data)
-		case html.ElementNode:
-			extractTextFromElement(node, &links, &sb)
-		default:
-			log.Panic("Unexpected node type: ", node.Type)
-		}
-	}
-
-	compactWhitespace(&sb)
-
-	s := sb.String()
-
-	// Special case currently needed for "popover" which has a trailing ;
-	s = strings.Trim(s, ";")
-
-	s, links = distinguishLinkDuplicates(s, links)
-
-	return s, links
-}
-
-func distinguishLinkDuplicates(s string, links []link) (string, []link) {
-	exactSameLink := make([]int, 0)
-
-	for i, link := range links {
-		duplicates := 0
-		for j, otherLink := range links[i+1:] {
-			if link.Name == otherLink.Name {
-				if link.Url == otherLink.Url {
-					exactSameLink = append(exactSameLink, i+j+1)
-					continue
-				}
-
-				duplicates++
-
-				name := fmt.Sprintf("%s (%d)", link.Name, duplicates)
-				links[i+j+1].Name = name
-
-				index := strings.Index(s, "["+link.Name+"]")
-
-				s = s[:index+1] + strings.Replace(s[index+1:], "["+link.Name+"]", "["+name+"]", 1)
-			}
-		}
-	}
-
-	newLinks := make([]link, 0, len(links)-len(exactSameLink))
-	for i, l := range links {
-		if !slices.Contains(exactSameLink, i) {
-			newLinks = append(newLinks, l)
-		}
-	}
-
-	return s, newLinks
-
-}
-
-func extractTextFromElement(node *html.Node, links *[]link, sb *strings.Builder) {
-	if node.Data == "a" {
-		addAsLink(node, links, sb)
-		return
-	}
-
-	if node.Data == "li" {
-		if node.PrevSibling != nil && node.PrevSibling.Data == "li" {
-			sb.WriteByte(',')
-		}
-
-		sb.WriteByte(' ')
-	}
-
-	text, ls := extractText(node)
-
-	sb.WriteString(text)
-
-	*links = append(*links, ls...)
-}
-
-func addAsLink(node *html.Node, links *[]link, sb *strings.Builder) {
-	var url string
-
-	for _, attr := range node.Attr {
-		if attr.Key == "href" {
-			url = standard.HtmlStandardUrl + attr.Val
-			break
-		}
-	}
-
-	text, ls := extractText(node)
-	name := text
-
-	*links = append(*links, link{Name: name, Url: url})
-
-	sb.WriteString("[" + text + "]")
-
-	*links = append(*links, ls...)
-}
-
-func compactWhitespace(sb *strings.Builder) {
-	scanner := bufio.NewScanner(strings.NewReader(sb.String()))
-	sb.Reset()
-
-	//nolint:wsl
-	for scanner.Scan() {
-		bs := scanner.Bytes()
-		bs = bytes.Trim(bs, " \t")
-
-		lastWasWhitespace := false
-		for _, b := range bs {
-			if b != ' ' && b != '\t' {
-				lastWasWhitespace = false
-				sb.WriteByte(b)
-
-				continue
-			}
-
-			if lastWasWhitespace {
-				continue
-			}
-
-			lastWasWhitespace = true
-			sb.WriteByte(' ')
-		}
-	}
-}
-
-var allWhitespace = regexp.MustCompile(`^[ \t\n\r]*$`)
-
-func isAllWhitespace(data string) bool {
-	return allWhitespace.MatchString(data)
-}
-
-func extractElements(data *html.Node) ([]string, []link) {
-	text, links := extractText(data)
+func extractElements(data *html.Node) ([]string, []standard.Link) {
+	text, links := standard.ExtractText(data)
 
 	return strings.Split(text, ";"), links
 }

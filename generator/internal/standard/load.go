@@ -18,7 +18,7 @@ const HtmlStandardUrl = `https://html.spec.whatwg.org/dev/`
 //nolint:gochecknoglobals
 var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
 
-func LoadIndicesFromStandard(reload bool) *html.Node {
+func LoadStandardForWebDevs(reload bool) *html.Node {
 	if reload || !isStandardFilePresent() {
 		downloadStandardFile()
 	}
