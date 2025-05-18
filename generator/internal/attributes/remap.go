@@ -5,6 +5,7 @@ type MethodParamName struct {
 }
 
 var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
+	"abbr":                            {"AbbrAttribute", "abbr"}, // Avoid name collision with abbr element
 	"accept-charset":                  {"AcceptCharset", "acceptCharset"},
 	"accesskey":                       {"AccessKey", "accessKey"},
 	"allowfullscreen":                 {"AllowFullScreen", "allowFullScreen"},
@@ -14,6 +15,7 @@ var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"autofocus":                       {"AutoFocus", "autoFocus"},
 	"autoplay":                        {"AutoPlay", "autoPlay"},
 	"charset":                         {"CharSet", "charSet"},
+	"cite":                            {"CiteAttribute", "cite"}, // Avoid name collision with cite element
 	"closedby":                        {"ClosedBy", "closedBy"},
 	"colorspace":                      {"ColorSpace", "colorSpace"},
 	"colspan":                         {"ColSpan", "colSpan"},
@@ -21,13 +23,15 @@ var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"contenteditable":                 {"ContentEditable", "contentEditable"},
 	"coords":                          {"Coords", "coords"},
 	"crossorigin":                     {"CrossOrigin", "crossOrigin"},
+	"data":                            {"DataAttribute", "data"}, // Avoid name collision with data element
 	"datetime":                        {"DateTime", "dateTime"},
 	"defer":                           {"Defer", "deferV"}, // defer must be renamed to avoid conflict with defer key word
 	"dirname":                         {"DirName", "dirName"},
 	"enctype":                         {"EncType", "encType"},
 	"enterkeyhint":                    {"EnterKeyHint", "enterKeyHint"},
 	"fetchpriority":                   {"FetchPriority", "fetchPriority"},
-	"for":                             {"For", "forV"}, // for must be renamed to avoid conflict with defer key word
+	"for":                             {"For", "forV"},           // for must be renamed to avoid conflict with defer key word
+	"form":                            {"FormAttribute", "form"}, // Avoid name collision with form element
 	"formaction":                      {"FormAction", "formAction"},
 	"formenctype":                     {"FormEnctype", "formEnctype"},
 	"formmethod":                      {"FormMethod", "formMethod"},
@@ -45,6 +49,7 @@ var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"itemref":                         {"ItemRef", "itemRef"},
 	"itemscope":                       {"ItemScope", "itemScope"},
 	"itemtype":                        {"ItemType", "itemType"},
+	"label":                           {"LabelAttribute", "label"}, // Avoid name collision with label element
 	"maxlength":                       {"MaxLength", "maxLength"},
 	"minlength":                       {"MinLength", "minLength"},
 	"nomodule":                        {"NoModule", "noModule"},
@@ -65,12 +70,16 @@ var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"shadowrootdelegatesfocus":        {"ShadowRootDelegatesFocus", "shadowRootDelegatesFocus"},
 	"shadowrootmode":                  {"ShadowRootMode", "shadowRootMode"},
 	"shadowrootserializable":          {"ShadowRootSerializable", "shadowRootSerializable"},
+	"slot":                            {"SlotAttribute", "slot"}, // Avoid name collision with slot element
+	"span":                            {"SpanAttribute", "span"}, // Avoid name collision with span element
 	"spellcheck":                      {"SpellCheck", "spellCheck"},
 	"srcdoc":                          {"SrcDoc", "srcDoc"},
 	"srclang":                         {"SrcLang", "srcLang"},
 	"srcset":                          {"SrcSet", "srcSet"},
+	"style":                           {"StyleAttribute", "style"}, // Avoid name collision with style element
 	"tabindex":                        {"TabIndex", "tabIndex"},
-	"type":                            {"Type", "typeV"}, // type must be renamed to avoid conflict with type key word
+	"title":                           {"TitleAttribute", "title"}, // Avoid name collision with title element
+	"type":                            {"Type", "typeV"},           // type must be renamed to avoid conflict with type key word
 	"usemap":                          {"UseMap", "useMap"},
 	"writingsuggestions":              {"WritingSuggestions", "writingSuggestions"},
 	"onafterprint":                    {"OnAfterPrint", "onAfterPrint"},

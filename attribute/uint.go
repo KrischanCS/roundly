@@ -162,7 +162,7 @@ func Size(size uint) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("size", strconv.FormatUint(uint64(size), 10))
 }
 
-// Span creates the span attribute - Number of columns spanned by the element
+// SpanAttribute creates the span attribute - Number of columns spanned by the element
 //
 // It can be applied to the following elements:
 //   - [col]
@@ -176,7 +176,7 @@ func Size(size uint) htmfunc.Attribute {
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-colgroup-span
 // [Valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Span(span uint) htmfunc.Attribute {
+func SpanAttribute(span uint) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("span", strconv.FormatUint(uint64(span), 10))
 }
 
