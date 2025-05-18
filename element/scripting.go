@@ -28,7 +28,6 @@ import (
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
@@ -71,8 +70,6 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [src]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-src
 // [type]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-type
@@ -108,7 +105,6 @@ func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -147,9 +143,6 @@ func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 //
 // [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
-// [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#the-colgroup-element

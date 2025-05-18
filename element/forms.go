@@ -33,8 +33,6 @@ import (
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [accept-charset]: https://html.spec.whatwg.org/dev/forms.html#attr-form-accept-charset
 // [action]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-action
@@ -74,8 +72,6 @@ func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [for]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 //

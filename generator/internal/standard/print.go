@@ -52,7 +52,7 @@ func ExtractText(data *html.Node) (string, []Link) {
 }
 
 func DistinguishLinkDuplicates(text string, links []Link) (string, []Link) {
-	links = eliminateExactSameLinks(links)
+	links = EliminateExactSameLinks(links)
 
 	for i, link := range links {
 		duplicates := 0
@@ -78,7 +78,7 @@ func DistinguishLinkDuplicates(text string, links []Link) (string, []Link) {
 	return text, links
 }
 
-func eliminateExactSameLinks(links []Link) []Link {
+func EliminateExactSameLinks(links []Link) []Link {
 	exactSameLink := set.Of[int]()
 
 	for i, link := range links {

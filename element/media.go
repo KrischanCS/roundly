@@ -39,7 +39,6 @@ import (
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element
 // [track]: https://html.spec.whatwg.org/dev/media.html#the-track-element
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
@@ -129,7 +128,6 @@ func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element
 // [track]: https://html.spec.whatwg.org/dev/media.html#the-track-element
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent

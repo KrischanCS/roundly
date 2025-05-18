@@ -28,7 +28,6 @@ import (
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [cite]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-cite
@@ -61,7 +60,6 @@ func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [cite]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-cite

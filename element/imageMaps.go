@@ -33,7 +33,6 @@ import (
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [alt]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-alt
 // [coords]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-coords
@@ -73,7 +72,6 @@ func Area(attributes htmfunc.Attribute) htmfunc.Element {
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [area]: https://html.spec.whatwg.org/dev/image-maps.html#the-area-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes

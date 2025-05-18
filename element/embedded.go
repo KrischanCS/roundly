@@ -46,7 +46,6 @@ import (
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [picture]: https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [alt]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-alt
@@ -92,7 +91,6 @@ func Img(attributes htmfunc.Attribute) htmfunc.Element {
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
@@ -131,8 +129,6 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [video]: https://html.spec.whatwg.org/dev/media.html#the-video-element
 // [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
 // [picture]: https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element
-// [video]: https://html.spec.whatwg.org/dev/media.html#the-video-element
-// [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [type]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-type
 // [media]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-media

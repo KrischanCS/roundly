@@ -29,9 +29,7 @@ import (
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
@@ -58,8 +56,6 @@ func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 //
@@ -84,7 +80,6 @@ func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2

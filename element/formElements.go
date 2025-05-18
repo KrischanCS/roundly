@@ -50,8 +50,6 @@ import (
 // [submittable]: https://html.spec.whatwg.org/dev/forms.html#category-submit
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [command]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command
 // [commandfor]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-commandfor
@@ -94,8 +92,6 @@ func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [combo box control]: https://html.spec.whatwg.org/dev/input.html#attr-input-list
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -131,9 +127,7 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [listed]: https://html.spec.whatwg.org/dev/forms.html#category-listed
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-fieldset-disabled
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
@@ -160,7 +154,6 @@ func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [fieldset]: https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element
 // [fieldset]: https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
@@ -199,8 +192,6 @@ func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [labelable]: https://html.spec.whatwg.org/dev/forms.html#category-label
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-value
 // [min]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-min
@@ -311,8 +302,6 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [resettable]: https://html.spec.whatwg.org/dev/forms.html#category-reset
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [for]: https://html.spec.whatwg.org/dev/form-elements.html#attr-output-for
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
@@ -347,8 +336,6 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [labelable]: https://html.spec.whatwg.org/dev/forms.html#category-label
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [max]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
@@ -399,7 +386,6 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [resettable]: https://html.spec.whatwg.org/dev/forms.html#category-reset
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
 // [optgroup]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
@@ -462,7 +448,6 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [resettable]: https://html.spec.whatwg.org/dev/forms.html#category-reset
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [text]: https://html.spec.whatwg.org/dev/dom.html#text-content
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [autocomplete]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-autocomplete

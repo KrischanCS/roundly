@@ -25,8 +25,6 @@ import (
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [cite]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-blockquote-cite
 //
@@ -82,9 +80,6 @@ func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
@@ -113,7 +108,6 @@ func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [dt]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dt-element
 // [dd]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dd-element
 // [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
@@ -168,7 +162,6 @@ func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [figure]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figure-element
-// [figure]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figure-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
@@ -196,9 +189,7 @@ func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfu
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [figcaption]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figcaption-element
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
@@ -221,7 +212,6 @@ func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
@@ -278,8 +268,6 @@ func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
@@ -306,7 +294,6 @@ func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -338,7 +325,6 @@ func Menu(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -369,7 +355,6 @@ func Ol(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
@@ -396,7 +381,6 @@ func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elemen
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
@@ -423,8 +407,6 @@ func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
@@ -451,7 +433,6 @@ func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes

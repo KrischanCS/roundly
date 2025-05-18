@@ -28,8 +28,6 @@ import (
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
-// [[SVG]]: https://html.spec.whatwg.org/dev/references.html#refsSVG
 // [[SVG]]: https://html.spec.whatwg.org/dev/references.html#refsSVG
 //
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3

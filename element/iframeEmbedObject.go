@@ -36,7 +36,6 @@ import (
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [src]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-embed-src
 // [type]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-embed-type
@@ -83,7 +82,6 @@ func Embed(attributes htmfunc.Attribute) htmfunc.Element {
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [src]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-src
 // [srcdoc]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-srcdoc
@@ -137,7 +135,6 @@ func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [listed]: https://html.spec.whatwg.org/dev/forms.html#category-listed
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [data]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-data

@@ -30,7 +30,6 @@ import (
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [width]: https://html.spec.whatwg.org/dev/canvas.html#attr-canvas-width

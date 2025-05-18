@@ -72,7 +72,6 @@ import (
 // [resettable]: https://html.spec.whatwg.org/dev/forms.html#category-reset
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [accept]: https://html.spec.whatwg.org/dev/input.html#attr-input-accept
 // [alpha]: https://html.spec.whatwg.org/dev/input.html#attr-input-alpha

@@ -126,7 +126,6 @@ func Html(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
 // [noscript]: https://html.spec.whatwg.org/dev/scripting.html#the-noscript-element
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [href]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-href
 // [crossorigin]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-crossorigin
@@ -179,7 +178,6 @@ func Link(attributes htmfunc.Attribute) htmfunc.Element {
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
 // [noscript]: https://html.spec.whatwg.org/dev/scripting.html#the-noscript-element
-// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
 // [http-equiv]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv

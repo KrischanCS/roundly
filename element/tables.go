@@ -107,7 +107,6 @@ func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 //
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [caption]: https://html.spec.whatwg.org/dev/tables.html#the-caption-element
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#the-colgroup-element
 // [thead]: https://html.spec.whatwg.org/dev/tables.html#the-thead-element
