@@ -2,6 +2,7 @@ package elements
 
 import (
 	"fmt"
+	"strings"
 
 	"golang.org/x/net/html"
 
@@ -27,10 +28,13 @@ func getAllElements(standardIndicesPage *html.Node) []Element {
 		panic("Could not find elements table")
 	}
 
-	text, _ := standard.ExtractText(elementsTable)
-	fmt.Println("Found elements table:\n",  text)
+	elements := createElements(elementsTable)
 
-	return nil
+	for _, element := range elements {
+		fmt.Println(element)
+	}
+
+	return elements
 }
 
 func findElementsTable(page *html.Node) (*html.Node, bool) {
@@ -40,4 +44,67 @@ func findElementsTable(page *html.Node) (*html.Node, bool) {
 	const caption = "List of elements"
 
 	return standard.FindTableWithCaption(page, caption)
+}
+
+func createElements(table *html.Node) []Element {
+	tBody := standard.FindTBody(table)
+
+	elements := make([]Element, 0)
+	for node := range tBody.ChildNodes() {
+		if node.Type != html.ElementNode {
+			panic("Expect only element nodes")
+		}
+
+		if node.Data != "tr" {
+			panic("Expect only rows in tbody")
+		}
+
+		elements = append(elements, elementsFromRow(node)...)
+	}
+
+	return elements
+}
+
+func elementsFromRow(node *html.Node) []Element {
+	nameNode := node.FirstChild
+	if nameNode.Type != html.ElementNode || nameNode.Data != "td" && nameNode.Data != "th" {
+		panic("Expect first child to be a td, was: " + nameNode.Data)
+	}
+
+	// There exist one case with multiple elements in a single ro
+	// (h1, h2, h3, h4, h5, h6)
+	names, _ := standard.ExtractText(nameNode)
+
+	elements := make([]Element, 0, 1)
+	for s := range strings.SplitSeq(names, ", ") {
+		if s == "[autonomous custom elements]" {
+			continue
+		}
+
+		elements = append(elements, elementFromRow(s, node))
+	}
+
+	return elements
+}
+
+func elementFromRow(name string, node *html.Node) Element {
+	name = strings.Trim(name, "[]")
+
+	if strings.Contains(name, " ") {
+		// Spaces are not allowed in element names. Known special cases are:
+		//   - "SVG svg" -> "svg"
+		//   - "MathML math" -> "math"
+		switch name {
+		case "SVG svg":
+			name = "svg"
+		case "MathML math":
+			name = "math"
+		default:
+			panic("Unexpected element name with space: " + name)
+		}
+	}
+
+	return Element{
+		Tag: name,
+	}
 }
