@@ -19,7 +19,6 @@ func main() {
 
 	body := standard.LoadStandardForWebDevs(*reloadStandard)
 
-
 	elements.GenerateElements(body)
 	attributes.GenerateAttributes(body)
 }

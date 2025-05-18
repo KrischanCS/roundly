@@ -46,12 +46,12 @@ func ExtractText(data *html.Node) (string, []Link) {
 	// Special case currently needed for "popover" which has a trailing ;
 	s = strings.Trim(s, ";")
 
-	s, links = distinguishLinkDuplicates(s, links)
+	s, links = DistinguishLinkDuplicates(s, links)
 
 	return s, links
 }
 
-func distinguishLinkDuplicates(s string, links []Link) (string, []Link) {
+func DistinguishLinkDuplicates(s string, links []Link) (string, []Link) {
 	exactSameLink := set.Of[int]()
 
 	for i, link := range links {

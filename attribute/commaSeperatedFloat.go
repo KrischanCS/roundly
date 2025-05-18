@@ -4,6 +4,7 @@ package attribute
 
 import (
 	"strconv"
+
 	"github.com/KrischanCS/htmfunc"
 )
 

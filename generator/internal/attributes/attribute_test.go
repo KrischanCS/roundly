@@ -13,20 +13,20 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 	type testCase struct {
 		name        string
 		inputString string
-		inputLinks  []standard.link
+		inputLinks  []standard.Link
 		wantString  string
-		wantLinks   []standard.link
+		wantLinks   []standard.Link
 	}
 
 	testCases := []testCase{
 		{
 			name:        "Should not change anything when there are no duplicates",
 			inputString: "This is a test [linkA] and [linkB]",
-			inputLinks: []standard.link{
+			inputLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 				{"linkB", "https://example.com/link2"}},
 			wantString: "This is a test [linkA] and [linkB]",
-			wantLinks: []standard.link{
+			wantLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 				{"linkB", "https://example.com/link2"},
 			},
@@ -34,12 +34,12 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 		{
 			name:        "Should Adapt the name of the second link when there are duplicates with different URLs",
 			inputString: "This is a test [linkA] and [linkA]",
-			inputLinks: []standard.link{
+			inputLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 				{"linkA", "https://example.com/link2"},
 			},
 			wantString: "This is a test [linkA] and [linkA (1)]",
-			wantLinks: []standard.link{
+			wantLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 				{"linkA (1)", "https://example.com/link2"},
 			},
@@ -47,12 +47,12 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 		{
 			name:        "Should remove the second link when the urls are the same",
 			inputString: "This is a test [linkA] and [linkA]",
-			inputLinks: []standard.link{
+			inputLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 				{"linkA", "https://example.com/link1"},
 			},
 			wantString: "This is a test [linkA] and [linkA]",
-			wantLinks: []standard.link{
+			wantLinks: []standard.Link{
 				{"linkA", "https://example.com/link1"},
 			},
 		},
@@ -61,7 +61,7 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			// Act
-			gotString, gotLinks := standard.distinguishLinkDuplicates(tc.inputString, tc.inputLinks)
+			gotString, gotLinks := standard.DistinguishLinkDuplicates(tc.inputString, tc.inputLinks)
 
 			// Assert
 			assert.Equal(t, tc.wantString, gotString)
