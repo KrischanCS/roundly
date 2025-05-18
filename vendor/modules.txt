@@ -28,9 +28,6 @@ github.com/Antonboom/testifylint/internal/testify
 ## explicit; go 1.18
 github.com/BurntSushi/toml
 github.com/BurntSushi/toml/internal
-# github.com/Crocmagnon/fatcontext v0.7.2
-## explicit; go 1.23.0
-github.com/Crocmagnon/fatcontext/pkg/analyzer
 # github.com/Djarvur/go-err113 v0.0.0-20210108212216-aea10b59be24
 ## explicit; go 1.13
 github.com/Djarvur/go-err113
@@ -40,6 +37,9 @@ github.com/GaijinEntertainment/go-exhaustruct/v3/analyzer
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/comment
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/pattern
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/structure
+# github.com/KrischanCS/go-toolbox v0.0.4
+## explicit; go 1.24.1
+github.com/KrischanCS/go-toolbox/set
 # github.com/Masterminds/semver/v3 v3.3.1
 ## explicit; go 1.21
 github.com/Masterminds/semver/v3
@@ -274,7 +274,7 @@ github.com/golangci/go-printf-func-name/pkg/analyzer
 # github.com/golangci/gofmt v0.0.0-20250106114630-d62b90e6713d
 ## explicit; go 1.22.0
 github.com/golangci/gofmt/gofmt
-# github.com/golangci/golangci-lint/v2 v2.1.2
+# github.com/golangci/golangci-lint/v2 v2.1.5
 ## explicit; go 1.23.0
 github.com/golangci/golangci-lint/v2/cmd/golangci-lint
 github.com/golangci/golangci-lint/v2/internal/cache
@@ -882,6 +882,9 @@ go-simpler.org/musttag
 # go-simpler.org/sloglint v0.11.0
 ## explicit; go 1.23.0
 go-simpler.org/sloglint
+# go.augendre.info/fatcontext v0.8.0
+## explicit; go 1.23.0
+go.augendre.info/fatcontext/pkg/analyzer
 # go.uber.org/atomic v1.7.0
 ## explicit; go 1.13
 go.uber.org/atomic
@@ -914,6 +917,7 @@ golang.org/x/mod/internal/lazyregexp
 golang.org/x/mod/modfile
 golang.org/x/mod/module
 golang.org/x/mod/semver
+golang.org/x/mod/sumdb/dirhash
 # golang.org/x/net v0.39.0
 ## explicit; go 1.23.0
 golang.org/x/net/html
