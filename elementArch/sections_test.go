@@ -1,23 +1,28 @@
-package element
+package elementArch
 
 import (
 	"testing"
 )
 
-func TestTable(t *testing.T) {
+func TestSections(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Table,
-		Caption,
-		Colgroup,
-		Col,
-		Tbody,
-		Thead,
-		Tfoot,
-		Tr,
-		Td,
-		Th,
+		Body,
+		Article,
+		Section,
+		Nav,
+		Aside,
+		H1,
+		H2,
+		H3,
+		H4,
+		H5,
+		H6,
+		Hgroup,
+		Header,
+		Footer,
+		Address,
 	}
 
 	for _, element := range elements {

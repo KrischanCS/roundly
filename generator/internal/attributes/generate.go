@@ -20,7 +20,7 @@ func GenerateAttributes(body *html.Node) {
 	attributes := findAttributes(body)
 	eventHandlerAttributes := findEventHandlerAttributes(body)
 
-	generateFile("attributesBool.go.tmpl", attributes.Text, "text.go")
+	generateFile("attributesText.go.tmpl", attributes.Text, "text.go")
 	generateFile("attributesBool.go.tmpl", attributes.Bool, "bool.go")
 	generateFile("attributesEnum.go.tmpl", attributes.Enum, "enum.go")
 	generateFile("attributesInputType.go.tmpl", attributes.InputType, "inputType.go")
@@ -31,7 +31,7 @@ func GenerateAttributes(body *html.Node) {
 	generateFile("attributesInt.go.tmpl", attributes.Int, "int.go")
 	generateFile("attributesUint.go.tmpl", attributes.Uint, "uint.go")
 	generateFile("attributeList.go.tmpl", nil, "attributeList.go")
-	generateFile("attributesBool.go.tmpl", eventHandlerAttributes, "eventHandler.go")
+	generateFile("attributesText.go.tmpl", eventHandlerAttributes, "eventHandler.go")
 }
 
 func generateFile(name string, attributes []attribute, fileName string) {

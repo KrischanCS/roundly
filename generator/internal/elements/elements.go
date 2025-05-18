@@ -3,10 +3,12 @@
 package elements
 
 import (
+	"embed"
 	"fmt"
 	"iter"
-	"sort"
+	"os"
 	"strings"
+	"text/template"
 
 	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
@@ -16,7 +18,16 @@ import (
 	"github.com/KrischanCS/htmfunc/generator/internal/standard"
 )
 
+//go:embed templates
+var templateFs embed.FS
+
+var elementTemplate = template.Must(template.ParseFS(templateFs, "templates/*.go.tmpl"))
+
 type Element struct {
+	FuncName string
+
+	IsVoid bool
+
 	// Tag is the name of the element, e.g. "div", "span", "h1", etc.
 	Tag string
 	// Description is a short description of the element.
@@ -39,10 +50,27 @@ type Element struct {
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
-	getAllElements(standardIndicesPage)
+	elementGroups := getAllElements(standardIndicesPage)
+
+	for group, elements := range elementGroups {
+		generateFile(group, elements)
+	}
 }
 
-func getAllElements(standardIndicesPage *html.Node) []Element {
+func generateFile(group string, elements []Element) {
+	file, err := os.OpenFile("../element/"+group+".go", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	if err != nil {
+		panic(fmt.Sprintf("Error opening file %s: %s", group+".go", err))
+	}
+	defer file.Close()
+
+	err = elementTemplate.Lookup("element.go.tmpl").Execute(file, elements)
+	if err != nil {
+		panic(fmt.Sprintf("Error executing template %s: %s", group, err))
+	}
+}
+
+func getAllElements(standardIndicesPage *html.Node) map[string][]Element {
 	elementsTable, ok := findElementsTable(standardIndicesPage)
 	if !ok {
 		panic("Could not find elements table")
@@ -52,56 +80,22 @@ func getAllElements(standardIndicesPage *html.Node) []Element {
 
 	e := iterator.Of(elements...)
 
-	printUniqueSorted(e, "Categories", func(e Element) []string { return e.Categories })
-	printUniqueSorted(e, "Parents", func(e Element) []string { return e.Parents })
-	printUniqueSorted(e, "Children", func(e Element) []string { return e.Children })
-
-	printSemanticGroups(e)
-
-	return elements
+	return groupElements(e)
 }
 
-func printSemanticGroups(e iter.Seq[Element]) {
-	groups := make(map[string][]string)
-	iterator.Reduce(e, &groups, func(accumulator *map[string][]string, value Element) {
+func groupElements(e iter.Seq[Element]) map[string][]Element {
+	groups := make(map[string][]Element)
+	iterator.Reduce(e, &groups, func(accumulator *map[string][]Element, value Element) {
 		group, ok := (*accumulator)[value.SemanticGroup]
 		if !ok {
-			group = make([]string, 0, 8)
+			group = make([]Element, 0, 8)
 		}
 
-		group = append(group, value.Tag)
+		group = append(group, value)
 		(*accumulator)[value.SemanticGroup] = group
 	})
 
-	for group, tags := range groups {
-		sort.Strings(tags)
-
-		fmt.Println(group)
-
-		for _, tag := range tags {
-			fmt.Printf("  %s\n", tag)
-		}
-	}
-}
-
-func printUniqueSorted(e iter.Seq[Element], name string, mapper func(e Element) []string) {
-	categorySet := set.WithCapacity[string](64)
-
-	for categories := range iterator.Map(e, mapper) {
-		for _, c := range categories {
-			categorySet.Add(c)
-		}
-	}
-
-	c := categorySet.Values()
-	sort.Strings(c)
-	fmt.Println(name + ":")
-
-	for _, category := range c {
-		fmt.Printf("  %s\n", category)
-	}
-
-	fmt.Println()
+	return groups
 }
 
 func findElementsTable(page *html.Node) (*html.Node, bool) {
@@ -178,11 +172,17 @@ func normalizeName(name string) (string, bool) {
 	}
 }
 
+//nolint:gochecknoglobals
+var voidElementTags = set.Of("area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param")
+
 func elementFromRow(name string, documentationLink standard.Link, descriptionNode *html.Node) Element {
 	element := Element{
 		Tag:               name,
+		FuncName:          strings.ToUpper(string(name[0])) + name[1:],
 		DocumentationLink: documentationLink,
 	}
+
+	element.IsVoid = voidElementTags.Contains(name)
 
 	description, links := standard.ExtractText(descriptionNode)
 	element.Description = strings.Trim(description, "[]")

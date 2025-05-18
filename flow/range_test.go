@@ -10,7 +10,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
+	. "github.com/KrischanCS/htmfunc/elementArch"
 	"github.com/KrischanCS/htmfunc/iters"
 )
 

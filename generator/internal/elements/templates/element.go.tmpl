@@ -1,0 +1,50 @@
+// Generated file. DO NOT EDIT.
+
+package element
+
+import (
+"github.com/KrischanCS/htmfunc"
+)
+{{ range .}}
+{{/*gotype: github.com/KrischanCS/htmfunc/generator/elements/element.Element*/ -}}
+// {{.FuncName}} creates the {{.Tag}} element - {{.Description}} [(More)]
+//
+// It belongs to the following categories:
+{{- range .Categories}}
+//   - {{.}}
+{{- end}}
+//
+{{- if .IsVoid}}
+// It is a void element and cannot contain any child elements
+{{- else -}}
+// It can be parent to the following elements/categories of elements:
+{{- range .Children}}
+//   - {{.}}
+{{- end -}}
+{{- end}}
+//
+// If can itself be a child of the following elements/categories of elements:
+{{- range .Parents}}
+//   - {{.}}
+{{- end}}
+//
+// The following attributes can be added to this element:
+{{- range .Attributes}}
+//   - {{.}}
+{{- end}}
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+{{ range .Links -}}
+// [{{.Name}}]: {{.Url}}
+{{ end -}}
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func {{.FuncName}}(attributes htmfunc.Attribute{{- if .IsVoid -}}{{- else -}}, children ...htmfunc.Element{{- end -}}) htmfunc.Element {
+{{- if .IsVoid }}
+    return htmfunc.WriteVoidElement("{{.Tag}}", attributes)
+{{ else -}}
+    return htmfunc.WriteElement("{{.Tag}}", attributes, children...)
+{{ end -}}
+}
+{{end}}

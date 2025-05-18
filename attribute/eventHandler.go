@@ -1,5 +1,7 @@
 // Generated file. DO NOT EDIT.
 
+// Package element provides functions for the elements defined in the HTML
+// standard.
 package attribute
 
 import (
@@ -11,7 +13,7 @@ import (
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onafterprint is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -19,8 +21,8 @@ import (
 // [afterprint]: https://html.spec.whatwg.org/dev/#event-afterprint
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnAfterPrint() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onafterprint")
+func OnAfterPrint(onAfterPrint string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onafterprint", onAfterPrint)
 }
 
 // OnAuxClick creates the onauxclick attribute - [auxclick] event handler
@@ -28,7 +30,7 @@ func OnAfterPrint() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onauxclick is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -36,8 +38,8 @@ func OnAfterPrint() htmfunc.Attribute {
 // [auxclick]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-auxclick
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnAuxClick() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onauxclick")
+func OnAuxClick(onAuxClick string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onauxclick", onAuxClick)
 }
 
 // OnBeforeInput creates the onbeforeinput attribute - [beforeinput] event handler
@@ -45,7 +47,7 @@ func OnAuxClick() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onbeforeinput is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -53,8 +55,8 @@ func OnAuxClick() htmfunc.Attribute {
 // [beforeinput]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-beforeinput
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBeforeInput() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onbeforeinput")
+func OnBeforeInput(onBeforeInput string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onbeforeinput", onBeforeInput)
 }
 
 // OnBeforeMatch creates the onbeforematch attribute - [beforematch] event handler
@@ -62,7 +64,7 @@ func OnBeforeInput() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onbeforematch is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -70,8 +72,8 @@ func OnBeforeInput() htmfunc.Attribute {
 // [beforematch]: https://html.spec.whatwg.org/dev/#event-beforematch
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBeforeMatch() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onbeforematch")
+func OnBeforeMatch(onBeforeMatch string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onbeforematch", onBeforeMatch)
 }
 
 // OnBeforePrint creates the onbeforeprint attribute - [beforeprint] event handler for Window object
@@ -79,7 +81,7 @@ func OnBeforeMatch() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onbeforeprint is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -87,8 +89,8 @@ func OnBeforeMatch() htmfunc.Attribute {
 // [beforeprint]: https://html.spec.whatwg.org/dev/#event-beforeprint
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBeforePrint() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onbeforeprint")
+func OnBeforePrint(onBeforePrint string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onbeforeprint", onBeforePrint)
 }
 
 // OnBeforeUnload creates the onbeforeunload attribute - [beforeunload] event handler for Window object
@@ -96,7 +98,7 @@ func OnBeforePrint() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onbeforeunload is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -104,8 +106,8 @@ func OnBeforePrint() htmfunc.Attribute {
 // [beforeunload]: https://html.spec.whatwg.org/dev/#event-beforeunload
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBeforeUnload() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onbeforeunload")
+func OnBeforeUnload(onBeforeUnload string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onbeforeunload", onBeforeUnload)
 }
 
 // OnBeforeToggle creates the onbeforetoggle attribute - [beforetoggle] event handler
@@ -113,7 +115,7 @@ func OnBeforeUnload() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onbeforetoggle is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -121,8 +123,8 @@ func OnBeforeUnload() htmfunc.Attribute {
 // [beforetoggle]: https://html.spec.whatwg.org/dev/#event-beforetoggle
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBeforeToggle() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onbeforetoggle")
+func OnBeforeToggle(onBeforeToggle string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onbeforetoggle", onBeforeToggle)
 }
 
 // OnBlur creates the onblur attribute - [blur] event handler
@@ -130,7 +132,7 @@ func OnBeforeToggle() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onblur is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -138,8 +140,8 @@ func OnBeforeToggle() htmfunc.Attribute {
 // [blur]: https://html.spec.whatwg.org/dev/#event-blur
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnBlur() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onblur")
+func OnBlur(onBlur string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onblur", onBlur)
 }
 
 // OnCancel creates the oncancel attribute - [cancel] event handler
@@ -147,7 +149,7 @@ func OnBlur() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncancel is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -155,8 +157,8 @@ func OnBlur() htmfunc.Attribute {
 // [cancel]: https://html.spec.whatwg.org/dev/#event-cancel
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCancel() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncancel")
+func OnCancel(onCancel string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncancel", onCancel)
 }
 
 // OnCanPlay creates the oncanplay attribute - [canplay] event handler
@@ -164,7 +166,7 @@ func OnCancel() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncanplay is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -172,8 +174,8 @@ func OnCancel() htmfunc.Attribute {
 // [canplay]: https://html.spec.whatwg.org/dev/media.html#event-media-canplay
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCanPlay() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncanplay")
+func OnCanPlay(onCanPlay string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncanplay", onCanPlay)
 }
 
 // OnCanplayThrough creates the oncanplaythrough attribute - [canplaythrough] event handler
@@ -181,7 +183,7 @@ func OnCanPlay() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncanplaythrough is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -189,8 +191,8 @@ func OnCanPlay() htmfunc.Attribute {
 // [canplaythrough]: https://html.spec.whatwg.org/dev/media.html#event-media-canplaythrough
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCanplayThrough() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncanplaythrough")
+func OnCanplayThrough(onCanplayThrough string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncanplaythrough", onCanplayThrough)
 }
 
 // OnChange creates the onchange attribute - [change] event handler
@@ -198,7 +200,7 @@ func OnCanplayThrough() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onchange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -206,8 +208,8 @@ func OnCanplayThrough() htmfunc.Attribute {
 // [change]: https://html.spec.whatwg.org/dev/#event-change
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onchange")
+func OnChange(onChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onchange", onChange)
 }
 
 // OnClick creates the onclick attribute - [click] event handler
@@ -215,7 +217,7 @@ func OnChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onclick is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -223,8 +225,8 @@ func OnChange() htmfunc.Attribute {
 // [click]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-click
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnClick() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onclick")
+func OnClick(onClick string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onclick", onClick)
 }
 
 // OnClose creates the onclose attribute - [close] event handler
@@ -232,7 +234,7 @@ func OnClick() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onclose is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -240,8 +242,8 @@ func OnClick() htmfunc.Attribute {
 // [close]: https://html.spec.whatwg.org/dev/#event-close
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnClose() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onclose")
+func OnClose(onClose string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onclose", onClose)
 }
 
 // OnCommand creates the oncommand attribute - [command] event handler
@@ -249,7 +251,7 @@ func OnClose() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncommand is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -257,8 +259,8 @@ func OnClose() htmfunc.Attribute {
 // [command]: https://html.spec.whatwg.org/dev/#event-command
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCommand() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncommand")
+func OnCommand(onCommand string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncommand", onCommand)
 }
 
 // OnContextLost creates the oncontextlost attribute - [contextlost] event handler
@@ -266,7 +268,7 @@ func OnCommand() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncontextlost is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -274,8 +276,8 @@ func OnCommand() htmfunc.Attribute {
 // [contextlost]: https://html.spec.whatwg.org/dev/#event-contextlost
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnContextLost() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncontextlost")
+func OnContextLost(onContextLost string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncontextlost", onContextLost)
 }
 
 // OnContextMenu creates the oncontextmenu attribute - [contextmenu] event handler
@@ -283,7 +285,7 @@ func OnContextLost() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncontextmenu is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -291,8 +293,8 @@ func OnContextLost() htmfunc.Attribute {
 // [contextmenu]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-contextmenu
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnContextMenu() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncontextmenu")
+func OnContextMenu(onContextMenu string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncontextmenu", onContextMenu)
 }
 
 // OnContextRestored creates the oncontextrestored attribute - [contextrestored] event handler
@@ -300,7 +302,7 @@ func OnContextMenu() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncontextrestored is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -308,8 +310,8 @@ func OnContextMenu() htmfunc.Attribute {
 // [contextrestored]: https://html.spec.whatwg.org/dev/#event-contextrestored
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnContextRestored() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncontextrestored")
+func OnContextRestored(onContextRestored string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncontextrestored", onContextRestored)
 }
 
 // OnCopy creates the oncopy attribute - [copy] event handler
@@ -317,7 +319,7 @@ func OnContextRestored() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncopy is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -325,8 +327,8 @@ func OnContextRestored() htmfunc.Attribute {
 // [copy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/clipboard-apis/#clipboard-event-copy
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCopy() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncopy")
+func OnCopy(onCopy string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncopy", onCopy)
 }
 
 // OnCueChange creates the oncuechange attribute - [cuechange] event handler
@@ -334,7 +336,7 @@ func OnCopy() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncuechange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -342,8 +344,8 @@ func OnCopy() htmfunc.Attribute {
 // [cuechange]: https://html.spec.whatwg.org/dev/media.html#event-media-cuechange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCueChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncuechange")
+func OnCueChange(onCueChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncuechange", onCueChange)
 }
 
 // OnCut creates the oncut attribute - [cut] event handler
@@ -351,7 +353,7 @@ func OnCueChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oncut is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -359,8 +361,8 @@ func OnCueChange() htmfunc.Attribute {
 // [cut]: https://html.spec.whatwg.org/dev/https://w3c.github.io/clipboard-apis/#clipboard-event-cut
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnCut() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oncut")
+func OnCut(onCut string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oncut", onCut)
 }
 
 // OnDblClick creates the ondblclick attribute - [dblclick] event handler
@@ -368,7 +370,7 @@ func OnCut() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondblclick is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -376,8 +378,8 @@ func OnCut() htmfunc.Attribute {
 // [dblclick]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-dblclick
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDblClick() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondblclick")
+func OnDblClick(onDblClick string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondblclick", onDblClick)
 }
 
 // OnDrag creates the ondrag attribute - [drag] event handler
@@ -385,7 +387,7 @@ func OnDblClick() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondrag is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -393,8 +395,8 @@ func OnDblClick() htmfunc.Attribute {
 // [drag]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-drag
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDrag() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondrag")
+func OnDrag(onDrag string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondrag", onDrag)
 }
 
 // OnDragEnd creates the ondragend attribute - [dragend] event handler
@@ -402,7 +404,7 @@ func OnDrag() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondragend is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -410,8 +412,8 @@ func OnDrag() htmfunc.Attribute {
 // [dragend]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-dragend
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDragEnd() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondragend")
+func OnDragEnd(onDragEnd string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondragend", onDragEnd)
 }
 
 // OnDragEnter creates the ondragenter attribute - [dragenter] event handler
@@ -419,7 +421,7 @@ func OnDragEnd() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondragenter is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -427,8 +429,8 @@ func OnDragEnd() htmfunc.Attribute {
 // [dragenter]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-dragenter
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDragEnter() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondragenter")
+func OnDragEnter(onDragEnter string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondragenter", onDragEnter)
 }
 
 // OnDragLeave creates the ondragleave attribute - [dragleave] event handler
@@ -436,7 +438,7 @@ func OnDragEnter() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondragleave is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -444,8 +446,8 @@ func OnDragEnter() htmfunc.Attribute {
 // [dragleave]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-dragleave
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDragLeave() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondragleave")
+func OnDragLeave(onDragLeave string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondragleave", onDragLeave)
 }
 
 // OnDragOver creates the ondragover attribute - [dragover] event handler
@@ -453,7 +455,7 @@ func OnDragLeave() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondragover is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -461,8 +463,8 @@ func OnDragLeave() htmfunc.Attribute {
 // [dragover]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-dragover
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDragOver() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondragover")
+func OnDragOver(onDragOver string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondragover", onDragOver)
 }
 
 // OnDragStart creates the ondragstart attribute - [dragstart] event handler
@@ -470,7 +472,7 @@ func OnDragOver() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondragstart is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -478,8 +480,8 @@ func OnDragOver() htmfunc.Attribute {
 // [dragstart]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-dragstart
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDragStart() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondragstart")
+func OnDragStart(onDragStart string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondragstart", onDragStart)
 }
 
 // OnDrop creates the ondrop attribute - [drop] event handler
@@ -487,7 +489,7 @@ func OnDragStart() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondrop is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -495,8 +497,8 @@ func OnDragStart() htmfunc.Attribute {
 // [drop]: https://html.spec.whatwg.org/dev/dnd.html#event-dnd-drop
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDrop() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondrop")
+func OnDrop(onDrop string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondrop", onDrop)
 }
 
 // OnDurationChange creates the ondurationchange attribute - [durationchange] event handler
@@ -504,7 +506,7 @@ func OnDrop() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ondurationchange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -512,8 +514,8 @@ func OnDrop() htmfunc.Attribute {
 // [durationchange]: https://html.spec.whatwg.org/dev/media.html#event-media-durationchange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnDurationChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ondurationchange")
+func OnDurationChange(onDurationChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ondurationchange", onDurationChange)
 }
 
 // OnEmptied creates the onemptied attribute - [emptied] event handler
@@ -521,7 +523,7 @@ func OnDurationChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onemptied is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -529,8 +531,8 @@ func OnDurationChange() htmfunc.Attribute {
 // [emptied]: https://html.spec.whatwg.org/dev/media.html#event-media-emptied
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnEmptied() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onemptied")
+func OnEmptied(onEmptied string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onemptied", onEmptied)
 }
 
 // OnEnded creates the onended attribute - [ended] event handler
@@ -538,7 +540,7 @@ func OnEmptied() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onended is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -546,8 +548,8 @@ func OnEmptied() htmfunc.Attribute {
 // [ended]: https://html.spec.whatwg.org/dev/media.html#event-media-ended
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnEnded() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onended")
+func OnEnded(onEnded string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onended", onEnded)
 }
 
 // OnError creates the onerror attribute - [error] event handler
@@ -555,7 +557,7 @@ func OnEnded() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onerror is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -563,8 +565,8 @@ func OnEnded() htmfunc.Attribute {
 // [error]: https://html.spec.whatwg.org/dev/#event-error
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnError() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onerror")
+func OnError(onError string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onerror", onError)
 }
 
 // OnFocus creates the onfocus attribute - [focus] event handler
@@ -572,7 +574,7 @@ func OnError() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onfocus is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -580,8 +582,8 @@ func OnError() htmfunc.Attribute {
 // [focus]: https://html.spec.whatwg.org/dev/#event-focus
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnFocus() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onfocus")
+func OnFocus(onFocus string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onfocus", onFocus)
 }
 
 // OnFormData creates the onformdata attribute - [formdata] event handler
@@ -589,7 +591,7 @@ func OnFocus() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onformdata is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -597,8 +599,8 @@ func OnFocus() htmfunc.Attribute {
 // [formdata]: https://html.spec.whatwg.org/dev/#event-formdata
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnFormData() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onformdata")
+func OnFormData(onFormData string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onformdata", onFormData)
 }
 
 // OnHashChange creates the onhashchange attribute - [hashchange] event handler for Window object
@@ -606,7 +608,7 @@ func OnFormData() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onhashchange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -614,8 +616,8 @@ func OnFormData() htmfunc.Attribute {
 // [hashchange]: https://html.spec.whatwg.org/dev/#event-hashchange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnHashChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onhashchange")
+func OnHashChange(onHashChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onhashchange", onHashChange)
 }
 
 // OnInput creates the oninput attribute - [input] event handler
@@ -623,7 +625,7 @@ func OnHashChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oninput is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -631,8 +633,8 @@ func OnHashChange() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-input
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnInput() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oninput")
+func OnInput(onInput string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oninput", onInput)
 }
 
 // OnInvalid creates the oninvalid attribute - [invalid] event handler
@@ -640,7 +642,7 @@ func OnInput() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute oninvalid is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -648,8 +650,8 @@ func OnInput() htmfunc.Attribute {
 // [invalid]: https://html.spec.whatwg.org/dev/#event-invalid
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnInvalid() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("oninvalid")
+func OnInvalid(onInvalid string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("oninvalid", onInvalid)
 }
 
 // OnKeyDown creates the onkeydown attribute - [keydown] event handler
@@ -657,7 +659,7 @@ func OnInvalid() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onkeydown is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -665,8 +667,8 @@ func OnInvalid() htmfunc.Attribute {
 // [keydown]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-keydown
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnKeyDown() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onkeydown")
+func OnKeyDown(onKeyDown string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onkeydown", onKeyDown)
 }
 
 // OnKeyPress creates the onkeypress attribute - [keypress] event handler
@@ -674,7 +676,7 @@ func OnKeyDown() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onkeypress is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -682,8 +684,8 @@ func OnKeyDown() htmfunc.Attribute {
 // [keypress]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-keypress
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnKeyPress() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onkeypress")
+func OnKeyPress(onKeyPress string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onkeypress", onKeyPress)
 }
 
 // OnKeyUp creates the onkeyup attribute - [keyup] event handler
@@ -691,7 +693,7 @@ func OnKeyPress() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onkeyup is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -699,8 +701,8 @@ func OnKeyPress() htmfunc.Attribute {
 // [keyup]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-keyup
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnKeyUp() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onkeyup")
+func OnKeyUp(onKeyUp string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onkeyup", onKeyUp)
 }
 
 // OnLanguageChange creates the onlanguagechange attribute - [languagechange] event handler for Window object
@@ -708,7 +710,7 @@ func OnKeyUp() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onlanguagechange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -716,8 +718,8 @@ func OnKeyUp() htmfunc.Attribute {
 // [languagechange]: https://html.spec.whatwg.org/dev/#event-languagechange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnLanguageChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onlanguagechange")
+func OnLanguageChange(onLanguageChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onlanguagechange", onLanguageChange)
 }
 
 // OnLoad creates the onload attribute - [load] event handler
@@ -725,7 +727,7 @@ func OnLanguageChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onload is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -733,8 +735,8 @@ func OnLanguageChange() htmfunc.Attribute {
 // [load]: https://html.spec.whatwg.org/dev/#event-load
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnLoad() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onload")
+func OnLoad(onLoad string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onload", onLoad)
 }
 
 // OnLoadedData creates the onloadeddata attribute - [loadeddata] event handler
@@ -742,7 +744,7 @@ func OnLoad() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onloadeddata is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -750,8 +752,8 @@ func OnLoad() htmfunc.Attribute {
 // [loadeddata]: https://html.spec.whatwg.org/dev/media.html#event-media-loadeddata
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnLoadedData() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onloadeddata")
+func OnLoadedData(onLoadedData string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onloadeddata", onLoadedData)
 }
 
 // OnLoadedMetaData creates the onloadedmetadata attribute - [loadedmetadata] event handler
@@ -759,7 +761,7 @@ func OnLoadedData() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onloadedmetadata is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -767,8 +769,8 @@ func OnLoadedData() htmfunc.Attribute {
 // [loadedmetadata]: https://html.spec.whatwg.org/dev/media.html#event-media-loadedmetadata
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnLoadedMetaData() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onloadedmetadata")
+func OnLoadedMetaData(onLoadedMetaData string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onloadedmetadata", onLoadedMetaData)
 }
 
 // OnLoadStart creates the onloadstart attribute - [loadstart] event handler
@@ -776,7 +778,7 @@ func OnLoadedMetaData() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onloadstart is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -784,8 +786,8 @@ func OnLoadedMetaData() htmfunc.Attribute {
 // [loadstart]: https://html.spec.whatwg.org/dev/media.html#event-media-loadstart
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnLoadStart() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onloadstart")
+func OnLoadStart(onLoadStart string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onloadstart", onLoadStart)
 }
 
 // OnMessage creates the onmessage attribute - [message] event handler for Window object
@@ -793,7 +795,7 @@ func OnLoadStart() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onmessage is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -801,8 +803,8 @@ func OnLoadStart() htmfunc.Attribute {
 // [message]: https://html.spec.whatwg.org/dev/#event-message
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMessage() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmessage")
+func OnMessage(onMessage string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmessage", onMessage)
 }
 
 // OnMessageError creates the onmessageerror attribute - [messageerror] event handler for Window object
@@ -810,7 +812,7 @@ func OnMessage() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onmessageerror is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -818,8 +820,8 @@ func OnMessage() htmfunc.Attribute {
 // [messageerror]: https://html.spec.whatwg.org/dev/#event-messageerror
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMessageError() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmessageerror")
+func OnMessageError(onMessageError string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmessageerror", onMessageError)
 }
 
 // OnMouseDown creates the onmousedown attribute - [mousedown] event handler
@@ -827,7 +829,7 @@ func OnMessageError() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmousedown is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -835,8 +837,8 @@ func OnMessageError() htmfunc.Attribute {
 // [mousedown]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mousedown
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseDown() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmousedown")
+func OnMouseDown(onMouseDown string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmousedown", onMouseDown)
 }
 
 // OnMouseEnter creates the onmouseenter attribute - [mouseenter] event handler
@@ -844,7 +846,7 @@ func OnMouseDown() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmouseenter is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -852,8 +854,8 @@ func OnMouseDown() htmfunc.Attribute {
 // [mouseenter]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mouseenter
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseEnter() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmouseenter")
+func OnMouseEnter(onMouseEnter string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmouseenter", onMouseEnter)
 }
 
 // OnMouseLeave creates the onmouseleave attribute - [mouseleave] event handler
@@ -861,7 +863,7 @@ func OnMouseEnter() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmouseleave is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -869,8 +871,8 @@ func OnMouseEnter() htmfunc.Attribute {
 // [mouseleave]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mouseleave
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseLeave() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmouseleave")
+func OnMouseLeave(onMouseLeave string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmouseleave", onMouseLeave)
 }
 
 // OnMouseMove creates the onmousemove attribute - [mousemove] event handler
@@ -878,7 +880,7 @@ func OnMouseLeave() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmousemove is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -886,8 +888,8 @@ func OnMouseLeave() htmfunc.Attribute {
 // [mousemove]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mousemove
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseMove() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmousemove")
+func OnMouseMove(onMouseMove string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmousemove", onMouseMove)
 }
 
 // OnMouseOut creates the onmouseout attribute - [mouseout] event handler
@@ -895,7 +897,7 @@ func OnMouseMove() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmouseout is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -903,8 +905,8 @@ func OnMouseMove() htmfunc.Attribute {
 // [mouseout]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mouseout
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseOut() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmouseout")
+func OnMouseOut(onMouseOut string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmouseout", onMouseOut)
 }
 
 // OnMouseOver creates the onmouseover attribute - [mouseover] event handler
@@ -912,7 +914,7 @@ func OnMouseOut() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmouseover is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -920,8 +922,8 @@ func OnMouseOut() htmfunc.Attribute {
 // [mouseover]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mouseover
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseOver() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmouseover")
+func OnMouseOver(onMouseOver string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmouseover", onMouseOver)
 }
 
 // OnMouseUp creates the onmouseup attribute - [mouseup] event handler
@@ -929,7 +931,7 @@ func OnMouseOver() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onmouseup is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -937,8 +939,8 @@ func OnMouseOver() htmfunc.Attribute {
 // [mouseup]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-mouseup
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnMouseUp() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onmouseup")
+func OnMouseUp(onMouseUp string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onmouseup", onMouseUp)
 }
 
 // OnOffline creates the onoffline attribute - [offline] event handler for Window object
@@ -946,7 +948,7 @@ func OnMouseUp() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onoffline is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -954,8 +956,8 @@ func OnMouseUp() htmfunc.Attribute {
 // [offline]: https://html.spec.whatwg.org/dev/#event-offline
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnOffline() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onoffline")
+func OnOffline(onOffline string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onoffline", onOffline)
 }
 
 // OnOnline creates the ononline attribute - [online] event handler for Window object
@@ -963,7 +965,7 @@ func OnOffline() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute ononline is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -971,8 +973,8 @@ func OnOffline() htmfunc.Attribute {
 // [online]: https://html.spec.whatwg.org/dev/#event-online
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnOnline() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ononline")
+func OnOnline(onOnline string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ononline", onOnline)
 }
 
 // OnPageHide creates the onpagehide attribute - [pagehide] event handler for Window object
@@ -980,7 +982,7 @@ func OnOnline() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onpagehide is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -988,8 +990,8 @@ func OnOnline() htmfunc.Attribute {
 // [pagehide]: https://html.spec.whatwg.org/dev/#event-pagehide
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPageHide() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpagehide")
+func OnPageHide(onPageHide string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpagehide", onPageHide)
 }
 
 // OnPageReveal creates the onpagereveal attribute - [pagereveal] event handler for Window object
@@ -997,7 +999,7 @@ func OnPageHide() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onpagereveal is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1005,8 +1007,8 @@ func OnPageHide() htmfunc.Attribute {
 // [pagereveal]: https://html.spec.whatwg.org/dev/#event-pagereveal
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPageReveal() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpagereveal")
+func OnPageReveal(onPageReveal string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpagereveal", onPageReveal)
 }
 
 // OnPageShow creates the onpageshow attribute - [pageshow] event handler for Window object
@@ -1014,7 +1016,7 @@ func OnPageReveal() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onpageshow is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1022,8 +1024,8 @@ func OnPageReveal() htmfunc.Attribute {
 // [pageshow]: https://html.spec.whatwg.org/dev/#event-pageshow
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPageShow() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpageshow")
+func OnPageShow(onPageShow string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpageshow", onPageShow)
 }
 
 // OnPageSwap creates the onpageswap attribute - [pageswap] event handler for Window object
@@ -1031,7 +1033,7 @@ func OnPageShow() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onpageswap is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1039,8 +1041,8 @@ func OnPageShow() htmfunc.Attribute {
 // [pageswap]: https://html.spec.whatwg.org/dev/#event-pageswap
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPageSwap() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpageswap")
+func OnPageSwap(onPageSwap string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpageswap", onPageSwap)
 }
 
 // OnPaste creates the onpaste attribute - [paste] event handler
@@ -1048,7 +1050,7 @@ func OnPageSwap() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onpaste is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1056,8 +1058,8 @@ func OnPageSwap() htmfunc.Attribute {
 // [paste]: https://html.spec.whatwg.org/dev/https://w3c.github.io/clipboard-apis/#clipboard-event-paste
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPaste() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpaste")
+func OnPaste(onPaste string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpaste", onPaste)
 }
 
 // OnPause creates the onpause attribute - [pause] event handler
@@ -1065,7 +1067,7 @@ func OnPaste() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onpause is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1073,8 +1075,8 @@ func OnPaste() htmfunc.Attribute {
 // [pause]: https://html.spec.whatwg.org/dev/media.html#event-media-pause
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPause() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpause")
+func OnPause(onPause string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpause", onPause)
 }
 
 // OnPlay creates the onplay attribute - [play] event handler
@@ -1082,7 +1084,7 @@ func OnPause() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onplay is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1090,8 +1092,8 @@ func OnPause() htmfunc.Attribute {
 // [play]: https://html.spec.whatwg.org/dev/media.html#event-media-play
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPlay() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onplay")
+func OnPlay(onPlay string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onplay", onPlay)
 }
 
 // OnPlaying creates the onplaying attribute - [playing] event handler
@@ -1099,7 +1101,7 @@ func OnPlay() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onplaying is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1107,8 +1109,8 @@ func OnPlay() htmfunc.Attribute {
 // [playing]: https://html.spec.whatwg.org/dev/media.html#event-media-playing
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPlaying() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onplaying")
+func OnPlaying(onPlaying string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onplaying", onPlaying)
 }
 
 // OnPopState creates the onpopstate attribute - [popstate] event handler for Window object
@@ -1116,7 +1118,7 @@ func OnPlaying() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onpopstate is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1124,8 +1126,8 @@ func OnPlaying() htmfunc.Attribute {
 // [popstate]: https://html.spec.whatwg.org/dev/#event-popstate
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnPopState() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onpopstate")
+func OnPopState(onPopState string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onpopstate", onPopState)
 }
 
 // OnProgress creates the onprogress attribute - [progress] event handler
@@ -1133,7 +1135,7 @@ func OnPopState() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onprogress is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1141,8 +1143,8 @@ func OnPopState() htmfunc.Attribute {
 // [progress]: https://html.spec.whatwg.org/dev/media.html#event-media-progress
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnProgress() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onprogress")
+func OnProgress(onProgress string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onprogress", onProgress)
 }
 
 // OnRatechange creates the onratechange attribute - [ratechange] event handler
@@ -1150,7 +1152,7 @@ func OnProgress() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onratechange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1158,8 +1160,8 @@ func OnProgress() htmfunc.Attribute {
 // [ratechange]: https://html.spec.whatwg.org/dev/media.html#event-media-ratechange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnRatechange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onratechange")
+func OnRatechange(onRatechange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onratechange", onRatechange)
 }
 
 // OnReset creates the onreset attribute - [reset] event handler
@@ -1167,7 +1169,7 @@ func OnRatechange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onreset is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1175,8 +1177,8 @@ func OnRatechange() htmfunc.Attribute {
 // [reset]: https://html.spec.whatwg.org/dev/#event-reset
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnReset() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onreset")
+func OnReset(onReset string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onreset", onReset)
 }
 
 // OnResize creates the onresize attribute - [resize] event handler
@@ -1184,7 +1186,7 @@ func OnReset() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onresize is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1192,8 +1194,8 @@ func OnReset() htmfunc.Attribute {
 // [resize]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom-view/#eventdef-window-resize
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnResize() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onresize")
+func OnResize(onResize string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onresize", onResize)
 }
 
 // OnRejectionHandled creates the onrejectionhandled attribute - [rejectionhandled] event handler for Window object
@@ -1201,7 +1203,7 @@ func OnResize() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onrejectionhandled is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1209,8 +1211,8 @@ func OnResize() htmfunc.Attribute {
 // [rejectionhandled]: https://html.spec.whatwg.org/dev/#event-rejectionhandled
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnRejectionHandled() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onrejectionhandled")
+func OnRejectionHandled(onRejectionHandled string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onrejectionhandled", onRejectionHandled)
 }
 
 // OnScroll creates the onscroll attribute - [scroll] event handler
@@ -1218,7 +1220,7 @@ func OnRejectionHandled() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onscroll is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1226,8 +1228,8 @@ func OnRejectionHandled() htmfunc.Attribute {
 // [scroll]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom-view/#eventdef-document-scroll
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnScroll() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onscroll")
+func OnScroll(onScroll string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onscroll", onScroll)
 }
 
 // OnScrollEnd creates the onscrollend attribute - [scrollend] event handler
@@ -1235,7 +1237,7 @@ func OnScroll() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onscrollend is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1243,8 +1245,8 @@ func OnScroll() htmfunc.Attribute {
 // [scrollend]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnScrollEnd() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onscrollend")
+func OnScrollEnd(onScrollEnd string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onscrollend", onScrollEnd)
 }
 
 // OnSecurityPolicyViolation creates the onsecuritypolicyviolation attribute - [securitypolicyviolation] event handler
@@ -1252,7 +1254,7 @@ func OnScrollEnd() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onsecuritypolicyviolation is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1260,8 +1262,8 @@ func OnScrollEnd() htmfunc.Attribute {
 // [securitypolicyviolation]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSecurityPolicyViolation() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onsecuritypolicyviolation")
+func OnSecurityPolicyViolation(onSecurityPolicyViolation string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onsecuritypolicyviolation", onSecurityPolicyViolation)
 }
 
 // OnSeeked creates the onseeked attribute - [seeked] event handler
@@ -1269,7 +1271,7 @@ func OnSecurityPolicyViolation() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onseeked is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1277,8 +1279,8 @@ func OnSecurityPolicyViolation() htmfunc.Attribute {
 // [seeked]: https://html.spec.whatwg.org/dev/media.html#event-media-seeked
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSeeked() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onseeked")
+func OnSeeked(onSeeked string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onseeked", onSeeked)
 }
 
 // OnSeeking creates the onseeking attribute - [seeking] event handler
@@ -1286,7 +1288,7 @@ func OnSeeked() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onseeking is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1294,8 +1296,8 @@ func OnSeeked() htmfunc.Attribute {
 // [seeking]: https://html.spec.whatwg.org/dev/media.html#event-media-seeking
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSeeking() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onseeking")
+func OnSeeking(onSeeking string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onseeking", onSeeking)
 }
 
 // OnSelect creates the onselect attribute - [select] event handler
@@ -1303,7 +1305,7 @@ func OnSeeking() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onselect is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1311,8 +1313,8 @@ func OnSeeking() htmfunc.Attribute {
 // [select]: https://html.spec.whatwg.org/dev/#event-select
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSelect() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onselect")
+func OnSelect(onSelect string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onselect", onSelect)
 }
 
 // OnSlotChange creates the onslotchange attribute - [slotchange] event handler
@@ -1320,7 +1322,7 @@ func OnSelect() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onslotchange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1328,8 +1330,8 @@ func OnSelect() htmfunc.Attribute {
 // [slotchange]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSlotChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onslotchange")
+func OnSlotChange(onSlotChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onslotchange", onSlotChange)
 }
 
 // OnStalled creates the onstalled attribute - [stalled] event handler
@@ -1337,7 +1339,7 @@ func OnSlotChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onstalled is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1345,8 +1347,8 @@ func OnSlotChange() htmfunc.Attribute {
 // [stalled]: https://html.spec.whatwg.org/dev/media.html#event-media-stalled
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnStalled() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onstalled")
+func OnStalled(onStalled string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onstalled", onStalled)
 }
 
 // OnStorage creates the onstorage attribute - [storage] event handler for Window object
@@ -1354,7 +1356,7 @@ func OnStalled() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onstorage is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1362,8 +1364,8 @@ func OnStalled() htmfunc.Attribute {
 // [storage]: https://html.spec.whatwg.org/dev/#event-storage
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnStorage() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onstorage")
+func OnStorage(onStorage string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onstorage", onStorage)
 }
 
 // OnSubmit creates the onsubmit attribute - [submit] event handler
@@ -1371,7 +1373,7 @@ func OnStorage() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onsubmit is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1379,8 +1381,8 @@ func OnStorage() htmfunc.Attribute {
 // [submit]: https://html.spec.whatwg.org/dev/#event-submit
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSubmit() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onsubmit")
+func OnSubmit(onSubmit string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onsubmit", onSubmit)
 }
 
 // OnSuspend creates the onsuspend attribute - [suspend] event handler
@@ -1388,7 +1390,7 @@ func OnSubmit() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onsuspend is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1396,8 +1398,8 @@ func OnSubmit() htmfunc.Attribute {
 // [suspend]: https://html.spec.whatwg.org/dev/media.html#event-media-suspend
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnSuspend() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onsuspend")
+func OnSuspend(onSuspend string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onsuspend", onSuspend)
 }
 
 // OnTimeUpdate creates the ontimeupdate attribute - [timeupdate] event handler
@@ -1405,7 +1407,7 @@ func OnSuspend() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ontimeupdate is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1413,8 +1415,8 @@ func OnSuspend() htmfunc.Attribute {
 // [timeupdate]: https://html.spec.whatwg.org/dev/media.html#event-media-timeupdate
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnTimeUpdate() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ontimeupdate")
+func OnTimeUpdate(onTimeUpdate string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ontimeupdate", onTimeUpdate)
 }
 
 // OnToggle creates the ontoggle attribute - [toggle] event handler
@@ -1422,7 +1424,7 @@ func OnTimeUpdate() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute ontoggle is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1430,8 +1432,8 @@ func OnTimeUpdate() htmfunc.Attribute {
 // [toggle]: https://html.spec.whatwg.org/dev/#event-toggle
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnToggle() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("ontoggle")
+func OnToggle(onToggle string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("ontoggle", onToggle)
 }
 
 // OnUnhandledRejection creates the onunhandledrejection attribute - [unhandledrejection] event handler for Window object
@@ -1439,7 +1441,7 @@ func OnToggle() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onunhandledrejection is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1447,8 +1449,8 @@ func OnToggle() htmfunc.Attribute {
 // [unhandledrejection]: https://html.spec.whatwg.org/dev/#event-unhandledrejection
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnUnhandledRejection() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onunhandledrejection")
+func OnUnhandledRejection(onUnhandledRejection string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onunhandledrejection", onUnhandledRejection)
 }
 
 // OnUnload creates the onunload attribute - [unload] event handler for Window object
@@ -1456,7 +1458,7 @@ func OnUnhandledRejection() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [body]
 //
-// The attribute onunload is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1464,8 +1466,8 @@ func OnUnhandledRejection() htmfunc.Attribute {
 // [unload]: https://html.spec.whatwg.org/dev/#event-unload
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnUnload() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onunload")
+func OnUnload(onUnload string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onunload", onUnload)
 }
 
 // OnVolumeChange creates the onvolumechange attribute - [volumechange] event handler
@@ -1473,7 +1475,7 @@ func OnUnload() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onvolumechange is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1481,8 +1483,8 @@ func OnUnload() htmfunc.Attribute {
 // [volumechange]: https://html.spec.whatwg.org/dev/media.html#event-media-volumechange
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnVolumeChange() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onvolumechange")
+func OnVolumeChange(onVolumeChange string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onvolumechange", onVolumeChange)
 }
 
 // OnWaiting creates the onwaiting attribute - [waiting] event handler
@@ -1490,7 +1492,7 @@ func OnVolumeChange() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onwaiting is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1498,8 +1500,8 @@ func OnVolumeChange() htmfunc.Attribute {
 // [waiting]: https://html.spec.whatwg.org/dev/media.html#event-media-waiting
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func OnWaiting() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onwaiting")
+func OnWaiting(onWaiting string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onwaiting", onWaiting)
 }
 
 // onWheel creates the onwheel attribute - [wheel] event handler
@@ -1507,7 +1509,7 @@ func OnWaiting() htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [HTML elements]
 //
-// The attribute onwheel is a [Boolean attribute].
+// Value constraints: [Event handler content attribute]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1515,6 +1517,6 @@ func OnWaiting() htmfunc.Attribute {
 // [wheel]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-wheel
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func onWheel() htmfunc.Attribute {
-	return htmfunc.WriteBoolAttribute("onwheel")
+func onWheel(onWheel string) htmfunc.Attribute {
+	return htmfunc.WriteAttribute("onwheel", onWheel)
 }

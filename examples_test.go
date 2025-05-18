@@ -6,7 +6,7 @@ import (
 	"os"
 
 	attr "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
+	. "github.com/KrischanCS/htmfunc/elementArch"
 )
 
 //nolint:nolintlint,lll

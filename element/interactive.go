@@ -1,47 +1,93 @@
+// Generated file. DO NOT EDIT.
+
 package element
 
 import (
-	"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/htmfunc"
 )
 
-// Details creates a [details element].
+// Details creates the details element - Disclosure control for hiding details [(More)]
 //
-// The details element represents a disclosure widget from which the user can obtain additional information or controls.
+// It belongs to the following categories:
+//   - [flow]
+//   - [interactive]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [summary]
+//   - [flow]
 //
-// [details element]: https://html.spec.whatwg.org/#the-details-element
-func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("details", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [name]
+//   - [open]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [name]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
+// [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("details", attributes, children...)
 }
 
-// Summary creates a [summary element].
-// The summary element represents a summary, caption, or legend for the rest of the contents of the summary element's
-// parent details element, if any.
+// Dialog creates the dialog element - Dialog box or window [(More)]
 //
-// A summary element is a summary for its parent details if the following algorithm returns true:
-//   - If this summary element has no parent, then return false.
-//   - Let parent be this summary element's parent.
-//   - If parent is not a details element, then return false.
-//   - If parent's first summary element child is not this summary element, then return false.
-//   - Return true.
+// It belongs to the following categories:
+//   - [flow]
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// The activation behavior of summary elements is to run the following steps:
-//   - If this summary element is not the summary for its parent details, then return.
-//   - Let parent be this summary element's parent.
-//   - If the open attribute is present on parent, then remove it. Otherwise, set parent's open attribute to the empty
-//     string.
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
 //
-// [summary element]: https://html.spec.whatwg.org/#the-summary-element
-func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("summary", attributes, children...)
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [open]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("dialog", attributes, children...)
 }
 
-// Dialog creates a [dialog element].
+// Summary creates the summary element - Caption for [details [(More)]
 //
-// The dialog element represents a transitory part of an application, in the form of a small window ("dialog box"),
-// which the user interacts with to perform a task or gather information. Once the user is done, the dialog can be
-// automatically closed by the application, or manually closed by the user.
+// It belongs to the following categories:
+//   - none
+//// It can be parent to the following elements/categories of elements:
+//   - [phrasing]
+//   - [heading content]
 //
-// [dialog element]: https://html.spec.whatwg.org/#the-dialog-element
-func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("dialog", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [details]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
+// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("summary", attributes, children...)
 }

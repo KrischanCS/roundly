@@ -1,17 +1,27 @@
-package element
+package elementArch
 
 import (
 	"testing"
 )
 
-func TestScripting(t *testing.T) {
+func TestEmbed(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Noscript,
-		Script,
-		Slot,
-		Template,
+		Area,
+		Audio,
+		Embed,
+		Iframe,
+		Img,
+		Map,
+		Math,
+		Object,
+		Picture,
+		Source,
+		Svg,
+		Track,
+		Video,
+		Area,
 	}
 
 	for _, element := range elements {

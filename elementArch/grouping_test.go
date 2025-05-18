@@ -1,27 +1,29 @@
-package element
+package elementArch
 
 import (
 	"testing"
 )
 
-func TestEmbed(t *testing.T) {
+func TestGrouping(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Area,
-		Audio,
-		Embed,
-		Iframe,
-		Img,
-		Map,
-		Math,
-		Object,
-		Picture,
-		Source,
-		Svg,
-		Track,
-		Video,
-		Area,
+		Blockquote,
+		Dd,
+		Div,
+		Dl,
+		Dt,
+		Figcaption,
+		Figure,
+		Hr,
+		Li,
+		Main,
+		Menu,
+		Ol,
+		P,
+		Pre,
+		Search,
+		Ul,
 	}
 
 	for _, element := range elements {

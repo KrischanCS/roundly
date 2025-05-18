@@ -1,6 +1,6 @@
 // Package element provides functions for the elements defined in the HTML
 // standard.
-package element
+package elementArch
 
 import (
 	"github.com/KrischanCS/htmfunc"

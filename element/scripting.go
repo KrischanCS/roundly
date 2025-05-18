@@ -1,47 +1,162 @@
+// Generated file. DO NOT EDIT.
+
 package element
 
 import (
-	"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/htmfunc"
 )
 
-// Script creates a [script element].
+// Noscript creates the noscript element - Fallback content for script [(More)]
 //
-// The script element allows authors to include dynamic script and data blocks in their documents. The element does not
-// represent content for the user.
+// It belongs to the following categories:
+//   - [metadata]
+//   - [flow]
+//   - [phrasing]
+//// It can be parent to the following elements/categories of elements:
+//   - varies
 //
-// [script element]: https://html.spec.whatwg.org/#the-script-element
-func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("script", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [head]
+//   - [phrasing]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("noscript", attributes, children...)
 }
 
-// Noscript creates a [noscript element].
+// Script creates the script element - Embedded script [(More)]
 //
-// The noscript element represents nothing if scripting is enabled, and represents its children if scripting is
-// disabled. It is used to present different markup to user agents that support scripting and those that don't support
-// scripting, by affecting how the document is parsed.
+// It belongs to the following categories:
+//   - [metadata]
+//   - [flow]
+//   - [phrasing]
+//   - [script-supporting]
+//// It can be parent to the following elements/categories of elements:
+//   - script, data, or script documentation
 //
-// [noscript element]: https://html.spec.whatwg.org/#the-noscript-element
-func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("noscript", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [head]
+//   - [phrasing]
+//   - [script-supporting]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [src]
+//   - [type]
+//   - [nomodule]
+//   - [async]
+//   - [defer]
+//   - [crossorigin]
+//   - [integrity]
+//   - [referrerpolicy]
+//   - [blocking]
+//   - [fetchpriority]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [src]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-src
+// [type]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-type
+// [nomodule]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-nomodule
+// [async]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-async
+// [defer]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-defer
+// [crossorigin]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-crossorigin
+// [integrity]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-integrity
+// [referrerpolicy]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-referrerpolicy
+// [blocking]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-blocking
+// [fetchpriority]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-fetchpriority
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("script", attributes, children...)
 }
 
-// Template creates a [template element].
+// Slot creates the slot element - Shadow tree slot [(More)]
 //
-// The template element is used to declare fragments of HTML that can be cloned and inserted in the document by script.
+// It belongs to the following categories:
+//   - [flow]
+//   - [phrasing]
+//// It can be parent to the following elements/categories of elements:
+//   - [transparent]
 //
-// In a rendering, the template element represents nothing.
+// If can itself be a child of the following elements/categories of elements:
+//   - [phrasing]
 //
-// [template element]: https://html.spec.whatwg.org/#the-template-element
-func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("template", attributes, children...)
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [name]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [name]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("slot", attributes, children...)
 }
 
-// Slot creates a [slot element].
+// Template creates the template element - Template [(More)]
 //
-// The slot element defines a slot. It is typically used in a shadow tree. A slot element represents its assigned nodes,
-// if any, and its contents otherwise.
+// It belongs to the following categories:
+//   - [metadata]
+//   - [flow]
+//   - [phrasing]
+//   - [script-supporting]
+//// It can be parent to the following elements/categories of elements:
+//   - empty
 //
-// [template element]: https://html.spec.whatwg.org/#the-template-element
-func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("slot", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [metadata]
+//   - [phrasing]
+//   - [script-supporting]
+//   - [colgroup]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [shadowrootmode]
+//   - [shadowrootdelegatesfocus]
+//   - [shadowrootclonable]
+//   - [shadowrootserializable]
+//   - [shadowrootcustomelementregistry]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [script-supporting]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [colgroup]: https://html.spec.whatwg.org/dev/tables.html#the-colgroup-element
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [shadowrootmode]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootmode
+// [shadowrootdelegatesfocus]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootdelegatesfocus
+// [shadowrootclonable]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootclonable
+// [shadowrootserializable]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootserializable
+// [shadowrootcustomelementregistry]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootcustomelementregistry
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("template", attributes, children...)
 }

@@ -1,196 +1,447 @@
+// Generated file. DO NOT EDIT.
+
 package element
 
 import (
-	"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/htmfunc"
 )
 
-// P creates a [p element].
+// Blockquote creates the blockquote element - A section quoted from another source [(More)]
 //
-// The p element represents a paragraph.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// [p element]: https://html.spec.whatwg.org/#the-p-element
-func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("p", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [cite]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [cite]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-blockquote-cite
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Blockquote(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("blockquote", attributes, children...)
 }
 
-// Hr creates a [hr element].
+// Dd creates the dd element - Content for corresponding [dt] element(s) [(More)]
 //
-// The hr element represents a paragraph-level thematic break, e.g., a scene change in a story, or a transition to
-// another topic within a section of a reference book; alternatively, it represents a separator between a set of options
-// of a select element.
+// It belongs to the following categories:
+//   - none
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// [hr element]: https://html.spec.whatwg.org/#the-hr-element
-func Hr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("hr", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [dl]
+//   - [div]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [dt]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dt-element
+// [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
+// [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("dd", attributes, children...)
 }
 
-// Pre creates a [pre element].
+// Div creates the div element - Generic flow container, or container for name-value groups in [dl] elements [(More)]
 //
-// The pre element represents a block of preformatted text, in which structure is represented by typographic conventions
-// rather than by elements.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// [pre element]: https://html.spec.whatwg.org/#the-pre-element
-func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("pre", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//   - [dl]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("div", attributes, children...)
 }
 
-// Blockquote creates a [blockquote element].
+// Dl creates the dl element - Association list consisting of zero or more name-value groups [(More)]
 //
-// The blockquote element represents a section that is quoted from another source.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [dt]
+//   - [dd]
+//   - [div]
+//   - [script-supporting elements]
 //
-// Content inside a blockquote must be quoted from another source, whose address, if it has one, may be cited in the
-// cite attribute.
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
 //
-// If the cite attribute is present, it must be a valid URL potentially surrounded by spaces.To obtain the corresponding
-// citation link, the value of the attribute must be parsed relative to the element's node document. User agents may
-// allow users to follow such citation links, but they are primarily intended for private use (e.g., by server-side
-// scripts collecting statistics about a site's use of quotations), not for readers.
+// The following attributes can be added to this element:
+//   - [globals]
 //
-// The content of a blockquote may be abbreviated or may have context added in the conventional manner for the text's
-// language.
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// Attribution for the quotation, if any, must be placed outside the blockquote element.
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [dt]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dt-element
+// [dd]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dd-element
+// [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
+// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 //
-// [blockquote element]: https://html.spec.whatwg.org/#the-blockquote-element
-func Blockquote(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("blockquote", attributes, children...)
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Dl(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("dl", attributes, children...)
 }
 
-// Ol creates a [ol element].
+// Dt creates the dt element - Legend for corresponding [dd] element(s) [(More)]
 //
-// The ol element represents a list of items, where the items have been intentionally ordered, such that changing the
-// order would change the meaning of the document.
+// It belongs to the following categories:
+//   - none
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// The items of the list are the li element child nodes of the ol element, in tree order.
+// If can itself be a child of the following elements/categories of elements:
+//   - [dl]
+//   - [div]
 //
-// [ol element]: https://html.spec.whatwg.org/#the-ol-element
-func Ol(attributes htmfunc.Attribute, listItems ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("ol", attributes, listItems...)
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [dd]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dd-element
+// [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
+// [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("dt", attributes, children...)
 }
 
-// Ul creates a [ul element].
+// Figcaption creates the figcaption element - Caption for [figure [(More)]
 //
-// The ul element represents a list of items, where the order of the items is not important — that is, where changing
-// the order would not materially change the meaning of the document.
+// It belongs to the following categories:
+//   - none
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// The items of the list are the li element child nodes of the ul element.
+// If can itself be a child of the following elements/categories of elements:
+//   - [figure]
 //
-// [ul element]: https://html.spec.whatwg.org/#the-ul-element
-func Ul(attributes htmfunc.Attribute, listItems ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("ul", attributes, listItems...)
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [figure]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figure-element
+// [figure]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figure-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("figcaption", attributes, children...)
 }
 
-// Menu creates a [menu element].
+// Figure creates the figure element - Figure with optional caption [(More)]
 //
-// The menu element represents a toolbar consisting of its contents, in the form of an unordered list of items
-// (represented by li elements), each of which represents a command that the user can perform or activate.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [figcaption]
+//   - [flow]
 //
-// [menu element]: https://html.spec.whatwg.org/#the-menu-element
-func Menu(attributes htmfunc.Attribute, listItems ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("menu", attributes, listItems...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [figcaption]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figcaption-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("figure", attributes, children...)
 }
 
-// Li creates a [li element].
+// Hr creates the hr element - Thematic break [(More)]
 //
-// The li element represents a list item. If its parent element is an ol, ul, or menu element, then the element is an
-// item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined
-// list-related relationship to any other li element.
+// It belongs to the following categories:
+//   - [flow]
 //
-// The value attribute, if present, must be a valid integer. It is used to determine the ordinal value of the list item,
-// when the li's list owner is an ol element.
+// It is a void element and cannot contain any child elements
 //
-// [li element]: https://html.spec.whatwg.org/#the-li-element
-func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("li", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Hr(attributes htmfunc.Attribute) htmfunc.Element {
+    return htmfunc.WriteVoidElement("hr", attributes)
 }
 
-// Dl creates a [dl element].
+// Li creates the li element - List item [(More)]
 //
-// The dl element represents an association list consisting of zero or more name-value groups (a description list).
-// A name-value group consists of one or more names (dt elements, possibly as children of a div element child) followed
-// by one or more values (dd elements, possibly as children of a div element child), ignoring any nodes other than dt
-// and dd element children, and dt and dd elements that are children of div element children. Within a single dl
-// element, there should not be more than one dt element for each name.
+// It belongs to the following categories:
+//   - none
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// Name-value groups may be terms and definitions, metadata topics and values, questions and answers, or any other
-// groups of name-value data.
+// If can itself be a child of the following elements/categories of elements:
+//   - [ol]
+//   - [ul]
+//   - [menu]
 //
-// [dl element]: https://html.spec.whatwg.org/#the-dl-element
-func Dl(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("dl", attributes, children...)
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [value]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element
+// [ul]: https://html.spec.whatwg.org/dev/grouping-content.html#the-ul-element
+// [menu]: https://html.spec.whatwg.org/dev/grouping-content.html#the-menu-element
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [value]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("li", attributes, children...)
 }
 
-// Dt creates a [dt element].
+// Main creates the main element - Container for the dominant contents of the document [(More)]
 //
-// The dt element represents the term, or name, part of a term-description group in a description list (dl element).
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// [dt element]: https://html.spec.whatwg.org/#the-dt-element
-func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("dt", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("main", attributes, children...)
 }
 
-// Dd creates a [dd element].
+// Menu creates the menu element - Menu of commands [(More)]
 //
-// The dd element represents the description, definition, or value, part of a term-description group in a description
-// list (dl element).
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [li]
+//   - [script-supporting elements]
 //
-// [dd element]: https://html.spec.whatwg.org/#the-dd-element
-func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("dd", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
+// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Menu(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("menu", attributes, children...)
 }
 
-// Figure creates a [figure element]
+// Ol creates the ol element - Ordered list [(More)]
 //
-// The figure element represents some flow content, optionally with a caption, that is self-contained (like a complete
-// sentence) and is typically referenced as a single unit from the main flow of the document.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [li]
+//   - [script-supporting elements]
 //
-// [figure element]: https://html.spec.whatwg.org/#the-figu-element
-func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("figure", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//   - [reversed]
+//   - [start]
+//   - [type]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
+// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [reversed]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-reversed
+// [start]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-start
+// [type]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Ol(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("ol", attributes, children...)
 }
 
-// Figcaption creates a [figcaption element].
+// P creates the p element - Paragraph [(More)]
 //
-// The figcaption element represents a caption or legend for the rest of the contents of the figcaption element's parent
-// figure element, if any.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [phrasing]
 //
-// [figcaption element]: https://html.spec.whatwg.org/#the-figcaption-element
-func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("figcaption", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("p", attributes, children...)
 }
 
-// Main creates a [main element]
+// Pre creates the pre element - Block of preformatted text [(More)]
 //
-// The main element represents the dominant contents of the document.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [phrasing]
 //
-// A document must not have more than one main element that does not have the hidden attribute specified.
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
 //
-// A hierarchically correct main element is one whose ancestor elements are limited to html, body, div, form without an
-// accessible name, and autonomous custom elements. Each main element must be a hierarchically correct main element.
+// The following attributes can be added to this element:
+//   - [globals]
 //
-// [main element]: https://html.spec.whatwg.org/#the-main-element
-func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("main", attributes, children...)
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("pre", attributes, children...)
 }
 
-// Search creates a [search element].
+// Search creates the search element - Container for search controls [(More)]
 //
-// The search element represents a part of a document or application that contains a set of form controls or other
-// content related to performing a search or filtering operation. This could be a search of the web site or application;
-// a way of searching or filtering search results on the current web page; or a global or Internet-wide search function.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [flow]
 //
-// [search element]: https://html.spec.whatwg.org/#the-search-element
-func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("search", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("search", attributes, children...)
 }
 
-// Div creates a [div element].
+// Ul creates the ul element - List [(More)]
 //
-// The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and
-// title attributes to mark up semantics common to a group of consecutive elements. It can also be used in a dl element,
-// wrapping groups of dt and dd elements.
+// It belongs to the following categories:
+//   - [flow]
+//   - [palpable]
+//// It can be parent to the following elements/categories of elements:
+//   - [li]
+//   - [script-supporting elements]
 //
-// [div element]: https://html.spec.whatwg.org/#the-div-element
-func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-	return htmfunc.WriteElement("div", attributes, children...)
+// If can itself be a child of the following elements/categories of elements:
+//   - [flow]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [li]: https://html.spec.whatwg.org/dev/grouping-content.html#the-li-element
+// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+//
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func Ul(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {return htmfunc.WriteElement("ul", attributes, children...)
 }
