@@ -16,6 +16,8 @@ type Element struct {
 	Categorys     []string
 	Parents       []string
 	Children      []string
+
+	Links []standard.Link
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
@@ -81,13 +83,13 @@ func elementsFromRow(node *html.Node) []Element {
 			continue
 		}
 
-		elements = append(elements, elementFromRow(s, node))
+		elements = append(elements, elementFromRow(s, nameNode.NextSibling))
 	}
 
 	return elements
 }
 
-func elementFromRow(name string, node *html.Node) Element {
+func elementFromRow(name string, descriptionNode *html.Node) Element {
 	name = strings.Trim(name, "[]")
 
 	if strings.Contains(name, " ") {
@@ -104,7 +106,13 @@ func elementFromRow(name string, node *html.Node) Element {
 		}
 	}
 
-	return Element{
+	element := Element{
 		Tag: name,
 	}
+
+	description, links := standard.ExtractText(descriptionNode)
+	element.Description = strings.Trim(description, "[]")
+	element.Links = links
+
+	return element
 }
