@@ -13,11 +13,12 @@ type Element struct {
 	Tag           string
 	Description   string
 	SemanticGroup string
-	Categorys     []string
+	Categories    []string
 	Parents       []string
 	Children      []string
 
-	Links []standard.Link
+	Links             []standard.Link
+	DocumentationLink standard.Link
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
@@ -75,39 +76,47 @@ func elementsFromRow(node *html.Node) []Element {
 
 	// There exist one case with multiple elements in a single ro
 	// (h1, h2, h3, h4, h5, h6)
-	names, _ := standard.ExtractText(nameNode)
+	names, links := standard.ExtractText(nameNode)
 
 	elements := make([]Element, 0, 1)
-	for s := range strings.SplitSeq(names, ", ") {
-		if s == "[autonomous custom elements]" {
+	for name := range strings.SplitSeq(names, ", ") {
+		name, ok := normalizeName(name)
+		if !ok {
 			continue
 		}
 
-		elements = append(elements, elementFromRow(s, nameNode.NextSibling))
+		mainLink := links[0]
+		mainLink.Name = "(More)"
+
+		elements = append(elements, elementFromRow(name, mainLink, nameNode.NextSibling))
 	}
 
 	return elements
 }
 
-func elementFromRow(name string, descriptionNode *html.Node) Element {
+func normalizeName(name string) (string, bool) {
 	name = strings.Trim(name, "[]")
 
-	if strings.Contains(name, " ") {
-		// Spaces are not allowed in element names. Known special cases are:
-		//   - "SVG svg" -> "svg"
-		//   - "MathML math" -> "math"
-		switch name {
-		case "SVG svg":
-			name = "svg"
-		case "MathML math":
-			name = "math"
-		default:
-			panic("Unexpected element name with space: " + name)
-		}
+	if !strings.Contains(name, " ") {
+		return name, true
 	}
 
+	switch name {
+	case "autonomous custom elements": // Not an element
+		return "", false
+	case "SVG svg":
+		return "svg", true
+	case "MathML math":
+		return "math", true
+	default:
+		panic("Unexpected element name with space: " + name)
+	}
+}
+
+func elementFromRow(name string, documentationLink standard.Link, descriptionNode *html.Node) Element {
 	element := Element{
-		Tag: name,
+		Tag:               name,
+		DocumentationLink: documentationLink,
 	}
 
 	description, links := standard.ExtractText(descriptionNode)
