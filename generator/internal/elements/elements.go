@@ -2,9 +2,11 @@ package elements
 
 import (
 	"fmt"
+	"iter"
 	"sort"
 	"strings"
 
+	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
 	"github.com/KrischanCS/go-toolbox/iterator"
@@ -19,9 +21,10 @@ type Element struct {
 	Categories    []string
 	Parents       []string
 	Children      []string
+	Attributes    []string
 
-	Links             []standard.Link
 	DocumentationLink standard.Link
+	Links             []standard.Link
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
@@ -38,6 +41,16 @@ func getAllElements(standardIndicesPage *html.Node) []Element {
 
 	e := iterator.Of(elements...)
 
+	printUniqueSorted(e, "Categories", func(e Element) []string { return e.Categories })
+	printUniqueSorted(e, "Parents", func(e Element) []string { return e.Parents })
+	printUniqueSorted(e, "Children", func(e Element) []string { return e.Children })
+
+	printSemanticGroups(e)
+
+	return elements
+}
+
+func printSemanticGroups(e iter.Seq[Element]) {
 	groups := make(map[string][]string)
 	iterator.Reduce(e, &groups, func(accumulator *map[string][]string, value Element) {
 		group, ok := (*accumulator)[value.SemanticGroup]
@@ -57,8 +70,24 @@ func getAllElements(standardIndicesPage *html.Node) []Element {
 			fmt.Printf("  %s\n", tag)
 		}
 	}
+}
 
-	return elements
+func printUniqueSorted(e iter.Seq[Element], name string, mapper func(e Element) []string) {
+	categorySet := set.WithCapacity[string](64)
+	for categories := range iterator.Map(e, mapper) {
+		for _, c := range categories {
+			categorySet.Add(c)
+		}
+	}
+
+	c := categorySet.Values()
+	sort.Strings(c)
+	fmt.Println(name + ":")
+	for _, category := range c {
+		fmt.Printf("  %s\n", category)
+	}
+
+	fmt.Println()
 }
 
 func findElementsTable(page *html.Node) (*html.Node, bool) {
@@ -146,7 +175,34 @@ func elementFromRow(name string, documentationLink standard.Link, descriptionNod
 
 	element.SemanticGroup = extractSemanticGroup(documentationLink)
 
+	categoriesNode := descriptionNode.NextSibling
+	element.Categories, links = extractTokens(categoriesNode)
+	element.Links = append(element.Links, links...)
+
+	parentsNode := categoriesNode.NextSibling
+	element.Parents, links = extractTokens(parentsNode)
+	element.Links = append(element.Links, links...)
+
+	childrenNode := parentsNode.NextSibling
+	element.Children, links = extractTokens(childrenNode)
+	element.Links = append(element.Links, links...)
+
+	attributesNode := childrenNode.NextSibling
+	element.Attributes, links = extractTokens(attributesNode)
+	element.Links = append(element.Links, links...)
+
 	return element
+}
+
+func extractTokens(node *html.Node) ([]string, []standard.Link) {
+	text, links := standard.ExtractText(node)
+
+	categories := strings.Split(text, ";")
+	for i := range categories {
+		categories[i] = strings.Trim(categories[i], "*")
+	}
+
+	return categories, links
 }
 
 func extractSemanticGroup(link standard.Link) string {
