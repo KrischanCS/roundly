@@ -1,4 +1,4 @@
-package htmfunc
+package test
 
 import (
 	"testing"
