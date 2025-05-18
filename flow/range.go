@@ -32,7 +32,7 @@ func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 	}
 }
 
-func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element) htmfunc.Element {
+func RangeIter(seq iter.Seq[int], component func(int) htmfunc.Element) htmfunc.Element {
 	if seq == nil {
 		return func(_ htmfunc.Writer) error {
 			return nil
@@ -40,8 +40,8 @@ func RangeIter(seq iter.Seq2[int, int], component func(int, int) htmfunc.Element
 	}
 
 	return func(w htmfunc.Writer) error {
-		for t1, t2 := range seq {
-			err := component(t1, t2).RenderElement(w)
+		for t := range seq {
+			err := component(t).RenderElement(w)
 			if err != nil {
 				return err
 			}

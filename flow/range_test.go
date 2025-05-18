@@ -6,12 +6,12 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/KrischanCS/go-toolbox/iterator"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
 	attr "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
-	"github.com/KrischanCS/htmfunc/iters"
 	"github.com/KrischanCS/htmfunc/text"
 )
 
@@ -146,8 +146,8 @@ func TestRangeIter(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		seq       iter.Seq2[int, int]
-		component func(int, int) htmfunc.Element
+		seq       iter.Seq[int]
+		component func(int) htmfunc.Element
 	}
 
 	tests := []struct {
@@ -159,9 +159,9 @@ func TestRangeIter(t *testing.T) {
 			name: "nil",
 			args: args{
 				seq: nil,
-				component: func(i int, s int) htmfunc.Element {
+				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%d - %c", i, 'a'+i)))
+						text.Text(fmt.Sprintf("%c", 'a'+s)))
 				},
 			},
 			want: "",
@@ -169,28 +169,28 @@ func TestRangeIter(t *testing.T) {
 		{
 			name: "1",
 			args: args{
-				seq: iters.FromToInclusive(7, 7),
-				component: func(i int, s int) htmfunc.Element {
+				seq: iterator.FromToInclusive(7, 7),
+				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
+						text.Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
 			},
-			want: `<li>1 - g</li>`,
+			want: `<li>g</li>`,
 		},
 		{
 			name: "5",
 			args: args{
-				seq: iters.FromTo(3, 8),
-				component: func(i int, s int) htmfunc.Element {
+				seq: iterator.FromTo(3, 8),
+				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%d - %c", i+1, 'a'+s-1)))
+						text.Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
 			},
-			want: `<li>1 - c</li>` +
-				`<li>2 - d</li>` +
-				`<li>3 - e</li>` +
-				`<li>4 - f</li>` +
-				`<li>5 - g</li>`,
+			want: `<li>c</li>` +
+				`<li>d</li>` +
+				`<li>e</li>` +
+				`<li>f</li>` +
+				`<li>g</li>`,
 		},
 	}
 
@@ -275,9 +275,9 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeIter(iters.FromTo(0, 10), func(_ int, row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeIter(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(attr.Class("row"),
-				RangeIter(iters.FromTo(0, 20), func(_ int, col int) htmfunc.Element {
+				RangeIter(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
 					return Div(attr.Class("col"),
 						text.Text(strconv.Itoa(row*100+col)),
 					)

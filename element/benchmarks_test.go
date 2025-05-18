@@ -4,10 +4,11 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/KrischanCS/go-toolbox/iterator"
+
 	"github.com/KrischanCS/htmfunc"
 	"github.com/KrischanCS/htmfunc/attribute"
 	"github.com/KrischanCS/htmfunc/flow"
-	"github.com/KrischanCS/htmfunc/iters"
 	"github.com/KrischanCS/htmfunc/text"
 )
 
@@ -74,7 +75,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, text.Text("Here could be your content")),
 					),
-					flow.RangeIter(iters.FromToInclusive(1, 10), func(_, i int) htmfunc.Element {
+					flow.RangeIter(iterator.FromToInclusive(1, 10), func(i int) htmfunc.Element {
 						return Div(nil, text.Text(strconv.Itoa(i)))
 					}),
 				),
@@ -209,7 +210,7 @@ func BenchmarkRange(b *testing.B) {
 				text.Text("The Title of the Page"),
 			),
 			Body(nil,
-				flow.RangeIter(iters.FromToInclusive(1, 1), func(_, i int) htmfunc.Element {
+				flow.RangeIter(iterator.FromToInclusive(1, 1), func(i int) htmfunc.Element {
 					return Div(nil, text.Text(strconv.Itoa(i)))
 				}),
 			),
