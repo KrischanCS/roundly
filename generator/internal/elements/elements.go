@@ -82,7 +82,6 @@ func getAllElements(standardIndicesPage *html.Node) map[string][]Element {
 		// TODO link deduplication is probably neither here, nor in attributes complete.
 		//  Everything rendered to doc comment must be considered, not only description
 		//  as it is in attributes (Or only dedup of exact same as I did here).
-
 		element.Links = standard.EliminateExactSameLinks(element.Links)
 		elements[i] = element
 	}

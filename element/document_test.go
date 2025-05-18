@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/text"
+	. "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/text"
 )
 
 func TestDocument(t *testing.T) {
@@ -15,7 +15,7 @@ func TestDocument(t *testing.T) {
 
 	w := htmfunc.NewWriter(128)
 
-	doc := htmfunc.Document("html", Html(attr.Lang("en"), Head(nil), Body(nil)))
+	doc := htmfunc.Document("html", Html(Lang("en"), Head(nil), Body(nil)))
 
 	err := doc.RenderElement(w)
 
@@ -50,8 +50,8 @@ func TestHtml(t *testing.T) {
 			name: "With Text",
 			args: args{
 				lang: "de",
-				body: Body(attr.Lang("de"), text.Text("Dies ist ein Text zum Testen.")),
-				head: Head(nil, Title(nil, text.Text("Der Titel"))),
+				body: Body(Lang("de"), Text("Dies ist ein Text zum Testen.")),
+				head: Head(nil, Title(nil, Text("Der Titel"))),
 			},
 			want: `<html lang="de"><head><title>Der Titel</title></head><body lang="de">Dies ist ein Text zum Testen.</body></html>`, //nolint:nolintlint,lll
 		},
@@ -61,9 +61,9 @@ func TestHtml(t *testing.T) {
 				lang: "en",
 				head: Head(nil),
 				body: Body(nil,
-					text.Text("The quick brown fox jumped over the lazy dog."),
-					text.Text("<p>Text Escaping Works!</p>"),
-					text.TextTrusted("<p>This will not be escaped!</p>")),
+					Text("The quick brown fox jumped over the lazy dog."),
+					Text("<p>Text Escaping Works!</p>"),
+					TextTrusted("<p>This will not be escaped!</p>")),
 			},
 			want: `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text Escaping Works!&lt;/p&gt;<p>This will not be escaped!</p></body></html>`, //nolint:nolintlint,lll
 		},
@@ -72,7 +72,7 @@ func TestHtml(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
-			component := Html(attr.Lang(tt.args.lang), tt.args.head, tt.args.body)
+			component := Html(Lang(tt.args.lang), tt.args.head, tt.args.body)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -96,7 +96,7 @@ func TestBase(t *testing.T) {
 		},
 		{
 			name:       "with href",
-			attributes: attr.HRef_AArea("https://example.com/index.html"),
+			attributes: HRef_AArea("https://example.com/index.html"),
 			want:       `<base href="https://example.com/index.html">`,
 		},
 	}
@@ -178,7 +178,7 @@ func TestHead(t *testing.T) {
 			name: "title only",
 			args: args{
 				childNodes: []htmfunc.Element{
-					Title(nil, text.Text("The Title")),
+					Title(nil, Text("The Title")),
 				},
 			},
 			want: "<head><title>The Title</title></head>",
@@ -187,8 +187,8 @@ func TestHead(t *testing.T) {
 			name: "empty",
 			args: args{
 				childNodes: []htmfunc.Element{
-					Title(nil, text.Text("The Title")),
-					Link(attr.Attributes(attr.HRef_Link("/style.css"), attr.Rel_Link("stylesheet"))),
+					Title(nil, Text("The Title")),
+					Link(Attributes(HRef_Link("/style.css"), Rel_Link("stylesheet"))),
 				},
 			},
 			want: `<head><title>The Title</title><link href="/style.css" rel="stylesheet"></head>`,
@@ -213,7 +213,7 @@ func TestMeta(t *testing.T) {
 
 	w := htmfunc.NewWriter(4096)
 
-	component := Meta(attr.Attributes(attr.Name_Meta("keywords"), attr.Content("british,type face,font,fonts,highway,"+
+	component := Meta(Attributes(Name_Meta("keywords"), Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
 	err := component.RenderElement(w)
@@ -249,7 +249,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: attr.Type_ALink("text/css"),
+				attributes: Type_ALink("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -257,7 +257,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: attr.Type_ALink("text/css"),
+				attributes: Type_ALink("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body&gt;div{background-color: firebrick}</style>`,
@@ -268,7 +268,7 @@ func TestStyle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Style(tt.args.attributes, text.Text(tt.args.css))
+			component := Style(tt.args.attributes, Text(tt.args.css))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -302,7 +302,7 @@ func TestStyleTrusted(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: attr.Type_ALink("text/css"),
+				attributes: Type_ALink("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -310,7 +310,7 @@ func TestStyleTrusted(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: attr.Type_ALink("text/css"),
+				attributes: Type_ALink("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body>div{background-color: firebrick}</style>`,
@@ -321,7 +321,7 @@ func TestStyleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Style(tt.args.attributes, text.TextTrusted(tt.args.css))
+			component := Style(tt.args.attributes, TextTrusted(tt.args.css))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -359,7 +359,7 @@ func TestTitle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Title(nil, text.Text(tt.title))
+			component := Title(nil, Text(tt.title))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -397,7 +397,7 @@ func TestTitleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Title(nil, text.TextTrusted(tt.title))
+			component := Title(nil, TextTrusted(tt.title))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)

@@ -4,6 +4,7 @@ type MethodParamName struct {
 	FuncName, paramName string
 }
 
+//nolint:lll
 var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"abbr":                            {"AbbrAttribute", "abbr"}, // Avoid name collision with abbr element
 	"accept-charset":                  {"AcceptCharset", "acceptCharset"},

@@ -36,6 +36,7 @@ linters:
             - allowedPackages: # I recommend dot-imports for these packages, so allowing it especially for examples and testing
                 - github.com/KrischanCS/htmfunc/element
                 - github.com/KrischanCS/htmfunc/attribute
+                - github.com/KrischanCS/htmfunc/text
                 - github.com/KrischanCS/htmfunc/flow
 
     staticcheck:

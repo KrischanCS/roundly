@@ -9,10 +9,11 @@ import (
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
-func ShouldCompileWhenAllSubpackagesAreDotImported(t *testing.T) {
+func TestShouldCompileWhenAllSubpackagesAreDotImported(t *testing.T) {
 	// This test is only to ensure that all subpackages can be dot-imported at
 	// once. There are some name collisions between attributes and elements, so
 	// this makes sure all collisions are handled.
+	t.Parallel()
 
 	// Using a function from each package to avoid the unused imports being removed.
 	_ = []any{

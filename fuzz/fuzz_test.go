@@ -9,7 +9,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/element"
-	"github.com/KrischanCS/htmfunc/text"
+	. "github.com/KrischanCS/htmfunc/text"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
@@ -174,7 +174,7 @@ func FuzzDom(f *testing.F) {
 
 func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	if depth > 20 || random.Float64() < 0.03 {
-		return Div(nil, text.Text(randomElement(random, texts)))
+		return Div(nil, Text(randomElement(random, texts)))
 	}
 
 	depth++
@@ -185,7 +185,7 @@ func createTree(random *rand.Rand, depth int) htmfunc.Element {
 	}
 
 	if len(children) == 0 {
-		return Div(nil, text.Text(randomElement(random, texts)))
+		return Div(nil, Text(randomElement(random, texts)))
 	}
 
 	element := randomElement(random, elements)

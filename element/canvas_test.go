@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/attribute"
 )
 
 func TestCanvas(t *testing.T) {
@@ -14,7 +14,7 @@ func TestCanvas(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	element := Canvas(attr.Attributes(attr.Class("test", "other")))
+	element := Canvas(Attributes(Class("test", "other")))
 
 	err := element.RenderElement(w)
 

@@ -5,31 +5,31 @@ import (
 	"fmt"
 	"os"
 
-	. "github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc"
+	. "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:nolintlint,lll
 func ExampleHtml() {
-	page := Document("html",
-		Html(attr.Lang("en"),
+	page := htmfunc.Document("html",
+		Html(Lang("en"),
 			Head(
 				nil,
 				Title(nil, Text("The Title of the Page")),
 			),
 			Body(nil,
 				Nav(nil,
-					A(attr.HRef_AArea("/main"), TextTrusted("Main")),
-					A(attr.HRef_AArea("/details"), TextTrusted("Details")),
+					A(HRef_AArea("/main"), TextTrusted("Main")),
+					A(HRef_AArea("/details"), TextTrusted("Details")),
 				),
 				Main(nil,
 					H1(nil, TextTrusted("The Heading")),
 					Div(nil,
 						Text("Here could be your content"),
 					),
-					Div(attr.Class("escaped", "something"),
+					Div(Class("escaped", "something"),
 						Text("HTML characters <div> in </div> here will be escaped &"),
 					),
 				),

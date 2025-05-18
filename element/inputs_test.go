@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/attribute"
 )
 
 func TestInputs(t *testing.T) {
@@ -42,10 +42,10 @@ func TestInput(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	e := Input(attr.Attributes(
-		attr.Value_Input("test"),
-		attr.Class("rounded"),
-		attr.Type_Input("button"),
+	e := Input(Attributes(
+		Value_Input("test"),
+		Class("rounded"),
+		Type_Input("button"),
 	))
 
 	err := e.RenderElement(w)

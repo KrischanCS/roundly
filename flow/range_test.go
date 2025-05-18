@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
-	"github.com/KrischanCS/htmfunc/text"
+	. "github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:funlen
@@ -37,8 +37,8 @@ func TestRange(t *testing.T) {
 				items: nil,
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), text.Text(s)),
+						Div(Class("number"), Text(strconv.Itoa(i+1))),
+						Div(Class("value"), Text(s)),
 					)
 				},
 			},
@@ -50,8 +50,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), text.Text(s)),
+						Div(Class("number"), Text(strconv.Itoa(i+1))),
+						Div(Class("value"), Text(s)),
 					)
 				},
 			},
@@ -63,8 +63,8 @@ func TestRange(t *testing.T) {
 				items: []string{"apples", "bananas", "oranges"},
 				component: func(i int, s string) htmfunc.Element {
 					return Li(nil,
-						Div(attr.Class("number"), text.Text(strconv.Itoa(i+1))),
-						Div(attr.Class("value"), text.Text(s)),
+						Div(Class("number"), Text(strconv.Itoa(i+1))),
+						Div(Class("value"), Text(s)),
 					)
 				},
 			},
@@ -103,7 +103,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 0,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, text.Text(strconv.Itoa(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "",
@@ -113,7 +113,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 1,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, text.Text(strconv.Itoa(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li>",
@@ -123,7 +123,7 @@ func TestRangeInt(t *testing.T) {
 			args: args{
 				limit: 3,
 				component: func(i int) htmfunc.Element {
-					return Li(nil, text.Text(strconv.Itoa(i)))
+					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
 			want: "<li>0</li><li>1</li><li>2</li>",
@@ -161,7 +161,7 @@ func TestRangeIter(t *testing.T) {
 				seq: nil,
 				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%c", 'a'+s)))
+						Text(fmt.Sprintf("%c", 'a'+s)))
 				},
 			},
 			want: "",
@@ -172,7 +172,7 @@ func TestRangeIter(t *testing.T) {
 				seq: iterator.FromToInclusive(7, 7),
 				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%c", 'a'+s-1)))
+						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
 			},
 			want: `<li>g</li>`,
@@ -183,7 +183,7 @@ func TestRangeIter(t *testing.T) {
 				seq: iterator.FromTo(3, 8),
 				component: func(s int) htmfunc.Element {
 					return Li(nil,
-						text.Text(fmt.Sprintf("%c", 'a'+s-1)))
+						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
 			},
 			want: `<li>c</li>` +
@@ -224,10 +224,10 @@ func BenchmarkRange(b *testing.B) {
 
 	for range b.N {
 		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
-			return Div(attr.Class("row"),
+			return Div(Class("row"),
 				Range(row, func(_ int, i int) htmfunc.Element {
-					return Div(attr.Class("col"),
-						text.Text(strconv.Itoa(i)),
+					return Div(Class("col"),
+						Text(strconv.Itoa(i)),
 					)
 				}),
 			)
@@ -250,10 +250,10 @@ func BenchmarkRangeInt(b *testing.B) {
 
 	for range b.N {
 		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
-			return Div(attr.Class("row"),
+			return Div(Class("row"),
 				RangeInt(20, func(col int) htmfunc.Element {
-					return Div(attr.Class("col"),
-						text.Text(strconv.Itoa(row*100+col)),
+					return Div(Class("col"),
+						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)
@@ -276,10 +276,10 @@ func BenchmarkRangeIter(b *testing.B) {
 
 	for range b.N {
 		_ = RangeIter(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
-			return Div(attr.Class("row"),
+			return Div(Class("row"),
 				RangeIter(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
-					return Div(attr.Class("col"),
-						text.Text(strconv.Itoa(row*100+col)),
+					return Div(Class("col"),
+						Text(strconv.Itoa(row*100+col)),
 					)
 				}),
 			)

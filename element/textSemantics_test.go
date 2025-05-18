@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	"github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/text"
+	. "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/text"
 )
 
 func TestTextSemantics(t *testing.T) {
@@ -53,7 +53,7 @@ func TestData(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Data(attribute.Value_Data("42"), text.TextTrusted("42")).RenderElement(w)
+	err := Data(Value_Data("42"), TextTrusted("42")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<data value="42">42</data>`, w.String())
@@ -65,11 +65,11 @@ func TestTimeAttribute(t *testing.T) {
 	w := htmfunc.NewWriter(64)
 
 	err := Time(
-		attribute.Attributes(
-			attribute.DateTime_Time("2024-12-24T12:34:56Z"),
-			attribute.Class("time"),
+		Attributes(
+			DateTime_Time("2024-12-24T12:34:56Z"),
+			Class("time"),
 		),
-		text.TextTrusted("24.12.2024 12:34:56"),
+		TextTrusted("24.12.2024 12:34:56"),
 	).RenderElement(w)
 
 	assert.NoError(t, err)
@@ -83,7 +83,7 @@ func TestBdo_RTL(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(attribute.Dir_Bdo(string(htmfunc.RightToLeft)), text.TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(Dir_Bdo(string(htmfunc.RightToLeft)), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
@@ -94,7 +94,7 @@ func TestBdo_LTR(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(attribute.Dir_Bdo(string(htmfunc.LeftToRight)), text.TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(Dir_Bdo(string(htmfunc.LeftToRight)), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="ltr">مرحباً بالعالم</bdo>`, w.String())

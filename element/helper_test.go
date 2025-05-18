@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/htmfunc"
-	attr "github.com/KrischanCS/htmfunc/attribute"
+	. "github.com/KrischanCS/htmfunc/attribute"
 )
 
 type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
@@ -26,7 +26,7 @@ func elementTest(
 	want := fmt.Sprintf(`<%s class="test other"></%s>`, tag, tag)
 
 	w := htmfunc.NewWriter(256)
-	element := elementFunc(attr.Attributes(attr.Class("test", "other")))
+	element := elementFunc(Attributes(Class("test", "other")))
 
 	err := element.RenderElement(w)
 
