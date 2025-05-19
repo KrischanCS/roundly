@@ -5,6 +5,7 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
 	"github.com/KrischanCS/htmfunc/generator/internal/standard"
@@ -77,9 +78,100 @@ func findAttributes(body *html.Node) attributes {
 		attrs = append(attrs, &attr)
 	}
 
-	disambiguateAttrs(attrsByName)
+	attrsClassified := classifyAttributes(attrs)
+	attrsClassified.Enum = DecomposeEnums(attrsClassified.Enum)
 
-	return classifyAttributes(attrs)
+	// TODO adapt this to handle attributesType
+	//disambiguateAttrs(attrsClassified)
+
+	return attrsClassified
+}
+
+func DecomposeEnums(enum []attribute) []attribute {
+	decomposed := make([]attribute, 0, len(enum)*3)
+
+	for _, attr := range enum {
+		for _, value := range attr.Values {
+			value = strings.Trim(value, `[]"`)
+
+			if value == "the empty string" {
+				value = "empty"
+			}
+
+			for i := strings.IndexByte(value, '-'); i != -1; i = strings.IndexByte(value, '-') {
+				value = strings.Replace(value, "-", "", 1)
+				value = value[:i] + strings.ToUpper(value[i:i+1]) + value[i+1:]
+			}
+
+			for i := strings.IndexByte(value, '/'); i != -1; i = strings.IndexByte(value, '/') {
+				value = strings.Replace(value, "/", "", 1)
+				value = value[:i] + strings.ToUpper(value[i:i+1]) + value[i+1:]
+			}
+
+			funcName := attr.FuncName + strings.ToUpper(value[:1]) + value[1:]
+
+			funcName = handleOrderedListTypeAttributes(attr, value, funcName)
+
+			newAttr := attr
+			newAttr.FuncName = funcName
+			newAttr.ParamName = ""
+			newAttr.Value = value
+
+			decomposed = append(decomposed, newAttr)
+		}
+	}
+
+	return disambiguateEnumAttrs(decomposed)
+
+}
+
+// handleOrderedListTypeAttributes checks for an annoying special case… The
+// single-character values of the type attribute of ol elements are
+// case-sensitive, thus they cannot be converted simply to camel case as i and I
+// as well as a and A would be converted to the same name.
+//
+// Instead, the generated function names chosen here are more explicit but
+// longer:
+//   - 1 -> Numbered
+//   - a -> RomanLower
+//   - b -> RomanUpper
+//   - i -> AlphaLower
+//   - I -> AlphaUpper
+func handleOrderedListTypeAttributes(attr attribute, value string, funcName string) (string, bool) {
+	if attr.Name != "type" {
+		return funcName, false
+	}
+
+	switch value {
+	default:
+		return funcName, false
+	case "1":
+		return "Numbered", true
+	case "i":
+		return "RomanLower", true
+	case "I":
+		return "RomanUpper", true
+	case "a":
+		return "AlphaLower", true
+	case "A":
+		return "AlphaUpper", true
+	}
+}
+
+func disambiguateEnumAttrs(enumAttrs []attribute) []attribute {
+	duplicates := make(map[string]set.Set[attribute])
+	duplicateIndices := set.WithCapacity[int](16)
+
+	for i, this := range enumAttrs {
+
+		for j, other := range enumAttrs {
+			if this.Name != other.Name {
+				continue
+			}
+
+
+		}
+	}
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {

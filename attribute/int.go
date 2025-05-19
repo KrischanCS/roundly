@@ -39,7 +39,7 @@ func TabIndex(tabIndex int) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("tabindex", strconv.Itoa(tabIndex))
 }
 
-// Value_Li creates the value attribute - Ordinal value of the list item
+// Value creates the value attribute - Ordinal value of the list item
 //
 // It can be applied to the following elements:
 //   - [li]
@@ -51,6 +51,6 @@ func TabIndex(tabIndex int) htmfunc.Attribute {
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value_Li(value int) htmfunc.Attribute {
+func Value(value int) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("value", strconv.Itoa(value))
 }

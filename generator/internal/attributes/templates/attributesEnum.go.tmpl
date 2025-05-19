@@ -7,7 +7,7 @@ import (
 )
 {{ range .}}
 {{/*gotype: github.com/KrischanCS/htmfunc/attribute/generateAttributes.attribute*/ -}}
-// {{.FuncName}} creates the {{.Name}} attribute - {{.Description}}
+// {{.FuncName}} creates the {{.Name}} attribute with value {{.Value}} - {{.Description}}
 //
 // It can be applied to the following elements:
 {{- range .Elements}}
@@ -25,7 +25,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("{{.Name}}", {{.ParamName}})
+func {{.FuncName}}() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("{{.Name}}", "{{.Value}}")
 }
 {{end}}

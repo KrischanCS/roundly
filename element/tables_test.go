@@ -37,6 +37,11 @@ func ExampleTable() {
 	element := Table(
 		Attributes(Class("test")),
 		Caption(nil, Text("Test")),
+		Thead(nil,
+			Tr(nil,
+				Th(nil, Text("Test"))),
+				Th(nil, Text("Test")),
+			),
 		Tbody(nil,
 			Tr(nil,
 				Td(nil, Text("Test")),

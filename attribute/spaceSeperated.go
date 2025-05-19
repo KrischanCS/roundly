@@ -60,7 +60,7 @@ func Class(class ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("class", ' ', class...)
 }
 
-// For_Output creates the for attribute - Specifies controls from which the output was calculated
+// For creates the for attribute - Specifies controls from which the output was calculated
 //
 // It can be applied to the following elements:
 //   - [output]
@@ -72,7 +72,7 @@ func Class(class ...string) htmfunc.Attribute {
 // [output]: https://html.spec.whatwg.org/dev/form-elements.html#attr-output-for
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func For_Output(forV ...string) htmfunc.Attribute {
+func For(forV ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("for", ' ', forV...)
 }
 
@@ -168,7 +168,7 @@ func Ping(ping ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("ping", ' ', ping...)
 }
 
-// Rel_AArea creates the rel attribute - Relationship between the location in the document containing the [hyperlink] and the destination resource
+// Rel creates the rel attribute - Relationship between the location in the document containing the [hyperlink] and the destination resource
 //
 // It can be applied to the following elements:
 //   - [a]
@@ -183,11 +183,11 @@ func Ping(ping ...string) htmfunc.Attribute {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rel_AArea(rel ...string) htmfunc.Attribute {
+func Rel(rel ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
 }
 
-// Rel_Link creates the rel attribute - Relationship between the document containing the [hyperlink] and the destination resource
+// Rel creates the rel attribute - Relationship between the document containing the [hyperlink] and the destination resource
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -200,7 +200,7 @@ func Rel_AArea(rel ...string) htmfunc.Attribute {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rel_Link(rel ...string) htmfunc.Attribute {
+func Rel(rel ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
 }
 
@@ -221,7 +221,7 @@ func SandBox(sandBox ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("sandbox", ' ', sandBox...)
 }
 
-// Sizes_Link creates the sizes attribute - Sizes of the icons (for [rel]="[icon]")
+// Sizes creates the sizes attribute - Sizes of the icons (for [rel]="[icon]")
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -236,6 +236,6 @@ func SandBox(sandBox ...string) htmfunc.Attribute {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Sizes_Link(sizes ...string) htmfunc.Attribute {
+func Sizes(sizes ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("sizes", ' ', sizes...)
 }
