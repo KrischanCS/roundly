@@ -9,60 +9,19 @@ import (
 // Input creates the input element - Form control [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [interactive]
-//   - [listed]
-//   - [labelable]
-//   - [submittable]
-//   - [resettable]
-//   - [form-associated]
-//   - [palpable]
+// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [accept]
-//   - [alpha]
-//   - [alt]
-//   - [autocomplete]
-//   - [checked]
-//   - [colorspace]
-//   - [dirname]
-//   - [disabled]
-//   - [form]
-//   - [formaction]
-//   - [formenctype]
-//   - [formmethod]
-//   - [formnovalidate]
-//   - [formtarget]
-//   - [height]
-//   - [list]
-//   - [max]
-//   - [maxlength]
-//   - [min]
-//   - [minlength]
-//   - [multiple]
-//   - [name]
-//   - [pattern]
-//   - [placeholder]
-//   - [popovertarget]
-//   - [popovertargetaction]
-//   - [readonly]
-//   - [required]
-//   - [size]
-//   - [src]
-//   - [step]
-//   - [type]
-//   - [value]
-//   - [width]
+// [globals] [accept] [alpha] [alt] [autocomplete] [checked] [colorspace] [dirname] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [height] [list] [max] [maxlength] [min] [minlength] [multiple] [name] [pattern] [placeholder] [popovertarget] [popovertargetaction] [readonly] [required] [size] [src] [step] [type] [value] [width]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/input.html#the-input-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
@@ -107,8 +66,7 @@ import (
 // [type]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [value]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Input(attributes htmfunc.Attribute) htmfunc.Element {
     return htmfunc.WriteVoidElement("input", attributes)
 }

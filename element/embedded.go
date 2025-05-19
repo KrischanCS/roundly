@@ -9,37 +9,19 @@ import (
 // Img creates the img element - Image [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [interactive]
-//   - [form-associated]
-//   - [palpable]
+// [flow] [phrasing] [embedded] [interactive] [form-associated] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
-//   - [picture]
+// [phrasing] [picture]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [alt]
-//   - [src]
-//   - [srcset]
-//   - [sizes]
-//   - [crossorigin]
-//   - [usemap]
-//   - [ismap]
-//   - [width]
-//   - [height]
-//   - [referrerpolicy]
-//   - [decoding]
-//   - [loading]
-//   - [fetchpriority]
+// [globals] [alt] [src] [srcset] [sizes] [crossorigin] [usemap] [ismap] [width] [height] [referrerpolicy] [decoding] [loading] [fetchpriority]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
@@ -61,8 +43,7 @@ import (
 // [decoding]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-decoding
 // [loading]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-loading
 // [fetchpriority]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-fetchpriority
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Img(attributes htmfunc.Attribute) htmfunc.Element {
     return htmfunc.WriteVoidElement("img", attributes)
 }
@@ -70,23 +51,20 @@ func Img(attributes htmfunc.Attribute) htmfunc.Element {
 // Picture creates the picture element - Image [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [source]
-//   - one [img]
-//   - [script-supporting elements]
+// [flow] [phrasing] [embedded] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [source] one [img] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
@@ -95,8 +73,7 @@ func Img(attributes htmfunc.Attribute) htmfunc.Element {
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("picture", attributes, children...)
 }
@@ -104,27 +81,20 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // Source creates the source element - Image source for [img] or media source for [video] or [audio [(More)]
 //
 // It belongs to the following categories:
-//   - none
-//// It can be parent to the following elements/categories of elements:
-//   - empty
+// none
+//
+// It can be parent to the following elements/categories of elements:
+// empty
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [picture]
-//   - [video]
-//   - [audio]
+// [picture] [video] [audio]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [type]
-//   - [media]
-//   - [src]
-//   - [srcset]
-//   - [sizes]
-//   - [width]
-//   - [height]
+// [globals] [type] [media] [src] [srcset] [sizes] [width] [height]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element
 // [video]: https://html.spec.whatwg.org/dev/media.html#the-video-element
 // [audio]: https://html.spec.whatwg.org/dev/media.html#the-audio-element
@@ -137,8 +107,7 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [sizes]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-sizes
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Source(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("source", attributes, children...)
 }

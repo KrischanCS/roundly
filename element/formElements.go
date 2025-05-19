@@ -9,39 +9,20 @@ import (
 // Button creates the button element - Button control [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [interactive]
-//   - [listed]
-//   - [labelable]
-//   - [submittable]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [command]
-//   - [commandfor]
-//   - [disabled]
-//   - [form]
-//   - [formaction]
-//   - [formenctype]
-//   - [formmethod]
-//   - [formnovalidate]
-//   - [formtarget]
-//   - [name]
-//   - [popovertarget]
-//   - [popovertargetaction]
-//   - [type]
-//   - [value]
+// [globals] [command] [commandfor] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [name] [popovertarget] [popovertargetaction] [type] [value]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-button-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
@@ -65,8 +46,7 @@ import (
 // [popovertargetaction]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction
 // [type]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-value
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("button", attributes, children...)
 }
@@ -74,29 +54,27 @@ func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Datalist creates the datalist element - Container for options for [combo box control [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
-//   - [option]
-//   - [script-supporting elements]
+// [flow] [phrasing]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing] [option] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element
 // [combo box control]: https://html.spec.whatwg.org/dev/input.html#attr-input-list
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("datalist", attributes, children...)
 }
@@ -104,25 +82,20 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // Fieldset creates the fieldset element - Group of form controls [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [listed]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [legend]
-//   - [flow]
+// [flow] [listed] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [legend] [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [disabled]
-//   - [form]
-//   - [name]
+// [globals] [disabled] [form] [name]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [listed]: https://html.spec.whatwg.org/dev/forms.html#category-listed
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
@@ -132,8 +105,7 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-fieldset-disabled
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("fieldset", attributes, children...)
 }
@@ -141,25 +113,25 @@ func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // Legend creates the legend element - Caption for [fieldset [(More)]
 //
 // It belongs to the following categories:
-//   - none
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
-//   - [heading content]
+// none
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing] [heading content]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [fieldset]
+// [fieldset]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
 // [fieldset]: https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("legend", attributes, children...)
 }
@@ -167,27 +139,20 @@ func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Meter creates the meter element - Gauge [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [labelable]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [phrasing] [labelable] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [value]
-//   - [min]
-//   - [max]
-//   - [low]
-//   - [high]
-//   - [optimum]
+// [globals] [value] [min] [max] [low] [high] [optimum]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-meter-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [labelable]: https://html.spec.whatwg.org/dev/forms.html#category-label
@@ -199,8 +164,7 @@ func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [low]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-low
 // [high]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-high
 // [optimum]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-optimum
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("meter", attributes, children...)
 }
@@ -208,29 +172,27 @@ func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // Optgroup creates the optgroup element - Group of options in a list box [(More)]
 //
 // It belongs to the following categories:
-//   - none
-//// It can be parent to the following elements/categories of elements:
-//   - [option]
-//   - [script-supporting elements]
+// none
+//
+// It can be parent to the following elements/categories of elements:
+// [option] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [select]
+// [select]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [disabled]
-//   - [label]
+// [globals] [disabled] [label]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#the-select-element
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-disabled
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-label
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("optgroup", attributes, children...)
 }
@@ -238,24 +200,20 @@ func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // Option creates the option element - Option in a list box or combo box control [(More)]
 //
 // It belongs to the following categories:
-//   - none
-//// It can be parent to the following elements/categories of elements:
-//   - [text]
+// none
+//
+// It can be parent to the following elements/categories of elements:
+// [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [select]
-//   - [datalist]
-//   - [optgroup]
+// [select] [datalist] [optgroup]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [disabled]
-//   - [label]
-//   - [selected]
-//   - [value]
+// [globals] [disabled] [label] [selected] [value]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#the-select-element
 // [datalist]: https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element
 // [optgroup]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
@@ -265,8 +223,7 @@ func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-label
 // [selected]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-selected
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-value
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("option", attributes, children...)
 }
@@ -274,27 +231,20 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Output creates the output element - Calculated output value [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [listed]
-//   - [labelable]
-//   - [resettable]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [phrasing] [listed] [labelable] [resettable] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [for]
-//   - [form]
-//   - [name]
+// [globals] [for] [form] [name]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-output-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [listed]: https://html.spec.whatwg.org/dev/forms.html#category-listed
@@ -306,8 +256,7 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [for]: https://html.spec.whatwg.org/dev/form-elements.html#attr-output-for
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("output", attributes, children...)
 }
@@ -315,23 +264,20 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Progress creates the progress element - Progress bar [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [labelable]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [phrasing] [labelable] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [value]
-//   - [max]
+// [globals] [value] [max]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-progress-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [labelable]: https://html.spec.whatwg.org/dev/forms.html#category-label
@@ -339,8 +285,7 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [max]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("progress", attributes, children...)
 }
@@ -348,35 +293,20 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // Select creates the select element - List box control [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [interactive]
-//   - [listed]
-//   - [labelable]
-//   - [submittable]
-//   - [resettable]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [option]
-//   - [optgroup]
-//   - [script-supporting elements]
+// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [option] [optgroup] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [autocomplete]
-//   - [disabled]
-//   - [form]
-//   - [multiple]
-//   - [name]
-//   - [required]
-//   - [size]
+// [globals] [autocomplete] [disabled] [form] [multiple] [name] [required] [size]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-select-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
@@ -397,8 +327,7 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
 // [required]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-required
 // [size]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-size
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("select", attributes, children...)
 }
@@ -406,39 +335,20 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Textarea creates the textarea element - Multiline text controls [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [interactive]
-//   - [listed]
-//   - [labelable]
-//   - [submittable]
-//   - [resettable]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [text]
+// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [autocomplete]
-//   - [cols]
-//   - [dirname]
-//   - [disabled]
-//   - [form]
-//   - [maxlength]
-//   - [minlength]
-//   - [name]
-//   - [placeholder]
-//   - [readonly]
-//   - [required]
-//   - [rows]
-//   - [wrap]
+// [globals] [autocomplete] [cols] [dirname] [disabled] [form] [maxlength] [minlength] [name] [placeholder] [readonly] [required] [rows] [wrap]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-textarea-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [interactive]: https://html.spec.whatwg.org/dev/dom.html#interactive-content-2
@@ -463,8 +373,7 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [required]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-required
 // [rows]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-rows
 // [wrap]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("textarea", attributes, children...)
 }

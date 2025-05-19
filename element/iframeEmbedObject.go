@@ -9,27 +9,19 @@ import (
 // Embed creates the embed element - Plugin [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [interactive]
-//   - [palpable]
+// [flow] [phrasing] [embedded] [interactive] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [src]
-//   - [type]
-//   - [width]
-//   - [height]
-//   - any
+// [globals] [src] [type] [width] [height] any
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-embed-element
 // [Plugin]: https://html.spec.whatwg.org/dev/infrastructure.html#plugin
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
@@ -41,8 +33,7 @@ import (
 // [type]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-embed-type
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Embed(attributes htmfunc.Attribute) htmfunc.Element {
     return htmfunc.WriteVoidElement("embed", attributes)
 }
@@ -50,32 +41,20 @@ func Embed(attributes htmfunc.Attribute) htmfunc.Element {
 // Iframe creates the iframe element - Child navigable [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [interactive]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - empty
+// [flow] [phrasing] [embedded] [interactive] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// empty
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [src]
-//   - [srcdoc]
-//   - [name]
-//   - [sandbox]
-//   - [allow]
-//   - [allowfullscreen]
-//   - [width]
-//   - [height]
-//   - [referrerpolicy]
-//   - [loading]
+// [globals] [src] [srcdoc] [name] [sandbox] [allow] [allowfullscreen] [width] [height] [referrerpolicy] [loading]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [Child navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#child-navigable
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
@@ -93,8 +72,7 @@ func Embed(attributes htmfunc.Attribute) htmfunc.Element {
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [referrerpolicy]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-referrerpolicy
 // [loading]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-loading
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("iframe", attributes, children...)
 }
@@ -102,30 +80,20 @@ func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Object creates the object element - Image, [child navigable], or [plugin [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [interactive]
-//   - [listed]
-//   - [form-associated]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [transparent]
+// [flow] [phrasing] [embedded] [interactive] [listed] [form-associated] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [data]
-//   - [type]
-//   - [name]
-//   - [form]
-//   - [width]
-//   - [height]
+// [globals] [data] [type] [name] [form] [width] [height]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-object-element
 // [child navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#child-navigable
 // [plugin]: https://html.spec.whatwg.org/dev/infrastructure.html#plugin
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
@@ -143,8 +111,7 @@ func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Object(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("object", attributes, children...)
 }

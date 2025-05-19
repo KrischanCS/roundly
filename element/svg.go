@@ -9,28 +9,26 @@ import (
 // Svg creates the svg element - SVG root [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [embedded]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - per [[SVG]]
+// [flow] [phrasing] [embedded] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// per [[SVG]]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - per [[SVG]]
+// per [[SVG]]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/https://svgwg.org/svg2-draft/struct.html#SVGElement
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [embedded]: https://html.spec.whatwg.org/dev/dom.html#embedded-content-category
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [[SVG]]: https://html.spec.whatwg.org/dev/references.html#refsSVG
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("svg", attributes, children...)
 }

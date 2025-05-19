@@ -9,28 +9,19 @@ import (
 // Area creates the area element - Hyperlink or dead area on an image map [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
+// [flow] [phrasing]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [alt]
-//   - [coords]
-//   - [shape]
-//   - [href]
-//   - [target]
-//   - [download]
-//   - [ping]
-//   - [rel]
-//   - [referrerpolicy]
+// [globals] [alt] [coords] [shape] [href] [target] [download] [ping] [rel] [referrerpolicy]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/image-maps.html#the-area-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -43,8 +34,7 @@ import (
 // [ping]: https://html.spec.whatwg.org/dev/links.html#ping
 // [rel]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-rel
 // [referrerpolicy]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-referrerpolicy
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Area(attributes htmfunc.Attribute) htmfunc.Element {
     return htmfunc.WriteVoidElement("area", attributes)
 }
@@ -52,22 +42,20 @@ func Area(attributes htmfunc.Attribute) htmfunc.Element {
 // Map creates the map element - Image map [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [transparent]
-//   - [area]
+// [flow] [phrasing] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [transparent] [area]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [name]
+// [globals] [name]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/image-maps.html#the-map-element
 // [Image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
@@ -76,8 +64,7 @@ func Area(attributes htmfunc.Attribute) htmfunc.Element {
 // [area]: https://html.spec.whatwg.org/dev/image-maps.html#the-area-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/image-maps.html#attr-map-name
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Map(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("map", attributes, children...)
 }

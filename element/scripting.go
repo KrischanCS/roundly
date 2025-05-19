@@ -9,28 +9,26 @@ import (
 // Noscript creates the noscript element - Fallback content for script [(More)]
 //
 // It belongs to the following categories:
-//   - [metadata]
-//   - [flow]
-//   - [phrasing]
-//// It can be parent to the following elements/categories of elements:
-//   - varies
+// [metadata] [flow] [phrasing]
+//
+// It can be parent to the following elements/categories of elements:
+// varies
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [head]
-//   - [phrasing]
+// [head] [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/scripting.html#the-noscript-element
 // [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("noscript", attributes, children...)
 }
@@ -38,33 +36,20 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // Script creates the script element - Embedded script [(More)]
 //
 // It belongs to the following categories:
-//   - [metadata]
-//   - [flow]
-//   - [phrasing]
-//   - [script-supporting]
-//// It can be parent to the following elements/categories of elements:
-//   - script, data, or script documentation
+// [metadata] [flow] [phrasing] [script-supporting]
+//
+// It can be parent to the following elements/categories of elements:
+// script, data, or script documentation
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [head]
-//   - [phrasing]
-//   - [script-supporting]
+// [head] [phrasing] [script-supporting]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [src]
-//   - [type]
-//   - [nomodule]
-//   - [async]
-//   - [defer]
-//   - [crossorigin]
-//   - [integrity]
-//   - [referrerpolicy]
-//   - [blocking]
-//   - [fetchpriority]
+// [globals] [src] [type] [nomodule] [async] [defer] [crossorigin] [integrity] [referrerpolicy] [blocking] [fetchpriority]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/scripting.html#the-script-element
 // [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
@@ -81,8 +66,7 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [referrerpolicy]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-referrerpolicy
 // [blocking]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-blocking
 // [fetchpriority]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-fetchpriority
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("script", attributes, children...)
 }
@@ -90,27 +74,26 @@ func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Slot creates the slot element - Shadow tree slot [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [phrasing]
-//// It can be parent to the following elements/categories of elements:
-//   - [transparent]
+// [flow] [phrasing]
+//
+// It can be parent to the following elements/categories of elements:
+// [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+// [phrasing]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [name]
+// [globals] [name]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/scripting.html#the-slot-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [transparent]: https://html.spec.whatwg.org/dev/dom.html#transparent
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("slot", attributes, children...)
 }
@@ -118,29 +101,20 @@ func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // Template creates the template element - Template [(More)]
 //
 // It belongs to the following categories:
-//   - [metadata]
-//   - [flow]
-//   - [phrasing]
-//   - [script-supporting]
-//// It can be parent to the following elements/categories of elements:
-//   - empty
+// [metadata] [flow] [phrasing] [script-supporting]
+//
+// It can be parent to the following elements/categories of elements:
+// empty
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [metadata]
-//   - [phrasing]
-//   - [script-supporting]
-//   - [colgroup]
+// [metadata] [phrasing] [script-supporting] [colgroup]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [shadowrootmode]
-//   - [shadowrootdelegatesfocus]
-//   - [shadowrootclonable]
-//   - [shadowrootserializable]
-//   - [shadowrootcustomelementregistry]
+// [globals] [shadowrootmode] [shadowrootdelegatesfocus] [shadowrootclonable] [shadowrootserializable] [shadowrootcustomelementregistry]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/scripting.html#the-template-element
 // [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
@@ -152,8 +126,7 @@ func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [shadowrootclonable]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootclonable
 // [shadowrootserializable]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootserializable
 // [shadowrootcustomelementregistry]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootcustomelementregistry
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("template", attributes, children...)
 }

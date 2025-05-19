@@ -9,25 +9,25 @@ import (
 // Address creates the address element - Contact information for a page or [article] element [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-address-element
 // [article]: https://html.spec.whatwg.org/dev/sections.html#the-article-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Address(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("address", attributes, children...)
 }
@@ -35,26 +35,25 @@ func Address(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // Article creates the article element - Self-contained syndicatable or reusable composition [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [sectioning]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [sectioning] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-article-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [sectioning]: https://html.spec.whatwg.org/dev/dom.html#sectioning-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Article(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("article", attributes, children...)
 }
@@ -62,26 +61,25 @@ func Article(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // Aside creates the aside element - Sidebar for tangentially related content [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [sectioning]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [sectioning] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-aside-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [sectioning]: https://html.spec.whatwg.org/dev/dom.html#sectioning-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("aside", attributes, children...)
 }
@@ -89,36 +87,20 @@ func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // Body creates the body element - Document body [(More)]
 //
 // It belongs to the following categories:
-//   - none
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// none
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [html]
+// [html]
 //
 // The following attributes can be added to this element:
-//   - [globals]
-//   - [onafterprint]
-//   - [onbeforeprint]
-//   - [onbeforeunload]
-//   - [onhashchange]
-//   - [onlanguagechange]
-//   - [onmessage]
-//   - [onmessageerror]
-//   - [onoffline]
-//   - [ononline]
-//   - [onpageswap]
-//   - [onpagehide]
-//   - [onpagereveal]
-//   - [onpageshow]
-//   - [onpopstate]
-//   - [onrejectionhandled]
-//   - [onstorage]
-//   - [onunhandledrejection]
-//   - [onunload]
+// [globals] [onafterprint] [onbeforeprint] [onbeforeunload] [onhashchange] [onlanguagechange] [onmessage] [onmessageerror] [onoffline] [ononline] [onpageswap] [onpagehide] [onpagereveal] [onpageshow] [onpopstate] [onrejectionhandled] [onstorage] [onunhandledrejection] [onunload]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-body-element
 // [html]: https://html.spec.whatwg.org/dev/semantics.html#the-html-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -140,8 +122,7 @@ func Aside(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [onstorage]: https://html.spec.whatwg.org/dev/webappapis.html#handler-window-onstorage
 // [onunhandledrejection]: https://html.spec.whatwg.org/dev/webappapis.html#handler-window-onunhandledrejection
 // [onunload]: https://html.spec.whatwg.org/dev/webappapis.html#handler-window-onunload
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Body(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("body", attributes, children...)
 }
@@ -149,24 +130,24 @@ func Body(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // Footer creates the footer element - Footer for a page or section [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-footer-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("footer", attributes, children...)
 }
@@ -174,22 +155,20 @@ func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // H1 creates the h1 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -197,8 +176,7 @@ func Footer(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h1", attributes, children...)
 }
@@ -206,22 +184,20 @@ func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // H2 creates the h2 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -229,8 +205,7 @@ func H1(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h2", attributes, children...)
 }
@@ -238,22 +213,20 @@ func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // H3 creates the h3 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -261,8 +234,7 @@ func H2(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h3", attributes, children...)
 }
@@ -270,22 +242,20 @@ func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // H4 creates the h4 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -293,8 +263,7 @@ func H3(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h4", attributes, children...)
 }
@@ -302,22 +271,20 @@ func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // H5 creates the h5 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -325,8 +292,7 @@ func H4(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h5", attributes, children...)
 }
@@ -334,22 +300,20 @@ func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // H6 creates the h6 element - Heading [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [heading]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [phrasing]
+// [flow] [heading] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [heading]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
@@ -357,8 +321,7 @@ func H5(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [summary]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-summary-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func H6(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("h6", attributes, children...)
 }
@@ -366,24 +329,24 @@ func H6(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // Header creates the header element - Introductory or navigational aids for a page or section [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-header-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("header", attributes, children...)
 }
@@ -391,27 +354,20 @@ func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Hgroup creates the hgroup element - Heading container [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [h1]
-//   - [h2]
-//   - [h3]
-//   - [h4]
-//   - [h5]
-//   - [h6]
-//   - [script-supporting elements]
+// [flow] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [h1] [h2] [h3] [h4] [h5] [h6] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [legend]
-//   - [summary]
-//   - [flow]
+// [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-hgroup-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
@@ -424,8 +380,7 @@ func Header(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [h6]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Hgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("hgroup", attributes, children...)
 }
@@ -433,26 +388,25 @@ func Hgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // Nav creates the nav element - Section with navigational links [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [sectioning]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [sectioning] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-nav-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [sectioning]: https://html.spec.whatwg.org/dev/dom.html#sectioning-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Nav(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("nav", attributes, children...)
 }
@@ -460,26 +414,25 @@ func Nav(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // Section creates the section element - Generic document or application section [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
-//   - [sectioning]
-//   - [palpable]
-//// It can be parent to the following elements/categories of elements:
-//   - [flow]
+// [flow] [sectioning] [palpable]
+//
+// It can be parent to the following elements/categories of elements:
+// [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+// [flow]
 //
 // The following attributes can be added to this element:
-//   - [globals]
+// [globals]
 //
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
+// [(More)]: https://html.spec.whatwg.org/dev/sections.html#the-section-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [sectioning]: https://html.spec.whatwg.org/dev/dom.html#sectioning-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
-//
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Section(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
     return htmfunc.WriteElement("section", attributes, children...)
 }
