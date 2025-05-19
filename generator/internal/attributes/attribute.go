@@ -3,8 +3,11 @@ package attributes
 import (
 	"log"
 	"regexp"
+	"sort"
 	"strings"
 
+	"github.com/KrischanCS/go-toolbox/iterator"
+	"github.com/KrischanCS/go-toolbox/iterator/reducer"
 	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
@@ -108,9 +111,10 @@ func DecomposeEnums(enum []attribute) []attribute {
 				value = value[:i] + strings.ToUpper(value[i:i+1]) + value[i+1:]
 			}
 
-			funcName := attr.FuncName + strings.ToUpper(value[:1]) + value[1:]
-
-			funcName = handleOrderedListTypeAttributes(attr, value, funcName)
+			funcName, ok := handleOrderedListTypeAttributes(attr, value, attr.FuncName)
+			if !ok {
+				funcName = attr.FuncName + strings.ToUpper(value[:1]) + value[1:]
+			}
 
 			newAttr := attr
 			newAttr.FuncName = funcName
@@ -146,32 +150,87 @@ func handleOrderedListTypeAttributes(attr attribute, value string, funcName stri
 	default:
 		return funcName, false
 	case "1":
-		return "Numbered", true
+		return funcName + "Numbered", true
 	case "i":
-		return "RomanLower", true
+		return funcName + "RomanLower", true
 	case "I":
-		return "RomanUpper", true
+		return funcName + "RomanUpper", true
 	case "a":
-		return "AlphaLower", true
+		return funcName + "AlphaLower", true
 	case "A":
-		return "AlphaUpper", true
+		return funcName + "AlphaUpper", true
 	}
 }
 
 func disambiguateEnumAttrs(enumAttrs []attribute) []attribute {
-	duplicates := make(map[string]set.Set[attribute])
-	duplicateIndices := set.WithCapacity[int](16)
+	attrsByName := make(map[string][]attribute)
 
-	for i, this := range enumAttrs {
+	iterator.Reduce(
+		iterator.Of(enumAttrs...),
+		&attrsByName,
+		reducer.GroupBy(func(attr attribute) string { return attr.FuncName }),
+	)
 
-		for j, other := range enumAttrs {
-			if this.Name != other.Name {
-				continue
-			}
+	disambiguated := make([]attribute, 0, len(attrsByName))
 
+	for _, attrs := range attrsByName {
+		if len(attrs) == 1 {
+			disambiguated = append(disambiguated, attrs[0])
+			continue
+		}
 
+		attrs[0].Elements = mergeElements(attrs)
+		attrs[0].Values = mergeValues(attrs)
+		attrs[0].Links = mergeLinks(attrs)
+
+		disambiguated = append(disambiguated, attrs[0])
+	}
+
+	return disambiguated
+}
+
+func mergeElements(disambiguated []attribute) []string {
+	elements := set.Of(disambiguated[0].Elements...)
+	for _, a := range disambiguated[1:] {
+		// TODO use variadic function
+		for _, element := range a.Elements {
+			elements.Add(element)
 		}
 	}
+
+	values := elements.Values()
+	sort.Strings(values)
+	return values
+}
+
+func mergeValues(disambiguated []attribute) []string {
+	values := set.Of(disambiguated[0].Values...)
+	for _, a := range disambiguated[1:] {
+		// TODO use variadic function
+		for _, element := range a.Values {
+			values.Add(element)
+		}
+	}
+
+	v := values.Values()
+	sort.Strings(v)
+	return v
+}
+
+func mergeLinks(disambiguated []attribute) []standard.Link {
+	links := set.Of(disambiguated[0].Links...)
+	for _, a := range disambiguated[1:] {
+		// TODO use variadic function
+		for _, element := range a.Links {
+			links.Add(element)
+		}
+	}
+
+	v := links.Values()
+	sort.Slice(v, func(i, j int) bool {
+		return v[i].Name < v[j].Name
+	})
+	return v
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {

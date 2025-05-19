@@ -41,6 +41,7 @@ github.com/GaijinEntertainment/go-exhaustruct/v3/internal/structure
 ## explicit; go 1.24.1
 github.com/KrischanCS/go-toolbox/constraints
 github.com/KrischanCS/go-toolbox/iterator
+github.com/KrischanCS/go-toolbox/iterator/reducer
 github.com/KrischanCS/go-toolbox/set
 github.com/KrischanCS/go-toolbox/tuple
 # github.com/Masterminds/semver/v3 v3.3.1
