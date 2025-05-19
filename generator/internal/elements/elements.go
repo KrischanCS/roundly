@@ -180,6 +180,8 @@ func normalizeName(name string) (string, bool) {
 	}
 }
 
+// TODO fetch this from the standard instead if hardcoding
+
 //nolint:gochecknoglobals
 var voidElementTags = set.Of("area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param")
 
@@ -241,7 +243,7 @@ func extractSemanticGroup(link standard.Link) string {
 
 //nolint:gochecknoglobals
 var semanticGroupMapping = map[string]string{
-	"https://html.spec.whatwg.org/dev/text-level-semantics.html":                "text",
+	"https://html.spec.whatwg.org/dev/text-level-semantics.html":                "textSemantics",
 	"https://html.spec.whatwg.org/dev/sections.html":                            "sections",
 	"https://html.spec.whatwg.org/dev/image-maps.html":                          "imageMaps",
 	"https://html.spec.whatwg.org/dev/media.html":                               "media",
