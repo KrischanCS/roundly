@@ -84,8 +84,8 @@ func findAttributes(body *html.Node) attributes {
 	attrsClassified := classifyAttributes(attrs)
 	attrsClassified.Enum = DecomposeEnums(attrsClassified.Enum)
 
-	// TODO adapt this to handle attributesType
-	//disambiguateAttrs(attrsClassified)
+
+	disambiguateAttrs(attrsClassified)
 
 	return attrsClassified
 }

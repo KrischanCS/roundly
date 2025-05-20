@@ -39,7 +39,7 @@ func Low(low float64) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("low", strconv.FormatFloat(low, 'f', -1, 64))
 }
 
-// Max creates the max attribute - Upper bound of range
+// MaxFloat creates the max attribute - Upper bound of range
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -53,11 +53,11 @@ func Low(low float64) htmfunc.Attribute {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max(max float64) htmfunc.Attribute {
+func MaxFloat(max float64) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("max", strconv.FormatFloat(max, 'f', -1, 64))
 }
 
-// Min creates the min attribute - Lower bound of range
+// MinFloat creates the min attribute - Lower bound of range
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -69,7 +69,7 @@ func Max(max float64) htmfunc.Attribute {
 // [meter]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-min
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min(min float64) htmfunc.Attribute {
+func MinFloat(min float64) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("min", strconv.FormatFloat(min, 'f', -1, 64))
 }
 
@@ -105,7 +105,7 @@ func Step(step float64) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("step", strconv.FormatFloat(step, 'f', -1, 64))
 }
 
-// Value creates the value attribute - Current value of the element
+// ValueFloat creates the value attribute - Current value of the element
 //
 // It can be applied to the following elements:
 //   - [meter]
@@ -119,6 +119,6 @@ func Step(step float64) htmfunc.Attribute {
 // [progress]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [Valid floating-point number]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-floating-point-number
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value float64) htmfunc.Attribute {
+func ValueFloat(value float64) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("value", strconv.FormatFloat(value, 'f', -1, 64))
 }

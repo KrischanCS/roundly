@@ -158,7 +158,7 @@ func Defer() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("defer")
 }
 
-// Disabled creates the disabled attribute - Whether the form control is disabled
+// DisabledTrue creates the disabled attribute - Whether the form control is disabled
 //
 // It can be applied to the following elements:
 //   - [button]
@@ -182,11 +182,11 @@ func Defer() htmfunc.Attribute {
 // [form-associated custom elements]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-disabled
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled() htmfunc.Attribute {
+func DisabledTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("disabled")
 }
 
-// Disabled creates the disabled attribute - Whether the descendant form controls, except any inside [legend], are disabled
+// DisabledTrue creates the disabled attribute - Whether the descendant form controls, except any inside [legend], are disabled
 //
 // It can be applied to the following elements:
 //   - [fieldset]
@@ -199,11 +199,11 @@ func Disabled() htmfunc.Attribute {
 // [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled() htmfunc.Attribute {
+func DisabledTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("disabled")
 }
 
-// Disabled creates the disabled attribute - Whether the link is disabled
+// DisabledTrue creates the disabled attribute - Whether the link is disabled
 //
 // It can be applied to the following elements:
 //   - [link]
@@ -215,7 +215,7 @@ func Disabled() htmfunc.Attribute {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-disabled
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Disabled() htmfunc.Attribute {
+func DisabledTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("disabled")
 }
 
@@ -376,7 +376,7 @@ func NoValidate() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("novalidate")
 }
 
-// Open creates the open attribute - Whether the details are visible
+// OpenTrue creates the open attribute - Whether the details are visible
 //
 // It can be applied to the following elements:
 //   - [details]
@@ -388,11 +388,11 @@ func NoValidate() htmfunc.Attribute {
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Open() htmfunc.Attribute {
+func OpenTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("open")
 }
 
-// Open creates the open attribute - Whether the dialog box is showing
+// OpenTrue creates the open attribute - Whether the dialog box is showing
 //
 // It can be applied to the following elements:
 //   - [dialog]
@@ -404,7 +404,7 @@ func Open() htmfunc.Attribute {
 // [dialog]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Open() htmfunc.Attribute {
+func OpenTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("open")
 }
 
@@ -424,7 +424,7 @@ func PlaysInline() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("playsinline")
 }
 
-// ReadOnly creates the readonly attribute - Whether to allow the value to be edited by the user
+// ReadOnlyTrue creates the readonly attribute - Whether to allow the value to be edited by the user
 //
 // It can be applied to the following elements:
 //   - [input]
@@ -438,11 +438,11 @@ func PlaysInline() htmfunc.Attribute {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-readonly
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReadOnly() htmfunc.Attribute {
+func ReadOnlyTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("readonly")
 }
 
-// ReadOnly creates the readonly attribute - Affects willValidate, plus any behavior added by the custom element author
+// ReadOnlyTrue creates the readonly attribute - Affects willValidate, plus any behavior added by the custom element author
 //
 // It can be applied to the following elements:
 //   - [form-associated custom elements]
@@ -454,7 +454,7 @@ func ReadOnly() htmfunc.Attribute {
 // [form-associated custom elements]: https://html.spec.whatwg.org/dev/custom-elements.html#attr-face-readonly
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReadOnly() htmfunc.Attribute {
+func ReadOnlyTrue() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("readonly")
 }
 

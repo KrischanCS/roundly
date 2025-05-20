@@ -3,6 +3,8 @@ package attributes
 import (
 	"slices"
 	"strings"
+
+	"github.com/KrischanCS/go-toolbox/set"
 )
 
 type namedElementGroups struct {
@@ -38,18 +40,57 @@ var definedElementGroups = []namedElementGroups{
 	},
 }
 
-// disambiguateAttrs checks multiple attributes with the same name exist.
+// disambiguateAttrs checks multiple attributes with the same funcName exist.
 //
-// If so, it renames them based on the elements they can be used on.
-func disambiguateAttrs(attrsByName map[string][]*attribute) {
-	for _, attrs := range attrsByName {
-		if len(attrs) == 1 {
-			continue
-		}
+// If so, it renames them based on their parameter types.
+func disambiguateAttrs(attrs attributes) {
+	duplicates := findDuplicatedNames(attrs)
 
-		for _, attr := range attrs {
-			renameByElements(attr)
+	appendSuffixToDuplicates(attrs.Bool, "True", duplicates)
+	appendSuffixToDuplicates(attrs.InputType, "InputType", duplicates)
+	appendSuffixToDuplicates(attrs.ListComma, "Strings", duplicates)
+	appendSuffixToDuplicates(attrs.ListSpace, "Strings", duplicates)
+	appendSuffixToDuplicates(attrs.ListCommaFloat, "Floats", duplicates)
+	appendSuffixToDuplicates(attrs.Float, "Float", duplicates)
+	appendSuffixToDuplicates(attrs.Int, "Int", duplicates)
+	appendSuffixToDuplicates(attrs.Uint, "UInt", duplicates)
+}
+
+func appendSuffixToDuplicates(attrs []attribute, suffix string, duplicates set.Set[string]) {
+	for i, attr := range attrs {
+		if duplicates.Contains(attr.FuncName) {
+			attrs[i].FuncName += suffix
 		}
+	}
+}
+
+func findDuplicatedNames(attrs attributes) set.Set[string] {
+	nameAppearances := make(map[string]int, 512)
+
+	addFuncNameCounts(&nameAppearances, attrs.Text)
+	addFuncNameCounts(&nameAppearances, attrs.Bool)
+	addFuncNameCounts(&nameAppearances, attrs.Enum)
+	addFuncNameCounts(&nameAppearances, attrs.InputType)
+	addFuncNameCounts(&nameAppearances, attrs.ListComma)
+	addFuncNameCounts(&nameAppearances, attrs.ListCommaFloat)
+	addFuncNameCounts(&nameAppearances, attrs.ListSpace)
+	addFuncNameCounts(&nameAppearances, attrs.Float)
+	addFuncNameCounts(&nameAppearances, attrs.Int)
+	addFuncNameCounts(&nameAppearances, attrs.Uint)
+
+	duplicates := set.WithCapacity[string](32)
+	for name, count := range nameAppearances {
+		if count > 1 {
+			duplicates.Add(name)
+		}
+	}
+
+	return duplicates
+}
+
+func addFuncNameCounts(nameAppearances *map[string]int, a []attribute) {
+	for _, attr := range a {
+		(*nameAppearances)[attr.FuncName]++
 	}
 }
 
