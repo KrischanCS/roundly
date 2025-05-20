@@ -98,26 +98,11 @@ func DecomposeEnums(enum []attribute) []attribute {
 			value = strings.Trim(value, `[]"`)
 
 			if value == "the empty string" {
-				value = "empty"
-			}
-
-			for i := strings.IndexByte(value, '-'); i != -1; i = strings.IndexByte(value, '-') {
-				value = strings.Replace(value, "-", "", 1)
-				value = value[:i] + strings.ToUpper(value[i:i+1]) + value[i+1:]
-			}
-
-			for i := strings.IndexByte(value, '/'); i != -1; i = strings.IndexByte(value, '/') {
-				value = strings.Replace(value, "/", "", 1)
-				value = value[:i] + strings.ToUpper(value[i:i+1]) + value[i+1:]
-			}
-
-			funcName, ok := handleOrderedListTypeAttributes(attr, value, attr.FuncName)
-			if !ok {
-				funcName = attr.FuncName + strings.ToUpper(value[:1]) + value[1:]
+				value = ""
 			}
 
 			newAttr := attr
-			newAttr.FuncName = funcName
+			newAttr.FuncName = createEnumAttrFuncName(attr, value)
 			newAttr.ParamName = ""
 			newAttr.Value = value
 
@@ -125,8 +110,37 @@ func DecomposeEnums(enum []attribute) []attribute {
 		}
 	}
 
-	return disambiguateEnumAttrs(decomposed)
+	attrs := disambiguateEnumAttrs(decomposed)
 
+	sort.Slice(attrs, func(i, j int) bool {
+		return attrs[i].FuncName < attrs[j].FuncName
+	})
+
+	return attrs
+}
+
+func createEnumAttrFuncName(attr attribute, value string) string {
+	funcNameSuffix := value
+	if value == "" {
+		funcNameSuffix = "Empty"
+	}
+
+	funcName, ok := handleOrderedListTypeAttributes(attr, funcNameSuffix, attr.FuncName)
+	if ok {
+		return funcName
+	}
+
+	for i := strings.IndexByte(funcNameSuffix, '-'); i != -1; i = strings.IndexByte(funcNameSuffix, '-') {
+		funcNameSuffix = strings.Replace(funcNameSuffix, "-", "", 1)
+		funcNameSuffix = funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
+	}
+
+	for i := strings.IndexByte(funcNameSuffix, '/'); i != -1; i = strings.IndexByte(funcNameSuffix, '/') {
+		funcNameSuffix = strings.Replace(funcNameSuffix, "/", "", 1)
+		funcNameSuffix = funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
+	}
+
+	return attr.FuncName + strings.ToUpper(funcNameSuffix[:1]) + funcNameSuffix[1:]
 }
 
 // handleOrderedListTypeAttributes checks for an annoying special case… The
