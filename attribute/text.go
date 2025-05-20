@@ -249,33 +249,19 @@ func DataAttribute(data string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("data", data)
 }
 
-// DateTime creates the datetime attribute - Date and (optionally) time of the change
+// DateTime creates the datetime attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [del]
-//   - [ins]
+//   - [del] [ins]: Date and (optionally) time of the change
+//   - [time]: Machine-readable value
 //
-// Value constraints: [Valid date string with optional time]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [del]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [ins]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [Valid date string with optional time]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string-with-optional-time
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime(dateTime string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("datetime", dateTime)
-}
-
-// DateTime creates the datetime attribute - Machine-readable value
-//
-// It can be applied to the following elements:
-//   - [time]
-//
-// Value constraints: [Valid month string],[valid date string],[valid yearless date string],[valid time string],[valid local date and time string],[valid time-zone offset string],[valid global date and time string],[valid week string],[valid non-negative integer], or[valid duration string]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [time]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-time-datetime
 // [Valid month string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-month-string
 // [valid date string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string
@@ -416,13 +402,14 @@ func FormTarget(formTarget string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("formtarget", formTarget)
 }
 
-// HRef creates the href attribute - Address of the [hyperlink]
+// HRef creates the href attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [a]
-//   - [area]
+//   - [a] [area]: Address of the [hyperlink]
+//   - [link]: Address of the [hyperlink]
+//   - [base]: [Document base URL]
 //
-// Value constraints: [Valid URL potentially surrounded by spaces]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -430,40 +417,10 @@ func FormTarget(formTarget string) htmfunc.Attribute {
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-href
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("href", hRef)
-}
-
-// HRef creates the href attribute - Address of the [hyperlink]
-//
-// It can be applied to the following elements:
-//   - [link]
-//
-// Value constraints: [Valid non-empty URL potentially surrounded by spaces]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-href
-// [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("href", hRef)
-}
-
-// HRef creates the href attribute - [Document base URL]
-//
-// It can be applied to the following elements:
-//   - [base]
-//
-// Value constraints: [Valid URL potentially surrounded by spaces]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-href
 // [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
-// [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func HRef(hRef string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("href", hRef)
@@ -678,18 +635,18 @@ func Min(min string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("min", min)
 }
 
-// Name creates the name attribute - Name of the element to use for [form submission] and in the [form.elements] API
+// Name creates the name attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [button]
-//   - [fieldset]
-//   - [input]
-//   - [output]
-//   - [select]
-//   - [textarea]
-//   - [form-associated custom elements]
+//   - [button] [fieldset] [input] [output] [select] [textarea] [form-associated custom elements]: Name of the element to use for [form submission] and in the [form.elements] API
+//   - [details]: Name of group of mutually-exclusive [details] elements
+//   - [form]: Name of form to use in the [document.forms] API
+//   - [iframe] [object]: Name of [content navigable]
+//   - [map]: Name of [image map] to [reference] from the [usemap] attribute
+//   - [meta]: Metadata name
+//   - [slot]: Name of shadow tree slot
 //
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -703,110 +660,20 @@ func Min(min string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [form.elements]: https://html.spec.whatwg.org/dev/forms.html#dom-form-elements
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Name of group of mutually-exclusive [details] elements
-//
-// It can be applied to the following elements:
-//   - [details]
-//
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Name of form to use in the [document.forms] API
-//
-// It can be applied to the following elements:
-//   - [form]
-//
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-name
 // [document.forms]: https://html.spec.whatwg.org/dev/dom.html#dom-document-forms
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Name of [content navigable]
-//
-// It can be applied to the following elements:
-//   - [iframe]
-//   - [object]
-//
-// Value constraints: [Valid navigable target name or keyword]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-name
 // [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-name
 // [content navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#content-navigable
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Name of [image map] to [reference] from the [usemap] attribute
-//
-// It can be applied to the following elements:
-//   - [map]
-//
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [map]: https://html.spec.whatwg.org/dev/image-maps.html#attr-map-name
 // [image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
 // [reference]: https://html.spec.whatwg.org/dev/dom.html#referenced
 // [usemap]: https://html.spec.whatwg.org/dev/image-maps.html#attr-hyperlink-usemap
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Metadata name
-//
-// It can be applied to the following elements:
-//   - [meta]
-//
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
-}
-
-// Name creates the name attribute - Name of shadow tree slot
-//
-// It can be applied to the following elements:
-//   - [slot]
-//
-// Value constraints: [Text]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [slot]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Name(name string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("name", name)
@@ -1040,13 +907,14 @@ func StyleAttribute(style string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("style", style)
 }
 
-// Target creates the target attribute - [Navigable] for [hyperlink][navigation]
+// Target creates the target attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [a]
-//   - [area]
+//   - [a] [area]: [Navigable] for [hyperlink][navigation]
+//   - [base]: Default [navigable] for [hyperlink][navigation] and [form submission]
+//   - [form]: [Navigable] for [form submission]
 //
-// Value constraints: [Valid navigable target name or keyword]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1056,182 +924,59 @@ func StyleAttribute(style string) htmfunc.Attribute {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [navigation]: https://html.spec.whatwg.org/dev/browsing-the-web.html#navigate
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("target", target)
-}
-
-// Target creates the target attribute - Default [navigable] for [hyperlink][navigation] and [form submission]
-//
-// It can be applied to the following elements:
-//   - [base]
-//
-// Value constraints: [Valid navigable target name or keyword]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-target
 // [navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#navigable
-// [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
-// [navigation]: https://html.spec.whatwg.org/dev/browsing-the-web.html#navigate
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
-// [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("target", target)
-}
-
-// Target creates the target attribute - [Navigable] for [form submission]
-//
-// It can be applied to the following elements:
-//   - [form]
-//
-// Value constraints: [Valid navigable target name or keyword]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-target
-// [Navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#navigable
-// [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
-// [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Target(target string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("target", target)
 }
 
-// TitleAttribute creates the title attribute - Advisory information for the element
+// TitleAttribute creates the title attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [HTML elements]
+//   - [HTML elements]: Advisory information for the element
+//   - [abbr] [dfn]: Full term or expansion of abbreviation
+//   - [input]: Description of pattern (when used with [pattern] attribute)
+//   - [link]: Title of the link
+//   - [link] [style]: [CSS style sheet set name]
 //
-// Value constraints: [Text]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TitleAttribute(title string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("title", title)
-}
-
-// TitleAttribute creates the title attribute - Full term or expansion of abbreviation
-//
-// It can be applied to the following elements:
-//   - [abbr]
-//   - [dfn]
-//
-// Value constraints: [Text]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [abbr]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-abbr-title
 // [dfn]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-dfn-title
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TitleAttribute(title string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("title", title)
-}
-
-// TitleAttribute creates the title attribute - Description of pattern (when used with [pattern] attribute)
-//
-// It can be applied to the following elements:
-//   - [input]
-//
-// Value constraints: [Text]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-title
 // [pattern]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TitleAttribute(title string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("title", title)
-}
-
-// TitleAttribute creates the title attribute - Title of the link
-//
-// It can be applied to the following elements:
-//   - [link]
-//
-// Value constraints: [Text]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-title
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TitleAttribute(title string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("title", title)
-}
-
-// TitleAttribute creates the title attribute - [CSS style sheet set name]
-//
-// It can be applied to the following elements:
-//   - [link]
-//   - [style]
-//
-// Value constraints: [Text]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-title
 // [style]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-title
 // [CSS style sheet set name]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom/#css-style-sheet-set-name
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TitleAttribute(title string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("title", title)
 }
 
-// Type creates the type attribute - Hint for the type of the referenced resource
+// Type creates the type attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [a]
-//   - [link]
+//   - [a] [link]: Hint for the type of the referenced resource
+//   - [embed] [object] [source]: Type of embedded resource
+//   - [script]: Type of script
 //
-// Value constraints: [Valid MIME type string]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-type
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", typeV)
-}
-
-// Type creates the type attribute - Type of embedded resource
-//
-// It can be applied to the following elements:
-//   - [embed]
-//   - [object]
-//   - [source]
-//
-// Value constraints: [Valid MIME type string]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [embed]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-embed-type
 // [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-type
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-type
-// [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", typeV)
-}
-
-// Type creates the type attribute - Type of script
-//
-// It can be applied to the following elements:
-//   - [script]
-//
-// Value constraints: "module"; a [valid MIME type string] that is not a [JavaScript MIME type essence match]
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-type
 // [valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [JavaScript MIME type essence match]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match
@@ -1257,13 +1002,14 @@ func UseMap(useMap string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("usemap", useMap)
 }
 
-// Value creates the value attribute - Value to be used for [form submission]
+// Value creates the value attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [button]
-//   - [option]
+//   - [button] [option]: Value to be used for [form submission]
+//   - [data]: Machine-readable value
+//   - [input]: Value of the form control
 //
-// Value constraints: [Text]
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1271,36 +1017,7 @@ func UseMap(useMap string) htmfunc.Attribute {
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-value
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("value", value)
-}
-
-// Value creates the value attribute - Machine-readable value
-//
-// It can be applied to the following elements:
-//   - [data]
-//
-// Value constraints: [Text] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [data]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-data-value
-// [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("value", value)
-}
-
-// Value creates the value attribute - Value of the form control
-//
-// It can be applied to the following elements:
-//   - [input]
-//
-// Value constraints: Varies (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Value(value string) htmfunc.Attribute {

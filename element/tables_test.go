@@ -55,5 +55,5 @@ func ExampleTable() {
 	fmt.Println(w.String())
 
 	// Output:
-	// <table class="test"><caption>Test</caption><tbody><tr><td>Test</td><td>Test</td></tr></tbody></table>
+	// <table class="test"><caption>Test</caption><thead><tr><th>Test</th></tr><th>Test</th></thead><tbody><tr><td>Test</td><td>Test</td></tr></tbody></table>
 }

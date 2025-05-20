@@ -53,7 +53,7 @@ func TestData(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Data(Value_Data("42"), TextTrusted("42")).RenderElement(w)
+	err := Data(Value("42"), TextTrusted("42")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<data value="42">42</data>`, w.String())
@@ -66,7 +66,7 @@ func TestTimeAttribute(t *testing.T) {
 
 	err := Time(
 		Attributes(
-			DateTime_Time("2024-12-24T12:34:56Z"),
+			DateTime("2024-12-24T12:34:56Z"),
 			Class("time"),
 		),
 		TextTrusted("24.12.2024 12:34:56"),
@@ -83,7 +83,7 @@ func TestBdo_RTL(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(Dir_Bdo(string(htmfunc.RightToLeft)), TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(DirRtl(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
@@ -94,7 +94,7 @@ func TestBdo_LTR(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(Dir_Bdo(string(htmfunc.LeftToRight)), TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := Bdo(DirLtr(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="ltr">مرحباً بالعالم</bdo>`, w.String())

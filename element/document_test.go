@@ -96,7 +96,7 @@ func TestBase(t *testing.T) {
 		},
 		{
 			name:       "with href",
-			attributes: HRef_AArea("https://example.com/index.html"),
+			attributes: HRef("https://example.com/index.html"),
 			want:       `<base href="https://example.com/index.html">`,
 		},
 	}
@@ -188,7 +188,7 @@ func TestHead(t *testing.T) {
 			args: args{
 				childNodes: []htmfunc.Element{
 					Title(nil, Text("The Title")),
-					Link(Attributes(HRef_Link("/style.css"), Rel_Link("stylesheet"))),
+					Link(Attributes(HRef("/style.css"), Rel("stylesheet"))),
 				},
 			},
 			want: `<head><title>The Title</title><link href="/style.css" rel="stylesheet"></head>`,
@@ -213,7 +213,7 @@ func TestMeta(t *testing.T) {
 
 	w := htmfunc.NewWriter(4096)
 
-	component := Meta(Attributes(Name_Meta("keywords"), Content("british,type face,font,fonts,highway,"+
+	component := Meta(Attributes(Name("keywords"), Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
 	err := component.RenderElement(w)
@@ -249,7 +249,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: Type_ALink("text/css"),
+				attributes: Type("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -257,7 +257,7 @@ func TestStyle(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: Type_ALink("text/css"),
+				attributes: Type("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body&gt;div{background-color: firebrick}</style>`,
@@ -302,7 +302,7 @@ func TestStyleTrusted(t *testing.T) {
 		{
 			name: "css",
 			args: args{
-				attributes: Type_ALink("text/css"),
+				attributes: Type("text/css"),
 				css:        `body{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body{background-color: firebrick}</style>`,
@@ -310,7 +310,7 @@ func TestStyleTrusted(t *testing.T) {
 		{
 			name: "css escaping",
 			args: args{
-				attributes: Type_ALink("text/css"),
+				attributes: Type("text/css"),
 				css:        `body>div{background-color: firebrick}`,
 			},
 			want: `<style type="text/css">body>div{background-color: firebrick}</style>`,

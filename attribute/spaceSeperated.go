@@ -168,13 +168,13 @@ func Ping(ping ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("ping", ' ', ping...)
 }
 
-// RelStrings creates the rel attribute - Relationship between the location in the document containing the [hyperlink] and the destination resource
+// Rel creates the rel attribute - It's semantics varies depending on the element it is applied to.
 //
 // It can be applied to the following elements:
-//   - [a]
-//   - [area]
+//   - [a] [area]: Relationship between the location in the document containing the [hyperlink] and the destination resource
+//   - [link]: Relationship between the document containing the [hyperlink] and the destination resource
 //
-// Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
+// Value constraints: 
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -182,25 +182,9 @@ func Ping(ping ...string) htmfunc.Attribute {
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-rel
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func RelStrings(rel ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
-}
-
-// RelStrings creates the rel attribute - Relationship between the document containing the [hyperlink] and the destination resource
-//
-// It can be applied to the following elements:
-//   - [link]
-//
-// Value constraints: [Unordered set of unique space-separated tokens] (Additional rules apply, see elements documentation)
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
-// [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
-// [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func RelStrings(rel ...string) htmfunc.Attribute {
+func Rel(rel ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
 }
 

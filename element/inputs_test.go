@@ -43,9 +43,9 @@ func TestInput(t *testing.T) {
 	w := htmfunc.NewWriter(256)
 
 	e := Input(Attributes(
-		Value_Input("test"),
+		Value("test"),
 		Class("rounded"),
-		Type_Input("button"),
+		Type("button"),
 	))
 
 	err := e.RenderElement(w)
