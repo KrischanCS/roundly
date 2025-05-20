@@ -1,4 +1,4 @@
-package element
+package elements
 
 import (
 	"testing"
@@ -7,6 +7,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
+	element2 "github.com/KrischanCS/htmfunc/element"
 )
 
 func TestCanvas(t *testing.T) {
@@ -14,7 +15,7 @@ func TestCanvas(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	element := Canvas(Attributes(Class("test", "other")))
+	element := element2.Canvas(Attributes(Class("test", "other")))
 
 	err := element.RenderElement(w)
 

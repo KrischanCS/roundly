@@ -1,4 +1,4 @@
-package element
+package elements
 
 import (
 	"testing"
@@ -7,25 +7,26 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/element"
 )
 
 func TestInputs(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Form,
-		Label,
-		Button,
-		Select,
-		Datalist,
-		Optgroup,
-		Option,
-		Textarea,
-		Output,
-		Progress,
-		Meter,
-		Fieldset,
-		Legend,
+		element.Form,
+		element.Label,
+		element.Button,
+		element.Select,
+		element.Datalist,
+		element.Optgroup,
+		element.Option,
+		element.Textarea,
+		element.Output,
+		element.Progress,
+		element.Meter,
+		element.Fieldset,
+		element.Legend,
 	}
 
 	for _, element := range elements {
@@ -42,7 +43,7 @@ func TestInput(t *testing.T) {
 
 	w := htmfunc.NewWriter(256)
 
-	e := Input(Attributes(
+	e := element.Input(Attributes(
 		Value("test"),
 		Class("rounded"),
 		Type("button"),

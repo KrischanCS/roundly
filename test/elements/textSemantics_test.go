@@ -1,4 +1,4 @@
-package element
+package elements
 
 import (
 	"testing"
@@ -7,6 +7,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
@@ -14,31 +15,31 @@ func TestTextSemantics(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		A,
-		Em,
-		Strong,
-		Small,
-		S,
-		Cite,
-		Q,
-		Dfn,
-		Abbr,
-		Ruby,
-		Rt,
-		Rp,
-		Code,
-		Var,
-		Samp,
-		Kbd,
-		Sub,
-		Sup,
-		I,
-		B,
-		U,
-		Mark,
-		Bdi,
-		Span,
-		Wbr,
+		element.A,
+		element.Em,
+		element.Strong,
+		element.Small,
+		element.S,
+		element.Cite,
+		element.Q,
+		element.Dfn,
+		element.Abbr,
+		element.Ruby,
+		element.Rt,
+		element.Rp,
+		element.Code,
+		element.Var,
+		element.Samp,
+		element.Kbd,
+		element.Sub,
+		element.Sup,
+		element.I,
+		element.B,
+		element.U,
+		element.Mark,
+		element.Bdi,
+		element.Span,
+		element.Wbr,
 	}
 
 	for _, element := range elements {
@@ -53,7 +54,7 @@ func TestData(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Data(Value("42"), TextTrusted("42")).RenderElement(w)
+	err := element.Data(Value("42"), TextTrusted("42")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<data value="42">42</data>`, w.String())
@@ -64,7 +65,7 @@ func TestTimeAttribute(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Time(
+	err := element.Time(
 		Attributes(
 			DateTime("2024-12-24T12:34:56Z"),
 			Class("time"),
@@ -83,7 +84,7 @@ func TestBdo_RTL(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(DirRtl(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := element.Bdo(DirRtl(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
@@ -94,7 +95,7 @@ func TestBdo_LTR(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Bdo(DirLtr(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
+	err := element.Bdo(DirLtr(), TextTrusted("مرحباً بالعالم")).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<bdo dir="ltr">مرحباً بالعالم</bdo>`, w.String())
@@ -105,7 +106,7 @@ func TestBr(t *testing.T) {
 
 	w := htmfunc.NewWriter(64)
 
-	err := Br(nil).RenderElement(w)
+	err := element.Br(nil).RenderElement(w)
 
 	assert.NoError(t, err)
 	assert.Equal(t, `<br>`, w.String())

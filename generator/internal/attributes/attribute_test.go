@@ -9,6 +9,8 @@ import (
 )
 
 func Test_distinguishLinkDuplicates(t *testing.T) {
+	t.Parallel()
+
 	type testCase struct {
 		name        string
 		inputString string
@@ -69,6 +71,7 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 	}
 }
 
+//nolint:funlen
 func Test_handleOrderedListTypeAttributes(t *testing.T) {
 	t.Parallel()
 
@@ -163,6 +166,8 @@ func Test_handleOrderedListTypeAttributes(t *testing.T) {
 }
 
 func TestDecomposeEnums(t *testing.T) {
+	t.Parallel()
+
 	type test struct {
 		name  string
 		input []attribute

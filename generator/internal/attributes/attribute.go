@@ -84,7 +84,6 @@ func findAttributes(body *html.Node) attributes {
 	attrsClassified := classifyAttributes(attrs)
 	attrsClassified.Enum = DecomposeEnums(attrsClassified.Enum)
 
-
 	disambiguateAttrs(&attrsClassified)
 
 	return attrsClassified
@@ -205,6 +204,7 @@ func disambiguateEnumAttrs(enumAttrs []attribute) []attribute {
 
 func mergeElements(disambiguated []attribute) []string {
 	elements := set.Of(disambiguated[0].Elements...)
+
 	for _, a := range disambiguated[1:] {
 		// TODO use variadic function
 		for _, element := range a.Elements {
@@ -214,11 +214,13 @@ func mergeElements(disambiguated []attribute) []string {
 
 	values := elements.Values()
 	sort.Strings(values)
+
 	return values
 }
 
 func mergeValues(disambiguated []attribute) []string {
 	values := set.Of(disambiguated[0].Values...)
+
 	for _, a := range disambiguated[1:] {
 		// TODO use variadic function
 		for _, element := range a.Values {
@@ -228,11 +230,13 @@ func mergeValues(disambiguated []attribute) []string {
 
 	v := values.Values()
 	sort.Strings(v)
+
 	return v
 }
 
 func mergeLinks(disambiguated []attribute) []standard.Link {
 	links := set.Of(disambiguated[0].Links...)
+
 	for _, a := range disambiguated[1:] {
 		// TODO use variadic function
 		for _, element := range a.Links {
@@ -244,6 +248,7 @@ func mergeLinks(disambiguated []attribute) []standard.Link {
 	sort.Slice(v, func(i, j int) bool {
 		return v[i].Name < v[j].Name
 	})
+
 	return v
 }
 

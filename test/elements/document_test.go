@@ -1,4 +1,4 @@
-package element
+package elements
 
 import (
 	"testing"
@@ -7,6 +7,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
@@ -15,7 +16,7 @@ func TestDocument(t *testing.T) {
 
 	w := htmfunc.NewWriter(128)
 
-	doc := htmfunc.Document("html", Html(Lang("en"), Head(nil), Body(nil)))
+	doc := htmfunc.Document("html", element.Html(Lang("en"), element.Head(nil), element.Body(nil)))
 
 	err := doc.RenderElement(w)
 
@@ -41,8 +42,8 @@ func TestHtml(t *testing.T) {
 			name: "empty",
 			args: args{
 				lang: "en",
-				head: Head(nil),
-				body: Body(nil),
+				head: element.Head(nil),
+				body: element.Body(nil),
 			},
 			want: `<html lang="en"><head></head><body></body></html>`,
 		},
@@ -50,8 +51,8 @@ func TestHtml(t *testing.T) {
 			name: "With Text",
 			args: args{
 				lang: "de",
-				body: Body(Lang("de"), Text("Dies ist ein Text zum Testen.")),
-				head: Head(nil, Title(nil, Text("Der Titel"))),
+				body: element.Body(Lang("de"), Text("Dies ist ein Text zum Testen.")),
+				head: element.Head(nil, element.Title(nil, Text("Der Titel"))),
 			},
 			want: `<html lang="de"><head><title>Der Titel</title></head><body lang="de">Dies ist ein Text zum Testen.</body></html>`, //nolint:nolintlint,lll
 		},
@@ -59,8 +60,8 @@ func TestHtml(t *testing.T) {
 			name: "Multiple Components",
 			args: args{
 				lang: "en",
-				head: Head(nil),
-				body: Body(nil,
+				head: element.Head(nil),
+				body: element.Body(nil,
 					Text("The quick brown fox jumped over the lazy dog."),
 					Text("<p>Text Escaping Works!</p>"),
 					TextTrusted("<p>This will not be escaped!</p>")),
@@ -72,7 +73,7 @@ func TestHtml(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
-			component := Html(Lang(tt.args.lang), tt.args.head, tt.args.body)
+			component := element.Html(Lang(tt.args.lang), tt.args.head, tt.args.body)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -105,7 +106,7 @@ func TestBase(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Base(tt.attributes)
+			component := element.Base(tt.attributes)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -178,7 +179,7 @@ func TestHead(t *testing.T) {
 			name: "title only",
 			args: args{
 				childNodes: []htmfunc.Element{
-					Title(nil, Text("The Title")),
+					element.Title(nil, Text("The Title")),
 				},
 			},
 			want: "<head><title>The Title</title></head>",
@@ -187,8 +188,8 @@ func TestHead(t *testing.T) {
 			name: "empty",
 			args: args{
 				childNodes: []htmfunc.Element{
-					Title(nil, Text("The Title")),
-					Link(Attributes(HRef("/style.css"), Rel("stylesheet"))),
+					element.Title(nil, Text("The Title")),
+					element.Link(Attributes(HRef("/style.css"), Rel("stylesheet"))),
 				},
 			},
 			want: `<head><title>The Title</title><link href="/style.css" rel="stylesheet"></head>`,
@@ -199,7 +200,7 @@ func TestHead(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Head(nil, tt.args.childNodes...)
+			component := element.Head(nil, tt.args.childNodes...)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -213,7 +214,7 @@ func TestMeta(t *testing.T) {
 
 	w := htmfunc.NewWriter(4096)
 
-	component := Meta(Attributes(Name("keywords"), Content("british,type face,font,fonts,highway,"+
+	component := element.Meta(Attributes(Name("keywords"), Content("british,type face,font,fonts,highway,"+
 		"highways")))
 
 	err := component.RenderElement(w)
@@ -268,7 +269,7 @@ func TestStyle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Style(tt.args.attributes, Text(tt.args.css))
+			component := element.Style(tt.args.attributes, Text(tt.args.css))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -321,7 +322,7 @@ func TestStyleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Style(tt.args.attributes, TextTrusted(tt.args.css))
+			component := element.Style(tt.args.attributes, TextTrusted(tt.args.css))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -359,7 +360,7 @@ func TestTitle(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Title(nil, Text(tt.title))
+			component := element.Title(nil, Text(tt.title))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -397,7 +398,7 @@ func TestTitleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := Title(nil, TextTrusted(tt.title))
+			component := element.Title(nil, TextTrusted(tt.title))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)

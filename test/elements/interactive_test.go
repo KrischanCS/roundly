@@ -1,17 +1,18 @@
-package element
+package elements
 
 import (
 	"testing"
+
+	"github.com/KrischanCS/htmfunc/element"
 )
 
-func TestScripting(t *testing.T) {
+func TestInteractive(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Noscript,
-		Script,
-		Slot,
-		Template,
+		element.Details,
+		element.Summary,
+		element.Dialog,
 	}
 
 	for _, element := range elements {

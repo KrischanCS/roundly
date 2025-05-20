@@ -5,9 +5,12 @@ package flow
 import "github.com/KrischanCS/htmfunc"
 
 // If returns the given renderer if condition is true, else a NOP renderer.
-func If[T ~func(w htmfunc.Writer) error](condition bool, renderer T) T {
+func If[Renderer ~func(w htmfunc.Writer) error](
+	condition bool,
+	then Renderer,
+) Renderer {
 	if condition {
-		return renderer
+		return then
 	}
 
 	return func(_ htmfunc.Writer) error {
@@ -15,11 +18,32 @@ func If[T ~func(w htmfunc.Writer) error](condition bool, renderer T) T {
 	}
 }
 
-// IfStr returns the given string if condition is true, else the empty string.
-func IfStr(condition bool, str string) string {
+// IfElse returns the then renderer, else the otherwise renderer.
+func IfElse[Renderer ~func(w htmfunc.Writer) error](
+	condition bool,
+	then, otherwise Renderer,
+) Renderer {
+	if condition {
+		return then
+	}
+
+	return otherwise
+}
+
+// IfText returns the given string if condition is true, else the empty string.
+func IfText(condition bool, str string) string {
 	if condition {
 		return str
 	}
 
 	return ""
+}
+
+// IfElseText returns the then string, else the otherwise string.
+func IfElseText(condition bool, then, otherwise string) string {
+	if condition {
+		return then
+	}
+
+	return otherwise
 }

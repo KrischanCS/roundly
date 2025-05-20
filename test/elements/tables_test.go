@@ -1,4 +1,4 @@
-package element
+package elements
 
 import (
 	"fmt"
@@ -6,6 +6,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
@@ -13,15 +14,15 @@ func TestTable(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Table,
-		Caption,
-		Colgroup,
-		Tbody,
-		Thead,
-		Tfoot,
-		Tr,
-		Td,
-		Th,
+		element.Table,
+		element.Caption,
+		element.Colgroup,
+		element.Tbody,
+		element.Thead,
+		element.Tfoot,
+		element.Tr,
+		element.Td,
+		element.Th,
 	}
 
 	for _, element := range elements {
@@ -31,21 +32,22 @@ func TestTable(t *testing.T) {
 	}
 }
 
+//nolint:lll
 func ExampleTable() {
 	w := htmfunc.NewWriter(256)
 
-	element := Table(
+	element := element.Table(
 		Attributes(Class("test")),
-		Caption(nil, Text("Test")),
-		Thead(nil,
-			Tr(nil,
-				Th(nil, Text("Test"))),
-				Th(nil, Text("Test")),
-			),
-		Tbody(nil,
-			Tr(nil,
-				Td(nil, Text("Test")),
-				Td(nil, Text("Test")),
+		element.Caption(nil, Text("Test")),
+		element.Thead(nil,
+			element.Tr(nil,
+				element.Th(nil, Text("Test"))),
+			element.Th(nil, Text("Test")),
+		),
+		element.Tbody(nil,
+			element.Tr(nil,
+				element.Td(nil, Text("Test")),
+				element.Td(nil, Text("Test")),
 			),
 		),
 	)

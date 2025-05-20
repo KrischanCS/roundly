@@ -1,28 +1,19 @@
-package element
+package elements
 
 import (
 	"testing"
+
+	"github.com/KrischanCS/htmfunc/element"
 )
 
-func TestGrouping(t *testing.T) {
+func TestScripting(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Blockquote,
-		Dd,
-		Div,
-		Dl,
-		Dt,
-		Figcaption,
-		Figure,
-		Li,
-		Main,
-		Menu,
-		Ol,
-		P,
-		Pre,
-		Search,
-		Ul,
+		element.Noscript,
+		element.Script,
+		element.Slot,
+		element.Template,
 	}
 
 	for _, element := range elements {

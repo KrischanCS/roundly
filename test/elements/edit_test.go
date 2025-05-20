@@ -1,15 +1,17 @@
-package element
+package elements
 
 import (
 	"testing"
+
+	"github.com/KrischanCS/htmfunc/element"
 )
 
 func TestEdit(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		Ins,
-		Del,
+		element.Ins,
+		element.Del,
 	}
 
 	for _, element := range elements {

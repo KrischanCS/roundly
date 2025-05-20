@@ -21,6 +21,7 @@ import (
 //go:embed templates
 var templateFs embed.FS
 
+//nolint:gochecknoglobals
 var elementTemplate = template.Must(template.ParseFS(templateFs, "templates/*.go.tmpl"))
 
 type Element struct {
@@ -58,6 +59,7 @@ func GenerateElements(standardIndicesPage *html.Node) {
 }
 
 func generateFile(group string, elements []Element) {
+	//nolint:gosec // Files are written for everyone
 	file, err := os.OpenFile("../element/"+group+".go", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		panic(fmt.Sprintf("Error opening file %s: %s", group+".go", err))
