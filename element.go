@@ -40,19 +40,19 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 // Usually it will be more convenient and readable to use the respective component functions provided by [el]. These are
 // the specified void elements and component functions:
 //
-//   - area		->	[el.Area]
-//   - base		->	[el.Base]
-//   - br		->	[el.Br]
-//   - col		->	[el.Col]
-//   - embed	->	[el.Embed]
-//   - hr		->	[el.Hr]
-//   - img		->	[el.Img]
-//   - input	->	[el.Input]
-//   - link		->	[el.Link]
-//   - meta		->	[el.Meta]
-//   - source	->	[el.Source]
-//   - track	->	[el.Track]
-//   - wbr		->	[el.Wbr]
+//   - area		->	[element.Area]
+//   - base		->	[element.Base]
+//   - br		->	[element.Br]
+//   - col		->	[element.Col]
+//   - embed	->	[element.Embed]
+//   - hr		->	[element.Hr]
+//   - img		->	[element.Img]
+//   - input	->	[element.Input]
+//   - link		->	[element.Link]
+//   - meta		->	[element.Meta]
+//   - source	->	[element.Source]
+//   - track	->	[element.Track]
+//   - wbr		->	[element.Wbr]
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
 func WriteVoidElement(tag string, attributes Attribute) Element {

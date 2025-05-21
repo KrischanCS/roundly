@@ -14,12 +14,3 @@ type Writer interface {
 	io.ByteWriter
 	io.StringWriter
 }
-
-// TODO this needs to go somewhere else
-
-type TextDirection string
-
-const (
-	LeftToRight TextDirection = "ltr"
-	RightToLeft TextDirection = "rtl"
-)

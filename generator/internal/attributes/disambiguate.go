@@ -69,7 +69,7 @@ func findAttrDuplicates(attrs []attribute, i int, attr attribute, visitedDuplica
 
 		duplicates = append(duplicates, other)
 	}
-	
+
 	return duplicates
 }
 

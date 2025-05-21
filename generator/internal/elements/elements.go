@@ -64,7 +64,7 @@ func generateFile(group string, elements []Element) {
 	if err != nil {
 		panic(fmt.Sprintf("Error opening file %s: %s", group+".go", err))
 	}
-	defer file.Close()
+	defer file.Close() //nolint:errcheck
 
 	err = elementTemplate.Lookup("element.go.tmpl").Execute(file, elements)
 	if err != nil {

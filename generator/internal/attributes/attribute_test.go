@@ -165,6 +165,7 @@ func Test_handleOrderedListTypeAttributes(t *testing.T) {
 	}
 }
 
+//nolint:lll
 func TestDecomposeEnums(t *testing.T) {
 	t.Parallel()
 
