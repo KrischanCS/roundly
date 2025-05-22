@@ -8,7 +8,7 @@ import (
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/element"
+	. "github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/flow"
 	. "github.com/KrischanCS/htmfunc/text"
 )
@@ -23,18 +23,18 @@ func BenchmarkExamplePage(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(nil,
-				element.Title(nil, TextTrusted("The Title of the Page")),
+			Head(nil,
+				Title(nil, TextTrusted("The Title of the Page")),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(HRef("/main"), TextTrusted(("Main")),
-						element.A(HRef("/details"), TextTrusted(("Details"))),
-						element.Main(nil,
-							element.H1(nil,
-								element.Div(nil, Text("Here could be your content")),
+			Body(nil,
+				Nav(nil,
+					A(HRef("/main"), TextTrusted("Main"),
+						A(HRef("/details"), TextTrusted("Details")),
+						Main(nil,
+							H1(nil,
+								Div(nil, Text("Here could be your content")),
 							),
 						),
 					),
@@ -58,25 +58,25 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil,
-				element.Title(
+				Title(
 					nil, TextTrusted("The Title of the Page"),
 				),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(HRef("/main"), TextTrusted("Main")),
-					element.A(HRef("/details"), TextTrusted("Details")),
+			Body(nil,
+				Nav(nil,
+					A(HRef("/main"), TextTrusted("Main")),
+					A(HRef("/details"), TextTrusted("Details")),
 				),
-				element.Main(nil,
-					element.H1(nil,
-						element.Div(nil, Text("Here could be your content")),
+				Main(nil,
+					H1(nil,
+						Div(nil, Text("Here could be your content")),
 					),
 					RangeIter(iterator.FromToInclusive(1, 10), func(i int) htmfunc.Element {
-						return element.Div(nil, Text(strconv.Itoa(i)))
+						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
 			),
@@ -98,19 +98,19 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil, TextTrusted("The Title of the Page"),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(HRef("/main"), TextTrusted("Main")),
-					element.A(HRef("/details"), TextTrusted("Details")),
+			Body(nil,
+				Nav(nil,
+					A(HRef("/main"), TextTrusted("Main")),
+					A(HRef("/details"), TextTrusted("Details")),
 				),
-				element.Main(nil,
-					element.H1(nil,
-						element.Div(nil, TextTrusted("Here could be your content")),
+				Main(nil,
+					H1(nil,
+						Div(nil, TextTrusted("Here could be your content")),
 					),
 				),
 			),
@@ -132,19 +132,19 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil, TextTrusted("The Title of the Page"),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(HRef("/main"), TextTrusted("Main")),
-					element.A(HRef("/details"), TextTrusted("Details")),
+			Body(nil,
+				Nav(nil,
+					A(HRef("/main"), TextTrusted("Main")),
+					A(HRef("/details"), TextTrusted("Details")),
 				),
-				element.Main(nil,
-					element.H1(nil,
-						element.Div(nil, Text("Here could be your content")),
+				Main(nil,
+					H1(nil,
+						Div(nil, Text("Here could be your content")),
 					),
 				),
 			),
@@ -166,19 +166,19 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil, TextTrusted("The Title of the Page"),
 			),
-			element.Body(nil,
-				element.Nav(nil,
-					element.A(HRef("/main"), TextTrusted("Main")),
-					element.A(HRef("/details"), TextTrusted("Details")),
+			Body(nil,
+				Nav(nil,
+					A(HRef("/main"), TextTrusted("Main")),
+					A(HRef("/details"), TextTrusted("Details")),
 				),
-				element.Main(nil,
-					element.H1(nil,
-						element.Div(nil, TextTrusted("Here could be your content")),
+				Main(nil,
+					H1(nil,
+						Div(nil, TextTrusted("Here could be your content")),
 					),
 				),
 			),
@@ -200,14 +200,14 @@ func BenchmarkRange(b *testing.B) {
 	for range b.N {
 		w.Reset()
 
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil, Text("The Title of the Page"),
 			),
-			element.Body(nil,
+			Body(nil,
 				RangeIter(iterator.FromToInclusive(1, 1), func(i int) htmfunc.Element {
-					return element.Div(nil, Text(strconv.Itoa(i)))
+					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
 		)
@@ -241,22 +241,22 @@ func BenchmarkYearCalendar(b *testing.B) {
 	b.ResetTimer()
 
 	for range b.N {
-		page := element.Html(
+		page := Html(
 			Lang("en"),
-			element.Head(
+			Head(
 				nil, TextTrusted("The Title of the Page"),
 			),
-			element.Body(nil,
-				element.Div(Class("header"),
-					element.Nav(nil,
-						element.A(HRef("/main"), TextTrusted("Main")),
-						element.A(HRef("/details"), TextTrusted("Details")),
+			Body(nil,
+				Div(Class("header"),
+					Nav(nil,
+						A(HRef("/main"), TextTrusted("Main")),
+						A(HRef("/details"), TextTrusted("Details")),
 					),
-					element.H1(nil, Text("Calendar")),
-					element.H2(nil, Text("2024")),
+					H1(nil, Text("Calendar")),
+					H2(nil, Text("2024")),
 				),
-				element.Main(nil,
-					element.Div(Class("year"),
+				Main(nil,
+					Div(Class("year"),
 						Range(months, month),
 					),
 				),
@@ -277,11 +277,11 @@ type monthDays struct {
 }
 
 func month(_ int, month monthDays) htmfunc.Element {
-	return element.Div(Class("month"),
-		element.H3(nil, Text(month.name)),
-		element.Div(Class("days"),
+	return Div(Class("month"),
+		H3(nil, Text(month.name)),
+		Div(Class("days"),
 			RangeInt(month.days, func(i int) htmfunc.Element {
-				return element.Div(Class("day"), Text(strconv.Itoa(i+1)))
+				return Div(Class("day"), Text(strconv.Itoa(i+1)))
 			}),
 		),
 	)
