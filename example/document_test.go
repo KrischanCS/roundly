@@ -71,11 +71,7 @@ func ExampleDocument() {
 	)
 
 	w := hf.NewWriter(256)
-
-	err := doc.RenderElement(w)
-	if err != nil {
-		panic("unexpected error: " + err.Error())
-	}
+	_ = doc.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
 

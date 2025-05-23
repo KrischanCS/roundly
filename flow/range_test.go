@@ -8,12 +8,135 @@ import (
 
 	"github.com/KrischanCS/go-toolbox/iterator"
 	"github.com/stretchr/testify/assert"
+	"github.com/yosssi/gohtml"
 
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
 	. "github.com/KrischanCS/htmfunc/text"
 )
+
+func ExampleRange() {
+	months := []string{
+		"January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December",
+	}
+
+	list := Ol(nil,
+		Range(months, func(_ int, month string) htmfunc.Element {
+			return Li(nil, Text(month))
+		}),
+	)
+
+	w := htmfunc.NewWriter(2048)
+	_ = list.RenderElement(w)
+
+	fmt.Println(gohtml.Format(w.String()))
+
+	// Output:
+	// <ol>
+	//   <li>
+	//     January
+	//   </li>
+	//   <li>
+	//     February
+	//   </li>
+	//   <li>
+	//     March
+	//   </li>
+	//   <li>
+	//     April
+	//   </li>
+	//   <li>
+	//     May
+	//   </li>
+	//   <li>
+	//     June
+	//   </li>
+	//   <li>
+	//     July
+	//   </li>
+	//   <li>
+	//     August
+	//   </li>
+	//   <li>
+	//     September
+	//   </li>
+	//   <li>
+	//     October
+	//   </li>
+	//   <li>
+	//     November
+	//   </li>
+	//   <li>
+	//     December
+	//   </li>
+	// </ol>
+}
+
+func ExampleRangeInt() {
+	list := Ol(nil,
+		RangeInt(5, func(i int) htmfunc.Element {
+			return Li(nil, Text(strconv.Itoa(i)))
+		}),
+	)
+
+	w := htmfunc.NewWriter(2048)
+	_ = list.RenderElement(w)
+
+	fmt.Println(gohtml.Format(w.String()))
+
+	// Output:
+	// <ol>
+	//   <li>
+	//     0
+	//   </li>
+	//   <li>
+	//     1
+	//   </li>
+	//   <li>
+	//     2
+	//   </li>
+	//   <li>
+	//     3
+	//   </li>
+	//   <li>
+	//     4
+	//   </li>
+	// </ol>
+}
+
+func ExampleRangeIter() {
+	list := Ol(nil,
+		RangeIter(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) htmfunc.Element {
+			return Li(nil, Text(strconv.FormatFloat(f, 'f', 1, 64)))
+		}),
+	)
+
+	w := htmfunc.NewWriter(2048)
+	_ = list.RenderElement(w)
+
+	fmt.Println(gohtml.Format(w.String()))
+
+	// Output:
+	// <ol>
+	//   <li>
+	//     0.0
+	//   </li>
+	//   <li>
+	//     0.1
+	//   </li>
+	//   <li>
+	//     0.2
+	//   </li>
+	//   <li>
+	//     0.3
+	//   </li>
+	//   <li>
+	//     0.4
+	//   </li>
+	// </ol>
+}
 
 //nolint:funlen
 func TestRange(t *testing.T) {

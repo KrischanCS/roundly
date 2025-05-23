@@ -4,11 +4,12 @@ package flow
 
 import "github.com/KrischanCS/htmfunc"
 
+type ElementOrAttribute interface {
+	htmfunc.Element | htmfunc.Attribute
+}
+
 // If returns the given renderer if condition is true, else a NOP renderer.
-func If[Renderer ~func(w htmfunc.Writer) error](
-	condition bool,
-	then Renderer,
-) Renderer {
+func If[EA ElementOrAttribute](condition bool, then EA) EA {
 	if condition {
 		return then
 	}
@@ -19,10 +20,7 @@ func If[Renderer ~func(w htmfunc.Writer) error](
 }
 
 // IfElse returns the then renderer, else the otherwise renderer.
-func IfElse[Renderer ~func(w htmfunc.Writer) error](
-	condition bool,
-	then, otherwise Renderer,
-) Renderer {
+func IfElse[EA ElementOrAttribute](condition bool, then, otherwise EA, ) EA {
 	if condition {
 		return then
 	}

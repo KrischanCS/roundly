@@ -13,7 +13,7 @@ import (
 func ExampleTable() {
 	w := htmfunc.NewWriter(256)
 
-	element := Table(
+	table := Table(
 		Class("test"),
 		Caption(nil, Text("Test")),
 		Thead(nil,
@@ -30,7 +30,7 @@ func ExampleTable() {
 		),
 	)
 
-	err := element.RenderElement(w)
+	err := table.RenderElement(w)
 	if err != nil {
 		panic(err)
 	}
