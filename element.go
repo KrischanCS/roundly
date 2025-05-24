@@ -8,8 +8,8 @@ func (fn Element) RenderElement(w Writer) error {
 	return fn(w)
 }
 
-// WriteElement creates a normal html element, with open and closing tag, the given attributes in the opening tag and
-// the given childNodes wrapped between the tags inside.
+// WriteElement creates a normal html element, with open and closing tag, the given attributes in
+// the opening tag and the given childNodes wrapped between the tags inside.
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
 	return func(w Writer) error {
 		err := writeOpenTag(w, tag, attributes)
@@ -35,10 +35,11 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 
 // WriteVoidElement creates a void element (An element without child nodes and closing tag).
 //
-// This must only be used for elements which don't require a closing tag according to the [html standard].
+// This must only be used for elements which don't require a closing tag according to the
+// [html standard].
 //
-// Usually it will be more convenient and readable to use the respective component functions provided by [el]. These are
-// the specified void elements and component functions:
+// Usually it will be more convenient and readable to use the respective component functions
+// provided by [el]. These are the specified void elements and component functions:
 //
 //   - area		->	[element.Area]
 //   - base		->	[element.Base]

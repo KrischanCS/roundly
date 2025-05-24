@@ -15,12 +15,12 @@ import (
 
 type Link struct {
 	Name string
-	Url  string
+	URL  string
 }
 
 func ExtractText(data *html.Node) (string, []Link) {
 	sb := strings.Builder{}
-	links := make([]Link, 0, 3) //nolint:mnd
+	links := make([]Link, 0, 3)
 
 	for node := data.FirstChild; node != nil; node = node.NextSibling {
 		switch node.Type {
@@ -71,7 +71,8 @@ func DistinguishLinkDuplicates(text string, links []Link) (string, []Link) {
 
 			index := strings.Index(text, "["+link.Name+"]")
 
-			text = text[:index+1] + strings.Replace(text[index+1:], "["+link.Name+"]", "["+name+"]", 1)
+			text = text[:index+1] +
+				strings.Replace(text[index+1:], "["+link.Name+"]", "["+name+"]", 1)
 		}
 	}
 
@@ -127,7 +128,7 @@ func addAsLink(node *html.Node, links *[]Link, sb *strings.Builder) {
 
 	for _, attr := range node.Attr {
 		if attr.Key == "href" {
-			url = HtmlStandardUrl + attr.Val
+			url = HTMLStandardURL + attr.Val
 			break
 		}
 	}
@@ -135,7 +136,7 @@ func addAsLink(node *html.Node, links *[]Link, sb *strings.Builder) {
 	text, ls := ExtractText(node)
 	name := text
 
-	*links = append(*links, Link{Name: name, Url: url})
+	*links = append(*links, Link{Name: name, URL: url})
 
 	sb.WriteString("[" + text + "]")
 

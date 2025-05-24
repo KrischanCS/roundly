@@ -64,7 +64,7 @@ func TestHtml(t *testing.T) {
 				body: element.Body(nil,
 					Text("The quick brown fox jumped over the lazy dog."),
 					Text("<p>Text Escaping Works!</p>"),
-					TextTrusted("<p>This will not be escaped!</p>")),
+					RawTrusted("<p>This will not be escaped!</p>")),
 			},
 			want: `<html lang="en"><head></head><body>The quick brown fox jumped over the lazy dog.&lt;p&gt;Text Escaping Works!&lt;/p&gt;<p>This will not be escaped!</p></body></html>`, //nolint:nolintlint,lll
 		},
@@ -115,6 +115,7 @@ func TestBase(t *testing.T) {
 	}
 }
 
+//nolint:lll
 func TestDoctype(t *testing.T) {
 	t.Parallel()
 
@@ -214,8 +215,8 @@ func TestMeta(t *testing.T) {
 
 	w := htmfunc.NewWriter(4096)
 
-	component := element.Meta(Attributes(Name("keywords"), Content("british,type face,font,fonts,highway,"+
-		"highways")))
+	component := element.Meta(Attributes(Name("keywords"), Content(
+		"british,type face,font,fonts,highway,highways")))
 
 	err := component.RenderElement(w)
 	assert.NoError(t, err)
@@ -322,7 +323,7 @@ func TestStyleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := element.Style(tt.args.attributes, TextTrusted(tt.args.css))
+			component := element.Style(tt.args.attributes, RawTrusted(tt.args.css))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -398,7 +399,7 @@ func TestTitleTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(4096)
 
-			component := element.Title(nil, TextTrusted(tt.title))
+			component := element.Title(nil, RawTrusted(tt.title))
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)

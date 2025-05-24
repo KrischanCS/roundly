@@ -12,7 +12,7 @@ import (
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
-//nolint:lll,funlen
+//nolint:lll,funlen,errcheck
 func ExampleDocument() {
 	doc := hf.Document(
 		"html",
@@ -47,13 +47,13 @@ func ExampleDocument() {
 							"nested just like HTML elements."),
 					),
 					P(nil,
-						Text("Text must be wrapped in one of the functions Text or TextTrusted "+
+						Text("Text must be wrapped in one of the functions Text or RawTrusted "+
 							"to be included as a child element. In the normal Text function, "+
 							"the given string is escaped. "+
 							"When you input some html here it will be rendered like this: '<em"+
 							">Some content</em>'. "),
 						Br(nil),
-						TextTrusted("The same content in TextTrusted will be rendered as '<em"+
+						RawTrusted("The same content in RawTrusted will be rendered as '<em"+
 							">Some content</em>."),
 					),
 					P(Attributes(Class("info"), Id("if-else")),
@@ -100,9 +100,9 @@ func ExampleDocument() {
 	//         Each element and attribute exist as a function in the respective package. Each element-function takes an attribute-function as it&#39;s first argument. To put multiple attributes on an element, the Attrs function is used, which takes. multiple attributes as arguments. After the attributes parameter, the element function takes multiple child elements as arguments. That way, elements-functions can be nested just like HTML elements.
 	//       </p>
 	//       <p>
-	//         Text must be wrapped in one of the functions Text or TextTrusted to be included as a child element. In the normal Text function, the given string is escaped. When you input some html here it will be rendered like this: &#39;&lt;em&gt;Some content&lt;/em&gt;&#39;.
+	//         Text must be wrapped in one of the functions Text or RawTrusted to be included as a child element. In the normal Text function, the given string is escaped. When you input some html here it will be rendered like this: &#39;&lt;em&gt;Some content&lt;/em&gt;&#39;.
 	//         <br>
-	//         The same content in TextTrusted will be rendered as '
+	//         The same content in RawTrusted will be rendered as '
 	//         <em>
 	//           Some content
 	//         </em>

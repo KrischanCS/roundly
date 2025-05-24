@@ -7,6 +7,8 @@ import (
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
+// TODO BdoRtl, BdoLtr, Bdi, BdiRtl, BdiLtr
+
 type RubySegment struct {
 	Text        string
 	Explanation string
@@ -40,8 +42,8 @@ func RubyText(segments []RubySegment) htmfunc.Element {
 
 func RubyExplanation(t string) htmfunc.Element {
 	return Group(
-		Rp(nil, TextTrusted("(")),
-		Rt(nil, TextTrusted(t)),
-		Rp(nil, TextTrusted(")")),
+		Rp(nil, RawTrusted("(")),
+		Rt(nil, RawTrusted(t)),
+		Rp(nil, RawTrusted(")")),
 	)
 }

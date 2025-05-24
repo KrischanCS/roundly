@@ -20,7 +20,7 @@ func If[EA ElementOrAttribute](condition bool, then EA) EA {
 }
 
 // IfElse returns the then renderer, else the otherwise renderer.
-func IfElse[EA ElementOrAttribute](condition bool, then, otherwise EA, ) EA {
+func IfElse[EA ElementOrAttribute](condition bool, then, otherwise EA) EA {
 	if condition {
 		return then
 	}

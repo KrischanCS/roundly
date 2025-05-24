@@ -115,7 +115,7 @@ func TestTextTrusted(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter(16)
 
-			err := TextTrusted(tt.text).RenderElement(w)
+			err := RawTrusted(tt.text).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.text, w.String())
@@ -150,7 +150,7 @@ func BenchmarkTextTrusted(b *testing.B) {
 	b.ReportAllocs()
 
 	for range b.N {
-		_ = TextTrusted(t)(w) //nolint:errcheck
+		_ = RawTrusted(t)(w) //nolint:errcheck
 		w.Reset()
 	}
 }

@@ -57,7 +57,12 @@ func mergeAttributes(attrs []attribute) []attribute {
 	return merged
 }
 
-func findAttrDuplicates(attrs []attribute, i int, attr attribute, visitedDuplicates set.Set[int]) []attribute {
+func findAttrDuplicates(
+	attrs []attribute,
+	i int,
+	attr attribute,
+	visitedDuplicates set.Set[int],
+) []attribute {
 	duplicates := make([]attribute, 0)
 
 	for j, other := range attrs[i+1:] {
@@ -139,7 +144,7 @@ func findDuplicatedNames(attrs attributes) set.Set[string] {
 	addFuncNameCounts(&nameAppearances, attrs.Int)
 	addFuncNameCounts(&nameAppearances, attrs.Uint)
 
-	duplicates := set.WithCapacity[string](32)
+	duplicates := set.WithCapacity[string](32) //nolint:mnd
 
 	for name, count := range nameAppearances {
 		if count > 1 {

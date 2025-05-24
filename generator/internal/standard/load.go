@@ -13,7 +13,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-const HtmlStandardUrl = `https://html.spec.whatwg.org/dev/`
+const HTMLStandardURL = `https://html.spec.whatwg.org/dev/`
 
 //nolint:gochecknoglobals
 var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
@@ -51,9 +51,9 @@ func isStandardFilePresent() bool {
 }
 
 func downloadStandardFile() {
-	const indicesUrl = HtmlStandardUrl + "indices.html"
+	const indicesURL = HTMLStandardURL + "indices.html"
 
-	response, err := http.Get(indicesUrl)
+	response, err := http.Get(indicesURL)
 	if err != nil {
 		log.Panic("Error loading indices from standard: ", err)
 	}
@@ -69,8 +69,8 @@ func downloadStandardFile() {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)
 	}
 
-	//nolint:gosec
-	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666) //nolint:mnd
+	//nolint:gosec,mnd,nolintlint
+	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Print("Error creating file htmlStandardIndices.html: ", err)
 	}

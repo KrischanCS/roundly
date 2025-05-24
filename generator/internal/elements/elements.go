@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"iter"
 	"os"
+	"path/filepath"
 	"strings"
 	"text/template"
 
@@ -59,8 +60,10 @@ func GenerateElements(standardIndicesPage *html.Node) {
 }
 
 func generateFile(group string, elements []Element) {
+	filePath := filepath.Join("..", "element", group+".go")
+
 	//nolint:gosec // Files are written for everyone
-	file, err := os.OpenFile("../element/"+group+".go", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	file, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		panic(fmt.Sprintf("Error opening file %s: %s", group+".go", err))
 	}
@@ -98,7 +101,7 @@ func groupElements(e iter.Seq[Element]) map[string][]Element {
 	iterator.Reduce(e, &groups, func(accumulator *map[string][]Element, value Element) {
 		group, ok := (*accumulator)[value.SemanticGroup]
 		if !ok {
-			group = make([]Element, 0, 8)
+			group = make([]Element, 0)
 		}
 
 		group = append(group, value)
@@ -185,9 +188,14 @@ func normalizeName(name string) (string, bool) {
 // TODO fetch this from the standard instead if hardcoding
 
 //nolint:gochecknoglobals
-var voidElementTags = set.Of("area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param")
+var voidElementTags = set.Of(
+	"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param")
 
-func elementFromRow(name string, documentationLink standard.Link, descriptionNode *html.Node) Element {
+func elementFromRow(
+	name string,
+	documentationLink standard.Link,
+	descriptionNode *html.Node,
+) Element {
 	element := Element{
 		Tag:               name,
 		FuncName:          strings.ToUpper(string(name[0])) + name[1:],
@@ -233,11 +241,12 @@ func extractTokens(node *html.Node) ([]string, []standard.Link) {
 }
 
 func extractSemanticGroup(link standard.Link) string {
-	s := strings.Split(link.Url, "#")[0]
+	s := strings.Split(link.URL, "#")[0]
+	s, _ = strings.CutPrefix(s, "https://html.spec.whatwg.org/dev/")
 
 	group, ok := semanticGroupMapping[s]
 	if !ok {
-		panic("Unknown semantic group link: " + link.Url)
+		panic("Unknown semantic group link: " + link.URL)
 	}
 
 	return group
@@ -245,22 +254,22 @@ func extractSemanticGroup(link standard.Link) string {
 
 //nolint:gochecknoglobals
 var semanticGroupMapping = map[string]string{
-	"https://html.spec.whatwg.org/dev/text-level-semantics.html":                "textSemantics",
-	"https://html.spec.whatwg.org/dev/sections.html":                            "sections",
-	"https://html.spec.whatwg.org/dev/image-maps.html":                          "imageMaps",
-	"https://html.spec.whatwg.org/dev/media.html":                               "media",
-	"https://html.spec.whatwg.org/dev/semantics.html":                           "semantics",
-	"https://html.spec.whatwg.org/dev/grouping-content.html":                    "grouping",
-	"https://html.spec.whatwg.org/dev/form-elements.html":                       "formElements",
-	"https://html.spec.whatwg.org/dev/canvas.html":                              "canvas",
-	"https://html.spec.whatwg.org/dev/tables.html":                              "tables",
-	"https://html.spec.whatwg.org/dev/edits.html":                               "edits",
-	"https://html.spec.whatwg.org/dev/interactive-elements.html":                "interactive",
-	"https://html.spec.whatwg.org/dev/iframe-embed-object.html":                 "iframeEmbedObject",
-	"https://html.spec.whatwg.org/dev/forms.html":                               "forms",
-	"https://html.spec.whatwg.org/dev/embedded-content.html":                    "embedded",
-	"https://html.spec.whatwg.org/dev/input.html":                               "input",
-	"https://html.spec.whatwg.org/dev/https://w3c.github.io/mathml-core/":       "mathml",
-	"https://html.spec.whatwg.org/dev/scripting.html":                           "scripting",
-	"https://html.spec.whatwg.org/dev/https://svgwg.org/svg2-draft/struct.html": "svg",
+	"text-level-semantics.html":                "textSemantics",
+	"sections.html":                            "sections",
+	"image-maps.html":                          "imageMaps",
+	"media.html":                               "media",
+	"semantics.html":                           "semantics",
+	"grouping-content.html":                    "grouping",
+	"form-elements.html":                       "formElements",
+	"canvas.html":                              "canvas",
+	"tables.html":                              "tables",
+	"edits.html":                               "edits",
+	"interactive-elements.html":                "interactive",
+	"iframe-embed-object.html":                 "iframeEmbedObject",
+	"forms.html":                               "forms",
+	"embedded-content.html":                    "embedded",
+	"input.html":                               "input",
+	"https://w3c.github.io/mathml-core/":       "mathml",
+	"scripting.html":                           "scripting",
+	"https://svgwg.org/svg2-draft/struct.html": "svg",
 }

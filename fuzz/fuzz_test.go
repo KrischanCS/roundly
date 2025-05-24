@@ -145,7 +145,7 @@ var texts = []string{ //nolint:gochecknoglobals
 	"Three < Four",
 	"'Text with quotes'",
 	"<>>><<''\"\"&&",
-	"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+	"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
 }
 
 func FuzzDom(f *testing.F) {

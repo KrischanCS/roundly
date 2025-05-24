@@ -65,7 +65,7 @@ var inputTypes = []string{ //nolint:gochecknoglobals
 }
 
 func findAttributes(body *html.Node) attributes {
-	attributesTable := standard.FindNodeWithId(body, "attributes-1")
+	attributesTable := standard.FindNodeWithID(body, "attributes-1")
 	if attributesTable == nil {
 		log.Fatal("Error finding attributes table")
 	}
@@ -73,7 +73,7 @@ func findAttributes(body *html.Node) attributes {
 	tBody := standard.FindTBody(attributesTable)
 
 	attrsByName := make(map[string][]*attribute)
-	attrs := make([]*attribute, 0, 256) //nolint:mnd
+	attrs := make([]*attribute, 0, 256)
 
 	for row := range tBody.ChildNodes() {
 		attr := parseAttribute(row)
@@ -129,17 +129,27 @@ func createEnumAttrFuncName(attr attribute, value string) string {
 		return funcName
 	}
 
-	for i := strings.IndexByte(funcNameSuffix, '-'); i != -1; i = strings.IndexByte(funcNameSuffix, '-') {
-		funcNameSuffix = strings.Replace(funcNameSuffix, "-", "", 1)
-		funcNameSuffix = funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
-	}
-
-	for i := strings.IndexByte(funcNameSuffix, '/'); i != -1; i = strings.IndexByte(funcNameSuffix, '/') {
-		funcNameSuffix = strings.Replace(funcNameSuffix, "/", "", 1)
-		funcNameSuffix = funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
-	}
+	funcNameSuffix = replaceAndUppercaseNext(funcNameSuffix, '-')
+	funcNameSuffix = replaceAndUppercaseNext(funcNameSuffix, '/')
 
 	return attr.FuncName + strings.ToUpper(funcNameSuffix[:1]) + funcNameSuffix[1:]
+}
+
+func replaceAndUppercaseNext(funcNameSuffix string, char byte) string {
+	for i := index(funcNameSuffix, char); i != -1; i = strings.IndexByte(funcNameSuffix, char) {
+		funcNameSuffix = strings.Replace(funcNameSuffix, string(char), "", 1)
+		funcNameSuffix = uppercaseAt(funcNameSuffix, i)
+	}
+
+	return funcNameSuffix
+}
+
+func index(text string, b byte) int {
+	return strings.IndexByte(text, b)
+}
+
+func uppercaseAt(funcNameSuffix string, i int) string {
+	return funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
 }
 
 // handleOrderedListTypeAttributes checks for an annoying special case… The
@@ -253,14 +263,14 @@ func mergeLinks(disambiguated []attribute) []standard.Link {
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {
-	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
+	eventHandlersTable := standard.FindNodeWithID(body, "ix-event-handlers")
 	if eventHandlersTable == nil {
 		log.Fatal("Error finding event handlers table")
 	}
 
 	tBody := standard.FindTBody(eventHandlersTable)
 
-	attrs := make([]attribute, 0, 256) //nolint:mnd
+	attrs := make([]attribute, 0, 256)
 
 	for row := range tBody.ChildNodes() {
 		attr := parseAttribute(row)
@@ -282,7 +292,6 @@ func addByName(attrsByName map[string][]*attribute, attr *attribute) {
 
 var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
-//nolint:mnd
 func classifyAttributes(attrs []*attribute) attributes {
 	attrsClassified := attributes{
 		Text:           make([]attribute, 0, 16),

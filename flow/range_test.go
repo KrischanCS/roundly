@@ -16,6 +16,7 @@ import (
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
+//nolint:errcheck
 func ExampleRange() {
 	months := []string{
 		"January", "February", "March", "April", "May", "June",
@@ -74,6 +75,7 @@ func ExampleRange() {
 	// </ol>
 }
 
+//nolint:errcheck
 func ExampleRangeInt() {
 	list := Ol(nil,
 		RangeInt(5, func(i int) htmfunc.Element {
@@ -106,6 +108,7 @@ func ExampleRangeInt() {
 	// </ol>
 }
 
+//nolint:errcheck
 func ExampleRangeIter() {
 	list := Ol(nil,
 		RangeIter(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) htmfunc.Element {

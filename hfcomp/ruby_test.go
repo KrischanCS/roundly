@@ -8,8 +8,8 @@ import (
 	"github.com/KrischanCS/htmfunc"
 )
 
+//nolint:gosmopolitan,errcheck
 func ExampleRubyText() {
-
 	rb := RubyText([]RubySegment{
 		{"漢", "kan"},
 		{"字", "ji"},

@@ -12,7 +12,11 @@ import (
 )
 
 //nolint:gochecknoglobals
-var reloadStandard = flag.Bool("reloadHtmlStandard", false, "reload html standard from the web instead of file system")
+var reloadStandard = flag.Bool(
+	"reloadHtmlStandard",
+	false,
+	"reload html standard from the web instead of file system",
+)
 
 func main() {
 	flag.Parse()

@@ -25,7 +25,11 @@ func GenerateAttributes(body *html.Node) {
 	generateFile("attributesEnum.go.tmpl", attributes.Enum, "enum.go")
 	generateFile("attributesInputType.go.tmpl", attributes.InputType, "inputType.go")
 	generateFile("attributesCommaSeparated.go.tmpl", attributes.ListComma, "commaSeperated.go")
-	generateFile("attributesCommaSeparatedFloats.go.tmpl", attributes.ListCommaFloat, "commaSeperatedFloat.go")
+	generateFile(
+		"attributesCommaSeparatedFloats.go.tmpl",
+		attributes.ListCommaFloat,
+		"commaSeperatedFloat.go",
+	)
 	generateFile("attributesSpaceSeparated.go.tmpl", attributes.ListSpace, "spaceSeperated.go")
 	generateFile("attributesFloat.go.tmpl", attributes.Float, "float.go")
 	generateFile("attributesInt.go.tmpl", attributes.Int, "int.go")
@@ -36,7 +40,7 @@ func GenerateAttributes(body *html.Node) {
 
 func generateFile(name string, attributes []attribute, fileName string) {
 	//nolint:gosec
-	file, err := os.OpenFile("../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666) //nolint:mnd
+	file, err := os.OpenFile("../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}

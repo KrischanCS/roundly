@@ -41,13 +41,18 @@ linters:
                 - github.com/KrischanCS/htmfunc/flow
 
     staticcheck:
+      initialisms: [] # Not check for any initialism, I think it hurts readability more than it helps (I know I fight the language idioms here, might rethink it later).
       checks:
         - all # Enable all checks
-        - -ST1003 # But ignore "ST1003 - Poorly chosen identifier" for the moment, underscores are currently included in names of some generated methods
+        - -ST1001 # allowing some packages to be dot-imported, and handling them with the revive rule above
 
     testifylint:
       disable:
         - require-error # I only use require in the "Arrange" phase of tests, in the "Assert" phase I prefer normal assertions also for errors
+
+    lll:
+      line-length: 100
+      tab-width: 4
 
     varnamelen:
       max-distance: 15 # Don't care too much about short identifiers in go, changing from default 6 to 15
@@ -58,6 +63,7 @@ linters:
         - w io.Writer
         - w Writer
         - w *bytes.Buffer
+        - w htmfunc.Writer
 
         # String builders
         - sb strings.Builder
@@ -68,6 +74,12 @@ linters:
 
     nlreturn:
       block-size: 2
+
+    mnd:
+      ignored-numbers:
+        - '0666'
+      ignored-functions:
+        - '^make'
 
   exclusions:
     generated: lax
