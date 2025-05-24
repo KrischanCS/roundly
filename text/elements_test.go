@@ -11,6 +11,7 @@ func ExampleDelText() {
 	del := DelText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := del(w)
 	if err != nil {
 		panic(err)
@@ -25,6 +26,7 @@ func ExampleInsText() {
 	ins := InsText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := ins(w)
 	if err != nil {
 		panic(err)
@@ -39,6 +41,7 @@ func ExampleButtonText() {
 	button := ButtonText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := button(w)
 	if err != nil {
 		panic(err)
@@ -53,6 +56,7 @@ func ExampleLegendText() {
 	legend := LegendText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := legend(w)
 	if err != nil {
 		panic(err)
@@ -67,6 +71,7 @@ func ExampleOptionText() {
 	option := OptionText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := option(w)
 	if err != nil {
 		panic(err)
@@ -81,6 +86,7 @@ func ExampleOutputText() {
 	output := OutputText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := output(w)
 	if err != nil {
 		panic(err)
@@ -96,6 +102,7 @@ func ExampleProgressText() {
 		Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := progress(w)
 	if err != nil {
 		panic(err)
@@ -111,6 +118,7 @@ func ExampleTextareaText() {
 		Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := textarea(w)
 	if err != nil {
 		panic(err)
@@ -125,6 +133,7 @@ func ExampleLabelText() {
 	label := LabelText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := label(w)
 	if err != nil {
 		panic(err)
@@ -140,6 +149,7 @@ func ExampleBlockquoteText() {
 		Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := blockquote(w)
 	if err != nil {
 		panic(err)
@@ -154,6 +164,7 @@ func ExampleDdText() {
 	dd := DdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := dd(w)
 	if err != nil {
 		panic(err)
@@ -168,6 +179,7 @@ func ExampleDtText() {
 	dt := DtText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := dt(w)
 	if err != nil {
 		panic(err)
@@ -183,6 +195,7 @@ func ExampleFigcaptionText() {
 		Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := figcaption(w)
 	if err != nil {
 		panic(err)
@@ -197,6 +210,7 @@ func ExampleLiText() {
 	li := LiText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := li(w)
 	if err != nil {
 		panic(err)
@@ -211,6 +225,7 @@ func ExamplePText() {
 	p := PText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := p(w)
 	if err != nil {
 		panic(err)
@@ -225,6 +240,7 @@ func ExamplePreText() {
 	pre := PreText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := pre(w)
 	if err != nil {
 		panic(err)
@@ -239,6 +255,7 @@ func ExampleUlText() {
 	ul := UlText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := ul(w)
 	if err != nil {
 		panic(err)
@@ -253,6 +270,7 @@ func ExampleSummaryText() {
 	summary := SummaryText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := summary(w)
 	if err != nil {
 		panic(err)
@@ -268,6 +286,7 @@ func ExampleNoscriptText() {
 		Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := noscript(w)
 	if err != nil {
 		panic(err)
@@ -282,6 +301,7 @@ func ExampleH1Text() {
 	h1 := H1Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h1(w)
 	if err != nil {
 		panic(err)
@@ -296,6 +316,7 @@ func ExampleH2Text() {
 	h2 := H2Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h2(w)
 	if err != nil {
 		panic(err)
@@ -310,6 +331,7 @@ func ExampleH3Text() {
 	h3 := H3Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h3(w)
 	if err != nil {
 		panic(err)
@@ -324,6 +346,7 @@ func ExampleH4Text() {
 	h4 := H4Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h4(w)
 	if err != nil {
 		panic(err)
@@ -338,6 +361,7 @@ func ExampleH5Text() {
 	h5 := H5Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h5(w)
 	if err != nil {
 		panic(err)
@@ -352,6 +376,7 @@ func ExampleH6Text() {
 	h6 := H6Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := h6(w)
 	if err != nil {
 		panic(err)
@@ -367,6 +392,7 @@ func ExampleTitleText() {
 
 	w := htmfunc.NewWriter()
 	err := title(w)
+
 	if err != nil {
 		panic(err)
 	}
@@ -380,6 +406,7 @@ func ExampleCaptionText() {
 	caption := CaptionText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := caption(w)
 	if err != nil {
 		panic(err)
@@ -394,6 +421,7 @@ func ExampleTdText() {
 	td := TdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := td(w)
 	if err != nil {
 		panic(err)
@@ -408,6 +436,7 @@ func ExampleThText() {
 	th := ThText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := th(w)
 	if err != nil {
 		panic(err)
@@ -422,6 +451,7 @@ func ExampleAText() {
 	a := AText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := a(w)
 	if err != nil {
 		panic(err)
@@ -436,6 +466,7 @@ func ExampleAbbrText() {
 	abbr := AbbrText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := abbr(w)
 	if err != nil {
 		panic(err)
@@ -450,6 +481,7 @@ func ExampleBText() {
 	b := BText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := b(w)
 	if err != nil {
 		panic(err)
@@ -464,6 +496,7 @@ func ExampleCiteText() {
 	cite := CiteText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := cite(w)
 	if err != nil {
 		panic(err)
@@ -478,6 +511,7 @@ func ExampleCodeText() {
 	code := CodeText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := code(w)
 	if err != nil {
 		panic(err)
@@ -492,6 +526,7 @@ func ExampleDataText() {
 	data := DataText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := data(w)
 	if err != nil {
 		panic(err)
@@ -506,6 +541,7 @@ func ExampleDfnText() {
 	dfn := DfnText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := dfn(w)
 	if err != nil {
 		panic(err)
@@ -520,6 +556,7 @@ func ExampleEmText() {
 	em := EmText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := em(w)
 	if err != nil {
 		panic(err)
@@ -534,6 +571,7 @@ func ExampleIText() {
 	i := IText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := i(w)
 	if err != nil {
 		panic(err)
@@ -548,6 +586,7 @@ func ExampleKbdText() {
 	kbd := KbdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := kbd(w)
 	if err != nil {
 		panic(err)
@@ -562,6 +601,7 @@ func ExampleMarkText() {
 	mark := MarkText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := mark(w)
 	if err != nil {
 		panic(err)
@@ -576,6 +616,7 @@ func ExampleQText() {
 	q := QText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := q(w)
 	if err != nil {
 		panic(err)
@@ -590,6 +631,7 @@ func ExampleRpText() {
 	rp := RpText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := rp(w)
 	if err != nil {
 		panic(err)
@@ -604,6 +646,7 @@ func ExampleRtText() {
 	rt := RtText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := rt(w)
 	if err != nil {
 		panic(err)
@@ -618,6 +661,7 @@ func ExampleSText() {
 	s := SText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := s(w)
 	if err != nil {
 		panic(err)
@@ -632,6 +676,7 @@ func ExampleSampText() {
 	samp := SampText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := samp(w)
 	if err != nil {
 		panic(err)
@@ -646,6 +691,7 @@ func ExampleSmallText() {
 	small := SmallText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := small(w)
 	if err != nil {
 		panic(err)
@@ -660,6 +706,7 @@ func ExampleSpanText() {
 	span := SpanText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := span(w)
 	if err != nil {
 		panic(err)
@@ -674,6 +721,7 @@ func ExampleStrongText() {
 	strong := StrongText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := strong(w)
 	if err != nil {
 		panic(err)
@@ -688,6 +736,7 @@ func ExampleSubText() {
 	sub := SubText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := sub(w)
 	if err != nil {
 		panic(err)
@@ -702,6 +751,7 @@ func ExampleSupText() {
 	sup := SupText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := sup(w)
 	if err != nil {
 		panic(err)
@@ -716,6 +766,7 @@ func ExampleUText() {
 	u := UText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := u(w)
 	if err != nil {
 		panic(err)
@@ -730,6 +781,7 @@ func ExampleVarText() {
 	varE := VarText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := htmfunc.NewWriter()
+
 	err := varE(w)
 	if err != nil {
 		panic(err)

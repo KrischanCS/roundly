@@ -4,8 +4,6 @@ Htmfunc is a go library for dynamic HTML generation. It works without template p
 code generation during development. Instead it provides functions for elements and attributes.
 These functions can be composed to reusable components.
 
-# Example
-
 ```go
 package main
 
@@ -48,7 +46,7 @@ probably just have used that.
 But when I finally found that gomponents exists, I had already implemented a significant part of
 htmfunc and also liked some of the things I did differently, so I decided to continue on it anyway.
 
-# Packages
+## Packages
 
 The rendering functions are distributed over the following packages:
 
@@ -62,7 +60,7 @@ I recommend to use those in files without other domain logic and dot-import them
 example. Even if this is usually not recommended in go. In my opinion it improves the readability
 drastically in this case.
 
-# Usage
+## Usage
 
 To create an element, simple use one of the function from the element package which all returns
 an `htmfunc.Element`:
@@ -75,7 +73,7 @@ fmt.Println(div.String())
 // Output: <div></div>
 ```
 
-## Rendering
+### Rendering
 
 The String function should be used mainly for debugging purposes and for brevity in testing and
 examples like the one above.
@@ -97,7 +95,7 @@ if err != nil {
 }
 ```
 
-> ### Minification
+> #### Minification
 >
 > The rendered HTML will not include any line breaks or indentation, so it minified already (At
 > least to some extend, minifiers can produce even more compact results).
@@ -117,7 +115,7 @@ if err != nil {
 >   <li>crab</li>
 > </ul>
 
-## Attributes
+### Attributes
 
 The first parameter of each element function, which was `nil` receives the attributes of the
 element. So adding an id to our empty div looks like this:
@@ -140,11 +138,13 @@ Div(Attributes(Id("the-empty-div"), Class("fancy-div")))
 
 Attribute functions also accept multiple string values:
 
+<!--
 ```go
 Div(Class("fancy-div", "glows-in-the-dark"))
 
 // <div class="fancy-div glows-in-the-dark"></div>)
 ```
+-->
 
 ## Child Elements
 
@@ -219,4 +219,42 @@ Article(nil,                                                                    
     PText("My first htmfunc paragraph!", Id("first-paragraph"), Class("opener")), //     <p id="first-paragraph" class="opener">This is a paragraph.</p>
     PText("And Already the next one…"),                                           //     <p>And another one…</p>
 )                                                                                 // </article>
+```
+
+```go
+Ul(Class("mascot-list"),     // <ul class="mascot-list">
+    Li(nil, Text("Gopher")), //   <li>Gopher</li>
+    Li(nil, Text("Ferris")), //   <li>Ferris</li>
+    Li(nil, Text("Lucy")),   //   <li>Lucy</li>
+    Li(nil, Text("Duke")),   //   <li>Duke</li>
+)                            // </ul>
+```
+
+### Logic
+
+The `logic` package provides functions for conditional rendering, loops and groups. They can be
+used as element functions, but don't render themself to the writer.
+
+```go
+group...
+```
+
+```go
+if...
+```
+
+```go
+ifElse...
+```
+
+```go
+Range...
+```
+
+```go
+RangeInt...
+```
+
+```go
+RangeIter...
 ```

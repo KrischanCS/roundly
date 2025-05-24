@@ -5,12 +5,12 @@ import (
 	"io"
 )
 
-// NewWriter creates a bytes.Buffer with a default initial capacity. It can be used as a [Writer]
+// NewWriter creates a bytes.Buffer with a default initial capacity. It can be used as a [Writer].
 func NewWriter() *bytes.Buffer {
 	return bytes.NewBuffer(make([]byte, 0, 256))
 }
 
-// NewWriterSize creates a bytes.Buffer the given initial size. It can be used as a [Writer]
+// NewWriterSize creates a bytes.Buffer the given initial size. It can be used as a [Writer].
 func NewWriterSize(size int) *bytes.Buffer {
 	return bytes.NewBuffer(make([]byte, 0, size))
 }
@@ -22,4 +22,3 @@ type Writer interface {
 	io.ByteWriter
 	io.StringWriter
 }
-

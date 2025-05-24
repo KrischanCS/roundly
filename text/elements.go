@@ -37,12 +37,14 @@ func OutputText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Output(Attributes(attributes...), Text(text))
 }
 
-// ProgressText creates a [element.Progress] element without any attributes and text as the only child.
+// ProgressText creates a [element.Progress] element without any attributes and text as the only
+// child.
 func ProgressText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Progress(Attributes(attributes...), Text(text))
 }
 
-// TextareaText creates a [element.Textarea] element without any attributes and text as the only child.
+// TextareaText creates a [element.Textarea] element without any attributes and text as the only
+// child.
 func TextareaText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Textarea(Attributes(attributes...), Text(text))
 }
@@ -52,7 +54,8 @@ func LabelText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Label(Attributes(attributes...), Text(text))
 }
 
-// BlockquoteText creates a [element.Blockquote] element without any attributes and text as the only child.
+// BlockquoteText creates a [element.Blockquote] element without any attributes and text as the only
+// child.
 func BlockquoteText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Blockquote(Attributes(attributes...), Text(text))
 }
@@ -67,7 +70,8 @@ func DtText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Dt(Attributes(attributes...), Text(text))
 }
 
-// FigcaptionText creates a [element.Figcaption] element without any attributes and text as the only child.
+// FigcaptionText creates a [element.Figcaption] element without any attributes and text as the only
+// child.
 func FigcaptionText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Figcaption(Attributes(attributes...), Text(text))
 }
@@ -92,12 +96,14 @@ func UlText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Ul(Attributes(attributes...), Text(text))
 }
 
-// SummaryText creates a [element.Summary] element without any attributes and text as the only child.
+// SummaryText creates a [element.Summary] element without any attributes and text as the only
+// child.
 func SummaryText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Summary(Attributes(attributes...), Text(text))
 }
 
-// NoscriptText creates a [element.Noscript] element without any attributes and text as the only child.
+// NoscriptText creates a [element.Noscript] element without any attributes and text as the only
+// child.
 func NoscriptText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Noscript(Attributes(attributes...), Text(text))
 }
@@ -137,7 +143,8 @@ func TitleText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Title(Attributes(attributes...), Text(text))
 }
 
-// CaptionText creates a [element.Caption] element without any attributes and text as the only child.
+// CaptionText creates a [element.Caption] element without any attributes and text as the only
+// child.
 func CaptionText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
 	return element.Caption(Attributes(attributes...), Text(text))
 }

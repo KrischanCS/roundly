@@ -38,7 +38,7 @@ linters:
                 - github.com/KrischanCS/htmfunc/element
                 - github.com/KrischanCS/htmfunc/attribute
                 - github.com/KrischanCS/htmfunc/text
-                - github.com/KrischanCS/htmfunc/flow
+                - github.com/KrischanCS/htmfunc/logic
 
     staticcheck:
       initialisms: [] # Not check for any initialism, I think it hurts readability more than it helps (I know I fight the language idioms here, might rethink it later).

@@ -4,7 +4,7 @@ package htmfunc
 
 type Element func(w Writer) error
 
-// RenderElement renders the element to the given Writer
+// RenderElement renders the element to the given Writer.
 func (fn Element) RenderElement(w Writer) error {
 	return fn(w)
 }
@@ -13,6 +13,7 @@ func (fn Element) RenderElement(w Writer) error {
 // this exists mainly for brevity in tests and examples.
 func (fn Element) String() string {
 	w := NewWriter()
+
 	err := fn(w)
 	if err != nil {
 		panic("Writing to bufio.Writer failed unexpectedly: " + err.Error())
