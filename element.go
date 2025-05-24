@@ -4,8 +4,21 @@ package htmfunc
 
 type Element func(w Writer) error
 
+// RenderElement renders the element to the given Writer
 func (fn Element) RenderElement(w Writer) error {
 	return fn(w)
+}
+
+// String renders the element to a string. For most use cases RenderElement will be more efficient,
+// this exists mainly for brevity in tests and examples.
+func (fn Element) String() string {
+	w := NewWriter()
+	err := fn(w)
+	if err != nil {
+		panic("Writing to bufio.Writer failed unexpectedly: " + err.Error())
+	}
+
+	return w.String()
 }
 
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in
