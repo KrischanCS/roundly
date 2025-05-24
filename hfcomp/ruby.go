@@ -7,8 +7,6 @@ import (
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
-// TODO BdoRtl, BdoLtr, Bdi, BdiRtl, BdiLtr
-
 type RubySegment struct {
 	Text        string
 	Explanation string
