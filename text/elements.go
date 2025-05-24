@@ -1,558 +1,268 @@
 package text
 
 import (
-	"fmt"
-
 	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
+	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/htmfunc/element"
 )
 
-// DelT creates an [element.Del] without any attributes and text as the only child.
-func DelT(text string) htmfunc.Element {
-	return Del(nil, Text(text))
+// DelText creates a [element.Del] element without any attributes and
+// text as the only child.
+func DelText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Del(Attributes(attributes...), Text(text))
 }
 
-// DelTf creates an [element.Del] without any attributes and the formatted template as its only
-// child.
-func DelTf(template string, args ...any) htmfunc.Element {
-	return Del(nil, Text(fmt.Sprintf(template, args...)))
+// InsText creates a [element.Ins] element without any attributes and text as the only child.
+func InsText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Ins(Attributes(attributes...), Text(text))
 }
 
-// InsT creates an [element.Ins] without any attributes and text as the only child.
-func InsT(text string) htmfunc.Element {
-	return Ins(nil, Text(text))
+// ButtonText creates a [element.Button] element without any attributes and text as the only child.
+func ButtonText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Button(Attributes(attributes...), Text(text))
 }
 
-// InsTf creates an [element.Ins] without any attributes and the formatted template as its only
-// child.
-func InsTf(template string, args ...any) htmfunc.Element {
-	return Ins(nil, Text(fmt.Sprintf(template, args...)))
+// LegendText creates a [element.Legend] element without any attributes and text as the only child.
+func LegendText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Legend(Attributes(attributes...), Text(text))
 }
 
-// ButtonT creates an [element.Button] without any attributes and text as the only child.
-func ButtonT(text string) htmfunc.Element {
-	return Button(nil, Text(text))
+// OptionText creates a [element.Option] element without any attributes and text as the only child.
+func OptionText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Option(Attributes(attributes...), Text(text))
 }
 
-// ButtonTf creates an [element.Button] without any attributes and the formatted template as its
-// only child.
-func ButtonTf(template string, args ...any) htmfunc.Element {
-	return Button(nil, Text(fmt.Sprintf(template, args...)))
+// OutputText creates a [element.Output] element without any attributes and text as the only child.
+func OutputText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Output(Attributes(attributes...), Text(text))
 }
 
-// LegendT creates an [element.Legend] without any attributes and text as the only child.
-func LegendT(text string) htmfunc.Element {
-	return Legend(nil, Text(text))
+// ProgressText creates a [element.Progress] element without any attributes and text as the only child.
+func ProgressText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Progress(Attributes(attributes...), Text(text))
 }
 
-// LegendTf creates an [element.Legend] without any attributes and the formatted template as its
-// only child.
-func LegendTf(template string, args ...any) htmfunc.Element {
-	return Legend(nil, Text(fmt.Sprintf(template, args...)))
+// TextareaText creates a [element.Textarea] element without any attributes and text as the only child.
+func TextareaText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Textarea(Attributes(attributes...), Text(text))
 }
 
-// OptionT creates an [element.Option] without any attributes and text as the only child.
-func OptionT(text string) htmfunc.Element {
-	return Option(nil, Text(text))
+// LabelText creates a [element.Label] element without any attributes and text as the only child.
+func LabelText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Label(Attributes(attributes...), Text(text))
 }
 
-// OptionTf creates an [element.Option] without any attributes and the formatted template as its
-// only child.
-func OptionTf(template string, args ...any) htmfunc.Element {
-	return Option(nil, Text(fmt.Sprintf(template, args...)))
+// BlockquoteText creates a [element.Blockquote] element without any attributes and text as the only child.
+func BlockquoteText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Blockquote(Attributes(attributes...), Text(text))
 }
 
-// OutputT creates an [element.Output] without any attributes and text as the only child.
-func OutputT(text string) htmfunc.Element {
-	return Output(nil, Text(text))
+// DdText creates a [element.Dd] element without any attributes and text as the only child.
+func DdText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Dd(Attributes(attributes...), Text(text))
 }
 
-// OutputTf creates an [element.Output] without any attributes and the formatted template as its
-// only child.
-func OutputTf(template string, args ...any) htmfunc.Element {
-	return Output(nil, Text(fmt.Sprintf(template, args...)))
+// DtText creates a [element.Dt] element without any attributes and text as the only child.
+func DtText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Dt(Attributes(attributes...), Text(text))
 }
 
-// ProgressT creates an [element.Progress] without any attributes and text as the only child.
-func ProgressT(text string) htmfunc.Element {
-	return Progress(nil, Text(text))
+// FigcaptionText creates a [element.Figcaption] element without any attributes and text as the only child.
+func FigcaptionText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Figcaption(Attributes(attributes...), Text(text))
 }
 
-// ProgressTf creates an [element.Progress] without any attributes and the formatted template as its
-// only child.
-func ProgressTf(template string, args ...any) htmfunc.Element {
-	return Progress(nil, Text(fmt.Sprintf(template, args...)))
+// LiText creates a [element.Li] element without any attributes and text as the only child.
+func LiText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Li(Attributes(attributes...), Text(text))
 }
 
-// TextareaT creates an [element.Textarea] without any attributes and text as the only child.
-func TextareaT(text string) htmfunc.Element {
-	return Textarea(nil, Text(text))
+// PText creates a [element.P] element without any attributes and text as the only child.
+func PText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.P(Attributes(attributes...), Text(text))
 }
 
-// TextareaTf creates an [element.Textarea] without any attributes and the formatted template as its
-// only child.
-func TextareaTf(template string, args ...any) htmfunc.Element {
-	return Textarea(nil, Text(fmt.Sprintf(template, args...)))
+// PreText creates a [element.Pre] element without any attributes and text as the only child.
+func PreText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Pre(Attributes(attributes...), Text(text))
 }
 
-// LabelT creates an [element.Label] without any attributes and text as the only child.
-func LabelT(text string) htmfunc.Element {
-	return Label(nil, Text(text))
+// UlText creates a [element.Ul] element without any attributes and text as the only child.
+func UlText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Ul(Attributes(attributes...), Text(text))
 }
 
-// LabelTf creates an [element.Label] without any attributes and the formatted template as its only
-// child.
-func LabelTf(template string, args ...any) htmfunc.Element {
-	return Label(nil, Text(fmt.Sprintf(template, args...)))
+// SummaryText creates a [element.Summary] element without any attributes and text as the only child.
+func SummaryText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Summary(Attributes(attributes...), Text(text))
 }
 
-// BlockquoteT creates an [element.Blockquote] without any attributes and text as the only child.
-func BlockquoteT(text string) htmfunc.Element {
-	return Blockquote(nil, Text(text))
+// NoscriptText creates a [element.Noscript] element without any attributes and text as the only child.
+func NoscriptText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Noscript(Attributes(attributes...), Text(text))
 }
 
-// BlockquoteTf creates an [element.Blockquote] without any attributes and the formatted template as
-// its only child.
-func BlockquoteTf(template string, args ...any) htmfunc.Element {
-	return Blockquote(nil, Text(fmt.Sprintf(template, args...)))
+// H1Text creates a [element.H1] element without any attributes and text as the only child.
+func H1Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H1(Attributes(attributes...), Text(text))
 }
 
-// DdT creates an [element.Dd] without any attributes and text as the only child.
-func DdT(text string) htmfunc.Element {
-	return Dd(nil, Text(text))
+// H2Text creates a [element.H2] element without any attributes and text as the only child.
+func H2Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H2(Attributes(attributes...), Text(text))
 }
 
-// DdTf creates an [element.Dd] without any attributes and the formatted template as its only child.
-func DdTf(template string, args ...any) htmfunc.Element {
-	return Dd(nil, Text(fmt.Sprintf(template, args...)))
+// H3Text creates a [element.H3] element without any attributes and text as the only child.
+func H3Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H3(Attributes(attributes...), Text(text))
 }
 
-// DtT creates an [element.Dt] without any attributes and text as the only child.
-func DtT(text string) htmfunc.Element {
-	return Dt(nil, Text(text))
+// H4Text creates a [element.H4] element without any attributes and text as the only child.
+func H4Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H4(Attributes(attributes...), Text(text))
 }
 
-// DtTf creates an [element.Dt] without any attributes and the formatted template as its only child.
-func DtTf(template string, args ...any) htmfunc.Element {
-	return Dt(nil, Text(fmt.Sprintf(template, args...)))
+// H5Text creates a [element.H5] element without any attributes and text as the only child.
+func H5Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H5(Attributes(attributes...), Text(text))
 }
 
-// FigcaptionT creates an [element.Figcaption] without any attributes and text as the only child.
-func FigcaptionT(text string) htmfunc.Element {
-	return Figcaption(nil, Text(text))
+// H6Text creates a [element.H6] element without any attributes and text as the only child.
+func H6Text(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.H6(Attributes(attributes...), Text(text))
 }
 
-// FigcaptionTf creates an [element.Figcaption] without any attributes and the formatted template as
-// its only child.
-func FigcaptionTf(template string, args ...any) htmfunc.Element {
-	return Figcaption(nil, Text(fmt.Sprintf(template, args...)))
+// TitleText creates a [element.Title] element without any attributes and text as the only child.
+func TitleText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Title(Attributes(attributes...), Text(text))
 }
 
-// LiT creates an [element.Li] without any attributes and text as the only child.
-func LiT(text string) htmfunc.Element {
-	return Li(nil, Text(text))
+// CaptionText creates a [element.Caption] element without any attributes and text as the only child.
+func CaptionText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Caption(Attributes(attributes...), Text(text))
 }
 
-// LiTf creates an [element.Li] without any attributes and the formatted template as its only child.
-func LiTf(template string, args ...any) htmfunc.Element {
-	return Li(nil, Text(fmt.Sprintf(template, args...)))
+// TdText creates a [element.Td] element without any attributes and text as the only child.
+func TdText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Td(Attributes(attributes...), Text(text))
 }
 
-// PT creates an [element.P] without any attributes and text as the only child.
-func PT(text string) htmfunc.Element {
-	return P(nil, Text(text))
+// ThText creates a [element.Th] element without any attributes and text as the only child.
+func ThText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Th(Attributes(attributes...), Text(text))
 }
 
-// PTf creates an [element.P] without any attributes and the formatted template as its only child.
-func PTf(template string, args ...any) htmfunc.Element {
-	return P(nil, Text(fmt.Sprintf(template, args...)))
+// AText creates a [element.A] element without any attributes and text as the only child.
+func AText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.A(Attributes(attributes...), Text(text))
 }
 
-// PreT creates an [element.Pre] without any attributes and text as the only child.
-func PreT(text string) htmfunc.Element {
-	return Pre(nil, Text(text))
+// AbbrText creates a [element.Abbr] element without any attributes and text as the only child.
+func AbbrText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Abbr(Attributes(attributes...), Text(text))
 }
 
-// PreTf creates an [element.Pre] without any attributes and the formatted template as its only
-// child.
-func PreTf(template string, args ...any) htmfunc.Element {
-	return Pre(nil, Text(fmt.Sprintf(template, args...)))
+// BText creates a [element.B] element without any attributes and text as the only child.
+func BText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.B(Attributes(attributes...), Text(text))
 }
 
-// UlT creates an [element.Ul] without any attributes and text as the only child.
-func UlT(text string) htmfunc.Element {
-	return Ul(nil, Text(text))
+// CiteText creates a [element.Cite] element without any attributes and text as the only child.
+func CiteText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Cite(Attributes(attributes...), Text(text))
 }
 
-// UlTf creates an [element.Ul] without any attributes and the formatted template as its only child.
-func UlTf(template string, args ...any) htmfunc.Element {
-	return Ul(nil, Text(fmt.Sprintf(template, args...)))
+// CodeText creates a [element.Code] element without any attributes and text as the only child.
+func CodeText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Code(Attributes(attributes...), Text(text))
 }
 
-// SummaryT creates an [element.Summary] without any attributes and text as the only child.
-func SummaryT(text string) htmfunc.Element {
-	return Summary(nil, Text(text))
+// DataText creates a [element.Data] element without any attributes and text as the only child.
+func DataText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Data(Attributes(attributes...), Text(text))
 }
 
-// SummaryTf creates an [element.Summary] without any attributes and the formatted template as its
-// only child.
-func SummaryTf(template string, args ...any) htmfunc.Element {
-	return Summary(nil, Text(fmt.Sprintf(template, args...)))
+// DfnText creates a [element.Dfn] element without any attributes and text as the only child.
+func DfnText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Dfn(Attributes(attributes...), Text(text))
 }
 
-// NoscriptT creates an [element.Noscript] without any attributes and text as the only child.
-func NoscriptT(text string) htmfunc.Element {
-	return Noscript(nil, Text(text))
+// EmText creates a [element.Em] element without any attributes and text as the only child.
+func EmText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Em(Attributes(attributes...), Text(text))
 }
 
-// NoscriptTf creates an [element.Noscript] without any attributes and the formatted template as its
-// only child.
-func NoscriptTf(template string, args ...any) htmfunc.Element {
-	return Noscript(nil, Text(fmt.Sprintf(template, args...)))
+// IText creates a [element.I] element without any attributes and text as the only child.
+func IText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.I(Attributes(attributes...), Text(text))
 }
 
-// H1T creates an [element.H1] without any attributes and text as the only child.
-func H1T(text string) htmfunc.Element {
-	return H1(nil, Text(text))
+// KbdText creates a [element.Kbd] element without any attributes and text as the only child.
+func KbdText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Kbd(Attributes(attributes...), Text(text))
 }
 
-// H1Tf creates an [element.H1] without any attributes and the formatted template as its only child.
-func H1Tf(template string, args ...any) htmfunc.Element {
-	return H1(nil, Text(fmt.Sprintf(template, args...)))
+// MarkText creates a [element.Mark] element without any attributes and text as the only child.
+func MarkText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Mark(Attributes(attributes...), Text(text))
 }
 
-// H2T creates an [element.H2] without any attributes and text as the only child.
-func H2T(text string) htmfunc.Element {
-	return H2(nil, Text(text))
+// QText creates a [element.Q] element without any attributes and text as the only child.
+func QText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Q(Attributes(attributes...), Text(text))
 }
 
-// H2Tf creates an [element.H2] without any attributes and the formatted template as its only child.
-func H2Tf(template string, args ...any) htmfunc.Element {
-	return H2(nil, Text(fmt.Sprintf(template, args...)))
+// RpText creates a [element.Rp] element without any attributes and text as the only child.
+func RpText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Rp(Attributes(attributes...), Text(text))
 }
 
-// H3T creates an [element.H3] without any attributes and text as the only child.
-func H3T(text string) htmfunc.Element {
-	return H3(nil, Text(text))
+// RtText creates a [element.Rt] element without any attributes and text as the only child.
+func RtText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Rt(Attributes(attributes...), Text(text))
 }
 
-// H3Tf creates an [element.H3] without any attributes and the formatted template as its only child.
-func H3Tf(template string, args ...any) htmfunc.Element {
-	return H3(nil, Text(fmt.Sprintf(template, args...)))
+// SText creates a [element.S] element without any attributes and text as the only child.
+func SText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.S(Attributes(attributes...), Text(text))
 }
 
-// H4T creates an [element.H4] without any attributes and text as the only child.
-func H4T(text string) htmfunc.Element {
-	return H4(nil, Text(text))
+// SampText creates a [element.Samp] element without any attributes and text as the only child.
+func SampText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Samp(Attributes(attributes...), Text(text))
 }
 
-// H4Tf creates an [element.H4] without any attributes and the formatted template as its only child.
-func H4Tf(template string, args ...any) htmfunc.Element {
-	return H4(nil, Text(fmt.Sprintf(template, args...)))
+// SmallText creates a [element.Small] element without any attributes and text as the only child.
+func SmallText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Small(Attributes(attributes...), Text(text))
 }
 
-// H5T creates an [element.H5] without any attributes and text as the only child.
-func H5T(text string) htmfunc.Element {
-	return H5(nil, Text(text))
+// SpanText creates a [element.Span] element without any attributes and text as the only child.
+func SpanText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Span(Attributes(attributes...), Text(text))
 }
 
-// H5Tf creates an [element.H5] without any attributes and the formatted template as its only child.
-func H5Tf(template string, args ...any) htmfunc.Element {
-	return H5(nil, Text(fmt.Sprintf(template, args...)))
+// StrongText creates a [element.Strong] element without any attributes and text as the only child.
+func StrongText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Strong(Attributes(attributes...), Text(text))
 }
 
-// H6T creates an [element.H6] without any attributes and text as the only child.
-func H6T(text string) htmfunc.Element {
-	return H6(nil, Text(text))
+// SubText creates a [element.Sub] element without any attributes and text as the only child.
+func SubText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Sub(Attributes(attributes...), Text(text))
 }
 
-// H6Tf creates an [element.H6] without any attributes and the formatted template as its only child.
-func H6Tf(template string, args ...any) htmfunc.Element {
-	return H6(nil, Text(fmt.Sprintf(template, args...)))
+// SupText creates a [element.Sup] element without any attributes and text as the only child.
+func SupText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Sup(Attributes(attributes...), Text(text))
 }
 
-// TitleT creates an [element.Title] without any attributes and text as the only child.
-func TitleT(text string) htmfunc.Element {
-	return Title(nil, Text(text))
+// UText creates a [element.U] element without any attributes and text as the only child.
+func UText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.U(Attributes(attributes...), Text(text))
 }
 
-// TitleTf creates an [element.Title] without any attributes and the formatted template as its only
-// child.
-func TitleTf(template string, args ...any) htmfunc.Element {
-	return Title(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// CaptionT creates an [element.Caption] without any attributes and text as the only child.
-func CaptionT(text string) htmfunc.Element {
-	return Caption(nil, Text(text))
-}
-
-// CaptionTf creates an [element.Caption] without any attributes and the formatted template as its
-// only child.
-func CaptionTf(template string, args ...any) htmfunc.Element {
-	return Caption(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// TdT creates an [element.Td] without any attributes and text as the only child.
-func TdT(text string) htmfunc.Element {
-	return Td(nil, Text(text))
-}
-
-// TdTf creates an [element.Td] without any attributes and the formatted template as its only child.
-func TdTf(template string, args ...any) htmfunc.Element {
-	return Td(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// ThT creates an [element.Th] without any attributes and text as the only child.
-func ThT(text string) htmfunc.Element {
-	return Th(nil, Text(text))
-}
-
-// ThTf creates an [element.Th] without any attributes and the formatted template as its only child.
-func ThTf(template string, args ...any) htmfunc.Element {
-	return Th(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// AT creates an [element.A] without any attributes and text as the only child.
-func AT(text string) htmfunc.Element {
-	return A(nil, Text(text))
-}
-
-// ATf creates an [element.A] without any attributes and the formatted template as its only child.
-func ATf(template string, args ...any) htmfunc.Element {
-	return A(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// AbbrT creates an [element.Abbr] without any attributes and text as the only child.
-func AbbrT(text string) htmfunc.Element {
-	return Abbr(nil, Text(text))
-}
-
-// AbbrTf creates an [element.Abbr] without any attributes and the formatted template as its only
-// child.
-func AbbrTf(template string, args ...any) htmfunc.Element {
-	return Abbr(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// BT creates an [element.B] without any attributes and text as the only child.
-func BT(text string) htmfunc.Element {
-	return B(nil, Text(text))
-}
-
-// BTf creates an [element.B] without any attributes and the formatted template as its only child.
-func BTf(template string, args ...any) htmfunc.Element {
-	return B(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// CiteT creates an [element.Cite] without any attributes and text as the only child.
-func CiteT(text string) htmfunc.Element {
-	return Cite(nil, Text(text))
-}
-
-// CiteTf creates an [element.Cite] without any attributes and the formatted template as its only
-// child.
-func CiteTf(template string, args ...any) htmfunc.Element {
-	return Cite(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// CodeT creates an [element.Code] without any attributes and text as the only child.
-func CodeT(text string) htmfunc.Element {
-	return Code(nil, Text(text))
-}
-
-// CodeTf creates an [element.Code] without any attributes and the formatted template as its only
-// child.
-func CodeTf(template string, args ...any) htmfunc.Element {
-	return Code(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// DataT creates an [element.Data] without any attributes and text as the only child.
-func DataT(text string) htmfunc.Element {
-	return Data(nil, Text(text))
-}
-
-// DataTf creates an [element.Data] without any attributes and the formatted template as its only
-// child.
-func DataTf(template string, args ...any) htmfunc.Element {
-	return Data(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// DfnT creates an [element.Dfn] without any attributes and text as the only child.
-func DfnT(text string) htmfunc.Element {
-	return Dfn(nil, Text(text))
-}
-
-// DfnTf creates an [element.Dfn] without any attributes and the formatted template as its only
-// child.
-func DfnTf(template string, args ...any) htmfunc.Element {
-	return Dfn(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// EmT creates an [element.Em] without any attributes and text as the only child.
-func EmT(text string) htmfunc.Element {
-	return Em(nil, Text(text))
-}
-
-// EmTf creates an [element.Em] without any attributes and the formatted template as its only child.
-func EmTf(template string, args ...any) htmfunc.Element {
-	return Em(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// IT creates an [element.I] without any attributes and text as the only child.
-func IT(text string) htmfunc.Element {
-	return I(nil, Text(text))
-}
-
-// ITf creates an [element.I] without any attributes and the formatted template as its only child.
-func ITf(template string, args ...any) htmfunc.Element {
-	return I(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// KbdT creates an [element.Kbd] without any attributes and text as the only child.
-func KbdT(text string) htmfunc.Element {
-	return Kbd(nil, Text(text))
-}
-
-// KbdTf creates an [element.Kbd] without any attributes and the formatted template as its only
-// child.
-func KbdTf(template string, args ...any) htmfunc.Element {
-	return Kbd(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// MarkT creates an [element.Mark] without any attributes and text as the only child.
-func MarkT(text string) htmfunc.Element {
-	return Mark(nil, Text(text))
-}
-
-// MarkTf creates an [element.Mark] without any attributes and the formatted template as its only
-// child.
-func MarkTf(template string, args ...any) htmfunc.Element {
-	return Mark(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// QT creates an [element.Q] without any attributes and text as the only child.
-func QT(text string) htmfunc.Element {
-	return Q(nil, Text(text))
-}
-
-// QTf creates an [element.Q] without any attributes and the formatted template as its only child.
-func QTf(template string, args ...any) htmfunc.Element {
-	return Q(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// RpT creates an [element.Rp] without any attributes and text as the only child.
-func RpT(text string) htmfunc.Element {
-	return Rp(nil, Text(text))
-}
-
-// RpTf creates an [element.Rp] without any attributes and the formatted template as its only child.
-func RpTf(template string, args ...any) htmfunc.Element {
-	return Rp(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// RtT creates an [element.Rt] without any attributes and text as the only child.
-func RtT(text string) htmfunc.Element {
-	return Rt(nil, Text(text))
-}
-
-// RtTf creates an [element.Rt] without any attributes and the formatted template as its only child.
-func RtTf(template string, args ...any) htmfunc.Element {
-	return Rt(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// ST creates an [element.S] without any attributes and text as the only child.
-func ST(text string) htmfunc.Element {
-	return S(nil, Text(text))
-}
-
-// STf creates an [element.S] without any attributes and the formatted template as its only child.
-func STf(template string, args ...any) htmfunc.Element {
-	return S(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// SampT creates an [element.Samp] without any attributes and text as the only child.
-func SampT(text string) htmfunc.Element {
-	return Samp(nil, Text(text))
-}
-
-// SampTf creates an [element.Samp] without any attributes and the formatted template as its only
-// child.
-func SampTf(template string, args ...any) htmfunc.Element {
-	return Samp(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// SmallT creates an [element.Small] without any attributes and text as the only child.
-func SmallT(text string) htmfunc.Element {
-	return Small(nil, Text(text))
-}
-
-// SmallTf creates an [element.Small] without any attributes and the formatted template as its only
-// child.
-func SmallTf(template string, args ...any) htmfunc.Element {
-	return Small(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// SpanT creates an [element.Span] without any attributes and text as the only child.
-func SpanT(text string) htmfunc.Element {
-	return Span(nil, Text(text))
-}
-
-// SpanTf creates an [element.Span] without any attributes and the formatted template as its only
-// child.
-func SpanTf(template string, args ...any) htmfunc.Element {
-	return Span(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// StrongT creates an [element.Strong] without any attributes and text as the only child.
-func StrongT(text string) htmfunc.Element {
-	return Strong(nil, Text(text))
-}
-
-// StrongTf creates an [element.Strong] without any attributes and the formatted template as its
-// only child.
-func StrongTf(template string, args ...any) htmfunc.Element {
-	return Strong(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// SubT creates an [element.Sub] without any attributes and text as the only child.
-func SubT(text string) htmfunc.Element {
-	return Sub(nil, Text(text))
-}
-
-// SubTf creates an [element.Sub] without any attributes and the formatted template as its only
-// child.
-func SubTf(template string, args ...any) htmfunc.Element {
-	return Sub(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// SupT creates an [element.Sup] without any attributes and text as the only child.
-func SupT(text string) htmfunc.Element {
-	return Sup(nil, Text(text))
-}
-
-// SupTf creates an [element.Sup] without any attributes and the formatted template as its only
-// child.
-func SupTf(template string, args ...any) htmfunc.Element {
-	return Sup(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// UT creates an [element.U] without any attributes and text as the only child.
-func UT(text string) htmfunc.Element {
-	return U(nil, Text(text))
-}
-
-// UTf creates an [element.U] without any attributes and the formatted template as its only child.
-func UTf(template string, args ...any) htmfunc.Element {
-	return U(nil, Text(fmt.Sprintf(template, args...)))
-}
-
-// VarT creates an [element.Var] without any attributes and text as the only child.
-func VarT(text string) htmfunc.Element {
-	return Var(nil, Text(text))
-}
-
-// VarTf creates an [element.Var] without any attributes and the formatted template as its only
-// child.
-func VarTf(template string, args ...any) htmfunc.Element {
-	return Var(nil, Text(fmt.Sprintf(template, args...)))
+// VarText creates a [element.Var] element without any attributes and text as the only child.
+func VarText(text string, attributes ...htmfunc.Attribute) htmfunc.Element {
+	return element.Var(Attributes(attributes...), Text(text))
 }
