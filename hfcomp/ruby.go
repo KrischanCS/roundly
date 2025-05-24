@@ -3,7 +3,7 @@ package hfcomp
 import (
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/flow"
+	. "github.com/KrischanCS/htmfunc/logic"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 

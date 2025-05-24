@@ -155,7 +155,7 @@ func FuzzDom(f *testing.F) {
 	f.Add(uint64(1337), uint64(234148))
 	f.Add(uint64(42), uint64(986345))
 
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	f.Fuzz(func(t *testing.T, seed1, seed2 uint64) {
 		r := rand.New(rand.NewPCG(seed1, seed2)) //nolint:gosec

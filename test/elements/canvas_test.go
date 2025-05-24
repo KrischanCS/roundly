@@ -13,7 +13,7 @@ import (
 func TestCanvas(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(256)
+	w := htmfunc.NewWriter()
 
 	element := element2.Canvas(Attributes(Class("test", "other")))
 

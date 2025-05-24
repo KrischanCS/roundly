@@ -1,6 +1,6 @@
 // Package flow provides typical "flow control" to be used in generating htmfunc
 // elements. This includes mainly variants of if and for-range.
-package flow
+package logic
 
 import "github.com/KrischanCS/htmfunc"
 

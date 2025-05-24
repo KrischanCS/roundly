@@ -14,7 +14,7 @@ import (
 func TestDocument(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(128)
+	w := htmfunc.NewWriter()
 
 	doc := htmfunc.Document("html", element.Html(Lang("en"), element.Head(nil), element.Body(nil)))
 
@@ -72,7 +72,7 @@ func TestHtml(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 			component := element.Html(Lang(tt.args.lang), tt.args.head, tt.args.body)
 
 			err := component.RenderElement(w)
@@ -104,7 +104,7 @@ func TestBase(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Base(tt.attributes)
 
@@ -146,7 +146,7 @@ func TestDoctype(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := htmfunc.Doctype(tt.args.doctype)
 
@@ -199,7 +199,7 @@ func TestHead(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Head(nil, tt.args.childNodes...)
 
@@ -213,7 +213,7 @@ func TestHead(t *testing.T) {
 func TestMeta(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	component := element.Meta(Attributes(Name("keywords"), Content(
 		"british,type face,font,fonts,highway,highways")))
@@ -268,7 +268,7 @@ func TestStyle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Style(tt.args.attributes, Text(tt.args.css))
 
@@ -321,7 +321,7 @@ func TestStyleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Style(tt.args.attributes, RawTrusted(tt.args.css))
 
@@ -359,7 +359,7 @@ func TestTitle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Title(nil, Text(tt.title))
 
@@ -397,7 +397,7 @@ func TestTitleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			component := element.Title(nil, RawTrusted(tt.title))
 

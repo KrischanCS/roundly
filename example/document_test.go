@@ -8,7 +8,7 @@ import (
 	hf "github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/flow"
+	. "github.com/KrischanCS/htmfunc/logic"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
@@ -70,7 +70,7 @@ func ExampleDocument() {
 		),
 	)
 
-	w := hf.NewWriter(256)
+	w := hf.NewWriter()
 	_ = doc.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))

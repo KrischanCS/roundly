@@ -9,7 +9,7 @@ import (
 func ExampleBdiAuto() {
 	element := BdiAuto("Text.")
 
-	w := htmfunc.NewWriter(32)
+	w := htmfunc.NewWriter()
 
 	err := element.RenderElement(w)
 	if err != nil {
@@ -24,7 +24,7 @@ func ExampleBdiAuto() {
 func ExampleBdiLtr() {
 	element := BdiLtr("Text.")
 
-	w := htmfunc.NewWriter(32)
+	w := htmfunc.NewWriter()
 
 	err := element.RenderElement(w)
 	if err != nil {
@@ -39,7 +39,7 @@ func ExampleBdiLtr() {
 func ExampleBdiRtl() {
 	element := BdiRtl("مرحباً بالعالم")
 
-	w := htmfunc.NewWriter(32)
+	w := htmfunc.NewWriter()
 
 	err := element.RenderElement(w)
 	if err != nil {
@@ -54,7 +54,7 @@ func ExampleBdiRtl() {
 func ExampleBdoLtr() {
 	element := BdoLtr("Text.")
 
-	w := htmfunc.NewWriter(32)
+	w := htmfunc.NewWriter()
 
 	err := element.RenderElement(w)
 	if err != nil {
@@ -69,7 +69,7 @@ func ExampleBdoLtr() {
 func ExampleBdoRtl() {
 	element := BdoRtl("مرحباً بالعالم")
 
-	w := htmfunc.NewWriter(32)
+	w := htmfunc.NewWriter()
 
 	err := element.RenderElement(w)
 	if err != nil {

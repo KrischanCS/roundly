@@ -9,13 +9,13 @@ import (
 	"github.com/KrischanCS/htmfunc"
 	. "github.com/KrischanCS/htmfunc/attribute"
 	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/flow"
+	. "github.com/KrischanCS/htmfunc/logic"
 	. "github.com/KrischanCS/htmfunc/text"
 )
 
 //nolint:errcheck
 func BenchmarkExamplePage(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -50,7 +50,7 @@ func BenchmarkExamplePage(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageRange10(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -90,7 +90,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageNoEscape(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -124,7 +124,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnly(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -158,7 +158,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -192,7 +192,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkRange(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -235,7 +235,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 		{"December", 31},
 	}
 
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()

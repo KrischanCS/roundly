@@ -1,4 +1,4 @@
-package flow
+package logic
 
 import (
 	"fmt"
@@ -29,7 +29,7 @@ func ExampleRange() {
 		}),
 	)
 
-	w := htmfunc.NewWriter(2048)
+	w := htmfunc.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -83,7 +83,7 @@ func ExampleRangeInt() {
 		}),
 	)
 
-	w := htmfunc.NewWriter(2048)
+	w := htmfunc.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -116,7 +116,7 @@ func ExampleRangeIter() {
 		}),
 	)
 
-	w := htmfunc.NewWriter(2048)
+	w := htmfunc.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -201,7 +201,7 @@ func TestRange(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			err := Range(tt.args.items, tt.args.component).RenderElement(w)
 
@@ -257,7 +257,7 @@ func TestRangeInt(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			err := RangeInt(tt.args.limit, tt.args.component).RenderElement(w)
 
@@ -322,7 +322,7 @@ func TestRangeIter(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			err := RangeIter(tt.args.seq, tt.args.component).RenderElement(w)
 
@@ -341,7 +341,7 @@ func BenchmarkRange(b *testing.B) {
 		}
 	}
 
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -367,7 +367,7 @@ func BenchmarkRange(b *testing.B) {
 }
 
 func BenchmarkRangeInt(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -393,7 +393,7 @@ func BenchmarkRangeInt(b *testing.B) {
 }
 
 func BenchmarkRangeIter(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()

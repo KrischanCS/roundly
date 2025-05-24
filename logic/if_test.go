@@ -1,4 +1,4 @@
-package flow
+package logic
 
 import (
 	"math/rand/v2"
@@ -34,7 +34,7 @@ func TestIf(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(strconv.FormatBool(tc.condition), func(t *testing.T) {
-			w := htmfunc.NewWriter(4096)
+			w := htmfunc.NewWriter()
 
 			err := If(tc.condition, tc.element).RenderElement(w)
 
@@ -45,7 +45,7 @@ func TestIf(t *testing.T) {
 }
 
 func BenchmarkIf(b *testing.B) {
-	w := htmfunc.NewWriter(4096)
+	w := htmfunc.NewWriter()
 
 	r := rand.New(rand.NewPCG(1234, 5678)) //nolint:gosec
 	conditions := make([]bool, b.N)

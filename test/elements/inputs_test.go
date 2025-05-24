@@ -41,7 +41,7 @@ func TestInput(t *testing.T) {
 
 	want := `<input value="test" class="rounded" type="button">`
 
-	w := htmfunc.NewWriter(256)
+	w := htmfunc.NewWriter()
 
 	e := element.Input(Attributes(
 		Value("test"),

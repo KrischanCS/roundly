@@ -15,7 +15,7 @@ func ExampleRubyText() {
 		{"字", "ji"},
 	})
 
-	w := htmfunc.NewWriter(512)
+	w := htmfunc.NewWriter()
 	_ = rb.RenderElement(w)
 
 	formatted := gohtml.Format(w.String())

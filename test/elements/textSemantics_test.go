@@ -52,7 +52,7 @@ func TestTextSemantics(t *testing.T) {
 func TestData(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(64)
+	w := htmfunc.NewWriter()
 
 	err := element.Data(Value("42"), RawTrusted("42")).RenderElement(w)
 
@@ -63,7 +63,7 @@ func TestData(t *testing.T) {
 func TestTimeAttribute(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(64)
+	w := htmfunc.NewWriter()
 
 	err := element.Time(
 		Attributes(
@@ -82,7 +82,7 @@ func TestTimeAttribute(t *testing.T) {
 func TestBdo_RTL(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(64)
+	w := htmfunc.NewWriter()
 
 	err := element.Bdo(DirRtl(), RawTrusted("مرحباً بالعالم")).RenderElement(w)
 
@@ -93,7 +93,7 @@ func TestBdo_RTL(t *testing.T) {
 func TestBdo_LTR(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(64)
+	w := htmfunc.NewWriter()
 
 	err := element.Bdo(DirLtr(), RawTrusted("مرحباً بالعالم")).RenderElement(w)
 
@@ -104,7 +104,7 @@ func TestBdo_LTR(t *testing.T) {
 func TestBr(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter(64)
+	w := htmfunc.NewWriter()
 
 	err := element.Br(nil).RenderElement(w)
 

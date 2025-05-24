@@ -11,7 +11,7 @@ import (
 
 //nolint:lll
 func ExampleTable() {
-	w := htmfunc.NewWriter(256)
+	w := htmfunc.NewWriter()
 
 	table := Table(
 		Class("test"),
