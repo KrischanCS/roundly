@@ -38,7 +38,7 @@ func classifyAttribute(attrs *attributes, attr *attribute, inputTypes []string) 
 
 	case strings.HasPrefix(attr.Value, "[input type keyword]"):
 		attr.Values = inputTypes
-		attrs.InputType = append(attrs.InputType, *attr)
+		attrs.Enum = append(attrs.Enum, *attr)
 
 	case isCommaSeparatedList(attr.Value):
 		attrs.ListComma = append(attrs.ListComma, *attr)

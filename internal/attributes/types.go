@@ -17,7 +17,6 @@ type attributes struct {
 	Text           []attribute
 	Bool           []attribute
 	Enum           []attribute
-	InputType      []attribute
 	ListComma      []attribute
 	ListCommaFloat []attribute
 	ListSpace      []attribute
@@ -31,7 +30,6 @@ func newAttributes() attributes {
 		Text:           make([]attribute, 0, 16),
 		Bool:           make([]attribute, 0, 16),
 		Enum:           make([]attribute, 0, 16),
-		InputType:      make([]attribute, 0, 16),
 		ListComma:      make([]attribute, 0, 16),
 		ListCommaFloat: make([]attribute, 0, 16),
 		ListSpace:      make([]attribute, 0, 16),

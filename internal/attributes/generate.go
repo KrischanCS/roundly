@@ -32,7 +32,6 @@ func GenerateAttributes(indicesBody *html.Node, inputBody *html.Node) {
 	generateFile("attributesText.go.tmpl", attributes.Text, "text.go")
 	generateFile("attributesBool.go.tmpl", attributes.Bool, "bool.go")
 	generateFile("attributesEnum.go.tmpl", attributes.Enum, "enum.go")
-	generateFile("attributesInputType.go.tmpl", attributes.InputType, "inputType.go")
 	generateFile("attributesCommaSeparated.go.tmpl", attributes.ListComma, "commaSeperated.go")
 	generateFile(
 		"attributesCommaSeparatedFloats.go.tmpl",

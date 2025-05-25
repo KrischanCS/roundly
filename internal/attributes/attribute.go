@@ -13,6 +13,7 @@ func createAcctributeGroups(indicesBody *html.Node, inputBody *html.Node) attrib
 	slog.Info("Creating attribute groups...")
 
 	attrs := parseAttributes(indicesBody)
+
 	inputTypes := parseInputTypes(inputBody)
 
 	attrsClassified := classifyAttributes(attrs, inputTypes)

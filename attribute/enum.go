@@ -2326,21 +2326,426 @@ func TypeAlphaLower() htmfunc.Attribute {
 //
 // It can be applied to the following elements:
 //   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
-//   - "[submit]"
-//   - "[reset]"
 //   - "[button]"
+//   - "[reset]"
+//   - "[submit]"
+//   - button
+//   - checkbox
+//   - color
+//   - date
+//   - datetime-local
+//   - email
+//   - file
+//   - hidden
+//   - image
+//   - month
+//   - number
+//   - password
+//   - radio
+//   - range
+//   - reset
+//   - search
+//   - submit
+//   - tel
+//   - text
+//   - time
+//   - url
+//   - week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
-// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
-// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
+// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TypeButton() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "button")
+}
+
+// TypeCheckbox creates the type attribute with value checkbox - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeCheckbox() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "checkbox")
+}
+
+// TypeColor creates the type attribute with value color - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeColor() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "color")
+}
+
+// TypeDate creates the type attribute with value date - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeDate() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "date")
+}
+
+// TypeDatetimeLocal creates the type attribute with value datetime-local - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeDatetimeLocal() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "datetime-local")
+}
+
+// TypeEmail creates the type attribute with value email - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeEmail() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "email")
+}
+
+// TypeFile creates the type attribute with value file - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeFile() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "file")
+}
+
+// TypeHidden creates the type attribute with value hidden - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeHidden() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "hidden")
+}
+
+// TypeImage creates the type attribute with value image - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeImage() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "image")
+}
+
+// TypeMonth creates the type attribute with value month - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeMonth() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "month")
+}
+
+// TypeNumber creates the type attribute with value number - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeNumber() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "number")
 }
 
 // TypeNumeric creates the type attribute with value 1 - Kind of list marker
@@ -2368,22 +2773,161 @@ func TypeNumeric() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "1")
 }
 
+// TypePassword creates the type attribute with value password - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypePassword() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "password")
+}
+
+// TypeRadio creates the type attribute with value radio - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeRadio() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "radio")
+}
+
+// TypeRange creates the type attribute with value range - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeRange() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "range")
+}
+
 // TypeReset creates the type attribute with value reset - Type of button
 //
 // It can be applied to the following elements:
 //   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
-//   - "[submit]"
-//   - "[reset]"
 //   - "[button]"
+//   - "[reset]"
+//   - "[submit]"
+//   - button
+//   - checkbox
+//   - color
+//   - date
+//   - datetime-local
+//   - email
+//   - file
+//   - hidden
+//   - image
+//   - month
+//   - number
+//   - password
+//   - radio
+//   - range
+//   - reset
+//   - search
+//   - submit
+//   - tel
+//   - text
+//   - time
+//   - url
+//   - week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
-// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
-// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
+// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TypeReset() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "reset")
@@ -2439,25 +2983,278 @@ func TypeRomanLower() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "i")
 }
 
+// TypeSearch creates the type attribute with value search - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeSearch() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "search")
+}
+
 // TypeSubmit creates the type attribute with value submit - Type of button
 //
 // It can be applied to the following elements:
 //   - [button]
+//   - [input]
 //
 // Can hold one of the following values:
-//   - "[submit]"
-//   - "[reset]"
 //   - "[button]"
+//   - "[reset]"
+//   - "[submit]"
+//   - button
+//   - checkbox
+//   - color
+//   - date
+//   - datetime-local
+//   - email
+//   - file
+//   - hidden
+//   - image
+//   - month
+//   - number
+//   - password
+//   - radio
+//   - range
+//   - reset
+//   - search
+//   - submit
+//   - tel
+//   - text
+//   - time
+//   - url
+//   - week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
-// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
-// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
+// [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TypeSubmit() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "submit")
+}
+
+// TypeTel creates the type attribute with value tel - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeTel() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "tel")
+}
+
+// TypeText creates the type attribute with value text - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeText() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "text")
+}
+
+// TypeTime creates the type attribute with value time - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeTime() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "time")
+}
+
+// TypeUrl creates the type attribute with value url - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeUrl() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "url")
+}
+
+// TypeWeek creates the type attribute with value week - Type of form control
+//
+// It can be applied to the following elements:
+//   - [input]
+//
+// Can hold one of the following values:
+//   - hidden
+//   - text
+//   - search
+//   - tel
+//   - url
+//   - email
+//   - password
+//   - date
+//   - month
+//   - week
+//   - time
+//   - datetime-local
+//   - number
+//   - range
+//   - color
+//   - checkbox
+//   - radio
+//   - file
+//   - submit
+//   - image
+//   - reset
+//   - button
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeWeek() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "week")
 }
 
 // WrapHard creates the wrap attribute with value hard - How the value of the form control is to be wrapped for [form submission]

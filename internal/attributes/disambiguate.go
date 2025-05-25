@@ -26,7 +26,6 @@ func disambiguateAttrs(attrs *attributes) {
 func mergeDuplicatesWithSameType(attrs *attributes) {
 	attrs.Text = mergeAttributes(attrs.Text)
 	attrs.Bool = mergeAttributes(attrs.Bool)
-	attrs.InputType = mergeAttributes(attrs.InputType)
 	attrs.ListComma = mergeAttributes(attrs.ListComma)
 	attrs.ListSpace = mergeAttributes(attrs.ListSpace)
 	attrs.ListCommaFloat = mergeAttributes(attrs.ListCommaFloat)
@@ -61,7 +60,6 @@ func mergeAttributes(attrs []attribute) []attribute {
 
 func appendSuffixesToRemainingDuplicates(attrs *attributes, duplicates set.Set[string]) {
 	appendSuffixToDuplicates(attrs.Bool, "True", duplicates)
-	appendSuffixToDuplicates(attrs.InputType, "InputType", duplicates)
 	appendSuffixToDuplicates(attrs.ListComma, "Strings", duplicates)
 	appendSuffixToDuplicates(attrs.ListSpace, "Strings", duplicates)
 	appendSuffixToDuplicates(attrs.ListCommaFloat, "Floats", duplicates)
@@ -145,7 +143,6 @@ func findDuplicatedNames(attrs attributes) set.Set[string] {
 	addFuncNameCounts(&nameAppearances, attrs.Text)
 	addFuncNameCounts(&nameAppearances, attrs.Bool)
 	addFuncNameCounts(&nameAppearances, attrs.Enum)
-	addFuncNameCounts(&nameAppearances, attrs.InputType)
 	addFuncNameCounts(&nameAppearances, attrs.ListComma)
 	addFuncNameCounts(&nameAppearances, attrs.ListCommaFloat)
 	addFuncNameCounts(&nameAppearances, attrs.ListSpace)
