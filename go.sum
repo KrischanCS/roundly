@@ -55,6 +55,8 @@ github.com/GaijinEntertainment/go-exhaustruct/v3 v3.3.1 h1:Sz1JIXEcSfhz7fUi7xHnh
 github.com/GaijinEntertainment/go-exhaustruct/v3 v3.3.1/go.mod h1:n/LSCXNuIYqVfBlVXyHfMQkZDdp1/mmxfSjADd3z1Zg=
 github.com/KrischanCS/go-toolbox v0.0.5 h1:J/z4FlkXVQU3r+KhHr7ti9r0GXQ3He+JQ1ne00L2tjY=
 github.com/KrischanCS/go-toolbox v0.0.5/go.mod h1:36KT1x0SDDLHmbBeifTXiGISAQf8UFb3PbDLc5pEn6s=
+github.com/KrischanCS/go-toolbox v0.0.6 h1:FwZA984dlGOSAAsB5VnhrQ6hi3vu2LB9UKvAxXpz5nY=
+github.com/KrischanCS/go-toolbox v0.0.6/go.mod h1:36KT1x0SDDLHmbBeifTXiGISAQf8UFb3PbDLc5pEn6s=
 github.com/Masterminds/semver/v3 v3.3.1 h1:QtNSWtVZ3nBfk8mAOu/B6v7FMJ+NHTIgUPi7rj+4nv4=
 github.com/Masterminds/semver/v3 v3.3.1/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/OpenPeeDeeP/depguard/v2 v2.2.1 h1:vckeWVESWp6Qog7UZSARNqfu/cZqvki8zsuj3piCMx4=

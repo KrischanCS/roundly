@@ -10,6 +10,8 @@ import (
 	"text/template"
 
 	"golang.org/x/net/html"
+
+	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 //go:embed templates
@@ -20,7 +22,9 @@ var attrTemplates = template.Must(template.ParseFS(templates, "templates/*.go.tm
 
 func GenerateAttributes(body *html.Node) {
 	slog.Info("Generating attributes...")
-	attributes := createElementGroups(body)
+
+	attributes := createAcctributeGroups(body)
+
 	eventHandlerAttributes := findEventHandlerAttributes(body)
 
 	slog.Info("Generating files...")
@@ -43,6 +47,24 @@ func GenerateAttributes(body *html.Node) {
 	generateFile("attributesText.go.tmpl", eventHandlerAttributes, "eventHandler.go")
 
 	slog.Info("Generated attributes.")
+}
+
+func findEventHandlerAttributes(body *html.Node) []attribute {
+	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
+	if eventHandlersTable == nil {
+		log.Fatal("Error finding event handlers table")
+	}
+
+	tBody := standard.FindTBody(eventHandlersTable)
+
+	attrs := make([]attribute, 0, 256)
+
+	for row := range tBody.ChildNodes() {
+		attr := parseAttribute(row)
+		attrs = append(attrs, attr)
+	}
+
+	return attrs
 }
 
 func generateFile(name string, attributes []attribute, fileName string) {

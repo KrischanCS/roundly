@@ -262,6 +262,17 @@ func DataAttribute(data string) htmfunc.Attribute {
 // [del]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [ins]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [Valid date string with optional time]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string-with-optional-time
+// [time]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-time-datetime
+// [Valid month string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-month-string
+// [valid date string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-date-string
+// [valid yearless date string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-yearless-date-string
+// [valid time string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-time-string
+// [valid local date and time string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-local-date-and-time-string
+// [valid time-zone offset string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-time-zone-offset-string
+// [valid global date and time string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-global-date-and-time-string
+// [valid week string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-week-string
+// [valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
+// [valid duration string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-duration-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func DateTime(dateTime string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("datetime", dateTime)
@@ -406,6 +417,10 @@ func FormTarget(formTarget string) htmfunc.Attribute {
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-href
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
+// [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-href
+// [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
+// [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-href
+// [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func HRef(hRef string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("href", hRef)
@@ -645,6 +660,20 @@ func Min(min string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [form.elements]: https://html.spec.whatwg.org/dev/forms.html#dom-form-elements
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
+// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
+// [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element
+// [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-name
+// [document.forms]: https://html.spec.whatwg.org/dev/dom.html#dom-document-forms
+// [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-name
+// [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-name
+// [content navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#content-navigable
+// [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
+// [map]: https://html.spec.whatwg.org/dev/image-maps.html#attr-map-name
+// [image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
+// [reference]: https://html.spec.whatwg.org/dev/dom.html#referenced
+// [usemap]: https://html.spec.whatwg.org/dev/image-maps.html#attr-hyperlink-usemap
+// [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
+// [slot]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Name(name string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("name", name)
@@ -895,6 +924,10 @@ func StyleAttribute(style string) htmfunc.Attribute {
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [navigation]: https://html.spec.whatwg.org/dev/browsing-the-web.html#navigate
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
+// [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-target
+// [navigable]: https://html.spec.whatwg.org/dev/document-sequences.html#navigable
+// [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
+// [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-target
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Target(target string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("target", target)
@@ -915,6 +948,13 @@ func Target(target string) htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-title
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
+// [abbr]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-abbr-title
+// [dfn]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-dfn-title
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-title
+// [pattern]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
+// [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-title
+// [style]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-title
+// [CSS style sheet set name]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom/#css-style-sheet-set-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TitleAttribute(title string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("title", title)
@@ -934,6 +974,12 @@ func TitleAttribute(title string) htmfunc.Attribute {
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-type
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-type
 // [Valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
+// [embed]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-embed-type
+// [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-type
+// [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-type
+// [script]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-type
+// [valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
+// [JavaScript MIME type essence match]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Type(typeV string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", typeV)
@@ -971,6 +1017,8 @@ func UseMap(useMap string) htmfunc.Attribute {
 // [option]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-value
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
+// [data]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-data-value
+// [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Value(value string) htmfunc.Attribute {
 	return htmfunc.WriteAttribute("value", value)

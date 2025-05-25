@@ -106,27 +106,17 @@ func joinDuplicateAttrsOfSameType(attr attribute, duplicates []attribute) attrib
 
 	for _, duplicate := range duplicates {
 		newAttr.Elements = joinElementsAndDescription(newAttr.Elements, duplicate)
-		mergeAttrValues(duplicate, newAttr)
-		mergeAttrLinks(duplicate, newAttr)
+		merge(duplicate.Values, &newAttr.Values)
+		merge(duplicate.Links, &newAttr.Links)
 	}
 
 	return newAttr
 }
 
-// TODO code duplication of mergeAttrValues and mergeAttrLinks
-
-func mergeAttrValues(duplicate attribute, newAttr attribute) {
-	for _, value := range duplicate.Values {
-		if !slices.Contains(newAttr.Values, value) {
-			newAttr.Values = append(newAttr.Values, value)
-		}
-	}
-}
-
-func mergeAttrLinks(duplicate attribute, newAttr attribute) {
-	for _, link := range duplicate.Links {
-		if !slices.Contains(newAttr.Links, link) {
-			newAttr.Links = append(newAttr.Links, link)
+func merge[T comparable](duplicates []T, target *[]T) {
+	for _, link := range duplicates {
+		if !slices.Contains(*target, link) {
+			*target = append(*target, link)
 		}
 	}
 }

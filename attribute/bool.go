@@ -177,6 +177,9 @@ func Defer() htmfunc.Attribute {
 // [textarea]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-disabled
 // [form-associated custom elements]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-disabled
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
+// [fieldset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-fieldset-disabled
+// [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
+// [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-disabled
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Disabled() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("disabled")
@@ -351,6 +354,7 @@ func NoValidate() htmfunc.Attribute {
 //
 // [details]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
+// [dialog]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Open() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("open")
@@ -385,6 +389,7 @@ func PlaysInline() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-readonly
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-readonly
 // [Boolean attribute]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#boolean-attribute
+// [form-associated custom elements]: https://html.spec.whatwg.org/dev/custom-elements.html#attr-face-readonly
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func ReadOnly() htmfunc.Attribute {
 	return htmfunc.WriteBoolAttribute("readonly")

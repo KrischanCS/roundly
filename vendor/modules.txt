@@ -37,7 +37,7 @@ github.com/GaijinEntertainment/go-exhaustruct/v3/analyzer
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/comment
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/pattern
 github.com/GaijinEntertainment/go-exhaustruct/v3/internal/structure
-# github.com/KrischanCS/go-toolbox v0.0.5
+# github.com/KrischanCS/go-toolbox v0.0.6
 ## explicit; go 1.24.1
 github.com/KrischanCS/go-toolbox/constraints
 github.com/KrischanCS/go-toolbox/iterator

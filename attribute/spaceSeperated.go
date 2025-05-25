@@ -182,6 +182,7 @@ func Ping(ping ...string) htmfunc.Attribute {
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-rel
 // [hyperlink]: https://html.spec.whatwg.org/dev/links.html#hyperlink
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
+// [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func Rel(rel ...string) htmfunc.Attribute {
 	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
