@@ -5,38 +5,34 @@ code generation during development. Instead it provides functions for elements a
 These functions can be composed to reusable components.
 
 ```go
-package main
-
-import (
-    "bufio"
-    "os"
-
-    "github.com/KrischanCS/htmfunc"
-    . "github.com/KrischanCS/htmfunc/attribute"
-    . "github.com/KrischanCS/htmfunc/element"
-    . "github.com/KrischanCS/htmfunc/text"
-)
-
-func main() {
-    doc := htmfunc.Document(
-        "html",
-        Html(nil,
-            Head(
-                CharSetUtf8(),
-                Title(nil, Text("Htmfunc Page")),
-            ),
-            Body(nil,
-                H1(Class("the-title"), Text("Hello World!")),
-            ),
-        ),
-    )
-
-    err := doc.RenderElement(bufio.NewWriter(os.Stdout))
-    if err != nil {
-        panic(err)
-    }
-}
-
+Table(                                                  // <table
+    Attributes(
+        Id("mascot-table"),                             //   id="mascot-table"
+        Class("fancy-table", "mascots"),                //   class="fancy-table mascots"
+    ),                                                  // >
+    Thead(nil,                                          //   <thead>
+        Tr(nil,                                         //     <tr>
+            ThText("Language"),                         //       <th>Language</th>  
+            ThText("Kind"),                             //       <th>Kind</th>
+            ThText("Name"),                             //       <th>Name</th>
+        ),                                              //     </tr>
+    ),                                                  //   </thead>
+    Tbody(nil,                                          //   <tbody>
+        Range([]Mascot{
+            {"Go", "Blue Gopher", "The Go Gopher"},     //     <tr><th scope="row">Go</th><td>Blue Gopher</td><td>The Go Gopher</td></tr>
+            {"Rust", "Orange Crab", "Ferris"},          //     <tr><th scope="row">Rust</th><td>Orange Crab</td><td>Ferris</td></tr>
+            {"Gleam", "Pink Starfish", "Lucy"},         //     <tr><th scope="row">Gleam</th><td>Pink Starfish</td><td>Lucy</td></tr>
+            {"Zig", "Ziguana", "Ziggy & Zero"},         //     <tr><th scope="row">Zig</th><td>Ziguana</td><td>Ziggy & Zero</td></tr>
+            {"Java", "?", "Duke"},                      //     <tr><th scope="row">Java</th><td>?</td><td>Duke</td></tr>
+        }, func(i int, mascot Mascot) htmfunc.Element {
+            return Tr(nil,
+                Th(ScopeRow(), Text(mascot.Language)),
+                TdText(mascot.Kind),
+                TdText(mascot.Name),
+            )
+        }),                                               
+    ),                                                  //   </tbody>
+)                                                       // </table>
 ```
 
 If you like this, also check out [gomponents](https://maragu.dev/gomponents) which is similar and

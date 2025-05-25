@@ -5,7 +5,7 @@ shopt: [ -s globstar ]
 tasks:
   test:
     cmds:
-      - go test ./...
+      - go test ./... -count 1000 -race
     sources:
       - ./**/*.go
       - taskfile.yml
