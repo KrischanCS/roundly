@@ -1,5 +1,6 @@
 .task/
-/generator/generator
+/internal/generator
+/internal/generator.exe
 
 
 ### VisualStudioCode template

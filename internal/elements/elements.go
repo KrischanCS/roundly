@@ -16,7 +16,7 @@ import (
 
 	"github.com/KrischanCS/go-toolbox/iterator"
 
-	"github.com/KrischanCS/htmfunc/generator/internal/standard"
+	standard2 "github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 //go:embed templates
@@ -46,9 +46,9 @@ type Element struct {
 	Attributes []string
 
 	// DocumentationLink is the link to the documentation of this in the html standard
-	DocumentationLink standard.Link
+	DocumentationLink standard2.Link
 	// Links are all links in the description of this element
-	Links []standard.Link
+	Links []standard2.Link
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
@@ -87,7 +87,7 @@ func getAllElements(standardIndicesPage *html.Node) map[string][]Element {
 		// TODO link deduplication is probably neither here, nor in attributes complete.
 		//  Everything rendered to doc comment must be considered, not only description
 		//  as it is in attributes (Or only dedup of exact same as I did here).
-		element.Links = standard.EliminateExactSameLinks(element.Links)
+		element.Links = standard2.EliminateExactSameLinks(element.Links)
 		elements[i] = element
 	}
 
@@ -116,11 +116,11 @@ func findElementsTable(page *html.Node) (*html.Node, bool) {
 	// "List of elements", searching by that…
 	const caption = "List of elements"
 
-	return standard.FindTableWithCaption(page, caption)
+	return standard2.FindTableWithCaption(page, caption)
 }
 
 func createElements(table *html.Node) []Element {
-	tBody := standard.FindTBody(table)
+	tBody := standard2.FindTBody(table)
 
 	elements := make([]Element, 0)
 
@@ -147,7 +147,7 @@ func elementsFromRow(node *html.Node) []Element {
 
 	// There exist one case with multiple elements in a single ro
 	// (h1, h2, h3, h4, h5, h6)
-	names, links := standard.ExtractText(nameNode)
+	names, links := standard2.ExtractText(nameNode)
 
 	elements := make([]Element, 0, 1)
 
@@ -193,7 +193,7 @@ var voidElementTags = set.Of(
 
 func elementFromRow(
 	name string,
-	documentationLink standard.Link,
+	documentationLink standard2.Link,
 	descriptionNode *html.Node,
 ) Element {
 	element := Element{
@@ -204,7 +204,7 @@ func elementFromRow(
 
 	element.IsVoid = voidElementTags.Contains(name)
 
-	description, links := standard.ExtractText(descriptionNode)
+	description, links := standard2.ExtractText(descriptionNode)
 	element.Description = strings.Trim(description, "[]")
 	element.Links = links
 
@@ -229,8 +229,8 @@ func elementFromRow(
 	return element
 }
 
-func extractTokens(node *html.Node) ([]string, []standard.Link) {
-	text, links := standard.ExtractText(node)
+func extractTokens(node *html.Node) ([]string, []standard2.Link) {
+	text, links := standard2.ExtractText(node)
 
 	categories := strings.Split(text, ";")
 	for i := range categories {
@@ -240,7 +240,7 @@ func extractTokens(node *html.Node) ([]string, []standard.Link) {
 	return categories, links
 }
 
-func extractSemanticGroup(link standard.Link) string {
+func extractSemanticGroup(link standard2.Link) string {
 	s := strings.Split(link.Url, "#")[0]
 	s, _ = strings.CutPrefix(s, "https://html.spec.whatwg.org/dev/")
 

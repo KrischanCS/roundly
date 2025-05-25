@@ -2272,6 +2272,31 @@ func TranslateYes() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("translate", "yes")
 }
 
+// TypeAlpha creates the type attribute with value A - Kind of list marker
+//
+// It can be applied to the following elements:
+//   - [ol]
+//
+// Can hold one of the following values:
+//   - "[1]"
+//   - "[a]"
+//   - "[A]"
+//   - "[i]"
+//   - "[I]"
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
+// [1]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-decimal
+// [a]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-alpha
+// [A]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-alpha
+// [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
+// [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeAlpha() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "A")
+}
+
 // TypeAlphaLower creates the type attribute with value a - Kind of list marker
 //
 // It can be applied to the following elements:
@@ -2297,31 +2322,6 @@ func TypeAlphaLower() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "a")
 }
 
-// TypeAlphaUpper creates the type attribute with value A - Kind of list marker
-//
-// It can be applied to the following elements:
-//   - [ol]
-//
-// Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
-// [1]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-decimal
-// [a]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-alpha
-// [A]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-alpha
-// [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
-// [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeAlphaUpper() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "A")
-}
-
 // TypeButton creates the type attribute with value button - Type of button
 //
 // It can be applied to the following elements:
@@ -2343,7 +2343,7 @@ func TypeButton() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "button")
 }
 
-// TypeNumbered creates the type attribute with value 1 - Kind of list marker
+// TypeNumeric creates the type attribute with value 1 - Kind of list marker
 //
 // It can be applied to the following elements:
 //   - [ol]
@@ -2364,7 +2364,7 @@ func TypeButton() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeNumbered() htmfunc.Attribute {
+func TypeNumeric() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "1")
 }
 
@@ -2387,6 +2387,31 @@ func TypeNumbered() htmfunc.Attribute {
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TypeReset() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "reset")
+}
+
+// TypeRoman creates the type attribute with value I - Kind of list marker
+//
+// It can be applied to the following elements:
+//   - [ol]
+//
+// Can hold one of the following values:
+//   - "[1]"
+//   - "[a]"
+//   - "[A]"
+//   - "[i]"
+//   - "[I]"
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
+// [1]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-decimal
+// [a]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-alpha
+// [A]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-alpha
+// [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
+// [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func TypeRoman() htmfunc.Attribute {
+	return htmfunc.WriteAttribute("type", "I")
 }
 
 // TypeRomanLower creates the type attribute with value i - Kind of list marker
@@ -2412,31 +2437,6 @@ func TypeReset() htmfunc.Attribute {
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func TypeRomanLower() htmfunc.Attribute {
 	return htmfunc.WriteAttribute("type", "i")
-}
-
-// TypeRomanUpper creates the type attribute with value I - Kind of list marker
-//
-// It can be applied to the following elements:
-//   - [ol]
-//
-// Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
-//
-// Source: [The HTML Standard for Web Developers/Indices/Attributes]
-//
-// [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
-// [1]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-decimal
-// [a]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-alpha
-// [A]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-alpha
-// [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
-// [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
-// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeRomanUpper() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "I")
 }
 
 // TypeSubmit creates the type attribute with value submit - Type of button

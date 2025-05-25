@@ -11,7 +11,7 @@ import (
 	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
-	"github.com/KrischanCS/htmfunc/generator/internal/standard"
+	standard2 "github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 type attribute struct {
@@ -22,7 +22,7 @@ type attribute struct {
 	Description string
 	Value       string
 	Values      []string
-	Links       []standard.Link
+	Links       []standard2.Link
 }
 
 type attributes struct {
@@ -65,12 +65,12 @@ var inputTypes = []string{ //nolint:gochecknoglobals
 }
 
 func findAttributes(body *html.Node) attributes {
-	attributesTable := standard.FindNodeWithId(body, "attributes-1")
+	attributesTable := standard2.FindNodeWithId(body, "attributes-1")
 	if attributesTable == nil {
 		log.Fatal("Error finding attributes table")
 	}
 
-	tBody := standard.FindTBody(attributesTable)
+	tBody := standard2.FindTBody(attributesTable)
 
 	attrsByName := make(map[string][]*attribute)
 	attrs := make([]*attribute, 0, 256)
@@ -244,7 +244,7 @@ func mergeValues(disambiguated []attribute) []string {
 	return v
 }
 
-func mergeLinks(disambiguated []attribute) []standard.Link {
+func mergeLinks(disambiguated []attribute) []standard2.Link {
 	links := set.Of(disambiguated[0].Links...)
 
 	for _, a := range disambiguated[1:] {
@@ -263,12 +263,12 @@ func mergeLinks(disambiguated []attribute) []standard.Link {
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {
-	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
+	eventHandlersTable := standard2.FindNodeWithId(body, "ix-event-handlers")
 	if eventHandlersTable == nil {
 		log.Fatal("Error finding event handlers table")
 	}
 
-	tBody := standard.FindTBody(eventHandlersTable)
+	tBody := standard2.FindTBody(eventHandlersTable)
 
 	attrs := make([]attribute, 0, 256)
 
@@ -395,7 +395,7 @@ func parseAttribute(row *html.Node) attribute {
 
 	var attr attribute
 
-	text, links := standard.ExtractText(data)
+	text, links := standard2.ExtractText(data)
 	setNames(&attr, text)
 	attr.Links = links
 
@@ -407,13 +407,13 @@ func parseAttribute(row *html.Node) attribute {
 
 	data = data.NextSibling
 
-	text, links = standard.ExtractText(data)
+	text, links = standard2.ExtractText(data)
 	attr.Description = text
 	attr.Links = append(attr.Links, links...)
 
 	data = data.NextSibling
 
-	text, links = standard.ExtractText(data)
+	text, links = standard2.ExtractText(data)
 	text = strings.ReplaceAll(text, "*", " (Additional rules apply, see elements documentation)")
 
 	attr.Value = text
@@ -436,8 +436,8 @@ func setNames(attr *attribute, attributeName string) {
 	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
 }
 
-func extractElements(data *html.Node) ([]string, []standard.Link) {
-	text, links := standard.ExtractText(data)
+func extractElements(data *html.Node) ([]string, []standard2.Link) {
+	text, links := standard2.ExtractText(data)
 
 	return strings.Split(text, ";"), links
 }

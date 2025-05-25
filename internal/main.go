@@ -6,9 +6,9 @@ import (
 	_ "embed"
 	"flag"
 
-	"github.com/KrischanCS/htmfunc/generator/internal/attributes"
-	"github.com/KrischanCS/htmfunc/generator/internal/elements"
-	"github.com/KrischanCS/htmfunc/generator/internal/standard"
+	"github.com/KrischanCS/htmfunc/internal/attributes"
+	"github.com/KrischanCS/htmfunc/internal/elements"
+	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 //nolint:gochecknoglobals
