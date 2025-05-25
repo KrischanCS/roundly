@@ -3,6 +3,7 @@
 package standard
 
 import (
+	"archive/zip"
 	"errors"
 	"io"
 	"log"
@@ -17,17 +18,17 @@ import (
 const HTMLStandardURL = `https://html.spec.whatwg.org/dev/`
 
 func LoadStandardForWebDevsIndices(reload bool) *html.Node {
-	var filePath = filepath.Join("data", "htmlStandardIndices.html")
+	var filePath = filepath.Join("data", "htmlStandardIndices.zip")
 	return loadFile(reload, filePath, "indices.html")
 }
 
 func LoadStandardForWebDevsInput(reload bool) *html.Node {
-	var filePath = filepath.Join("data", "htmlStandardInputs.html")
+	var filePath = filepath.Join("data", "htmlStandardInputs.zip")
 	return loadFile(reload, filePath, "input.html")
 }
 
 func LoadStandardForWebDevsSyntax(reload bool) *html.Node {
-	var filePath = filepath.Join("data", "htmlStandardSyntax.html")
+	var filePath = filepath.Join("data", "htmlStandardSyntax.zip")
 	return loadFile(reload, filePath, "syntax.html")
 }
 
@@ -38,10 +39,15 @@ func loadFile(reload bool, fileName string, urlResourceName string) *html.Node {
 
 	slog.Info("Parsing HTML file to nodes...", "filePath", fileName)
 
-	//nolint:gosec
-	file, err := os.Open(fileName)
+	//nolint:gosec,nolintlint
+	zipReader, err := zip.OpenReader(fileName)
 	if err != nil {
 		log.Panic("Error opening "+fileName+": ", err)
+	}
+
+	file, err := zipReader.Open(urlResourceName)
+	if err != nil {
+		log.Panic("Error opening "+urlResourceName+": ", err)
 	}
 
 	document, err := html.Parse(file)
@@ -94,6 +100,12 @@ func downloadStandardIndicesFile(fileName string, urlResourceName string) {
 		log.Panic("Unexpected status loading indices from standard: ", response.StatusCode)
 	}
 
+	saveToFile(fileName, urlResourceName, response.Body)
+
+	slog.Info("Saved HTML standard to file", "file", fileName)
+}
+
+func saveToFile(fileName string, urlResourceName string, response io.Reader) {
 	//nolint:gosec,mnd,nolintlint
 	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666)
 	if err != nil {
@@ -107,10 +119,25 @@ func downloadStandardIndicesFile(fileName string, urlResourceName string) {
 		}
 	}()
 
-	_, err = io.Copy(file, response.Body)
+	writeAsZip(file, urlResourceName, response)
+}
+
+func writeAsZip(file io.Writer, urlResourceName string, response io.Reader) {
+	zipWriter := zip.NewWriter(file)
+	defer func() {
+		err := zipWriter.Close()
+		if err != nil {
+			log.Print("Error closing zip writer: ", err)
+		}
+	}()
+
+	w, err := zipWriter.Create(urlResourceName)
+	if err != nil {
+		log.Panic("Error creating zip writer for htmlStandardIndices.html: ", err)
+	}
+
+	_, err = io.Copy(w, response)
 	if err != nil {
 		log.Panic("Error saving to htmlStandardIndices.html: ", err)
 	}
-
-	slog.Info("Saved HTML standard to file", "file", fileName)
 }
