@@ -39,7 +39,6 @@ func TestTextSemantics(t *testing.T) {
 		element.Mark,
 		element.Bdi,
 		element.Span,
-		element.Wbr,
 	}
 
 	for _, element := range elements {

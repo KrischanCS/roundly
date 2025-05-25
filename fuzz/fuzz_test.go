@@ -49,9 +49,7 @@ var elements = []elementFunc{ //nolint:gochecknoglobals
 	Math,
 	Object,
 	Picture,
-	Source,
 	Svg,
-	Track,
 	Video,
 	Blockquote,
 	Dd,
@@ -136,7 +134,6 @@ var elements = []elementFunc{ //nolint:gochecknoglobals
 	Mark,
 	Bdi,
 	Span,
-	Wbr,
 }
 
 var texts = []string{ //nolint:gochecknoglobals

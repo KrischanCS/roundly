@@ -25,17 +25,18 @@ func main() {
 	flag.Parse()
 	setupLogger()
 
+	slog.Info("Begins generation")
+
 	start := time.Now()
 	defer func() {
 		slog.Info("Done", "time", time.Since(start))
 	}()
 
-	slog.Info("Begins generation")
-
 	indicesBody := standard.LoadStandardForWebDevsIndices(*reloadStandard)
+	syntaxBody := standard.LoadStandardForWebDevsSyntax(*reloadStandard)
 	inputBody := standard.LoadStandardForWebDevsInput(*reloadStandard)
 
-	elements.GenerateElements(indicesBody)
+	elements.GenerateElements(indicesBody, syntaxBody)
 	attributes.GenerateAttributes(indicesBody, inputBody)
 }
 

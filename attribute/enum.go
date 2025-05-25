@@ -2922,8 +2922,8 @@ func TypeRange() htmfunc.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
@@ -3056,8 +3056,8 @@ func TypeSearch() htmfunc.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset

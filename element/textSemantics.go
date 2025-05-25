@@ -750,8 +750,7 @@ func Var(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // It belongs to the following categories:
 // [flow] [phrasing]
 //
-// It can be parent to the following elements/categories of elements:
-// empty
+// It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
 // [phrasing]
@@ -766,6 +765,6 @@ func Var(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Wbr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("wbr", attributes, children...)
+func Wbr(attributes htmfunc.Attribute) htmfunc.Element {
+    return htmfunc.WriteVoidElement("wbr", attributes)
 }

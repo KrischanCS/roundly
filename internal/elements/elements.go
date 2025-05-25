@@ -8,10 +8,10 @@ import (
 	"golang.org/x/net/html"
 )
 
-func GenerateElements(standardIndicesPage *html.Node) {
+func GenerateElements(standardIndicesPage *html.Node, syntaxBody *html.Node) {
 	slog.Info("Generating elements...")
 
-	elements := parseAllElements(standardIndicesPage)
+	elements := parseAllElements(standardIndicesPage, syntaxBody)
 
 	elementGroups := groupElements(elements)
 

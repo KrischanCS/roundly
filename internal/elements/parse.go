@@ -11,7 +11,7 @@ import (
 	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
-func parseAllElements(standardIndicesPage *html.Node) []Element {
+func parseAllElements(standardIndicesPage *html.Node, syntaxBody *html.Node) []Element {
 	slog.Info("Creating element groups...")
 
 	elementsTable, ok := findElementsTable(standardIndicesPage)
@@ -19,7 +19,7 @@ func parseAllElements(standardIndicesPage *html.Node) []Element {
 		log.Panic("Could not find elements table")
 	}
 
-	elements := createElements(elementsTable)
+	elements := createElements(elementsTable, syntaxBody)
 
 	for i, element := range elements {
 		// TODO link deduplication is probably neither here, nor in attributes complete.
@@ -42,12 +42,14 @@ func findElementsTable(page *html.Node) (*html.Node, bool) {
 	return standard.FindTableWithCaption(page, caption)
 }
 
-func createElements(table *html.Node) []Element {
+func createElements(table *html.Node, syntaxBody *html.Node) []Element {
 	slog.Debug("Searching tbody element of element index table...")
 
 	tBody := standard.FindTBody(table)
 
 	slog.Debug("Found tbody of element index table.")
+
+	voidElementTags := findVoidElementTags(syntaxBody)
 
 	elements := make([]Element, 0)
 
@@ -62,7 +64,7 @@ func createElements(table *html.Node) []Element {
 			panic("Expect only rows in tbody")
 		}
 
-		elements = append(elements, elementsFromRow(node)...)
+		elements = append(elements, elementsFromRow(node, voidElementTags)...)
 	}
 
 	slog.Debug("Parsed table nodes to elements.", "elementCount", len(elements))
@@ -70,7 +72,30 @@ func createElements(table *html.Node) []Element {
 	return elements
 }
 
-func elementsFromRow(node *html.Node) []Element {
+func findVoidElementTags(syntaxBody *html.Node) set.Set[string] {
+	slog.Debug("Finding void element tags...")
+
+	voidElementsHeader := standard.FindNodeWithId(syntaxBody, "void-elements")
+	voidElementsContainer := voidElementsHeader.Parent.NextSibling
+
+	voidElementsTags := set.WithCapacity[string](16) //nolint:mnd
+
+	for current := voidElementsContainer.FirstChild; current != nil; current = current.
+		NextSibling {
+		if current.Type != html.ElementNode || current.Data != "code" {
+			continue
+		}
+
+		text, _ := standard.ExtractText(current)
+		voidElementsTags.Add(strings.Trim(text, "[]"))
+	}
+
+	slog.Debug("Found void element tags.", "voidElementCount", voidElementsTags.Len())
+
+	return voidElementsTags
+}
+
+func elementsFromRow(node *html.Node, voidElementTags set.Set[string]) []Element {
 	nameNode := node.FirstChild
 	if nameNode.Type != html.ElementNode || nameNode.Data != "td" && nameNode.Data != "th" {
 		panic("Expect first child to be a td, was: " + nameNode.Data)
@@ -91,7 +116,8 @@ func elementsFromRow(node *html.Node) []Element {
 		mainLink := links[0]
 		mainLink.Name = "(More)"
 
-		elements = append(elements, elementFromRow(name, mainLink, nameNode.NextSibling))
+		e := elementFromRow(name, mainLink, nameNode.NextSibling, voidElementTags)
+		elements = append(elements, e)
 	}
 
 	// TODO put link deduplication here
@@ -118,16 +144,11 @@ func normalizeName(name string) (string, bool) {
 	}
 }
 
-// TODO fetch this from the standard instead if hardcoding
-
-//nolint:gochecknoglobals
-var voidElementTags = set.Of(
-	"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param")
-
 func elementFromRow(
 	name string,
 	documentationLink standard.Link,
 	descriptionNode *html.Node,
+	voidElementTags set.Set[string],
 ) Element {
 	element := Element{
 		Tag:               name,

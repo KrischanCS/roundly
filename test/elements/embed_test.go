@@ -16,9 +16,7 @@ func TestEmbed(t *testing.T) {
 		element.Math,
 		element.Object,
 		element.Picture,
-		element.Source,
 		element.Svg,
-		element.Track,
 		element.Video,
 	}
 

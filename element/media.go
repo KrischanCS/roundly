@@ -49,8 +49,7 @@ func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // It belongs to the following categories:
 // none
 //
-// It can be parent to the following elements/categories of elements:
-// empty
+// It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
 // [audio] [video]
@@ -70,8 +69,8 @@ func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [src]: https://html.spec.whatwg.org/dev/media.html#attr-track-src
 // [srclang]: https://html.spec.whatwg.org/dev/media.html#attr-track-srclang
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Track(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("track", attributes, children...)
+func Track(attributes htmfunc.Attribute) htmfunc.Element {
+    return htmfunc.WriteVoidElement("track", attributes)
 }
 
 // Video creates the video element - Video player [(More)]

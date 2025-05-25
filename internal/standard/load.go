@@ -17,13 +17,18 @@ import (
 const HTMLStandardURL = `https://html.spec.whatwg.org/dev/`
 
 func LoadStandardForWebDevsIndices(reload bool) *html.Node {
-	var standardIndicesFileName = filepath.Join("data", "htmlStandardIndices.html")
-	return loadFile(reload, standardIndicesFileName, "indices.html")
+	var filePath = filepath.Join("data", "htmlStandardIndices.html")
+	return loadFile(reload, filePath, "indices.html")
 }
 
 func LoadStandardForWebDevsInput(reload bool) *html.Node {
-	var standardInputFileName = filepath.Join("data", "htmlStandardInputs.html")
-	return loadFile(reload, standardInputFileName, "input.html")
+	var filePath = filepath.Join("data", "htmlStandardInputs.html")
+	return loadFile(reload, filePath, "input.html")
+}
+
+func LoadStandardForWebDevsSyntax(reload bool) *html.Node {
+	var filePath = filepath.Join("data", "htmlStandardSyntax.html")
+	return loadFile(reload, filePath, "syntax.html")
 }
 
 func loadFile(reload bool, fileName string, urlResourceName string) *html.Node {
@@ -31,20 +36,25 @@ func loadFile(reload bool, fileName string, urlResourceName string) *html.Node {
 		downloadStandardIndicesFile(fileName, urlResourceName)
 	}
 
-	slog.Info("Parsing HTML standard to nodes...", "filePath", fileName)
+	slog.Info("Parsing HTML file to nodes...", "filePath", fileName)
 
 	//nolint:gosec
-	htmlStandard, err := os.Open(fileName)
+	file, err := os.Open(fileName)
 	if err != nil {
 		log.Panic("Error opening "+fileName+": ", err)
 	}
 
-	body, err := html.Parse(htmlStandard)
+	document, err := html.Parse(file)
 	if err != nil {
-		log.Fatal("Error reading "+fileName+": ", err)
+		log.Panic("Error reading "+fileName+": ", err)
 	}
 
-	slog.Info("Parsed HTML standard to nodes.")
+	body, ok := findTag(document, "body")
+	if !ok {
+		log.Panic("Could not find body tag")
+	}
+
+	slog.Info("Parsed HTML file to nodes.")
 
 	return body
 }

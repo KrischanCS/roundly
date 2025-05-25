@@ -83,8 +83,7 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // It belongs to the following categories:
 // none
 //
-// It can be parent to the following elements/categories of elements:
-// empty
+// It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
 // [picture] [video] [audio]
@@ -108,6 +107,6 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Source(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("source", attributes, children...)
+func Source(attributes htmfunc.Attribute) htmfunc.Element {
+    return htmfunc.WriteVoidElement("source", attributes)
 }

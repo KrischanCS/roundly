@@ -26,6 +26,44 @@ func FindNodeWithId(node *html.Node, id string) *html.Node {
 	return nil
 }
 
+func findTag(node *html.Node, tag string) (*html.Node, bool) {
+	if node == nil {
+		return nil, false
+	}
+
+	if node.Type == html.ElementNode || node.Type == html.DocumentNode {
+		if node.Data == tag {
+			return node, true
+		}
+
+		n, ok := findTag(node.FirstChild, tag)
+		if ok {
+			return n, true
+		}
+	}
+
+	return checkNextSibling(node, tag)
+}
+
+func checkNextSibling(node *html.Node, s string) (*html.Node, bool) {
+	for current := node.NextSibling; current != nil; current = current.NextSibling {
+		n, ok := findTag(current, s)
+		if ok {
+			return n, true
+		}
+	}
+
+	return nil, false
+}
+
+func Path(node *html.Node) string {
+	if node.Parent == nil || node.Parent.Data == "" {
+		return node.Data
+	}
+
+	return Path(node.Parent) + "." + node.Data
+}
+
 func FindTBody(table *html.Node) *html.Node {
 	for current := table.FirstChild; current != nil; current = current.NextSibling {
 		if current.Data == "tbody" {

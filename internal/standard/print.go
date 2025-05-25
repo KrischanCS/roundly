@@ -32,7 +32,7 @@ func ExtractText(data *html.Node) (string, []Link) {
 			}
 
 			sb.WriteString(node.Data)
-		case html.ElementNode:
+		case html.ElementNode, html.DoctypeNode:
 			extractTextFromElement(node, &links, &sb)
 		default:
 			log.Panic("Unexpected node type: ", node.Type)
