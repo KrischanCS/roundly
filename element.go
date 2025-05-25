@@ -88,11 +88,6 @@ func writeOpenTag(w Writer, tag string, attributes Attribute) error {
 	}
 
 	if attributes != nil {
-		err = w.WriteByte(' ')
-		if err != nil {
-			return err
-		}
-
 		err = attributes.RenderAttribute(w)
 		if err != nil {
 			return err

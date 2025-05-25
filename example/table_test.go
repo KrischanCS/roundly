@@ -63,13 +63,13 @@ func ExampleTable() {
 	// <table id="mascot-table" class="fancy-table mascots">
 	//   <thead>
 	//     <tr>
-	//       <th >
+	//       <th>
 	//         Language
 	//       </th>
-	//       <th >
+	//       <th>
 	//         Kind
 	//       </th>
-	//       <th >
+	//       <th>
 	//         Name
 	//       </th>
 	//     </tr>
@@ -79,10 +79,10 @@ func ExampleTable() {
 	//       <th scope="row">
 	//         Go
 	//       </th>
-	//       <td >
+	//       <td>
 	//         Blue Gopher
 	//       </td>
-	//       <td >
+	//       <td>
 	//         The Go Gopher
 	//       </td>
 	//     </tr>
@@ -90,10 +90,10 @@ func ExampleTable() {
 	//       <th scope="row">
 	//         Rust
 	//       </th>
-	//       <td >
+	//       <td>
 	//         Orange Crab
 	//       </td>
-	//       <td >
+	//       <td>
 	//         Ferris
 	//       </td>
 	//     </tr>
@@ -101,10 +101,10 @@ func ExampleTable() {
 	//       <th scope="row">
 	//         Gleam
 	//       </th>
-	//       <td >
+	//       <td>
 	//         Pink Starfish
 	//       </td>
-	//       <td >
+	//       <td>
 	//         Lucy
 	//       </td>
 	//     </tr>
@@ -112,10 +112,10 @@ func ExampleTable() {
 	//       <th scope="row">
 	//         Zig
 	//       </th>
-	//       <td >
+	//       <td>
 	//         Ziguana
 	//       </td>
-	//       <td >
+	//       <td>
 	//         Ziggy &amp; Zero
 	//       </td>
 	//     </tr>
@@ -123,10 +123,10 @@ func ExampleTable() {
 	//       <th scope="row">
 	//         Java
 	//       </th>
-	//       <td >
+	//       <td>
 	//         ?
 	//       </td>
-	//       <td >
+	//       <td>
 	//         Duke
 	//       </td>
 	//     </tr>

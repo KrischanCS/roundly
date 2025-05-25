@@ -8,7 +8,12 @@ func (fn Attribute) RenderAttribute(w Writer) error {
 
 func WriteAttribute(name string, value string) Attribute {
 	return func(w Writer) error {
-		_, err := w.WriteString(name)
+		err := w.WriteByte(' ')
+		if err != nil {
+			return err
+		}
+
+		_, err = w.WriteString(name)
 		if err != nil {
 			return err
 		}
@@ -29,7 +34,12 @@ func WriteAttribute(name string, value string) Attribute {
 
 func WriteMultiValueAttribute(name string, delimiter byte, values ...string) Attribute {
 	return func(w Writer) error {
-		_, err := w.WriteString(name)
+		err := w.WriteByte(' ')
+		if err != nil {
+			return err
+		}
+
+		_, err = w.WriteString(name)
 		if err != nil {
 			return err
 		}
