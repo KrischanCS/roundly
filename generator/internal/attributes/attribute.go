@@ -65,7 +65,7 @@ var inputTypes = []string{ //nolint:gochecknoglobals
 }
 
 func findAttributes(body *html.Node) attributes {
-	attributesTable := standard.FindNodeWithID(body, "attributes-1")
+	attributesTable := standard.FindNodeWithId(body, "attributes-1")
 	if attributesTable == nil {
 		log.Fatal("Error finding attributes table")
 	}
@@ -159,11 +159,11 @@ func uppercaseAt(funcNameSuffix string, i int) string {
 //
 // Instead, the generated function names chosen here are more explicit but
 // longer:
-//   - 1 -> Numbered
+//   - 1 -> Numeric
 //   - a -> RomanLower
-//   - b -> RomanUpper
+//   - b -> Roman
 //   - i -> AlphaLower
-//   - I -> AlphaUpper
+//   - I -> Alpha
 func handleOrderedListTypeAttributes(attr attribute, value string, funcName string) (string, bool) {
 	if attr.Name != "type" {
 		return funcName, false
@@ -173,15 +173,15 @@ func handleOrderedListTypeAttributes(attr attribute, value string, funcName stri
 	default:
 		return funcName, false
 	case "1":
-		return funcName + "Numbered", true
+		return funcName + "Numeric", true
 	case "i":
 		return funcName + "RomanLower", true
 	case "I":
-		return funcName + "RomanUpper", true
+		return funcName + "Roman", true
 	case "a":
 		return funcName + "AlphaLower", true
 	case "A":
-		return funcName + "AlphaUpper", true
+		return funcName + "Alpha", true
 	}
 }
 
@@ -263,7 +263,7 @@ func mergeLinks(disambiguated []attribute) []standard.Link {
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {
-	eventHandlersTable := standard.FindNodeWithID(body, "ix-event-handlers")
+	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
 	if eventHandlersTable == nil {
 		log.Fatal("Error finding event handlers table")
 	}

@@ -241,12 +241,12 @@ func extractTokens(node *html.Node) ([]string, []standard.Link) {
 }
 
 func extractSemanticGroup(link standard.Link) string {
-	s := strings.Split(link.URL, "#")[0]
+	s := strings.Split(link.Url, "#")[0]
 	s, _ = strings.CutPrefix(s, "https://html.spec.whatwg.org/dev/")
 
 	group, ok := semanticGroupMapping[s]
 	if !ok {
-		panic("Unknown semantic group link: " + link.URL)
+		panic("Unknown semantic group link: " + link.Url)
 	}
 
 	return group

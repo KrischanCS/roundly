@@ -15,7 +15,7 @@ import (
 
 type Link struct {
 	Name string
-	URL  string
+	Url  string
 }
 
 func ExtractText(data *html.Node) (string, []Link) {
@@ -136,7 +136,7 @@ func addAsLink(node *html.Node, links *[]Link, sb *strings.Builder) {
 	text, ls := ExtractText(node)
 	name := text
 
-	*links = append(*links, Link{Name: name, URL: url})
+	*links = append(*links, Link{Name: name, Url: url})
 
 	sb.WriteString("[" + text + "]")
 

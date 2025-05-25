@@ -41,7 +41,7 @@ linters:
                 - github.com/KrischanCS/htmfunc/logic
 
     staticcheck:
-      initialisms: [] # Not check for any initialism, I think it hurts readability more than it helps (I know I fight the language idioms here, might rethink it later).
+      initialisms: ["NONE_SHOULD_MATCH"] # Not check for any initialism, I think it hurts readability more than it helps (I know I fight the language idioms here, might rethink it later).
       checks:
         - all # Enable all checks
         - -ST1001 # allowing some packages to be dot-imported, and handling them with the revive rule above

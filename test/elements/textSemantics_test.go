@@ -79,7 +79,7 @@ func TestTimeAttribute(t *testing.T) {
 		w.String())
 }
 
-func TestBdo_RTL(t *testing.T) {
+func TestBdo_Rtl(t *testing.T) {
 	t.Parallel()
 
 	w := htmfunc.NewWriter()
@@ -90,7 +90,7 @@ func TestBdo_RTL(t *testing.T) {
 	assert.Equal(t, `<bdo dir="rtl">مرحباً بالعالم</bdo>`, w.String())
 }
 
-func TestBdo_LTR(t *testing.T) {
+func TestBdo_Ltr(t *testing.T) {
 	t.Parallel()
 
 	w := htmfunc.NewWriter()

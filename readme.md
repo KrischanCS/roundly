@@ -8,33 +8,33 @@ These functions can be composed to reusable components.
 package main
 
 import (
-	"bufio"
-	"os"
+    "bufio"
+    "os"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+    "github.com/KrischanCS/htmfunc"
+    . "github.com/KrischanCS/htmfunc/attribute"
+    . "github.com/KrischanCS/htmfunc/element"
+    . "github.com/KrischanCS/htmfunc/text"
 )
 
 func main() {
-	doc := htmfunc.Document(
-		"html",
-		Html(nil,
-			Head(
-				CharSetUtf8(),
-				Title(nil, Text("Htmfunc Page")),
-			),
-			Body(nil,
-				H1(Class("the-title"), Text("Hello World!")),
-			),
-		),
-	)
+    doc := htmfunc.Document(
+        "html",
+        Html(nil,
+            Head(
+                CharSetUtf8(),
+                Title(nil, Text("Htmfunc Page")),
+            ),
+            Body(nil,
+                H1(Class("the-title"), Text("Hello World!")),
+            ),
+        ),
+    )
 
-	err := doc.RenderElement(bufio.NewWriter(os.Stdout))
-	if err != nil {
-		panic(err)
-	}
+    err := doc.RenderElement(bufio.NewWriter(os.Stdout))
+    if err != nil {
+        panic(err)
+    }
 }
 
 ```
@@ -70,7 +70,7 @@ div := Div(nil)
 
 fmt.Println(div.String())
 
-// Output: <div></div>
+// <div></div>
 ```
 
 ### Rendering
@@ -85,13 +85,13 @@ to RenderElement. So with our emppty div from before, it would look like this:
 
 ```go
 func handler(w http.ResponseWriter, r *http.Request) {
-buf := bufio.NewWriter(w)
-defer buf.Flush()
-
-err := Div(nil).RenderElement(buf)
-if err != nil {
-// Handle error
-}
+    buf := bufio.NewWriter(w)
+    defer buf.Flush()
+    
+    err := Div(nil).RenderElement(buf)
+    if err != nil {
+        // Handle error
+    }
 }
 ```
 
@@ -136,17 +136,37 @@ Div(Attributes(Id("the-empty-div"), Class("fancy-div")))
 // </div>
 ```
 
-Attribute functions also accept multiple string values:
+Attributes have different parameter types, depending on what the standard allows:
 
-<!--
 ```go
-Div(Class("fancy-div", "glows-in-the-dark"))
+// Text attributes take a single string as value:
+Id("an-id") // id="an-id"
 
-// <div class="fancy-div glows-in-the-dark"></div>)
+// Text list attributes takes an arbitrary amount of strings
+// and renders them, according to the standard, either comma or space separated:
+Class("class1")                        // class="class1"
+Class("class1", "class2", )            // class="class1 class2"
+Accept("text/xml", "application/json") // accept="text/xml, application/json"
+
+// Equivalently to the text attributes, there are int, uint, float and float-list attributes
+TableIndex(1)              // tableindex="1"
+ColSpan(2)                 // colspan="2"
+Value(6.28)                // value="6.28"
+Coords(52.44897, 13.18063) // coords="52.44897, 13.18063"
+
+// Bool attributes take no value, they just render their name if present:
+Disabled() // disabled
+
+// Attributes wich have a fixed set of allowed values, exist once for each Value, with the value as
+// suffix:
+DirAuto() // dir="auto"
+DirLtr()  // dir="ltr"
+DirRtl()  // dir="rtl"
 ```
--->
 
-## Child Elements
+
+
+### Child Elements
 
 After the attributes, the element functions take an arbitrary amount of child elements:
 
@@ -214,11 +234,17 @@ The `Attributes` function is not required here)
 
 
 ```go
-Article(nil,                                                                      // <article>
-    H1Text("Hello World!", Id("heading")),                                        //     <h1 id="heading">Hello World!</h1>
-    PText("My first htmfunc paragraph!", Id("first-paragraph"), Class("opener")), //     <p id="first-paragraph" class="opener">This is a paragraph.</p>
-    PText("And Already the next one…"),                                           //     <p>And another one…</p>
-)                                                                                 // </article>
+Article(nil,
+    H1Text("Hello World!", Id("heading")),
+    PText("My first htmfunc paragraph!", Id("first-paragraph"), Class("opener")),
+    PText("And Already the next one…"),
+)
+
+// <article>
+//     <h1 id="heading">Hello World!</h1>
+//     <p id="first-paragraph" class="opener">This is a paragraph.</p>
+//     <p>And another one…</p>
+// </article>
 ```
 
 ```go
@@ -232,29 +258,143 @@ Ul(Class("mascot-list"),     // <ul class="mascot-list">
 
 ### Logic
 
-The `logic` package provides functions for conditional rendering, loops and groups. They can be
-used as element functions, but don't render themself to the writer.
+The `logic` package provides meta-elements, which are not rendered itself, but they influence how
+their children are rendered. Specifically there are elements for grouping, conditional rendering and
+repeated rendering.
+
+#### Groups
+
+A group simple renders all its children without a parent. Use this if you wnat to create a component
+which renders multiple elements without a common parent.
 
 ```go
-group...
+Group(
+    H1(nil, Text("Title")),                     // <h1>Title</h1>
+    P(nil, Text("This is a paragraph.")),       // <p>This is a paragraph.</p>
+    P(nil, Text("This is another paragraph.")), // <p>This is another paragraph.</p>
+)
+```
+
+#### Conditionals
+
+Conditional renderings represent classical if/if-else statements.
+
+The `If` function takes a boolean and an element. If the boolean is true, the element is rendered,
+otherwise not.
+
+```go
+Group(
+    If(2>1, H1(nil, Text("This is rendered"))),     // <h1>This is rendered</h1>
+    If(1>2, H1(nil, Text("This is not rendered"))), //
+)
+```
+
+IfElse takes a boolean and two elements. If the boolean is true, the first element is rendered,
+otherwise the second element is rendered.
+
+```go
+Group(
+    IfElse(2>1,                                //
+        H1(nil, Text("This is rendered")),     // <h1>This is rendered</h1>
+        H1(nil, Text("This is not rendered")), //
+    ),                                         //
+    IfElse(1>2,                                //
+        H1(nil, Text("This is not rendered")), //
+        H1(nil, Text("This is rendered")),     // <h1>This is rendered</h1>
+    ),
+)
+
+```
+
+#### Repetitions
+
+For repeating elements with different data, htmfunc provides the `Range` functions:
+
+- `Range` takes a slice of elements and passes each elements index and value to the provided 
+    function.
+- `RangeInt` takes an integer and will call the provided function for each integer from 0 to the
+    given integer - 1.
+- `RangeSeq` takes an iterator (iter.Seq) and applies each yielded value to the provided
+    function.
+
+
+```go
+Range([]string{"gopher", "ferris", "lucy", "duke"}, 
+    func(i int, mascot string) Element {
+        return Li(nil, Text(fmt.Sprintf("$d – %s", i, mascot)))
+    },
+)
+
+// <li>0 – gopher</li>
+// <li>1 – ferris</li>
+// <li>2 – lucy</li>
+// <li>3 – duke</li>
 ```
 
 ```go
-if...
+RangeInt(4, 
+    func(i int) Element {
+        return Li(nil, Text(fmt.Sprintf("Element %d", i)))
+    },
+)
+
+// <li>Element 0</li>
+// <li>Element 1</li>
+// <li>Element 2</li>
+// <li>Element 3</li>
 ```
 
 ```go
-ifElse...
+RangeSeq(slices.Reverse([]string{"gopher", "ferris", "lucy", "duke"}), )
+    func(mascot string) Element {
+        return Li(nil, Text(mascot))
+    },
+)
+
+// <li>duke</li>
+// <li>lucy</li>
+// <li>ferris</li>
+// <li>gopher</li>
 ```
 
-```go
-Range...
-```
+## Naming of Elements and Attributes
 
-```go
-RangeInt...
-```
+All HTML elements have a counterpart element function, which has the same name but with an uppercase
+first letter, e. g.:
 
-```go
-RangeIter...
-```
+- `div` -> `Div`
+- `span` -> `Span`
+- `input` -> `Input`
+
+For attributes the renaming is slightly more complex:
+
+- Attributes are converted to PascalCase, so `colspan` becomes `ColSpan`.
+- Dashes are removed from the name, so `accept-charset` becomes `AcceptCharset`.
+- If there is a name collision between an attribute and an element, the attribute is suffixed with
+  `Attritbute`. Currently these attributes are affected by this:
+  - `abbr`  -> `AbbrAttribute`
+  - `cite`  -> `CiteAttribute`
+  - `data`  -> `DataAttribute`
+  - `form`  -> `FormAttribute`
+  - `label` -> `LabelAttribute`
+  - `slot`  -> `SlotAttribute`
+  - `span`  -> `SpanAttribute`
+  - `style` -> `StyleAttribute`
+  - `title` -> `TitleAttribute`
+- There are a few name collisions between attributes of different parameter types, in those cases
+    the variants are suffixes with `Strings`, `Int`, `Uint`, `Float`, `Floats` or `True` (text attributes
+    are considered default, thus get no suffix). Currently these attributes are affected by this:
+  - `for`    -> `ForStrings`
+  - `sizes`  -> `SizesStrings`
+  - `max`    -> `MaxFloat`
+  - `min`    -> `MinFloat`
+  - `value`  -> `ValueFloat`
+  - `value`  -> `ValueInt`
+- Finally, the type of an unordered list can have the values `1`, `a`, `A`, `i` or `I`. When adding 
+    those to as uppercased suffixes, there are name collisions between a and A and i and I. Those 
+    are completely renamed:
+  - `type="1"` -> `TypeNumeric`
+  - `type="a"` -> `TypeAlphaLower`
+  - `type="A"` -> `TypeAlpha`
+  - `type="i"` -> `TypeRomanLower`
+  - `type="I"` -> `TypeRoman`

@@ -34,8 +34,8 @@ func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 	}
 }
 
-// RangeIter creates an htmfunc.Element yielded by seq.
-func RangeIter[E any](seq iter.Seq[E], component func(E) htmfunc.Element) htmfunc.Element {
+// RangeSeq creates an htmfunc.Element for each value yielded by seq.
+func RangeSeq[E any](seq iter.Seq[E], component func(E) htmfunc.Element) htmfunc.Element {
 	if seq == nil {
 		return func(_ htmfunc.Writer) error {
 			return nil

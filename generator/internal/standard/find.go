@@ -6,7 +6,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-func FindNodeWithID(node *html.Node, id string) *html.Node {
+func FindNodeWithId(node *html.Node, id string) *html.Node {
 	for _, attr := range node.Attr {
 		if attr.Key == "id" && attr.Val == id {
 			return node
@@ -14,13 +14,13 @@ func FindNodeWithID(node *html.Node, id string) *html.Node {
 	}
 
 	for child := range node.ChildNodes() {
-		if n := FindNodeWithID(child, id); n != nil {
+		if n := FindNodeWithId(child, id); n != nil {
 			return n
 		}
 	}
 
 	if node.NextSibling != nil {
-		return FindNodeWithID(node.NextSibling, id)
+		return FindNodeWithId(node.NextSibling, id)
 	}
 
 	return nil

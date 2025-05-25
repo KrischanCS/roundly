@@ -75,7 +75,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					RangeIter(iterator.FromToInclusive(1, 10), func(i int) htmfunc.Element {
+					RangeSeq(iterator.FromToInclusive(1, 10), func(i int) htmfunc.Element {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -206,7 +206,7 @@ func BenchmarkRange(b *testing.B) {
 				nil, Text("The Title of the Page"),
 			),
 			Body(nil,
-				RangeIter(iterator.FromToInclusive(1, 1), func(i int) htmfunc.Element {
+				RangeSeq(iterator.FromToInclusive(1, 1), func(i int) htmfunc.Element {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),

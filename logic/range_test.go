@@ -109,9 +109,9 @@ func ExampleRangeInt() {
 }
 
 //nolint:errcheck
-func ExampleRangeIter() {
+func ExampleRangeSeq() {
 	list := Ol(nil,
-		RangeIter(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) htmfunc.Element {
+		RangeSeq(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) htmfunc.Element {
 			return Li(nil, Text(strconv.FormatFloat(f, 'f', 1, 64)))
 		}),
 	)
@@ -324,7 +324,7 @@ func TestRangeIter(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := htmfunc.NewWriter()
 
-			err := RangeIter(tt.args.seq, tt.args.component).RenderElement(w)
+			err := RangeSeq(tt.args.seq, tt.args.component).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -401,9 +401,9 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for range b.N {
-		_ = RangeIter(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeSeq(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(Class("row"),
-				RangeIter(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
+				RangeSeq(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
 					return Div(Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)

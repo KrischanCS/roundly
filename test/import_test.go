@@ -18,9 +18,9 @@ func TestShouldCompileWhenAllSubpackagesAreDotImported(t *testing.T) {
 	// Using a function from each package to avoid the unused imports being
 	// removed.
 	_ = []any{
-		Html,           // Function from element package
-		Class,          // Function from attribute package
-		Text,           // Function from text package
-		RangeIter[any], // Function from flow package
+		Html,          // Function from element package
+		Class,         // Function from attribute package
+		Text,          // Function from text package
+		RangeSeq[any], // Function from flow package
 	}
 }

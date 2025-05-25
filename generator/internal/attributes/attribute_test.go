@@ -24,12 +24,12 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 			name:        "Should not change anything when there are no duplicates",
 			inputString: "This is a test [linkA] and [linkB]",
 			inputLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
-				{Name: "linkB", URL: "https://example.com/link2"}},
+				{Name: "linkA", Url: "https://example.com/link1"},
+				{Name: "linkB", Url: "https://example.com/link2"}},
 			wantString: "This is a test [linkA] and [linkB]",
 			wantLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
-				{Name: "linkB", URL: "https://example.com/link2"},
+				{Name: "linkA", Url: "https://example.com/link1"},
+				{Name: "linkB", Url: "https://example.com/link2"},
 			},
 		},
 		{
@@ -37,25 +37,25 @@ func Test_distinguishLinkDuplicates(t *testing.T) {
 				"with different URLs",
 			inputString: "This is a test [linkA] and [linkA]",
 			inputLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
-				{Name: "linkA", URL: "https://example.com/link2"},
+				{Name: "linkA", Url: "https://example.com/link1"},
+				{Name: "linkA", Url: "https://example.com/link2"},
 			},
 			wantString: "This is a test [linkA] and [linkA (1)]",
 			wantLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
-				{Name: "linkA (1)", URL: "https://example.com/link2"},
+				{Name: "linkA", Url: "https://example.com/link1"},
+				{Name: "linkA (1)", Url: "https://example.com/link2"},
 			},
 		},
 		{
 			name:        "Should remove the second link when the urls are the same",
 			inputString: "This is a test [linkA] and [linkA]",
 			inputLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
-				{Name: "linkA", URL: "https://example.com/link1"},
+				{Name: "linkA", Url: "https://example.com/link1"},
+				{Name: "linkA", Url: "https://example.com/link1"},
 			},
 			wantString: "This is a test [linkA] and [linkA]",
 			wantLinks: []standard.Link{
-				{Name: "linkA", URL: "https://example.com/link1"},
+				{Name: "linkA", Url: "https://example.com/link1"},
 			},
 		},
 	}
@@ -114,12 +114,12 @@ func Test_handleOrderedListTypeAttributes(t *testing.T) {
 			ok:           false,
 		},
 		{
-			name: "Should append 'Numbered' to the function name when attribute.Name is " +
+			name: "Should append 'Numeric' to the function name when attribute.Name is " +
 				"'type' and value is 1",
 			attribute:    attribute{Name: "type"},
 			value:        "1",
 			funcNameArg:  "FuncName",
-			funcNameWant: "FuncNameNumbered",
+			funcNameWant: "FuncNameNumeric",
 			ok:           true,
 		},
 		{
@@ -132,12 +132,12 @@ func Test_handleOrderedListTypeAttributes(t *testing.T) {
 			ok:           true,
 		},
 		{
-			name: "Should append 'RomanUpper' to the function name when attribute.Name " +
+			name: "Should append 'Roman' to the function name when attribute.Name " +
 				"is 'type' and value is I",
 			attribute:    attribute{Name: "type"},
 			value:        "I",
 			funcNameArg:  "FuncName",
-			funcNameWant: "FuncNameRomanUpper",
+			funcNameWant: "FuncNameRoman",
 			ok:           true,
 		},
 		{
@@ -150,12 +150,12 @@ func Test_handleOrderedListTypeAttributes(t *testing.T) {
 			ok:           true,
 		},
 		{
-			name: "Should append 'AlphaUpper' to the function name when attribute.Name is " +
+			name: "Should append 'Alpha' to the function name when attribute.Name is " +
 				"'type' and value is A",
 			attribute:    attribute{Name: "type"},
 			value:        "A",
 			funcNameArg:  "FuncName",
-			funcNameWant: "FuncNameAlphaUpper",
+			funcNameWant: "FuncNameAlpha",
 			ok:           true,
 		},
 	}
@@ -211,13 +211,13 @@ func TestDecomposeEnums(t *testing.T) {
 		{
 			name: "Should combine attributes for different elements when they have the same name and values",
 			input: []attribute{
-				{Name: "dir", FuncName: "Dir", ParamName: "bdo", Elements: []string{"bdo"}, Value: "", Values: []string{"ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", URL: "https://example.com"}}},
-				{Name: "dir", FuncName: "Dir", ParamName: "span", Elements: []string{"HTML Elements"}, Value: "", Values: []string{"ltr", "rtl", "auto"}, Links: []standard.Link{{Name: "linkB", URL: "https://example.com"}}},
+				{Name: "dir", FuncName: "Dir", ParamName: "bdo", Elements: []string{"bdo"}, Value: "", Values: []string{"ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", Url: "https://example.com"}}},
+				{Name: "dir", FuncName: "Dir", ParamName: "span", Elements: []string{"HTML Elements"}, Value: "", Values: []string{"ltr", "rtl", "auto"}, Links: []standard.Link{{Name: "linkB", Url: "https://example.com"}}},
 			},
 			want: []attribute{
-				{Name: "dir", FuncName: "DirLtr", ParamName: "", Elements: []string{"HTML Elements", "bdo"}, Value: "ltr", Values: []string{"auto", "ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", URL: "https://example.com"}, {Name: "linkB", URL: "https://example.com"}}},
-				{Name: "dir", FuncName: "DirRtl", ParamName: "", Elements: []string{"HTML Elements", "bdo"}, Value: "rtl", Values: []string{"auto", "ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", URL: "https://example.com"}, {Name: "linkB", URL: "https://example.com"}}},
-				{Name: "dir", FuncName: "DirAuto", ParamName: "", Elements: []string{"HTML Elements"}, Value: "auto", Values: []string{"ltr", "rtl", "auto"}, Links: []standard.Link{{Name: "linkB", URL: "https://example.com"}}},
+				{Name: "dir", FuncName: "DirLtr", ParamName: "", Elements: []string{"HTML Elements", "bdo"}, Value: "ltr", Values: []string{"auto", "ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", Url: "https://example.com"}, {Name: "linkB", Url: "https://example.com"}}},
+				{Name: "dir", FuncName: "DirRtl", ParamName: "", Elements: []string{"HTML Elements", "bdo"}, Value: "rtl", Values: []string{"auto", "ltr", "rtl"}, Links: []standard.Link{{Name: "linkA", Url: "https://example.com"}, {Name: "linkB", Url: "https://example.com"}}},
+				{Name: "dir", FuncName: "DirAuto", ParamName: "", Elements: []string{"HTML Elements"}, Value: "auto", Values: []string{"ltr", "rtl", "auto"}, Links: []standard.Link{{Name: "linkB", Url: "https://example.com"}}},
 			},
 		},
 	}

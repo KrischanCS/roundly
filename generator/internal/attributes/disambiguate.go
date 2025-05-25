@@ -1,6 +1,7 @@
 package attributes
 
 import (
+	"fmt"
 	"slices"
 	"strings"
 
@@ -125,6 +126,7 @@ func joinElementsAndDescription(elements []string, attr attribute) []string {
 func appendSuffixToDuplicates(attrs []attribute, suffix string, duplicates set.Set[string]) {
 	for i, attr := range attrs {
 		if duplicates.Contains(attr.FuncName) {
+			fmt.Printf("Rename attribute %s to %s\n", attr.FuncName, attr.FuncName+suffix)
 			attrs[i].FuncName += suffix
 		}
 	}
