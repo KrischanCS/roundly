@@ -39,6 +39,7 @@ func createAttrbibutesFromRows(tBody *html.Node) []*attribute {
 	slog.Debug("Creating attributes from rows...")
 
 	attrs := make([]*attribute, 0, 256)
+
 	for row := range tBody.ChildNodes() {
 		attr := parseAttribute(row)
 		attrs = append(attrs, &attr)

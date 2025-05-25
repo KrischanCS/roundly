@@ -9,12 +9,13 @@ import (
 	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
-func createAcctributeGroups(body *html.Node) attributes {
+func createAcctributeGroups(indicesBody *html.Node, inputBody *html.Node) attributes {
 	slog.Info("Creating attribute groups...")
 
-	attrs := parseAttributes(body)
+	attrs := parseAttributes(indicesBody)
+	inputTypes := parseInputTypes(inputBody)
 
-	attrsClassified := classifyAttributes(attrs)
+	attrsClassified := classifyAttributes(attrs, inputTypes)
 
 	attrsClassified.Enum = DecomposeEnums(attrsClassified.Enum)
 

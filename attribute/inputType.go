@@ -23,7 +23,7 @@ import (
 //   - month
 //   - week
 //   - time
-//   - datetime
+//   - datetime-local
 //   - number
 //   - range
 //   - color

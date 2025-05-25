@@ -8,13 +8,13 @@ import (
 
 var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
-func classifyAttributes(attrs []*attribute) attributes {
+func classifyAttributes(attrs []*attribute, inputTypes []string) attributes {
 	slog.Debug("Grouping attributes by type...")
 
 	attrsClassified := newAttributes()
 
 	for _, attr := range attrs {
-		classifyAttribute(&attrsClassified, attr)
+		classifyAttribute(&attrsClassified, attr, inputTypes)
 	}
 
 	slog.Info("Grouping attributes by type.")
@@ -24,7 +24,7 @@ func classifyAttributes(attrs []*attribute) attributes {
 
 var enumSeperator = regexp.MustCompile(`; ?`)
 
-func classifyAttribute(attrs *attributes, attr *attribute) {
+func classifyAttribute(attrs *attributes, attr *attribute, inputTypes []string) {
 	switch {
 	default:
 		attrs.Text = append(attrs.Text, *attr)

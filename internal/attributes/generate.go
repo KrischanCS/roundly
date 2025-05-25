@@ -20,12 +20,12 @@ var templates embed.FS
 //nolint:gochecknoglobals
 var attrTemplates = template.Must(template.ParseFS(templates, "templates/*.go.tmpl"))
 
-func GenerateAttributes(body *html.Node) {
+func GenerateAttributes(indicesBody *html.Node, inputBody *html.Node) {
 	slog.Info("Generating attributes...")
 
-	attributes := createAcctributeGroups(body)
+	attributes := createAcctributeGroups(indicesBody, inputBody)
 
-	eventHandlerAttributes := findEventHandlerAttributes(body)
+	eventHandlerAttributes := findEventHandlerAttributes(indicesBody)
 
 	slog.Info("Generating files...")
 

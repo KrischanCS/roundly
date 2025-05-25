@@ -39,31 +39,6 @@ func newAttributes() attributes {
 		Int:            make([]attribute, 0, 16),
 		Uint:           make([]attribute, 0, 16),
 	}
-	return attrsClassified
-}
 
-// TODO parse https://html.spec.whatwg.org/dev/input.html#attr-input-type instead of hardcoding this.
-var inputTypes = []string{ //nolint:gochecknoglobals
-	"hidden",
-	"text",
-	"search",
-	"tel",
-	"url",
-	"email",
-	"password",
-	"date",
-	"month",
-	"week",
-	"time",
-	"datetime",
-	"number",
-	"range",
-	"color",
-	"checkbox",
-	"radio",
-	"file",
-	"submit",
-	"image",
-	"reset",
-	"button",
+	return attrsClassified
 }

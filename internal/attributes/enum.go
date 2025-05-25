@@ -16,6 +16,7 @@ func DecomposeEnums(enum []attribute) []attribute {
 	slog.Debug("Decomposing enum attributes...")
 
 	decomposed := make([]attribute, 0, len(enum)*3)
+
 	for _, attr := range enum {
 		for _, value := range attr.Values {
 			value = strings.Trim(value, `[]"`)

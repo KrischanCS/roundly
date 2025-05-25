@@ -16,25 +16,32 @@ import (
 
 const HTMLStandardURL = `https://html.spec.whatwg.org/dev/`
 
-//nolint:gochecknoglobals
-var standardFileName = filepath.Join("data", "htmlStandardIndices.html")
+func LoadStandardForWebDevsIndices(reload bool) *html.Node {
+	var standardIndicesFileName = filepath.Join("data", "htmlStandardIndices.html")
+	return loadFile(reload, standardIndicesFileName, "indices.html")
+}
 
-func LoadStandardForWebDevs(reload bool) *html.Node {
-	if reload || !isStandardFilePresent() {
-		downloadStandardFile()
+func LoadStandardForWebDevsInput(reload bool) *html.Node {
+	var standardInputFileName = filepath.Join("data", "htmlStandardInputs.html")
+	return loadFile(reload, standardInputFileName, "input.html")
+}
+
+func loadFile(reload bool, fileName string, urlResourceName string) *html.Node {
+	if reload || !isFilePresent(fileName) {
+		downloadStandardIndicesFile(fileName, urlResourceName)
 	}
 
-	slog.Info("Parsing HTML standard to nodes...", "filePath", standardFileName)
+	slog.Info("Parsing HTML standard to nodes...", "filePath", fileName)
 
 	//nolint:gosec
-	htmlStandard, err := os.Open(standardFileName)
+	htmlStandard, err := os.Open(fileName)
 	if err != nil {
-		log.Panic("Error opening "+standardFileName+": ", err)
+		log.Panic("Error opening "+fileName+": ", err)
 	}
 
 	body, err := html.Parse(htmlStandard)
 	if err != nil {
-		log.Fatal("Error reading "+standardFileName+": ", err)
+		log.Fatal("Error reading "+fileName+": ", err)
 	}
 
 	slog.Info("Parsed HTML standard to nodes.")
@@ -42,24 +49,25 @@ func LoadStandardForWebDevs(reload bool) *html.Node {
 	return body
 }
 
-func isStandardFilePresent() bool {
-	_, err := os.Stat(standardFileName)
+func isFilePresent(filePath string) bool {
+	_, err := os.Stat(filePath)
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) {
 			return false
 		}
 
-		log.Panic("Error checkin if htmlStandardIndices.html exists: ", err)
+		log.Panicf("Error checking if '%s' exists: %v", filePath, err)
 	}
 
 	return true
 }
 
-func downloadStandardFile() {
-	const indicesURL = HTMLStandardURL + "indices.html"
+func downloadStandardIndicesFile(fileName string, urlResourceName string) {
+	var indicesURL = HTMLStandardURL + urlResourceName
 
 	slog.Info("Downloading HTML standard from the web...", "url", indicesURL)
 
+	//nolint:gosec
 	response, err := http.Get(indicesURL)
 	if err != nil {
 		log.Panic("Error loading indices from standard: ", err)
@@ -77,7 +85,7 @@ func downloadStandardFile() {
 	}
 
 	//nolint:gosec,mnd,nolintlint
-	file, err := os.OpenFile(standardFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666)
+	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Print("Error creating file htmlStandardIndices.html: ", err)
 	}
@@ -94,5 +102,5 @@ func downloadStandardFile() {
 		log.Panic("Error saving to htmlStandardIndices.html: ", err)
 	}
 
-	slog.Info("Saved HTML standard to file", "file", standardFileName)
+	slog.Info("Saved HTML standard to file", "file", fileName)
 }

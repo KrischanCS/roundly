@@ -44,12 +44,15 @@ func findElementsTable(page *html.Node) (*html.Node, bool) {
 
 func createElements(table *html.Node) []Element {
 	slog.Debug("Searching tbody element of element index table...")
+
 	tBody := standard.FindTBody(table)
+
 	slog.Debug("Found tbody of element index table.")
 
 	elements := make([]Element, 0)
 
 	slog.Debug("Parsing table rows to elements...")
+
 	for node := range tBody.ChildNodes() {
 		if node.Type != html.ElementNode {
 			panic("Expect only element nodes")
@@ -61,6 +64,7 @@ func createElements(table *html.Node) []Element {
 
 		elements = append(elements, elementsFromRow(node)...)
 	}
+
 	slog.Debug("Parsed table nodes to elements.", "elementCount", len(elements))
 
 	return elements
@@ -168,4 +172,3 @@ func extractTokens(node *html.Node) ([]string, []standard.Link) {
 
 	return categories, links
 }
-

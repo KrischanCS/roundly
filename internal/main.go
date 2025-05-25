@@ -32,11 +32,11 @@ func main() {
 
 	slog.Info("Begins generation")
 
-	body := standard.LoadStandardForWebDevs(*reloadStandard)
+	indicesBody := standard.LoadStandardForWebDevsIndices(*reloadStandard)
+	inputBody := standard.LoadStandardForWebDevsInput(*reloadStandard)
 
-	elements.GenerateElements(body)
-
-	attributes.GenerateAttributes(body)
+	elements.GenerateElements(indicesBody)
+	attributes.GenerateAttributes(indicesBody, inputBody)
 }
 
 func setupLogger() {

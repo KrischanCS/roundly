@@ -127,10 +127,15 @@ func joinElementsAndDescription(elements []string, attr attribute) []string {
 
 func appendSuffixToDuplicates(attrs []attribute, suffix string, duplicates set.Set[string]) {
 	for i, attr := range attrs {
-		if duplicates.Contains(attr.FuncName) {
-			slog.Info("Renaming attribute", "oldName", attr.FuncName, "newName", attr.FuncName+suffix)
-			attrs[i].FuncName += suffix
+		if !duplicates.Contains(attr.FuncName) {
+			continue
 		}
+
+		slog.Info("Renaming attribute",
+			"oldName", attr.FuncName,
+			"newName", attr.FuncName+suffix)
+
+		attrs[i].FuncName += suffix
 	}
 }
 

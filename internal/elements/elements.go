@@ -19,4 +19,3 @@ func GenerateElements(standardIndicesPage *html.Node) {
 
 	slog.Info("Generated elements.")
 }
-
