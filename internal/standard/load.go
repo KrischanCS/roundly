@@ -6,6 +6,7 @@ import (
 	"errors"
 	"io"
 	"log"
+	"log/slog"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -23,6 +24,8 @@ func LoadStandardForWebDevs(reload bool) *html.Node {
 		downloadStandardFile()
 	}
 
+	slog.Info("Parsing HTML standard to nodes...", "filePath", standardFileName)
+
 	//nolint:gosec
 	htmlStandard, err := os.Open(standardFileName)
 	if err != nil {
@@ -33,6 +36,8 @@ func LoadStandardForWebDevs(reload bool) *html.Node {
 	if err != nil {
 		log.Fatal("Error reading "+standardFileName+": ", err)
 	}
+
+	slog.Info("Parsed HTML standard to nodes.")
 
 	return body
 }
@@ -52,6 +57,8 @@ func isStandardFilePresent() bool {
 
 func downloadStandardFile() {
 	const indicesURL = HTMLStandardURL + "indices.html"
+
+	slog.Info("Downloading HTML standard from the web...", "url", indicesURL)
 
 	response, err := http.Get(indicesURL)
 	if err != nil {
@@ -86,4 +93,6 @@ func downloadStandardFile() {
 	if err != nil {
 		log.Panic("Error saving to htmlStandardIndices.html: ", err)
 	}
+
+	slog.Info("Saved HTML standard to file", "file", standardFileName)
 }

@@ -4,7 +4,9 @@ package attributes
 import (
 	"embed"
 	"log"
+	"log/slog"
 	"os"
+	"path/filepath"
 	"text/template"
 
 	"golang.org/x/net/html"
@@ -17,8 +19,11 @@ var templates embed.FS
 var attrTemplates = template.Must(template.ParseFS(templates, "templates/*.go.tmpl"))
 
 func GenerateAttributes(body *html.Node) {
-	attributes := findAttributes(body)
+	slog.Info("Generating attributes...")
+	attributes := createElementGroups(body)
 	eventHandlerAttributes := findEventHandlerAttributes(body)
+
+	slog.Info("Generating files...")
 
 	generateFile("attributesText.go.tmpl", attributes.Text, "text.go")
 	generateFile("attributesBool.go.tmpl", attributes.Bool, "bool.go")
@@ -36,11 +41,17 @@ func GenerateAttributes(body *html.Node) {
 	generateFile("attributesUint.go.tmpl", attributes.Uint, "uint.go")
 	generateFile("attributeList.go.tmpl", nil, "attributeList.go")
 	generateFile("attributesText.go.tmpl", eventHandlerAttributes, "eventHandler.go")
+
+	slog.Info("Generated attributes.")
 }
 
 func generateFile(name string, attributes []attribute, fileName string) {
+	filePath := filepath.Join("..", "attribute", fileName)
+
+	slog.Debug("Generating file...", "file", filePath, "templateName", name)
+
 	//nolint:gosec
-	file, err := os.OpenFile("../attribute/"+fileName, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	file, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -56,4 +67,6 @@ func generateFile(name string, attributes []attribute, fileName string) {
 	if err != nil {
 		log.Print("Error executing template: ", err)
 	}
+
+	slog.Info("Generated file.", "file", filepath.Base(filePath))
 }

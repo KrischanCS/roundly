@@ -6,6 +6,8 @@ import (
 	"embed"
 	"fmt"
 	"iter"
+	"log"
+	"log/slog"
 	"os"
 	"path/filepath"
 	"strings"
@@ -16,7 +18,7 @@ import (
 
 	"github.com/KrischanCS/go-toolbox/iterator"
 
-	standard2 "github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 //go:embed templates
@@ -46,21 +48,35 @@ type Element struct {
 	Attributes []string
 
 	// DocumentationLink is the link to the documentation of this in the html standard
-	DocumentationLink standard2.Link
+	DocumentationLink standard.Link
 	// Links are all links in the description of this element
-	Links []standard2.Link
+	Links []standard.Link
 }
 
 func GenerateElements(standardIndicesPage *html.Node) {
+	slog.Info("Generating elements...")
+
 	elementGroups := getAllElements(standardIndicesPage)
+
+	generateFileForEachGroup(elementGroups)
+
+	slog.Info("Generated elements.")
+}
+
+func generateFileForEachGroup(elementGroups map[string][]Element) {
+	slog.Info("Generating files for groups...", "groupCount", len(elementGroups))
 
 	for group, elements := range elementGroups {
 		generateFile(group, elements)
 	}
+
+	slog.Info("Generated files for all groups.")
 }
 
 func generateFile(group string, elements []Element) {
 	filePath := filepath.Join("..", "element", group+".go")
+
+	slog.Debug("Creating file...", "file", filePath)
 
 	//nolint:gosec // Files are written for everyone
 	file, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
@@ -73,12 +89,16 @@ func generateFile(group string, elements []Element) {
 	if err != nil {
 		panic(fmt.Sprintf("Error executing template %s: %s", group, err))
 	}
+
+	slog.Info("Created file.", "file", filePath)
 }
 
 func getAllElements(standardIndicesPage *html.Node) map[string][]Element {
+	slog.Info("Creating element groups...")
+
 	elementsTable, ok := findElementsTable(standardIndicesPage)
 	if !ok {
-		panic("Could not find elements table")
+		log.Panic("Could not find elements table")
 	}
 
 	elements := createElements(elementsTable)
@@ -87,16 +107,22 @@ func getAllElements(standardIndicesPage *html.Node) map[string][]Element {
 		// TODO link deduplication is probably neither here, nor in attributes complete.
 		//  Everything rendered to doc comment must be considered, not only description
 		//  as it is in attributes (Or only dedup of exact same as I did here).
-		element.Links = standard2.EliminateExactSameLinks(element.Links)
+		element.Links = standard.EliminateExactSameLinks(element.Links)
 		elements[i] = element
 	}
 
 	e := iterator.Of(elements...)
 
-	return groupElements(e)
+	groups := groupElements(e)
+
+	slog.Info("Generated element groups.")
+
+	return groups
 }
 
 func groupElements(e iter.Seq[Element]) map[string][]Element {
+	slog.Info("assigning elements to semantic groups...")
+
 	groups := make(map[string][]Element)
 	iterator.Reduce(e, &groups, func(accumulator *map[string][]Element, value Element) {
 		group, ok := (*accumulator)[value.SemanticGroup]
@@ -108,22 +134,27 @@ func groupElements(e iter.Seq[Element]) map[string][]Element {
 		(*accumulator)[value.SemanticGroup] = group
 	})
 
+	slog.Info("assigned elements to semantic groups.")
+
 	return groups
 }
 
 func findElementsTable(page *html.Node) (*html.Node, bool) {
 	// The elements table has no id, but a caption with the text
-	// "List of elements", searching by that…
+	// "List of elements", searching by that...
 	const caption = "List of elements"
 
-	return standard2.FindTableWithCaption(page, caption)
+	return standard.FindTableWithCaption(page, caption)
 }
 
 func createElements(table *html.Node) []Element {
-	tBody := standard2.FindTBody(table)
+	slog.Debug("Searching tbody element of element index table...")
+	tBody := standard.FindTBody(table)
+	slog.Debug("Found tbody of element index table.")
 
 	elements := make([]Element, 0)
 
+	slog.Debug("Parsing table rows to elements...")
 	for node := range tBody.ChildNodes() {
 		if node.Type != html.ElementNode {
 			panic("Expect only element nodes")
@@ -135,6 +166,7 @@ func createElements(table *html.Node) []Element {
 
 		elements = append(elements, elementsFromRow(node)...)
 	}
+	slog.Debug("Parsed table nodes to elements.", "elementCount", len(elements))
 
 	return elements
 }
@@ -147,7 +179,7 @@ func elementsFromRow(node *html.Node) []Element {
 
 	// There exist one case with multiple elements in a single ro
 	// (h1, h2, h3, h4, h5, h6)
-	names, links := standard2.ExtractText(nameNode)
+	names, links := standard.ExtractText(nameNode)
 
 	elements := make([]Element, 0, 1)
 
@@ -162,6 +194,8 @@ func elementsFromRow(node *html.Node) []Element {
 
 		elements = append(elements, elementFromRow(name, mainLink, nameNode.NextSibling))
 	}
+
+	// TODO put link deduplication here
 
 	return elements
 }
@@ -193,7 +227,7 @@ var voidElementTags = set.Of(
 
 func elementFromRow(
 	name string,
-	documentationLink standard2.Link,
+	documentationLink standard.Link,
 	descriptionNode *html.Node,
 ) Element {
 	element := Element{
@@ -204,7 +238,7 @@ func elementFromRow(
 
 	element.IsVoid = voidElementTags.Contains(name)
 
-	description, links := standard2.ExtractText(descriptionNode)
+	description, links := standard.ExtractText(descriptionNode)
 	element.Description = strings.Trim(description, "[]")
 	element.Links = links
 
@@ -229,8 +263,8 @@ func elementFromRow(
 	return element
 }
 
-func extractTokens(node *html.Node) ([]string, []standard2.Link) {
-	text, links := standard2.ExtractText(node)
+func extractTokens(node *html.Node) ([]string, []standard.Link) {
+	text, links := standard.ExtractText(node)
 
 	categories := strings.Split(text, ";")
 	for i := range categories {
@@ -240,7 +274,7 @@ func extractTokens(node *html.Node) ([]string, []standard2.Link) {
 	return categories, links
 }
 
-func extractSemanticGroup(link standard2.Link) string {
+func extractSemanticGroup(link standard.Link) string {
 	s := strings.Split(link.Url, "#")[0]
 	s, _ = strings.CutPrefix(s, "https://html.spec.whatwg.org/dev/")
 

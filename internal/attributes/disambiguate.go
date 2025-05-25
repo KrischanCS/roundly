@@ -1,7 +1,7 @@
 package attributes
 
 import (
-	"fmt"
+	"log/slog"
 	"slices"
 	"strings"
 
@@ -12,6 +12,18 @@ import (
 //
 // If so, it renames them based on their parameter types.
 func disambiguateAttrs(attrs *attributes) {
+	slog.Debug("Disambiguating attributes with name collisions...")
+
+	mergeDuplicatesWithSameType(attrs)
+
+	duplicates := findDuplicatedNames(*attrs)
+
+	appendSuffixesToRemainingDuplicates(attrs, duplicates)
+
+	slog.Info("Disambiguated attributes with name collisions.")
+}
+
+func mergeDuplicatesWithSameType(attrs *attributes) {
 	attrs.Text = mergeAttributes(attrs.Text)
 	attrs.Bool = mergeAttributes(attrs.Bool)
 	attrs.InputType = mergeAttributes(attrs.InputType)
@@ -21,17 +33,6 @@ func disambiguateAttrs(attrs *attributes) {
 	attrs.Float = mergeAttributes(attrs.Float)
 	attrs.Int = mergeAttributes(attrs.Int)
 	attrs.Uint = mergeAttributes(attrs.Uint)
-
-	duplicates := findDuplicatedNames(*attrs)
-
-	appendSuffixToDuplicates(attrs.Bool, "True", duplicates)
-	appendSuffixToDuplicates(attrs.InputType, "InputType", duplicates)
-	appendSuffixToDuplicates(attrs.ListComma, "Strings", duplicates)
-	appendSuffixToDuplicates(attrs.ListSpace, "Strings", duplicates)
-	appendSuffixToDuplicates(attrs.ListCommaFloat, "Floats", duplicates)
-	appendSuffixToDuplicates(attrs.Float, "Float", duplicates)
-	appendSuffixToDuplicates(attrs.Int, "Int", duplicates)
-	appendSuffixToDuplicates(attrs.Uint, "UInt", duplicates)
 }
 
 func mergeAttributes(attrs []attribute) []attribute {
@@ -56,6 +57,17 @@ func mergeAttributes(attrs []attribute) []attribute {
 	}
 
 	return merged
+}
+
+func appendSuffixesToRemainingDuplicates(attrs *attributes, duplicates set.Set[string]) {
+	appendSuffixToDuplicates(attrs.Bool, "True", duplicates)
+	appendSuffixToDuplicates(attrs.InputType, "InputType", duplicates)
+	appendSuffixToDuplicates(attrs.ListComma, "Strings", duplicates)
+	appendSuffixToDuplicates(attrs.ListSpace, "Strings", duplicates)
+	appendSuffixToDuplicates(attrs.ListCommaFloat, "Floats", duplicates)
+	appendSuffixToDuplicates(attrs.Float, "Float", duplicates)
+	appendSuffixToDuplicates(attrs.Int, "Int", duplicates)
+	appendSuffixToDuplicates(attrs.Uint, "UInt", duplicates)
 }
 
 func findAttrDuplicates(
@@ -126,7 +138,7 @@ func joinElementsAndDescription(elements []string, attr attribute) []string {
 func appendSuffixToDuplicates(attrs []attribute, suffix string, duplicates set.Set[string]) {
 	for i, attr := range attrs {
 		if duplicates.Contains(attr.FuncName) {
-			fmt.Printf("Rename attribute %s to %s\n", attr.FuncName, attr.FuncName+suffix)
+			slog.Info("Renaming attribute", "oldName", attr.FuncName, "newName", attr.FuncName+suffix)
 			attrs[i].FuncName += suffix
 		}
 	}

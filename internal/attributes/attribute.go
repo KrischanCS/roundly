@@ -2,6 +2,7 @@ package attributes
 
 import (
 	"log"
+	"log/slog"
 	"regexp"
 	"sort"
 	"strings"
@@ -11,7 +12,7 @@ import (
 	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
-	standard2 "github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/htmfunc/internal/standard"
 )
 
 type attribute struct {
@@ -22,7 +23,7 @@ type attribute struct {
 	Description string
 	Value       string
 	Values      []string
-	Links       []standard2.Link
+	Links       []standard.Link
 }
 
 type attributes struct {
@@ -64,34 +65,66 @@ var inputTypes = []string{ //nolint:gochecknoglobals
 	"button",
 }
 
-func findAttributes(body *html.Node) attributes {
-	attributesTable := standard2.FindNodeWithId(body, "attributes-1")
-	if attributesTable == nil {
-		log.Fatal("Error finding attributes table")
-	}
+func createElementGroups(body *html.Node) attributes {
+	slog.Info("Creating attribute groups...")
 
-	tBody := standard2.FindTBody(attributesTable)
-
-	attrsByName := make(map[string][]*attribute)
-	attrs := make([]*attribute, 0, 256)
-
-	for row := range tBody.ChildNodes() {
-		attr := parseAttribute(row)
-		addByName(attrsByName, &attr)
-		attrs = append(attrs, &attr)
-	}
+	attrs := parseAttributes(body)
 
 	attrsClassified := classifyAttributes(attrs)
+
 	attrsClassified.Enum = DecomposeEnums(attrsClassified.Enum)
 
 	disambiguateAttrs(&attrsClassified)
 
+	slog.Info("Created attribute groups.")
+
 	return attrsClassified
 }
 
-func DecomposeEnums(enum []attribute) []attribute {
-	decomposed := make([]attribute, 0, len(enum)*3)
+func parseAttributes(body *html.Node) []*attribute {
+	slog.Info("Parsing attributes...")
 
+	tBody := findAttributesTableBody(body)
+	attrs := createAttrbibutesFromRows(tBody)
+
+	slog.Info("Parsed attributes.", "attributesCount", len(attrs))
+
+	return attrs
+}
+
+func createAttrbibutesFromRows(tBody *html.Node) []*attribute {
+	slog.Debug("Creating attributes from rows...")
+
+	attrs := make([]*attribute, 0, 256)
+	for row := range tBody.ChildNodes() {
+		attr := parseAttribute(row)
+		attrs = append(attrs, &attr)
+	}
+
+	slog.Debug("Created attributes from rows.")
+
+	return attrs
+}
+
+func findAttributesTableBody(body *html.Node) *html.Node {
+	slog.Debug("Finding attributes table...")
+
+	attributesTable := standard.FindNodeWithId(body, "attributes-1")
+	if attributesTable == nil {
+		log.Fatal("Error finding attributes table")
+	}
+
+	tBody := standard.FindTBody(attributesTable)
+
+	slog.Debug("Found attributes table.")
+
+	return tBody
+}
+
+func DecomposeEnums(enum []attribute) []attribute {
+	slog.Debug("Decomposing enum attributes...")
+
+	decomposed := make([]attribute, 0, len(enum)*3)
 	for _, attr := range enum {
 		for _, value := range attr.Values {
 			value = strings.Trim(value, `[]"`)
@@ -114,6 +147,8 @@ func DecomposeEnums(enum []attribute) []attribute {
 	sort.Slice(attrs, func(i, j int) bool {
 		return attrs[i].FuncName < attrs[j].FuncName
 	})
+
+	slog.Info("Decomposed enum attributes.")
 
 	return attrs
 }
@@ -152,7 +187,7 @@ func uppercaseAt(funcNameSuffix string, i int) string {
 	return funcNameSuffix[:i] + strings.ToUpper(funcNameSuffix[i:i+1]) + funcNameSuffix[i+1:]
 }
 
-// handleOrderedListTypeAttributes checks for an annoying special case… The
+// handleOrderedListTypeAttributes checks for an annoying special case... The
 // single-character values of the type attribute of ol elements are
 // case-sensitive, thus they cannot be converted simply to camel case as i and I
 // as well as a and A would be converted to the same name.
@@ -244,7 +279,7 @@ func mergeValues(disambiguated []attribute) []string {
 	return v
 }
 
-func mergeLinks(disambiguated []attribute) []standard2.Link {
+func mergeLinks(disambiguated []attribute) []standard.Link {
 	links := set.Of(disambiguated[0].Links...)
 
 	for _, a := range disambiguated[1:] {
@@ -263,12 +298,12 @@ func mergeLinks(disambiguated []attribute) []standard2.Link {
 }
 
 func findEventHandlerAttributes(body *html.Node) []attribute {
-	eventHandlersTable := standard2.FindNodeWithId(body, "ix-event-handlers")
+	eventHandlersTable := standard.FindNodeWithId(body, "ix-event-handlers")
 	if eventHandlersTable == nil {
 		log.Fatal("Error finding event handlers table")
 	}
 
-	tBody := standard2.FindTBody(eventHandlersTable)
+	tBody := standard.FindTBody(eventHandlersTable)
 
 	attrs := make([]attribute, 0, 256)
 
@@ -280,19 +315,11 @@ func findEventHandlerAttributes(body *html.Node) []attribute {
 	return attrs
 }
 
-func addByName(attrsByName map[string][]*attribute, attr *attribute) {
-	attrsWithName, ok := attrsByName[attr.Name]
-	if !ok {
-		attrsWithName = make([]*attribute, 0, 1)
-	}
-
-	attrsWithName = append(attrsWithName, attr)
-	attrsByName[attr.Name] = attrsWithName
-}
-
 var enumPattern = regexp.MustCompile(`^".*?"(;".*?")*(;the empty string)?$`)
 
 func classifyAttributes(attrs []*attribute) attributes {
+	slog.Debug("Grouping attributes by type...")
+
 	attrsClassified := attributes{
 		Text:           make([]attribute, 0, 16),
 		Bool:           make([]attribute, 0, 16),
@@ -309,6 +336,8 @@ func classifyAttributes(attrs []*attribute) attributes {
 	for _, attr := range attrs {
 		classifyAttribute(&attrsClassified, attr)
 	}
+
+	slog.Info("Grouping attributes by type.")
 
 	return attrsClassified
 }
@@ -395,7 +424,7 @@ func parseAttribute(row *html.Node) attribute {
 
 	var attr attribute
 
-	text, links := standard2.ExtractText(data)
+	text, links := standard.ExtractText(data)
 	setNames(&attr, text)
 	attr.Links = links
 
@@ -407,13 +436,13 @@ func parseAttribute(row *html.Node) attribute {
 
 	data = data.NextSibling
 
-	text, links = standard2.ExtractText(data)
+	text, links = standard.ExtractText(data)
 	attr.Description = text
 	attr.Links = append(attr.Links, links...)
 
 	data = data.NextSibling
 
-	text, links = standard2.ExtractText(data)
+	text, links = standard.ExtractText(data)
 	text = strings.ReplaceAll(text, "*", " (Additional rules apply, see elements documentation)")
 
 	attr.Value = text
@@ -436,8 +465,8 @@ func setNames(attr *attribute, attributeName string) {
 	attr.FuncName = strings.ToUpper(attr.ParamName[0:1]) + attr.ParamName[1:]
 }
 
-func extractElements(data *html.Node) ([]string, []standard2.Link) {
-	text, links := standard2.ExtractText(data)
+func extractElements(data *html.Node) ([]string, []standard.Link) {
+	text, links := standard.ExtractText(data)
 
 	return strings.Split(text, ";"), links
 }

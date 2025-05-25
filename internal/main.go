@@ -5,6 +5,9 @@ package main
 import (
 	_ "embed"
 	"flag"
+	"log/slog"
+	"os"
+	"time"
 
 	"github.com/KrischanCS/htmfunc/internal/attributes"
 	"github.com/KrischanCS/htmfunc/internal/elements"
@@ -20,9 +23,29 @@ var reloadStandard = flag.Bool(
 
 func main() {
 	flag.Parse()
+	setupLogger()
+
+	start := time.Now()
+	defer func() {
+		slog.Info("Done", "time", time.Since(start))
+	}()
+
+	slog.Info("Begins generation")
 
 	body := standard.LoadStandardForWebDevs(*reloadStandard)
 
 	elements.GenerateElements(body)
+
 	attributes.GenerateAttributes(body)
+}
+
+func setupLogger() {
+	slog.SetDefault(
+		slog.New(slog.NewTextHandler(os.Stderr,
+			&slog.HandlerOptions{
+				AddSource: true,
+				Level:     slog.LevelInfo,
+			}),
+		),
+	)
 }
