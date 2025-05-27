@@ -130,10 +130,9 @@ func BenchmarkText(b *testing.B) {
 
 	w := htmfunc.NewWriter()
 
-	b.ResetTimer()
 	b.ReportAllocs()
 
-	for range b.N {
+	for b.Loop() {
 		_ = Text(t)(w) //nolint:errcheck
 		w.Reset()
 	}
@@ -146,10 +145,9 @@ func BenchmarkTextTrusted(b *testing.B) {
 
 	w := htmfunc.NewWriter()
 
-	b.ResetTimer()
 	b.ReportAllocs()
 
-	for range b.N {
+	for b.Loop() {
 		_ = RawTrusted(t)(w) //nolint:errcheck
 		w.Reset()
 	}

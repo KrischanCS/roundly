@@ -348,7 +348,7 @@ func BenchmarkRange(b *testing.B) {
 
 	var res []byte
 
-	for range b.N {
+	for b.Loop() {
 		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
 			return Div(Class("row"),
 				Range(row, func(_ int, i int) htmfunc.Element {
@@ -374,7 +374,7 @@ func BenchmarkRangeInt(b *testing.B) {
 
 	var res []byte
 
-	for range b.N {
+	for b.Loop() {
 		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(Class("row"),
 				RangeInt(20, func(col int) htmfunc.Element {
@@ -400,7 +400,7 @@ func BenchmarkRangeIter(b *testing.B) {
 
 	var res []byte
 
-	for range b.N {
+	for b.Loop() {
 		_ = RangeSeq(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
 			return Div(Class("row"),
 				RangeSeq(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
