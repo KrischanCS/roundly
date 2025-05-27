@@ -6,19 +6,19 @@ import (
 	"github.com/KrischanCS/htmfunc"
 )
 
+func nopAttribute(w htmfunc.Writer) error {
+	return nil
+}
+
 // Attributes joins all given attributes space separated.
 func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 	if attributes == nil {
-		return func(w htmfunc.Writer) error {
-			return nil
-		}
+		return nopAttribute
 	}
 
 	switch len(attributes) {
 	case 0:
-		return func(w htmfunc.Writer) error {
-			return nil
-		}
+		return nopAttribute
 	case 1:
 		return attributes[0]
 	default:
@@ -34,6 +34,11 @@ func join(attributes []htmfunc.Attribute) htmfunc.Attribute {
 		}
 
 		for _, attribute := range attributes[1:] {
+			err = w.WriteByte(' ')
+			if err != nil {
+				return err
+			}
+
 			err = attribute.RenderAttribute(w)
 			if err != nil {
 				return err

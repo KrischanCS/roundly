@@ -141,7 +141,7 @@ Id("an-id") // id="an-id"
 // Text list attributes takes an arbitrary amount of strings
 // and renders them, according to the standard, either comma or space separated:
 Class("class1")                        // class="class1"
-Class("class1", "class2", )            // class="class1 class2"
+Class("class1", "class2")            // class="class1 class2"
 Accept("text/xml", "application/json") // accept="text/xml, application/json"
 
 // Equivalently to the text attributes, there are int, uint, float and float-list attributes
@@ -208,9 +208,9 @@ the string as is, without escaping it. This should only be used with trusted con
 lead to XSS vulnerabilities if used with user input or untrusted data.
 
 ```go
-Div(nil,                                       // <div>
+Div(nil,                                             // <div>
     RawTrusted("<script>alert('Hello!');</script>"), //   <script>alert('Hello!');</script>
-)                                              // </div>
+)                                                    // </div>
 ```
 
 Another way to include Text, are the convenience variants of the element functions, with the `Text`
@@ -358,9 +358,11 @@ RangeSeq(slices.Reverse([]string{"gopher", "ferris", "lucy", "duke"}), )
 All HTML elements have a counterpart element function, which has the same name but with an uppercase
 first letter, e. g.:
 
-- `div` -> `Div`
-- `span` -> `Span`
-- `input` -> `Input`
+| Element Tag | Function Name |
+|-------------|---------------|
+| `div`       | `Div`         |
+| `span`      | `Span`        |
+| `input`     | `Input`       |
 
 For attributes the renaming is slightly more complex:
 
@@ -368,29 +370,40 @@ For attributes the renaming is slightly more complex:
 - Dashes are removed from the name, so `accept-charset` becomes `AcceptCharset`.
 - If there is a name collision between an attribute and an element, the attribute is suffixed with
   `Attritbute`. Currently these attributes are affected by this:
-  - `abbr`  -> `AbbrAttribute`
-  - `cite`  -> `CiteAttribute`
-  - `data`  -> `DataAttribute`
-  - `form`  -> `FormAttribute`
-  - `label` -> `LabelAttribute`
-  - `slot`  -> `SlotAttribute`
-  - `span`  -> `SpanAttribute`
-  - `style` -> `StyleAttribute`
-  - `title` -> `TitleAttribute`
-- There are a few name collisions between attributes of different parameter types, in those cases
+
+
+| Attribute Name | Function Name         |
+|----------------|------------------------|
+| `abbr`         | `AbbrAttribute`        |
+| `cite`         | `CiteAttribute`        |
+| `data`         | `DataAttribute`        |
+| `form`         | `FormAttribute`        |
+| `label`        | `LabelAttribute`       |
+| `slot`         | `SlotAttribute`        |
+| `span`         | `SpanAttribute`        |
+| `style`        | `StyleAttribute`       |
+| `title`        | `TitleAttribute`       |
+  
+There are a few name collisions between attributes of different parameter types, in those cases
     the variants are suffixes with `Strings`, `Int`, `Uint`, `Float`, `Floats` or `True` (text attributes
     are considered default, thus get no suffix). Currently these attributes are affected by this:
-  - `for`    -> `ForStrings`
-  - `sizes`  -> `SizesStrings`
-  - `max`    -> `MaxFloat`
-  - `min`    -> `MinFloat`
-  - `value`  -> `ValueFloat`
-  - `value`  -> `ValueInt`
+
+| Attribute Name | Function Name         |
+|----------------|------------------------|
+| `for`          | `ForStrings`           |
+| `sizes`        | `SizesStrings`         |
+| `max`          | `MaxFloat`             |
+| `min`          | `MinFloat`             |
+| `value`        | `ValueFloat`, `ValueInt` |
+
 - Finally, the type of an unordered list can have the values `1`, `a`, `A`, `i` or `I`. When adding 
     those to as uppercased suffixes, there are name collisions between a and A and i and I. Those 
     are completely renamed:
-  - `type="1"` -> `TypeNumeric`
-  - `type="a"` -> `TypeAlphaLower`
-  - `type="A"` -> `TypeAlpha`
-  - `type="i"` -> `TypeRomanLower`
-  - `type="I"` -> `TypeRoman`
+
+| Attribute & Value | Function Name         |
+|-------------------|------------------------|
+| `type="1"`         | `TypeNumeric`          |
+| `type="A"`         | `TypeAlpha`            |
+| `type="a"`         | `TypeAlphaLower`       |
+| `type="I"`         | `TypeRoman`            |
+| `type="i"`         | `TypeRomanLower`       |
