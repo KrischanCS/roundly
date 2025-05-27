@@ -34,10 +34,6 @@ func join(attributes []htmfunc.Attribute) htmfunc.Attribute {
 		}
 
 		for _, attribute := range attributes[1:] {
-			err = w.WriteByte(' ')
-			if err != nil {
-				return err
-			}
 
 			err = attribute.RenderAttribute(w)
 			if err != nil {
