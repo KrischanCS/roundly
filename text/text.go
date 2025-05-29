@@ -34,7 +34,7 @@ func writeTextIndexOfMode(w htmfunc.Writer, b []byte) (err error) {
 	repeatedShortDistances := 0
 
 	for len(b) > 0 {
-		i := bytes.IndexAny(b, `&<>"'`)
+		i := bytes.IndexAny(b, "&<>\"'\000")
 		if i == -1 {
 			_, err = w.Write(b)
 			return err

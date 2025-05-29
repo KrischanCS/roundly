@@ -59,14 +59,9 @@ func TestText(t *testing.T) {
 		},
 		{
 			name: "escape all",
-			text: `<div>'Test'>"test" & 1<3</div\000>`,
+			text: "<div>'Test'>\"test\" & 1<3</div\000>",
 			want: "&lt;div&gt;&#39;Test&#39;&gt;&#34;test&#34; &amp; 1&lt;3&lt;/div\uFFFD&gt;",
 		},
-	}
-
-	type impl struct {
-		name string
-		impl func(text string) htmfunc.Element
 	}
 
 	for _, tt := range tests {
