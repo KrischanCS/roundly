@@ -9,6 +9,62 @@ import (
 )
 
 func TestRawTrusted(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name string
+		text string
+	}{
+		{
+			name: "empty",
+			text: "",
+		},
+		{
+			name: "simple",
+			text: "hello world",
+		},
+		{
+			name: "escape <",
+			text: "hello<world",
+		},
+		{
+			name: "escape >",
+			text: "hello>world",
+		},
+		{
+			name: "escape &",
+			text: "hello&world",
+		},
+		{
+			name: "escape '",
+			text: "hello'world",
+		},
+		{
+			name: "escape \"",
+			text: "hello\"world",
+		},
+		{
+			name: "escape all",
+			text: `<div>'Test'>"test" & 1<3</div>`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			w := htmfunc.NewWriter()
+
+			err := RawTrusted(tt.text).RenderElement(w)
+
+			assert.NoError(t, err)
+			assert.Equal(t, tt.text, w.String())
+		})
+	}
+}
+
+//nolint:funlen
+func TestRawTrustedSamples(t *testing.T) {
+	t.Parallel()
+
 	type testCase struct {
 		name string
 		text string
@@ -76,6 +132,7 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 	}
 }
 
+//nolint:funlen
 func BenchmarkRawTrusted(b *testing.B) {
 	type testCase struct {
 		name string
@@ -139,7 +196,7 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 			b.ReportAllocs()
 
 			for b.Loop() {
-				_ = RawTrusted(tt.text).RenderElement(w)
+				_ = RawTrusted(tt.text).RenderElement(w) //nolint:errcheck
 
 				w.Reset()
 			}

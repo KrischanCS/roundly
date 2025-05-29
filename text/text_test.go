@@ -2,6 +2,7 @@ package text
 
 import (
 	"html/template"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,6 +10,7 @@ import (
 	"github.com/KrischanCS/htmfunc"
 )
 
+//nolint:funlen
 func TestText(t *testing.T) {
 	t.Parallel()
 
@@ -66,70 +68,26 @@ func TestText(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			// Arrange
+			original := strings.Clone(tt.text)
 
-			err := Text(tt.text).RenderElement(w)
+			// Act
+			got := Text(tt.text).String()
 
-			assert.NoError(t, err)
-			assert.Equal(t, tt.want, w.String())
+			// Assert
+			assert.Equal(t, tt.want, got,
+				"RawTrusted should return the exact text without escaping.")
+
+			assert.Equal(t, original, tt.text, "text must not be modified, "+
+				"verifying no mutations by wrong usage of unsafe")
 		})
 	}
 }
 
-func TestTextTrusted(t *testing.T) {
+//nolint:funlen
+func TestTextSamples(t *testing.T) {
 	t.Parallel()
 
-	tests := []struct {
-		name string
-		text string
-	}{
-		{
-			name: "empty",
-			text: "",
-		},
-		{
-			name: "simple",
-			text: "hello world",
-		},
-		{
-			name: "escape <",
-			text: "hello<world",
-		},
-		{
-			name: "escape >",
-			text: "hello>world",
-		},
-		{
-			name: "escape &",
-			text: "hello&world",
-		},
-		{
-			name: "escape '",
-			text: "hello'world",
-		},
-		{
-			name: "escape \"",
-			text: "hello\"world",
-		},
-		{
-			name: "escape all",
-			text: `<div>'Test'>"test" & 1<3</div>`,
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
-
-			err := RawTrusted(tt.text).RenderElement(w)
-
-			assert.NoError(t, err)
-			assert.Equal(t, tt.text, w.String())
-		})
-	}
-}
-
-func TestTextSamples(t *testing.T) {
 	type testCase struct {
 		name string
 		text string
@@ -187,6 +145,9 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			// Arrange
+			original := strings.Clone(tt.text)
+
 			// Act
 			got := Text(tt.text).String()
 
@@ -195,10 +156,14 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 			// Compare against std library escaping
 			want := template.HTMLEscapeString(tt.text)
 			assert.Equal(t, want, got)
+
+			assert.Equal(t, original, tt.text, "text must not be modified, "+
+				"verifying no mutations by wrong usage of unsafe")
 		})
 	}
 }
 
+//nolint:funlen
 func BenchmarkText(b *testing.B) {
 	type testCase struct {
 		name string
@@ -262,7 +227,7 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 			b.ReportAllocs()
 
 			for b.Loop() {
-				_ = Text(tt.text).RenderElement(w)
+				_ = Text(tt.text).RenderElement(w) //nolint:errcheck
 
 				w.Reset()
 			}

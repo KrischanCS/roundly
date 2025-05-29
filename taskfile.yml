@@ -3,14 +3,18 @@ version: '3'
 shopt: [ -s globstar ]
 
 tasks:
-  test:
+  check:
     cmds:
-      - go test ./... -count 1000 -race
+      - go test ./...
+      - go tool golangci-lint run --fast-only --output.tab.path stdout --output.tab.print-linter-name --output.tab.colors
     sources:
       - ./**/*.go
       - taskfile.yml
+      - .golangci.yml
+      - go.mod
+      - go.sum
 
-  check:
+  check+:
     cmds:
       - task test
       - task vulncheck
@@ -22,6 +26,13 @@ tasks:
       - .golangci.yml
       - go.mod
       - go.sum
+
+  test:
+    cmds:
+      - go test ./... -count 1000 -race
+    sources:
+      - ./**/*.go
+      - taskfile.yml
 
   vulncheck:
     cmds:
