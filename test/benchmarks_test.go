@@ -6,16 +6,16 @@ import (
 
 	"github.com/KrischanCS/go-toolbox/iterator"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/logic"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/logic"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 //nolint:errcheck
 func BenchmarkExamplePage(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -50,7 +50,7 @@ func BenchmarkExamplePage(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageRange10(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -75,7 +75,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					RangeSeq(iterator.FromToInclusive(1, 10), func(i int) htmfunc.Element {
+					RangeSeq(iterator.FromToInclusive(1, 10), func(i int) roundly.Element {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -90,7 +90,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageNoEscape(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -124,7 +124,7 @@ func BenchmarkExamplePageNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnly(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -158,7 +158,7 @@ func BenchmarkExamplePageWriteOnly(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -192,7 +192,7 @@ func BenchmarkExamplePageWriteOnlyNoEscape(b *testing.B) {
 
 //nolint:errcheck
 func BenchmarkRange(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -206,7 +206,7 @@ func BenchmarkRange(b *testing.B) {
 				nil, Text("The Title of the Page"),
 			),
 			Body(nil,
-				RangeSeq(iterator.FromToInclusive(1, 1), func(i int) htmfunc.Element {
+				RangeSeq(iterator.FromToInclusive(1, 1), func(i int) roundly.Element {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),
@@ -235,7 +235,7 @@ func BenchmarkYearCalendar(b *testing.B) {
 		{"December", 31},
 	}
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ReportAllocs()
 	b.ResetTimer()
@@ -276,11 +276,11 @@ type monthDays struct {
 	days int
 }
 
-func month(_ int, month monthDays) htmfunc.Element {
+func month(_ int, month monthDays) roundly.Element {
 	return Div(Class("month"),
 		H3(nil, Text(month.name)),
 		Div(Class("days"),
-			RangeInt(month.days, func(i int) htmfunc.Element {
+			RangeInt(month.days, func(i int) roundly.Element {
 				return Div(Class("day"), Text(strconv.Itoa(i+1)))
 			}),
 		),

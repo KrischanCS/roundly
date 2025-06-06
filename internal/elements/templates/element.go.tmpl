@@ -3,10 +3,10 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 {{ range .}}
-{{/*gotype: github.com/KrischanCS/htmfunc/generator/elements/element.Element*/ -}}
+{{/*gotype: github.com/KrischanCS/roundly/generator/elements/element.Element*/ -}}
 // {{.FuncName}} creates the {{.Tag}} element - {{.Description}} [(More)]
 //
 // It belongs to the following categories:
@@ -32,11 +32,11 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func {{.FuncName}}(attributes htmfunc.Attribute{{- if .IsVoid -}}{{- else -}}, children ...htmfunc.Element{{- end -}}) htmfunc.Element {
+func {{.FuncName}}(attributes roundly.Attribute{{- if .IsVoid -}}{{- else -}}, children ...roundly.Element{{- end -}}) roundly.Element {
 {{- if .IsVoid }}
-    return htmfunc.WriteVoidElement("{{.Tag}}", attributes)
+    return roundly.WriteVoidElement("{{.Tag}}", attributes)
 {{- else }}
-    return htmfunc.WriteElement("{{.Tag}}", attributes, children...)
+    return roundly.WriteElement("{{.Tag}}", attributes, children...)
 {{- end }}
 }
 {{end}}

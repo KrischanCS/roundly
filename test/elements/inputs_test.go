@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	"github.com/KrischanCS/roundly/element"
 )
 
 func TestInputs(t *testing.T) {
@@ -41,7 +41,7 @@ func TestInput(t *testing.T) {
 
 	want := `<input value="test" class="rounded" type="button">`
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	e := element.Input(Attributes(
 		Value("test"),

@@ -7,12 +7,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
-type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
+type elementFunc func(attributes roundly.Attribute, children ...roundly.Element) roundly.Element
 
 // // Currently added as reminders, not used in Fuzzing
 // var (
@@ -152,7 +152,7 @@ func FuzzDom(f *testing.F) {
 	f.Add(uint64(1337), uint64(234148))
 	f.Add(uint64(42), uint64(986345))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	f.Fuzz(func(t *testing.T, seed1, seed2 uint64) {
 		r := rand.New(rand.NewPCG(seed1, seed2)) //nolint:gosec
@@ -169,14 +169,14 @@ func FuzzDom(f *testing.F) {
 	})
 }
 
-func createTree(random *rand.Rand, depth int) htmfunc.Element {
+func createTree(random *rand.Rand, depth int) roundly.Element {
 	if depth > 20 || random.Float64() < 0.03 {
 		return Div(nil, Text(randomElement(random, texts)))
 	}
 
 	depth++
 
-	children := make([]htmfunc.Element, 0, 3)
+	children := make([]roundly.Element, 0, 3)
 	for random.Float64() < 0.6 && len(children) < 30 {
 		children = append(children, createTree(random, depth))
 	}

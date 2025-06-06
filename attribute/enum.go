@@ -3,7 +3,7 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 // AutoCapitalizeCharacters creates the autocapitalize attribute with value characters - Recommended autocapitalization behavior (for supported input methods)
@@ -29,8 +29,8 @@ import (
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeCharacters() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "characters")
+func AutoCapitalizeCharacters() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "characters")
 }
 
 // AutoCapitalizeNone creates the autocapitalize attribute with value none - Recommended autocapitalization behavior (for supported input methods)
@@ -56,8 +56,8 @@ func AutoCapitalizeCharacters() htmfunc.Attribute {
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeNone() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "none")
+func AutoCapitalizeNone() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "none")
 }
 
 // AutoCapitalizeOff creates the autocapitalize attribute with value off - Recommended autocapitalization behavior (for supported input methods)
@@ -83,8 +83,8 @@ func AutoCapitalizeNone() htmfunc.Attribute {
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeOff() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "off")
+func AutoCapitalizeOff() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "off")
 }
 
 // AutoCapitalizeOn creates the autocapitalize attribute with value on - Recommended autocapitalization behavior (for supported input methods)
@@ -110,8 +110,8 @@ func AutoCapitalizeOff() htmfunc.Attribute {
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeOn() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "on")
+func AutoCapitalizeOn() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "on")
 }
 
 // AutoCapitalizeSentences creates the autocapitalize attribute with value sentences - Recommended autocapitalization behavior (for supported input methods)
@@ -137,8 +137,8 @@ func AutoCapitalizeOn() htmfunc.Attribute {
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeSentences() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "sentences")
+func AutoCapitalizeSentences() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "sentences")
 }
 
 // AutoCapitalizeWords creates the autocapitalize attribute with value words - Recommended autocapitalization behavior (for supported input methods)
@@ -164,8 +164,8 @@ func AutoCapitalizeSentences() htmfunc.Attribute {
 // [words]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-words
 // [characters]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocapitalize-characters
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCapitalizeWords() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocapitalize", "words")
+func AutoCapitalizeWords() roundly.Attribute {
+	return roundly.WriteAttribute("autocapitalize", "words")
 }
 
 // AutoCompleteOff creates the autocomplete attribute with value off - Default setting for autofill feature for controls in the form
@@ -181,8 +181,8 @@ func AutoCapitalizeWords() htmfunc.Attribute {
 //
 // [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-autocomplete
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCompleteOff() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocomplete", "off")
+func AutoCompleteOff() roundly.Attribute {
+	return roundly.WriteAttribute("autocomplete", "off")
 }
 
 // AutoCompleteOn creates the autocomplete attribute with value on - Default setting for autofill feature for controls in the form
@@ -198,8 +198,8 @@ func AutoCompleteOff() htmfunc.Attribute {
 //
 // [form]: https://html.spec.whatwg.org/dev/forms.html#attr-form-autocomplete
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCompleteOn() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocomplete", "on")
+func AutoCompleteOn() roundly.Attribute {
+	return roundly.WriteAttribute("autocomplete", "on")
 }
 
 // AutoCorrectOff creates the autocorrect attribute with value off - Recommended autocorrection behavior (for supported input methods)
@@ -217,8 +217,8 @@ func AutoCompleteOn() htmfunc.Attribute {
 // [on]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocorrect-on
 // [off]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocorrect-off
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCorrectOff() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocorrect", "off")
+func AutoCorrectOff() roundly.Attribute {
+	return roundly.WriteAttribute("autocorrect", "off")
 }
 
 // AutoCorrectOn creates the autocorrect attribute with value on - Recommended autocorrection behavior (for supported input methods)
@@ -236,8 +236,8 @@ func AutoCorrectOff() htmfunc.Attribute {
 // [on]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocorrect-on
 // [off]: https://html.spec.whatwg.org/dev/interaction.html#attr-autocorrect-off
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoCorrectOn() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocorrect", "on")
+func AutoCorrectOn() roundly.Attribute {
+	return roundly.WriteAttribute("autocorrect", "on")
 }
 
 // CharSetUtf8 creates the charset attribute with value utf-8 - [Character encoding declaration]
@@ -253,8 +253,8 @@ func AutoCorrectOn() htmfunc.Attribute {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-charset
 // [Character encoding declaration]: https://html.spec.whatwg.org/dev/semantics.html#character-encoding-declaration
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func CharSetUtf8() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("charset", "utf-8")
+func CharSetUtf8() roundly.Attribute {
+	return roundly.WriteAttribute("charset", "utf-8")
 }
 
 // ClosedByAny creates the closedby attribute with value any - Which user actions will close the dialog
@@ -274,8 +274,8 @@ func CharSetUtf8() htmfunc.Attribute {
 // [closerequest]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-closerequest
 // [none]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-none
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ClosedByAny() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("closedby", "any")
+func ClosedByAny() roundly.Attribute {
+	return roundly.WriteAttribute("closedby", "any")
 }
 
 // ClosedByCloserequest creates the closedby attribute with value closerequest - Which user actions will close the dialog
@@ -295,8 +295,8 @@ func ClosedByAny() htmfunc.Attribute {
 // [closerequest]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-closerequest
 // [none]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-none
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ClosedByCloserequest() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("closedby", "closerequest")
+func ClosedByCloserequest() roundly.Attribute {
+	return roundly.WriteAttribute("closedby", "closerequest")
 }
 
 // ClosedByNone creates the closedby attribute with value none - Which user actions will close the dialog
@@ -316,8 +316,8 @@ func ClosedByCloserequest() htmfunc.Attribute {
 // [closerequest]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-closerequest
 // [none]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-closedby-none
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ClosedByNone() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("closedby", "none")
+func ClosedByNone() roundly.Attribute {
+	return roundly.WriteAttribute("closedby", "none")
 }
 
 // ColorSpaceDisplayP3 creates the colorspace attribute with value display-p3 - The color space of the serialized color
@@ -335,8 +335,8 @@ func ClosedByNone() htmfunc.Attribute {
 // [limited-srgb]: https://html.spec.whatwg.org/dev/input.html#attr-input-colorspace-limited-srgb
 // [display-p3]: https://html.spec.whatwg.org/dev/input.html#attr-input-colorspace-display-p3
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ColorSpaceDisplayP3() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("colorspace", "display-p3")
+func ColorSpaceDisplayP3() roundly.Attribute {
+	return roundly.WriteAttribute("colorspace", "display-p3")
 }
 
 // ColorSpaceLimitedSrgb creates the colorspace attribute with value limited-srgb - The color space of the serialized color
@@ -354,8 +354,8 @@ func ColorSpaceDisplayP3() htmfunc.Attribute {
 // [limited-srgb]: https://html.spec.whatwg.org/dev/input.html#attr-input-colorspace-limited-srgb
 // [display-p3]: https://html.spec.whatwg.org/dev/input.html#attr-input-colorspace-display-p3
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ColorSpaceLimitedSrgb() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("colorspace", "limited-srgb")
+func ColorSpaceLimitedSrgb() roundly.Attribute {
+	return roundly.WriteAttribute("colorspace", "limited-srgb")
 }
 
 // ContentEditableFalse creates the contenteditable attribute with value false - Whether the element is editable
@@ -372,8 +372,8 @@ func ColorSpaceLimitedSrgb() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-contenteditable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ContentEditableFalse() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("contenteditable", "false")
+func ContentEditableFalse() roundly.Attribute {
+	return roundly.WriteAttribute("contenteditable", "false")
 }
 
 // ContentEditablePlaintextOnly creates the contenteditable attribute with value plaintext-only - Whether the element is editable
@@ -390,8 +390,8 @@ func ContentEditableFalse() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-contenteditable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ContentEditablePlaintextOnly() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("contenteditable", "plaintext-only")
+func ContentEditablePlaintextOnly() roundly.Attribute {
+	return roundly.WriteAttribute("contenteditable", "plaintext-only")
 }
 
 // ContentEditableTrue creates the contenteditable attribute with value true - Whether the element is editable
@@ -408,8 +408,8 @@ func ContentEditablePlaintextOnly() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-contenteditable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ContentEditableTrue() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("contenteditable", "true")
+func ContentEditableTrue() roundly.Attribute {
+	return roundly.WriteAttribute("contenteditable", "true")
 }
 
 // CrossOriginAnonymous creates the crossorigin attribute with value anonymous - How the element handles crossorigin requests
@@ -435,8 +435,8 @@ func ContentEditableTrue() htmfunc.Attribute {
 // [anonymous]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-crossorigin-anonymous-keyword
 // [use-credentials]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-crossorigin-use-credentials-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func CrossOriginAnonymous() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("crossorigin", "anonymous")
+func CrossOriginAnonymous() roundly.Attribute {
+	return roundly.WriteAttribute("crossorigin", "anonymous")
 }
 
 // CrossOriginUseCredentials creates the crossorigin attribute with value use-credentials - How the element handles crossorigin requests
@@ -462,8 +462,8 @@ func CrossOriginAnonymous() htmfunc.Attribute {
 // [anonymous]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-crossorigin-anonymous-keyword
 // [use-credentials]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-crossorigin-use-credentials-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func CrossOriginUseCredentials() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("crossorigin", "use-credentials")
+func CrossOriginUseCredentials() roundly.Attribute {
+	return roundly.WriteAttribute("crossorigin", "use-credentials")
 }
 
 // DecodingAsync creates the decoding attribute with value async - Decoding hint to use when processing this image for presentation
@@ -480,8 +480,8 @@ func CrossOriginUseCredentials() htmfunc.Attribute {
 //
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-decoding
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DecodingAsync() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("decoding", "async")
+func DecodingAsync() roundly.Attribute {
+	return roundly.WriteAttribute("decoding", "async")
 }
 
 // DecodingAuto creates the decoding attribute with value auto - Decoding hint to use when processing this image for presentation
@@ -498,8 +498,8 @@ func DecodingAsync() htmfunc.Attribute {
 //
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-decoding
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DecodingAuto() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("decoding", "auto")
+func DecodingAuto() roundly.Attribute {
+	return roundly.WriteAttribute("decoding", "auto")
 }
 
 // DecodingSync creates the decoding attribute with value sync - Decoding hint to use when processing this image for presentation
@@ -516,8 +516,8 @@ func DecodingAuto() htmfunc.Attribute {
 //
 // [img]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-decoding
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DecodingSync() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("decoding", "sync")
+func DecodingSync() roundly.Attribute {
+	return roundly.WriteAttribute("decoding", "sync")
 }
 
 // DirAuto creates the dir attribute with value auto - [The text directionality] of the element
@@ -538,8 +538,8 @@ func DecodingSync() htmfunc.Attribute {
 // [rtl]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-rtl
 // [auto]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DirAuto() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("dir", "auto")
+func DirAuto() roundly.Attribute {
+	return roundly.WriteAttribute("dir", "auto")
 }
 
 // DirLtr creates the dir attribute with value ltr - [The text directionality] of the element
@@ -562,8 +562,8 @@ func DirAuto() htmfunc.Attribute {
 // [ltr]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-ltr
 // [rtl]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-rtl
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DirLtr() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("dir", "ltr")
+func DirLtr() roundly.Attribute {
+	return roundly.WriteAttribute("dir", "ltr")
 }
 
 // DirRtl creates the dir attribute with value rtl - [The text directionality] of the element
@@ -586,8 +586,8 @@ func DirLtr() htmfunc.Attribute {
 // [ltr]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-ltr
 // [rtl]: https://html.spec.whatwg.org/dev/dom.html#attr-dir-rtl
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DirRtl() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("dir", "rtl")
+func DirRtl() roundly.Attribute {
+	return roundly.WriteAttribute("dir", "rtl")
 }
 
 // DraggableFalse creates the draggable attribute with value false - Whether the element is draggable
@@ -603,8 +603,8 @@ func DirRtl() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dnd.html#attr-draggable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DraggableFalse() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("draggable", "false")
+func DraggableFalse() roundly.Attribute {
+	return roundly.WriteAttribute("draggable", "false")
 }
 
 // DraggableTrue creates the draggable attribute with value true - Whether the element is draggable
@@ -620,8 +620,8 @@ func DraggableFalse() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dnd.html#attr-draggable
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DraggableTrue() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("draggable", "true")
+func DraggableTrue() roundly.Attribute {
+	return roundly.WriteAttribute("draggable", "true")
 }
 
 // EncTypeApplicationXWwwFormUrlencoded creates the enctype attribute with value application/x-www-form-urlencoded - Entry list encoding type to use for [form submission]
@@ -642,8 +642,8 @@ func DraggableTrue() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EncTypeApplicationXWwwFormUrlencoded() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enctype", "application/x-www-form-urlencoded")
+func EncTypeApplicationXWwwFormUrlencoded() roundly.Attribute {
+	return roundly.WriteAttribute("enctype", "application/x-www-form-urlencoded")
 }
 
 // EncTypeMultipartFormData creates the enctype attribute with value multipart/form-data - Entry list encoding type to use for [form submission]
@@ -664,8 +664,8 @@ func EncTypeApplicationXWwwFormUrlencoded() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EncTypeMultipartFormData() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enctype", "multipart/form-data")
+func EncTypeMultipartFormData() roundly.Attribute {
+	return roundly.WriteAttribute("enctype", "multipart/form-data")
 }
 
 // EncTypeTextPlain creates the enctype attribute with value text/plain - Entry list encoding type to use for [form submission]
@@ -686,8 +686,8 @@ func EncTypeMultipartFormData() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EncTypeTextPlain() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enctype", "text/plain")
+func EncTypeTextPlain() roundly.Attribute {
+	return roundly.WriteAttribute("enctype", "text/plain")
 }
 
 // EnterKeyHintDone creates the enterkeyhint attribute with value done - Hint for selecting an enter key action
@@ -715,8 +715,8 @@ func EncTypeTextPlain() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintDone() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "done")
+func EnterKeyHintDone() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "done")
 }
 
 // EnterKeyHintEnter creates the enterkeyhint attribute with value enter - Hint for selecting an enter key action
@@ -744,8 +744,8 @@ func EnterKeyHintDone() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintEnter() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "enter")
+func EnterKeyHintEnter() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "enter")
 }
 
 // EnterKeyHintGo creates the enterkeyhint attribute with value go - Hint for selecting an enter key action
@@ -773,8 +773,8 @@ func EnterKeyHintEnter() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintGo() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "go")
+func EnterKeyHintGo() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "go")
 }
 
 // EnterKeyHintNext creates the enterkeyhint attribute with value next - Hint for selecting an enter key action
@@ -802,8 +802,8 @@ func EnterKeyHintGo() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintNext() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "next")
+func EnterKeyHintNext() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "next")
 }
 
 // EnterKeyHintPrevious creates the enterkeyhint attribute with value previous - Hint for selecting an enter key action
@@ -831,8 +831,8 @@ func EnterKeyHintNext() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintPrevious() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "previous")
+func EnterKeyHintPrevious() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "previous")
 }
 
 // EnterKeyHintSearch creates the enterkeyhint attribute with value search - Hint for selecting an enter key action
@@ -860,8 +860,8 @@ func EnterKeyHintPrevious() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintSearch() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "search")
+func EnterKeyHintSearch() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "search")
 }
 
 // EnterKeyHintSend creates the enterkeyhint attribute with value send - Hint for selecting an enter key action
@@ -889,8 +889,8 @@ func EnterKeyHintSearch() htmfunc.Attribute {
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-search
 // [send]: https://html.spec.whatwg.org/dev/interaction.html#attr-enterkeyhint-keyword-send
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func EnterKeyHintSend() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("enterkeyhint", "send")
+func EnterKeyHintSend() roundly.Attribute {
+	return roundly.WriteAttribute("enterkeyhint", "send")
 }
 
 // FetchPriorityAuto creates the fetchpriority attribute with value auto - Sets the [priority] for [fetches] initiated by the element
@@ -916,8 +916,8 @@ func EnterKeyHintSend() htmfunc.Attribute {
 // [high]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-high
 // [low]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-low
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FetchPriorityAuto() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("fetchpriority", "auto")
+func FetchPriorityAuto() roundly.Attribute {
+	return roundly.WriteAttribute("fetchpriority", "auto")
 }
 
 // FetchPriorityHigh creates the fetchpriority attribute with value high - Sets the [priority] for [fetches] initiated by the element
@@ -943,8 +943,8 @@ func FetchPriorityAuto() htmfunc.Attribute {
 // [high]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-high
 // [low]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-low
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FetchPriorityHigh() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("fetchpriority", "high")
+func FetchPriorityHigh() roundly.Attribute {
+	return roundly.WriteAttribute("fetchpriority", "high")
 }
 
 // FetchPriorityLow creates the fetchpriority attribute with value low - Sets the [priority] for [fetches] initiated by the element
@@ -970,8 +970,8 @@ func FetchPriorityHigh() htmfunc.Attribute {
 // [high]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-high
 // [low]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-fetchpriority-low
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FetchPriorityLow() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("fetchpriority", "low")
+func FetchPriorityLow() roundly.Attribute {
+	return roundly.WriteAttribute("fetchpriority", "low")
 }
 
 // FormEnctypeApplicationXWwwFormUrlencoded creates the formenctype attribute with value application/x-www-form-urlencoded - Entry list encoding type to use for [form submission]
@@ -994,8 +994,8 @@ func FetchPriorityLow() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormEnctypeApplicationXWwwFormUrlencoded() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formenctype", "application/x-www-form-urlencoded")
+func FormEnctypeApplicationXWwwFormUrlencoded() roundly.Attribute {
+	return roundly.WriteAttribute("formenctype", "application/x-www-form-urlencoded")
 }
 
 // FormEnctypeMultipartFormData creates the formenctype attribute with value multipart/form-data - Entry list encoding type to use for [form submission]
@@ -1018,8 +1018,8 @@ func FormEnctypeApplicationXWwwFormUrlencoded() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormEnctypeMultipartFormData() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formenctype", "multipart/form-data")
+func FormEnctypeMultipartFormData() roundly.Attribute {
+	return roundly.WriteAttribute("formenctype", "multipart/form-data")
 }
 
 // FormEnctypeTextPlain creates the formenctype attribute with value text/plain - Entry list encoding type to use for [form submission]
@@ -1042,8 +1042,8 @@ func FormEnctypeMultipartFormData() htmfunc.Attribute {
 // [multipart/form-data]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-formdata
 // [text/plain]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-enctype-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormEnctypeTextPlain() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formenctype", "text/plain")
+func FormEnctypeTextPlain() roundly.Attribute {
+	return roundly.WriteAttribute("formenctype", "text/plain")
 }
 
 // FormMethodDialog creates the formmethod attribute with value dialog - Variant to use for [form submission]
@@ -1063,8 +1063,8 @@ func FormEnctypeTextPlain() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-formmethod
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormMethodDialog() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formmethod", "dialog")
+func FormMethodDialog() roundly.Attribute {
+	return roundly.WriteAttribute("formmethod", "dialog")
 }
 
 // FormMethodGET creates the formmethod attribute with value GET - Variant to use for [form submission]
@@ -1084,8 +1084,8 @@ func FormMethodDialog() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-formmethod
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormMethodGET() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formmethod", "GET")
+func FormMethodGET() roundly.Attribute {
+	return roundly.WriteAttribute("formmethod", "GET")
 }
 
 // FormMethodPOST creates the formmethod attribute with value POST - Variant to use for [form submission]
@@ -1105,8 +1105,8 @@ func FormMethodGET() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-formmethod
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormMethodPOST() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formmethod", "POST")
+func FormMethodPOST() roundly.Attribute {
+	return roundly.WriteAttribute("formmethod", "POST")
 }
 
 // HiddenEmpty creates the hidden attribute with value  - Whether the element is relevant
@@ -1125,8 +1125,8 @@ func FormMethodPOST() htmfunc.Attribute {
 // [until-found]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden-until-found
 // [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HiddenEmpty() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("hidden", "")
+func HiddenEmpty() roundly.Attribute {
+	return roundly.WriteAttribute("hidden", "")
 }
 
 // HiddenHidden creates the hidden attribute with value hidden - Whether the element is relevant
@@ -1145,8 +1145,8 @@ func HiddenEmpty() htmfunc.Attribute {
 // [until-found]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden-until-found
 // [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HiddenHidden() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("hidden", "hidden")
+func HiddenHidden() roundly.Attribute {
+	return roundly.WriteAttribute("hidden", "hidden")
 }
 
 // HiddenUntilFound creates the hidden attribute with value until-found - Whether the element is relevant
@@ -1165,8 +1165,8 @@ func HiddenHidden() htmfunc.Attribute {
 // [until-found]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden-until-found
 // [hidden]: https://html.spec.whatwg.org/dev/interaction.html#attr-hidden
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HiddenUntilFound() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("hidden", "until-found")
+func HiddenUntilFound() roundly.Attribute {
+	return roundly.WriteAttribute("hidden", "until-found")
 }
 
 // HttpEquivContentSecurityPolicy creates the http-equiv attribute with value content-security-policy - Pragma directive
@@ -1190,8 +1190,8 @@ func HiddenUntilFound() htmfunc.Attribute {
 // [x-ua-compatible]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-x-ua-compatible
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HttpEquivContentSecurityPolicy() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("http-equiv", "content-security-policy")
+func HttpEquivContentSecurityPolicy() roundly.Attribute {
+	return roundly.WriteAttribute("http-equiv", "content-security-policy")
 }
 
 // HttpEquivContentType creates the http-equiv attribute with value content-type - Pragma directive
@@ -1215,8 +1215,8 @@ func HttpEquivContentSecurityPolicy() htmfunc.Attribute {
 // [x-ua-compatible]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-x-ua-compatible
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HttpEquivContentType() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("http-equiv", "content-type")
+func HttpEquivContentType() roundly.Attribute {
+	return roundly.WriteAttribute("http-equiv", "content-type")
 }
 
 // HttpEquivDefaultStyle creates the http-equiv attribute with value default-style - Pragma directive
@@ -1240,8 +1240,8 @@ func HttpEquivContentType() htmfunc.Attribute {
 // [x-ua-compatible]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-x-ua-compatible
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HttpEquivDefaultStyle() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("http-equiv", "default-style")
+func HttpEquivDefaultStyle() roundly.Attribute {
+	return roundly.WriteAttribute("http-equiv", "default-style")
 }
 
 // HttpEquivRefresh creates the http-equiv attribute with value refresh - Pragma directive
@@ -1265,8 +1265,8 @@ func HttpEquivDefaultStyle() htmfunc.Attribute {
 // [x-ua-compatible]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-x-ua-compatible
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HttpEquivRefresh() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("http-equiv", "refresh")
+func HttpEquivRefresh() roundly.Attribute {
+	return roundly.WriteAttribute("http-equiv", "refresh")
 }
 
 // HttpEquivXUaCompatible creates the http-equiv attribute with value x-ua-compatible - Pragma directive
@@ -1290,8 +1290,8 @@ func HttpEquivRefresh() htmfunc.Attribute {
 // [x-ua-compatible]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-x-ua-compatible
 // [content-security-policy]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-http-equiv-keyword-content-security-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HttpEquivXUaCompatible() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("http-equiv", "x-ua-compatible")
+func HttpEquivXUaCompatible() roundly.Attribute {
+	return roundly.WriteAttribute("http-equiv", "x-ua-compatible")
 }
 
 // InputModeDecimal creates the inputmode attribute with value decimal - Hint for selecting an input modality
@@ -1321,8 +1321,8 @@ func HttpEquivXUaCompatible() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeDecimal() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "decimal")
+func InputModeDecimal() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "decimal")
 }
 
 // InputModeEmail creates the inputmode attribute with value email - Hint for selecting an input modality
@@ -1352,8 +1352,8 @@ func InputModeDecimal() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeEmail() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "email")
+func InputModeEmail() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "email")
 }
 
 // InputModeNone creates the inputmode attribute with value none - Hint for selecting an input modality
@@ -1383,8 +1383,8 @@ func InputModeEmail() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeNone() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "none")
+func InputModeNone() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "none")
 }
 
 // InputModeNumeric creates the inputmode attribute with value numeric - Hint for selecting an input modality
@@ -1414,8 +1414,8 @@ func InputModeNone() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeNumeric() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "numeric")
+func InputModeNumeric() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "numeric")
 }
 
 // InputModeSearch creates the inputmode attribute with value search - Hint for selecting an input modality
@@ -1445,8 +1445,8 @@ func InputModeNumeric() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeSearch() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "search")
+func InputModeSearch() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "search")
 }
 
 // InputModeTel creates the inputmode attribute with value tel - Hint for selecting an input modality
@@ -1476,8 +1476,8 @@ func InputModeSearch() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeTel() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "tel")
+func InputModeTel() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "tel")
 }
 
 // InputModeText creates the inputmode attribute with value text - Hint for selecting an input modality
@@ -1507,8 +1507,8 @@ func InputModeTel() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeText() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "text")
+func InputModeText() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "text")
 }
 
 // InputModeUrl creates the inputmode attribute with value url - Hint for selecting an input modality
@@ -1538,8 +1538,8 @@ func InputModeText() htmfunc.Attribute {
 // [decimal]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-decimal
 // [search]: https://html.spec.whatwg.org/dev/interaction.html#attr-inputmode-keyword-search
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func InputModeUrl() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("inputmode", "url")
+func InputModeUrl() roundly.Attribute {
+	return roundly.WriteAttribute("inputmode", "url")
 }
 
 // KindCaptions creates the kind attribute with value captions - The type of text track
@@ -1563,8 +1563,8 @@ func InputModeUrl() htmfunc.Attribute {
 // [chapters]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-chapters
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func KindCaptions() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("kind", "captions")
+func KindCaptions() roundly.Attribute {
+	return roundly.WriteAttribute("kind", "captions")
 }
 
 // KindChapters creates the kind attribute with value chapters - The type of text track
@@ -1588,8 +1588,8 @@ func KindCaptions() htmfunc.Attribute {
 // [chapters]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-chapters
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func KindChapters() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("kind", "chapters")
+func KindChapters() roundly.Attribute {
+	return roundly.WriteAttribute("kind", "chapters")
 }
 
 // KindDescriptions creates the kind attribute with value descriptions - The type of text track
@@ -1613,8 +1613,8 @@ func KindChapters() htmfunc.Attribute {
 // [chapters]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-chapters
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func KindDescriptions() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("kind", "descriptions")
+func KindDescriptions() roundly.Attribute {
+	return roundly.WriteAttribute("kind", "descriptions")
 }
 
 // KindMetadata creates the kind attribute with value metadata - The type of text track
@@ -1638,8 +1638,8 @@ func KindDescriptions() htmfunc.Attribute {
 // [chapters]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-chapters
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func KindMetadata() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("kind", "metadata")
+func KindMetadata() roundly.Attribute {
+	return roundly.WriteAttribute("kind", "metadata")
 }
 
 // KindSubtitles creates the kind attribute with value subtitles - The type of text track
@@ -1663,8 +1663,8 @@ func KindMetadata() htmfunc.Attribute {
 // [chapters]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-chapters
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-track-kind-keyword-metadata
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func KindSubtitles() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("kind", "subtitles")
+func KindSubtitles() roundly.Attribute {
+	return roundly.WriteAttribute("kind", "subtitles")
 }
 
 // LoadingEager creates the loading attribute with value eager - Used when determining loading deferral
@@ -1684,8 +1684,8 @@ func KindSubtitles() htmfunc.Attribute {
 // [lazy]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-loading-lazy
 // [eager]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-loading-eager
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func LoadingEager() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("loading", "eager")
+func LoadingEager() roundly.Attribute {
+	return roundly.WriteAttribute("loading", "eager")
 }
 
 // LoadingLazy creates the loading attribute with value lazy - Used when determining loading deferral
@@ -1705,8 +1705,8 @@ func LoadingEager() htmfunc.Attribute {
 // [lazy]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-loading-lazy
 // [eager]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#attr-loading-eager
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func LoadingLazy() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("loading", "lazy")
+func LoadingLazy() roundly.Attribute {
+	return roundly.WriteAttribute("loading", "lazy")
 }
 
 // MethodDialog creates the method attribute with value dialog - Variant to use for [form submission]
@@ -1727,8 +1727,8 @@ func LoadingLazy() htmfunc.Attribute {
 // [POST]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-post-keyword
 // [dialog]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-dialog-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MethodDialog() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("method", "dialog")
+func MethodDialog() roundly.Attribute {
+	return roundly.WriteAttribute("method", "dialog")
 }
 
 // MethodGET creates the method attribute with value GET - Variant to use for [form submission]
@@ -1749,8 +1749,8 @@ func MethodDialog() htmfunc.Attribute {
 // [POST]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-post-keyword
 // [dialog]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-dialog-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MethodGET() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("method", "GET")
+func MethodGET() roundly.Attribute {
+	return roundly.WriteAttribute("method", "GET")
 }
 
 // MethodPOST creates the method attribute with value POST - Variant to use for [form submission]
@@ -1771,8 +1771,8 @@ func MethodGET() htmfunc.Attribute {
 // [POST]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-post-keyword
 // [dialog]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-method-dialog-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func MethodPOST() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("method", "POST")
+func MethodPOST() roundly.Attribute {
+	return roundly.WriteAttribute("method", "POST")
 }
 
 // PopOverAuto creates the popover attribute with value auto - Makes the element a [popover] element
@@ -1791,8 +1791,8 @@ func MethodPOST() htmfunc.Attribute {
 // [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
 // [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverAuto() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popover", "auto")
+func PopOverAuto() roundly.Attribute {
+	return roundly.WriteAttribute("popover", "auto")
 }
 
 // PopOverManual creates the popover attribute with value manual - Makes the element a [popover] element
@@ -1811,8 +1811,8 @@ func PopOverAuto() htmfunc.Attribute {
 // [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
 // [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverManual() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popover", "manual")
+func PopOverManual() roundly.Attribute {
+	return roundly.WriteAttribute("popover", "manual")
 }
 
 // PopOverTargetActionHide creates the popovertargetaction attribute with value hide - Indicates whether a targeted popover element is to be toggled, shown, or hidden
@@ -1834,8 +1834,8 @@ func PopOverManual() htmfunc.Attribute {
 // [show]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-show
 // [hide]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-hide
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverTargetActionHide() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popovertargetaction", "hide")
+func PopOverTargetActionHide() roundly.Attribute {
+	return roundly.WriteAttribute("popovertargetaction", "hide")
 }
 
 // PopOverTargetActionShow creates the popovertargetaction attribute with value show - Indicates whether a targeted popover element is to be toggled, shown, or hidden
@@ -1857,8 +1857,8 @@ func PopOverTargetActionHide() htmfunc.Attribute {
 // [show]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-show
 // [hide]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-hide
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverTargetActionShow() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popovertargetaction", "show")
+func PopOverTargetActionShow() roundly.Attribute {
+	return roundly.WriteAttribute("popovertargetaction", "show")
 }
 
 // PopOverTargetActionToggle creates the popovertargetaction attribute with value toggle - Indicates whether a targeted popover element is to be toggled, shown, or hidden
@@ -1880,8 +1880,8 @@ func PopOverTargetActionShow() htmfunc.Attribute {
 // [show]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-show
 // [hide]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertargetaction-hide
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverTargetActionToggle() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popovertargetaction", "toggle")
+func PopOverTargetActionToggle() roundly.Attribute {
+	return roundly.WriteAttribute("popovertargetaction", "toggle")
 }
 
 // PreLoadAuto creates the preload attribute with value auto - Hints how much buffering the [media resource] will likely need
@@ -1904,8 +1904,8 @@ func PopOverTargetActionToggle() htmfunc.Attribute {
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-metadata
 // [auto]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PreLoadAuto() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("preload", "auto")
+func PreLoadAuto() roundly.Attribute {
+	return roundly.WriteAttribute("preload", "auto")
 }
 
 // PreLoadMetadata creates the preload attribute with value metadata - Hints how much buffering the [media resource] will likely need
@@ -1928,8 +1928,8 @@ func PreLoadAuto() htmfunc.Attribute {
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-metadata
 // [auto]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PreLoadMetadata() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("preload", "metadata")
+func PreLoadMetadata() roundly.Attribute {
+	return roundly.WriteAttribute("preload", "metadata")
 }
 
 // PreLoadNone creates the preload attribute with value none - Hints how much buffering the [media resource] will likely need
@@ -1952,8 +1952,8 @@ func PreLoadMetadata() htmfunc.Attribute {
 // [metadata]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-metadata
 // [auto]: https://html.spec.whatwg.org/dev/media.html#attr-media-preload-auto
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PreLoadNone() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("preload", "none")
+func PreLoadNone() roundly.Attribute {
+	return roundly.WriteAttribute("preload", "none")
 }
 
 // ScopeCol creates the scope attribute with value col - Specifies which cells the header cell applies to
@@ -1975,8 +1975,8 @@ func PreLoadNone() htmfunc.Attribute {
 // [rowgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-rowgroup
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-colgroup
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ScopeCol() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("scope", "col")
+func ScopeCol() roundly.Attribute {
+	return roundly.WriteAttribute("scope", "col")
 }
 
 // ScopeColgroup creates the scope attribute with value colgroup - Specifies which cells the header cell applies to
@@ -1998,8 +1998,8 @@ func ScopeCol() htmfunc.Attribute {
 // [rowgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-rowgroup
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-colgroup
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ScopeColgroup() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("scope", "colgroup")
+func ScopeColgroup() roundly.Attribute {
+	return roundly.WriteAttribute("scope", "colgroup")
 }
 
 // ScopeRow creates the scope attribute with value row - Specifies which cells the header cell applies to
@@ -2021,8 +2021,8 @@ func ScopeColgroup() htmfunc.Attribute {
 // [rowgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-rowgroup
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-colgroup
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ScopeRow() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("scope", "row")
+func ScopeRow() roundly.Attribute {
+	return roundly.WriteAttribute("scope", "row")
 }
 
 // ScopeRowgroup creates the scope attribute with value rowgroup - Specifies which cells the header cell applies to
@@ -2044,8 +2044,8 @@ func ScopeRow() htmfunc.Attribute {
 // [rowgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-rowgroup
 // [colgroup]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope-colgroup
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ScopeRowgroup() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("scope", "rowgroup")
+func ScopeRowgroup() roundly.Attribute {
+	return roundly.WriteAttribute("scope", "rowgroup")
 }
 
 // ShadowRootModeClosed creates the shadowrootmode attribute with value closed - Enables streaming declarative shadow roots
@@ -2061,8 +2061,8 @@ func ScopeRowgroup() htmfunc.Attribute {
 //
 // [template]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootmode
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShadowRootModeClosed() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shadowrootmode", "closed")
+func ShadowRootModeClosed() roundly.Attribute {
+	return roundly.WriteAttribute("shadowrootmode", "closed")
 }
 
 // ShadowRootModeOpen creates the shadowrootmode attribute with value open - Enables streaming declarative shadow roots
@@ -2078,8 +2078,8 @@ func ShadowRootModeClosed() htmfunc.Attribute {
 //
 // [template]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootmode
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShadowRootModeOpen() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shadowrootmode", "open")
+func ShadowRootModeOpen() roundly.Attribute {
+	return roundly.WriteAttribute("shadowrootmode", "open")
 }
 
 // ShapeCircle creates the shape attribute with value circle - The kind of shape to be created in an [image map]
@@ -2102,8 +2102,8 @@ func ShadowRootModeOpen() htmfunc.Attribute {
 // [poly]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-poly
 // [rect]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-rect
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShapeCircle() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shape", "circle")
+func ShapeCircle() roundly.Attribute {
+	return roundly.WriteAttribute("shape", "circle")
 }
 
 // ShapeDefault creates the shape attribute with value default - The kind of shape to be created in an [image map]
@@ -2126,8 +2126,8 @@ func ShapeCircle() htmfunc.Attribute {
 // [poly]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-poly
 // [rect]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-rect
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShapeDefault() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shape", "default")
+func ShapeDefault() roundly.Attribute {
+	return roundly.WriteAttribute("shape", "default")
 }
 
 // ShapePoly creates the shape attribute with value poly - The kind of shape to be created in an [image map]
@@ -2150,8 +2150,8 @@ func ShapeDefault() htmfunc.Attribute {
 // [poly]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-poly
 // [rect]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-rect
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShapePoly() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shape", "poly")
+func ShapePoly() roundly.Attribute {
+	return roundly.WriteAttribute("shape", "poly")
 }
 
 // ShapeRect creates the shape attribute with value rect - The kind of shape to be created in an [image map]
@@ -2174,8 +2174,8 @@ func ShapePoly() htmfunc.Attribute {
 // [poly]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-poly
 // [rect]: https://html.spec.whatwg.org/dev/image-maps.html#attr-area-shape-keyword-rect
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ShapeRect() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("shape", "rect")
+func ShapeRect() roundly.Attribute {
+	return roundly.WriteAttribute("shape", "rect")
 }
 
 // SpellCheckEmpty creates the spellcheck attribute with value  - Whether the element is to have its spelling and grammar checked
@@ -2194,8 +2194,8 @@ func ShapeRect() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SpellCheckEmpty() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("spellcheck", "")
+func SpellCheckEmpty() roundly.Attribute {
+	return roundly.WriteAttribute("spellcheck", "")
 }
 
 // SpellCheckFalse creates the spellcheck attribute with value false - Whether the element is to have its spelling and grammar checked
@@ -2214,8 +2214,8 @@ func SpellCheckEmpty() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SpellCheckFalse() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("spellcheck", "false")
+func SpellCheckFalse() roundly.Attribute {
+	return roundly.WriteAttribute("spellcheck", "false")
 }
 
 // SpellCheckTrue creates the spellcheck attribute with value true - Whether the element is to have its spelling and grammar checked
@@ -2234,8 +2234,8 @@ func SpellCheckFalse() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-spellcheck-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SpellCheckTrue() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("spellcheck", "true")
+func SpellCheckTrue() roundly.Attribute {
+	return roundly.WriteAttribute("spellcheck", "true")
 }
 
 // TranslateNo creates the translate attribute with value no - Whether the element is to be translated when the page is localized
@@ -2251,8 +2251,8 @@ func SpellCheckTrue() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-translate
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TranslateNo() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("translate", "no")
+func TranslateNo() roundly.Attribute {
+	return roundly.WriteAttribute("translate", "no")
 }
 
 // TranslateYes creates the translate attribute with value yes - Whether the element is to be translated when the page is localized
@@ -2268,8 +2268,8 @@ func TranslateNo() htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-translate
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TranslateYes() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("translate", "yes")
+func TranslateYes() roundly.Attribute {
+	return roundly.WriteAttribute("translate", "yes")
 }
 
 // TypeAlpha creates the type attribute with value A - Kind of list marker
@@ -2293,8 +2293,8 @@ func TranslateYes() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeAlpha() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "A")
+func TypeAlpha() roundly.Attribute {
+	return roundly.WriteAttribute("type", "A")
 }
 
 // TypeAlphaLower creates the type attribute with value a - Kind of list marker
@@ -2318,8 +2318,8 @@ func TypeAlpha() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeAlphaLower() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "a")
+func TypeAlphaLower() roundly.Attribute {
+	return roundly.WriteAttribute("type", "a")
 }
 
 // TypeButton creates the type attribute with value button - Type of button
@@ -2364,8 +2364,8 @@ func TypeAlphaLower() htmfunc.Attribute {
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeButton() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "button")
+func TypeButton() roundly.Attribute {
+	return roundly.WriteAttribute("type", "button")
 }
 
 // TypeCheckbox creates the type attribute with value checkbox - Type of form control
@@ -2402,8 +2402,8 @@ func TypeButton() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeCheckbox() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "checkbox")
+func TypeCheckbox() roundly.Attribute {
+	return roundly.WriteAttribute("type", "checkbox")
 }
 
 // TypeColor creates the type attribute with value color - Type of form control
@@ -2440,8 +2440,8 @@ func TypeCheckbox() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeColor() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "color")
+func TypeColor() roundly.Attribute {
+	return roundly.WriteAttribute("type", "color")
 }
 
 // TypeDate creates the type attribute with value date - Type of form control
@@ -2478,8 +2478,8 @@ func TypeColor() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeDate() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "date")
+func TypeDate() roundly.Attribute {
+	return roundly.WriteAttribute("type", "date")
 }
 
 // TypeDatetimeLocal creates the type attribute with value datetime-local - Type of form control
@@ -2516,8 +2516,8 @@ func TypeDate() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeDatetimeLocal() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "datetime-local")
+func TypeDatetimeLocal() roundly.Attribute {
+	return roundly.WriteAttribute("type", "datetime-local")
 }
 
 // TypeEmail creates the type attribute with value email - Type of form control
@@ -2554,8 +2554,8 @@ func TypeDatetimeLocal() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeEmail() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "email")
+func TypeEmail() roundly.Attribute {
+	return roundly.WriteAttribute("type", "email")
 }
 
 // TypeFile creates the type attribute with value file - Type of form control
@@ -2592,8 +2592,8 @@ func TypeEmail() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeFile() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "file")
+func TypeFile() roundly.Attribute {
+	return roundly.WriteAttribute("type", "file")
 }
 
 // TypeHidden creates the type attribute with value hidden - Type of form control
@@ -2630,8 +2630,8 @@ func TypeFile() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeHidden() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "hidden")
+func TypeHidden() roundly.Attribute {
+	return roundly.WriteAttribute("type", "hidden")
 }
 
 // TypeImage creates the type attribute with value image - Type of form control
@@ -2668,8 +2668,8 @@ func TypeHidden() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeImage() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "image")
+func TypeImage() roundly.Attribute {
+	return roundly.WriteAttribute("type", "image")
 }
 
 // TypeMonth creates the type attribute with value month - Type of form control
@@ -2706,8 +2706,8 @@ func TypeImage() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeMonth() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "month")
+func TypeMonth() roundly.Attribute {
+	return roundly.WriteAttribute("type", "month")
 }
 
 // TypeNumber creates the type attribute with value number - Type of form control
@@ -2744,8 +2744,8 @@ func TypeMonth() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeNumber() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "number")
+func TypeNumber() roundly.Attribute {
+	return roundly.WriteAttribute("type", "number")
 }
 
 // TypeNumeric creates the type attribute with value 1 - Kind of list marker
@@ -2769,8 +2769,8 @@ func TypeNumber() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeNumeric() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "1")
+func TypeNumeric() roundly.Attribute {
+	return roundly.WriteAttribute("type", "1")
 }
 
 // TypePassword creates the type attribute with value password - Type of form control
@@ -2807,8 +2807,8 @@ func TypeNumeric() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypePassword() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "password")
+func TypePassword() roundly.Attribute {
+	return roundly.WriteAttribute("type", "password")
 }
 
 // TypeRadio creates the type attribute with value radio - Type of form control
@@ -2845,8 +2845,8 @@ func TypePassword() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeRadio() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "radio")
+func TypeRadio() roundly.Attribute {
+	return roundly.WriteAttribute("type", "radio")
 }
 
 // TypeRange creates the type attribute with value range - Type of form control
@@ -2883,8 +2883,8 @@ func TypeRadio() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeRange() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "range")
+func TypeRange() roundly.Attribute {
+	return roundly.WriteAttribute("type", "range")
 }
 
 // TypeReset creates the type attribute with value reset - Type of button
@@ -2922,15 +2922,15 @@ func TypeRange() htmfunc.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeReset() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "reset")
+func TypeReset() roundly.Attribute {
+	return roundly.WriteAttribute("type", "reset")
 }
 
 // TypeRoman creates the type attribute with value I - Kind of list marker
@@ -2954,8 +2954,8 @@ func TypeReset() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeRoman() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "I")
+func TypeRoman() roundly.Attribute {
+	return roundly.WriteAttribute("type", "I")
 }
 
 // TypeRomanLower creates the type attribute with value i - Kind of list marker
@@ -2979,8 +2979,8 @@ func TypeRoman() htmfunc.Attribute {
 // [i]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-lower-roman
 // [I]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type-keyword-upper-roman
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeRomanLower() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "i")
+func TypeRomanLower() roundly.Attribute {
+	return roundly.WriteAttribute("type", "i")
 }
 
 // TypeSearch creates the type attribute with value search - Type of form control
@@ -3017,8 +3017,8 @@ func TypeRomanLower() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeSearch() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "search")
+func TypeSearch() roundly.Attribute {
+	return roundly.WriteAttribute("type", "search")
 }
 
 // TypeSubmit creates the type attribute with value submit - Type of button
@@ -3056,15 +3056,15 @@ func TypeSearch() htmfunc.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
 // [submit]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-submit
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeSubmit() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "submit")
+func TypeSubmit() roundly.Attribute {
+	return roundly.WriteAttribute("type", "submit")
 }
 
 // TypeTel creates the type attribute with value tel - Type of form control
@@ -3101,8 +3101,8 @@ func TypeSubmit() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeTel() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "tel")
+func TypeTel() roundly.Attribute {
+	return roundly.WriteAttribute("type", "tel")
 }
 
 // TypeText creates the type attribute with value text - Type of form control
@@ -3139,8 +3139,8 @@ func TypeTel() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeText() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "text")
+func TypeText() roundly.Attribute {
+	return roundly.WriteAttribute("type", "text")
 }
 
 // TypeTime creates the type attribute with value time - Type of form control
@@ -3177,8 +3177,8 @@ func TypeText() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeTime() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "time")
+func TypeTime() roundly.Attribute {
+	return roundly.WriteAttribute("type", "time")
 }
 
 // TypeUrl creates the type attribute with value url - Type of form control
@@ -3215,8 +3215,8 @@ func TypeTime() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeUrl() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "url")
+func TypeUrl() roundly.Attribute {
+	return roundly.WriteAttribute("type", "url")
 }
 
 // TypeWeek creates the type attribute with value week - Type of form control
@@ -3253,8 +3253,8 @@ func TypeUrl() htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TypeWeek() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", "week")
+func TypeWeek() roundly.Attribute {
+	return roundly.WriteAttribute("type", "week")
 }
 
 // WrapHard creates the wrap attribute with value hard - How the value of the form control is to be wrapped for [form submission]
@@ -3273,8 +3273,8 @@ func TypeWeek() htmfunc.Attribute {
 // [soft]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap-soft
 // [hard]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap-hard
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WrapHard() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("wrap", "hard")
+func WrapHard() roundly.Attribute {
+	return roundly.WriteAttribute("wrap", "hard")
 }
 
 // WrapSoft creates the wrap attribute with value soft - How the value of the form control is to be wrapped for [form submission]
@@ -3293,8 +3293,8 @@ func WrapHard() htmfunc.Attribute {
 // [soft]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap-soft
 // [hard]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap-hard
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WrapSoft() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("wrap", "soft")
+func WrapSoft() roundly.Attribute {
+	return roundly.WriteAttribute("wrap", "soft")
 }
 
 // WritingSuggestionsEmpty creates the writingsuggestions attribute with value  - Whether the element can offer writing suggestions or not.
@@ -3313,8 +3313,8 @@ func WrapSoft() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WritingSuggestionsEmpty() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("writingsuggestions", "")
+func WritingSuggestionsEmpty() roundly.Attribute {
+	return roundly.WriteAttribute("writingsuggestions", "")
 }
 
 // WritingSuggestionsFalse creates the writingsuggestions attribute with value false - Whether the element can offer writing suggestions or not.
@@ -3333,8 +3333,8 @@ func WritingSuggestionsEmpty() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WritingSuggestionsFalse() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("writingsuggestions", "false")
+func WritingSuggestionsFalse() roundly.Attribute {
+	return roundly.WriteAttribute("writingsuggestions", "false")
 }
 
 // WritingSuggestionsTrue creates the writingsuggestions attribute with value true - Whether the element can offer writing suggestions or not.
@@ -3353,6 +3353,6 @@ func WritingSuggestionsFalse() htmfunc.Attribute {
 // [true]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-true
 // [false]: https://html.spec.whatwg.org/dev/interaction.html#attr-writingsuggestions-false
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func WritingSuggestionsTrue() htmfunc.Attribute {
-	return htmfunc.WriteAttribute("writingsuggestions", "true")
+func WritingSuggestionsTrue() roundly.Attribute {
+	return roundly.WriteAttribute("writingsuggestions", "true")
 }

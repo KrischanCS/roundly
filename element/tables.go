@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Caption creates the caption element - Table caption [(More)]
@@ -27,8 +27,8 @@ import (
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("caption", attributes, children...)
+func Caption(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("caption", attributes, children...)
 }
 
 // Col creates the col element - Table column [(More)]
@@ -51,8 +51,8 @@ func Caption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [span]: https://html.spec.whatwg.org/dev/tables.html#attr-col-span
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Col(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("col", attributes)
+func Col(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("col", attributes)
 }
 
 // Colgroup creates the colgroup element - Group of columns in a table [(More)]
@@ -78,8 +78,8 @@ func Col(attributes htmfunc.Attribute) htmfunc.Element {
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [span]: https://html.spec.whatwg.org/dev/tables.html#attr-colgroup-span
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("colgroup", attributes, children...)
+func Colgroup(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("colgroup", attributes, children...)
 }
 
 // Table creates the table element - Table [(More)]
@@ -110,8 +110,8 @@ func Colgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("table", attributes, children...)
+func Table(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("table", attributes, children...)
 }
 
 // Tbody creates the tbody element - Group of rows in a table [(More)]
@@ -136,8 +136,8 @@ func Table(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("tbody", attributes, children...)
+func Tbody(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("tbody", attributes, children...)
 }
 
 // Td creates the td element - Table cell [(More)]
@@ -164,8 +164,8 @@ func Tbody(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [rowspan]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-rowspan
 // [headers]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-headers
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("td", attributes, children...)
+func Td(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("td", attributes, children...)
 }
 
 // Tfoot creates the tfoot element - Group of footer rows in a table [(More)]
@@ -190,8 +190,8 @@ func Td(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("tfoot", attributes, children...)
+func Tfoot(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("tfoot", attributes, children...)
 }
 
 // Th creates the th element - Table header cell [(More)]
@@ -221,8 +221,8 @@ func Tfoot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [scope]: https://html.spec.whatwg.org/dev/tables.html#attr-th-scope
 // [abbr]: https://html.spec.whatwg.org/dev/tables.html#attr-th-abbr
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("th", attributes, children...)
+func Th(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("th", attributes, children...)
 }
 
 // Thead creates the thead element - Group of heading rows in a table [(More)]
@@ -247,8 +247,8 @@ func Th(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("thead", attributes, children...)
+func Thead(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("thead", attributes, children...)
 }
 
 // Tr creates the tr element - Table row [(More)]
@@ -277,6 +277,6 @@ func Thead(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Tr(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("tr", attributes, children...)
+func Tr(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("tr", attributes, children...)
 }

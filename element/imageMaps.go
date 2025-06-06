@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Area creates the area element - Hyperlink or dead area on an image map [(More)]
@@ -35,8 +35,8 @@ import (
 // [rel]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-rel
 // [referrerpolicy]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-referrerpolicy
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Area(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("area", attributes)
+func Area(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("area", attributes)
 }
 
 // Map creates the map element - Image map [(More)]
@@ -65,6 +65,6 @@ func Area(attributes htmfunc.Attribute) htmfunc.Element {
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/image-maps.html#attr-map-name
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Map(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("map", attributes, children...)
+func Map(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("map", attributes, children...)
 }

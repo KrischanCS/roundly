@@ -5,11 +5,11 @@ import (
 
 	"github.com/yosssi/gohtml"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/logic"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/logic"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 func ExampleTable() {
@@ -38,7 +38,7 @@ func ExampleTable() {
 				{"Gleam", "Pink Starfish", "Lucy"},
 				{"Zig", "Ziguana", "Ziggy & Zero"},
 				{"Java", "?", "Duke"},
-			}, func(i int, mascot Mascot) htmfunc.Element {
+			}, func(i int, mascot Mascot) roundly.Element {
 				return Tr(nil,
 					Th(ScopeRow(), Text(mascot.Language)),
 					TdText(mascot.Kind),
@@ -48,7 +48,7 @@ func ExampleTable() {
 		),
 	)
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := table.RenderElement(w)
 	if err != nil {

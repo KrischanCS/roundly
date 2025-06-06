@@ -3,10 +3,10 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 {{ range . }}
-{{/*gotype: github.com/KrischanCS/htmfunc/attribute/generateAttributes.attribute*/ -}}
+{{/*gotype: github.com/KrischanCS/roundly/attribute/generateAttributes.attribute*/ -}}
 // {{.FuncName}} creates the {{.Name}} attribute - {{.Description}}
 //
 // It can be applied to the following elements:
@@ -22,7 +22,7 @@ import (
 // [{{.Name}}]: {{.Url}}
 {{ end -}}
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func {{.FuncName}}({{.ParamName}} ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("{{.Name}}", ',', {{.ParamName}}...)
+func {{.FuncName}}({{.ParamName}} ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("{{.Name}}", ',', {{.ParamName}}...)
 }
 {{end}}

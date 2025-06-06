@@ -9,9 +9,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/KrischanCS/htmfunc/internal/attributes"
-	"github.com/KrischanCS/htmfunc/internal/elements"
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/attributes"
+	"github.com/KrischanCS/roundly/internal/elements"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 //nolint:gochecknoglobals

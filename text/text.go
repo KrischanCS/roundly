@@ -1,4 +1,4 @@
-//go:build !htmfunc_text_std
+//go:build !roundly_text_std
 
 // Package text Provides functions to add text to elements or attributes, either escaped of not.
 //
@@ -9,18 +9,18 @@ import (
 	"bytes"
 	"unsafe"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 // Text represents exactly the given text without any extra tags. Html-specific characters will be
 // escaped. If this is not wanted, [RawTrusted] may be used.
-func Text(text string) htmfunc.Element {
+func Text(text string) roundly.Element {
 	// This function is optimized for performance, since it is used very often in templates.
 	//
 	// The implementation uses unsafe (described below) and is relatively complex. It beats the
 	// stdlib's template.HTMLEscape in most scenarios in runtime, and clearly in bytes allocated.
 	//
-	// Users can opt-out of this optimization by using the htmfunc_text_std build tag.
+	// Users can opt-out of this optimization by using the roundly_text_std build tag.
 	//
 	// # Modes
 	//
@@ -46,12 +46,12 @@ func Text(text string) htmfunc.Element {
 	// edited.
 	textBytes := unsafe.Slice(unsafe.StringData(text), len(text)) //nolint:gosec // explained above
 
-	return func(w htmfunc.Writer) (err error) {
+	return func(w roundly.Writer) (err error) {
 		return writeTextFindNextMode(w, textBytes)
 	}
 }
 
-func writeTextFindNextMode(w htmfunc.Writer, text []byte) (err error) {
+func writeTextFindNextMode(w roundly.Writer, text []byte) (err error) {
 	// This performs best, when characters which must be escaped are distributed sparsely over the
 	// text. If they are close together, the performance would degrade significantly. In that case,
 	// we switch to a writeTextCheckEachMode.
@@ -92,7 +92,7 @@ func writeTextFindNextMode(w htmfunc.Writer, text []byte) (err error) {
 	return nil
 }
 
-func writeChunk(w htmfunc.Writer, unescapedBytes []byte, byteToEscape byte) (err error) {
+func writeChunk(w roundly.Writer, unescapedBytes []byte, byteToEscape byte) (err error) {
 	_, err = w.Write(unescapedBytes)
 	if err != nil {
 		return err
@@ -113,7 +113,7 @@ var (
 	htmlNull = []byte("\uFFFD")
 )
 
-func writeEscapedByte(w htmfunc.Writer, text byte) (err error) {
+func writeEscapedByte(w roundly.Writer, text byte) (err error) {
 	switch text {
 	case '&':
 		_, err = w.Write(htmlAmp)
@@ -134,7 +134,7 @@ func writeEscapedByte(w htmfunc.Writer, text byte) (err error) {
 	return err
 }
 
-func writeTextCheckEachMode(w htmfunc.Writer, text []byte) (err error) {
+func writeTextCheckEachMode(w roundly.Writer, text []byte) (err error) {
 	// This mode checks every character individually, which is usually slower than the IndexOfMode,
 	// but it performs better when the text contains many characters that must be escaped,
 	// since it avoids the double-checking.

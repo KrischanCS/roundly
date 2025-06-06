@@ -1,4 +1,4 @@
-package htmfunc
+package roundly
 
 import (
 	"bytes"

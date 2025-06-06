@@ -1,4 +1,4 @@
-package htmfunc
+package roundly
 
 // Document creates an html document with doctype and html root.
 func Document(doctype string, html Element) Element {

@@ -3,7 +3,7 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/roundly/element"
 )
 
 func TestTable(t *testing.T) {

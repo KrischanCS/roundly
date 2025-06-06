@@ -3,7 +3,7 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 	"strconv"
 )
 
@@ -19,8 +19,8 @@ import (
 // [ol]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-start
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Start(start int) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("start", strconv.Itoa(start))
+func Start(start int) roundly.Attribute {
+	return roundly.WriteAttribute("start", strconv.Itoa(start))
 }
 
 // TabIndex creates the tabindex attribute - Whether the element is focusable and sequentially focusable, andthe relative order of the element for the purposes of sequential focus navigation
@@ -35,8 +35,8 @@ func Start(start int) htmfunc.Attribute {
 // [HTML elements]: https://html.spec.whatwg.org/dev/interaction.html#attr-tabindex
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TabIndex(tabIndex int) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("tabindex", strconv.Itoa(tabIndex))
+func TabIndex(tabIndex int) roundly.Attribute {
+	return roundly.WriteAttribute("tabindex", strconv.Itoa(tabIndex))
 }
 
 // ValueInt creates the value attribute - Ordinal value of the list item
@@ -51,6 +51,6 @@ func TabIndex(tabIndex int) htmfunc.Attribute {
 // [li]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [Valid integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-integer
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ValueInt(value int) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("value", strconv.Itoa(value))
+func ValueInt(value int) roundly.Attribute {
+	return roundly.WriteAttribute("value", strconv.Itoa(value))
 }

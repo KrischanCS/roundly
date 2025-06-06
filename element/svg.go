@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Svg creates the svg element - SVG root [(More)]
@@ -29,6 +29,6 @@ import (
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [[SVG]]: https://html.spec.whatwg.org/dev/references.html#refsSVG
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Svg(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("svg", attributes, children...)
+func Svg(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("svg", attributes, children...)
 }

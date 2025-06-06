@@ -6,7 +6,7 @@ import (
 
 	"github.com/KrischanCS/go-toolbox/iterator"
 
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 func groupElements(elements []Element) map[string][]Element {

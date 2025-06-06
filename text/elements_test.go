@@ -3,14 +3,14 @@ package text
 import (
 	"fmt"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
 )
 
 func ExampleDelText() {
 	del := DelText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := del(w)
 	if err != nil {
@@ -25,7 +25,7 @@ func ExampleDelText() {
 func ExampleInsText() {
 	ins := InsText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := ins(w)
 	if err != nil {
@@ -40,7 +40,7 @@ func ExampleInsText() {
 func ExampleButtonText() {
 	button := ButtonText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := button(w)
 	if err != nil {
@@ -55,7 +55,7 @@ func ExampleButtonText() {
 func ExampleLegendText() {
 	legend := LegendText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := legend(w)
 	if err != nil {
@@ -70,7 +70,7 @@ func ExampleLegendText() {
 func ExampleOptionText() {
 	option := OptionText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := option(w)
 	if err != nil {
@@ -85,7 +85,7 @@ func ExampleOptionText() {
 func ExampleOutputText() {
 	output := OutputText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := output(w)
 	if err != nil {
@@ -101,7 +101,7 @@ func ExampleProgressText() {
 	progress := ProgressText("Some Text.", Id("id"),
 		Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := progress(w)
 	if err != nil {
@@ -117,7 +117,7 @@ func ExampleTextareaText() {
 	textarea := TextareaText("Some Text.", Id("id"),
 		Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := textarea(w)
 	if err != nil {
@@ -132,7 +132,7 @@ func ExampleTextareaText() {
 func ExampleLabelText() {
 	label := LabelText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := label(w)
 	if err != nil {
@@ -148,7 +148,7 @@ func ExampleBlockquoteText() {
 	blockquote := BlockquoteText("Some Text.", Id("id"),
 		Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := blockquote(w)
 	if err != nil {
@@ -163,7 +163,7 @@ func ExampleBlockquoteText() {
 func ExampleDdText() {
 	dd := DdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := dd(w)
 	if err != nil {
@@ -178,7 +178,7 @@ func ExampleDdText() {
 func ExampleDtText() {
 	dt := DtText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := dt(w)
 	if err != nil {
@@ -194,7 +194,7 @@ func ExampleFigcaptionText() {
 	figcaption := FigcaptionText("Some Text.", Id("id"),
 		Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := figcaption(w)
 	if err != nil {
@@ -209,7 +209,7 @@ func ExampleFigcaptionText() {
 func ExampleLiText() {
 	li := LiText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := li(w)
 	if err != nil {
@@ -224,7 +224,7 @@ func ExampleLiText() {
 func ExamplePText() {
 	p := PText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := p(w)
 	if err != nil {
@@ -239,7 +239,7 @@ func ExamplePText() {
 func ExamplePreText() {
 	pre := PreText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := pre(w)
 	if err != nil {
@@ -254,7 +254,7 @@ func ExamplePreText() {
 func ExampleUlText() {
 	ul := UlText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := ul(w)
 	if err != nil {
@@ -269,7 +269,7 @@ func ExampleUlText() {
 func ExampleSummaryText() {
 	summary := SummaryText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := summary(w)
 	if err != nil {
@@ -285,7 +285,7 @@ func ExampleNoscriptText() {
 	noscript := NoscriptText("Some Text.", Id("id"),
 		Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := noscript(w)
 	if err != nil {
@@ -300,7 +300,7 @@ func ExampleNoscriptText() {
 func ExampleH1Text() {
 	h1 := H1Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h1(w)
 	if err != nil {
@@ -315,7 +315,7 @@ func ExampleH1Text() {
 func ExampleH2Text() {
 	h2 := H2Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h2(w)
 	if err != nil {
@@ -330,7 +330,7 @@ func ExampleH2Text() {
 func ExampleH3Text() {
 	h3 := H3Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h3(w)
 	if err != nil {
@@ -345,7 +345,7 @@ func ExampleH3Text() {
 func ExampleH4Text() {
 	h4 := H4Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h4(w)
 	if err != nil {
@@ -360,7 +360,7 @@ func ExampleH4Text() {
 func ExampleH5Text() {
 	h5 := H5Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h5(w)
 	if err != nil {
@@ -375,7 +375,7 @@ func ExampleH5Text() {
 func ExampleH6Text() {
 	h6 := H6Text("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := h6(w)
 	if err != nil {
@@ -390,7 +390,7 @@ func ExampleH6Text() {
 func ExampleTitleText() {
 	title := TitleText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	err := title(w)
 
 	if err != nil {
@@ -405,7 +405,7 @@ func ExampleTitleText() {
 func ExampleCaptionText() {
 	caption := CaptionText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := caption(w)
 	if err != nil {
@@ -420,7 +420,7 @@ func ExampleCaptionText() {
 func ExampleTdText() {
 	td := TdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := td(w)
 	if err != nil {
@@ -435,7 +435,7 @@ func ExampleTdText() {
 func ExampleThText() {
 	th := ThText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := th(w)
 	if err != nil {
@@ -450,7 +450,7 @@ func ExampleThText() {
 func ExampleAText() {
 	a := AText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := a(w)
 	if err != nil {
@@ -465,7 +465,7 @@ func ExampleAText() {
 func ExampleAbbrText() {
 	abbr := AbbrText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := abbr(w)
 	if err != nil {
@@ -480,7 +480,7 @@ func ExampleAbbrText() {
 func ExampleBText() {
 	b := BText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := b(w)
 	if err != nil {
@@ -495,7 +495,7 @@ func ExampleBText() {
 func ExampleCiteText() {
 	cite := CiteText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := cite(w)
 	if err != nil {
@@ -510,7 +510,7 @@ func ExampleCiteText() {
 func ExampleCodeText() {
 	code := CodeText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := code(w)
 	if err != nil {
@@ -525,7 +525,7 @@ func ExampleCodeText() {
 func ExampleDataText() {
 	data := DataText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := data(w)
 	if err != nil {
@@ -540,7 +540,7 @@ func ExampleDataText() {
 func ExampleDfnText() {
 	dfn := DfnText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := dfn(w)
 	if err != nil {
@@ -555,7 +555,7 @@ func ExampleDfnText() {
 func ExampleEmText() {
 	em := EmText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := em(w)
 	if err != nil {
@@ -570,7 +570,7 @@ func ExampleEmText() {
 func ExampleIText() {
 	i := IText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := i(w)
 	if err != nil {
@@ -585,7 +585,7 @@ func ExampleIText() {
 func ExampleKbdText() {
 	kbd := KbdText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := kbd(w)
 	if err != nil {
@@ -600,7 +600,7 @@ func ExampleKbdText() {
 func ExampleMarkText() {
 	mark := MarkText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := mark(w)
 	if err != nil {
@@ -615,7 +615,7 @@ func ExampleMarkText() {
 func ExampleQText() {
 	q := QText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := q(w)
 	if err != nil {
@@ -630,7 +630,7 @@ func ExampleQText() {
 func ExampleRpText() {
 	rp := RpText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := rp(w)
 	if err != nil {
@@ -645,7 +645,7 @@ func ExampleRpText() {
 func ExampleRtText() {
 	rt := RtText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := rt(w)
 	if err != nil {
@@ -660,7 +660,7 @@ func ExampleRtText() {
 func ExampleSText() {
 	s := SText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := s(w)
 	if err != nil {
@@ -675,7 +675,7 @@ func ExampleSText() {
 func ExampleSampText() {
 	samp := SampText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := samp(w)
 	if err != nil {
@@ -690,7 +690,7 @@ func ExampleSampText() {
 func ExampleSmallText() {
 	small := SmallText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := small(w)
 	if err != nil {
@@ -705,7 +705,7 @@ func ExampleSmallText() {
 func ExampleSpanText() {
 	span := SpanText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := span(w)
 	if err != nil {
@@ -720,7 +720,7 @@ func ExampleSpanText() {
 func ExampleStrongText() {
 	strong := StrongText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := strong(w)
 	if err != nil {
@@ -735,7 +735,7 @@ func ExampleStrongText() {
 func ExampleSubText() {
 	sub := SubText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := sub(w)
 	if err != nil {
@@ -750,7 +750,7 @@ func ExampleSubText() {
 func ExampleSupText() {
 	sup := SupText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := sup(w)
 	if err != nil {
@@ -765,7 +765,7 @@ func ExampleSupText() {
 func ExampleUText() {
 	u := UText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := u(w)
 	if err != nil {
@@ -780,7 +780,7 @@ func ExampleUText() {
 func ExampleVarText() {
 	varE := VarText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := varE(w)
 	if err != nil {

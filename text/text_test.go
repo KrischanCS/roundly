@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 //nolint:funlen
@@ -222,7 +222,7 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 
 	for _, tt := range tests {
 		b.Run(tt.name, func(b *testing.B) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			b.ReportAllocs()
 

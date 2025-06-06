@@ -5,7 +5,7 @@ import (
 
 	"github.com/yosssi/gohtml"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 //nolint:gosmopolitan,errcheck
@@ -15,7 +15,7 @@ func ExampleRubyText() {
 		{"字", "ji"},
 	})
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	_ = rb.RenderElement(w)
 
 	formatted := gohtml.Format(w.String())

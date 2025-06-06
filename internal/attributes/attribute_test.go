@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 func Test_distinguishLinkDuplicates(t *testing.T) {

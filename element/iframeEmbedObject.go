@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Embed creates the embed element - Plugin [(More)]
@@ -34,8 +34,8 @@ import (
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Embed(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("embed", attributes)
+func Embed(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("embed", attributes)
 }
 
 // Iframe creates the iframe element - Child navigable [(More)]
@@ -73,8 +73,8 @@ func Embed(attributes htmfunc.Attribute) htmfunc.Element {
 // [referrerpolicy]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-referrerpolicy
 // [loading]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-iframe-loading
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("iframe", attributes, children...)
+func Iframe(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("iframe", attributes, children...)
 }
 
 // Object creates the object element - Image, [child navigable], or [plugin [(More)]
@@ -112,6 +112,6 @@ func Iframe(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Object(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("object", attributes, children...)
+func Object(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("object", attributes, children...)
 }

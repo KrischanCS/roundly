@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Math creates the math element - MathML root [(More)]
@@ -29,6 +29,6 @@ import (
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [[MATHML]]: https://html.spec.whatwg.org/dev/references.html#refsMATHML
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Math(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("math", attributes, children...)
+func Math(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("math", attributes, children...)
 }

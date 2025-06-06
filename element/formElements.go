@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Button creates the button element - Button control [(More)]
@@ -47,8 +47,8 @@ import (
 // [type]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-value
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("button", attributes, children...)
+func Button(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("button", attributes, children...)
 }
 
 // Datalist creates the datalist element - Container for options for [combo box control [(More)]
@@ -75,8 +75,8 @@ func Button(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("datalist", attributes, children...)
+func Datalist(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("datalist", attributes, children...)
 }
 
 // Fieldset creates the fieldset element - Group of form controls [(More)]
@@ -106,8 +106,8 @@ func Datalist(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("fieldset", attributes, children...)
+func Fieldset(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("fieldset", attributes, children...)
 }
 
 // Legend creates the legend element - Caption for [fieldset [(More)]
@@ -132,8 +132,8 @@ func Fieldset(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("legend", attributes, children...)
+func Legend(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("legend", attributes, children...)
 }
 
 // Meter creates the meter element - Gauge [(More)]
@@ -165,8 +165,8 @@ func Legend(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [high]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-high
 // [optimum]: https://html.spec.whatwg.org/dev/form-elements.html#attr-meter-optimum
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("meter", attributes, children...)
+func Meter(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("meter", attributes, children...)
 }
 
 // Optgroup creates the optgroup element - Group of options in a list box [(More)]
@@ -193,8 +193,8 @@ func Meter(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-disabled
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-label
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("optgroup", attributes, children...)
+func Optgroup(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("optgroup", attributes, children...)
 }
 
 // Option creates the option element - Option in a list box or combo box control [(More)]
@@ -224,8 +224,8 @@ func Optgroup(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [selected]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-selected
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-value
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("option", attributes, children...)
+func Option(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("option", attributes, children...)
 }
 
 // Output creates the output element - Calculated output value [(More)]
@@ -257,8 +257,8 @@ func Option(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fae-form
 // [name]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-name
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("output", attributes, children...)
+func Output(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("output", attributes, children...)
 }
 
 // Progress creates the progress element - Progress bar [(More)]
@@ -286,8 +286,8 @@ func Output(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [value]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-value
 // [max]: https://html.spec.whatwg.org/dev/form-elements.html#attr-progress-max
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("progress", attributes, children...)
+func Progress(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("progress", attributes, children...)
 }
 
 // Select creates the select element - List box control [(More)]
@@ -328,8 +328,8 @@ func Progress(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [required]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-required
 // [size]: https://html.spec.whatwg.org/dev/form-elements.html#attr-select-size
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("select", attributes, children...)
+func Select(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("select", attributes, children...)
 }
 
 // Textarea creates the textarea element - Multiline text controls [(More)]
@@ -374,6 +374,6 @@ func Select(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [rows]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-rows
 // [wrap]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-wrap
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Textarea(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("textarea", attributes, children...)
+func Textarea(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("textarea", attributes, children...)
 }

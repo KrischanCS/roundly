@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Details creates the details element - Disclosure control for hiding details [(More)]
@@ -31,8 +31,8 @@ import (
 // [name]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-name
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-details-open
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("details", attributes, children...)
+func Details(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("details", attributes, children...)
 }
 
 // Dialog creates the dialog element - Dialog box or window [(More)]
@@ -56,8 +56,8 @@ func Details(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [open]: https://html.spec.whatwg.org/dev/interactive-elements.html#attr-dialog-open
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("dialog", attributes, children...)
+func Dialog(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("dialog", attributes, children...)
 }
 
 // Summary creates the summary element - Caption for [details [(More)]
@@ -82,6 +82,6 @@ func Dialog(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Summary(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("summary", attributes, children...)
+func Summary(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("summary", attributes, children...)
 }

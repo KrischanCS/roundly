@@ -3,7 +3,7 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 // AccessKey creates the accesskey attribute - Keyboard shortcut to activate or focus element
@@ -19,8 +19,8 @@ import (
 // [Ordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#ordered-set-of-unique-space-separated-tokens
 // [identical to]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#string-is
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AccessKey(accessKey ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("accesskey", ' ', accessKey...)
+func AccessKey(accessKey ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("accesskey", ' ', accessKey...)
 }
 
 // Blocking creates the blocking attribute - Whether the element is [potentially render-blocking]
@@ -40,8 +40,8 @@ func AccessKey(accessKey ...string) htmfunc.Attribute {
 // [potentially render-blocking]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#potentially-render-blocking
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Blocking(blocking ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("blocking", ' ', blocking...)
+func Blocking(blocking ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("blocking", ' ', blocking...)
 }
 
 // Class creates the class attribute - Classes to which the element belongs
@@ -56,8 +56,8 @@ func Blocking(blocking ...string) htmfunc.Attribute {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#classes
 // [Set of space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Class(class ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("class", ' ', class...)
+func Class(class ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("class", ' ', class...)
 }
 
 // ForStrings creates the for attribute - Specifies controls from which the output was calculated
@@ -72,8 +72,8 @@ func Class(class ...string) htmfunc.Attribute {
 // [output]: https://html.spec.whatwg.org/dev/form-elements.html#attr-output-for
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ForStrings(forV ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("for", ' ', forV...)
+func ForStrings(forV ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("for", ' ', forV...)
 }
 
 // Headers creates the headers attribute - The header cells for this cell
@@ -90,8 +90,8 @@ func ForStrings(forV ...string) htmfunc.Attribute {
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-tdth-headers
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Headers(headers ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("headers", ' ', headers...)
+func Headers(headers ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("headers", ' ', headers...)
 }
 
 // ItemProp creates the itemprop attribute - [Property names] of a microdata item
@@ -109,8 +109,8 @@ func Headers(headers ...string) htmfunc.Attribute {
 // [valid absolute URLs]: https://html.spec.whatwg.org/dev/https://url.spec.whatwg.org/#syntax-url-absolute
 // [defined property names]: https://html.spec.whatwg.org/dev/microdata.html#defined-property-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemProp(itemProp ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("itemprop", ' ', itemProp...)
+func ItemProp(itemProp ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("itemprop", ' ', itemProp...)
 }
 
 // ItemRef creates the itemref attribute - [Referenced] elements
@@ -126,8 +126,8 @@ func ItemProp(itemProp ...string) htmfunc.Attribute {
 // [Referenced]: https://html.spec.whatwg.org/dev/dom.html#referenced
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemRef(itemRef ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("itemref", ' ', itemRef...)
+func ItemRef(itemRef ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("itemref", ' ', itemRef...)
 }
 
 // ItemType creates the itemtype attribute - [Item types] of a microdata item
@@ -144,8 +144,8 @@ func ItemRef(itemRef ...string) htmfunc.Attribute {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [valid absolute URLs]: https://html.spec.whatwg.org/dev/https://url.spec.whatwg.org/#syntax-url-absolute
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemType(itemType ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("itemtype", ' ', itemType...)
+func ItemType(itemType ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("itemtype", ' ', itemType...)
 }
 
 // Ping creates the ping attribute - [URLs] to ping
@@ -164,8 +164,8 @@ func ItemType(itemType ...string) htmfunc.Attribute {
 // [Set of space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#set-of-space-separated-tokens
 // [valid non-empty URLs]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Ping(ping ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("ping", ' ', ping...)
+func Ping(ping ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("ping", ' ', ping...)
 }
 
 // Rel creates the rel attribute - It's semantics varies depending on the element it is applied to.
@@ -184,8 +184,8 @@ func Ping(ping ...string) htmfunc.Attribute {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Rel(rel ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("rel", ' ', rel...)
+func Rel(rel ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("rel", ' ', rel...)
 }
 
 // SandBox creates the sandbox attribute - Security rules for nested content
@@ -201,8 +201,8 @@ func Rel(rel ...string) htmfunc.Attribute {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SandBox(sandBox ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("sandbox", ' ', sandBox...)
+func SandBox(sandBox ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("sandbox", ' ', sandBox...)
 }
 
 // SizesStrings creates the sizes attribute - Sizes of the icons (for [rel]="[icon]")
@@ -220,6 +220,6 @@ func SandBox(sandBox ...string) htmfunc.Attribute {
 // [Unordered set of unique space-separated tokens]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SizesStrings(sizes ...string) htmfunc.Attribute {
-	return htmfunc.WriteMultiValueAttribute("sizes", ' ', sizes...)
+func SizesStrings(sizes ...string) roundly.Attribute {
+	return roundly.WriteMultiValueAttribute("sizes", ' ', sizes...)
 }

@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 func createAcctributeGroups(indicesBody *html.Node, inputBody *html.Node) attributes {

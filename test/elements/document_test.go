@@ -5,18 +5,18 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 func TestDocument(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
-	doc := htmfunc.Document("html", element.Html(Lang("en"), element.Head(nil), element.Body(nil)))
+	doc := roundly.Document("html", element.Html(Lang("en"), element.Head(nil), element.Body(nil)))
 
 	err := doc.RenderElement(w)
 
@@ -29,8 +29,8 @@ func TestHtml(t *testing.T) {
 
 	type args struct {
 		lang string
-		head htmfunc.Element
-		body htmfunc.Element
+		head roundly.Element
+		body roundly.Element
 	}
 
 	tests := []struct {
@@ -72,7 +72,7 @@ func TestHtml(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 			component := element.Html(Lang(tt.args.lang), tt.args.head, tt.args.body)
 
 			err := component.RenderElement(w)
@@ -87,7 +87,7 @@ func TestBase(t *testing.T) {
 
 	tests := []struct {
 		name       string
-		attributes htmfunc.Attribute
+		attributes roundly.Attribute
 		want       string
 	}{
 		{
@@ -104,7 +104,7 @@ func TestBase(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Base(tt.attributes)
 
@@ -146,9 +146,9 @@ func TestDoctype(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
-			component := htmfunc.Doctype(tt.args.doctype)
+			component := roundly.Doctype(tt.args.doctype)
 
 			err := component.RenderElement(w)
 			assert.NoError(t, err)
@@ -161,7 +161,7 @@ func TestHead(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		childNodes []htmfunc.Element
+		childNodes []roundly.Element
 	}
 
 	tests := []struct {
@@ -179,7 +179,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "title only",
 			args: args{
-				childNodes: []htmfunc.Element{
+				childNodes: []roundly.Element{
 					element.Title(nil, Text("The Title")),
 				},
 			},
@@ -188,7 +188,7 @@ func TestHead(t *testing.T) {
 		{
 			name: "empty",
 			args: args{
-				childNodes: []htmfunc.Element{
+				childNodes: []roundly.Element{
 					element.Title(nil, Text("The Title")),
 					element.Link(Attributes(HRef("/style.css"), Rel("stylesheet"))),
 				},
@@ -199,7 +199,7 @@ func TestHead(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Head(nil, tt.args.childNodes...)
 
@@ -213,7 +213,7 @@ func TestHead(t *testing.T) {
 func TestMeta(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	component := element.Meta(Attributes(Name("keywords"), Content(
 		"british,type face,font,fonts,highway,highways")))
@@ -231,7 +231,7 @@ func TestStyle(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.Attribute
+		attributes roundly.Attribute
 		css        string
 	}
 
@@ -268,7 +268,7 @@ func TestStyle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Style(tt.args.attributes, Text(tt.args.css))
 
@@ -284,7 +284,7 @@ func TestStyleTrusted(t *testing.T) {
 	t.Parallel()
 
 	type args struct {
-		attributes htmfunc.Attribute
+		attributes roundly.Attribute
 		css        string
 	}
 
@@ -321,7 +321,7 @@ func TestStyleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Style(tt.args.attributes, RawTrusted(tt.args.css))
 
@@ -359,7 +359,7 @@ func TestTitle(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Title(nil, Text(tt.title))
 
@@ -397,7 +397,7 @@ func TestTitleTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			component := element.Title(nil, RawTrusted(tt.title))
 

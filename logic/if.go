@@ -6,10 +6,10 @@
 //   - repeating elements with different data
 package logic
 
-import "github.com/KrischanCS/htmfunc"
+import "github.com/KrischanCS/roundly"
 
 type ElementOrAttribute interface {
-	htmfunc.Element | htmfunc.Attribute
+	roundly.Element | roundly.Attribute
 }
 
 // If returns the given renderer if condition is true, else a NOP renderer.
@@ -18,7 +18,7 @@ func If[EA ElementOrAttribute](condition bool, then EA) EA {
 		return then
 	}
 
-	return func(_ htmfunc.Writer) error {
+	return func(_ roundly.Writer) error {
 		return nil
 	}
 }

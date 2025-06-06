@@ -1,4 +1,4 @@
-//go:build htmfunc_text_std
+//go:build roundly_text_std
 
 // Package text Provides functions to add text to elements or attributes, either escaped of not.
 //
@@ -8,13 +8,13 @@ package text
 import (
 	"text/template"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 // Text represents exactly the given text without any extra tags. Html-specific characters will be
 // escaped. If this is not wanted, [RawTrusted] may be used.
-func Text(text string) htmfunc.Element {
-	return func(w htmfunc.Writer) (err error) {
+func Text(text string) roundly.Element {
+	return func(w roundly.Writer) (err error) {
 		template.HTMLEscape(w, []byte(text))
 		return
 	}

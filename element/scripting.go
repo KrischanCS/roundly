@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Noscript creates the noscript element - Fallback content for script [(More)]
@@ -29,8 +29,8 @@ import (
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("noscript", attributes, children...)
+func Noscript(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("noscript", attributes, children...)
 }
 
 // Script creates the script element - Embedded script [(More)]
@@ -67,8 +67,8 @@ func Noscript(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc
 // [blocking]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-blocking
 // [fetchpriority]: https://html.spec.whatwg.org/dev/scripting.html#attr-script-fetchpriority
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("script", attributes, children...)
+func Script(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("script", attributes, children...)
 }
 
 // Slot creates the slot element - Shadow tree slot [(More)]
@@ -94,8 +94,8 @@ func Script(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [name]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("slot", attributes, children...)
+func Slot(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("slot", attributes, children...)
 }
 
 // Template creates the template element - Template [(More)]
@@ -127,6 +127,6 @@ func Slot(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [shadowrootserializable]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootserializable
 // [shadowrootcustomelementregistry]: https://html.spec.whatwg.org/dev/scripting.html#attr-template-shadowrootcustomelementregistry
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Template(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("template", attributes, children...)
+func Template(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("template", attributes, children...)
 }

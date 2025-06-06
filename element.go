@@ -1,6 +1,6 @@
-// Package htmfunc provides a way to create type-safe, template like HTML
+// Package roundly provides a way to create type-safe, template like HTML
 // components in pure go.
-package htmfunc
+package roundly
 
 type Element func(w Writer) error
 

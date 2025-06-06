@@ -10,10 +10,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/yosssi/gohtml"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 //nolint:errcheck
@@ -24,12 +24,12 @@ func ExampleRange() {
 	}
 
 	list := Ol(nil,
-		Range(months, func(_ int, month string) htmfunc.Element {
+		Range(months, func(_ int, month string) roundly.Element {
 			return Li(nil, Text(month))
 		}),
 	)
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -78,12 +78,12 @@ func ExampleRange() {
 //nolint:errcheck
 func ExampleRangeInt() {
 	list := Ol(nil,
-		RangeInt(5, func(i int) htmfunc.Element {
+		RangeInt(5, func(i int) roundly.Element {
 			return Li(nil, Text(strconv.Itoa(i)))
 		}),
 	)
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -111,12 +111,12 @@ func ExampleRangeInt() {
 //nolint:errcheck
 func ExampleRangeSeq() {
 	list := Ol(nil,
-		RangeSeq(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) htmfunc.Element {
+		RangeSeq(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) roundly.Element {
 			return Li(nil, Text(strconv.FormatFloat(f, 'f', 1, 64)))
 		}),
 	)
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	_ = list.RenderElement(w)
 
 	fmt.Println(gohtml.Format(w.String()))
@@ -147,7 +147,7 @@ func TestRange(t *testing.T) {
 
 	type args[T any] struct {
 		items     []T
-		component func(int, T) htmfunc.Element
+		component func(int, T) roundly.Element
 	}
 
 	type testCase[T any] struct {
@@ -161,7 +161,7 @@ func TestRange(t *testing.T) {
 			"zeroItems",
 			args[string]{
 				items: nil,
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) roundly.Element {
 					return Li(nil,
 						Div(Class("number"), Text(strconv.Itoa(i+1))),
 						Div(Class("value"), Text(s)),
@@ -174,7 +174,7 @@ func TestRange(t *testing.T) {
 			"oneItem",
 			args[string]{
 				items: []string{"apples"},
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) roundly.Element {
 					return Li(nil,
 						Div(Class("number"), Text(strconv.Itoa(i+1))),
 						Div(Class("value"), Text(s)),
@@ -187,7 +187,7 @@ func TestRange(t *testing.T) {
 			"ThreeItems",
 			args[string]{
 				items: []string{"apples", "bananas", "oranges"},
-				component: func(i int, s string) htmfunc.Element {
+				component: func(i int, s string) roundly.Element {
 					return Li(nil,
 						Div(Class("number"), Text(strconv.Itoa(i+1))),
 						Div(Class("value"), Text(s)),
@@ -201,7 +201,7 @@ func TestRange(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			err := Range(tt.args.items, tt.args.component).RenderElement(w)
 
@@ -216,7 +216,7 @@ func TestRangeInt(t *testing.T) {
 
 	type args struct {
 		limit     int
-		component func(int) htmfunc.Element
+		component func(int) roundly.Element
 	}
 
 	tests := []struct {
@@ -228,7 +228,7 @@ func TestRangeInt(t *testing.T) {
 			name: "0",
 			args: args{
 				limit: 0,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) roundly.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -238,7 +238,7 @@ func TestRangeInt(t *testing.T) {
 			name: "1",
 			args: args{
 				limit: 1,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) roundly.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -248,7 +248,7 @@ func TestRangeInt(t *testing.T) {
 			name: "3",
 			args: args{
 				limit: 3,
-				component: func(i int) htmfunc.Element {
+				component: func(i int) roundly.Element {
 					return Li(nil, Text(strconv.Itoa(i)))
 				},
 			},
@@ -257,7 +257,7 @@ func TestRangeInt(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			err := RangeInt(tt.args.limit, tt.args.component).RenderElement(w)
 
@@ -273,7 +273,7 @@ func TestRangeIter(t *testing.T) {
 
 	type args struct {
 		seq       iter.Seq[int]
-		component func(int) htmfunc.Element
+		component func(int) roundly.Element
 	}
 
 	tests := []struct {
@@ -285,7 +285,7 @@ func TestRangeIter(t *testing.T) {
 			name: "nil",
 			args: args{
 				seq: nil,
-				component: func(s int) htmfunc.Element {
+				component: func(s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s)))
 				},
@@ -296,7 +296,7 @@ func TestRangeIter(t *testing.T) {
 			name: "1",
 			args: args{
 				seq: iterator.FromToInclusive(7, 7),
-				component: func(s int) htmfunc.Element {
+				component: func(s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
@@ -307,7 +307,7 @@ func TestRangeIter(t *testing.T) {
 			name: "5",
 			args: args{
 				seq: iterator.FromTo(3, 8),
-				component: func(s int) htmfunc.Element {
+				component: func(s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
@@ -322,7 +322,7 @@ func TestRangeIter(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			err := RangeSeq(tt.args.seq, tt.args.component).RenderElement(w)
 
@@ -341,7 +341,7 @@ func BenchmarkRange(b *testing.B) {
 		}
 	}
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -349,9 +349,9 @@ func BenchmarkRange(b *testing.B) {
 	var res []byte
 
 	for b.Loop() {
-		_ = Range(grid, func(_ int, row []int) htmfunc.Element { //nolint:errcheck
+		_ = Range(grid, func(_ int, row []int) roundly.Element { //nolint:errcheck
 			return Div(Class("row"),
-				Range(row, func(_ int, i int) htmfunc.Element {
+				Range(row, func(_ int, i int) roundly.Element {
 					return Div(Class("col"),
 						Text(strconv.Itoa(i)),
 					)
@@ -367,7 +367,7 @@ func BenchmarkRange(b *testing.B) {
 }
 
 func BenchmarkRangeInt(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -375,9 +375,9 @@ func BenchmarkRangeInt(b *testing.B) {
 	var res []byte
 
 	for b.Loop() {
-		_ = RangeInt(10, func(row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeInt(10, func(row int) roundly.Element { //nolint:errcheck
 			return Div(Class("row"),
-				RangeInt(20, func(col int) htmfunc.Element {
+				RangeInt(20, func(col int) roundly.Element {
 					return Div(Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)
@@ -393,7 +393,7 @@ func BenchmarkRangeInt(b *testing.B) {
 }
 
 func BenchmarkRangeIter(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	b.ResetTimer()
 	b.ReportAllocs()
@@ -401,9 +401,9 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for b.Loop() {
-		_ = RangeSeq(iterator.FromTo(0, 10), func(row int) htmfunc.Element { //nolint:errcheck
+		_ = RangeSeq(iterator.FromTo(0, 10), func(row int) roundly.Element { //nolint:errcheck
 			return Div(Class("row"),
-				RangeSeq(iterator.FromTo(0, 20), func(col int) htmfunc.Element {
+				RangeSeq(iterator.FromTo(0, 20), func(col int) roundly.Element {
 					return Div(Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)

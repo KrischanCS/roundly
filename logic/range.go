@@ -3,12 +3,12 @@ package logic
 import (
 	"iter"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
-// Range creates an htmfunc.Element for each item if items.
-func Range[E any](items []E, component func(int, E) htmfunc.Element) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
+// Range creates an roundly.Element for each item if items.
+func Range[E any](items []E, component func(int, E) roundly.Element) roundly.Element {
+	return func(w roundly.Writer) error {
 		for i, e := range items {
 			err := component(i, e).RenderElement(w)
 			if err != nil {
@@ -20,9 +20,9 @@ func Range[E any](items []E, component func(int, E) htmfunc.Element) htmfunc.Ele
 	}
 }
 
-// RangeInt creates an htmfunc.Element for each int in [0, limit).
-func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
+// RangeInt creates an roundly.Element for each int in [0, limit).
+func RangeInt(limit int, component func(int) roundly.Element) roundly.Element {
+	return func(w roundly.Writer) error {
 		for i := range limit {
 			err := component(i).RenderElement(w)
 			if err != nil {
@@ -34,15 +34,15 @@ func RangeInt(limit int, component func(int) htmfunc.Element) htmfunc.Element {
 	}
 }
 
-// RangeSeq creates an htmfunc.Element for each value yielded by seq.
-func RangeSeq[E any](seq iter.Seq[E], component func(E) htmfunc.Element) htmfunc.Element {
+// RangeSeq creates an roundly.Element for each value yielded by seq.
+func RangeSeq[E any](seq iter.Seq[E], component func(E) roundly.Element) roundly.Element {
 	if seq == nil {
-		return func(_ htmfunc.Writer) error {
+		return func(_ roundly.Writer) error {
 			return nil
 		}
 	}
 
-	return func(w htmfunc.Writer) error {
+	return func(w roundly.Writer) error {
 		for t := range seq {
 			err := component(t).RenderElement(w)
 			if err != nil {

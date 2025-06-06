@@ -8,7 +8,7 @@ import (
 	"github.com/KrischanCS/go-toolbox/set"
 	"golang.org/x/net/html"
 
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 func parseAllElements(standardIndicesPage *html.Node, syntaxBody *html.Node) []Element {

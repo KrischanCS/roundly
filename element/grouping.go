@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Blockquote creates the blockquote element - A section quoted from another source [(More)]
@@ -28,8 +28,8 @@ import (
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [cite]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-blockquote-cite
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Blockquote(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("blockquote", attributes, children...)
+func Blockquote(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("blockquote", attributes, children...)
 }
 
 // Dd creates the dd element - Content for corresponding [dt] element(s) [(More)]
@@ -55,8 +55,8 @@ func Blockquote(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfu
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("dd", attributes, children...)
+func Dd(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("dd", attributes, children...)
 }
 
 // Div creates the div element - Generic flow container, or container for name-value groups in [dl] elements [(More)]
@@ -81,8 +81,8 @@ func Dd(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("div", attributes, children...)
+func Div(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("div", attributes, children...)
 }
 
 // Dl creates the dl element - Association list consisting of zero or more name-value groups [(More)]
@@ -110,8 +110,8 @@ func Div(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Dl(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("dl", attributes, children...)
+func Dl(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("dl", attributes, children...)
 }
 
 // Dt creates the dt element - Legend for corresponding [dd] element(s) [(More)]
@@ -137,8 +137,8 @@ func Dl(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("dt", attributes, children...)
+func Dt(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("dt", attributes, children...)
 }
 
 // Figcaption creates the figcaption element - Caption for [figure [(More)]
@@ -162,8 +162,8 @@ func Dt(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("figcaption", attributes, children...)
+func Figcaption(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("figcaption", attributes, children...)
 }
 
 // Figure creates the figure element - Figure with optional caption [(More)]
@@ -188,8 +188,8 @@ func Figcaption(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfu
 // [figcaption]: https://html.spec.whatwg.org/dev/grouping-content.html#the-figcaption-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("figure", attributes, children...)
+func Figure(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("figure", attributes, children...)
 }
 
 // Hr creates the hr element - Thematic break [(More)]
@@ -211,8 +211,8 @@ func Figure(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Hr(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("hr", attributes)
+func Hr(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("hr", attributes)
 }
 
 // Li creates the li element - List item [(More)]
@@ -239,8 +239,8 @@ func Hr(attributes htmfunc.Attribute) htmfunc.Element {
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [value]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-li-value
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("li", attributes, children...)
+func Li(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("li", attributes, children...)
 }
 
 // Main creates the main element - Container for the dominant contents of the document [(More)]
@@ -264,8 +264,8 @@ func Li(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("main", attributes, children...)
+func Main(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("main", attributes, children...)
 }
 
 // Menu creates the menu element - Menu of commands [(More)]
@@ -291,8 +291,8 @@ func Main(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Menu(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("menu", attributes, children...)
+func Menu(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("menu", attributes, children...)
 }
 
 // Ol creates the ol element - Ordered list [(More)]
@@ -321,8 +321,8 @@ func Menu(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [start]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-start
 // [type]: https://html.spec.whatwg.org/dev/grouping-content.html#attr-ol-type
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Ol(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("ol", attributes, children...)
+func Ol(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("ol", attributes, children...)
 }
 
 // P creates the p element - Paragraph [(More)]
@@ -347,8 +347,8 @@ func Ol(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Eleme
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("p", attributes, children...)
+func P(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("p", attributes, children...)
 }
 
 // Pre creates the pre element - Block of preformatted text [(More)]
@@ -373,8 +373,8 @@ func P(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elemen
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("pre", attributes, children...)
+func Pre(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("pre", attributes, children...)
 }
 
 // Search creates the search element - Container for search controls [(More)]
@@ -398,8 +398,8 @@ func Pre(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("search", attributes, children...)
+func Search(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("search", attributes, children...)
 }
 
 // Ul creates the ul element - List [(More)]
@@ -425,6 +425,6 @@ func Search(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.E
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Ul(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("ul", attributes, children...)
+func Ul(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("ul", attributes, children...)
 }

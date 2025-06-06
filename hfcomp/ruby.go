@@ -1,10 +1,10 @@
 package hfcomp
 
 import (
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/logic"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/logic"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 type RubySegment struct {
@@ -12,8 +12,8 @@ type RubySegment struct {
 	Explanation string
 }
 
-func RubyText(segments []RubySegment) htmfunc.Element {
-	return func(w htmfunc.Writer) error {
+func RubyText(segments []RubySegment) roundly.Element {
+	return func(w roundly.Writer) error {
 		_, err := w.WriteString("<ruby>")
 		if err != nil {
 			return err
@@ -38,7 +38,7 @@ func RubyText(segments []RubySegment) htmfunc.Element {
 	}
 }
 
-func RubyExplanation(t string) htmfunc.Element {
+func RubyExplanation(t string) roundly.Element {
 	return Group(
 		Rp(nil, RawTrusted("(")),
 		Rt(nil, RawTrusted(t)),

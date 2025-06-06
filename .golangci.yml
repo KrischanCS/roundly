@@ -37,10 +37,10 @@ linters:
         - name: dot-imports
           arguments:
             - allowedPackages: # I recommend dot-imports for these packages, so allowing it especially for examples and testing
-                - github.com/KrischanCS/htmfunc/element
-                - github.com/KrischanCS/htmfunc/attribute
-                - github.com/KrischanCS/htmfunc/text
-                - github.com/KrischanCS/htmfunc/logic
+                - github.com/KrischanCS/roundly/element
+                - github.com/KrischanCS/roundly/attribute
+                - github.com/KrischanCS/roundly/text
+                - github.com/KrischanCS/roundly/logic
 
     staticcheck:
       initialisms: ["NONE_SHOULD_MATCH"] # Not check for any initialism, I think it hurts readability more than it helps (I know I fight the language idioms here, might rethink it later).
@@ -66,7 +66,7 @@ linters:
         - w io.Writer
         - w Writer
         - w *bytes.Buffer
-        - w htmfunc.Writer
+        - w roundly.Writer
 
         # String builders
         - sb strings.Builder

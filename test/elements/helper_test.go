@@ -9,11 +9,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
 )
 
-type elementFunc func(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element
+type elementFunc func(attributes roundly.Attribute, children ...roundly.Element) roundly.Element
 
 func elementTest(
 	t *testing.T,
@@ -25,7 +25,7 @@ func elementTest(
 
 	want := fmt.Sprintf(`<%s class="test other"></%s>`, tag, tag)
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 	element := elementFunc(Attributes(Class("test", "other")))
 
 	err := element.RenderElement(w)

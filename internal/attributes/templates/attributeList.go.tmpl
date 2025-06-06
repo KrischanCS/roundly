@@ -3,15 +3,15 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
-func nopAttribute(w htmfunc.Writer) error {
+func nopAttribute(w roundly.Writer) error {
 	return nil
 }
 
 // Attributes joins all given attributes space separated.
-func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
+func Attributes(attributes ...roundly.Attribute) roundly.Attribute {
 	if attributes == nil {
 		return nopAttribute
 	}
@@ -26,8 +26,8 @@ func Attributes(attributes ...htmfunc.Attribute) htmfunc.Attribute {
 	}
 }
 
-func join(attributes []htmfunc.Attribute) htmfunc.Attribute {
-	return func(w htmfunc.Writer) error {
+func join(attributes []roundly.Attribute) roundly.Attribute {
+	return func(w roundly.Writer) error {
 		err := attributes[0].RenderAttribute(w)
 		if err != nil {
 			return err

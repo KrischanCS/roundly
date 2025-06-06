@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	"github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 func TestTextSemantics(t *testing.T) {
@@ -51,7 +51,7 @@ func TestTextSemantics(t *testing.T) {
 func TestData(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := element.Data(Value("42"), RawTrusted("42")).RenderElement(w)
 
@@ -62,7 +62,7 @@ func TestData(t *testing.T) {
 func TestTimeAttribute(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := element.Time(
 		Attributes(
@@ -81,7 +81,7 @@ func TestTimeAttribute(t *testing.T) {
 func TestBdo_Rtl(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := element.Bdo(DirRtl(), RawTrusted("مرحباً بالعالم")).RenderElement(w)
 
@@ -92,7 +92,7 @@ func TestBdo_Rtl(t *testing.T) {
 func TestBdo_Ltr(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := element.Bdo(DirLtr(), RawTrusted("مرحباً بالعالم")).RenderElement(w)
 
@@ -103,7 +103,7 @@ func TestBdo_Ltr(t *testing.T) {
 func TestBr(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	err := element.Br(nil).RenderElement(w)
 

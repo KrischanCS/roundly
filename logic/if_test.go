@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 func TestIf(t *testing.T) {
@@ -17,7 +17,7 @@ func TestIf(t *testing.T) {
 
 	tests := []struct {
 		condition bool
-		element   htmfunc.Element
+		element   roundly.Element
 		want      string
 	}{
 		{
@@ -34,7 +34,7 @@ func TestIf(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(strconv.FormatBool(tc.condition), func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			err := If(tc.condition, tc.element).RenderElement(w)
 
@@ -45,7 +45,7 @@ func TestIf(t *testing.T) {
 }
 
 func BenchmarkIf(b *testing.B) {
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	r := rand.New(rand.NewPCG(1234, 5678)) //nolint:gosec
 	conditions := make([]bool, b.N)

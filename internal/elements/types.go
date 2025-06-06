@@ -1,6 +1,6 @@
 package elements
 
-import "github.com/KrischanCS/htmfunc/internal/standard"
+import "github.com/KrischanCS/roundly/internal/standard"
 
 type Element struct {
 	FuncName string

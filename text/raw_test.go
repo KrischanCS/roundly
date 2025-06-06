@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 func TestRawTrusted(t *testing.T) {
@@ -51,7 +51,7 @@ func TestRawTrusted(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			err := RawTrusted(tt.text).RenderElement(w)
 
@@ -191,7 +191,7 @@ ut aliquip ex ea \commodo \consequat. Dis aute ir.`,
 
 	for _, tt := range tests {
 		b.Run(tt.name, func(b *testing.B) {
-			w := htmfunc.NewWriter()
+			w := roundly.NewWriter()
 
 			b.ReportAllocs()
 

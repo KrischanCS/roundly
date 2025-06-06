@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Canvas creates the canvas element - Scriptable bitmap canvas [(More)]
@@ -32,6 +32,6 @@ import (
 // [width]: https://html.spec.whatwg.org/dev/canvas.html#attr-canvas-width
 // [height]: https://html.spec.whatwg.org/dev/canvas.html#attr-canvas-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Canvas(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("canvas", attributes, children...)
+func Canvas(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("canvas", attributes, children...)
 }

@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Form creates the form element - User-submittable form [(More)]
@@ -36,8 +36,8 @@ import (
 // [rel]: https://html.spec.whatwg.org/dev/forms.html#attr-form-rel
 // [target]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-target
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("form", attributes, children...)
+func Form(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("form", attributes, children...)
 }
 
 // Label creates the label element - Caption for a form control [(More)]
@@ -64,6 +64,6 @@ func Form(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [for]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Label(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("label", attributes, children...)
+func Label(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("label", attributes, children...)
 }

@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Del creates the del element - A removal from the document [(More)]
@@ -31,8 +31,8 @@ import (
 // [cite]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-cite
 // [datetime]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("del", attributes, children...)
+func Del(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("del", attributes, children...)
 }
 
 // Ins creates the ins element - An addition to the document [(More)]
@@ -60,6 +60,6 @@ func Del(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Elem
 // [cite]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-cite
 // [datetime]: https://html.spec.whatwg.org/dev/edits.html#attr-mod-datetime
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Ins(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("ins", attributes, children...)
+func Ins(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("ins", attributes, children...)
 }

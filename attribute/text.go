@@ -5,7 +5,7 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/htmfunc"
+	"github.com/KrischanCS/roundly"
 )
 
 // AbbrAttribute creates the abbr attribute - Alternative label to use for the header cell when referencing the cell in other contexts
@@ -20,8 +20,8 @@ import (
 // [th]: https://html.spec.whatwg.org/dev/tables.html#attr-th-abbr
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AbbrAttribute(abbr string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("abbr", abbr)
+func AbbrAttribute(abbr string) roundly.Attribute {
+	return roundly.WriteAttribute("abbr", abbr)
 }
 
 // AcceptCharset creates the accept-charset attribute - Character encodings to use for [form submission]
@@ -37,8 +37,8 @@ func AbbrAttribute(abbr string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [ASCII case-insensitive]: https://html.spec.whatwg.org/dev/https://infra.spec.whatwg.org/#ascii-case-insensitive
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AcceptCharset(acceptCharset string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("accept-charset", acceptCharset)
+func AcceptCharset(acceptCharset string) roundly.Attribute {
+	return roundly.WriteAttribute("accept-charset", acceptCharset)
 }
 
 // Action creates the action attribute - [URL] to use for [form submission]
@@ -55,8 +55,8 @@ func AcceptCharset(acceptCharset string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Action(action string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("action", action)
+func Action(action string) roundly.Attribute {
+	return roundly.WriteAttribute("action", action)
 }
 
 // Allow creates the allow attribute - [Permissions policy] to be applied to the [iframe]'s contents
@@ -73,8 +73,8 @@ func Action(action string) htmfunc.Attribute {
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [Serialized permissions policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-feature-policy/#serialized-permissions-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Allow(allow string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("allow", allow)
+func Allow(allow string) roundly.Attribute {
+	return roundly.WriteAttribute("allow", allow)
 }
 
 // Alt creates the alt attribute - Replacement text for use when images are not available
@@ -93,8 +93,8 @@ func Allow(allow string) htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-alt
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Alt(alt string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("alt", alt)
+func Alt(alt string) roundly.Attribute {
+	return roundly.WriteAttribute("alt", alt)
 }
 
 // As creates the as attribute - [Potential destination] for a preload request (for [rel]="[preload]" and [rel]="[modulepreload]")
@@ -117,8 +117,8 @@ func Alt(alt string) htmfunc.Attribute {
 // [script-like destination]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#request-destination-script-like
 // [modulepreload]: https://html.spec.whatwg.org/dev/links.html#link-type-modulepreload
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func As(as string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("as", as)
+func As(as string) roundly.Attribute {
+	return roundly.WriteAttribute("as", as)
 }
 
 // AutoComplete creates the autocomplete attribute - Hint for form autofill feature
@@ -137,8 +137,8 @@ func As(as string) htmfunc.Attribute {
 // [textarea]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-autocomplete
 // [Autofill field]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#autofill-field
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func AutoComplete(autoComplete string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("autocomplete", autoComplete)
+func AutoComplete(autoComplete string) roundly.Attribute {
+	return roundly.WriteAttribute("autocomplete", autoComplete)
 }
 
 // CiteAttribute creates the cite attribute - Link to the source of the quotation or more information about the edit
@@ -159,8 +159,8 @@ func AutoComplete(autoComplete string) htmfunc.Attribute {
 // [q]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-q-cite
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func CiteAttribute(cite string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("cite", cite)
+func CiteAttribute(cite string) roundly.Attribute {
+	return roundly.WriteAttribute("cite", cite)
 }
 
 // Color creates the color attribute - Color to use when customizing a site's icon (for [rel]="mask-icon")
@@ -176,8 +176,8 @@ func CiteAttribute(cite string) htmfunc.Attribute {
 // [rel]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-rel
 // [<color>]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/css-color/#typedef-color
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Color(color string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("color", color)
+func Color(color string) roundly.Attribute {
+	return roundly.WriteAttribute("color", color)
 }
 
 // Command creates the command attribute - Indicates to the targeted element which action to take.
@@ -185,7 +185,7 @@ func Color(color string) htmfunc.Attribute {
 // It can be applied to the following elements:
 //   - [button]
 //
-// Value constraints: "[toggle-popover]";"[show-popover]";"[hide-popover]";"[close]";"[show-modal]";a [custom command keyword]
+// Value constraints: "[toggle-popover]";"[show-popover]";"[hide-popover]";"[close]";"[request-close]";"[show-modal]";a [custom command keyword]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -194,11 +194,12 @@ func Color(color string) htmfunc.Attribute {
 // [show-popover]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-show-popover
 // [hide-popover]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-hide-popover
 // [close]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-close
+// [request-close]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-request-close
 // [show-modal]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-show-modal
 // [custom command keyword]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-command-custom
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Command(command string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("command", command)
+func Command(command string) roundly.Attribute {
+	return roundly.WriteAttribute("command", command)
 }
 
 // Commandfor creates the commandfor attribute - Targets another element to be invoked.
@@ -213,8 +214,8 @@ func Command(command string) htmfunc.Attribute {
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-commandfor
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Commandfor(commandfor string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("commandfor", commandfor)
+func Commandfor(commandfor string) roundly.Attribute {
+	return roundly.WriteAttribute("commandfor", commandfor)
 }
 
 // Content creates the content attribute - Value of the element
@@ -229,8 +230,8 @@ func Commandfor(commandfor string) htmfunc.Attribute {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-content
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Content(content string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("content", content)
+func Content(content string) roundly.Attribute {
+	return roundly.WriteAttribute("content", content)
 }
 
 // DataAttribute creates the data attribute - Address of the resource
@@ -245,8 +246,8 @@ func Content(content string) htmfunc.Attribute {
 // [object]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#attr-object-data
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DataAttribute(data string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("data", data)
+func DataAttribute(data string) roundly.Attribute {
+	return roundly.WriteAttribute("data", data)
 }
 
 // DateTime creates the datetime attribute - It's semantics varies depending on the element it is applied to.
@@ -274,8 +275,8 @@ func DataAttribute(data string) htmfunc.Attribute {
 // [valid non-negative integer]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-non-negative-integer
 // [valid duration string]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-duration-string
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DateTime(dateTime string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("datetime", dateTime)
+func DateTime(dateTime string) roundly.Attribute {
+	return roundly.WriteAttribute("datetime", dateTime)
 }
 
 // DirName creates the dirname attribute - Name of form control to use for sending the element's [directionality] in [form submission]
@@ -294,8 +295,8 @@ func DateTime(dateTime string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func DirName(dirName string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("dirname", dirName)
+func DirName(dirName string) roundly.Attribute {
+	return roundly.WriteAttribute("dirname", dirName)
 }
 
 // Download creates the download attribute - Whether to download the resource instead of navigating to it, and its filename if so
@@ -311,8 +312,8 @@ func DirName(dirName string) htmfunc.Attribute {
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-download
 // [area]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-download
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Download(download string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("download", download)
+func Download(download string) roundly.Attribute {
+	return roundly.WriteAttribute("download", download)
 }
 
 // For creates the for attribute - Associate the label with form control
@@ -327,8 +328,8 @@ func Download(download string) htmfunc.Attribute {
 // [label]: https://html.spec.whatwg.org/dev/forms.html#attr-label-for
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func For(forV string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("for", forV)
+func For(forV string) roundly.Attribute {
+	return roundly.WriteAttribute("for", forV)
 }
 
 // FormAttribute creates the form attribute - Associates the element with a [form] element
@@ -358,8 +359,8 @@ func For(forV string) htmfunc.Attribute {
 // [form]: https://html.spec.whatwg.org/dev/forms.html#the-form-element
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormAttribute(form string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("form", form)
+func FormAttribute(form string) roundly.Attribute {
+	return roundly.WriteAttribute("form", form)
 }
 
 // FormAction creates the formaction attribute - [URL] to use for [form submission]
@@ -378,8 +379,8 @@ func FormAttribute(form string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormAction(formAction string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formaction", formAction)
+func FormAction(formAction string) roundly.Attribute {
+	return roundly.WriteAttribute("formaction", formAction)
 }
 
 // FormTarget creates the formtarget attribute - [Navigable] for [form submission]
@@ -398,8 +399,8 @@ func FormAction(formAction string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [Valid navigable target name or keyword]: https://html.spec.whatwg.org/dev/document-sequences.html#valid-navigable-target-name-or-keyword
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func FormTarget(formTarget string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("formtarget", formTarget)
+func FormTarget(formTarget string) roundly.Attribute {
+	return roundly.WriteAttribute("formtarget", formTarget)
 }
 
 // HRef creates the href attribute - It's semantics varies depending on the element it is applied to.
@@ -422,8 +423,8 @@ func FormTarget(formTarget string) htmfunc.Attribute {
 // [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-href
 // [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRef(hRef string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("href", hRef)
+func HRef(hRef string) roundly.Attribute {
+	return roundly.WriteAttribute("href", hRef)
 }
 
 // HRefLang creates the hreflang attribute - Language of the linked resource
@@ -439,8 +440,8 @@ func HRef(hRef string) htmfunc.Attribute {
 // [a]: https://html.spec.whatwg.org/dev/links.html#attr-hyperlink-hreflang
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-hreflang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func HRefLang(hRefLang string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("hreflang", hRefLang)
+func HRefLang(hRefLang string) roundly.Attribute {
+	return roundly.WriteAttribute("hreflang", hRefLang)
 }
 
 // Id creates the id attribute - The element's [ID]
@@ -456,8 +457,8 @@ func HRefLang(hRefLang string) htmfunc.Attribute {
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Id(id string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("id", id)
+func Id(id string) roundly.Attribute {
+	return roundly.WriteAttribute("id", id)
 }
 
 // ImageSizes creates the imagesizes attribute - Image sizes for different page layouts (for [rel]="[preload]")
@@ -474,8 +475,8 @@ func Id(id string) htmfunc.Attribute {
 // [preload]: https://html.spec.whatwg.org/dev/links.html#link-type-preload
 // [Valid source size list]: https://html.spec.whatwg.org/dev/images.html#valid-source-size-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ImageSizes(imageSizes string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("imagesizes", imageSizes)
+func ImageSizes(imageSizes string) roundly.Attribute {
+	return roundly.WriteAttribute("imagesizes", imageSizes)
 }
 
 // Integrity creates the integrity attribute - Integrity metadata used in Subresource Integrity checks [[SRI]]
@@ -493,8 +494,8 @@ func ImageSizes(imageSizes string) htmfunc.Attribute {
 // [[SRI]]: https://html.spec.whatwg.org/dev/references.html#refsSRI
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Integrity(integrity string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("integrity", integrity)
+func Integrity(integrity string) roundly.Attribute {
+	return roundly.WriteAttribute("integrity", integrity)
 }
 
 // Is creates the is attribute - Creates a [customized built-in element]
@@ -511,8 +512,8 @@ func Integrity(integrity string) htmfunc.Attribute {
 // [Valid custom element name]: https://html.spec.whatwg.org/dev/custom-elements.html#valid-custom-element-name
 // [customized built-in element]: https://html.spec.whatwg.org/dev/custom-elements.html#customized-built-in-element
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Is(is string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("is", is)
+func Is(is string) roundly.Attribute {
+	return roundly.WriteAttribute("is", is)
 }
 
 // ItemId creates the itemid attribute - [Global identifier] for a microdata item
@@ -528,8 +529,8 @@ func Is(is string) htmfunc.Attribute {
 // [Global identifier]: https://html.spec.whatwg.org/dev/microdata.html#global-identifier
 // [Valid URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ItemId(itemId string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("itemid", itemId)
+func ItemId(itemId string) roundly.Attribute {
+	return roundly.WriteAttribute("itemid", itemId)
 }
 
 // LabelAttribute creates the label attribute - User-visible label
@@ -548,8 +549,8 @@ func ItemId(itemId string) htmfunc.Attribute {
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-label
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func LabelAttribute(label string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("label", label)
+func LabelAttribute(label string) roundly.Attribute {
+	return roundly.WriteAttribute("label", label)
 }
 
 // Lang creates the lang attribute - Language of the element
@@ -563,8 +564,8 @@ func LabelAttribute(label string) htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-lang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Lang(lang string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("lang", lang)
+func Lang(lang string) roundly.Attribute {
+	return roundly.WriteAttribute("lang", lang)
 }
 
 // List creates the list attribute - List of autocomplete options
@@ -579,8 +580,8 @@ func Lang(lang string) htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-list
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func List(list string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("list", list)
+func List(list string) roundly.Attribute {
+	return roundly.WriteAttribute("list", list)
 }
 
 // Max creates the max attribute - Maximum value
@@ -594,8 +595,8 @@ func List(list string) htmfunc.Attribute {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-max
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Max(max string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("max", max)
+func Max(max string) roundly.Attribute {
+	return roundly.WriteAttribute("max", max)
 }
 
 // Media creates the media attribute - Applicable media
@@ -616,8 +617,8 @@ func Max(max string) htmfunc.Attribute {
 // [style]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-media
 // [Valid media query list]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-media-query-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Media(media string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("media", media)
+func Media(media string) roundly.Attribute {
+	return roundly.WriteAttribute("media", media)
 }
 
 // Min creates the min attribute - Minimum value
@@ -631,8 +632,8 @@ func Media(media string) htmfunc.Attribute {
 //
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-min
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Min(min string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("min", min)
+func Min(min string) roundly.Attribute {
+	return roundly.WriteAttribute("min", min)
 }
 
 // Name creates the name attribute - It's semantics varies depending on the element it is applied to.
@@ -675,8 +676,8 @@ func Min(min string) htmfunc.Attribute {
 // [meta]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-name
 // [slot]: https://html.spec.whatwg.org/dev/scripting.html#attr-slot-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Name(name string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("name", name)
+func Name(name string) roundly.Attribute {
+	return roundly.WriteAttribute("name", name)
 }
 
 // Nonce creates the nonce attribute - Cryptographic nonce used in Content Security Policy checks [[CSP]]
@@ -692,8 +693,8 @@ func Name(name string) htmfunc.Attribute {
 // [[CSP]]: https://html.spec.whatwg.org/dev/references.html#refsCSP
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Nonce(nonce string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("nonce", nonce)
+func Nonce(nonce string) roundly.Attribute {
+	return roundly.WriteAttribute("nonce", nonce)
 }
 
 // Pattern creates the pattern attribute - Pattern to be matched by the form control's value
@@ -708,8 +709,8 @@ func Nonce(nonce string) htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-pattern
 // [Pattern]: https://html.spec.whatwg.org/dev/https://tc39.es/ecma262/#prod-Pattern
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Pattern(pattern string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("pattern", pattern)
+func Pattern(pattern string) roundly.Attribute {
+	return roundly.WriteAttribute("pattern", pattern)
 }
 
 // PlaceHolder creates the placeholder attribute - User-visible label to be placed within the form control
@@ -726,8 +727,8 @@ func Pattern(pattern string) htmfunc.Attribute {
 // [textarea]: https://html.spec.whatwg.org/dev/form-elements.html#attr-textarea-placeholder
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PlaceHolder(placeHolder string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("placeholder", placeHolder)
+func PlaceHolder(placeHolder string) roundly.Attribute {
+	return roundly.WriteAttribute("placeholder", placeHolder)
 }
 
 // PopOverTarget creates the popovertarget attribute - Targets a popover element to toggle, show, or hide
@@ -744,8 +745,8 @@ func PlaceHolder(placeHolder string) htmfunc.Attribute {
 // [input]: https://html.spec.whatwg.org/dev/popover.html#attr-popovertarget
 // [ID]: https://html.spec.whatwg.org/dev/https://dom.spec.whatwg.org/#concept-id
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func PopOverTarget(popOverTarget string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("popovertarget", popOverTarget)
+func PopOverTarget(popOverTarget string) roundly.Attribute {
+	return roundly.WriteAttribute("popovertarget", popOverTarget)
 }
 
 // Poster creates the poster attribute - Poster frame to show prior to video playback
@@ -760,8 +761,8 @@ func PopOverTarget(popOverTarget string) htmfunc.Attribute {
 // [video]: https://html.spec.whatwg.org/dev/media.html#attr-video-poster
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Poster(poster string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("poster", poster)
+func Poster(poster string) roundly.Attribute {
+	return roundly.WriteAttribute("poster", poster)
 }
 
 // ReferrerPolicy creates the referrerpolicy attribute - [Referrer policy] for [fetches] initiated by the element
@@ -788,8 +789,8 @@ func Poster(poster string) htmfunc.Attribute {
 // [fetches]: https://html.spec.whatwg.org/dev/https://fetch.spec.whatwg.org/#concept-fetch
 // [Referrer policy]: https://html.spec.whatwg.org/dev/https://w3c.github.io/webappsec-referrer-policy/#referrer-policy
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func ReferrerPolicy(referrerPolicy string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("referrerpolicy", referrerPolicy)
+func ReferrerPolicy(referrerPolicy string) roundly.Attribute {
+	return roundly.WriteAttribute("referrerpolicy", referrerPolicy)
 }
 
 // Sizes creates the sizes attribute - Image sizes for different page layouts
@@ -806,8 +807,8 @@ func ReferrerPolicy(referrerPolicy string) htmfunc.Attribute {
 // [source]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-source-sizes
 // [Valid source size list]: https://html.spec.whatwg.org/dev/images.html#valid-source-size-list
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Sizes(sizes string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("sizes", sizes)
+func Sizes(sizes string) roundly.Attribute {
+	return roundly.WriteAttribute("sizes", sizes)
 }
 
 // SlotAttribute creates the slot attribute - The element's desired slot
@@ -822,8 +823,8 @@ func Sizes(sizes string) htmfunc.Attribute {
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#the-id-attribute
 // [Text]: https://html.spec.whatwg.org/dev/dom.html#attribute-text
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SlotAttribute(slot string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("slot", slot)
+func SlotAttribute(slot string) roundly.Attribute {
+	return roundly.WriteAttribute("slot", slot)
 }
 
 // Src creates the src attribute - Address of the resource
@@ -856,8 +857,8 @@ func SlotAttribute(slot string) htmfunc.Attribute {
 // [video (1)]: https://html.spec.whatwg.org/dev/media.html#attr-media-src
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Src(src string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("src", src)
+func Src(src string) roundly.Attribute {
+	return roundly.WriteAttribute("src", src)
 }
 
 // SrcDoc creates the srcdoc attribute - A document to render in the [iframe]
@@ -873,8 +874,8 @@ func Src(src string) htmfunc.Attribute {
 // [iframe]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#the-iframe-element
 // [an iframesrcdoc document]: https://html.spec.whatwg.org/dev/iframe-embed-object.html#an-iframe-srcdoc-document
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SrcDoc(srcDoc string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("srcdoc", srcDoc)
+func SrcDoc(srcDoc string) roundly.Attribute {
+	return roundly.WriteAttribute("srcdoc", srcDoc)
 }
 
 // SrcLang creates the srclang attribute - Language of the text track
@@ -888,8 +889,8 @@ func SrcDoc(srcDoc string) htmfunc.Attribute {
 //
 // [track]: https://html.spec.whatwg.org/dev/media.html#attr-track-srclang
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func SrcLang(srcLang string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("srclang", srcLang)
+func SrcLang(srcLang string) roundly.Attribute {
+	return roundly.WriteAttribute("srclang", srcLang)
 }
 
 // StyleAttribute creates the style attribute - Presentational and formatting instructions
@@ -903,8 +904,8 @@ func SrcLang(srcLang string) htmfunc.Attribute {
 //
 // [HTML elements]: https://html.spec.whatwg.org/dev/dom.html#attr-style
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func StyleAttribute(style string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("style", style)
+func StyleAttribute(style string) roundly.Attribute {
+	return roundly.WriteAttribute("style", style)
 }
 
 // Target creates the target attribute - It's semantics varies depending on the element it is applied to.
@@ -929,8 +930,8 @@ func StyleAttribute(style string) htmfunc.Attribute {
 // [form submission]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#form-submission-2
 // [form]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fs-target
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Target(target string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("target", target)
+func Target(target string) roundly.Attribute {
+	return roundly.WriteAttribute("target", target)
 }
 
 // TitleAttribute creates the title attribute - It's semantics varies depending on the element it is applied to.
@@ -956,8 +957,8 @@ func Target(target string) htmfunc.Attribute {
 // [style]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-title
 // [CSS style sheet set name]: https://html.spec.whatwg.org/dev/https://drafts.csswg.org/cssom/#css-style-sheet-set-name
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func TitleAttribute(title string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("title", title)
+func TitleAttribute(title string) roundly.Attribute {
+	return roundly.WriteAttribute("title", title)
 }
 
 // Type creates the type attribute - It's semantics varies depending on the element it is applied to.
@@ -981,8 +982,8 @@ func TitleAttribute(title string) htmfunc.Attribute {
 // [valid MIME type string]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#valid-mime-type
 // [JavaScript MIME type essence match]: https://html.spec.whatwg.org/dev/https://mimesniff.spec.whatwg.org/#javascript-mime-type-essence-match
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Type(typeV string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("type", typeV)
+func Type(typeV string) roundly.Attribute {
+	return roundly.WriteAttribute("type", typeV)
 }
 
 // UseMap creates the usemap attribute - Name of [image map] to use
@@ -998,8 +999,8 @@ func Type(typeV string) htmfunc.Attribute {
 // [image map]: https://html.spec.whatwg.org/dev/image-maps.html#image-map
 // [Valid hash-name reference]: https://html.spec.whatwg.org/dev/common-microsyntaxes.html#valid-hash-name-reference
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func UseMap(useMap string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("usemap", useMap)
+func UseMap(useMap string) roundly.Attribute {
+	return roundly.WriteAttribute("usemap", useMap)
 }
 
 // Value creates the value attribute - It's semantics varies depending on the element it is applied to.
@@ -1020,6 +1021,6 @@ func UseMap(useMap string) htmfunc.Attribute {
 // [data]: https://html.spec.whatwg.org/dev/text-level-semantics.html#attr-data-value
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func Value(value string) htmfunc.Attribute {
-	return htmfunc.WriteAttribute("value", value)
+func Value(value string) roundly.Attribute {
+	return roundly.WriteAttribute("value", value)
 }

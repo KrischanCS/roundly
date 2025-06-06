@@ -1,4 +1,4 @@
-module github.com/KrischanCS/htmfunc
+module github.com/KrischanCS/roundly
 
 go 1.24.1
 

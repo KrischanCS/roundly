@@ -3,10 +3,10 @@ package test
 import (
 	"testing"
 
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/logic"
-	. "github.com/KrischanCS/htmfunc/text"
+	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/logic"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 func TestShouldCompileWhenAllSubpackagesAreDotImported(t *testing.T) {

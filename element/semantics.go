@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Base creates the base element - Base URL and default target [navigable] for [hyperlinks] and [forms [(More)]
@@ -31,8 +31,8 @@ import (
 // [href]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-href
 // [target]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-target
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Base(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("base", attributes)
+func Base(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("base", attributes)
 }
 
 // Head creates the head element - Container for document metadata [(More)]
@@ -56,8 +56,8 @@ func Base(attributes htmfunc.Attribute) htmfunc.Element {
 // [metadata content]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Head(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("head", attributes, children...)
+func Head(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("head", attributes, children...)
 }
 
 // Html creates the html element - Root element [(More)]
@@ -81,8 +81,8 @@ func Head(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [body]: https://html.spec.whatwg.org/dev/sections.html#the-body-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Html(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("html", attributes, children...)
+func Html(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("html", attributes, children...)
 }
 
 // Link creates the link element - Link metadata [(More)]
@@ -124,8 +124,8 @@ func Html(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Ele
 // [disabled]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-disabled
 // [fetchpriority]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-fetchpriority
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Link(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("link", attributes)
+func Link(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("link", attributes)
 }
 
 // Meta creates the meta element - Text metadata [(More)]
@@ -156,8 +156,8 @@ func Link(attributes htmfunc.Attribute) htmfunc.Element {
 // [charset]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-charset
 // [media]: https://html.spec.whatwg.org/dev/semantics.html#attr-meta-media
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Meta(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("meta", attributes)
+func Meta(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("meta", attributes)
 }
 
 // Style creates the style element - Embedded styling information [(More)]
@@ -184,8 +184,8 @@ func Meta(attributes htmfunc.Attribute) htmfunc.Element {
 // [media]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-media
 // [blocking]: https://html.spec.whatwg.org/dev/semantics.html#attr-style-blocking
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Style(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("style", attributes, children...)
+func Style(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("style", attributes, children...)
 }
 
 // Title creates the title element - Document title [(More)]
@@ -210,6 +210,6 @@ func Style(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [text]: https://html.spec.whatwg.org/dev/dom.html#text-content
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Title(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("title", attributes, children...)
+func Title(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("title", attributes, children...)
 }

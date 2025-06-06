@@ -1,19 +1,19 @@
-package htmfunc_test
+package roundly_test
 
 import (
 	"bufio"
 	"fmt"
 	"os"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	. "github.com/KrischanCS/htmfunc/element"
-	. "github.com/KrischanCS/htmfunc/text"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/text"
 )
 
 //nolint:nolintlint,lll
 func ExampleHtml() {
-	page := htmfunc.Document("html",
+	page := roundly.Document("html",
 		Html(Lang("en"),
 			Head(
 				nil,

@@ -1,4 +1,4 @@
-package htmfunc
+package roundly
 
 type Attribute func(w Writer) error
 

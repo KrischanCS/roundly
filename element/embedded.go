@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Img creates the img element - Image [(More)]
@@ -44,8 +44,8 @@ import (
 // [loading]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-loading
 // [fetchpriority]: https://html.spec.whatwg.org/dev/embedded-content.html#attr-img-fetchpriority
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Img(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("img", attributes)
+func Img(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("img", attributes)
 }
 
 // Picture creates the picture element - Image [(More)]
@@ -74,8 +74,8 @@ func Img(attributes htmfunc.Attribute) htmfunc.Element {
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("picture", attributes, children...)
+func Picture(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("picture", attributes, children...)
 }
 
 // Source creates the source element - Image source for [img] or media source for [video] or [audio [(More)]
@@ -107,6 +107,6 @@ func Picture(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Source(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("source", attributes)
+func Source(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("source", attributes)
 }

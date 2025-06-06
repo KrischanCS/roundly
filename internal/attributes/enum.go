@@ -9,7 +9,7 @@ import (
 	"github.com/KrischanCS/go-toolbox/iterator/reducer"
 	"github.com/KrischanCS/go-toolbox/set"
 
-	"github.com/KrischanCS/htmfunc/internal/standard"
+	"github.com/KrischanCS/roundly/internal/standard"
 )
 
 func DecomposeEnums(enum []attribute) []attribute {

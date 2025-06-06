@@ -1,6 +1,6 @@
-# Htmfunc
+# roundly
 
-Htmfunc is a go library for dynamic HTML generation. It works without template parsing at runtime or
+roundly is a go library for dynamic HTML generation. It works without template parsing at runtime or
 code generation during development. Instead it provides functions for elements and attributes.
 These functions can be composed to reusable components.
 
@@ -24,7 +24,7 @@ Table(                                                  // <table
             {"Gleam", "Pink Starfish", "Lucy"},         //     <tr><th scope="row">Gleam</th><td>Pink Starfish</td><td>Lucy</td></tr>
             {"Zig", "Ziguana", "Ziggy & Zero"},         //     <tr><th scope="row">Zig</th><td>Ziguana</td><td>Ziggy & Zero</td></tr>
             {"Java", "?", "Duke"},                      //     <tr><th scope="row">Java</th><td>?</td><td>Duke</td></tr>
-        }, func(i int, mascot Mascot) htmfunc.Element {
+        }, func(i int, mascot Mascot) roundly.Element {
             return Tr(nil,
                 Th(ScopeRow(), Text(mascot.Language)),
                 TdText(mascot.Kind),
@@ -40,16 +40,16 @@ out there for a few years longer and probably more stable. If I had found it ear
 probably just have used that.
 
 But when I finally found that gomponents exists, I had already implemented a significant part of
-htmfunc and also liked some of the things I did differently, so I decided to continue on it anyway.
+roundly and also liked some of the things I did differently, so I decided to continue on it anyway.
 
 ## Packages
 
 The rendering functions are distributed over the following packages:
 
-- [element](https://github.com/KrischanCS/htmfunc/element): All HTML elements from the standard.
-- [attribute](https://github.com/KrischanCS/htmfunc/attribute): All attributes from the standard.
-- [text](https://github.com/KrischanCS/htmfunc/text): Functions for text nodes.
-- [logic](https://github.com/KrischanCS/htmfunc/logic): Logic for conditional rendering, loops and
+- [element](https://github.com/KrischanCS/roundly/element): All HTML elements from the standard.
+- [attribute](https://github.com/KrischanCS/roundly/attribute): All attributes from the standard.
+- [text](https://github.com/KrischanCS/roundly/text): Functions for text nodes.
+- [logic](https://github.com/KrischanCS/roundly/logic): Logic for conditional rendering, loops and
   groups.
 
 I recommend to use those in files without other domain logic and dot-import them as in the
@@ -59,7 +59,7 @@ drastically in this case.
 ## Usage
 
 To create an element, simple use one of the function from the element package which all returns
-an `htmfunc.Element`:
+an `roundly.Element`:
 
 ```go
 div := Div(nil)
@@ -74,7 +74,7 @@ fmt.Println(div.String())
 The String function should be used mainly for debugging purposes and for brevity in testing and
 examples like the one above.
 
-Usually it will be more efficient to render the element to an `htmfunc.Writer` (an interface
+Usually it will be more efficient to render the element to an `roundly.Writer` (an interface
 composed of `io.Writer` `io.StringWriter` and `io.ByteWriter`) e.g. `bufio.Writer`. In an
 http.HandleFunc for example, the `http.ResponseWriter` can be wrapped in a `bufio.Writer` and passed
 to RenderElement. So with our emppty div from before, it would look like this:
@@ -189,7 +189,7 @@ they will write as as text as content to their parent element.
 ```go
 Article(nil,                                     // <article>
     H1(nil, Text("Hello World!")),               //     <h1>Hello World!</h1>
-    P(nil, Text("My first htmfunc paragraph!")), //     <p>This is a paragraph.</p>
+    P(nil, Text("My first roundly paragraph!")), //     <p>This is a paragraph.</p>
     P(nil, Text("And Already the next one…")),   //     <p>And another one…</p>
 )                                                // </article>
 ```
@@ -220,7 +220,7 @@ content. Our example from above could be written like this:
 ```go
 Article(nil,                              // <article>
     H1Text("Hello World!"),               //     <h1>Hello World!</h1>
-    PText("My first htmfunc paragraph!"), //     <p>This is a paragraph.</p>
+    PText("My first roundly paragraph!"), //     <p>This is a paragraph.</p>
     PText("And Already the next one…"),   //     <p>And another one…</p>
 )                                         // </article>
 ```
@@ -232,7 +232,7 @@ The `Attributes` function is not required here)
 ```go
 Article(nil,
     H1Text("Hello World!", Id("heading")),
-    PText("My first htmfunc paragraph!", Id("first-paragraph"), Class("opener")),
+    PText("My first roundly paragraph!", Id("first-paragraph"), Class("opener")),
     PText("And Already the next one…"),
 )
 
@@ -304,7 +304,7 @@ Group(
 
 #### Repetitions
 
-For repeating elements with different data, htmfunc provides the `Range` functions:
+For repeating elements with different data, roundly provides the `Range` functions:
 
 - `Range` takes a slice of elements and passes each elements index and value to the provided 
     function.

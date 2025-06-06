@@ -5,15 +5,15 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KrischanCS/htmfunc"
-	. "github.com/KrischanCS/htmfunc/attribute"
-	element2 "github.com/KrischanCS/htmfunc/element"
+	"github.com/KrischanCS/roundly"
+	. "github.com/KrischanCS/roundly/attribute"
+	element2 "github.com/KrischanCS/roundly/element"
 )
 
 func TestCanvas(t *testing.T) {
 	t.Parallel()
 
-	w := htmfunc.NewWriter()
+	w := roundly.NewWriter()
 
 	element := element2.Canvas(Attributes(Class("test", "other")))
 

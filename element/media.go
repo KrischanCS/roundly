@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Audio creates the audio element - Audio player [(More)]
@@ -40,8 +40,8 @@ import (
 // [muted]: https://html.spec.whatwg.org/dev/media.html#attr-media-muted
 // [controls]: https://html.spec.whatwg.org/dev/media.html#attr-media-controls
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("audio", attributes, children...)
+func Audio(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("audio", attributes, children...)
 }
 
 // Track creates the track element - Timed text track [(More)]
@@ -69,8 +69,8 @@ func Audio(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.El
 // [src]: https://html.spec.whatwg.org/dev/media.html#attr-track-src
 // [srclang]: https://html.spec.whatwg.org/dev/media.html#attr-track-srclang
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Track(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("track", attributes)
+func Track(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("track", attributes)
 }
 
 // Video creates the video element - Video player [(More)]
@@ -111,6 +111,6 @@ func Track(attributes htmfunc.Attribute) htmfunc.Element {
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [height]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-height
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Video(attributes htmfunc.Attribute, children ...htmfunc.Element) htmfunc.Element {
-    return htmfunc.WriteElement("video", attributes, children...)
+func Video(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("video", attributes, children...)
 }

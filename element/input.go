@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/htmfunc"
+"github.com/KrischanCS/roundly"
 )
 
 // Input creates the input element - Form control [(More)]
@@ -67,6 +67,6 @@ import (
 // [value]: https://html.spec.whatwg.org/dev/input.html#attr-input-value
 // [width]: https://html.spec.whatwg.org/dev/embedded-content-other.html#attr-dim-width
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
-func Input(attributes htmfunc.Attribute) htmfunc.Element {
-    return htmfunc.WriteVoidElement("input", attributes)
+func Input(attributes roundly.Attribute) roundly.Element {
+    return roundly.WriteVoidElement("input", attributes)
 }
