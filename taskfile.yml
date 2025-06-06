@@ -44,6 +44,10 @@ tasks:
       - taskfile.yml
       - .golangci.yml
 
+  generate:
+    cmds:
+      - cd internal && go run .
+
   deps:
     cmds:
       - go get -u ./...
