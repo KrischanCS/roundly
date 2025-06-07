@@ -26,7 +26,7 @@ func AccessKey(accessKey ...string) roundly.Attribute {
 // Blocking creates the blocking attribute - Whether the element is [potentially render-blocking]
 //
 // It can be applied to the following elements:
-//   - [link]
+//   - [link] [script] [style]
 //   - [script]
 //   - [style]
 //
@@ -79,7 +79,7 @@ func ForStrings(forV ...string) roundly.Attribute {
 // Headers creates the headers attribute - The header cells for this cell
 //
 // It can be applied to the following elements:
-//   - [td]
+//   - [td] [th]
 //   - [th]
 //
 // Value constraints: [Unordered set of unique space-separated tokens] consisting of IDs (Additional rules apply, see elements documentation)
@@ -151,7 +151,7 @@ func ItemType(itemType ...string) roundly.Attribute {
 // Ping creates the ping attribute - [URLs] to ping
 //
 // It can be applied to the following elements:
-//   - [a]
+//   - [a] [area]
 //   - [area]
 //
 // Value constraints: [Set of space-separated tokens] consisting of [valid non-empty URLs]

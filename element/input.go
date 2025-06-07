@@ -9,15 +9,15 @@ import (
 // Input creates the input element - Form control [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
+//   - [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [accept] [alpha] [alt] [autocomplete] [checked] [colorspace] [dirname] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [height] [list] [max] [maxlength] [min] [minlength] [multiple] [name] [pattern] [placeholder] [popovertarget] [popovertargetaction] [readonly] [required] [size] [src] [step] [type] [value] [width]
+//   - [globals] [accept] [alpha] [alt] [autocomplete] [checked] [colorspace] [dirname] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [height] [list] [max] [maxlength] [min] [minlength] [multiple] [name] [pattern] [placeholder] [popovertarget] [popovertargetaction] [readonly] [required] [size] [src] [step] [type] [value] [width]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

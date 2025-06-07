@@ -15,9 +15,7 @@ import (
 {{- end}}
 //
 // Can hold one of the following values:
-{{ range .Values -}}
-//   - {{.}}
-{{ end -}}
+//   - {{- range .Values }} {{.}}{{- end}}
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //

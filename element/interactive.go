@@ -9,16 +9,16 @@ import (
 // Details creates the details element - Disclosure control for hiding details [(More)]
 //
 // It belongs to the following categories:
-// [flow] [interactive] [palpable]
+//   - [flow] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [summary] [flow]
+//   - [summary] [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [name] [open]
+//   - [globals] [name] [open]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -38,16 +38,16 @@ func Details(attributes roundly.Attribute, children ...roundly.Element) roundly.
 // Dialog creates the dialog element - Dialog box or window [(More)]
 //
 // It belongs to the following categories:
-// [flow]
+//   - [flow]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [open]
+//   - [globals] [open]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -63,16 +63,16 @@ func Dialog(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Summary creates the summary element - Caption for [details [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing] [heading content]
+//   - [phrasing] [heading content]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [details]
+//   - [details]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

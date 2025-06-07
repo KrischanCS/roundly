@@ -9,16 +9,16 @@ import (
 // Form creates the form element - User-submittable form [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [accept-charset] [action] [autocomplete] [enctype] [method] [name] [novalidate] [rel] [target]
+//   - [globals] [accept-charset] [action] [autocomplete] [enctype] [method] [name] [novalidate] [rel] [target]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -43,16 +43,16 @@ func Form(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Label creates the label element - Caption for a form control [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [palpable]
+//   - [flow] [phrasing] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [for]
+//   - [globals] [for]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

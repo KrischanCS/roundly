@@ -9,16 +9,16 @@ import (
 // Noscript creates the noscript element - Fallback content for script [(More)]
 //
 // It belongs to the following categories:
-// [metadata] [flow] [phrasing]
+//   - [metadata] [flow] [phrasing]
 //
 // It can be parent to the following elements/categories of elements:
-// varies
+//   - varies
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head] [phrasing]
+//   - [head] [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -36,16 +36,16 @@ func Noscript(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Script creates the script element - Embedded script [(More)]
 //
 // It belongs to the following categories:
-// [metadata] [flow] [phrasing] [script-supporting]
+//   - [metadata] [flow] [phrasing] [script-supporting]
 //
 // It can be parent to the following elements/categories of elements:
-// script, data, or script documentation
+//   - script, data, or script documentation
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head] [phrasing] [script-supporting]
+//   - [head] [phrasing] [script-supporting]
 //
 // The following attributes can be added to this element:
-// [globals] [src] [type] [nomodule] [async] [defer] [crossorigin] [integrity] [referrerpolicy] [blocking] [fetchpriority]
+//   - [globals] [src] [type] [nomodule] [async] [defer] [crossorigin] [integrity] [referrerpolicy] [blocking] [fetchpriority]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -74,16 +74,16 @@ func Script(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Slot creates the slot element - Shadow tree slot [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing]
+//   - [flow] [phrasing]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [name]
+//   - [globals] [name]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -101,16 +101,16 @@ func Slot(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Template creates the template element - Template [(More)]
 //
 // It belongs to the following categories:
-// [metadata] [flow] [phrasing] [script-supporting]
+//   - [metadata] [flow] [phrasing] [script-supporting]
 //
 // It can be parent to the following elements/categories of elements:
-// empty
+//   - empty
 //
 // If can itself be a child of the following elements/categories of elements:
-// [metadata] [phrasing] [script-supporting] [colgroup]
+//   - [metadata] [phrasing] [script-supporting] [colgroup]
 //
 // The following attributes can be added to this element:
-// [globals] [shadowrootmode] [shadowrootdelegatesfocus] [shadowrootclonable] [shadowrootserializable] [shadowrootcustomelementregistry]
+//   - [globals] [shadowrootmode] [shadowrootdelegatesfocus] [shadowrootclonable] [shadowrootserializable] [shadowrootcustomelementregistry]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

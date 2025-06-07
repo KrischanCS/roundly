@@ -9,15 +9,15 @@ import (
 // Img creates the img element - Image [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [form-associated] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [form-associated] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing] [picture]
+//   - [phrasing] [picture]
 //
 // The following attributes can be added to this element:
-// [globals] [alt] [src] [srcset] [sizes] [crossorigin] [usemap] [ismap] [width] [height] [referrerpolicy] [decoding] [loading] [fetchpriority]
+//   - [globals] [alt] [src] [srcset] [sizes] [crossorigin] [usemap] [ismap] [width] [height] [referrerpolicy] [decoding] [loading] [fetchpriority]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -51,16 +51,16 @@ func Img(attributes roundly.Attribute) roundly.Element {
 // Picture creates the picture element - Image [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [palpable]
+//   - [flow] [phrasing] [embedded] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [source] one [img] [script-supporting elements]
+//   - [source] one [img] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -81,15 +81,15 @@ func Picture(attributes roundly.Attribute, children ...roundly.Element) roundly.
 // Source creates the source element - Image source for [img] or media source for [video] or [audio [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [picture] [video] [audio]
+//   - [picture] [video] [audio]
 //
 // The following attributes can be added to this element:
-// [globals] [type] [media] [src] [srcset] [sizes] [width] [height]
+//   - [globals] [type] [media] [src] [srcset] [sizes] [width] [height]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

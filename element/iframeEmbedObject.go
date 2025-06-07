@@ -9,15 +9,15 @@ import (
 // Embed creates the embed element - Plugin [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [palpable]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [src] [type] [width] [height] any
+//   - [globals] [src] [type] [width] [height] any
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -41,16 +41,16 @@ func Embed(attributes roundly.Attribute) roundly.Element {
 // Iframe creates the iframe element - Child navigable [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// empty
+//   - empty
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [src] [srcdoc] [name] [sandbox] [allow] [allowfullscreen] [width] [height] [referrerpolicy] [loading]
+//   - [globals] [src] [srcdoc] [name] [sandbox] [allow] [allowfullscreen] [width] [height] [referrerpolicy] [loading]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -80,16 +80,16 @@ func Iframe(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Object creates the object element - Image, [child navigable], or [plugin [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [listed] [form-associated] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [listed] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [data] [type] [name] [form] [width] [height]
+//   - [globals] [data] [type] [name] [form] [width] [height]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

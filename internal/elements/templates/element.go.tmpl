@@ -10,20 +10,19 @@ import (
 // {{.FuncName}} creates the {{.Tag}} element - {{.Description}} [(More)]
 //
 // It belongs to the following categories:
-// {{- range .Categories}} {{.}}{{end}}
+//   - {{- range .Categories}} {{.}}{{end}}
 //
 {{- if .IsVoid}}
 // It is a void element and cannot contain any child elements
 {{- else}}
 // It can be parent to the following elements/categories of elements:
-//{{- range .Children}} {{.}}{{- end}}
-{{- end}}
+//   - {{- range .Children}} {{.}}{{- end}}{{- end}}
 //
 // If can itself be a child of the following elements/categories of elements:
-// {{- range .Parents}} {{.}}{{- end}}
+//   - {{- range .Parents}} {{.}}{{- end}}
 //
 // The following attributes can be added to this element:
-// {{- range .Attributes}} {{.}}{{- end}}
+//   - {{- range .Attributes}} {{.}}{{- end}}
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

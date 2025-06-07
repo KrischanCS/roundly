@@ -9,16 +9,16 @@ import (
 // A creates the a element - Hyperlink [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [palpable]
+//   - [flow] [phrasing] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [href] [target] [download] [ping] [rel] [hreflang] [type] [referrerpolicy]
+//   - [globals] [href] [target] [download] [ping] [rel] [hreflang] [type] [referrerpolicy]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -45,16 +45,16 @@ func A(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Abbr creates the abbr element - Abbreviation [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -71,16 +71,16 @@ func Abbr(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // B creates the b element - Keywords [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -97,16 +97,16 @@ func B(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Bdi creates the bdi element - Text directionality isolation [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -123,16 +123,16 @@ func Bdi(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Bdo creates the bdo element - Text directionality formatting [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -149,15 +149,15 @@ func Bdo(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Br creates the br element - Line break, e.g. in poem or postal address [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing]
+//   - [flow] [phrasing]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -173,16 +173,16 @@ func Br(attributes roundly.Attribute) roundly.Element {
 // Cite creates the cite element - Title of a work [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -199,16 +199,16 @@ func Cite(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Code creates the code element - Computer code [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -225,16 +225,16 @@ func Code(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Data creates the data element - Machine-readable equivalent [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [value]
+//   - [globals] [value]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -252,16 +252,16 @@ func Data(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Dfn creates the dfn element - Defining instance [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -278,16 +278,16 @@ func Dfn(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Em creates the em element - Stress emphasis [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -304,16 +304,16 @@ func Em(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // I creates the i element - Alternate voice [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -330,16 +330,16 @@ func I(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Kbd creates the kbd element - User input [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -356,16 +356,16 @@ func Kbd(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Mark creates the mark element - Highlight [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -382,16 +382,16 @@ func Mark(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Q creates the q element - Quotation [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [cite]
+//   - [globals] [cite]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -409,16 +409,16 @@ func Q(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Rp creates the rp element - Parenthesis for ruby annotation text [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [text]
+//   - [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [ruby]
+//   - [ruby]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -434,16 +434,16 @@ func Rp(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Rt creates the rt element - Ruby annotation text [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [ruby]
+//   - [ruby]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -459,16 +459,16 @@ func Rt(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Ruby creates the ruby element - Ruby annotation(s) [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing] [rt] [rp]
+//   - [phrasing] [rt] [rp]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -487,16 +487,16 @@ func Ruby(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // S creates the s element - Inaccurate text [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -513,16 +513,16 @@ func S(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Samp creates the samp element - Computer output [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -539,16 +539,16 @@ func Samp(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Small creates the small element - Side comment [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -565,16 +565,16 @@ func Small(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Span creates the span element - Generic phrasing container [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -591,16 +591,16 @@ func Span(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Strong creates the strong element - Importance [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -617,16 +617,16 @@ func Strong(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Sub creates the sub element - Subscript [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -643,16 +643,16 @@ func Sub(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Sup creates the sup element - Superscript [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -669,16 +669,16 @@ func Sup(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Time creates the time element - Machine-readable equivalent of date- or time-related data [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [datetime]
+//   - [globals] [datetime]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -696,16 +696,16 @@ func Time(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // U creates the u element - Unarticulated annotation [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -722,16 +722,16 @@ func U(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Var creates the var element - Variable [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -748,15 +748,15 @@ func Var(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Wbr creates the wbr element - Line breaking opportunity [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing]
+//   - [flow] [phrasing]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

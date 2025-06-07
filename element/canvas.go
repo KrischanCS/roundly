@@ -9,16 +9,16 @@ import (
 // Canvas creates the canvas element - Scriptable bitmap canvas [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [palpable]
+//   - [flow] [phrasing] [embedded] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [width] [height]
+//   - [globals] [width] [height]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

@@ -12,12 +12,7 @@ import (
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -39,12 +34,7 @@ func AutoCapitalizeCharacters() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -66,12 +56,7 @@ func AutoCapitalizeNone() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -93,12 +78,7 @@ func AutoCapitalizeOff() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -120,12 +100,7 @@ func AutoCapitalizeOn() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -147,12 +122,7 @@ func AutoCapitalizeSentences() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
-//   - "[none]"
-//   - "[sentences]"
-//   - "[words]"
-//   - "[characters]"
+//   - "[on]" "[off]" "[none]" "[sentences]" "[words]" "[characters]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -174,8 +144,7 @@ func AutoCapitalizeWords() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "on"
-//   - "off"
+//   - "on" "off"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -191,8 +160,7 @@ func AutoCompleteOff() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "on"
-//   - "off"
+//   - "on" "off"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -208,8 +176,7 @@ func AutoCompleteOn() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
+//   - "[on]" "[off]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -227,8 +194,7 @@ func AutoCorrectOff() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[on]"
-//   - "[off]"
+//   - "[on]" "[off]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -263,9 +229,7 @@ func CharSetUtf8() roundly.Attribute {
 //   - [dialog]
 //
 // Can hold one of the following values:
-//   - "[any]"
-//   - "[closerequest]"
-//   - "[none]"
+//   - "[any]" "[closerequest]" "[none]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -284,9 +248,7 @@ func ClosedByAny() roundly.Attribute {
 //   - [dialog]
 //
 // Can hold one of the following values:
-//   - "[any]"
-//   - "[closerequest]"
-//   - "[none]"
+//   - "[any]" "[closerequest]" "[none]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -305,9 +267,7 @@ func ClosedByCloserequest() roundly.Attribute {
 //   - [dialog]
 //
 // Can hold one of the following values:
-//   - "[any]"
-//   - "[closerequest]"
-//   - "[none]"
+//   - "[any]" "[closerequest]" "[none]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -326,8 +286,7 @@ func ClosedByNone() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[limited-srgb]"
-//   - "[display-p3]"
+//   - "[limited-srgb]" "[display-p3]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -345,8 +304,7 @@ func ColorSpaceDisplayP3() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[limited-srgb]"
-//   - "[display-p3]"
+//   - "[limited-srgb]" "[display-p3]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -364,9 +322,7 @@ func ColorSpaceLimitedSrgb() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "true"
-//   - "plaintext-only"
-//   - "false"
+//   - "true" "plaintext-only" "false"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -382,9 +338,7 @@ func ContentEditableFalse() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "true"
-//   - "plaintext-only"
-//   - "false"
+//   - "true" "plaintext-only" "false"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -400,9 +354,7 @@ func ContentEditablePlaintextOnly() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "true"
-//   - "plaintext-only"
-//   - "false"
+//   - "true" "plaintext-only" "false"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -422,8 +374,7 @@ func ContentEditableTrue() roundly.Attribute {
 //   - [video]
 //
 // Can hold one of the following values:
-//   - "[anonymous]"
-//   - "[use-credentials]"
+//   - "[anonymous]" "[use-credentials]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -449,8 +400,7 @@ func CrossOriginAnonymous() roundly.Attribute {
 //   - [video]
 //
 // Can hold one of the following values:
-//   - "[anonymous]"
-//   - "[use-credentials]"
+//   - "[anonymous]" "[use-credentials]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -472,9 +422,7 @@ func CrossOriginUseCredentials() roundly.Attribute {
 //   - [img]
 //
 // Can hold one of the following values:
-//   - "sync"
-//   - "async"
-//   - "auto"
+//   - "sync" "async" "auto"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -490,9 +438,7 @@ func DecodingAsync() roundly.Attribute {
 //   - [img]
 //
 // Can hold one of the following values:
-//   - "sync"
-//   - "async"
-//   - "auto"
+//   - "sync" "async" "auto"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -508,9 +454,7 @@ func DecodingAuto() roundly.Attribute {
 //   - [img]
 //
 // Can hold one of the following values:
-//   - "sync"
-//   - "async"
-//   - "auto"
+//   - "sync" "async" "auto"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -526,9 +470,7 @@ func DecodingSync() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[ltr]"
-//   - "[rtl]"
-//   - "[auto]"
+//   - "[ltr]" "[rtl]" "[auto]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -549,9 +491,7 @@ func DirAuto() roundly.Attribute {
 //   - [bdo]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[ltr]"
-//   - "[rtl]"
+//   - "[auto]" "[ltr]" "[rtl]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -573,9 +513,7 @@ func DirLtr() roundly.Attribute {
 //   - [bdo]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[ltr]"
-//   - "[rtl]"
+//   - "[auto]" "[ltr]" "[rtl]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -596,8 +534,7 @@ func DirRtl() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "true"
-//   - "false"
+//   - "true" "false"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -613,8 +550,7 @@ func DraggableFalse() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "true"
-//   - "false"
+//   - "true" "false"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -630,9 +566,7 @@ func DraggableTrue() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -652,9 +586,7 @@ func EncTypeApplicationXWwwFormUrlencoded() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -674,9 +606,7 @@ func EncTypeMultipartFormData() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -696,13 +626,7 @@ func EncTypeTextPlain() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -725,13 +649,7 @@ func EnterKeyHintDone() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -754,13 +672,7 @@ func EnterKeyHintEnter() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -783,13 +695,7 @@ func EnterKeyHintGo() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -812,13 +718,7 @@ func EnterKeyHintNext() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -841,13 +741,7 @@ func EnterKeyHintPrevious() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -870,13 +764,7 @@ func EnterKeyHintSearch() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[enter]"
-//   - "[done]"
-//   - "[go]"
-//   - "[next]"
-//   - "[previous]"
-//   - "[search]"
-//   - "[send]"
+//   - "[enter]" "[done]" "[go]" "[next]" "[previous]" "[search]" "[send]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -901,9 +789,7 @@ func EnterKeyHintSend() roundly.Attribute {
 //   - [script]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[high]"
-//   - "[low]"
+//   - "[auto]" "[high]" "[low]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -928,9 +814,7 @@ func FetchPriorityAuto() roundly.Attribute {
 //   - [script]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[high]"
-//   - "[low]"
+//   - "[auto]" "[high]" "[low]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -955,9 +839,7 @@ func FetchPriorityHigh() roundly.Attribute {
 //   - [script]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[high]"
-//   - "[low]"
+//   - "[auto]" "[high]" "[low]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -981,9 +863,7 @@ func FetchPriorityLow() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1005,9 +885,7 @@ func FormEnctypeApplicationXWwwFormUrlencoded() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1029,9 +907,7 @@ func FormEnctypeMultipartFormData() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[application/x-www-form-urlencoded]"
-//   - "[multipart/form-data]"
-//   - "[text/plain]"
+//   - "[application/x-www-form-urlencoded]" "[multipart/form-data]" "[text/plain]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1053,9 +929,7 @@ func FormEnctypeTextPlain() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "GET"
-//   - "POST"
-//   - "dialog"
+//   - "GET" "POST" "dialog"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1074,9 +948,7 @@ func FormMethodDialog() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "GET"
-//   - "POST"
-//   - "dialog"
+//   - "GET" "POST" "dialog"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1095,9 +967,7 @@ func FormMethodGET() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "GET"
-//   - "POST"
-//   - "dialog"
+//   - "GET" "POST" "dialog"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1115,9 +985,7 @@ func FormMethodPOST() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[until-found]"
-//   - "[hidden]"
-//   - the empty string
+//   - "[until-found]" "[hidden]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1135,9 +1003,7 @@ func HiddenEmpty() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[until-found]"
-//   - "[hidden]"
-//   - the empty string
+//   - "[until-found]" "[hidden]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1155,9 +1021,7 @@ func HiddenHidden() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[until-found]"
-//   - "[hidden]"
-//   - the empty string
+//   - "[until-found]" "[hidden]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1175,11 +1039,7 @@ func HiddenUntilFound() roundly.Attribute {
 //   - [meta]
 //
 // Can hold one of the following values:
-//   - "[content-type]"
-//   - "[default-style]"
-//   - "[refresh]"
-//   - "[x-ua-compatible]"
-//   - "[content-security-policy]"
+//   - "[content-type]" "[default-style]" "[refresh]" "[x-ua-compatible]" "[content-security-policy]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1200,11 +1060,7 @@ func HttpEquivContentSecurityPolicy() roundly.Attribute {
 //   - [meta]
 //
 // Can hold one of the following values:
-//   - "[content-type]"
-//   - "[default-style]"
-//   - "[refresh]"
-//   - "[x-ua-compatible]"
-//   - "[content-security-policy]"
+//   - "[content-type]" "[default-style]" "[refresh]" "[x-ua-compatible]" "[content-security-policy]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1225,11 +1081,7 @@ func HttpEquivContentType() roundly.Attribute {
 //   - [meta]
 //
 // Can hold one of the following values:
-//   - "[content-type]"
-//   - "[default-style]"
-//   - "[refresh]"
-//   - "[x-ua-compatible]"
-//   - "[content-security-policy]"
+//   - "[content-type]" "[default-style]" "[refresh]" "[x-ua-compatible]" "[content-security-policy]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1250,11 +1102,7 @@ func HttpEquivDefaultStyle() roundly.Attribute {
 //   - [meta]
 //
 // Can hold one of the following values:
-//   - "[content-type]"
-//   - "[default-style]"
-//   - "[refresh]"
-//   - "[x-ua-compatible]"
-//   - "[content-security-policy]"
+//   - "[content-type]" "[default-style]" "[refresh]" "[x-ua-compatible]" "[content-security-policy]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1275,11 +1123,7 @@ func HttpEquivRefresh() roundly.Attribute {
 //   - [meta]
 //
 // Can hold one of the following values:
-//   - "[content-type]"
-//   - "[default-style]"
-//   - "[refresh]"
-//   - "[x-ua-compatible]"
-//   - "[content-security-policy]"
+//   - "[content-type]" "[default-style]" "[refresh]" "[x-ua-compatible]" "[content-security-policy]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1300,14 +1144,7 @@ func HttpEquivXUaCompatible() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1331,14 +1168,7 @@ func InputModeDecimal() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1362,14 +1192,7 @@ func InputModeEmail() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1393,14 +1216,7 @@ func InputModeNone() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1424,14 +1240,7 @@ func InputModeNumeric() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1455,14 +1264,7 @@ func InputModeSearch() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1486,14 +1288,7 @@ func InputModeTel() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1517,14 +1312,7 @@ func InputModeText() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[text]"
-//   - "[tel]"
-//   - "[email]"
-//   - "[url]"
-//   - "[numeric]"
-//   - "[decimal]"
-//   - "[search]"
+//   - "[none]" "[text]" "[tel]" "[email]" "[url]" "[numeric]" "[decimal]" "[search]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1548,11 +1336,7 @@ func InputModeUrl() roundly.Attribute {
 //   - [track]
 //
 // Can hold one of the following values:
-//   - "[subtitles]"
-//   - "[captions]"
-//   - "[descriptions]"
-//   - "[chapters]"
-//   - "[metadata]"
+//   - "[subtitles]" "[captions]" "[descriptions]" "[chapters]" "[metadata]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1573,11 +1357,7 @@ func KindCaptions() roundly.Attribute {
 //   - [track]
 //
 // Can hold one of the following values:
-//   - "[subtitles]"
-//   - "[captions]"
-//   - "[descriptions]"
-//   - "[chapters]"
-//   - "[metadata]"
+//   - "[subtitles]" "[captions]" "[descriptions]" "[chapters]" "[metadata]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1598,11 +1378,7 @@ func KindChapters() roundly.Attribute {
 //   - [track]
 //
 // Can hold one of the following values:
-//   - "[subtitles]"
-//   - "[captions]"
-//   - "[descriptions]"
-//   - "[chapters]"
-//   - "[metadata]"
+//   - "[subtitles]" "[captions]" "[descriptions]" "[chapters]" "[metadata]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1623,11 +1399,7 @@ func KindDescriptions() roundly.Attribute {
 //   - [track]
 //
 // Can hold one of the following values:
-//   - "[subtitles]"
-//   - "[captions]"
-//   - "[descriptions]"
-//   - "[chapters]"
-//   - "[metadata]"
+//   - "[subtitles]" "[captions]" "[descriptions]" "[chapters]" "[metadata]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1648,11 +1420,7 @@ func KindMetadata() roundly.Attribute {
 //   - [track]
 //
 // Can hold one of the following values:
-//   - "[subtitles]"
-//   - "[captions]"
-//   - "[descriptions]"
-//   - "[chapters]"
-//   - "[metadata]"
+//   - "[subtitles]" "[captions]" "[descriptions]" "[chapters]" "[metadata]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1674,8 +1442,7 @@ func KindSubtitles() roundly.Attribute {
 //   - [img]
 //
 // Can hold one of the following values:
-//   - "[lazy]"
-//   - "[eager]"
+//   - "[lazy]" "[eager]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1695,8 +1462,7 @@ func LoadingEager() roundly.Attribute {
 //   - [img]
 //
 // Can hold one of the following values:
-//   - "[lazy]"
-//   - "[eager]"
+//   - "[lazy]" "[eager]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1715,9 +1481,7 @@ func LoadingLazy() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[GET]"
-//   - "[POST]"
-//   - "[dialog]"
+//   - "[GET]" "[POST]" "[dialog]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1737,9 +1501,7 @@ func MethodDialog() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[GET]"
-//   - "[POST]"
-//   - "[dialog]"
+//   - "[GET]" "[POST]" "[dialog]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1759,9 +1521,7 @@ func MethodGET() roundly.Attribute {
 //   - [form]
 //
 // Can hold one of the following values:
-//   - "[GET]"
-//   - "[POST]"
-//   - "[dialog]"
+//   - "[GET]" "[POST]" "[dialog]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1781,8 +1541,7 @@ func MethodPOST() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[manual]"
+//   - "[auto]" "[manual]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1801,8 +1560,7 @@ func PopOverAuto() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[auto]"
-//   - "[manual]"
+//   - "[auto]" "[manual]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1822,9 +1580,7 @@ func PopOverManual() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[toggle]"
-//   - "[show]"
-//   - "[hide]"
+//   - "[toggle]" "[show]" "[hide]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1845,9 +1601,7 @@ func PopOverTargetActionHide() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[toggle]"
-//   - "[show]"
-//   - "[hide]"
+//   - "[toggle]" "[show]" "[hide]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1868,9 +1622,7 @@ func PopOverTargetActionShow() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[toggle]"
-//   - "[show]"
-//   - "[hide]"
+//   - "[toggle]" "[show]" "[hide]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1891,9 +1643,7 @@ func PopOverTargetActionToggle() roundly.Attribute {
 //   - [video]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[metadata]"
-//   - "[auto]"
+//   - "[none]" "[metadata]" "[auto]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1915,9 +1665,7 @@ func PreLoadAuto() roundly.Attribute {
 //   - [video]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[metadata]"
-//   - "[auto]"
+//   - "[none]" "[metadata]" "[auto]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1939,9 +1687,7 @@ func PreLoadMetadata() roundly.Attribute {
 //   - [video]
 //
 // Can hold one of the following values:
-//   - "[none]"
-//   - "[metadata]"
-//   - "[auto]"
+//   - "[none]" "[metadata]" "[auto]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1962,10 +1708,7 @@ func PreLoadNone() roundly.Attribute {
 //   - [th]
 //
 // Can hold one of the following values:
-//   - "[row]"
-//   - "[col]"
-//   - "[rowgroup]"
-//   - "[colgroup]"
+//   - "[row]" "[col]" "[rowgroup]" "[colgroup]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1985,10 +1728,7 @@ func ScopeCol() roundly.Attribute {
 //   - [th]
 //
 // Can hold one of the following values:
-//   - "[row]"
-//   - "[col]"
-//   - "[rowgroup]"
-//   - "[colgroup]"
+//   - "[row]" "[col]" "[rowgroup]" "[colgroup]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2008,10 +1748,7 @@ func ScopeColgroup() roundly.Attribute {
 //   - [th]
 //
 // Can hold one of the following values:
-//   - "[row]"
-//   - "[col]"
-//   - "[rowgroup]"
-//   - "[colgroup]"
+//   - "[row]" "[col]" "[rowgroup]" "[colgroup]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2031,10 +1768,7 @@ func ScopeRow() roundly.Attribute {
 //   - [th]
 //
 // Can hold one of the following values:
-//   - "[row]"
-//   - "[col]"
-//   - "[rowgroup]"
-//   - "[colgroup]"
+//   - "[row]" "[col]" "[rowgroup]" "[colgroup]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2054,8 +1788,7 @@ func ScopeRowgroup() roundly.Attribute {
 //   - [template]
 //
 // Can hold one of the following values:
-//   - "open"
-//   - "closed"
+//   - "open" "closed"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2071,8 +1804,7 @@ func ShadowRootModeClosed() roundly.Attribute {
 //   - [template]
 //
 // Can hold one of the following values:
-//   - "open"
-//   - "closed"
+//   - "open" "closed"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2088,10 +1820,7 @@ func ShadowRootModeOpen() roundly.Attribute {
 //   - [area]
 //
 // Can hold one of the following values:
-//   - "[circle]"
-//   - "[default]"
-//   - "[poly]"
-//   - "[rect]"
+//   - "[circle]" "[default]" "[poly]" "[rect]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2112,10 +1841,7 @@ func ShapeCircle() roundly.Attribute {
 //   - [area]
 //
 // Can hold one of the following values:
-//   - "[circle]"
-//   - "[default]"
-//   - "[poly]"
-//   - "[rect]"
+//   - "[circle]" "[default]" "[poly]" "[rect]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2136,10 +1862,7 @@ func ShapeDefault() roundly.Attribute {
 //   - [area]
 //
 // Can hold one of the following values:
-//   - "[circle]"
-//   - "[default]"
-//   - "[poly]"
-//   - "[rect]"
+//   - "[circle]" "[default]" "[poly]" "[rect]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2160,10 +1883,7 @@ func ShapePoly() roundly.Attribute {
 //   - [area]
 //
 // Can hold one of the following values:
-//   - "[circle]"
-//   - "[default]"
-//   - "[poly]"
-//   - "[rect]"
+//   - "[circle]" "[default]" "[poly]" "[rect]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2184,9 +1904,7 @@ func ShapeRect() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2204,9 +1922,7 @@ func SpellCheckEmpty() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2224,9 +1940,7 @@ func SpellCheckFalse() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2244,8 +1958,7 @@ func SpellCheckTrue() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "yes"
-//   - "no"
+//   - "yes" "no"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2261,8 +1974,7 @@ func TranslateNo() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "yes"
-//   - "no"
+//   - "yes" "no"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2278,11 +1990,7 @@ func TranslateYes() roundly.Attribute {
 //   - [ol]
 //
 // Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
+//   - "[1]" "[a]" "[A]" "[i]" "[I]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2303,11 +2011,7 @@ func TypeAlpha() roundly.Attribute {
 //   - [ol]
 //
 // Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
+//   - "[1]" "[a]" "[A]" "[i]" "[I]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2329,31 +2033,7 @@ func TypeAlphaLower() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[button]"
-//   - "[reset]"
-//   - "[submit]"
-//   - button
-//   - checkbox
-//   - color
-//   - date
-//   - datetime-local
-//   - email
-//   - file
-//   - hidden
-//   - image
-//   - month
-//   - number
-//   - password
-//   - radio
-//   - range
-//   - reset
-//   - search
-//   - submit
-//   - tel
-//   - text
-//   - time
-//   - url
-//   - week
+//   - "[button]" "[reset]" "[submit]" button checkbox color date datetime-local email file hidden image month number password radio range reset search submit tel text time url week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2374,28 +2054,7 @@ func TypeButton() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2412,28 +2071,7 @@ func TypeCheckbox() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2450,28 +2088,7 @@ func TypeColor() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2488,28 +2105,7 @@ func TypeDate() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2526,28 +2122,7 @@ func TypeDatetimeLocal() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2564,28 +2139,7 @@ func TypeEmail() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2602,28 +2156,7 @@ func TypeFile() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2640,28 +2173,7 @@ func TypeHidden() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2678,28 +2190,7 @@ func TypeImage() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2716,28 +2207,7 @@ func TypeMonth() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2754,11 +2224,7 @@ func TypeNumber() roundly.Attribute {
 //   - [ol]
 //
 // Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
+//   - "[1]" "[a]" "[A]" "[i]" "[I]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2779,28 +2245,7 @@ func TypeNumeric() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2817,28 +2262,7 @@ func TypePassword() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2855,28 +2279,7 @@ func TypeRadio() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2894,36 +2297,12 @@ func TypeRange() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[button]"
-//   - "[reset]"
-//   - "[submit]"
-//   - button
-//   - checkbox
-//   - color
-//   - date
-//   - datetime-local
-//   - email
-//   - file
-//   - hidden
-//   - image
-//   - month
-//   - number
-//   - password
-//   - radio
-//   - range
-//   - reset
-//   - search
-//   - submit
-//   - tel
-//   - text
-//   - time
-//   - url
-//   - week
+//   - "[button]" "[reset]" "[submit]" button checkbox color date datetime-local email file hidden image month number password radio range reset search submit tel text time url week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
@@ -2939,11 +2318,7 @@ func TypeReset() roundly.Attribute {
 //   - [ol]
 //
 // Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
+//   - "[1]" "[a]" "[A]" "[i]" "[I]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2964,11 +2339,7 @@ func TypeRoman() roundly.Attribute {
 //   - [ol]
 //
 // Can hold one of the following values:
-//   - "[1]"
-//   - "[a]"
-//   - "[A]"
-//   - "[i]"
-//   - "[I]"
+//   - "[1]" "[a]" "[A]" "[i]" "[I]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -2989,28 +2360,7 @@ func TypeRomanLower() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3028,31 +2378,7 @@ func TypeSearch() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - "[button]"
-//   - "[reset]"
-//   - "[submit]"
-//   - button
-//   - checkbox
-//   - color
-//   - date
-//   - datetime-local
-//   - email
-//   - file
-//   - hidden
-//   - image
-//   - month
-//   - number
-//   - password
-//   - radio
-//   - range
-//   - reset
-//   - search
-//   - submit
-//   - tel
-//   - text
-//   - time
-//   - url
-//   - week
+//   - "[button]" "[reset]" "[submit]" button checkbox color date datetime-local email file hidden image month number password radio range reset search submit tel text time url week
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3073,28 +2399,7 @@ func TypeSubmit() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3111,28 +2416,7 @@ func TypeTel() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3149,28 +2433,7 @@ func TypeText() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3187,28 +2450,7 @@ func TypeTime() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3225,28 +2467,7 @@ func TypeUrl() roundly.Attribute {
 //   - [input]
 //
 // Can hold one of the following values:
-//   - hidden
-//   - text
-//   - search
-//   - tel
-//   - url
-//   - email
-//   - password
-//   - date
-//   - month
-//   - week
-//   - time
-//   - datetime-local
-//   - number
-//   - range
-//   - color
-//   - checkbox
-//   - radio
-//   - file
-//   - submit
-//   - image
-//   - reset
-//   - button
+//   - hidden text search tel url email password date month week time datetime-local number range color checkbox radio file submit image reset button
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3263,8 +2484,7 @@ func TypeWeek() roundly.Attribute {
 //   - [textarea]
 //
 // Can hold one of the following values:
-//   - "[soft]"
-//   - "[hard]"
+//   - "[soft]" "[hard]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3283,8 +2503,7 @@ func WrapHard() roundly.Attribute {
 //   - [textarea]
 //
 // Can hold one of the following values:
-//   - "[soft]"
-//   - "[hard]"
+//   - "[soft]" "[hard]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3303,9 +2522,7 @@ func WrapSoft() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3323,9 +2540,7 @@ func WritingSuggestionsEmpty() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -3343,9 +2558,7 @@ func WritingSuggestionsFalse() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[true]"
-//   - "[false]"
-//   - the empty string
+//   - "[true]" "[false]" the empty string
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //

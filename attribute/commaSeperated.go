@@ -45,7 +45,7 @@ func ImageSrcSet(imageSrcSet ...string) roundly.Attribute {
 // SrcSet creates the srcset attribute - Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
 //
 // It can be applied to the following elements:
-//   - [img]
+//   - [img] [source]
 //   - [source]
 //
 // Value constraints: Comma-separated list of [image candidate strings]

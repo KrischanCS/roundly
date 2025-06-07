@@ -9,16 +9,16 @@ import (
 // Caption creates the caption element - Table caption [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table]
+//   - [table]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -34,15 +34,15 @@ func Caption(attributes roundly.Attribute, children ...roundly.Element) roundly.
 // Col creates the col element - Table column [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [colgroup]
+//   - [colgroup]
 //
 // The following attributes can be added to this element:
-// [globals] [span]
+//   - [globals] [span]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -58,16 +58,16 @@ func Col(attributes roundly.Attribute) roundly.Element {
 // Colgroup creates the colgroup element - Group of columns in a table [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [col] [template]
+//   - [col] [template]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table]
+//   - [table]
 //
 // The following attributes can be added to this element:
-// [globals] [span]
+//   - [globals] [span]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -85,16 +85,16 @@ func Colgroup(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Table creates the table element - Table [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [caption] [colgroup] [thead] [tbody] [tfoot] [tr] [script-supporting elements]
+//   - [caption] [colgroup] [thead] [tbody] [tfoot] [tr] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -117,16 +117,16 @@ func Table(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Tbody creates the tbody element - Group of rows in a table [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [tr] [script-supporting elements]
+//   - [tr] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table]
+//   - [table]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -143,16 +143,16 @@ func Tbody(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Td creates the td element - Table cell [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [tr]
+//   - [tr]
 //
 // The following attributes can be added to this element:
-// [globals] [colspan] [rowspan] [headers]
+//   - [globals] [colspan] [rowspan] [headers]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -171,16 +171,16 @@ func Td(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Tfoot creates the tfoot element - Group of footer rows in a table [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [tr] [script-supporting elements]
+//   - [tr] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table]
+//   - [table]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -197,16 +197,16 @@ func Tfoot(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Th creates the th element - Table header cell [(More)]
 //
 // It belongs to the following categories:
-// [interactive]
+//   - [interactive]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [tr]
+//   - [tr]
 //
 // The following attributes can be added to this element:
-// [globals] [colspan] [rowspan] [headers] [scope] [abbr]
+//   - [globals] [colspan] [rowspan] [headers] [scope] [abbr]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -228,16 +228,16 @@ func Th(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Thead creates the thead element - Group of heading rows in a table [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [tr] [script-supporting elements]
+//   - [tr] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table]
+//   - [table]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -254,16 +254,16 @@ func Thead(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Tr creates the tr element - Table row [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [th] [td] [script-supporting elements]
+//   - [th] [td] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [table] [thead] [tbody] [tfoot]
+//   - [table] [thead] [tbody] [tfoot]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

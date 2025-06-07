@@ -80,7 +80,7 @@ func Allow(allow string) roundly.Attribute {
 // Alt creates the alt attribute - Replacement text for use when images are not available
 //
 // It can be applied to the following elements:
-//   - [area]
+//   - [area] [img] [input]
 //   - [img]
 //   - [input]
 //
@@ -124,7 +124,7 @@ func As(as string) roundly.Attribute {
 // AutoComplete creates the autocomplete attribute - Hint for form autofill feature
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [select] [textarea]
 //   - [select]
 //   - [textarea]
 //
@@ -144,7 +144,7 @@ func AutoComplete(autoComplete string) roundly.Attribute {
 // CiteAttribute creates the cite attribute - Link to the source of the quotation or more information about the edit
 //
 // It can be applied to the following elements:
-//   - [blockquote]
+//   - [blockquote] [del] [ins] [q]
 //   - [del]
 //   - [ins]
 //   - [q]
@@ -282,7 +282,7 @@ func DateTime(dateTime string) roundly.Attribute {
 // DirName creates the dirname attribute - Name of form control to use for sending the element's [directionality] in [form submission]
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [textarea]
 //   - [textarea]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
@@ -302,7 +302,7 @@ func DirName(dirName string) roundly.Attribute {
 // Download creates the download attribute - Whether to download the resource instead of navigating to it, and its filename if so
 //
 // It can be applied to the following elements:
-//   - [a]
+//   - [a] [area]
 //   - [area]
 //
 // Value constraints: Text
@@ -335,7 +335,7 @@ func For(forV string) roundly.Attribute {
 // FormAttribute creates the form attribute - Associates the element with a [form] element
 //
 // It can be applied to the following elements:
-//   - [button]
+//   - [button] [fieldset] [input] [object] [output] [select] [textarea] [form-associated custom elements]
 //   - [fieldset]
 //   - [input]
 //   - [object]
@@ -366,7 +366,7 @@ func FormAttribute(form string) roundly.Attribute {
 // FormAction creates the formaction attribute - [URL] to use for [form submission]
 //
 // It can be applied to the following elements:
-//   - [button]
+//   - [button] [input]
 //   - [input]
 //
 // Value constraints: [Valid non-empty URL potentially surrounded by spaces]
@@ -386,7 +386,7 @@ func FormAction(formAction string) roundly.Attribute {
 // FormTarget creates the formtarget attribute - [Navigable] for [form submission]
 //
 // It can be applied to the following elements:
-//   - [button]
+//   - [button] [input]
 //   - [input]
 //
 // Value constraints: [Valid navigable target name or keyword]
@@ -430,7 +430,7 @@ func HRef(hRef string) roundly.Attribute {
 // HRefLang creates the hreflang attribute - Language of the linked resource
 //
 // It can be applied to the following elements:
-//   - [a]
+//   - [a] [link]
 //   - [link]
 //
 // Value constraints: Valid BCP 47 language tag
@@ -482,7 +482,7 @@ func ImageSizes(imageSizes string) roundly.Attribute {
 // Integrity creates the integrity attribute - Integrity metadata used in Subresource Integrity checks [[SRI]]
 //
 // It can be applied to the following elements:
-//   - [link]
+//   - [link] [script]
 //   - [script]
 //
 // Value constraints: [Text]
@@ -536,7 +536,7 @@ func ItemId(itemId string) roundly.Attribute {
 // LabelAttribute creates the label attribute - User-visible label
 //
 // It can be applied to the following elements:
-//   - [optgroup]
+//   - [optgroup] [option] [track]
 //   - [option]
 //   - [track]
 //
@@ -602,7 +602,7 @@ func Max(max string) roundly.Attribute {
 // Media creates the media attribute - Applicable media
 //
 // It can be applied to the following elements:
-//   - [link]
+//   - [link] [meta] [source] [style]
 //   - [meta]
 //   - [source]
 //   - [style]
@@ -716,7 +716,7 @@ func Pattern(pattern string) roundly.Attribute {
 // PlaceHolder creates the placeholder attribute - User-visible label to be placed within the form control
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [textarea]
 //   - [textarea]
 //
 // Value constraints: [Text] (Additional rules apply, see elements documentation)
@@ -734,7 +734,7 @@ func PlaceHolder(placeHolder string) roundly.Attribute {
 // PopOverTarget creates the popovertarget attribute - Targets a popover element to toggle, show, or hide
 //
 // It can be applied to the following elements:
-//   - [button]
+//   - [button] [input]
 //   - [input]
 //
 // Value constraints: [ID] (Additional rules apply, see elements documentation)
@@ -768,7 +768,7 @@ func Poster(poster string) roundly.Attribute {
 // ReferrerPolicy creates the referrerpolicy attribute - [Referrer policy] for [fetches] initiated by the element
 //
 // It can be applied to the following elements:
-//   - [a]
+//   - [a] [area] [iframe] [img] [link] [script]
 //   - [area]
 //   - [iframe]
 //   - [img]
@@ -796,7 +796,7 @@ func ReferrerPolicy(referrerPolicy string) roundly.Attribute {
 // Sizes creates the sizes attribute - Image sizes for different page layouts
 //
 // It can be applied to the following elements:
-//   - [img]
+//   - [img] [source]
 //   - [source]
 //
 // Value constraints: [Valid source size list]
@@ -830,7 +830,7 @@ func SlotAttribute(slot string) roundly.Attribute {
 // Src creates the src attribute - Address of the resource
 //
 // It can be applied to the following elements:
-//   - [audio]
+//   - [audio] [embed] [iframe] [img] [input] [script] [source] (in [video] or [audio (1)]) [track] [video (1)]
 //   - [embed]
 //   - [iframe]
 //   - [img]

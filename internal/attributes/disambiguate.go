@@ -46,6 +46,7 @@ func mergeAttributes(attrs []attribute) []attribute {
 		duplicates := findAttrDuplicates(attrs, i, attr, visitedDuplicates)
 
 		if len(duplicates) == 0 {
+			mergeElementsToSingleString(attr)
 			merged = append(merged, attr)
 			continue
 		}
@@ -56,6 +57,11 @@ func mergeAttributes(attrs []attribute) []attribute {
 	}
 
 	return merged
+}
+
+func mergeElementsToSingleString(attr attribute) {
+	attr.Elements[0] = strings.Join(attr.Elements, " ")
+	attr.Elements = attr.Elements[:1]
 }
 
 func appendSuffixesToRemainingDuplicates(attrs *attributes, duplicates set.Set[string]) {

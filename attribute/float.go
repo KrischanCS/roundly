@@ -43,7 +43,7 @@ func Low(low float64) roundly.Attribute {
 // MaxFloat creates the max attribute - Upper bound of range
 //
 // It can be applied to the following elements:
-//   - [meter]
+//   - [meter] [progress]
 //   - [progress]
 //
 // Value constraints: [Valid floating-point number] (Additional rules apply, see elements documentation)
@@ -109,7 +109,7 @@ func Step(step float64) roundly.Attribute {
 // ValueFloat creates the value attribute - Current value of the element
 //
 // It can be applied to the following elements:
-//   - [meter]
+//   - [meter] [progress]
 //   - [progress]
 //
 // Value constraints: [Valid floating-point number]

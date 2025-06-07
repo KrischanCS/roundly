@@ -9,16 +9,16 @@ import (
 // Del creates the del element - A removal from the document [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [cite] [datetime]
+//   - [globals] [cite] [datetime]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -38,16 +38,16 @@ func Del(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Ins creates the ins element - An addition to the document [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [palpable]
+//   - [flow] [phrasing] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [transparent]
+//   - [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [cite] [datetime]
+//   - [globals] [cite] [datetime]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

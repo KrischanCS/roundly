@@ -26,7 +26,7 @@ func Cols(cols uint) roundly.Attribute {
 // ColSpan creates the colspan attribute - Number of columns that the cell is to span
 //
 // It can be applied to the following elements:
-//   - [td]
+//   - [td] [th]
 //   - [th]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
@@ -44,7 +44,7 @@ func ColSpan(colSpan uint) roundly.Attribute {
 // Height creates the height attribute - Vertical dimension
 //
 // It can be applied to the following elements:
-//   - [canvas]
+//   - [canvas] [embed] [iframe] [img] [input] [object] [source] (in [picture]) [video]
 //   - [embed]
 //   - [iframe]
 //   - [img]
@@ -75,7 +75,7 @@ func Height(height uint) roundly.Attribute {
 // MaxLength creates the maxlength attribute - Maximum [length] of value
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [textarea]
 //   - [textarea]
 //
 // Value constraints: [Valid non-negative integer]
@@ -94,7 +94,7 @@ func MaxLength(maxLength uint) roundly.Attribute {
 // MinLength creates the minlength attribute - Minimum [length] of value
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [textarea]
 //   - [textarea]
 //
 // Value constraints: [Valid non-negative integer]
@@ -129,7 +129,7 @@ func Rows(rows uint) roundly.Attribute {
 // RowSpan creates the rowspan attribute - Number of rows that the cell is to span
 //
 // It can be applied to the following elements:
-//   - [td]
+//   - [td] [th]
 //   - [th]
 //
 // Value constraints: [Valid non-negative integer]
@@ -147,7 +147,7 @@ func RowSpan(rowSpan uint) roundly.Attribute {
 // Size creates the size attribute - Size of the control
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [select]
 //   - [select]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
@@ -165,7 +165,7 @@ func Size(size uint) roundly.Attribute {
 // SpanAttribute creates the span attribute - Number of columns spanned by the element
 //
 // It can be applied to the following elements:
-//   - [col]
+//   - [col] [colgroup]
 //   - [colgroup]
 //
 // Value constraints: [Valid non-negative integer] greater than zero
@@ -183,7 +183,7 @@ func SpanAttribute(span uint) roundly.Attribute {
 // Width creates the width attribute - Horizontal dimension
 //
 // It can be applied to the following elements:
-//   - [canvas]
+//   - [canvas] [embed] [iframe] [img] [input] [object] [source] (in [picture]) [video]
 //   - [embed]
 //   - [iframe]
 //   - [img]

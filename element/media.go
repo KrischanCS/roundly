@@ -9,16 +9,16 @@ import (
 // Audio creates the audio element - Audio player [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [source] [track] [transparent]
+//   - [source] [track] [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [src] [crossorigin] [preload] [autoplay] [loop] [muted] [controls]
+//   - [globals] [src] [crossorigin] [preload] [autoplay] [loop] [muted] [controls]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -47,15 +47,15 @@ func Audio(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Track creates the track element - Timed text track [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [audio] [video]
+//   - [audio] [video]
 //
 // The following attributes can be added to this element:
-// [globals] [default] [kind] [label] [src] [srclang]
+//   - [globals] [default] [kind] [label] [src] [srclang]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -76,16 +76,16 @@ func Track(attributes roundly.Attribute) roundly.Element {
 // Video creates the video element - Video player [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [embedded] [interactive] [palpable]
+//   - [flow] [phrasing] [embedded] [interactive] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [source] [track] [transparent]
+//   - [source] [track] [transparent]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [src] [crossorigin] [poster] [preload] [autoplay] [playsinline] [loop] [muted] [controls] [width] [height]
+//   - [globals] [src] [crossorigin] [poster] [preload] [autoplay] [playsinline] [loop] [muted] [controls] [width] [height]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

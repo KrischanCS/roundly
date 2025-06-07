@@ -9,16 +9,16 @@ import (
 // Blockquote creates the blockquote element - A section quoted from another source [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [cite]
+//   - [globals] [cite]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -35,16 +35,16 @@ func Blockquote(attributes roundly.Attribute, children ...roundly.Element) round
 // Dd creates the dd element - Content for corresponding [dt] element(s) [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [dl] [div]
+//   - [dl] [div]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -62,16 +62,16 @@ func Dd(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Div creates the div element - Generic flow container, or container for name-value groups in [dl] elements [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow] [dl]
+//   - [flow] [dl]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -88,16 +88,16 @@ func Div(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Dl creates the dl element - Association list consisting of zero or more name-value groups [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [dt] [dd] [div] [script-supporting elements]
+//   - [dt] [dd] [div] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -117,16 +117,16 @@ func Dl(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Dt creates the dt element - Legend for corresponding [dd] element(s) [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [dl] [div]
+//   - [dl] [div]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -144,16 +144,16 @@ func Dt(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Figcaption creates the figcaption element - Caption for [figure [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [figure]
+//   - [figure]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -169,16 +169,16 @@ func Figcaption(attributes roundly.Attribute, children ...roundly.Element) round
 // Figure creates the figure element - Figure with optional caption [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [figcaption] [flow]
+//   - [figcaption] [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -195,15 +195,15 @@ func Figure(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Hr creates the hr element - Thematic break [(More)]
 //
 // It belongs to the following categories:
-// [flow]
+//   - [flow]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -218,16 +218,16 @@ func Hr(attributes roundly.Attribute) roundly.Element {
 // Li creates the li element - List item [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [ol] [ul] [menu]
+//   - [ol] [ul] [menu]
 //
 // The following attributes can be added to this element:
-// [globals] [value]
+//   - [globals] [value]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -246,16 +246,16 @@ func Li(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Main creates the main element - Container for the dominant contents of the document [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -271,16 +271,16 @@ func Main(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Menu creates the menu element - Menu of commands [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [li] [script-supporting elements]
+//   - [li] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -298,16 +298,16 @@ func Menu(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Ol creates the ol element - Ordered list [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [li] [script-supporting elements]
+//   - [li] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [reversed] [start] [type]
+//   - [globals] [reversed] [start] [type]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -328,16 +328,16 @@ func Ol(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // P creates the p element - Paragraph [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -354,16 +354,16 @@ func P(attributes roundly.Attribute, children ...roundly.Element) roundly.Elemen
 // Pre creates the pre element - Block of preformatted text [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -380,16 +380,16 @@ func Pre(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Search creates the search element - Container for search controls [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -405,16 +405,16 @@ func Search(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Ul creates the ul element - List [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [li] [script-supporting elements]
+//   - [li] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

@@ -9,16 +9,16 @@ import (
 // Button creates the button element - Button control [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [form-associated] [palpable]
+//   - [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [command] [commandfor] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [name] [popovertarget] [popovertargetaction] [type] [value]
+//   - [globals] [command] [commandfor] [disabled] [form] [formaction] [formenctype] [formmethod] [formnovalidate] [formtarget] [name] [popovertarget] [popovertargetaction] [type] [value]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -54,16 +54,16 @@ func Button(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Datalist creates the datalist element - Container for options for [combo box control [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing]
+//   - [flow] [phrasing]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing] [option] [script-supporting elements]
+//   - [phrasing] [option] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -82,16 +82,16 @@ func Datalist(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Fieldset creates the fieldset element - Group of form controls [(More)]
 //
 // It belongs to the following categories:
-// [flow] [listed] [form-associated] [palpable]
+//   - [flow] [listed] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [legend] [flow]
+//   - [legend] [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals] [disabled] [form] [name]
+//   - [globals] [disabled] [form] [name]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -113,16 +113,16 @@ func Fieldset(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Legend creates the legend element - Caption for [fieldset [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing] [heading content]
+//   - [phrasing] [heading content]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [fieldset]
+//   - [fieldset]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -139,16 +139,16 @@ func Legend(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Meter creates the meter element - Gauge [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [labelable] [palpable]
+//   - [flow] [phrasing] [labelable] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [value] [min] [max] [low] [high] [optimum]
+//   - [globals] [value] [min] [max] [low] [high] [optimum]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -172,16 +172,16 @@ func Meter(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Optgroup creates the optgroup element - Group of options in a list box [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [option] [script-supporting elements]
+//   - [option] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [select]
+//   - [select]
 //
 // The following attributes can be added to this element:
-// [globals] [disabled] [label]
+//   - [globals] [disabled] [label]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -200,16 +200,16 @@ func Optgroup(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Option creates the option element - Option in a list box or combo box control [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [text]
+//   - [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [select] [datalist] [optgroup]
+//   - [select] [datalist] [optgroup]
 //
 // The following attributes can be added to this element:
-// [globals] [disabled] [label] [selected] [value]
+//   - [globals] [disabled] [label] [selected] [value]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -231,16 +231,16 @@ func Option(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Output creates the output element - Calculated output value [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [listed] [labelable] [resettable] [form-associated] [palpable]
+//   - [flow] [phrasing] [listed] [labelable] [resettable] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [for] [form] [name]
+//   - [globals] [for] [form] [name]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -264,16 +264,16 @@ func Output(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Progress creates the progress element - Progress bar [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [labelable] [palpable]
+//   - [flow] [phrasing] [labelable] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [value] [max]
+//   - [globals] [value] [max]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -293,16 +293,16 @@ func Progress(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Select creates the select element - List box control [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
+//   - [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [option] [optgroup] [script-supporting elements]
+//   - [option] [optgroup] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [autocomplete] [disabled] [form] [multiple] [name] [required] [size]
+//   - [globals] [autocomplete] [disabled] [form] [multiple] [name] [required] [size]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -335,16 +335,16 @@ func Select(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Textarea creates the textarea element - Multiline text controls [(More)]
 //
 // It belongs to the following categories:
-// [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
+//   - [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [text]
+//   - [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [autocomplete] [cols] [dirname] [disabled] [form] [maxlength] [minlength] [name] [placeholder] [readonly] [required] [rows] [wrap]
+//   - [globals] [autocomplete] [cols] [dirname] [disabled] [form] [maxlength] [minlength] [name] [placeholder] [readonly] [required] [rows] [wrap]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

@@ -9,16 +9,16 @@ import (
 // Address creates the address element - Contact information for a page or [article] element [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -35,16 +35,16 @@ func Address(attributes roundly.Attribute, children ...roundly.Element) roundly.
 // Article creates the article element - Self-contained syndicatable or reusable composition [(More)]
 //
 // It belongs to the following categories:
-// [flow] [sectioning] [palpable]
+//   - [flow] [sectioning] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -61,16 +61,16 @@ func Article(attributes roundly.Attribute, children ...roundly.Element) roundly.
 // Aside creates the aside element - Sidebar for tangentially related content [(More)]
 //
 // It belongs to the following categories:
-// [flow] [sectioning] [palpable]
+//   - [flow] [sectioning] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -87,16 +87,16 @@ func Aside(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Body creates the body element - Document body [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [html]
+//   - [html]
 //
 // The following attributes can be added to this element:
-// [globals] [onafterprint] [onbeforeprint] [onbeforeunload] [onhashchange] [onlanguagechange] [onmessage] [onmessageerror] [onoffline] [ononline] [onpageswap] [onpagehide] [onpagereveal] [onpageshow] [onpopstate] [onrejectionhandled] [onstorage] [onunhandledrejection] [onunload]
+//   - [globals] [onafterprint] [onbeforeprint] [onbeforeunload] [onhashchange] [onlanguagechange] [onmessage] [onmessageerror] [onoffline] [ononline] [onpageswap] [onpagehide] [onpagereveal] [onpageshow] [onpopstate] [onrejectionhandled] [onstorage] [onunhandledrejection] [onunload]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -130,16 +130,16 @@ func Body(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Footer creates the footer element - Footer for a page or section [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -155,16 +155,16 @@ func Footer(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // H1 creates the h1 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -184,16 +184,16 @@ func H1(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // H2 creates the h2 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -213,16 +213,16 @@ func H2(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // H3 creates the h3 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -242,16 +242,16 @@ func H3(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // H4 creates the h4 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -271,16 +271,16 @@ func H4(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // H5 creates the h5 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -300,16 +300,16 @@ func H5(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // H6 creates the h6 element - Heading [(More)]
 //
 // It belongs to the following categories:
-// [flow] [heading] [palpable]
+//   - [flow] [heading] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [phrasing]
+//   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -329,16 +329,16 @@ func H6(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Header creates the header element - Introductory or navigational aids for a page or section [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -354,16 +354,16 @@ func Header(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Hgroup creates the hgroup element - Heading container [(More)]
 //
 // It belongs to the following categories:
-// [flow] [palpable]
+//   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [h1] [h2] [h3] [h4] [h5] [h6] [script-supporting elements]
+//   - [h1] [h2] [h3] [h4] [h5] [h6] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [legend] [summary] [flow]
+//   - [legend] [summary] [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -388,16 +388,16 @@ func Hgroup(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Nav creates the nav element - Section with navigational links [(More)]
 //
 // It belongs to the following categories:
-// [flow] [sectioning] [palpable]
+//   - [flow] [sectioning] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -414,16 +414,16 @@ func Nav(attributes roundly.Attribute, children ...roundly.Element) roundly.Elem
 // Section creates the section element - Generic document or application section [(More)]
 //
 // It belongs to the following categories:
-// [flow] [sectioning] [palpable]
+//   - [flow] [sectioning] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [flow]
+//   - [flow]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //

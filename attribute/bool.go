@@ -75,7 +75,7 @@ func AutoFocus() roundly.Attribute {
 // AutoPlay creates the autoplay attribute - Hint that the [media resource] can be started automatically when the page is loaded
 //
 // It can be applied to the following elements:
-//   - [audio]
+//   - [audio] [video]
 //   - [video]
 //
 // The attribute autoplay is a [Boolean attribute].
@@ -110,7 +110,7 @@ func Checked() roundly.Attribute {
 // Controls creates the controls attribute - Show user agent controls
 //
 // It can be applied to the following elements:
-//   - [audio]
+//   - [audio] [video]
 //   - [video]
 //
 // The attribute controls is a [Boolean attribute].
@@ -188,7 +188,7 @@ func Disabled() roundly.Attribute {
 // FormNoValidate creates the formnovalidate attribute - Bypass form control validation for [form submission]
 //
 // It can be applied to the following elements:
-//   - [button]
+//   - [button] [input]
 //   - [input]
 //
 // The attribute formnovalidate is a [Boolean attribute].
@@ -256,7 +256,7 @@ func ItemScope() roundly.Attribute {
 // Loop creates the loop attribute - Whether to loop the [media resource]
 //
 // It can be applied to the following elements:
-//   - [audio]
+//   - [audio] [video]
 //   - [video]
 //
 // The attribute loop is a [Boolean attribute].
@@ -275,7 +275,7 @@ func Loop() roundly.Attribute {
 // Multiple creates the multiple attribute - Whether to allow multiple values
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [select]
 //   - [select]
 //
 // The attribute multiple is a [Boolean attribute].
@@ -293,7 +293,7 @@ func Multiple() roundly.Attribute {
 // Muted creates the muted attribute - Whether to mute the [media resource] by default
 //
 // It can be applied to the following elements:
-//   - [audio]
+//   - [audio] [video]
 //   - [video]
 //
 // The attribute muted is a [Boolean attribute].
@@ -398,7 +398,7 @@ func ReadOnly() roundly.Attribute {
 // Required creates the required attribute - Whether the control is required for [form submission]
 //
 // It can be applied to the following elements:
-//   - [input]
+//   - [input] [select] [textarea]
 //   - [select]
 //   - [textarea]
 //

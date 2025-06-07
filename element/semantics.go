@@ -9,15 +9,15 @@ import (
 // Base creates the base element - Base URL and default target [navigable] for [hyperlinks] and [forms [(More)]
 //
 // It belongs to the following categories:
-// [metadata]
+//   - [metadata]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head]
+//   - [head]
 //
 // The following attributes can be added to this element:
-// [globals] [href] [target]
+//   - [globals] [href] [target]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -38,16 +38,16 @@ func Base(attributes roundly.Attribute) roundly.Element {
 // Head creates the head element - Container for document metadata [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [metadata content]
+//   - [metadata content]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [html]
+//   - [html]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -63,16 +63,16 @@ func Head(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Html creates the html element - Root element [(More)]
 //
 // It belongs to the following categories:
-// none
+//   - none
 //
 // It can be parent to the following elements/categories of elements:
-// [head] [body]
+//   - [head] [body]
 //
 // If can itself be a child of the following elements/categories of elements:
-// none
+//   - none
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -88,15 +88,15 @@ func Html(attributes roundly.Attribute, children ...roundly.Element) roundly.Ele
 // Link creates the link element - Link metadata [(More)]
 //
 // It belongs to the following categories:
-// [metadata] [flow] [phrasing]
+//   - [metadata] [flow] [phrasing]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head] [noscript] [phrasing]
+//   - [head] [noscript] [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [href] [crossorigin] [rel] [as] [media] [hreflang] [type] [sizes] [imagesrcset] [imagesizes] [referrerpolicy] [integrity] [blocking] [color] [disabled] [fetchpriority]
+//   - [globals] [href] [crossorigin] [rel] [as] [media] [hreflang] [type] [sizes] [imagesrcset] [imagesizes] [referrerpolicy] [integrity] [blocking] [color] [disabled] [fetchpriority]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -131,15 +131,15 @@ func Link(attributes roundly.Attribute) roundly.Element {
 // Meta creates the meta element - Text metadata [(More)]
 //
 // It belongs to the following categories:
-// [metadata] [flow] [phrasing]
+//   - [metadata] [flow] [phrasing]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head] [noscript] [phrasing]
+//   - [head] [noscript] [phrasing]
 //
 // The following attributes can be added to this element:
-// [globals] [name] [http-equiv] [content] [charset] [media]
+//   - [globals] [name] [http-equiv] [content] [charset] [media]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -163,16 +163,16 @@ func Meta(attributes roundly.Attribute) roundly.Element {
 // Style creates the style element - Embedded styling information [(More)]
 //
 // It belongs to the following categories:
-// [metadata]
+//   - [metadata]
 //
 // It can be parent to the following elements/categories of elements:
-// text
+//   - text
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head] [noscript]
+//   - [head] [noscript]
 //
 // The following attributes can be added to this element:
-// [globals] [media] [blocking]
+//   - [globals] [media] [blocking]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
@@ -191,16 +191,16 @@ func Style(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Title creates the title element - Document title [(More)]
 //
 // It belongs to the following categories:
-// [metadata]
+//   - [metadata]
 //
 // It can be parent to the following elements/categories of elements:
-// [text]
+//   - [text]
 //
 // If can itself be a child of the following elements/categories of elements:
-// [head]
+//   - [head]
 //
 // The following attributes can be added to this element:
-// [globals]
+//   - [globals]
 //
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
