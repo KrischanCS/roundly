@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Form creates the form element - User-submittable form [(More)]

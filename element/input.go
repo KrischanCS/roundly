@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Input creates the input element - Form control [(More)]

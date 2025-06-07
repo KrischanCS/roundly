@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Area creates the area element - Hyperlink or dead area on an image map [(More)]

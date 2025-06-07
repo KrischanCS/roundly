@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Math creates the math element - MathML root [(More)]

@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Del creates the del element - A removal from the document [(More)]

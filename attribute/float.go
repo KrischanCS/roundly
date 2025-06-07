@@ -3,8 +3,9 @@
 package attribute
 
 import (
-	"github.com/KrischanCS/roundly"
 	"strconv"
+
+	"github.com/KrischanCS/roundly"
 )
 
 // High creates the high attribute - Low limit of high range

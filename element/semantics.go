@@ -3,7 +3,7 @@
 package element
 
 import (
-"github.com/KrischanCS/roundly"
+	"github.com/KrischanCS/roundly"
 )
 
 // Base creates the base element - Base URL and default target [navigable] for [hyperlinks] and [forms [(More)]
