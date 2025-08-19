@@ -93,8 +93,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 > #### Minification
 >
-> The rendered HTML will not include any line breaks or indentation, so it minified already (At
-> least to some extend, minifiers can produce even more compact results).
+> The rendered HTML will not include any line breaks or indentation, so it is somewhat minified (Real minifiers can 
+> produce more compact results by applying optimizations which are ignored here).
 >
 > So the rendered output will look like this:
 >
@@ -110,6 +110,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 >   <li>gopher</li>
 >   <li>crab</li>
 > </ul>
+> ```
 
 ### Attributes
 
