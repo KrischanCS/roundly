@@ -261,7 +261,7 @@ repeated rendering.
 
 #### Groups
 
-A group simple renders all its children without a parent. Use this if you wnat to create a component
+A group simple renders all its children without a parent. Use this if you want to create a component
 which renders multiple elements without a common parent.
 
 ```go

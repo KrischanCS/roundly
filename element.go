@@ -24,6 +24,8 @@ func (fn Element) String() string {
 
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in
 // the opening tag and the given childNodes wrapped between the tags inside.
+//
+// The element is written without any extra linebreaks and indentation, thus is somewhat minified
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
 	return func(w Writer) error {
 		err := writeOpenTag(w, tag, attributes)
