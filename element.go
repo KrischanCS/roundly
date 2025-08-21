@@ -2,11 +2,15 @@
 // components in pure go.
 package roundly
 
-type Element func(w Writer) error
+type Element func(w Writer, options ...*RenderOptions) error
 
 // RenderElement renders the element to the given Writer.
 func (fn Element) RenderElement(w Writer) error {
 	return fn(w)
+}
+
+func (fn Element) RenderElementWithOptions(w Writer, options *RenderOptions) error {
+	return fn(w, options)
 }
 
 // String renders the element to a string. For most use cases RenderElement will be more efficient,
@@ -14,7 +18,9 @@ func (fn Element) RenderElement(w Writer) error {
 func (fn Element) String() string {
 	w := NewWriter()
 
-	err := fn(w)
+	err := fn(w, &RenderOptions{
+		Pretty: true,
+	})
 	if err != nil {
 		panic("Writing to bufio.Writer failed unexpectedly: " + err.Error())
 	}
@@ -27,7 +33,12 @@ func (fn Element) String() string {
 //
 // The element is written without any extra linebreaks and indentation, thus is somewhat minified
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
-	return func(w Writer) error {
+
+	return func(w Writer, options ...*RenderOptions) error {
+		if len(options) != 0 {
+			return writeElementWithOptions(w, tag, attributes, childNodes, options[0])
+		}
+
 		err := writeOpenTag(w, tag, attributes)
 		if err != nil {
 			return err
@@ -73,8 +84,12 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
 func WriteVoidElement(tag string, attributes Attribute) Element {
-	return func(w Writer) error {
-		return writeOpenTag(w, tag, attributes)
+	return func(w Writer, opts ...*RenderOptions) error {
+		if len(opts) == 0 {
+			return writeOpenTag(w, tag, attributes)
+		}
+
+		return writeOpenTagWithOptions(w, tag, attributes, opts[0])
 	}
 }
 

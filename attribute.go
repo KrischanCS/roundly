@@ -1,13 +1,17 @@
 package roundly
 
-type Attribute func(w Writer) error
+type Attribute func(w Writer, options ...*RenderOptions) error
 
 func (fn Attribute) RenderAttribute(w Writer) error {
 	return fn(w)
 }
 
 func WriteAttribute(name string, value string) Attribute {
-	return func(w Writer) error {
+	return func(w Writer, opts ...*RenderOptions) error {
+		if len(opts) != 0 {
+			return WriteAttributeWithOptions(w, name, value, opts[0])
+		}
+
 		err := w.WriteByte(' ')
 		if err != nil {
 			return err
@@ -33,7 +37,11 @@ func WriteAttribute(name string, value string) Attribute {
 }
 
 func WriteMultiValueAttribute(name string, delimiter byte, values ...string) Attribute {
-	return func(w Writer) error {
+	return func(w Writer, opts ...*RenderOptions) error {
+		if len(opts) != 0 {
+			return WriteMultiValueAttributeWithOptions(w, name, delimiter, values, opts[0])
+		}
+
 		err := w.WriteByte(' ')
 		if err != nil {
 			return err

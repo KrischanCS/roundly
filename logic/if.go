@@ -18,7 +18,7 @@ func If[EA ElementOrAttribute](condition bool, then EA) EA {
 		return then
 	}
 
-	return func(_ roundly.Writer) error {
+	return func(_ roundly.Writer, _ ...*roundly.RenderOptions) error {
 		return nil
 	}
 }
