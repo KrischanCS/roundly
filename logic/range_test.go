@@ -7,13 +7,11 @@ import (
 	"testing"
 
 	"github.com/KrischanCS/go-toolbox/iterator"
-	"github.com/stretchr/testify/assert"
-	"github.com/yosssi/gohtml"
-
 	"github.com/KrischanCS/roundly"
 	. "github.com/KrischanCS/roundly/attribute"
 	. "github.com/KrischanCS/roundly/element"
 	. "github.com/KrischanCS/roundly/text"
+	"github.com/stretchr/testify/assert"
 )
 
 //nolint:errcheck
@@ -30,48 +28,49 @@ func ExampleRange() {
 	)
 
 	w := roundly.NewWriter()
-	_ = list.RenderElement(w)
+	_ = list.RenderElementWithOptions(w, &roundly.RenderOptions{Pretty: true})
 
-	fmt.Println(gohtml.Format(w.String()))
+	fmt.Println(w.String())
 
 	// Output:
+	//
 	// <ol>
-	//   <li>
-	//     January
-	//   </li>
-	//   <li>
-	//     February
-	//   </li>
-	//   <li>
-	//     March
-	//   </li>
-	//   <li>
-	//     April
-	//   </li>
-	//   <li>
-	//     May
-	//   </li>
-	//   <li>
-	//     June
-	//   </li>
-	//   <li>
-	//     July
-	//   </li>
-	//   <li>
-	//     August
-	//   </li>
-	//   <li>
-	//     September
-	//   </li>
-	//   <li>
-	//     October
-	//   </li>
-	//   <li>
-	//     November
-	//   </li>
-	//   <li>
-	//     December
-	//   </li>
+	// 	<li>
+	// 		January
+	// 	</li>
+	// 	<li>
+	// 		February
+	// 	</li>
+	// 	<li>
+	// 		March
+	// 	</li>
+	// 	<li>
+	// 		April
+	// 	</li>
+	// 	<li>
+	// 		May
+	// 	</li>
+	// 	<li>
+	// 		June
+	// 	</li>
+	// 	<li>
+	// 		July
+	// 	</li>
+	// 	<li>
+	// 		August
+	// 	</li>
+	// 	<li>
+	// 		September
+	// 	</li>
+	// 	<li>
+	// 		October
+	// 	</li>
+	// 	<li>
+	// 		November
+	// 	</li>
+	// 	<li>
+	// 		December
+	// 	</li>
 	// </ol>
 }
 
@@ -84,27 +83,28 @@ func ExampleRangeInt() {
 	)
 
 	w := roundly.NewWriter()
-	_ = list.RenderElement(w)
+	_ = list.RenderElementWithOptions(w, &roundly.RenderOptions{Pretty: true})
 
-	fmt.Println(gohtml.Format(w.String()))
+	fmt.Println(w.String())
 
 	// Output:
+	//
 	// <ol>
-	//   <li>
-	//     0
-	//   </li>
-	//   <li>
-	//     1
-	//   </li>
-	//   <li>
-	//     2
-	//   </li>
-	//   <li>
-	//     3
-	//   </li>
-	//   <li>
-	//     4
-	//   </li>
+	// 	<li>
+	// 		0
+	// 	</li>
+	// 	<li>
+	// 		1
+	// 	</li>
+	// 	<li>
+	// 		2
+	// 	</li>
+	// 	<li>
+	// 		3
+	// 	</li>
+	// 	<li>
+	// 		4
+	// 	</li>
 	// </ol>
 }
 
@@ -117,27 +117,28 @@ func ExampleRangeSeq() {
 	)
 
 	w := roundly.NewWriter()
-	_ = list.RenderElement(w)
+	_ = list.RenderElementWithOptions(w, &roundly.RenderOptions{Pretty: true})
 
-	fmt.Println(gohtml.Format(w.String()))
+	fmt.Println(w.String())
 
 	// Output:
+	//
 	// <ol>
-	//   <li>
-	//     0.0
-	//   </li>
-	//   <li>
-	//     0.1
-	//   </li>
-	//   <li>
-	//     0.2
-	//   </li>
-	//   <li>
-	//     0.3
-	//   </li>
-	//   <li>
-	//     0.4
-	//   </li>
+	// 	<li>
+	// 		0.0
+	// 	</li>
+	// 	<li>
+	// 		0.1
+	// 	</li>
+	// 	<li>
+	// 		0.2
+	// 	</li>
+	// 	<li>
+	// 		0.3
+	// 	</li>
+	// 	<li>
+	// 		0.4
+	// 	</li>
 	// </ol>
 }
 

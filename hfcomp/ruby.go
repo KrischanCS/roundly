@@ -13,35 +13,22 @@ type RubySegment struct {
 }
 
 func RubyText(segments []RubySegment) roundly.Element {
-	return func(w roundly.Writer) error {
-		_, err := w.WriteString("<ruby>")
-		if err != nil {
-			return err
+	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
+		el := Ruby(nil,
+			Range(segments, func(_ int, segment RubySegment) roundly.Element {
+				return Group(
+					Text(segment.Text),
+					Rp(nil, RawTrusted("(")),
+					RtText(segment.Text),
+					Rp(nil, RawTrusted(")")),
+				)
+			}),
+		)
+
+		if len(opts) != 0 {
+			return el.RenderElementWithOptions(w, opts[0])
 		}
 
-		for _, s := range segments {
-			err = Group(
-				Text(s.Text),
-				RubyExplanation(s.Explanation),
-			).RenderElement(w)
-			if err != nil {
-				return err
-			}
-		}
-
-		_, err = w.WriteString("</ruby>")
-		if err != nil {
-			return err
-		}
-
-		return nil
+		return el.RenderElement(w)
 	}
-}
-
-func RubyExplanation(t string) roundly.Element {
-	return Group(
-		Rp(nil, RawTrusted("(")),
-		Rt(nil, RawTrusted(t)),
-		Rp(nil, RawTrusted(")")),
-	)
 }

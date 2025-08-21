@@ -48,6 +48,7 @@ func mergeAttributes(attrs []attribute) []attribute {
 		if len(duplicates) == 0 {
 			mergeElementsToSingleString(attr)
 			merged = append(merged, attr)
+
 			continue
 		}
 

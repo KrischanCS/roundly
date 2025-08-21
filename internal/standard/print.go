@@ -147,7 +147,7 @@ func compactWhitespace(sb *strings.Builder) {
 	scanner := bufio.NewScanner(strings.NewReader(sb.String()))
 	sb.Reset()
 
-	//nolint:wsl
+	//nolint:wsl_v5
 	for scanner.Scan() {
 		bs := scanner.Bytes()
 		bs = bytes.Trim(bs, " \t")

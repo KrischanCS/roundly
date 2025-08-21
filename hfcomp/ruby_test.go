@@ -3,8 +3,6 @@ package hfcomp
 import (
 	"fmt"
 
-	"github.com/yosssi/gohtml"
-
 	"github.com/KrischanCS/roundly"
 )
 
@@ -16,33 +14,32 @@ func ExampleRubyText() {
 	})
 
 	w := roundly.NewWriter()
-	_ = rb.RenderElement(w)
+	_ = rb.RenderElementWithOptions(w, &roundly.RenderOptions{Pretty: true})
 
-	formatted := gohtml.Format(w.String())
-
-	fmt.Println(formatted)
+	fmt.Println(w.String())
 
 	// Output:
+	//
 	// <ruby>
-	//   漢
-	//   <rp>
-	//     (
-	//   </rp>
-	//   <rt>
-	//     kan
-	//   </rt>
-	//   <rp>
-	//     )
-	//   </rp>
-	//   字
-	//   <rp>
-	//     (
-	//   </rp>
-	//   <rt>
-	//     ji
-	//   </rt>
-	//   <rp>
-	//     )
-	//   </rp>
+	// 	漢
+	// 	<rp>
+	// 		(
+	// 	</rp>
+	// 	<rt>
+	// 		漢
+	// 	</rt>
+	// 	<rp>
+	// 		)
+	// 	</rp>
+	// 	字
+	// 	<rp>
+	// 		(
+	// 	</rp>
+	// 	<rt>
+	// 		字
+	// 	</rt>
+	// 	<rp>
+	// 		)
+	// 	</rp>
 	// </ruby>
 }

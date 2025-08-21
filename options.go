@@ -1,14 +1,42 @@
 package roundly
 
-import "strings"
-
 type RenderOptions struct {
-	Pretty bool
-	Level  int
-	Indent string
+	Pretty       bool
+	Level        int
+	Indent       string
+	LineBreakMin int
 }
 
-func writeElementWithOptions(w Writer, tag string, attributes Attribute, childNodes []Element, opts *RenderOptions) error {
+func (r *RenderOptions) IncreaseIndent() {
+	r.Level++
+}
+
+func (r *RenderOptions) DecreaseIndent() {
+	r.Level--
+}
+
+func (r *RenderOptions) WriteIndent(w Writer) (err error) {
+	if r.Indent == "" {
+		r.Indent = "\t"
+	}
+
+	for range r.Level {
+		_, err = w.WriteString(r.Indent)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func writeElementWithOptions(
+	w Writer,
+	tag string,
+	attributes Attribute,
+	childNodes []Element,
+	opts *RenderOptions,
+) error {
 	err := writeOpenTagWithOptions(w, tag, attributes, opts)
 	if err != nil {
 		return err
@@ -21,7 +49,7 @@ func writeElementWithOptions(w Writer, tag string, attributes Attribute, childNo
 		}
 	}
 
-	err = writeCloseTag(w, tag)
+	err = writeCloseTagWithOptions(w, tag, opts)
 	if err != nil {
 		return err
 	}
@@ -29,20 +57,18 @@ func writeElementWithOptions(w Writer, tag string, attributes Attribute, childNo
 	return nil
 }
 
-func writeOpenTagWithOptions(w Writer, tag string, attributes Attribute, opts *RenderOptions) error {
-	indentation := "\t"
-	if opts.Indent != "" {
-		indentation = opts.Indent
+func writeOpenTagWithOptions(
+	w Writer,
+	tag string,
+	attributes Attribute,
+	opts *RenderOptions,
+) error {
+	err := opts.WriteIndent(w)
+	if err != nil {
+		return err
 	}
 
-	if opts.Pretty {
-		_, err := w.WriteString(strings.Repeat(indentation, opts.Level))
-		if err != nil {
-			return err
-		}
-	}
-
-	err := w.WriteByte('<')
+	err = w.WriteByte('<')
 	if err != nil {
 		return err
 	}
@@ -59,7 +85,39 @@ func writeOpenTagWithOptions(w Writer, tag string, attributes Attribute, opts *R
 		}
 	}
 
-	return w.WriteByte('>')
+	_, err = w.WriteString(">\n")
+	if err != nil {
+		return err
+	}
+
+	opts.IncreaseIndent()
+
+	return nil
+}
+
+func writeCloseTagWithOptions(w Writer, tag string, opts *RenderOptions) error {
+	if !opts.Pretty {
+		return writeCloseTag(w, tag)
+	}
+
+	opts.DecreaseIndent()
+
+	err := opts.WriteIndent(w)
+	if err != nil {
+		return err
+	}
+
+	err = writeCloseTag(w, tag)
+	if err != nil {
+		return err
+	}
+
+	err = w.WriteByte('\n')
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func WriteAttributeWithOptions(w Writer, name string, value string, options *RenderOptions) error {
@@ -87,7 +145,13 @@ func WriteAttributeWithOptions(w Writer, name string, value string, options *Ren
 	return w.WriteByte('"')
 }
 
-func WriteMultiValueAttributeWithOptions(w Writer, name string, delimiter byte, values []string, options *RenderOptions) error {
+func WriteMultiValueAttributeWithOptions(
+	w Writer,
+	name string,
+	delimiter byte,
+	values []string,
+	options *RenderOptions,
+) error {
 	// TODO this is currently identical with WriteMultiValueAttribute
 	err := w.WriteByte(' ')
 	if err != nil {

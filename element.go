@@ -18,6 +18,20 @@ func (fn Element) RenderElementWithOptions(w Writer, options *RenderOptions) err
 func (fn Element) String() string {
 	w := NewWriter()
 
+	err := fn(w)
+	if err != nil {
+		panic("Writing to bufio.Writer failed unexpectedly: " + err.Error())
+	}
+
+	return w.String()
+}
+
+// StringPretty renders the element to a string with newlines and indentation. For most use cases
+// RenderElementWithOptions will be more efficient, this exists mainly for brevity in tests and
+// examples.
+func (fn Element) StringPretty() string {
+	w := NewWriter()
+
 	err := fn(w, &RenderOptions{
 		Pretty: true,
 	})
@@ -31,9 +45,8 @@ func (fn Element) String() string {
 // WriteElement creates a normal html element, with open and closing tag, the given attributes in
 // the opening tag and the given childNodes wrapped between the tags inside.
 //
-// The element is written without any extra linebreaks and indentation, thus is somewhat minified
+// The element is written without any extra linebreaks and indentation, thus is somewhat minified.
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
-
 	return func(w Writer, options ...*RenderOptions) error {
 		if len(options) != 0 {
 			return writeElementWithOptions(w, tag, attributes, childNodes, options[0])
@@ -51,12 +64,7 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 			}
 		}
 
-		err = writeCloseTag(w, tag)
-		if err != nil {
-			return err
-		}
-
-		return nil
+		return writeCloseTag(w, tag)
 	}
 }
 
@@ -89,7 +97,16 @@ func WriteVoidElement(tag string, attributes Attribute) Element {
 			return writeOpenTag(w, tag, attributes)
 		}
 
-		return writeOpenTagWithOptions(w, tag, attributes, opts[0])
+		err := writeOpenTagWithOptions(w, tag, attributes, opts[0])
+		if err != nil {
+			return err
+		}
+
+		if opts[0].Pretty {
+			opts[0].DecreaseIndent()
+		}
+
+		return nil
 	}
 }
 

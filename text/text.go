@@ -44,9 +44,13 @@ func Text(text string) roundly.Element {
 	//
 	// The underlying array is never modified, and it must be kept like this when this function is
 	// edited.
-	textBytes := unsafe.Slice(unsafe.StringData(text), len(text)) //nolint:gosec // explained above
+	textBytes := unsafe.Slice(unsafe.StringData(text), len(text)) //nolint:gosec // explained abov
 
-	return func(w roundly.Writer) (err error) {
+	return func(w roundly.Writer, opts ...*roundly.RenderOptions) (err error) {
+		if len(opts) != 0 {
+			textBytes = addIndentsAndLineBreaks(textBytes, opts[0])
+		}
+
 		return writeTextFindNextMode(w, textBytes)
 	}
 }
@@ -180,4 +184,50 @@ func writeTextCheckEachMode(w roundly.Writer, text []byte) (err error) {
 	}
 
 	return nil
+}
+
+//nolint:errcheck // writing to bytes.Buffer never fails
+func addIndentsAndLineBreaks(textBytes []byte, opts *roundly.RenderOptions) []byte {
+	if !opts.Pretty {
+		return textBytes
+	}
+
+	if opts.LineBreakMin == 0 {
+		opts.LineBreakMin = 80
+	}
+
+	buf := make([]byte, 0, len(textBytes)+len(textBytes)/opts.LineBreakMin+16)
+	w := bytes.NewBuffer(buf)
+
+	_ = opts.WriteIndent(w)
+
+	charsSinceBreak := 0
+	for _, char := range textBytes {
+		if char == '\n' {
+			charsSinceBreak = 0
+			_ = w.WriteByte(char)
+
+			continue
+		}
+
+		charsSinceBreak++
+		if charsSinceBreak <= opts.LineBreakMin {
+			_ = w.WriteByte(char)
+			continue
+		}
+
+		switch char {
+		case '\t':
+		case ' ':
+			w.WriteByte('\n')
+			_ = opts.WriteIndent(w)
+			charsSinceBreak = 0
+		default:
+			w.WriteByte(char)
+		}
+	}
+
+	w.WriteByte('\n')
+
+	return w.Bytes()
 }

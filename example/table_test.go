@@ -3,8 +3,6 @@ package example
 import (
 	"fmt"
 
-	"github.com/yosssi/gohtml"
-
 	"github.com/KrischanCS/roundly"
 	. "github.com/KrischanCS/roundly/attribute"
 	. "github.com/KrischanCS/roundly/element"
@@ -50,86 +48,85 @@ func ExampleTable() {
 
 	w := roundly.NewWriter()
 
-	err := table.RenderElement(w)
+	err := table.RenderElementWithOptions(w, &roundly.RenderOptions{Pretty: true})
 	if err != nil {
 		panic(err)
 	}
 
-	indented := gohtml.Format(w.String())
-
-	fmt.Println(indented)
+	fmt.Println(w.String())
 
 	// Output:
+	//
 	// <table id="mascot-table" class="fancy-table mascots">
-	//   <thead>
-	//     <tr>
-	//       <th>
-	//         Language
-	//       </th>
-	//       <th>
-	//         Kind
-	//       </th>
-	//       <th>
-	//         Name
-	//       </th>
-	//     </tr>
-	//   </thead>
-	//   <tbody>
-	//     <tr>
-	//       <th scope="row">
-	//         Go
-	//       </th>
-	//       <td>
-	//         Blue Gopher
-	//       </td>
-	//       <td>
-	//         The Go Gopher
-	//       </td>
-	//     </tr>
-	//     <tr>
-	//       <th scope="row">
-	//         Rust
-	//       </th>
-	//       <td>
-	//         Orange Crab
-	//       </td>
-	//       <td>
-	//         Ferris
-	//       </td>
-	//     </tr>
-	//     <tr>
-	//       <th scope="row">
-	//         Gleam
-	//       </th>
-	//       <td>
-	//         Pink Starfish
-	//       </td>
-	//       <td>
-	//         Lucy
-	//       </td>
-	//     </tr>
-	//     <tr>
-	//       <th scope="row">
-	//         Zig
-	//       </th>
-	//       <td>
-	//         Ziguana
-	//       </td>
-	//       <td>
-	//         Ziggy &amp; Zero
-	//       </td>
-	//     </tr>
-	//     <tr>
-	//       <th scope="row">
-	//         Java
-	//       </th>
-	//       <td>
-	//         ?
-	//       </td>
-	//       <td>
-	//         Duke
-	//       </td>
-	//     </tr>
-	//   </tbody>
+	// 	<thead>
+	// 		<tr>
+	// 			<th>
+	// 				Language
+	// 			</th>
+	// 			<th>
+	// 				Kind
+	// 			</th>
+	// 			<th>
+	// 				Name
+	// 			</th>
+	// 		</tr>
+	// 	</thead>
+	// 	<tbody>
+	// 		<tr>
+	// 			<th scope="row">
+	// 				Go
+	// 			</th>
+	// 			<td>
+	// 				Blue Gopher
+	// 			</td>
+	// 			<td>
+	// 				The Go Gopher
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<th scope="row">
+	// 				Rust
+	// 			</th>
+	// 			<td>
+	// 				Orange Crab
+	// 			</td>
+	// 			<td>
+	// 				Ferris
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<th scope="row">
+	// 				Gleam
+	// 			</th>
+	// 			<td>
+	// 				Pink Starfish
+	// 			</td>
+	// 			<td>
+	// 				Lucy
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<th scope="row">
+	// 				Zig
+	// 			</th>
+	// 			<td>
+	// 				Ziguana
+	// 			</td>
+	// 			<td>
+	// 				Ziggy &amp; Zero
+	// 			</td>
+	// 		</tr>
+	// 		<tr>
+	// 			<th scope="row">
+	// 				Java
+	// 			</th>
+	// 			<td>
+	// 				?
+	// 			</td>
+	// 			<td>
+	// 				Duke
+	// 			</td>
+	// 		</tr>
+	// 	</tbody>
 	// </table>
 }

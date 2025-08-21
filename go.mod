@@ -7,7 +7,6 @@ toolchain go1.24.2
 require (
 	github.com/KrischanCS/go-toolbox v0.0.6
 	github.com/stretchr/testify v1.10.0
-	github.com/yosssi/gohtml v0.0.0-20201013000340-ee4748c638f4
 	golang.org/x/net v0.41.0
 )
 

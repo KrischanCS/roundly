@@ -67,7 +67,7 @@ func WriteMultiValueAttribute(name string, delimiter byte, values ...string) Att
 }
 
 func WriteBoolAttribute(name string) Attribute {
-	return func(w Writer) error {
+	return func(w Writer, _ ...*RenderOptions) error {
 		_, err := w.WriteString(name)
 		return err
 	}
@@ -88,7 +88,7 @@ func writeStringsSeparated(w Writer, delimiter byte, values []string) error {
 	}
 
 	for _, v := range values[1:] {
-		err := w.WriteByte(delimiter)
+		err = w.WriteByte(delimiter)
 		if err != nil {
 			return err
 		}

@@ -6,7 +6,7 @@ import (
 	"github.com/KrischanCS/roundly"
 )
 
-func nopAttribute(w roundly.Writer) error {
+func nopAttribute(_ roundly.Writer, _ ...*roundly.RenderOptions) error {
 	return nil
 }
 
@@ -27,7 +27,11 @@ func Attributes(attributes ...roundly.Attribute) roundly.Attribute {
 }
 
 func join(attributes []roundly.Attribute) roundly.Attribute {
-	return func(w roundly.Writer) error {
+	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
+		if len(opts) != 0 {
+			return joinWithOptions(w, attributes, opts[0])
+		}
+
 		err := attributes[0].RenderAttribute(w)
 		if err != nil {
 			return err
@@ -43,4 +47,41 @@ func join(attributes []roundly.Attribute) roundly.Attribute {
 
 		return nil
 	}
+}
+
+func joinWithOptions(w roundly.Writer, attributes []roundly.Attribute, opts *roundly.RenderOptions) error {
+	if opts.Pretty && len(attributes) >= 3 {
+		opts.Indent = "  "
+		defer opts.DecreaseIndent()
+		err := joinWithLineBrakes(w, attributes, opts)
+		return err
+	}
+
+	err := attributes[0].RenderAttribute(w)
+	if err != nil {
+		return err
+	}
+
+	for _, attribute := range attributes[1:] {
+
+		err = attribute.RenderAttribute(w)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func joinWithLineBrakes(w roundly.Writer, attributes []roundly.Attribute, opts *roundly.RenderOptions) (err error) {
+	for _, attr := range attributes {
+		err = w.WriteByte('\n')
+
+		err = attr.RenderAttribute(w)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }

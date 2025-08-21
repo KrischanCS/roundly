@@ -22,6 +22,72 @@ func ExampleDelText() {
 	// Output: <del id="id" class="class-1 class-2">Some Text.</del>
 }
 
+func ExampleDelText_stringPretty() {
+	// TODO these are indent tests and should be moved
+	del := DelText(
+		"Some Text.",
+		Id("id"),
+		Class("class-1", "class-2"))
+
+	fmt.Println(del.StringPretty())
+
+	// Output:
+	//
+	// <del id="id" class="class-1 class-2">
+	// 	Some Text.
+	// </del>
+}
+
+func ExampleDelText_longStringPretty() {
+	// TODO these are indent tests and should be moved
+	del := DelText(
+		"This text is longer. Line breaks should be added to it at the first white-space "+
+			"which appears after at least 80 characters on each line. While 80 is the default for "+
+			"this 'soft limit', it can be changed in the render options.",
+		Id("id"),
+		Class("class-1", "class-2"))
+
+	fmt.Println(del.StringPretty())
+
+	// Output:
+	//
+	// <del id="id" class="class-1 class-2">
+	// 	This text is longer. Line breaks should be added to it at the first white-space which
+	// 	appears after at least 80 characters on each line. While 80 is the default for this
+	// 	&#39;soft limit&#39;, it can be changed in the render options.
+	// </del>
+}
+
+func ExampleDelText_longStringWithOptions60Chars() {
+	// TODO these are indent tests and should be moved
+	del := DelText(
+		"This text is longer. Line breaks are usually added to it at the first white-space"+
+			" which appears after at least 80 characters on each line. In this case this 'soft"+
+			" limit' is altered to 60.",
+		Id("id"),
+		Class("class-1", "class-2"))
+
+	w := roundly.NewWriter()
+
+	err := del.RenderElementWithOptions(w, &roundly.RenderOptions{
+		Pretty:       true,
+		LineBreakMin: 60,
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(w.String())
+
+	// Output:
+	//
+	// <del id="id" class="class-1 class-2">
+	// 	This text is longer. Line breaks are usually added to it at the
+	// 	first white-space which appears after at least 80 characters
+	// 	on each line. In this case this &#39;soft limit&#39; is altered to 60.
+	// </del>
+}
+
 func ExampleInsText() {
 	ins := InsText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
@@ -391,8 +457,8 @@ func ExampleTitleText() {
 	title := TitleText("Some Text.", Id("id"), Class("class-1", "class-2"))
 
 	w := roundly.NewWriter()
-	err := title(w)
 
+	err := title(w)
 	if err != nil {
 		panic(err)
 	}
