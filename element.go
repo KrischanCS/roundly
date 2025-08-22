@@ -2,11 +2,11 @@
 // components in pure go.
 package roundly
 
-type Element func(w Writer, options ...*RenderOptions) error
+type Element func(w Writer, options *RenderOptions) error
 
 // RenderElement renders the element to the given Writer.
 func (fn Element) RenderElement(w Writer) error {
-	return fn(w)
+	return fn(w, nil)
 }
 
 func (fn Element) RenderElementWithOptions(w Writer, options *RenderOptions) error {
@@ -18,7 +18,7 @@ func (fn Element) RenderElementWithOptions(w Writer, options *RenderOptions) err
 func (fn Element) String() string {
 	w := NewWriter()
 
-	err := fn(w)
+	err := fn(w, nil)
 	if err != nil {
 		panic("Writing to bufio.Writer failed unexpectedly: " + err.Error())
 	}
@@ -47,25 +47,29 @@ func (fn Element) StringPretty() string {
 //
 // The element is written without any extra linebreaks and indentation, thus is somewhat minified.
 func WriteElement(tag string, attributes Attribute, childNodes ...Element) Element {
-	return func(w Writer, options ...*RenderOptions) error {
-		if len(options) != 0 {
-			return writeElementWithOptions(w, tag, attributes, childNodes, options[0])
+	return func(w Writer, options *RenderOptions) error {
+		if options == nil {
+			return writeElement(w, tag, attributes, childNodes)
 		}
 
-		err := writeOpenTag(w, tag, attributes)
+		return writeElementWithOptions(w, tag, attributes, childNodes, options)
+	}
+}
+
+func writeElement(w Writer, tag string, attributes Attribute, childNodes []Element) error {
+	err := writeOpenTag(w, tag, attributes)
+	if err != nil {
+		return err
+	}
+
+	for _, node := range childNodes {
+		err = node.RenderElement(w)
 		if err != nil {
 			return err
 		}
-
-		for _, node := range childNodes {
-			err = node.RenderElement(w)
-			if err != nil {
-				return err
-			}
-		}
-
-		return writeCloseTag(w, tag)
 	}
+
+	return writeCloseTag(w, tag)
 }
 
 // WriteVoidElement creates a void element (An element without child nodes and closing tag).
@@ -92,18 +96,18 @@ func WriteElement(tag string, attributes Attribute, childNodes ...Element) Eleme
 //
 // [html standard]: https://html.spec.whatwg.org/#void-elements
 func WriteVoidElement(tag string, attributes Attribute) Element {
-	return func(w Writer, opts ...*RenderOptions) error {
-		if len(opts) == 0 {
+	return func(w Writer, opts *RenderOptions) error {
+		if opts == nil {
 			return writeOpenTag(w, tag, attributes)
 		}
 
-		err := writeOpenTagWithOptions(w, tag, attributes, opts[0])
+		err := writeOpenTagWithOptions(w, tag, attributes, opts)
 		if err != nil {
 			return err
 		}
 
-		if opts[0].Pretty {
-			opts[0].DecreaseIndent()
+		if opts.Pretty {
+			opts.DecreaseIndent()
 		}
 
 		return nil

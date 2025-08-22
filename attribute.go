@@ -1,73 +1,81 @@
 package roundly
 
-type Attribute func(w Writer, options ...*RenderOptions) error
+type Attribute func(w Writer, options *RenderOptions) error
 
 func (fn Attribute) RenderAttribute(w Writer) error {
-	return fn(w)
+	return fn(w, nil)
 }
 
 func WriteAttribute(name string, value string) Attribute {
-	return func(w Writer, opts ...*RenderOptions) error {
-		if len(opts) != 0 {
-			return WriteAttributeWithOptions(w, name, value, opts[0])
+	return func(w Writer, opts *RenderOptions) error {
+		if opts == nil {
+			return writeAttribute(w, name, value)
 		}
+		return WriteAttributeWithOptions(w, name, value, opts)
 
-		err := w.WriteByte(' ')
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(name)
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(`="`)
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(value)
-		if err != nil {
-			return err
-		}
-
-		return w.WriteByte('"')
 	}
+}
+
+func writeAttribute(w Writer, name string, value string) error {
+	err := w.WriteByte(' ')
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(name)
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(`="`)
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(value)
+	if err != nil {
+		return err
+	}
+
+	return w.WriteByte('"')
 }
 
 func WriteMultiValueAttribute(name string, delimiter byte, values ...string) Attribute {
-	return func(w Writer, opts ...*RenderOptions) error {
-		if len(opts) != 0 {
-			return WriteMultiValueAttributeWithOptions(w, name, delimiter, values, opts[0])
+	return func(w Writer, opts *RenderOptions) error {
+		if opts == nil {
+			return writeMultiValueAttribute(w, name, delimiter, values)
 		}
 
-		err := w.WriteByte(' ')
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(name)
-		if err != nil {
-			return err
-		}
-
-		_, err = w.WriteString(`="`)
-		if err != nil {
-			return err
-		}
-
-		err = writeStringsSeparated(w, delimiter, values)
-		if err != nil {
-			return err
-		}
-
-		return w.WriteByte('"')
+		return WriteMultiValueAttributeWithOptions(w, name, delimiter, values, opts)
 	}
 }
 
+func writeMultiValueAttribute(w Writer, name string, delimiter byte, values []string) error {
+	err := w.WriteByte(' ')
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(name)
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(`="`)
+	if err != nil {
+		return err
+	}
+
+	err = writeStringsSeparated(w, delimiter, values)
+	if err != nil {
+		return err
+	}
+
+	return w.WriteByte('"')
+}
+
 func WriteBoolAttribute(name string) Attribute {
-	return func(w Writer, _ ...*RenderOptions) error {
+	return func(w Writer, _ *RenderOptions) error {
 		_, err := w.WriteString(name)
 		return err
 	}

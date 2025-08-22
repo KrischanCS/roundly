@@ -46,9 +46,9 @@ func Text(text string) roundly.Element {
 	// edited.
 	textBytes := unsafe.Slice(unsafe.StringData(text), len(text)) //nolint:gosec // explained abov
 
-	return func(w roundly.Writer, opts ...*roundly.RenderOptions) (err error) {
-		if len(opts) != 0 {
-			textBytes = addIndentsAndLineBreaks(textBytes, opts[0])
+	return func(w roundly.Writer, opts *roundly.RenderOptions) (err error) {
+		if opts != nil {
+			textBytes = addIndentsAndLineBreaks(textBytes, opts)
 		}
 
 		return writeTextFindNextMode(w, textBytes)

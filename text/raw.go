@@ -9,9 +9,9 @@ import "github.com/KrischanCS/roundly"
 //  1. Adding html snippets from trusted sources, must not be escaped on purpose.
 //  2. Adding text that is already escaped, avoiding double escaping & better performance.
 func RawTrusted(text string) roundly.Element {
-	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
-		if len(opts) != 0 {
-			textBytes := addIndentsAndLineBreaks([]byte(text), opts[0])
+	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
+		if opts != nil {
+			textBytes := addIndentsAndLineBreaks([]byte(text), opts)
 			_, err := w.Write(textBytes)
 
 			return err

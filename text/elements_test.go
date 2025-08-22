@@ -12,7 +12,7 @@ func ExampleDelText() {
 
 	w := roundly.NewWriter()
 
-	err := del(w)
+	err := del(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -93,7 +93,7 @@ func ExampleInsText() {
 
 	w := roundly.NewWriter()
 
-	err := ins(w)
+	err := ins(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -108,7 +108,7 @@ func ExampleButtonText() {
 
 	w := roundly.NewWriter()
 
-	err := button(w)
+	err := button(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -123,7 +123,7 @@ func ExampleLegendText() {
 
 	w := roundly.NewWriter()
 
-	err := legend(w)
+	err := legend(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -138,7 +138,7 @@ func ExampleOptionText() {
 
 	w := roundly.NewWriter()
 
-	err := option(w)
+	err := option(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -153,7 +153,7 @@ func ExampleOutputText() {
 
 	w := roundly.NewWriter()
 
-	err := output(w)
+	err := output(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -169,7 +169,7 @@ func ExampleProgressText() {
 
 	w := roundly.NewWriter()
 
-	err := progress(w)
+	err := progress(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -185,7 +185,7 @@ func ExampleTextareaText() {
 
 	w := roundly.NewWriter()
 
-	err := textarea(w)
+	err := textarea(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -200,7 +200,7 @@ func ExampleLabelText() {
 
 	w := roundly.NewWriter()
 
-	err := label(w)
+	err := label(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -216,7 +216,7 @@ func ExampleBlockquoteText() {
 
 	w := roundly.NewWriter()
 
-	err := blockquote(w)
+	err := blockquote(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -231,7 +231,7 @@ func ExampleDdText() {
 
 	w := roundly.NewWriter()
 
-	err := dd(w)
+	err := dd(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -246,7 +246,7 @@ func ExampleDtText() {
 
 	w := roundly.NewWriter()
 
-	err := dt(w)
+	err := dt(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -262,7 +262,7 @@ func ExampleFigcaptionText() {
 
 	w := roundly.NewWriter()
 
-	err := figcaption(w)
+	err := figcaption(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -277,7 +277,7 @@ func ExampleLiText() {
 
 	w := roundly.NewWriter()
 
-	err := li(w)
+	err := li(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -292,7 +292,7 @@ func ExamplePText() {
 
 	w := roundly.NewWriter()
 
-	err := p(w)
+	err := p(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -307,7 +307,7 @@ func ExamplePreText() {
 
 	w := roundly.NewWriter()
 
-	err := pre(w)
+	err := pre(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -322,7 +322,7 @@ func ExampleUlText() {
 
 	w := roundly.NewWriter()
 
-	err := ul(w)
+	err := ul(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -337,7 +337,7 @@ func ExampleSummaryText() {
 
 	w := roundly.NewWriter()
 
-	err := summary(w)
+	err := summary(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -353,7 +353,7 @@ func ExampleNoscriptText() {
 
 	w := roundly.NewWriter()
 
-	err := noscript(w)
+	err := noscript(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -368,7 +368,7 @@ func ExampleH1Text() {
 
 	w := roundly.NewWriter()
 
-	err := h1(w)
+	err := h1(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -383,7 +383,7 @@ func ExampleH2Text() {
 
 	w := roundly.NewWriter()
 
-	err := h2(w)
+	err := h2(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -398,7 +398,7 @@ func ExampleH3Text() {
 
 	w := roundly.NewWriter()
 
-	err := h3(w)
+	err := h3(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -413,7 +413,7 @@ func ExampleH4Text() {
 
 	w := roundly.NewWriter()
 
-	err := h4(w)
+	err := h4(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -428,7 +428,7 @@ func ExampleH5Text() {
 
 	w := roundly.NewWriter()
 
-	err := h5(w)
+	err := h5(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -443,7 +443,7 @@ func ExampleH6Text() {
 
 	w := roundly.NewWriter()
 
-	err := h6(w)
+	err := h6(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -458,7 +458,7 @@ func ExampleTitleText() {
 
 	w := roundly.NewWriter()
 
-	err := title(w)
+	err := title(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -473,7 +473,7 @@ func ExampleCaptionText() {
 
 	w := roundly.NewWriter()
 
-	err := caption(w)
+	err := caption(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -488,7 +488,7 @@ func ExampleTdText() {
 
 	w := roundly.NewWriter()
 
-	err := td(w)
+	err := td(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -503,7 +503,7 @@ func ExampleThText() {
 
 	w := roundly.NewWriter()
 
-	err := th(w)
+	err := th(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -518,7 +518,7 @@ func ExampleAText() {
 
 	w := roundly.NewWriter()
 
-	err := a(w)
+	err := a(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -533,7 +533,7 @@ func ExampleAbbrText() {
 
 	w := roundly.NewWriter()
 
-	err := abbr(w)
+	err := abbr(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -548,7 +548,7 @@ func ExampleBText() {
 
 	w := roundly.NewWriter()
 
-	err := b(w)
+	err := b(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -563,7 +563,7 @@ func ExampleCiteText() {
 
 	w := roundly.NewWriter()
 
-	err := cite(w)
+	err := cite(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -578,7 +578,7 @@ func ExampleCodeText() {
 
 	w := roundly.NewWriter()
 
-	err := code(w)
+	err := code(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -593,7 +593,7 @@ func ExampleDataText() {
 
 	w := roundly.NewWriter()
 
-	err := data(w)
+	err := data(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -608,7 +608,7 @@ func ExampleDfnText() {
 
 	w := roundly.NewWriter()
 
-	err := dfn(w)
+	err := dfn(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -623,7 +623,7 @@ func ExampleEmText() {
 
 	w := roundly.NewWriter()
 
-	err := em(w)
+	err := em(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -638,7 +638,7 @@ func ExampleIText() {
 
 	w := roundly.NewWriter()
 
-	err := i(w)
+	err := i(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -653,7 +653,7 @@ func ExampleKbdText() {
 
 	w := roundly.NewWriter()
 
-	err := kbd(w)
+	err := kbd(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -668,7 +668,7 @@ func ExampleMarkText() {
 
 	w := roundly.NewWriter()
 
-	err := mark(w)
+	err := mark(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -683,7 +683,7 @@ func ExampleQText() {
 
 	w := roundly.NewWriter()
 
-	err := q(w)
+	err := q(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -698,7 +698,7 @@ func ExampleRpText() {
 
 	w := roundly.NewWriter()
 
-	err := rp(w)
+	err := rp(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -713,7 +713,7 @@ func ExampleRtText() {
 
 	w := roundly.NewWriter()
 
-	err := rt(w)
+	err := rt(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -728,7 +728,7 @@ func ExampleSText() {
 
 	w := roundly.NewWriter()
 
-	err := s(w)
+	err := s(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -743,7 +743,7 @@ func ExampleSampText() {
 
 	w := roundly.NewWriter()
 
-	err := samp(w)
+	err := samp(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -758,7 +758,7 @@ func ExampleSmallText() {
 
 	w := roundly.NewWriter()
 
-	err := small(w)
+	err := small(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -773,7 +773,7 @@ func ExampleSpanText() {
 
 	w := roundly.NewWriter()
 
-	err := span(w)
+	err := span(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -788,7 +788,7 @@ func ExampleStrongText() {
 
 	w := roundly.NewWriter()
 
-	err := strong(w)
+	err := strong(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -803,7 +803,7 @@ func ExampleSubText() {
 
 	w := roundly.NewWriter()
 
-	err := sub(w)
+	err := sub(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -818,7 +818,7 @@ func ExampleSupText() {
 
 	w := roundly.NewWriter()
 
-	err := sup(w)
+	err := sup(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -833,7 +833,7 @@ func ExampleUText() {
 
 	w := roundly.NewWriter()
 
-	err := u(w)
+	err := u(w, nil)
 	if err != nil {
 		panic(err)
 	}
@@ -848,7 +848,7 @@ func ExampleVarText() {
 
 	w := roundly.NewWriter()
 
-	err := varE(w)
+	err := varE(w, nil)
 	if err != nil {
 		panic(err)
 	}

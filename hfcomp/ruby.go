@@ -13,7 +13,7 @@ type RubySegment struct {
 }
 
 func RubyText(segments []RubySegment) roundly.Element {
-	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
+	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
 		el := Ruby(nil,
 			Range(segments, func(_ int, segment RubySegment) roundly.Element {
 				return Group(
@@ -25,10 +25,10 @@ func RubyText(segments []RubySegment) roundly.Element {
 			}),
 		)
 
-		if len(opts) != 0 {
-			return el.RenderElementWithOptions(w, opts[0])
+		if opts == nil {
+			return el.RenderElement(w)
 		}
 
-		return el.RenderElement(w)
+		return el.RenderElementWithOptions(w, opts)
 	}
 }

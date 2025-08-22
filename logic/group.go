@@ -3,23 +3,27 @@ package logic
 import "github.com/KrischanCS/roundly"
 
 func Group(elements ...roundly.Element) roundly.Element {
-	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
-		if len(opts) != 0 {
-			return renderGroupWithOptions(w, elements, opts[0])
+	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
+		if opts == nil {
+			return group(w, elements)
 		}
 
-		for _, e := range elements {
-			err := e.RenderElement(w)
-			if err != nil {
-				return err
-			}
-		}
-
-		return nil
+		return groupWithOptions(w, elements, opts)
 	}
 }
 
-func renderGroupWithOptions(
+func group(w roundly.Writer, elements []roundly.Element) error {
+	for _, e := range elements {
+		err := e.RenderElement(w)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func groupWithOptions(
 	w roundly.Writer,
 	elements []roundly.Element,
 	opts *roundly.RenderOptions,

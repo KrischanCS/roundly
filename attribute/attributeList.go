@@ -6,7 +6,7 @@ import (
 	"github.com/KrischanCS/roundly"
 )
 
-func nopAttribute(_ roundly.Writer, _ ...*roundly.RenderOptions) error {
+func nopAttribute(_ roundly.Writer, _ *roundly.RenderOptions) error {
 	return nil
 }
 
@@ -27,26 +27,30 @@ func Attributes(attributes ...roundly.Attribute) roundly.Attribute {
 }
 
 func join(attributes []roundly.Attribute) roundly.Attribute {
-	return func(w roundly.Writer, opts ...*roundly.RenderOptions) error {
-		if len(opts) != 0 {
-			return joinWithOptions(w, attributes, opts[0])
+	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
+		if opts == nil {
+			return joinNoOpts(w, attributes)
 		}
 
-		err := attributes[0].RenderAttribute(w)
+		return joinWithOptions(w, attributes, opts)
+	}
+}
+
+func joinNoOpts(w roundly.Writer, attributes []roundly.Attribute) error {
+	err := attributes[0].RenderAttribute(w)
+	if err != nil {
+		return err
+	}
+
+	for _, attribute := range attributes[1:] {
+
+		err = attribute.RenderAttribute(w)
 		if err != nil {
 			return err
 		}
-
-		for _, attribute := range attributes[1:] {
-
-			err = attribute.RenderAttribute(w)
-			if err != nil {
-				return err
-			}
-		}
-
-		return nil
 	}
+
+	return nil
 }
 
 func joinWithOptions(w roundly.Writer, attributes []roundly.Attribute, opts *roundly.RenderOptions) error {
