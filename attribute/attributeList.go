@@ -29,46 +29,16 @@ func Attributes(attributes ...roundly.Attribute) roundly.Attribute {
 func join(attributes []roundly.Attribute) roundly.Attribute {
 	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
 		if opts == nil {
-			return joinNoOpts(w, attributes)
+			return joinWithSpaces(w, attributes)
 		}
 
-		return joinWithOptions(w, attributes, opts)
+		return joinWithLineBrakes(w, attributes, opts)
 	}
 }
 
-func joinNoOpts(w roundly.Writer, attributes []roundly.Attribute) error {
-	err := attributes[0].RenderAttribute(w)
-	if err != nil {
-		return err
-	}
-
-	for _, attribute := range attributes[1:] {
-
-		err = attribute.RenderAttribute(w)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
-func joinWithOptions(w roundly.Writer, attributes []roundly.Attribute, opts *roundly.RenderOptions) error {
-	if opts.Pretty && len(attributes) >= 3 {
-		opts.Indent = "  "
-		defer opts.DecreaseIndent()
-		err := joinWithLineBrakes(w, attributes, opts)
-		return err
-	}
-
-	err := attributes[0].RenderAttribute(w)
-	if err != nil {
-		return err
-	}
-
-	for _, attribute := range attributes[1:] {
-
-		err = attribute.RenderAttribute(w)
+func joinWithSpaces(w roundly.Writer, attributes []roundly.Attribute) error {
+	for _, attribute := range attributes {
+		err := attribute.RenderAttribute(w)
 		if err != nil {
 			return err
 		}
@@ -79,9 +49,7 @@ func joinWithOptions(w roundly.Writer, attributes []roundly.Attribute, opts *rou
 
 func joinWithLineBrakes(w roundly.Writer, attributes []roundly.Attribute, opts *roundly.RenderOptions) (err error) {
 	for _, attr := range attributes {
-		err = w.WriteByte('\n')
-
-		err = attr.RenderAttribute(w)
+		err = attr.RenderAttributeWithOptions(w, opts)
 		if err != nil {
 			return err
 		}

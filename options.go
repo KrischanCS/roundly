@@ -1,33 +1,40 @@
 package roundly
 
+import "bytes"
+
 type RenderOptions struct {
 	Pretty       bool
-	Level        int
-	Indent       string
 	LineBreakMin int
+
+	level int
 }
 
 func (r *RenderOptions) IncreaseIndent() {
-	r.Level++
+	r.level++
 }
 
 func (r *RenderOptions) DecreaseIndent() {
-	r.Level--
+	r.level--
 }
 
 func (r *RenderOptions) WriteIndent(w Writer) (err error) {
-	if r.Indent == "" {
-		r.Indent = "\t"
-	}
-
-	for range r.Level {
-		_, err = w.WriteString(r.Indent)
+	for range r.level {
+		err = w.WriteByte('\t')
 		if err != nil {
 			return err
 		}
 	}
 
 	return nil
+}
+
+func (r *RenderOptions) WriteNewLineAndIndent(w Writer) error {
+	err := w.WriteByte('\n')
+	if err != nil {
+		return err
+	}
+
+	return r.WriteIndent(w)
 }
 
 func writeElementWithOptions(
@@ -79,9 +86,49 @@ func writeOpenTagWithOptions(
 	}
 
 	if attributes != nil {
-		err = attributes.RenderAttribute(w)
+		buf := make([]byte, 0, 128)
+		tempW := bytes.NewBuffer(buf)
+
+		opts.IncreaseIndent()
+		err = attributes.RenderAttributeWithOptions(tempW, opts)
+		opts.DecreaseIndent()
+
 		if err != nil {
 			return err
+		}
+
+		buf = tempW.Bytes()
+		newLines := bytes.Count(buf, []byte{'\n'})
+		if newLines >= 3 {
+			_, err = w.Write(buf)
+			if err != nil {
+				return err
+			}
+
+			err = opts.WriteNewLineAndIndent(w)
+		} else {
+			lastWasLineBreak := false
+			for _, b := range buf {
+				if b == '\n' {
+					err = w.WriteByte(' ')
+					if err != nil {
+						return err
+					}
+					lastWasLineBreak = true
+					continue
+				}
+
+				if lastWasLineBreak && b == '\t' {
+					continue
+				}
+
+				lastWasLineBreak = false
+
+				err = w.WriteByte(b)
+				if err != nil {
+					return err
+				}
+			}
 		}
 	}
 
@@ -120,9 +167,12 @@ func writeCloseTagWithOptions(w Writer, tag string, opts *RenderOptions) error {
 	return nil
 }
 
-func WriteAttributeWithOptions(w Writer, name string, value string, options *RenderOptions) error {
-	// TODO this is currently identical with WriteAttribute
-	err := w.WriteByte(' ')
+func writeAttributeWithOptions(w Writer, name string, value string, options *RenderOptions) error {
+	if !options.Pretty {
+		return writeAttribute(w, name, value)
+	}
+
+	err := options.WriteNewLineAndIndent(w)
 	if err != nil {
 		return err
 	}
@@ -152,8 +202,11 @@ func WriteMultiValueAttributeWithOptions(
 	values []string,
 	options *RenderOptions,
 ) error {
-	// TODO this is currently identical with WriteMultiValueAttribute
-	err := w.WriteByte(' ')
+	if !options.Pretty {
+		return writeMultiValueAttribute(w, name, delimiter, values)
+	}
+
+	err := options.WriteNewLineAndIndent(w)
 	if err != nil {
 		return err
 	}

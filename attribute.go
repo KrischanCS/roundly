@@ -6,23 +6,26 @@ func (fn Attribute) RenderAttribute(w Writer) error {
 	return fn(w, nil)
 }
 
+func (fn Attribute) RenderAttributeWithOptions(w Writer, opts *RenderOptions) error {
+	return fn(w, opts)
+}
+
 func WriteAttribute(name string, value string) Attribute {
 	return func(w Writer, opts *RenderOptions) error {
 		if opts == nil {
 			return writeAttribute(w, name, value)
 		}
-		return WriteAttributeWithOptions(w, name, value, opts)
+		return writeAttributeWithOptions(w, name, value, opts)
 
 	}
 }
 
 func writeAttribute(w Writer, name string, value string) error {
-	err := w.WriteByte(' ')
-	if err != nil {
-		return err
+	if value == "" {
+		return nil
 	}
 
-	_, err = w.WriteString(name)
+	_, err := w.WriteString(name)
 	if err != nil {
 		return err
 	}
@@ -75,8 +78,23 @@ func writeMultiValueAttribute(w Writer, name string, delimiter byte, values []st
 }
 
 func WriteBoolAttribute(name string) Attribute {
-	return func(w Writer, _ *RenderOptions) error {
-		_, err := w.WriteString(name)
+	return func(w Writer, opts *RenderOptions) error {
+		if opts == nil || !opts.Pretty {
+			_, err := w.WriteString(name)
+			return err
+		}
+
+		err := w.WriteByte('\n')
+		if err != nil {
+			return err
+		}
+
+		err = opts.WriteIndent(w)
+		if err != nil {
+			return err
+		}
+
+		_, err = w.WriteString(name)
 		return err
 	}
 }

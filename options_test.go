@@ -103,6 +103,38 @@ func ExampleRenderOptions_prettyLongContentWithOptions60Chars() {
 	// </div>
 }
 
+func ExampleRenderOptions_pretty3OrMoreAttributesArePutOnSeparateLines() {
+	div := Div(
+		Attributes(
+			Id("id"),
+			Class("class-1", "class-2"),
+			ItemScope(),
+		),
+		Text("Some Text."),
+	)
+
+	w := roundly.NewWriter()
+
+	err := div.RenderElementWithOptions(w, &roundly.RenderOptions{
+		Pretty: true,
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(w.String())
+
+	// Output:
+	//
+	// <div
+	// 	id="id"
+	// 	class="class-1 class-2"
+	// 	itemscope
+	// >
+	// 	Some Text.
+	// </div>
+}
+
 func ExampleRenderOptions_prettyNestedContent() {
 	article := Article(nil,
 		Hgroup(nil,
