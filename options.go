@@ -86,49 +86,9 @@ func writeOpenTagWithOptions(
 	}
 
 	if attributes != nil {
-		buf := make([]byte, 0, 128)
-		tempW := bytes.NewBuffer(buf)
-
-		opts.IncreaseIndent()
-		err = attributes.RenderAttributeWithOptions(tempW, opts)
-		opts.DecreaseIndent()
-
+		err := writeAttributesWithOptions(w, attributes, opts)
 		if err != nil {
 			return err
-		}
-
-		buf = tempW.Bytes()
-		newLines := bytes.Count(buf, []byte{'\n'})
-		if newLines >= 3 {
-			_, err = w.Write(buf)
-			if err != nil {
-				return err
-			}
-
-			err = opts.WriteNewLineAndIndent(w)
-		} else {
-			lastWasLineBreak := false
-			for _, b := range buf {
-				if b == '\n' {
-					err = w.WriteByte(' ')
-					if err != nil {
-						return err
-					}
-					lastWasLineBreak = true
-					continue
-				}
-
-				if lastWasLineBreak && b == '\t' {
-					continue
-				}
-
-				lastWasLineBreak = false
-
-				err = w.WriteByte(b)
-				if err != nil {
-					return err
-				}
-			}
 		}
 	}
 
@@ -140,6 +100,86 @@ func writeOpenTagWithOptions(
 	opts.IncreaseIndent()
 
 	return nil
+}
+
+func writeAttributesWithOptions(w Writer, attributes Attribute, opts *RenderOptions) error {
+	buf, err := bufferAttrsIndented(attributes, opts)
+	if err != nil {
+		return err
+	}
+
+	newLineCount := bytes.Count(buf, []byte{'\n'})
+
+	if newLineCount < 3 { //nolint:mnd
+		return writeFlattened(w, buf)
+	}
+
+	_, err = w.Write(buf)
+	if err != nil {
+		return err
+	}
+
+	return opts.WriteNewLineAndIndent(w)
+}
+
+func writeFlattened(w Writer, buf []byte) error {
+	r := bytes.NewReader(buf)
+
+	for b, err := r.ReadByte(); err == nil; b, err = r.ReadByte() {
+		if b == '\n' {
+			err = replaceLineBreakAndIndent(w, r)
+			if err != nil {
+				return err
+			}
+
+			continue
+		}
+
+		err := w.WriteByte(b)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func replaceLineBreakAndIndent(w Writer, r *bytes.Reader) error {
+	err := w.WriteByte(' ')
+	if err != nil {
+		return err
+	}
+
+	return consumeIndent(r)
+}
+
+func consumeIndent(r *bytes.Reader) error {
+	b, err := r.ReadByte()
+	for b == '\t' && err == nil {
+		b, err = r.ReadByte()
+	}
+
+	err = r.UnreadByte()
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func bufferAttrsIndented(attributes Attribute, opts *RenderOptions) ([]byte, error) {
+	opts.IncreaseIndent()
+	defer opts.DecreaseIndent()
+
+	buf := make([]byte, 0, 128)
+	tempW := bytes.NewBuffer(buf)
+
+	err := attributes.RenderAttributeWithOptions(tempW, opts)
+	if err != nil {
+		return nil, err
+	}
+
+	return tempW.Bytes(), nil
 }
 
 func writeCloseTagWithOptions(w Writer, tag string, opts *RenderOptions) error {

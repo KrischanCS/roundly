@@ -15,8 +15,8 @@ func WriteAttribute(name string, value string) Attribute {
 		if opts == nil {
 			return writeAttribute(w, name, value)
 		}
-		return writeAttributeWithOptions(w, name, value, opts)
 
+		return writeAttributeWithOptions(w, name, value, opts)
 	}
 }
 
@@ -25,7 +25,12 @@ func writeAttribute(w Writer, name string, value string) error {
 		return nil
 	}
 
-	_, err := w.WriteString(name)
+	err := w.WriteByte(' ')
+	if err != nil {
+		return err
+	}
+
+	_, err = w.WriteString(name)
 	if err != nil {
 		return err
 	}
@@ -95,6 +100,7 @@ func WriteBoolAttribute(name string) Attribute {
 		}
 
 		_, err = w.WriteString(name)
+
 		return err
 	}
 }

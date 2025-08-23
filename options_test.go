@@ -136,6 +136,7 @@ func ExampleRenderOptions_pretty3OrMoreAttributesArePutOnSeparateLines() {
 	// </div>
 }
 
+//nolint:lll // Example output is longer, but formatted correctly.
 func ExampleRenderOptions_prettyNestedContent() {
 	article := Article(nil,
 		Hgroup(nil,
