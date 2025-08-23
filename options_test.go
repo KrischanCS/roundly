@@ -2,6 +2,7 @@ package roundly_test
 
 import (
 	"fmt"
+	"testing"
 
 	"github.com/KrischanCS/roundly"
 	. "github.com/KrischanCS/roundly/attribute"
@@ -176,4 +177,78 @@ func ExampleRenderOptions_prettyNestedContent() {
 	// 		string for efficiency, but for documentation and testing it&#39;s pretty handy.
 	// 	</p>
 	// </article>
+}
+
+func BenchmarkRenderOptions(b *testing.B) {
+	b.ReportAllocs()
+
+	article := Article(
+		Attributes(
+			Id("id"),
+			Class("class-1", "class-2"),
+			ItemScope(),
+		),
+		Hgroup(nil,
+			H1Text("This is a title"),
+			PText("And a subtitle"),
+		),
+		PText(
+			"This is a paragraph with some text in it. It should be indented properly. "+
+				"Also line breaks should be added if the text is too long.",
+		),
+		PText(
+			"By the way, 'StringPretty()' creates a string with default pretty options. "+
+				"But usually you will want to render directly to a writer instead of creating "+
+				"an intermediate string for efficiency, but for documentation and testing it's "+
+				"pretty handy.",
+		),
+	)
+
+	w := roundly.NewWriter()
+
+	for b.Loop() {
+		err := article.RenderElementWithOptions(w, &roundly.RenderOptions{
+			Pretty: true,
+		})
+		if err != nil {
+			panic(err)
+		}
+		w.Reset()
+	}
+}
+
+func BenchmarkRenderOptions_noOptions(b *testing.B) {
+	b.ReportAllocs()
+
+	article := Article(
+		Attributes(
+			Id("id"),
+			Class("class-1", "class-2"),
+			ItemScope(),
+		),
+		Hgroup(nil,
+			H1Text("This is a title"),
+			PText("And a subtitle"),
+		),
+		PText(
+			"This is a paragraph with some text in it. It should be indented properly. "+
+				"Also line breaks should be added if the text is too long.",
+		),
+		PText(
+			"By the way, 'StringPretty()' creates a string with default pretty options. "+
+				"But usually you will want to render directly to a writer instead of creating "+
+				"an intermediate string for efficiency, but for documentation and testing it's "+
+				"pretty handy.",
+		),
+	)
+
+	w := roundly.NewWriter()
+
+	for b.Loop() {
+		err := article.RenderElement(w)
+		if err != nil {
+			panic(err)
+		}
+		w.Reset()
+	}
 }
