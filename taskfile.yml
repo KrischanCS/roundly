@@ -57,6 +57,10 @@ tasks:
     cmds:
       - cd internal && go run .
 
+  generate+:
+    cmds:
+      - cd internal && go run . -reloadHtmlStandard
+
   deps:
     cmds:
       - go get -u ./...

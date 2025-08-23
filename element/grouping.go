@@ -62,13 +62,13 @@ func Dd(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // Div creates the div element - Generic flow container, or container for name-value groups in [dl] elements [(More)]
 //
 // It belongs to the following categories:
-//   - [flow] [palpable]
+//   - [flow] [palpable] [select element inner content elements] [optgroup element inner content elements] [option element inner content elements]
 //
 // It can be parent to the following elements/categories of elements:
-//   - [flow]
+//   - [flow][select element inner content elements] [optgroup element inner content elements] [option element inner content elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow] [dl]
+//   - [flow] [dl] [select element inner content elements] [optgroup element inner content elements] [option element inner content elements]
 //
 // The following attributes can be added to this element:
 //   - [globals]
@@ -79,6 +79,9 @@ func Dd(attributes roundly.Attribute, children ...roundly.Element) roundly.Eleme
 // [dl]: https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
+// [optgroup element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#optgroup-element-inner-content-elements-2
+// [option element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#option-element-inner-content-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Div(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
@@ -195,12 +198,12 @@ func Figure(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // Hr creates the hr element - Thematic break [(More)]
 //
 // It belongs to the following categories:
-//   - [flow]
+//   - [flow] [select element inner content elements]
 //
 // It is a void element and cannot contain any child elements
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [flow]
+//   - [flow] [select element inner content elements]
 //
 // The following attributes can be added to this element:
 //   - [globals]
@@ -209,6 +212,7 @@ func Figure(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 //
 // [(More)]: https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Hr(attributes roundly.Attribute) roundly.Element {

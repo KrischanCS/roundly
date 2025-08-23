@@ -1541,7 +1541,7 @@ func MethodPOST() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[auto]" "[manual]"
+//   - "[auto]" "[manual]" "[hint]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1549,9 +1549,30 @@ func MethodPOST() roundly.Attribute {
 // [popover]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
 // [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
 // [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
+// [hint]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-hint
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PopOverAuto() roundly.Attribute {
 	return roundly.WriteAttribute("popover", "auto")
+}
+
+// PopOverHint creates the popover attribute with value hint - Makes the element a [popover] element
+//
+// It can be applied to the following elements:
+//   - [HTML elements]
+//
+// Can hold one of the following values:
+//   - "[auto]" "[manual]" "[hint]"
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+// [HTML elements]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
+// [popover]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
+// [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
+// [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
+// [hint]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-hint
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func PopOverHint() roundly.Attribute {
+	return roundly.WriteAttribute("popover", "hint")
 }
 
 // PopOverManual creates the popover attribute with value manual - Makes the element a [popover] element
@@ -1560,7 +1581,7 @@ func PopOverAuto() roundly.Attribute {
 //   - [HTML elements]
 //
 // Can hold one of the following values:
-//   - "[auto]" "[manual]"
+//   - "[auto]" "[manual]" "[hint]"
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
@@ -1568,6 +1589,7 @@ func PopOverAuto() roundly.Attribute {
 // [popover]: https://html.spec.whatwg.org/dev/popover.html#attr-popover
 // [auto]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-auto
 // [manual]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-manual
+// [hint]: https://html.spec.whatwg.org/dev/popover.html#attr-popover-hint
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func PopOverManual() roundly.Attribute {
 	return roundly.WriteAttribute("popover", "manual")
@@ -2037,8 +2059,8 @@ func TypeAlphaLower() roundly.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset
@@ -2382,8 +2404,8 @@ func TypeSearch() roundly.Attribute {
 //
 // Source: [The HTML Standard for Web Developers/Indices/Attributes]
 //
-// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-button
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type
 // [input]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [input type keyword]: https://html.spec.whatwg.org/dev/input.html#attr-input-type
 // [reset]: https://html.spec.whatwg.org/dev/form-elements.html#attr-button-type-reset

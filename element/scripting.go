@@ -9,7 +9,7 @@ import (
 // Noscript creates the noscript element - Fallback content for script [(More)]
 //
 // It belongs to the following categories:
-//   - [metadata] [flow] [phrasing]
+//   - [metadata] [flow] [phrasing] [select element inner content elements] [optgroup element inner content elements]
 //
 // It can be parent to the following elements/categories of elements:
 //   - varies
@@ -26,6 +26,8 @@ import (
 // [metadata]: https://html.spec.whatwg.org/dev/dom.html#metadata-content-2
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
+// [optgroup element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#optgroup-element-inner-content-elements-2
 // [head]: https://html.spec.whatwg.org/dev/semantics.html#the-head-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3

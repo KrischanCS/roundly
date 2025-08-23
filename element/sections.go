@@ -357,7 +357,7 @@ func Header(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 //   - [flow] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-//   - [h1] [h2] [h3] [h4] [h5] [h6] [script-supporting elements]
+//   - [h1] [h2] [h3] [h4] [h5] [h6] [p] [script-supporting elements]
 //
 // If can itself be a child of the following elements/categories of elements:
 //   - [legend] [summary] [flow]
@@ -378,6 +378,7 @@ func Header(attributes roundly.Attribute, children ...roundly.Element) roundly.E
 // [h4]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [h5]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // [h6]: https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
+// [p]: https://html.spec.whatwg.org/dev/grouping-content.html#the-p-element
 // [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3

@@ -408,7 +408,7 @@ func FormTarget(formTarget string) roundly.Attribute {
 // It can be applied to the following elements:
 //   - [a] [area]: Address of the [hyperlink]
 //   - [link]: Address of the [hyperlink]
-//   - [base]: [Document base URL]
+//   - [base]: Document base URL
 //
 // Value constraints: 
 //
@@ -421,7 +421,6 @@ func FormTarget(formTarget string) roundly.Attribute {
 // [link]: https://html.spec.whatwg.org/dev/semantics.html#attr-link-href
 // [Valid non-empty URL potentially surrounded by spaces]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#valid-non-empty-url-potentially-surrounded-by-spaces
 // [base]: https://html.spec.whatwg.org/dev/semantics.html#attr-base-href
-// [Document base URL]: https://html.spec.whatwg.org/dev/urls-and-fetching.html#document-base-url
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
 func HRef(hRef string) roundly.Attribute {
 	return roundly.WriteAttribute("href", hRef)

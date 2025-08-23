@@ -119,7 +119,7 @@ func Fieldset(attributes roundly.Attribute, children ...roundly.Element) roundly
 //   - [phrasing] [heading content]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [fieldset]
+//   - [fieldset] [optgroup]
 //
 // The following attributes can be added to this element:
 //   - [globals]
@@ -128,6 +128,7 @@ func Fieldset(attributes roundly.Attribute, children ...roundly.Element) roundly
 //
 // [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
 // [fieldset]: https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element
+// [optgroup]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [heading content]: https://html.spec.whatwg.org/dev/dom.html#heading-content-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
@@ -172,13 +173,13 @@ func Meter(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Optgroup creates the optgroup element - Group of options in a list box [(More)]
 //
 // It belongs to the following categories:
-//   - none
+//   - [select element inner content elements]
 //
 // It can be parent to the following elements/categories of elements:
-//   - [option] [script-supporting elements]
+//   - [optgroup element inner content elements] [legend]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [select]
+//   - [select] [div]
 //
 // The following attributes can be added to this element:
 //   - [globals] [disabled] [label]
@@ -186,9 +187,11 @@ func Meter(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
 // [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#the-select-element
-// [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
-// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
+// [optgroup element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#optgroup-element-inner-content-elements-2
+// [legend]: https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-disabled
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-optgroup-label
@@ -200,13 +203,13 @@ func Optgroup(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Option creates the option element - Option in a list box or combo box control [(More)]
 //
 // It belongs to the following categories:
-//   - none
+//   - [select element inner content elements] [optgroup element inner content elements]
 //
 // It can be parent to the following elements/categories of elements:
-//   - [text]
+//   - [text] [option element inner content elements]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [select] [datalist] [optgroup]
+//   - [select] [datalist] [optgroup] [div]
 //
 // The following attributes can be added to this element:
 //   - [globals] [disabled] [label] [selected] [value]
@@ -214,10 +217,14 @@ func Optgroup(attributes roundly.Attribute, children ...roundly.Element) roundly
 // Source: [The HTML Standard for Web Developers/Indices/Elements]
 //
 // [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
+// [optgroup element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#optgroup-element-inner-content-elements-2
 // [select]: https://html.spec.whatwg.org/dev/form-elements.html#the-select-element
 // [datalist]: https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element
 // [optgroup]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
+// [div]: https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element
 // [text]: https://html.spec.whatwg.org/dev/dom.html#text-content
+// [option element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#option-element-inner-content-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [disabled]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-disabled
 // [label]: https://html.spec.whatwg.org/dev/form-elements.html#attr-option-label
@@ -296,7 +303,7 @@ func Progress(attributes roundly.Attribute, children ...roundly.Element) roundly
 //   - [flow] [phrasing] [interactive] [listed] [labelable] [submittable] [resettable] [form-associated] [palpable]
 //
 // It can be parent to the following elements/categories of elements:
-//   - [option] [optgroup] [script-supporting elements]
+//   - [select element inner content elements] [button]
 //
 // If can itself be a child of the following elements/categories of elements:
 //   - [phrasing]
@@ -316,9 +323,8 @@ func Progress(attributes roundly.Attribute, children ...roundly.Element) roundly
 // [resettable]: https://html.spec.whatwg.org/dev/forms.html#category-reset
 // [form-associated]: https://html.spec.whatwg.org/dev/forms.html#form-associated-element
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
-// [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
-// [optgroup]: https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element
-// [script-supporting elements]: https://html.spec.whatwg.org/dev/dom.html#script-supporting-elements-2
+// [select element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#select-element-inner-content-elements-2
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#the-button-element
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [autocomplete]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-autocomplete
 // [disabled]: https://html.spec.whatwg.org/dev/form-control-infrastructure.html#attr-fe-disabled
@@ -330,6 +336,31 @@ func Progress(attributes roundly.Attribute, children ...roundly.Element) roundly
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Select(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
     return roundly.WriteElement("select", attributes, children...)
+}
+
+// Selectedcontent creates the selectedcontent element - Mirrors content from an [option [(More)]
+//
+// It belongs to the following categories:
+//   - none
+//
+// It can be parent to the following elements/categories of elements:
+//   - empty
+//
+// If can itself be a child of the following elements/categories of elements:
+//   - [button]
+//
+// The following attributes can be added to this element:
+//   - [globals]
+//
+// Source: [The HTML Standard for Web Developers/Indices/Elements]
+//
+// [(More)]: https://html.spec.whatwg.org/dev/form-elements.html#the-selectedcontent-element
+// [option]: https://html.spec.whatwg.org/dev/form-elements.html#the-option-element
+// [button]: https://html.spec.whatwg.org/dev/form-elements.html#the-button-element
+// [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
+// [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
+func Selectedcontent(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
+    return roundly.WriteElement("selectedcontent", attributes, children...)
 }
 
 // Textarea creates the textarea element - Multiline text controls [(More)]

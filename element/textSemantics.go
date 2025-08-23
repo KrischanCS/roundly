@@ -571,7 +571,7 @@ func Small(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 //   - [phrasing]
 //
 // If can itself be a child of the following elements/categories of elements:
-//   - [phrasing]
+//   - [phrasing] [option element inner content elements]
 //
 // The following attributes can be added to this element:
 //   - [globals]
@@ -582,6 +582,7 @@ func Small(attributes roundly.Attribute, children ...roundly.Element) roundly.El
 // [flow]: https://html.spec.whatwg.org/dev/dom.html#flow-content-2
 // [phrasing]: https://html.spec.whatwg.org/dev/dom.html#phrasing-content-2
 // [palpable]: https://html.spec.whatwg.org/dev/dom.html#palpable-content-2
+// [option element inner content elements]: https://html.spec.whatwg.org/dev/dom.html#option-element-inner-content-elements-2
 // [globals]: https://html.spec.whatwg.org/dev/dom.html#global-attributes
 // [The HTML Standard for Web Developers/Indices/Elements]: https://html.spec.whatwg.org/dev/indices.html#elements-3
 func Span(attributes roundly.Attribute, children ...roundly.Element) roundly.Element {
