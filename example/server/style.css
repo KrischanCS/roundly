@@ -37,6 +37,7 @@ body {
     margin: auto;
     width: calc(100% - 4ch);
     max-width: 80ch;
+    
 
     background-color: var(--clr-bg);
     color: var(--clr-text);
@@ -48,13 +49,15 @@ pre {
     padding: 1em 2ch;
     background-color: var(--clr-bg-code);
 
-    border: 1px solid var(--clr-primary);
+    /*border: 1px solid var(--clr-primary);*/
     border-radius: 1em;
 
     font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
     font-size: .9em;
 
     z-index: 2;
+    
+    overflow: auto;
 }
 
 header {
@@ -174,6 +177,7 @@ article:after {
 
     color: var(--clr-accent);
     opacity: .1;
+    
 }
 
 article *:nth-child(1) {

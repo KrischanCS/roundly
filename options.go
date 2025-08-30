@@ -3,10 +3,13 @@ package roundly
 import "bytes"
 
 type RenderOptions struct {
-	Pretty       bool
-	LineBreakMin int
+	Pretty          bool
+	LineBreakMin    int
+	ExplainYourself bool
 
-	level int
+	level        int
+	funcBuffer   Writer
+	elementStack []string
 }
 
 func (r *RenderOptions) IncreaseIndent() {
@@ -44,6 +47,13 @@ func writeElementWithOptions(
 	childNodes []Element,
 	opts *RenderOptions,
 ) error {
+	if opts.ExplainYourself {
+		err := writeExplanation(opts)
+		if err != nil {
+			return err
+		}
+	}
+
 	err := writeOpenTagWithOptions(w, tag, attributes, opts)
 	if err != nil {
 		return err
