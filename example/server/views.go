@@ -20,12 +20,19 @@ func Page(title string, mainContent roundly.Element) roundly.Element {
 			),
 			Body(nil,
 				Header(nil,
-					Hgroup(Class("page-title"),
-						H1Text("roundly"),
-						PText("html. pure go"),
-						A(Attributes(
-							HRef("/"),
-							roundly.WriteAttribute("aria-label", "Home")),
+					//Hgroup(Class("page-title"),
+					//	H1Text("roundly"),
+					//	PText("html. pure go"),
+					//	A(Attributes(
+					//		HRef("/"),
+					//		roundly.WriteAttribute("aria-label", "Home")),
+					//	),
+					//),
+					Img(
+						Attributes(
+							Src("/logo.svg"),
+							Alt("roundly logo"),
+							Height(120),
 						),
 					),
 					Nav(nil,

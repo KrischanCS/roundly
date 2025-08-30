@@ -11,7 +11,10 @@ import (
 )
 
 //go:embed style.css
-var styleCSS string
+var styleCSS []byte
+
+//go:embed logo.svg
+var logo []byte
 
 func handle(pattern string, handleFunc func(w http.ResponseWriter, r *http.Request)) {
 	http.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
@@ -29,6 +32,7 @@ func main() {
 	handle("/home", HomeHandleFunc)
 	handle("/examples", ExamplesHandleFunc)
 	handle("/style.css", StyleHandleFunc)
+	handle("/logo.svg", LogoHandleFunc)
 
 	log.Printf("Listening on port %d", 8080)
 	log.Fatal(http.ListenAndServe(":8080", nil))
@@ -41,7 +45,20 @@ func StyleHandleFunc(w http.ResponseWriter, _ *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 
-	_, err := w.Write([]byte(styleCSS))
+	_, err := w.Write(styleCSS)
+	if err != nil {
+		log.Println("Error writing response:", err)
+	}
+}
+
+func LogoHandleFunc(w http.ResponseWriter, _ *http.Request) {
+	w.Header().Set("Content-Type", "image/svg+xml")
+	//w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+	//w.Header().Set("Pragma", "no-cache")
+
+	w.WriteHeader(http.StatusOK)
+
+	_, err := w.Write(logo)
 	if err != nil {
 		log.Println("Error writing response:", err)
 	}

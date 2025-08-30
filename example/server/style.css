@@ -1,45 +1,49 @@
 :root {
-    --clr-bg: #f6f4f1;
-    --clr-bg-2: #faf9f7;
+    --clr-bg: #eee8e0;
+    --clr-bg-2: #faf8f5;
     --clr-bg-code: #ffffff;
     --clr-text: #1c1c1c;
 
-    --clr-primary: #8de194;
-    --clr-primary-2: #29802f;
-    --clr-accent: #7807e1;
-    --clr-accent-2: #7f02f3;
-    --clr-invert: #f3a93e;
-    --clr-invert-2: #f5bf73;
+    --clr-primary: #9bdf4a;
+    --clr-primary-2: #2c4f04;
+    --clr-accent: #9122e6;
+    --clr-accent-2: #230a34;
+    --clr-invert: #e67922;
+    --clr-invert-2: #ebcf90;
 
+    --bg: linear-gradient(180deg, #f5f3f1 0%, #efdec8 66%, #eab07d 100%);
 
     font-size: 16px;
 }
 
+html {
+    height: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-bg: #1b1321;
-        --clr-bg-2: #2e2634;
+        --clr-bg: #231e29;
+        --clr-bg-2: #322b38;
         --clr-bg-code: #000000;
         --clr-text: #e9f5eb;
 
-        --clr-primary: #8de194;
-        --clr-primary-2: #c0eac4;
-        --clr-accent: #f3a93e;
-        --clr-accent-2: #f5bf73;
-        --clr-invert: #7807e1;
-        --clr-invert-2: #7f02f3;
+        --clr-primary: #2c4f04;
+        --clr-primary-2: #9bdf4a;
+        --clr-accent: #e67922;
+        --clr-accent-2: #ebcf90;
+        --clr-invert: #230a34;
+        --clr-invert-2: #9122e6;
+
+        --bg: linear-gradient(180deg, rgba(35, 30, 41, 1) 0%, rgba(24, 19, 28, 1) 66%, rgb(18, 14, 23) 100%);
     }
 }
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 
-    margin: auto;
-    width: calc(100% - 4ch);
-    max-width: 80ch;
-    
+    margin: 0;
 
-    background-color: var(--clr-bg);
+    background: var(--bg);
     color: var(--clr-text);
 }
 
@@ -56,15 +60,20 @@ pre {
     font-size: .9em;
 
     z-index: 2;
-    
+
     overflow: auto;
 }
 
 header {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: calc(100% - 4ch);
+    max-width: 100ch;
+
     display: flex;
     flex-direction: row;
-    
-    margin-top: 2em;
 }
 
 nav {
@@ -79,9 +88,9 @@ nav {
 nav a {
     padding: .5em 1ch;
     border-radius: .5em;
-    
+
     margin: 0 .5ch;
-    
+
     text-decoration: none;
 }
 
@@ -92,14 +101,14 @@ nav a.selected {
 
 header hgroup {
     position: relative;
-    
+
     padding: 0 2ch;
     border-radius: 1em;
     width: fit-content;
 
     background-color: var(--clr-primary);
     color: var(--clr-accent-2);
-    
+
     overflow: hidden;
 
     & h1 {
@@ -141,6 +150,15 @@ a:hover, a:active {
     color: var(--clr-accent-2);
 }
 
+
+main {
+    margin: auto;
+    width: calc(100% - 4ch);
+    max-width: 80ch;
+
+    overflow: auto;
+}
+
 article {
     position: relative;
 
@@ -177,7 +195,7 @@ article:after {
 
     color: var(--clr-accent);
     opacity: .1;
-    
+
 }
 
 article *:nth-child(1) {
