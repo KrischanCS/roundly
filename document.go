@@ -38,6 +38,13 @@ func Doctype(doctype string) Element {
 
 		err = w.WriteByte('>')
 
+		if opts != nil && opts.Pretty {
+			err = w.WriteByte('\n')
+			if err != nil {
+				return err
+			}
+		}
+
 		return err
 	}
 }

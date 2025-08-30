@@ -77,7 +77,8 @@ func ExampleDocument() {
 
 	// Output:
 	//
-	// <!doctype html><html>
+	// <!doctype html>
+	// <html>
 	// 	<head>
 	// 		<title>
 	// 			roundly Example

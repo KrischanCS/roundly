@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>
+			roundly – Home
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<header>
+			<hgroup class="page-title">
+				<h1>
+					roundly
+				</h1>
+				<p>
+					html. pure go
+				</p>
+				<a href="/" aria-label="Home">
+				</a>
+			</hgroup>
+			<nav>
+				<a href="/home" class="selected">
+					Home()
+				</a>
+				<a href="/examples">
+					Examples()
+				</a>
+			</nav>
+		</header>
+		<main>
+			<article>
+				<h2>
+					Summary
+				</h2>
+				<p>
+					Roundly is a library for creating composable HTML components in pure Go. Instead
+					of writing template files, which needs to be wired to go in some way, roundly allows
+					you to write your components as go functions.
+				</p>
+				<p>
+					So there is no need for any runtime parsing of templates or code generation while
+					development. Instead you get the type safety you know from go
+				</p>
+				<p>
+					Here is how roundly components looks like:
+					<br>
+					<pre>
+						Table(
+						    Attributes(
+						        Id(&#34;mascot-table&#34;),
+						        Class(&#34;fancy-table&#34;, &#34;mascots&#34;),
+						    ),
+						    Thead(nil,
+						        Tr(nil,
+						            ThText(&#34;Language&#34;),
+						            ThText(&#34;Kind&#34;),
+						            ThText(&#34;Name&#34;),
+						        ),
+						    ),
+						    Tbody(nil,
+						        Range([]Mascot{
+						            {&#34;Go&#34;, &#34;Blue Gopher&#34;, &#34;The Go Gopher&#34;},
+						            {&#34;Rust&#34;, &#34;Orange Crab&#34;, &#34;Ferris&#34;},
+						            {&#34;Gleam&#34;, &#34;Pink Starfish&#34;, &#34;Lucy&#34;},
+						            {&#34;Zig&#34;, &#34;Ziguana&#34;, &#34;Ziggy &amp; Zero&#34;},
+						            {&#34;Java&#34;, &#34;?&#34;, &#34;Duke&#34;},
+						        }, func(i int, mascot Mascot) roundly.Element {
+						            return Tr(nil,
+						                Th(ScopeRow(), Text(mascot.Language)),
+						                TdText(mascot.Kind),
+						                TdText(mascot.Name),
+						            )
+						        }),
+						    ),
+						)
+						
+					</pre>
+				</p>
+			</article>
+		</main>
+	</body>
+</html>
