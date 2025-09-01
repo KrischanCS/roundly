@@ -206,6 +206,7 @@ func addIndentsAndLineBreaks(textBytes []byte, opts *roundly.RenderOptions) []by
 		if char == '\n' {
 			charsSinceBreak = 0
 			_ = w.WriteByte(char)
+			_ = opts.WriteIndent(w)
 
 			continue
 		}

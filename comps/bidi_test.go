@@ -1,4 +1,4 @@
-package hfcomp
+package comps
 
 import (
 	"fmt"

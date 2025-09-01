@@ -208,6 +208,10 @@ func writeCloseTagWithOptions(w Writer, tag string, opts *RenderOptions) error {
 }
 
 func writeAttributeWithOptions(w Writer, name string, value string, options *RenderOptions) error {
+	if value == "" {
+		return nil
+	}
+
 	if !options.Pretty {
 		return writeAttribute(w, name, value)
 	}
