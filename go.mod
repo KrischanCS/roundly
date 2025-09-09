@@ -1,13 +1,11 @@
 module github.com/KrischanCS/roundly
 
-go 1.24.1
-
-toolchain go1.24.2
+go 1.25
 
 require (
 	github.com/KrischanCS/go-toolbox v0.0.6
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/net v0.41.0
+	golang.org/x/net v0.44.0
 )
 
 require (

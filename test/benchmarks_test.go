@@ -75,7 +75,7 @@ func BenchmarkExamplePageRange10(b *testing.B) {
 					H1(nil,
 						Div(nil, Text("Here could be your content")),
 					),
-					RangeSeq(iterator.FromToInclusive(1, 10), func(i int) roundly.Element {
+					Range(iterator.FromToInclusive(1, 10), func(_, i int) roundly.Element {
 						return Div(nil, Text(strconv.Itoa(i)))
 					}),
 				),
@@ -206,7 +206,7 @@ func BenchmarkRange(b *testing.B) {
 				nil, Text("The Title of the Page"),
 			),
 			Body(nil,
-				RangeSeq(iterator.FromToInclusive(1, 1), func(i int) roundly.Element {
+				Range(iterator.FromToInclusive(1, 1), func(_, i int) roundly.Element {
 					return Div(nil, Text(strconv.Itoa(i)))
 				}),
 			),

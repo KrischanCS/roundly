@@ -7,11 +7,12 @@ import (
 	"testing"
 
 	"github.com/KrischanCS/go-toolbox/iterator"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/KrischanCS/roundly"
 	. "github.com/KrischanCS/roundly/attribute"
 	. "github.com/KrischanCS/roundly/element"
 	. "github.com/KrischanCS/roundly/text"
-	"github.com/stretchr/testify/assert"
 )
 
 //nolint:errcheck
@@ -109,9 +110,9 @@ func ExampleRangeInt() {
 }
 
 //nolint:errcheck
-func ExampleRangeSeq() {
+func ExampleRange_seq() {
 	list := Ol(nil,
-		RangeSeq(iterator.FromStepTo(0, 0.1, 0.5), func(f float64) roundly.Element {
+		Range(iterator.FromStepTo(0, 0.1, 0.5), func(_ int, f float64) roundly.Element {
 			return Li(nil, Text(strconv.FormatFloat(f, 'f', 1, 64)))
 		}),
 	)
@@ -274,7 +275,7 @@ func TestRangeIter(t *testing.T) {
 
 	type args struct {
 		seq       iter.Seq[int]
-		component func(int) roundly.Element
+		component func(int, int) roundly.Element
 	}
 
 	tests := []struct {
@@ -286,7 +287,7 @@ func TestRangeIter(t *testing.T) {
 			name: "nil",
 			args: args{
 				seq: nil,
-				component: func(s int) roundly.Element {
+				component: func(_, s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s)))
 				},
@@ -297,7 +298,7 @@ func TestRangeIter(t *testing.T) {
 			name: "1",
 			args: args{
 				seq: iterator.FromToInclusive(7, 7),
-				component: func(s int) roundly.Element {
+				component: func(_, s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
@@ -308,7 +309,7 @@ func TestRangeIter(t *testing.T) {
 			name: "5",
 			args: args{
 				seq: iterator.FromTo(3, 8),
-				component: func(s int) roundly.Element {
+				component: func(_, s int) roundly.Element {
 					return Li(nil,
 						Text(fmt.Sprintf("%c", 'a'+s-1)))
 				},
@@ -325,7 +326,7 @@ func TestRangeIter(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			w := roundly.NewWriter()
 
-			err := RangeSeq(tt.args.seq, tt.args.component).RenderElement(w)
+			err := Range(tt.args.seq, tt.args.component).RenderElement(w)
 
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, w.String())
@@ -402,9 +403,9 @@ func BenchmarkRangeIter(b *testing.B) {
 	var res []byte
 
 	for b.Loop() {
-		_ = RangeSeq(iterator.FromTo(0, 10), func(row int) roundly.Element { //nolint:errcheck
+		_ = Range(iterator.FromTo(0, 10), func(_, row int) roundly.Element { //nolint:errcheck
 			return Div(Class("row"),
-				RangeSeq(iterator.FromTo(0, 20), func(col int) roundly.Element {
+				Range(iterator.FromTo(0, 20), func(_, col int) roundly.Element {
 					return Div(Class("col"),
 						Text(strconv.Itoa(row*100+col)),
 					)
