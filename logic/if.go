@@ -31,3 +31,22 @@ func IfElse[EA ElementOrAttribute](condition bool, then, otherwise EA) EA {
 
 	return otherwise
 }
+
+// IfValue returns the given string if condition is true, else an empty string. Intended to be used
+// on  multi-value attributes, where some values are optional.
+func IfValue(condition bool, then string) string {
+	if condition {
+		return then
+	}
+
+	return ""
+}
+
+// IfElseValue returns the then string, else the otherwise string.
+func IfElseValue(condition bool, then, otherwise string) string {
+	if condition {
+		return then
+	}
+
+	return otherwise
+}
