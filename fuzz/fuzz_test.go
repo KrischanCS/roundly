@@ -8,8 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/roundly"
-	. "github.com/KrischanCS/roundly/element"
-	. "github.com/KrischanCS/roundly/text"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 type elementFunc func(attributes roundly.Attribute, children ...roundly.Element) roundly.Element

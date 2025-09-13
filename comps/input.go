@@ -2,18 +2,16 @@ package comps
 
 import (
 	"github.com/KrischanCS/roundly"
-	. "github.com/KrischanCS/roundly/attribute"
-	el "github.com/KrischanCS/roundly/element"
-	. "github.com/KrischanCS/roundly/logic"
-	. "github.com/KrischanCS/roundly/text"
+
+	. "github.com/KrischanCS/roundly/html"
 )
 
-func Form(
+func InputForm(
 	actionTarget string,
 	attrs roundly.Attribute,
 	inputs ...roundly.Element,
 ) roundly.Element {
-	return el.Form(
+	return Form(
 		Attributes(
 			Action(actionTarget),
 			If(attrs != nil, attrs),
@@ -58,7 +56,7 @@ type IptRadioButtonOption struct {
 func input(inputType func() roundly.Attribute, attributes InputAttributes, otherAttrs ...roundly.Attribute) roundly.Element {
 	return Group(
 		LabelText(attributes.Label, For(attributes.Id)),
-		el.Input(
+		Input(
 			Attributes(
 				inputType(),
 				Name(attributes.Name),
@@ -73,7 +71,7 @@ func input(inputType func() roundly.Attribute, attributes InputAttributes, other
 
 func inputLeft(inputType func() roundly.Attribute, attributes InputAttributes, otherAttrs ...roundly.Attribute) roundly.Element {
 	return Group(
-		el.Input(
+		Input(
 			Attributes(
 				inputType(),
 				Name(attributes.Name),
@@ -99,7 +97,7 @@ func IptPassword(attributes InputAttributes, otherAttrs ...roundly.Attribute) ro
 
 // IptSubmit creates a submit button.
 func IptSubmit(value string, otherAttrs ...roundly.Attribute) roundly.Element {
-	return el.Input(Attributes(
+	return Input(Attributes(
 		TypeSubmit(),
 		Value(value),
 		Attributes(otherAttrs...),
@@ -108,7 +106,7 @@ func IptSubmit(value string, otherAttrs ...roundly.Attribute) roundly.Element {
 
 // IptReset create a reset button.
 func IptReset(value string, otherAttrs ...roundly.Attribute) roundly.Element {
-	return el.Input(Attributes(
+	return Input(Attributes(
 		TypeReset(),
 		Value(value),
 		Attributes(otherAttrs...),
@@ -138,7 +136,7 @@ func IptCheckBox(attributes InputAttributes, otherAttrs ...roundly.Attribute) ro
 
 // IptButton creates a button with the given onclick action.
 func IptButton(value string, onClick string, otherAttrs ...roundly.Attribute) roundly.Element {
-	return el.Input(Attributes(
+	return Input(Attributes(
 		TypeButton(),
 		Value(value),
 		OnClick(onClick),
@@ -168,10 +166,10 @@ func IptEmail(attributes InputAttributes, otherAttrs ...roundly.Attribute) round
 
 // IptImage creates an input of type image with a label.
 func IptImage(attributes ImageAttributes, otherAttrs ...roundly.Attribute) roundly.Element {
-	return el.Div(
+	return Div(
 		StyleAttribute(`display:flex; flex-direction:column;`),
-		el.Label(Id(attributes.Id), Text(attributes.Label)),
-		el.Input(
+		Label(Id(attributes.Id), Text(attributes.Label)),
+		Input(
 			Attributes(
 				TypeImage(),
 				Id(attributes.Id),
@@ -192,7 +190,7 @@ func IptFile(attributes InputAttributes, otherAttrs ...roundly.Attribute) roundl
 
 // IptHidden creates a input of type hidden with a label.
 func IptHidden(name, value string, otherAttrs ...roundly.Attribute) roundly.Element {
-	return el.Input(
+	return Input(
 		Attributes(
 			TypeHidden(),
 			Name(name),

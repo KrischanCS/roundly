@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/KrischanCS/roundly"
-	. "github.com/KrischanCS/roundly/attribute"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func ExampleIptText() {
@@ -520,7 +520,7 @@ func ExampleIptWeek() {
 }
 
 func ExampleForm() {
-	form := Form("#", nil,
+	form := InputForm("#", nil,
 		IptText(InputAttributes{
 			Label:       "Username",
 			Name:        "username",

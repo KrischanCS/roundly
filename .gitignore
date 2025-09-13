@@ -1,6 +1,6 @@
 .task/
-/internal/generator
-/internal/generator.exe
+/internal/generator/generator
+/internal/generator/generator.exe
 /tmp/main
 /example/server/tmp
 

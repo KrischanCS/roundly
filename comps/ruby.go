@@ -2,9 +2,7 @@ package comps
 
 import (
 	"github.com/KrischanCS/roundly"
-	el "github.com/KrischanCS/roundly/element"
-	. "github.com/KrischanCS/roundly/logic"
-	. "github.com/KrischanCS/roundly/text"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 type RubySegment struct {
@@ -14,13 +12,13 @@ type RubySegment struct {
 
 func RubyText(segments []RubySegment) roundly.Element {
 	return func(w roundly.Writer, opts *roundly.RenderOptions) error {
-		rbt := el.Ruby(nil,
+		rbt := Ruby(nil,
 			Range(segments, func(_ int, segment RubySegment) roundly.Element {
 				return Group(
 					Text(segment.Text),
-					el.Rp(nil, RawTrusted("(")),
+					Rp(nil, RawTrusted("(")),
 					RtText(segment.Text),
-					el.Rp(nil, RawTrusted(")")),
+					Rp(nil, RawTrusted(")")),
 				)
 			}),
 		)

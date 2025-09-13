@@ -3,22 +3,22 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestTable(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Table,
-		element.Caption,
-		element.Colgroup,
-		element.Tbody,
-		element.Thead,
-		element.Tfoot,
-		element.Tr,
-		element.Td,
-		element.Th,
+		Table,
+		Caption,
+		Colgroup,
+		Tbody,
+		Thead,
+		Tfoot,
+		Tr,
+		Td,
+		Th,
 	}
 
 	for _, element := range elements {

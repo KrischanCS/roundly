@@ -3,17 +3,17 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestScripting(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Noscript,
-		element.Script,
-		element.Slot,
-		element.Template,
+		Noscript,
+		Script,
+		Slot,
+		Template,
 	}
 
 	for _, element := range elements {

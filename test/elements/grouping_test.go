@@ -3,28 +3,28 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestGrouping(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Blockquote,
-		element.Dd,
-		element.Div,
-		element.Dl,
-		element.Dt,
-		element.Figcaption,
-		element.Figure,
-		element.Li,
-		element.Main,
-		element.Menu,
-		element.Ol,
-		element.P,
-		element.Pre,
-		element.Search,
-		element.Ul,
+		Blockquote,
+		Dd,
+		Div,
+		Dl,
+		Dt,
+		Figcaption,
+		Figure,
+		Li,
+		Main,
+		Menu,
+		Ol,
+		P,
+		Pre,
+		Search,
+		Ul,
 	}
 
 	for _, element := range elements {

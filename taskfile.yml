@@ -55,11 +55,11 @@ tasks:
 
   generate:
     cmds:
-      - cd internal && go run .
+      - cd internal/generator && go run .
 
   generate+:
     cmds:
-      - cd internal && go run . -reloadHtmlStandard
+      - cd internal/generator && go run . -reloadHtmlStandard
 
   deps:
     cmds:

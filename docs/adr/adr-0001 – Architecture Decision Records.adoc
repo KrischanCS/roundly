@@ -1,0 +1,20 @@
+= ADR 0001 – Architecture Decision Records
+
+:author: Christian Schulz
+:status: accepted
+:date: 2025-09-13
+
+The famous first ADR, documenting the decision of using ADRs ;)
+
+== Decision
+
+Decisions done from now in this project will be documented using Architecture Decision Records (ADRs).
+
+I will not use a template strictly for the moment. In my experience, that often introduces noise to the documents.
+
+Even if working on this on my own and for myself at the moment, it makes sense to me to document some decisions.
+I'm not necessarily working in this frequently so this is a way to remember why I made some decisions and what I tried already.
+
+Also, if someone else looks at this it might also make some things clearer.
+
+For what I did already, there are no ADRs, maybe I will add some retroactively to explain a few things.

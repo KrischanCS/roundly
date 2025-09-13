@@ -1,0 +1,15 @@
+= ADR 0002 – The HTML Package
+
+:author: Christian Schulz
+:status: accepted
+:date: 2025-09-13
+
+== Decision
+
+The content of the packages `element`, `attribute` , `logic` and `text` will be moved to a new package `html`.
+
+The benefit is the easier usability of the library, especially when working with dot-imports, as it's recommended.
+
+The content in most of them is anyways generated so having one big package does not really make the maintainability worse.
+
+The packages `logic` and `text` are hand written, their original sources will be moved to the generator (internal/generator). They must only be edited there and will be copied to `html` by the generator.

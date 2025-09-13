@@ -1,0 +1,35 @@
+// Generated file. DO NOT EDIT.
+
+package html
+
+import (
+	"strconv"
+
+	"github.com/KrischanCS/roundly"
+)
+{{ range . }}
+{{/*gotype: github.com/KrischanCS/roundly/attribute/generateAttributes.attribute*/ -}}
+// {{.FuncName}} creates the {{.Name}} attribute - {{.Description}}
+//
+// It can be applied to the following elements:
+{{- range .Elements}}
+//   - {{.}}
+{{- end}}
+//
+// Value constraints: {{.Value}}
+//
+// Source: [The HTML Standard for Web Developers/Indices/Attributes]
+//
+{{ range .Links -}}
+// [{{.Name}}]: {{.Url}}
+{{ end -}}
+// [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
+func {{.FuncName}}({{.ParamName}} ...float64) roundly.Attribute {
+	floats := make([]string, len({{.ParamName}}))
+	for i, val := range {{.ParamName}} {
+		floats[i] = strconv.FormatFloat(val, 'f', -1, 64)
+	}
+
+	return roundly.WriteMultiValueAttribute("{{.Name}}", ',', floats...)
+}
+{{end}}

@@ -3,16 +3,16 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestInteractive(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Details,
-		element.Summary,
-		element.Dialog,
+		Details,
+		Summary,
+		Dialog,
 	}
 
 	for _, element := range elements {

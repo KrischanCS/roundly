@@ -6,8 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/KrischanCS/roundly"
-	. "github.com/KrischanCS/roundly/attribute"
-	element2 "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestCanvas(t *testing.T) {
@@ -15,7 +14,7 @@ func TestCanvas(t *testing.T) {
 
 	w := roundly.NewWriter()
 
-	element := element2.Canvas(Attributes(Class("test", "other")))
+	element := Canvas(Attributes(Class("test", "other")))
 
 	err := element.RenderElement(w)
 

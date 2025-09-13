@@ -6,9 +6,7 @@ import (
 	"os"
 
 	"github.com/KrischanCS/roundly"
-	. "github.com/KrischanCS/roundly/attribute"
-	. "github.com/KrischanCS/roundly/element"
-	. "github.com/KrischanCS/roundly/text"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 //nolint:nolintlint,lll

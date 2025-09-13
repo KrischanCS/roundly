@@ -3,15 +3,15 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestEdit(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Ins,
-		element.Del,
+		Ins,
+		Del,
 	}
 
 	for _, element := range elements {

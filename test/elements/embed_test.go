@@ -3,21 +3,21 @@ package elements
 import (
 	"testing"
 
-	"github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/html"
 )
 
 func TestEmbed(t *testing.T) {
 	t.Parallel()
 
 	elements := []elementFunc{
-		element.Audio,
-		element.Iframe,
-		element.Map,
-		element.Math,
-		element.Object,
-		element.Picture,
-		element.Svg,
-		element.Video,
+		Audio,
+		Iframe,
+		Map,
+		Math,
+		Object,
+		Picture,
+		Svg,
+		Video,
 	}
 
 	for _, element := range elements {
