@@ -7,6 +7,7 @@ import (
 	"github.com/KrischanCS/roundly"
 	. "github.com/KrischanCS/roundly/attribute"
 	. "github.com/KrischanCS/roundly/element"
+	. "github.com/KrischanCS/roundly/logic"
 	. "github.com/KrischanCS/roundly/text"
 )
 
@@ -178,6 +179,33 @@ func ExampleRenderOptions_prettyNestedContent() {
 	// 		string for efficiency, but for documentation and testing it&#39;s pretty handy.
 	// 	</p>
 	// </article>
+}
+
+func ExampleRenderOptions_range() {
+	ul := Ul(nil,
+		Range(
+			[]string{"Item 1", "Item 2", "Item 3"},
+			func(_ int, s string) roundly.Element {
+				return Li(nil, Text(s))
+			},
+		),
+	)
+
+	fmt.Println(ul.StringPretty())
+
+	// Output:
+	//
+	// <ul>
+	// 	<li>
+	// 		Item 1
+	// 	</li>
+	// 	<li>
+	// 		Item 2
+	// 	</li>
+	// 	<li>
+	// 		Item 3
+	// 	</li>
+	// </ul>
 }
 
 func BenchmarkRenderOptions(b *testing.B) {
