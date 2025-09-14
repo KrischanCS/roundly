@@ -43,7 +43,7 @@ func GenerateAttributes(indicesBody *html.Node, inputBody *html.Node) {
 	generateFile("attributesFloat.go.tmpl", attributes.Float, attribute+"Float.go")
 	generateFile("attributesInt.go.tmpl", attributes.Int, attribute+"Int.go")
 	generateFile("attributesUint.go.tmpl", attributes.Uint, attribute+"Uint.go")
-	generateFile("attributeList.go.tmpl", nil, attribute+"AttributeList.go")
+	generateFile("attributeList.go.tmpl", nil, attribute+"List.go")
 	generateFile("attributesText.go.tmpl", eventHandlerAttributes, attribute+"EventHandler.go")
 
 	slog.Info("Generated attributes.")
