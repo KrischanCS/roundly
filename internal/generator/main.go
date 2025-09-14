@@ -5,11 +5,8 @@ package main
 import (
 	_ "embed"
 	"flag"
-	"io"
-	"log"
 	"log/slog"
 	"os"
-	"path/filepath"
 	"time"
 
 	"github.com/KrischanCS/roundly/internal/generator/attributes"
@@ -41,50 +38,6 @@ func main() {
 
 	elements.GenerateElements(indicesBody, syntaxBody)
 	attributes.GenerateAttributes(indicesBody, inputBody)
-
-	copyLogicAndTextFiles()
-}
-
-func copyLogicAndTextFiles() {
-	filepath.Walk("src/", func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			log.Panic(err)
-		}
-		if info.IsDir() {
-			return nil
-		}
-		if filepath.Ext(path) != ".go" {
-			return nil
-		}
-
-		slog.Info("Copying file...", "path", path)
-
-		src, err := os.Open(path)
-		if err != nil {
-			log.Panic(err)
-		}
-		defer src.Close()
-
-		dst, err := os.OpenFile("../../html/"+info.Name(), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
-		if err != nil {
-			log.Panic(err)
-		}
-		defer dst.Close()
-
-		_, err = dst.Write([]byte("// Copied by generator. DO NOT EDIT.\n" +
-			"// Original file: " + path + "\n\n"))
-		if err != nil {
-			log.Panic(err)
-		}
-
-		_, err = io.Copy(dst, src)
-		if err != nil {
-			log.Panic(err)
-		}
-
-		slog.Info("Copied file.", "path", path)
-		return nil
-	})
 }
 
 func setupLogger() {

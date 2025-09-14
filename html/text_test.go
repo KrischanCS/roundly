@@ -1,6 +1,3 @@
-// Copied by generator. DO NOT EDIT.
-// Original file: src/text/text_test.go
-
 package html
 
 import (

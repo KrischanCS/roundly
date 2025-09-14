@@ -1,6 +1,3 @@
-// Copied by generator. DO NOT EDIT.
-// Original file: src/text/text_stdlib.go
-
 //go:build roundly_text_std
 
 package html

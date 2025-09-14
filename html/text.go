@@ -1,6 +1,3 @@
-// Copied by generator. DO NOT EDIT.
-// Original file: src/text/text.go
-
 //go:build !roundly_text_std
 
 // Package text Provides functions to add text to elements or attributes, either escaped of not.
