@@ -171,5 +171,5 @@ var mappings = map[string]MethodParamName{ //nolint:gochecknoglobals
 	"onunload":                        {"OnUnload", "onUnload"},
 	"onvolumechange":                  {"OnVolumeChange", "onVolumeChange"},
 	"onwaiting":                       {"OnWaiting", "onWaiting"},
-	"onwheel":                         {"onWheel", "onWheel"},
+	"onwheel":                         {"OnWheel", "onWheel"},
 }

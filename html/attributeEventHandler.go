@@ -1502,7 +1502,7 @@ func OnWaiting(onWaiting string) roundly.Attribute {
 	return roundly.WriteAttribute("onwaiting", onWaiting)
 }
 
-// onWheel creates the onwheel attribute - [wheel] event handler
+// OnWheel creates the onwheel attribute - [wheel] event handler
 //
 // It can be applied to the following elements:
 //   - [HTML elements]
@@ -1515,6 +1515,6 @@ func OnWaiting(onWaiting string) roundly.Attribute {
 // [wheel]: https://html.spec.whatwg.org/dev/https://w3c.github.io/uievents/#event-type-wheel
 // [Event handler content attribute]: https://html.spec.whatwg.org/dev/webappapis.html#event-handler-content-attributes
 // [The HTML Standard for Web Developers/Indices/Attributes]: https://html.spec.whatwg.org/dev/indices.html#attributes-3
-func onWheel(onWheel string) roundly.Attribute {
+func OnWheel(onWheel string) roundly.Attribute {
 	return roundly.WriteAttribute("onwheel", onWheel)
 }

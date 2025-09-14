@@ -85,7 +85,12 @@ func writeMultiValueAttribute(w Writer, name string, delimiter byte, values []st
 func WriteBoolAttribute(name string) Attribute {
 	return func(w Writer, opts *RenderOptions) error {
 		if opts == nil || !opts.Pretty {
-			_, err := w.WriteString(name)
+			err := w.WriteByte(' ')
+			if err != nil {
+				return err
+			}
+
+			_, err = w.WriteString(name)
 			return err
 		}
 

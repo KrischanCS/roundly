@@ -37,7 +37,7 @@ func GenerateAttributes(indicesBody *html.Node, inputBody *html.Node) {
 	generateFile(
 		"attributesCommaSeparatedFloats.go.tmpl",
 		attributes.ListCommaFloat,
-		"commaSeperatedFloat.go",
+		attribute+"CommaSeperatedFloat.go",
 	)
 	generateFile("attributesSpaceSeparated.go.tmpl", attributes.ListSpace, attribute+"SpaceSeperated.go")
 	generateFile("attributesFloat.go.tmpl", attributes.Float, attribute+"Float.go")
